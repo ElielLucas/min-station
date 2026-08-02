@@ -1,0 +1,2 @@
+instance,R,N_nodes,M_base,A_R,m,VI,candidatos,vars,cons,cortes_camadas,cortes_camadas_duplicados,cortes_camadas_skip_tamanho,cortes_camadas_skip_vazio,camada_tam_min,camada_tam_max,camada_tam_media,camada_dmin_min,camada_dmin_max,camada_dmin_media,status,solcount,LI,LS,gap,runtime_s,nodes,timelimit,feasible_like
+hc9u.txt,1,512,4608,4608,128,256,512,5120,1664,128,0,0,0,9,9,9.0,2,2,2.0,9,10,31.0,42.0,0.2619047619047619,3600.092037291033,12613,True,True

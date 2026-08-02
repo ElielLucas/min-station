@@ -1,0 +1,32 @@
+================================================================================
+PREPROCESSAMENTO | hc12p.txt | R=150
+================================================================================
+[Inicial] |V|=4096 | |S|=1024 | |T|=1024 | candidatos_iniciais=4096 | M_base=49152
+[Observação] Estações permitidas em todos os vértices, inclusive origens e destinos.
+[Observação] Por isso, arcos entrando em S ou saindo de T NÃO são removidos automaticamente.
+[Grafo original]
+  Poda iterativa de folhas sem terminais: |V| 4096 -> 4096 | removidos=0 (0.00%) | tempo=0.109s
+  Contração de grau 2: não aplicada por segurança (estações podem ser instaladas em todos os vértices). Vértices grau-2 não terminais remanescentes=0
+[Construção A^R]
+  A^R bruto normalizado: 49152 | loops_descartados=0 | fora_de_V=0 | duplicados=0 | tempo=0.054s
+  [Inicial | arcos forçados a zero] 49152 -> 49152 | removidos=0 (0.00%) | sem_saida_livre/estacao=0 | sem_entrada_livre/estacao=0 | ambos=0
+
+[Iteração 1]
+  [Iteração 1 - Alcance | candidatos] 4096 -> 4096 | removidos=0 (0.00%) | fora_RS=0 | fora_RT=0
+  [Iteração 1 - Alcance | arcos irrelevantes] 49152 -> 49152 | removidos=0 (0.00%) | u_fora_RS=0 | v_fora_RT=0 | ambos=0
+  [Iteração 1 - pós-alcance | arcos forçados a zero] 49152 -> 49152 | removidos=0 (0.00%) | sem_saida_livre/estacao=0 | sem_entrada_livre/estacao=0 | ambos=0
+  [Dominância Pred/Succ] 4096 -> 4096 | removidos=0 (0.00%) | pares_testados=8386560 | pares_dominantes=0 | tempo=5.743s
+  [Iteração 1 - pós-dominância | arcos forçados a zero] 49152 -> 49152 | removidos=0 (0.00%) | sem_saida_livre/estacao=0 | sem_entrada_livre/estacao=0 | ambos=0
+  [Resumo iteração 1] candidatos 4096 -> 4096 | A^R 49152 -> 49152 | tempo=5.789s
+  [Estabilização] Nenhuma redução na iteração 1.
+
+[Diagnósticos finais sem remoção]
+[Diagnóstico | equivalência Pred/Succ] classes_nao_unitarias=0 | candidatos_em_classes=0 | maior_classe=0 | tempo=0.047s
+[Diagnóstico | quase-dominância] pulado: candidatos=4096 > limite=2500. Ajuste --diag-quase-dom-max-candidatos se quiser rodar.
+[Diagnóstico | assinatura global Orig/Dest] classes_nao_unitarias=1 | candidatos_em_classes=4096 | maior_classe=4096 | tempo=6.204s
+
+[Resumo final do pré-processamento]
+  |V| original -> pré: 4096 -> 4096 | removidos_grafo=0
+  candidatos: 4096 -> 4096 | removidos=0 (0.00%)
+  A^R: 49152 -> 49152 | removidos=0 (0.00%)
+  tempo_total_preprocessamento=12.218s

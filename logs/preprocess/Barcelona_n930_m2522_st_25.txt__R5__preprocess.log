@@ -1,0 +1,44 @@
+================================================================================
+PREPROCESSAMENTO | Barcelona_n930_m2522_st_25.txt | R=5
+================================================================================
+[Inicial] |V|=930 | |S|=25 | |T|=25 | candidatos_iniciais=930 | M_base=2522
+[Observação] Estações permitidas em todos os vértices, inclusive origens e destinos.
+[Observação] Por isso, arcos entrando em S ou saindo de T NÃO são removidos automaticamente.
+[Grafo original]
+  Poda iterativa de folhas sem terminais: |V| 930 -> 919 | removidos=11 (1.18%) | tempo=0.003s
+  Contração de grau 2: não aplicada por segurança (estações podem ser instaladas em todos os vértices). Vértices grau-2 não terminais remanescentes=45
+[Construção A^R]
+  A^R bruto normalizado: 32454 | loops_descartados=0 | fora_de_V=0 | duplicados=0 | tempo=0.024s
+  [Inicial | arcos forçados a zero] 32454 -> 32454 | removidos=0 (0.00%) | sem_saida_livre/estacao=0 | sem_entrada_livre/estacao=0 | ambos=0
+
+[Iteração 1]
+  [Iteração 1 - Alcance | candidatos] 919 -> 917 | removidos=2 (0.22%) | fora_RS=1 | fora_RT=1
+  [Iteração 1 - Alcance | arcos irrelevantes] 32454 -> 32410 | removidos=44 (0.14%) | u_fora_RS=18 | v_fora_RT=26 | ambos=0
+  [Iteração 1 - pós-alcance | arcos forçados a zero] 32410 -> 32410 | removidos=0 (0.00%) | sem_saida_livre/estacao=0 | sem_entrada_livre/estacao=0 | ambos=0
+  [Dominância Pred/Succ] 917 -> 914 | removidos=3 (0.33%) | pares_testados=354069 | pares_dominantes=3 | tempo=0.085s
+    Exemplos de dominância:
+      v=102 dominado por u=158 | |Pred(v)|=1, |Pred(u)|=3, |Succ(v)|=1, |Succ(u)|=3
+      v=171 dominado por u=174 | |Pred(v)|=7, |Pred(u)|=19, |Succ(v)|=5, |Succ(u)|=19
+      v=922 dominado por u=811 | |Pred(v)|=3, |Pred(u)|=28, |Succ(v)|=16, |Succ(u)|=28
+  [Iteração 1 - pós-dominância | arcos forçados a zero] 32410 -> 32378 | removidos=32 (0.10%) | sem_saida_livre/estacao=22 | sem_entrada_livre/estacao=10 | ambos=0
+  [Resumo iteração 1] candidatos 919 -> 914 | A^R 32454 -> 32378 | tempo=0.106s
+
+[Iteração 2]
+  [Iteração 2 - Alcance | candidatos] 914 -> 914 | removidos=0 (0.00%) | fora_RS=0 | fora_RT=0
+  [Iteração 2 - Alcance | arcos irrelevantes] 32378 -> 32378 | removidos=0 (0.00%) | u_fora_RS=0 | v_fora_RT=0 | ambos=0
+  [Iteração 2 - pós-alcance | arcos forçados a zero] 32378 -> 32378 | removidos=0 (0.00%) | sem_saida_livre/estacao=0 | sem_entrada_livre/estacao=0 | ambos=0
+  [Dominância Pred/Succ] 914 -> 914 | removidos=0 (0.00%) | pares_testados=353308 | pares_dominantes=0 | tempo=0.078s
+  [Iteração 2 - pós-dominância | arcos forçados a zero] 32378 -> 32378 | removidos=0 (0.00%) | sem_saida_livre/estacao=0 | sem_entrada_livre/estacao=0 | ambos=0
+  [Resumo iteração 2] candidatos 914 -> 914 | A^R 32378 -> 32378 | tempo=0.097s
+  [Estabilização] Nenhuma redução na iteração 2.
+
+[Diagnósticos finais sem remoção]
+[Diagnóstico | equivalência Pred/Succ] classes_nao_unitarias=0 | candidatos_em_classes=0 | maior_classe=0 | tempo=0.011s
+[Diagnóstico | quase-dominância] pares_avaliados=353741 | >=90%=302 | >=95%=60 | >=99%=0 | tempo=0.381s
+[Diagnóstico | assinatura global Orig/Dest] classes_nao_unitarias=1 | candidatos_em_classes=914 | maior_classe=914 | tempo=0.057s
+
+[Resumo final do pré-processamento]
+  |V| original -> pré: 930 -> 919 | removidos_grafo=11
+  candidatos: 919 -> 914 | removidos=5 (0.54%)
+  A^R: 32454 -> 32378 | removidos=76 (0.23%)
+  tempo_total_preprocessamento=0.686s

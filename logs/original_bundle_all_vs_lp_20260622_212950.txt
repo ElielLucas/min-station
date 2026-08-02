@@ -1,0 +1,28 @@
+1 arquivo(s) encontrado(s) em inputs
+Modo de relaxação: all
+Método dual: proximal bundle
+Comparação LP original x LR-Bundle: True
+Tiebreak menor fluxo: True
+Permitir oracle inexato: False
+CSV de iterações: results_original_bundle_vs_lp/original_all_bundle_iteracoes.csv
+CSV de resumo: results_original_bundle_vs_lp/original_all_bundle_resumo.csv
+
+================================================================================
+Arquivo: hc9u.txt
+R original: 1
+Modo de relaxação: all
+Método dual: proximal bundle
+Comparação LP original x LR-Bundle: True
+Tiebreak menor fluxo: True
+Permitir oracle inexato: False
+================================================================================
+Traceback (most recent call last):
+  File "/home/eliel/Documentos/eliel/Unicamp/Plano de Projeto/min-station-project/p_relaxation_min_station_original_bundle_vs_lp.py", line 1918, in <module>
+    main()
+  File "/home/eliel/Documentos/eliel/Unicamp/Plano de Projeto/min-station-project/p_relaxation_min_station_original_bundle_vs_lp.py", line 1903, in main
+    resumo, linhas_iter = executar_arquivo(caminho, args)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eliel/Documentos/eliel/Unicamp/Plano de Projeto/min-station-project/p_relaxation_min_station_original_bundle_vs_lp.py", line 1598, in executar_arquivo
+    resumo, linhas_iter = executar_bundle_instancia(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: executar_bundle_instancia() got an unexpected keyword argument 'tempo_limite_global'

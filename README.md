@@ -1,5 +1,8 @@
 # min-station-project
 
+Provavelmente, será necessário clonar o repositório do TNTP dentro desse repositório para que a geração de instâncias funcione.
+Link: https://github.com/bstabler/TransportationNetworks
+
 ## Gerar instância (TPTP → MIN-STATION)
 ```bash
 python gen_min_station.py   --repositorio ./TransportationNetworks   --caso Philadelphia   --saida inputs/Philadelphia.txt   --n-nos 800   --m-st 6   --percentil-r 0.5   --reindexar

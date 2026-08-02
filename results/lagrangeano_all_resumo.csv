@@ -1,0 +1,2 @@
+instance,R,relax_mode,N_nodes,A_R,m,VI,max_iters,iters_executadas,melhor_LB_lagrangeano,melhor_iter,UB,gap_lagrangeano_pct,status_mip_ub,LB_mip_ub,runtime_mip_ub_s,solcount_mip_ub,runtime_total_s,step_rule,pi_inicial,pi_final,fluxo_inteiro,tiebreak
+hc9u.txt,1,all,512,4608,128,256,1000,1000,0.9965652716231744,964,42.0,97.62722554375435,UB_MANUAL,,0.0,1,112.54486633000488,polyak,0.01,0.002400999999999999,False,True

@@ -13,6 +13,21 @@ from ms_utils import (
 
 
 def construir_modelo_baseline(S, T, V, arcos, custos_estacao=None):
+    """
+    Constrói uma formulação PLI para o MIN-STATION original de Das.
+
+    Nesta versão:
+    - y[v] é criado para todo v em V;
+    - a função objetivo minimiza estações em todo V;
+    - origens têm balanço líquido de saída igual a 1;
+    - destinos têm balanço líquido de entrada igual a 1;
+    - demais vértices conservam fluxo;
+    - a ativação é escrita separadamente para:
+        * entrada em vértices que não são destinos;
+        * entrada nos destinos;
+        * saída de vértices que não são origens;
+        * saída das origens.
+    """
     S = list(S)
     T = list(T)
     V = list(V)
@@ -26,6 +41,13 @@ def construir_modelo_baseline(S, T, V, arcos, custos_estacao=None):
             f"MIN-STATION exige |S| = |T|. Recebido |S|={len(S)} e |T|={len(T)}."
         )
 
+    intersecao_ST = S_set & T_set
+    if intersecao_ST:
+        raise ValueError(
+            "Esta formulação assume S e T disjuntos. "
+            f"Vértices em ambos os conjuntos: {sorted(intersecao_ST)}"
+        )
+
     faltando_S = S_set - V_set
     faltando_T = T_set - V_set
 
@@ -35,7 +57,11 @@ def construir_modelo_baseline(S, T, V, arcos, custos_estacao=None):
     if faltando_T:
         raise ValueError(f"Há destinos fora de V: {sorted(faltando_T)}")
 
-    A = [(u, v) for (u, v) in arcos if u in V_set and v in V_set and u != v]
+    A = [
+        (u, v)
+        for (u, v) in arcos
+        if u in V_set and v in V_set and u != v
+    ]
 
     arcos_entrada = {n: [] for n in V}
     arcos_saida = {n: [] for n in V}
@@ -69,31 +95,72 @@ def construir_modelo_baseline(S, T, V, arcos, custos_estacao=None):
         GRB.MINIMIZE,
     )
 
+    entrada = {
+        v: quicksum(f[a] for a in arcos_entrada.get(v, []))
+        for v in V
+    }
+
+    saida = {
+        v: quicksum(f[a] for a in arcos_saida.get(v, []))
+        for v in V
+    }
+
+    # Fluxo em fontes e sumidouros
+    # Balanço nas origens: sai uma unidade líquida de fluxo.
+    for s in S:
+        modelo.addConstr(
+            saida[s] - entrada[s] == 1,
+            name=f"balanco_origem[{s}]",
+        )
+
+    # Balanço nos destinos: entra uma unidade líquida de fluxo.
+    for t in T:
+        modelo.addConstr(
+            entrada[t] - saida[t] == 1,
+            name=f"balanco_destino[{t}]",
+        )
+
+    # Conservação de fluxo nos demais vértices.
     for v in V:
-        entrada_v = quicksum(f[a] for a in arcos_entrada.get(v, []))
-        saida_v = quicksum(f[a] for a in arcos_saida.get(v, []))
+        if v not in S_set and v not in T_set:
+            modelo.addConstr(
+                entrada[v] == saida[v],
+                name=f"fluxo_cons[{v}]",
+            )
 
-        balanco = (1 if v in S_set else 0) - (1 if v in T_set else 0)
+    # Ativação por instalação
+    # Entrada em vértices que não são destinos.
+    for v in V:
+        if v not in T_set:
+            modelo.addConstr(
+                entrada[v] <= m * y[v],
+                name=f"ativa_entrada_nao_destino[{v}]",
+            )
 
+    # Entrada nos destinos.
+    for t in T:
         modelo.addConstr(
-            saida_v - entrada_v == balanco,
-            name=f"balanco[{v}]",
+            entrada[t] <= 1 + (m - 1) * y[t],
+            name=f"ativa_entrada_destino[{t}]",
         )
 
-        entrada_livre = 1 if v in T_set else 0
-        saida_livre = 1 if v in S_set else 0
+    # Saída de vértices que não são origens.
+    for v in V:
+        if v not in S_set:
+            modelo.addConstr(
+                saida[v] <= m * y[v],
+                name=f"ativa_saida_nao_origem[{v}]",
+            )
 
+    # Saída das origens.
+    for s in S:
         modelo.addConstr(
-            entrada_v <= entrada_livre + (m - entrada_livre) * y[v],
-            name=f"ativa_entrada[{v}]",
-        )
-
-        modelo.addConstr(
-            saida_v <= saida_livre + (m - saida_livre) * y[v],
-            name=f"ativa_saida[{v}]",
+            saida[s] <= 1 + (m - 1) * y[s],
+            name=f"ativa_saida_origem[{s}]",
         )
 
     modelo.update()
+
     return modelo, y, f, len(A), len(V)
 
 

@@ -1,0 +1,255 @@
+1 arquivo(s) encontrado(s) em inputs
+Relaxação: original/agregada, sem caminhos
+Modo de relaxação: all
+Método dual: subgradiente projetado
+Comparação LP x LR: True
+CSV de iterações: results_original_vs_lp/original_all_subgradient_iteracoes.csv
+CSV de resumo: results_original_vs_lp/original_all_subgradient_resumo.csv
+
+================================================================================
+Arquivo: hc9u.txt
+R original: 1
+Relaxação: original/agregada, sem caminhos
+Modo de relaxação: all
+Método dual: subgradiente projetado
+|V|=512 |A_r|=4608 |S|=|T|=128 |VI|=256
+Multiplicadores: 1024
+Fluxo inteiro no oracle: False
+UB inicial: 42.0
+Regra de passo: polyak
+alpha inicial: 2.0
+Tiebreak menor fluxo: True
+================================================================================
+[hc9u.txt] Resolvendo relaxação linear do modelo original/agregado...
+Set parameter Username
+Academic license - for non-commercial use only - expires 2026-08-17
+[hc9u.txt] LP status=OPTIMAL LB_LP=1.0 runtime=0.243s
+[hc9u.txt] original-all it=00001 L_inc=0.0 L_cert=0.0 bestLB=0.0 UB=42.0 gap=100.00% UB_heur=119.0 ||g||=17.088 theta=0.287671 alpha=2 step=4.91573 status=OPTIMAL
+[hc9u.txt] original-all it=00005 L_inc=0.0036452902723652647 L_cert=0.0036452902723652647 bestLB=0.0036452902723652647 UB=42.0 gap=99.99% UB_heur=79.0 ||g||=27.8927 theta=0.10796 alpha=2 step=3.01128 status=OPTIMAL
+[hc9u.txt] original-all it=00010 L_inc=0.021286207602782124 L_cert=0.021286207602782124 bestLB=0.021286207602782124 UB=42.0 gap=99.95% UB_heur=63.0 ||g||=25.6121 theta=0.127988 alpha=2 step=3.27804 status=OPTIMAL
+[hc9u.txt] original-all it=00014 L_inc=0.04338752338172751 L_cert=0.04338752338172751 bestLB=0.04338752338172751 UB=42.0 gap=99.90% UB_heur=68.0 ||g||=25.7676 theta=0.126381 alpha=2 step=3.25654 status=OPTIMAL
+[hc9u.txt] original-all it=00020 L_inc=0.10971928803649177 L_cert=0.10971928803649177 bestLB=0.10971928803649177 UB=42.0 gap=99.74% UB_heur=65.0 ||g||=25.6901 theta=0.126944 alpha=2 step=3.2612 status=OPTIMAL
+[hc9u.txt] original-all it=00030 L_inc=-99.87414811872287 L_cert=-99.87414811872287 bestLB=0.10971928803649177 UB=42.0 gap=99.74% UB_heur=60.0 ||g||=1354.86 theta=0.000154578 alpha=2 step=0.12169 status=OPTIMAL
+[hc9u.txt] original-all it=00040 L_inc=9.197317359099788e-09 L_cert=9.197317359099788e-09 bestLB=0.10971928803649177 UB=42.0 gap=99.74% UB_heur=59.0 ||g||=24.8997 theta=0.135485 alpha=2 step=3.37353 status=OPTIMAL
+[hc9u.txt] original-all it=00050 L_inc=-4408.377584060709 L_cert=-4408.377584060709 bestLB=0.10971928803649177 UB=42.0 gap=99.74% UB_heur=56.0 ||g||=1402.41 theta=0.00452563 alpha=2 step=3.38645 status=OPTIMAL
+[hc9u.txt] original-all it=00060 L_inc=-92.02490211400972 L_cert=-92.02490211400972 bestLB=0.10971928803649177 UB=42.0 gap=99.74% UB_heur=62.0 ||g||=1378.82 theta=0.000140994 alpha=2 step=0.113916 status=OPTIMAL
+[hc9u.txt] original-all it=00070 L_inc=-4324.899278360049 L_cert=-4324.899278360049 bestLB=0.10971928803649177 UB=42.0 gap=99.74% UB_heur=60.0 ||g||=1378.89 theta=0.00459353 alpha=2 step=3.35444 status=OPTIMAL
+[hc9u.txt] original-all it=00080 L_inc=-93.92037090790744 L_cert=-93.92037090790744 bestLB=0.10971928803649177 UB=42.0 gap=99.74% UB_heur=59.0 ||g||=1354.87 theta=0.000148088 alpha=2 step=0.118909 status=OPTIMAL
+[hc9u.txt] original-all it=00090 L_inc=7.810330497799722e-09 L_cert=7.810330497799722e-09 bestLB=0.10971928803649177 UB=42.0 gap=99.74% UB_heur=58.0 ||g||=25.8454 theta=0.125751 alpha=2 step=3.25009 status=OPTIMAL
+[hc9u.txt] original-all it=00100 L_inc=-4166.6290183961155 L_cert=-4166.6290183961155 bestLB=0.10971928803649177 UB=42.0 gap=99.74% UB_heur=60.0 ||g||=1342.73 theta=0.00466865 alpha=2 step=3.29202 status=OPTIMAL
+[hc9u.txt] original-all it=00110 L_inc=-101.0989683026097 L_cert=-101.0989683026097 bestLB=0.10971928803649177 UB=42.0 gap=99.74% UB_heur=59.0 ||g||=1354.68 theta=0.000155952 alpha=2 step=0.125182 status=OPTIMAL
+[hc9u.txt] original-all it=00120 L_inc=7.65680574109015e-09 L_cert=7.65680574109015e-09 bestLB=0.10971928803649177 UB=42.0 gap=99.74% UB_heur=58.0 ||g||=25.298 theta=0.131253 alpha=2 step=3.32042 status=OPTIMAL
+[hc9u.txt] original-all it=00130 L_inc=-4114.455621299762 L_cert=-4114.455621299762 bestLB=0.10971928803649177 UB=42.0 gap=99.74% UB_heur=59.0 ||g||=1354.87 theta=0.00452855 alpha=2 step=3.2718 status=OPTIMAL
+[hc9u.txt] original-all it=00140 L_inc=7.647039769638486e-09 L_cert=7.647039769638486e-09 bestLB=0.10971928803649177 UB=42.0 gap=99.74% UB_heur=56.0 ||g||=25.5342 theta=0.128836 alpha=2 step=3.28971 status=OPTIMAL
+[hc9u.txt] original-all it=00150 L_inc=-4167.562338595404 L_cert=-4167.562338595404 bestLB=0.10971928803649177 UB=42.0 gap=99.74% UB_heur=55.0 ||g||=1330.46 theta=0.00475626 alpha=2 step=3.29192 status=OPTIMAL
+[hc9u.txt] original-all it=00160 L_inc=-106.82554317235713 L_cert=-106.82554317235713 bestLB=0.10971928803649177 UB=42.0 gap=99.74% UB_heur=56.0 ||g||=1342.62 theta=0.000165121 alpha=2 step=0.127412 status=OPTIMAL
+[hc9u.txt] original-all it=00170 L_inc=6.98312938420334e-09 L_cert=6.98312938420334e-09 bestLB=0.10971928803649177 UB=42.0 gap=99.74% UB_heur=56.0 ||g||=25.6903 theta=0.0890924 alpha=1.4 step=2.28881 status=OPTIMAL
+[hc9u.txt] original-all it=00175 L_inc=0.2976353298919029 L_cert=0.2976353298919029 bestLB=0.2976353298919029 UB=42.0 gap=99.29% UB_heur=64.0 ||g||=25.6122 theta=0.0890011 alpha=1.4 step=2.27951 status=OPTIMAL
+[hc9u.txt] original-all it=00180 L_inc=-8.91907304120025 L_cert=-8.91907304120025 bestLB=0.2976353298919029 UB=42.0 gap=99.29% UB_heur=73.0 ||g||=1008.17 theta=7.01362e-05 alpha=1.4 step=0.0412394 status=OPTIMAL
+[hc9u.txt] original-all it=00190 L_inc=-166.97606632691082 L_cert=-166.97606632691082 bestLB=0.2976353298919029 UB=42.0 gap=99.29% UB_heur=65.0 ||g||=886.991 theta=0.000371866 alpha=1.4 step=0.188841 status=OPTIMAL
+[hc9u.txt] original-all it=00194 L_inc=0.4708773996985479 L_cert=0.4708773996985479 bestLB=0.4708773996985479 UB=42.0 gap=98.88% UB_heur=73.0 ||g||=23.7458 theta=0.103111 alpha=1.4 step=2.44846 status=OPTIMAL
+[hc9u.txt] original-all it=00200 L_inc=0.2665030934260585 L_cert=0.2665030934260585 bestLB=0.4708773996985479 UB=42.0 gap=98.88% UB_heur=71.0 ||g||=257.231 theta=0.000883008 alpha=1.4 step=0.0237456 status=OPTIMAL
+[hc9u.txt] original-all it=00210 L_inc=-2742.1096057717327 L_cert=-2742.1096057717327 bestLB=0.4708773996985479 UB=42.0 gap=98.88% UB_heur=70.0 ||g||=1578.04 theta=0.00156523 alpha=1.4 step=1.64453 status=OPTIMAL
+[hc9u.txt] original-all it=00217 L_inc=0.5055949964969867 L_cert=0.5055949964969867 bestLB=0.5055949964969867 UB=42.0 gap=98.80% UB_heur=79.0 ||g||=30.1045 theta=0.0640994 alpha=1.4 step=1.92968 status=OPTIMAL
+[hc9u.txt] original-all it=00220 L_inc=-299.1861065884872 L_cert=-299.1861065884872 bestLB=0.5055949964969867 UB=42.0 gap=98.80% UB_heur=75.0 ||g||=768.165 theta=0.000809489 alpha=1.4 step=0.423821 status=OPTIMAL
+[hc9u.txt] original-all it=00230 L_inc=-43.83568155362478 L_cert=-43.83568155362478 bestLB=0.5055949964969867 UB=42.0 gap=98.80% UB_heur=66.0 ||g||=1267.18 theta=7.48378e-05 alpha=1.4 step=0.0715412 status=OPTIMAL
+[hc9u.txt] original-all it=00240 L_inc=-1.808539875861104 L_cert=-1.808539875861104 bestLB=0.5055949964969867 UB=42.0 gap=98.80% UB_heur=73.0 ||g||=183.03 theta=0.00183081 alpha=1.4 step=0.0522007 status=OPTIMAL
+[hc9u.txt] original-all it=00250 L_inc=-414.67778228013384 L_cert=-414.67778228013384 bestLB=0.5055949964969867 UB=42.0 gap=98.80% UB_heur=68.0 ||g||=1578.28 theta=0.000256668 alpha=1.4 step=0.188954 status=OPTIMAL
+[hc9u.txt] original-all it=00260 L_inc=0.11690096152306784 L_cert=0.11690096152306784 bestLB=0.5055949964969867 UB=42.0 gap=98.80% UB_heur=70.0 ||g||=182.746 theta=0.00175579 alpha=1.4 step=0.0444017 status=OPTIMAL
+[hc9u.txt] original-all it=00268 L_inc=0.5131841827278296 L_cert=0.5131841827278296 bestLB=0.5131841827278296 UB=42.0 gap=98.78% UB_heur=76.0 ||g||=24.1658 theta=0.0994571 alpha=1.4 step=2.40346 status=OPTIMAL
+[hc9u.txt] original-all it=00270 L_inc=-355.6996900691799 L_cert=-355.6996900691799 bestLB=0.5131841827278296 UB=42.0 gap=98.78% UB_heur=68.0 ||g||=1598.9 theta=0.00021779 alpha=1.4 step=0.157926 status=OPTIMAL
+[hc9u.txt] original-all it=00280 L_inc=-2.247576205703299 L_cert=-2.247576205703299 bestLB=0.5131841827278296 UB=42.0 gap=98.78% UB_heur=73.0 ||g||=653.14 theta=0.000145213 alpha=1.4 step=0.024115 status=OPTIMAL
+[hc9u.txt] original-all it=00290 L_inc=-5.79000331366584 L_cert=-5.79000331366584 bestLB=0.5131841827278296 UB=42.0 gap=98.78% UB_heur=68.0 ||g||=809.955 theta=0.000101987 alpha=1.4 step=0.0327651 status=OPTIMAL
+[hc9u.txt] original-all it=00300 L_inc=0.34847746032865146 L_cert=0.34847746032865146 bestLB=0.5131841827278296 UB=42.0 gap=98.78% UB_heur=65.0 ||g||=26.4574 theta=0.0833038 alpha=1.4 step=2.204 status=OPTIMAL
+[hc9u.txt] original-all it=00310 L_inc=-124.12901798989782 L_cert=-124.12901798989782 bestLB=0.5131841827278296 UB=42.0 gap=98.78% UB_heur=76.0 ||g||=600.789 theta=0.00064436 alpha=1.4 step=0.28635 status=OPTIMAL
+[hc9u.txt] original-all it=00320 L_inc=-223.69908329930644 L_cert=-223.69908329930644 bestLB=0.5131841827278296 UB=42.0 gap=98.78% UB_heur=65.0 ||g||=1578.29 theta=0.000149329 alpha=1.4 step=0.112585 status=OPTIMAL
+[hc9u.txt] original-all it=00330 L_inc=0.12449663648384063 L_cert=0.12449663648384063 bestLB=0.5131841827278296 UB=42.0 gap=98.78% UB_heur=69.0 ||g||=183.161 theta=0.00174752 alpha=1.4 step=0.0491171 status=OPTIMAL
+[hc9u.txt] original-all it=00340 L_inc=-26.177330570292757 L_cert=-26.177330570292757 bestLB=0.5131841827278296 UB=42.0 gap=98.78% UB_heur=65.0 ||g||=257.278 theta=0.00144199 alpha=1.4 step=0.116603 status=OPTIMAL
+[hc9u.txt] original-all it=00350 L_inc=-0.006418174713810981 L_cert=-0.006418174713810981 bestLB=0.5131841827278296 UB=42.0 gap=98.78% UB_heur=67.0 ||g||=183.172 theta=0.00175277 alpha=1.4 step=0.0494737 status=OPTIMAL
+[hc9u.txt] original-all it=00360 L_inc=0.14984907228561808 L_cert=0.14984907228561808 bestLB=0.5131841827278296 UB=42.0 gap=98.78% UB_heur=76.0 ||g||=28.9822 theta=0.0697527 alpha=1.4 step=2.02159 status=OPTIMAL
+[hc9u.txt] original-all it=00370 L_inc=-17.189172269320633 L_cert=-17.189172269320633 bestLB=0.5131841827278296 UB=42.0 gap=98.78% UB_heur=70.0 ||g||=183.29 theta=0.00246656 alpha=1.4 step=0.123374 status=OPTIMAL
+[hc9u.txt] original-all it=00380 L_inc=-469.5442175049646 L_cert=-469.5442175049646 bestLB=0.5131841827278296 UB=42.0 gap=98.78% UB_heur=61.0 ||g||=1609.14 theta=0.00027658 alpha=1.4 step=0.233927 status=OPTIMAL
+[hc9u.txt] original-all it=00390 L_inc=-70.07020296418155 L_cert=-70.07020296418155 bestLB=0.5131841827278296 UB=42.0 gap=98.78% UB_heur=68.0 ||g||=362.955 theta=0.00119101 alpha=1.4 step=0.241554 status=OPTIMAL
+[hc9u.txt] original-all it=00397 L_inc=0.5891380279978367 L_cert=0.5891380279978367 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=76.0 ||g||=24.5761 theta=0.095988 alpha=1.4 step=2.35901 status=OPTIMAL
+[hc9u.txt] original-all it=00400 L_inc=-232.27070351906667 L_cert=-232.27070351906667 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=72.0 ||g||=789.387 theta=0.000616208 alpha=1.4 step=0.286985 status=OPTIMAL
+[hc9u.txt] original-all it=00410 L_inc=-15.505076995124742 L_cert=-15.505076995124742 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=73.0 ||g||=183.292 theta=0.00239633 alpha=1.4 step=0.114499 status=OPTIMAL
+[hc9u.txt] original-all it=00420 L_inc=-15.698700065536865 L_cert=-15.698700065536865 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=63.0 ||g||=182.82 theta=0.00241683 alpha=1.4 step=0.111444 status=OPTIMAL
+[hc9u.txt] original-all it=00430 L_inc=-0.09565707181613511 L_cert=-0.09565707181613511 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=61.0 ||g||=182.921 theta=0.00176133 alpha=1.4 step=0.0467981 status=OPTIMAL
+[hc9u.txt] original-all it=00440 L_inc=-355.3676545160287 L_cert=-355.3676545160287 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=62.0 ||g||=1649.37 theta=0.000204495 alpha=1.4 step=0.186833 status=OPTIMAL
+[hc9u.txt] original-all it=00450 L_inc=0.0950633839165676 L_cert=0.0950633839165676 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=65.0 ||g||=25.6121 theta=0.0894342 alpha=1.4 step=2.2906 status=OPTIMAL
+[hc9u.txt] original-all it=00460 L_inc=-48.895212377602114 L_cert=-48.895212377602114 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=67.0 ||g||=479.529 theta=0.0005534 alpha=1.4 step=0.118075 status=OPTIMAL
+[hc9u.txt] original-all it=00470 L_inc=-104.33806436811761 L_cert=-104.33806436811761 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=59.0 ||g||=543.658 theta=0.000693161 alpha=1.4 step=0.249514 status=OPTIMAL
+[hc9u.txt] original-all it=00480 L_inc=-57.06424717664424 L_cert=-57.06424717664424 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=66.0 ||g||=479.579 theta=0.00060301 alpha=1.4 step=0.134291 status=OPTIMAL
+[hc9u.txt] original-all it=00490 L_inc=-136.51421144865574 L_cert=-136.51421144865574 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=65.0 ||g||=600.856 theta=0.000692245 alpha=1.4 step=0.282772 status=OPTIMAL
+[hc9u.txt] original-all it=00500 L_inc=-47.51645266067755 L_cert=-47.51645266067755 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=68.0 ||g||=479.6 theta=0.000544845 alpha=1.4 step=0.114926 status=OPTIMAL
+[hc9u.txt] original-all it=00510 L_inc=0.09828530722352308 L_cert=0.09828530722352308 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=64.0 ||g||=25.2032 theta=0.0923522 alpha=1.4 step=2.32757 status=OPTIMAL
+[hc9u.txt] original-all it=00520 L_inc=-2856.633822947495 L_cert=-2856.633822947495 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=65.0 ||g||=1459.64 theta=0.00190472 alpha=1.4 step=1.92574 status=OPTIMAL
+[hc9u.txt] original-all it=00530 L_inc=0.14254914178564526 L_cert=0.14254914178564526 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=69.0 ||g||=27.2761 theta=0.0787654 alpha=1.4 step=2.14841 status=OPTIMAL
+[hc9u.txt] original-all it=00540 L_inc=-103.61991111156912 L_cert=-103.61991111156912 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=60.0 ||g||=1492.94 theta=9.1467e-05 alpha=1.4 step=0.0813412 status=OPTIMAL
+[hc9u.txt] original-all it=00547 L_inc=-53.615109609107066 L_cert=-53.615109609107066 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=70.0 ||g||=314.49 theta=0.000947412 alpha=0.98 step=0.182159 status=OPTIMAL
+[hc9u.txt] original-all it=00550 L_inc=-403.6994511784278 L_cert=-403.6994511784278 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=72.0 ||g||=1514.76 theta=0.000190362 alpha=0.98 step=0.155774 status=OPTIMAL
+[hc9u.txt] original-all it=00560 L_inc=-2142.4474137400384 L_cert=-2142.4474137400384 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=70.0 ||g||=1503.85 theta=0.000946578 alpha=0.98 step=1.15979 status=OPTIMAL
+[hc9u.txt] original-all it=00570 L_inc=0.20543856240866648 L_cert=0.20543856240866648 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=71.0 ||g||=24.8989 theta=0.0660671 alpha=0.98 step=1.645 status=OPTIMAL
+[hc9u.txt] original-all it=00580 L_inc=0.18802102059358816 L_cert=0.18802102059358816 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=71.0 ||g||=25.054 theta=0.0652791 alpha=0.98 step=1.6355 status=OPTIMAL
+[hc9u.txt] original-all it=00590 L_inc=-39.80831449666412 L_cert=-39.80831449666412 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=70.0 ||g||=314.566 theta=0.000810213 alpha=0.98 step=0.138477 status=OPTIMAL
+[hc9u.txt] original-all it=00600 L_inc=-297.1498270852822 L_cert=-297.1498270852822 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=75.0 ||g||=887.108 theta=0.000422343 alpha=0.98 step=0.296744 status=OPTIMAL
+[hc9u.txt] original-all it=00610 L_inc=-477.9601209705568 L_cert=-477.9601209705568 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=64.0 ||g||=1588.65 theta=0.000201903 alpha=0.98 step=0.167765 status=OPTIMAL
+[hc9u.txt] original-all it=00620 L_inc=0.1439782765231502 L_cert=0.1439782765231502 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=65.0 ||g||=25.4554 theta=0.0633032 alpha=0.98 step=1.61141 status=OPTIMAL
+[hc9u.txt] original-all it=00630 L_inc=-362.7738998769222 L_cert=-362.7738998769222 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=71.0 ||g||=1173.37 theta=0.000288118 alpha=0.98 step=0.243552 status=OPTIMAL
+[hc9u.txt] original-all it=00640 L_inc=-13.003017946206661 L_cert=-13.003017946206661 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=72.0 ||g||=257.324 theta=0.000814053 alpha=0.98 step=0.0810979 status=OPTIMAL
+[hc9u.txt] original-all it=00650 L_inc=-0.22214643904680145 L_cert=-0.22214643904680145 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=71.0 ||g||=444.068 theta=0.00020983 alpha=0.98 step=0.015253 status=OPTIMAL
+[hc9u.txt] original-all it=00660 L_inc=-112.80357105042789 L_cert=-112.80357105042789 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=71.0 ||g||=479.569 theta=0.000659637 alpha=0.98 step=0.250861 status=OPTIMAL
+[hc9u.txt] original-all it=00670 L_inc=-295.57925516428935 L_cert=-295.57925516428935 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=63.0 ||g||=905.428 theta=0.000403547 alpha=0.98 step=0.243397 status=OPTIMAL
+[hc9u.txt] original-all it=00680 L_inc=-449.40926447810057 L_cert=-449.40926447810057 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=75.0 ||g||=1619.34 theta=0.00018365 alpha=0.98 step=0.15529 status=OPTIMAL
+[hc9u.txt] original-all it=00690 L_inc=-2344.4549912419316 L_cert=-2344.4549912419316 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=60.0 ||g||=1536.22 theta=0.000990992 alpha=0.98 step=1.26641 status=OPTIMAL
+[hc9u.txt] original-all it=00697 L_inc=-546.0998753456524 L_cert=-546.0998753456524 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=64.0 ||g||=1378.85 theta=0.000212199 alpha=0.686 step=0.195967 status=OPTIMAL
+[hc9u.txt] original-all it=00700 L_inc=-60.3814582629301 L_cert=-60.3814582629301 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=72.0 ||g||=362.888 theta=0.000533334 alpha=0.686 step=0.178654 status=OPTIMAL
+[hc9u.txt] original-all it=00710 L_inc=-302.96979419884 L_cert=-302.96979419884 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=67.0 ||g||=1201.01 theta=0.000164063 alpha=0.686 step=0.127286 status=OPTIMAL
+[hc9u.txt] original-all it=00720 L_inc=0.2683340524850294 L_cert=0.2683340524850294 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=74.0 ||g||=182.68 theta=0.000857843 alpha=0.686 step=0.0218032 status=OPTIMAL
+[hc9u.txt] original-all it=00730 L_inc=-1523.2073208974318 L_cert=-1523.2073208974318 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=65.0 ||g||=1536.2 theta=0.000454988 alpha=0.686 step=0.644976 status=OPTIMAL
+[hc9u.txt] original-all it=00740 L_inc=-188.48206496211716 L_cert=-188.48206496211716 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=72.0 ||g||=677.737 theta=0.000344222 alpha=0.686 step=0.204832 status=OPTIMAL
+[hc9u.txt] original-all it=00750 L_inc=0.27090277721572464 L_cert=0.27090277721572464 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=72.0 ||g||=24.1661 theta=0.0490174 alpha=0.686 step=1.18456 status=OPTIMAL
+[hc9u.txt] original-all it=00760 L_inc=-1578.4842687431083 L_cert=-1578.4842687431083 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=70.0 ||g||=1536.2 theta=0.000471057 alpha=0.686 step=0.674629 status=OPTIMAL
+[hc9u.txt] original-all it=00770 L_inc=-185.02700351613979 L_cert=-185.02700351613979 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=73.0 ||g||=627.535 theta=0.000395481 alpha=0.686 step=0.220765 status=OPTIMAL
+[hc9u.txt] original-all it=00780 L_inc=0.49337997548787377 L_cert=0.49337997548787377 bestLB=0.5891380279978367 UB=42.0 gap=98.60% UB_heur=75.0 ||g||=314.406 theta=0.000288044 alpha=0.686 step=0.0122574 status=OPTIMAL
+[hc9u.txt] original-all it=00782 L_inc=0.6540409090068902 L_cert=0.6540409090068902 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=75.0 ||g||=24.33 theta=0.0479151 alpha=0.686 step=1.16578 status=OPTIMAL
+[hc9u.txt] original-all it=00790 L_inc=-558.2319175354039 L_cert=-558.2319175354039 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=69.0 ||g||=1101.38 theta=0.000339444 alpha=0.686 step=0.323888 status=OPTIMAL
+[hc9u.txt] original-all it=00800 L_inc=-572.7262682803042 L_cert=-572.7262682803042 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=75.0 ||g||=1437.07 theta=0.000204196 alpha=0.686 step=0.226886 status=OPTIMAL
+[hc9u.txt] original-all it=00810 L_inc=-180.6445831277847 L_cert=-180.6445831277847 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=78.0 ||g||=746.715 theta=0.000273921 alpha=0.686 step=0.180466 status=OPTIMAL
+[hc9u.txt] original-all it=00820 L_inc=0.4944606662043408 L_cert=0.4944606662043408 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=72.0 ||g||=23.6643 theta=0.0508442 alpha=0.686 step=1.20319 status=OPTIMAL
+[hc9u.txt] original-all it=00830 L_inc=-225.7868240987898 L_cert=-225.7868240987898 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=69.0 ||g||=789.463 theta=0.000294747 alpha=0.686 step=0.232692 status=OPTIMAL
+[hc9u.txt] original-all it=00840 L_inc=0.1774096418779954 L_cert=0.1774096418779954 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=68.0 ||g||=479.55 theta=0.000124758 alpha=0.686 step=0.015832 status=OPTIMAL
+[hc9u.txt] original-all it=00850 L_inc=-531.0136398796567 L_cert=-531.0136398796567 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=74.0 ||g||=1145.05 theta=0.000299808 alpha=0.686 step=0.291352 status=OPTIMAL
+[hc9u.txt] original-all it=00860 L_inc=-237.12598195246062 L_cert=-237.12598195246062 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=72.0 ||g||=829.872 theta=0.000278037 alpha=0.686 step=0.199716 status=OPTIMAL
+[hc9u.txt] original-all it=00870 L_inc=0.5580243697666365 L_cert=0.5580243697666365 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=74.0 ||g||=24.98 theta=0.0455597 alpha=0.686 step=1.13808 status=OPTIMAL
+[hc9u.txt] original-all it=00880 L_inc=-282.8475335790892 L_cert=-282.8475335790892 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=66.0 ||g||=809.921 theta=0.000339718 alpha=0.686 step=0.261964 status=OPTIMAL
+[hc9u.txt] original-all it=00890 L_inc=-67.27985861305392 L_cert=-67.27985861305392 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=75.0 ||g||=512.578 theta=0.000285328 alpha=0.686 step=0.145441 status=OPTIMAL
+[hc9u.txt] original-all it=00900 L_inc=-281.76156123546014 L_cert=-281.76156123546014 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=70.0 ||g||=1024.28 theta=0.000211694 alpha=0.686 step=0.146373 status=OPTIMAL
+[hc9u.txt] original-all it=00910 L_inc=0.08434630388749637 L_cert=0.08434630388749637 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=79.0 ||g||=600.796 theta=7.96611e-05 alpha=0.686 step=0.0188096 status=OPTIMAL
+[hc9u.txt] original-all it=00920 L_inc=0.2800202267400337 L_cert=0.2800202267400337 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=69.0 ||g||=24.7371 theta=0.0467703 alpha=0.686 step=1.15696 status=OPTIMAL
+[hc9u.txt] original-all it=00930 L_inc=-369.5863762885628 L_cert=-369.5863762885628 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=73.0 ||g||=1086.38 theta=0.000239232 alpha=0.686 step=0.197884 status=OPTIMAL
+[hc9u.txt] original-all it=00932 L_inc=-76.46317445188373 L_cert=-76.46317445188373 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=75.0 ||g||=479.516 theta=0.000247399 alpha=0.4802 step=0.118632 status=OPTIMAL
+[hc9u.txt] original-all it=00940 L_inc=-59.44306551724663 L_cert=-59.44306551724663 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=82.0 ||g||=479.448 theta=0.000211915 alpha=0.4802 step=0.101602 status=OPTIMAL
+[hc9u.txt] original-all it=00950 L_inc=0.24146484996832324 L_cert=0.24146484996832324 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=73.0 ||g||=24.1643 theta=0.0343414 alpha=0.4802 step=0.829837 status=OPTIMAL
+[hc9u.txt] original-all it=00960 L_inc=-519.4995513052289 L_cert=-519.4995513052289 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=78.0 ||g||=1588.61 theta=0.00010684 alpha=0.4802 step=0.126047 status=OPTIMAL
+[hc9u.txt] original-all it=00970 L_inc=-578.2322737410464 L_cert=-578.2322737410464 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=80.0 ||g||=1717.47 theta=0.000100972 alpha=0.4802 step=0.132187 status=OPTIMAL
+[hc9u.txt] original-all it=00980 L_inc=-411.62540873472034 L_cert=-411.62540873472034 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=75.0 ||g||=1318.06 theta=0.000125386 alpha=0.4802 step=0.13816 status=OPTIMAL
+[hc9u.txt] original-all it=00990 L_inc=-149.5973320265464 L_cert=-149.5973320265464 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=76.0 ||g||=701.495 theta=0.000186966 alpha=0.4802 step=0.126835 status=OPTIMAL
+[hc9u.txt] original-all it=01000 L_inc=-22.371544128632824 L_cert=-22.371544128632824 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=73.0 ||g||=314.433 theta=0.000312651 alpha=0.4802 step=0.0818013 status=OPTIMAL
+[hc9u.txt] original-all it=01010 L_inc=-1082.3434373132795 L_cert=-1082.3434373132795 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=78.0 ||g||=1514.69 theta=0.000235329 alpha=0.4802 step=0.35645 status=OPTIMAL
+[hc9u.txt] original-all it=01020 L_inc=-1107.437412681599 L_cert=-1107.437412681599 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=71.0 ||g||=1557.37 theta=0.000227575 alpha=0.4802 step=0.354418 status=OPTIMAL
+[hc9u.txt] original-all it=01030 L_inc=-572.7078574127758 L_cert=-572.7078574127758 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=71.0 ||g||=1819.39 theta=8.91741e-05 alpha=0.4802 step=0.128041 status=OPTIMAL
+[hc9u.txt] original-all it=01040 L_inc=-187.98633440586897 L_cert=-187.98633440586897 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=78.0 ||g||=724.436 theta=0.000210438 alpha=0.4802 step=0.14283 status=OPTIMAL
+[hc9u.txt] original-all it=01050 L_inc=-59.422810206812954 L_cert=-59.422810206812954 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=79.0 ||g||=627.481 theta=0.000123696 alpha=0.4802 step=0.0713092 status=OPTIMAL
+[hc9u.txt] original-all it=01060 L_inc=0.18657282110012025 L_cert=0.18657282110012025 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=73.0 ||g||=182.592 theta=0.000602244 alpha=0.4802 step=0.0155378 status=OPTIMAL
+[hc9u.txt] original-all it=01070 L_inc=0.29415423624714365 L_cert=0.29415423624714365 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=73.0 ||g||=23.9932 theta=0.0347889 alpha=0.4802 step=0.834699 status=OPTIMAL
+[hc9u.txt] original-all it=01080 L_inc=-1045.8152139555455 L_cert=-1045.8152139555455 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=66.0 ||g||=1481.92 theta=0.000237863 alpha=0.4802 step=0.352495 status=OPTIMAL
+[hc9u.txt] original-all it=01082 L_inc=-361.9000006998187 L_cert=-361.9000006998187 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=77.0 ||g||=1201 theta=9.41249e-05 alpha=0.33614 step=0.108377 status=OPTIMAL
+[hc9u.txt] original-all it=01090 L_inc=-780.7552406263609 L_cert=-780.7552406263609 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=77.0 ||g||=1525.48 theta=0.000118844 alpha=0.33614 step=0.181294 status=OPTIMAL
+[hc9u.txt] original-all it=01100 L_inc=-859.8471355756627 L_cert=-859.8471355756627 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=73.0 ||g||=1649.34 theta=0.000111438 alpha=0.33614 step=0.183013 status=OPTIMAL
+[hc9u.txt] original-all it=01110 L_inc=0.2642865136575453 L_cert=0.2642865136575453 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=83.0 ||g||=22.3603 theta=0.028059 alpha=0.33614 step=0.627408 status=OPTIMAL
+[hc9u.txt] original-all it=01120 L_inc=0.3275235907343573 L_cert=0.3275235907343573 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=72.0 ||g||=24.0828 theta=0.0241521 alpha=0.33614 step=0.581651 status=OPTIMAL
+[hc9u.txt] original-all it=01130 L_inc=0.28948727729218765 L_cert=0.28948727729218765 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=67.0 ||g||=24.495 theta=0.0233675 alpha=0.33614 step=0.572386 status=OPTIMAL
+[hc9u.txt] original-all it=01140 L_inc=0.45573717993330565 L_cert=0.45573717993330565 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=72.0 ||g||=182.702 theta=0.000418355 alpha=0.33614 step=0.0117708 status=OPTIMAL
+[hc9u.txt] original-all it=01150 L_inc=-34.5343297248431 L_cert=-34.5343297248431 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=72.0 ||g||=600.873 theta=7.12544e-05 alpha=0.33614 step=0.0377672 status=OPTIMAL
+[hc9u.txt] original-all it=01160 L_inc=-318.41068997073916 L_cert=-318.41068997073916 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=69.0 ||g||=1267.37 theta=7.54242e-05 alpha=0.33614 step=0.084352 status=OPTIMAL
+[hc9u.txt] original-all it=01170 L_inc=-195.91048379539805 L_cert=-195.91048379539805 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=72.0 ||g||=1145.13 theta=6.09851e-05 alpha=0.33614 step=0.0691854 status=OPTIMAL
+[hc9u.txt] original-all it=01180 L_inc=-122.02114303028614 L_cert=-122.02114303028614 bestLB=0.6540409090068902 UB=42.0 gap=98.44% UB_heur=85.0 ||g||=940.889 theta=6.22792e-05 alpha=0.33614 step=0.0462229 status=OPTIMAL
+[hc9u.txt] original-all it=01187 L_inc=0.6646030062997247 L_cert=0.6646030062997247 bestLB=0.6646030062997247 UB=42.0 gap=98.42% UB_heur=74.0 ||g||=24 theta=0.0241224 alpha=0.33614 step=0.578937 status=OPTIMAL
+[hc9u.txt] original-all it=01190 L_inc=-326.60164233891925 L_cert=-326.60164233891925 bestLB=0.6646030062997247 UB=42.0 gap=98.42% UB_heur=75.0 ||g||=1318.05 theta=7.13202e-05 alpha=0.33614 step=0.0801616 status=OPTIMAL
+[hc9u.txt] original-all it=01200 L_inc=-757.5604869299043 L_cert=-757.5604869299043 bestLB=0.6646030062997247 UB=42.0 gap=98.42% UB_heur=71.0 ||g||=1546.83 theta=0.000112328 alpha=0.33614 step=0.173752 status=OPTIMAL
+[hc9u.txt] original-all it=01210 L_inc=0.1303740030280135 L_cert=0.1303740030280135 bestLB=0.6646030062997247 UB=42.0 gap=98.42% UB_heur=81.0 ||g||=23.9122 theta=0.0246138 alpha=0.33614 step=0.588571 status=OPTIMAL
+[hc9u.txt] original-all it=01220 L_inc=-794.1343895267264 L_cert=-794.1343895267264 bestLB=0.6646030062997247 UB=42.0 gap=98.42% UB_heur=66.0 ||g||=1578.3 theta=0.000112828 alpha=0.33614 step=0.178077 status=OPTIMAL
+[hc9u.txt] original-all it=01230 L_inc=0.32961752966000457 L_cert=0.32961752966000457 bestLB=0.6646030062997247 UB=42.0 gap=98.42% UB_heur=69.0 ||g||=512.632 theta=5.3301e-05 alpha=0.33614 step=0.0160355 status=OPTIMAL
+[hc9u.txt] original-all it=01240 L_inc=-19.14618525430316 L_cert=-19.14618525430316 bestLB=0.6646030062997247 UB=42.0 gap=98.42% UB_heur=71.0 ||g||=600.859 theta=5.69304e-05 alpha=0.33614 step=0.0342071 status=OPTIMAL
+[hc9u.txt] original-all it=01250 L_inc=-27.78216458787863 L_cert=-27.78216458787863 bestLB=0.6646030062997247 UB=42.0 gap=98.42% UB_heur=73.0 ||g||=405.453 theta=0.000142687 alpha=0.33614 step=0.0578528 status=OPTIMAL
+[hc9u.txt] original-all it=01260 L_inc=-70.30426258793499 L_cert=-70.30426258793499 bestLB=0.6646030062997247 UB=42.0 gap=98.42% UB_heur=82.0 ||g||=809.842 theta=5.75594e-05 alpha=0.33614 step=0.0449241 status=OPTIMAL
+[hc9u.txt] original-all it=01270 L_inc=-92.73786600017237 L_cert=-92.73786600017237 bestLB=0.6646030062997247 UB=42.0 gap=98.42% UB_heur=72.0 ||g||=677.746 theta=9.85997e-05 alpha=0.33614 step=0.0623743 status=OPTIMAL
+[hc9u.txt] original-all it=01280 L_inc=-114.37117426916527 L_cert=-114.37117426916527 bestLB=0.6646030062997247 UB=42.0 gap=98.42% UB_heur=72.0 ||g||=1071.17 theta=4.58097e-05 alpha=0.33614 step=0.048505 status=OPTIMAL
+[hc9u.txt] original-all it=01290 L_inc=-192.2879586965653 L_cert=-192.2879586965653 bestLB=0.6646030062997247 UB=42.0 gap=98.42% UB_heur=69.0 ||g||=958.18 theta=8.57781e-05 alpha=0.33614 step=0.0809098 status=OPTIMAL
+[hc9u.txt] original-all it=01300 L_inc=0.6467966086165191 L_cert=0.6467966086165191 bestLB=0.6646030062997247 UB=42.0 gap=98.42% UB_heur=85.0 ||g||=182.362 theta=0.000417984 alpha=0.33614 step=0.0108017 status=OPTIMAL
+[hc9u.txt] original-all it=01302 L_inc=0.6982625445476098 L_cert=0.6982625445476098 bestLB=0.6982625445476098 UB=42.0 gap=98.34% UB_heur=78.0 ||g||=23.3973 theta=0.0253605 alpha=0.33614 step=0.593366 status=OPTIMAL
+[hc9u.txt] original-all it=01310 L_inc=-53.98504578975473 L_cert=-53.98504578975473 bestLB=0.6982625445476098 UB=42.0 gap=98.34% UB_heur=79.0 ||g||=701.455 theta=6.55728e-05 alpha=0.33614 step=0.0459964 status=OPTIMAL
+[hc9u.txt] original-all it=01320 L_inc=-54.22437472867938 L_cert=-54.22437472867938 bestLB=0.6982625445476098 UB=42.0 gap=98.34% UB_heur=72.0 ||g||=724.461 theta=6.16276e-05 alpha=0.33614 step=0.0446468 status=OPTIMAL
+[hc9u.txt] original-all it=01330 L_inc=-82.81698341288639 L_cert=-82.81698341288639 bestLB=0.6982625445476098 UB=42.0 gap=98.34% UB_heur=75.0 ||g||=600.803 theta=0.000116233 alpha=0.33614 step=0.0668184 status=OPTIMAL
+[hc9u.txt] original-all it=01340 L_inc=-101.2125243664499 L_cert=-101.2125243664499 bestLB=0.6982625445476098 UB=42.0 gap=98.34% UB_heur=70.0 ||g||=653.103 theta=0.000112859 alpha=0.33614 step=0.0710373 status=OPTIMAL
+[hc9u.txt] original-all it=01350 L_inc=-250.6626274008453 L_cert=-250.6626274008453 bestLB=0.6982625445476098 UB=42.0 gap=98.34% UB_heur=68.0 ||g||=1173.43 theta=7.14455e-05 alpha=0.33614 step=0.0770643 status=OPTIMAL
+[hc9u.txt] original-all it=01360 L_inc=0.4571203301299608 L_cert=0.4571203301299608 bestLB=0.6982625445476098 UB=42.0 gap=98.34% UB_heur=70.0 ||g||=257.146 theta=0.000211182 alpha=0.33614 step=0.00980636 status=OPTIMAL
+[hc9u.txt] original-all it=01370 L_inc=-52.8182711088321 L_cert=-52.8182711088321 bestLB=0.6982625445476098 UB=42.0 gap=98.34% UB_heur=77.0 ||g||=653.08 theta=7.47272e-05 alpha=0.33614 step=0.0484395 status=OPTIMAL
+[hc9u.txt] original-all it=01380 L_inc=-53.94536238533966 L_cert=-53.94536238533966 bestLB=0.6982625445476098 UB=42.0 gap=98.34% UB_heur=81.0 ||g||=724.444 theta=6.14517e-05 alpha=0.33614 step=0.0445184 status=OPTIMAL
+[hc9u.txt] original-all it=01390 L_inc=-55.476247340741125 L_cert=-55.476247340741125 bestLB=0.6982625445476098 UB=42.0 gap=98.34% UB_heur=77.0 ||g||=724.583 theta=6.24084e-05 alpha=0.33614 step=0.0452201 status=OPTIMAL
+[hc9u.txt] original-all it=01400 L_inc=-39.528833699112354 L_cert=-39.528833699112354 bestLB=0.6982625445476098 UB=42.0 gap=98.34% UB_heur=71.0 ||g||=868.465 theta=3.63351e-05 alpha=0.33614 step=0.0309675 status=OPTIMAL
+[hc9u.txt] original-all it=01410 L_inc=-288.70192825048406 L_cert=-288.70192825048406 bestLB=0.6982625445476098 UB=42.0 gap=98.34% UB_heur=73.0 ||g||=1390.45 theta=5.74975e-05 alpha=0.33614 step=0.0690457 status=OPTIMAL
+[hc9u.txt] original-all it=01420 L_inc=-324.96514708436996 L_cert=-324.96514708436996 bestLB=0.6982625445476098 UB=42.0 gap=98.34% UB_heur=68.0 ||g||=1187.28 theta=8.75066e-05 alpha=0.33614 step=0.0973422 status=OPTIMAL
+[hc9u.txt] original-all it=01430 L_inc=-318.6010184555803 L_cert=-318.6010184555803 bestLB=0.6982625445476098 UB=42.0 gap=98.34% UB_heur=70.0 ||g||=1130.73 theta=9.48045e-05 alpha=0.33614 step=0.102164 status=OPTIMAL
+[hc9u.txt] original-all it=01440 L_inc=-306.3044268753633 L_cert=-306.3044268753633 bestLB=0.6982625445476098 UB=42.0 gap=98.34% UB_heur=74.0 ||g||=1557.39 theta=4.8271e-05 alpha=0.33614 step=0.0610594 status=OPTIMAL
+[hc9u.txt] original-all it=01450 L_inc=-331.8224709600318 L_cert=-331.8224709600318 bestLB=0.6982625445476098 UB=42.0 gap=98.34% UB_heur=64.0 ||g||=1145.16 theta=9.58199e-05 alpha=0.33614 step=0.104796 status=OPTIMAL
+[hc9u.txt] original-all it=01452 L_inc=-130.893970131172 L_cert=-130.893970131172 bestLB=0.6982625445476098 UB=42.0 gap=98.34% UB_heur=71.0 ||g||=1086.39 theta=3.44689e-05 alpha=0.235298 step=0.0374466 status=OPTIMAL
+[hc9u.txt] original-all it=01460 L_inc=-420.98239442242874 L_cert=-420.98239442242874 bestLB=0.6982625445476098 UB=42.0 gap=98.34% UB_heur=76.0 ||g||=1629.34 theta=4.10353e-05 alpha=0.235298 step=0.0663178 status=OPTIMAL
+[hc9u.txt] original-all it=01470 L_inc=-4.602119354873085 L_cert=-4.602119354873085 bestLB=0.6982625445476098 UB=42.0 gap=98.34% UB_heur=75.0 ||g||=362.756 theta=8.33287e-05 alpha=0.235298 step=0.0251256 status=OPTIMAL
+[hc9u.txt] original-all it=01480 L_inc=-43.644039412821556 L_cert=-43.644039412821556 bestLB=0.6982625445476098 UB=42.0 gap=98.34% UB_heur=74.0 ||g||=701.493 theta=4.09514e-05 alpha=0.235298 step=0.0283086 status=OPTIMAL
+[hc9u.txt] original-all it=01490 L_inc=-110.9902117511217 L_cert=-110.9902117511217 bestLB=0.6982625445476098 UB=42.0 gap=98.34% UB_heur=75.0 ||g||=1130.72 theta=2.81558e-05 alpha=0.235298 step=0.0318365 status=OPTIMAL
+[hc9u.txt] original-all it=01500 L_inc=0.3779676106008231 L_cert=0.3779676106008231 bestLB=0.6982625445476098 UB=42.0 gap=98.34% UB_heur=72.0 ||g||=314.477 theta=9.90291e-05 alpha=0.235298 step=0.010003 status=OPTIMAL
+[hc9u.txt] original-all it=01510 L_inc=0.5786017989558379 L_cert=0.5786017989558379 bestLB=0.6982625445476098 UB=42.0 gap=98.34% UB_heur=68.0 ||g||=182.718 theta=0.00029193 alpha=0.235298 step=0.00912507 status=OPTIMAL
+[hc9u.txt] original-all it=01520 L_inc=-84.12008811017135 L_cert=-84.12008811017135 bestLB=0.6982625445476098 UB=42.0 gap=98.34% UB_heur=67.0 ||g||=849.395 theta=4.11323e-05 alpha=0.235298 step=0.0349376 status=OPTIMAL
+[hc9u.txt] original-all it=01530 L_inc=-182.41491829714744 L_cert=-182.41491829714744 bestLB=0.6982625445476098 UB=42.0 gap=98.34% UB_heur=67.0 ||g||=1101.36 theta=4.35321e-05 alpha=0.235298 step=0.0479446 status=OPTIMAL
+[hc9u.txt] original-all it=01540 L_inc=-305.4097033354437 L_cert=-305.4097033354437 bestLB=0.6982625445476098 UB=42.0 gap=98.34% UB_heur=72.0 ||g||=1578.28 theta=3.28166e-05 alpha=0.235298 step=0.0517529 status=OPTIMAL
+[hc9u.txt] original-all it=01550 L_inc=0.6382159325492057 L_cert=0.6382159325492057 bestLB=0.6982625445476098 UB=42.0 gap=98.34% UB_heur=85.0 ||g||=23.0379 theta=0.0183372 alpha=0.235298 step=0.42245 status=OPTIMAL
+[hc9u.txt] original-all it=01560 L_inc=-29.99959669007921 L_cert=-29.99959669007921 bestLB=0.6982625445476098 UB=42.0 gap=98.34% UB_heur=73.0 ||g||=724.464 theta=3.22786e-05 alpha=0.235298 step=0.0233175 status=OPTIMAL
+[hc9u.txt] original-all it=01570 L_inc=-105.21554829962508 L_cert=-105.21554829962508 bestLB=0.6982625445476098 UB=42.0 gap=98.34% UB_heur=67.0 ||g||=1040.16 theta=3.20165e-05 alpha=0.235298 step=0.0332643 status=OPTIMAL
+[hc9u.txt] original-all it=01580 L_inc=-277.79186634984217 L_cert=-277.79186634984217 bestLB=0.6982625445476098 UB=42.0 gap=98.34% UB_heur=72.0 ||g||=1536.23 theta=3.18841e-05 alpha=0.235298 step=0.0488525 status=OPTIMAL
+[hc9u.txt] original-all it=01590 L_inc=0.2676130431436107 L_cert=0.2676130431436107 bestLB=0.6982625445476098 UB=42.0 gap=98.34% UB_heur=76.0 ||g||=23.9123 theta=0.0171731 alpha=0.235298 step=0.410649 status=OPTIMAL
+[hc9u.txt] original-all it=01600 L_inc=-32.27141679737664 L_cert=-32.27141679737664 bestLB=0.6982625445476098 UB=42.0 gap=98.34% UB_heur=79.0 ||g||=724.414 theta=3.33017e-05 alpha=0.235298 step=0.0241242 status=OPTIMAL
+[hc9u.txt] original-all it=01602 L_inc=-4.79050210502964 L_cert=-4.79050210502964 bestLB=0.6982625445476098 UB=42.0 gap=98.34% UB_heur=80.0 ||g||=405.403 theta=4.6892e-05 alpha=0.164709 step=0.0190102 status=OPTIMAL
+[hc9u.txt] original-all it=01610 L_inc=-122.55467405368377 L_cert=-122.55467405368377 bestLB=0.6982625445476098 UB=42.0 gap=98.34% UB_heur=72.0 ||g||=1145.13 theta=2.0669e-05 alpha=0.164709 step=0.0236687 status=OPTIMAL
+[hc9u.txt] original-all it=01620 L_inc=-361.1280877152941 L_cert=-361.1280877152941 bestLB=0.6982625445476098 UB=42.0 gap=98.34% UB_heur=70.0 ||g||=1503.86 theta=2.93592e-05 alpha=0.164709 step=0.0441521 status=OPTIMAL
+[hc9u.txt] original-all it=01630 L_inc=-33.834808960724885 L_cert=-33.834808960724885 bestLB=0.6982625445476098 UB=42.0 gap=98.34% UB_heur=76.0 ||g||=724.472 theta=2.37981e-05 alpha=0.164709 step=0.017241 status=OPTIMAL
+[hc9u.txt] original-all it=01634 L_inc=0.7209670022938972 L_cert=0.7209670022938972 bestLB=0.7209670022938972 UB=42.0 gap=98.28% UB_heur=72.0 ||g||=257.161 theta=0.00010281 alpha=0.164709 step=0.00827634 status=OPTIMAL
+[hc9u.txt] original-all it=01635 L_inc=0.7396324277031436 L_cert=0.7396324277031436 bestLB=0.7396324277031436 UB=42.0 gap=98.24% UB_heur=78.0 ||g||=23.3235 theta=0.0124929 alpha=0.164709 step=0.291377 status=OPTIMAL
+[hc9u.txt] original-all it=01640 L_inc=-171.22203179087538 L_cert=-171.22203179087538 bestLB=0.7396324277031436 UB=42.0 gap=98.24% UB_heur=78.0 ||g||=1609.1 theta=1.35639e-05 alpha=0.164709 step=0.0218256 status=OPTIMAL
+[hc9u.txt] original-all it=01650 L_inc=-2.298477214634777 L_cert=-2.298477214634777 bestLB=0.7396324277031436 UB=42.0 gap=98.24% UB_heur=75.0 ||g||=405.438 theta=4.43871e-05 alpha=0.164709 step=0.0170377 status=OPTIMAL
+[hc9u.txt] original-all it=01660 L_inc=-67.49533965817895 L_cert=-67.49533965817895 bestLB=0.7396324277031436 UB=42.0 gap=98.24% UB_heur=80.0 ||g||=1055.76 theta=1.61801e-05 alpha=0.164709 step=0.0170823 status=OPTIMAL
+[hc9u.txt] original-all it=01670 L_inc=0.42225816453722914 L_cert=0.42225816453722914 bestLB=0.7396324277031436 UB=42.0 gap=98.24% UB_heur=72.0 ||g||=257.208 theta=0.000103516 alpha=0.164709 step=0.00825622 status=OPTIMAL
+[hc9u.txt] original-all it=01680 L_inc=-120.58668668186876 L_cert=-120.58668668186876 bestLB=0.7396324277031436 UB=42.0 gap=98.24% UB_heur=72.0 ||g||=1187.28 theta=1.89974e-05 alpha=0.164709 step=0.0225552 status=OPTIMAL
+[hc9u.txt] original-all it=01690 L_inc=0.4873214832700486 L_cert=0.4873214832700486 bestLB=0.7396324277031436 UB=42.0 gap=98.24% UB_heur=73.0 ||g||=257.084 theta=0.000103454 alpha=0.164709 step=0.00835615 status=OPTIMAL
+[hc9u.txt] original-all it=01700 L_inc=-72.61492092042198 L_cert=-72.61492092042198 bestLB=0.7396324277031436 UB=42.0 gap=98.24% UB_heur=70.0 ||g||=1055.79 theta=1.69356e-05 alpha=0.164709 step=0.0178804 status=OPTIMAL
+[hc9u.txt] original-all it=01710 L_inc=-324.6830662052515 L_cert=-324.6830662052515 bestLB=0.7396324277031436 UB=42.0 gap=98.24% UB_heur=76.0 ||g||=1726.39 theta=2.02642e-05 alpha=0.164709 step=0.0349839 status=OPTIMAL
+[hc9u.txt] original-all it=01720 L_inc=-32.427286134974715 L_cert=-32.427286134974715 bestLB=0.7396324277031436 UB=42.0 gap=98.24% UB_heur=75.0 ||g||=677.731 theta=2.66891e-05 alpha=0.164709 step=0.018088 status=OPTIMAL
+[hc9u.txt] original-all it=01730 L_inc=0.6810196347065556 L_cert=0.6810196347065556 bestLB=0.7396324277031436 UB=42.0 gap=98.24% UB_heur=82.0 ||g||=23.4093 theta=0.012419 alpha=0.164709 step=0.290721 status=OPTIMAL
+[hc9u.txt] original-all it=01740 L_inc=-56.81198730854811 L_cert=-56.81198730854811 bestLB=0.7396324277031436 UB=42.0 gap=98.24% UB_heur=80.0 ||g||=958.125 theta=1.77289e-05 alpha=0.164709 step=0.0169865 status=OPTIMAL
+[hc9u.txt] original-all it=01750 L_inc=0.3310448828081534 L_cert=0.3310448828081534 bestLB=0.7396324277031436 UB=42.0 gap=98.24% UB_heur=73.0 ||g||=314.433 theta=6.94182e-05 alpha=0.164709 step=0.0101051 status=OPTIMAL
+[hc9u.txt] original-all it=01760 L_inc=-100.31142437340233 L_cert=-100.31142437340233 bestLB=0.7396324277031436 UB=42.0 gap=98.24% UB_heur=71.0 ||g||=1116.14 theta=1.88156e-05 alpha=0.164709 step=0.0210008 status=OPTIMAL
+[hc9u.txt] original-all it=01770 L_inc=0.5791702518281807 L_cert=0.5791702518281807 bestLB=0.7396324277031436 UB=42.0 gap=98.24% UB_heur=80.0 ||g||=257.014 theta=0.000103282 alpha=0.164709 step=0.00841401 status=OPTIMAL
+[hc9u.txt] original-all it=01780 L_inc=-75.39188872021374 L_cert=-75.39188872021374 bestLB=0.7396324277031436 UB=42.0 gap=98.24% UB_heur=76.0 ||g||=1040.02 theta=1.78762e-05 alpha=0.164709 step=0.0185915 status=OPTIMAL
+[hc9u.txt] original-all it=01785 L_inc=-12.935008711203484 L_cert=-12.935008711203484 bestLB=0.7396324277031436 UB=42.0 gap=98.24% UB_heur=76.0 ||g||=362.772 theta=4.81279e-05 alpha=0.115296 step=0.0174594 status=OPTIMAL
+[hc9u.txt] original-all it=01790 L_inc=-245.34155692973198 L_cert=-245.34155692973198 bestLB=0.7396324277031436 UB=42.0 gap=98.24% UB_heur=74.0 ||g||=1567.77 theta=1.34788e-05 alpha=0.115296 step=0.0211316 status=OPTIMAL
+[hc9u.txt] original-all it=01800 L_inc=-48.86959640976769 L_cert=-48.86959640976769 bestLB=0.7396324277031436 UB=42.0 gap=98.24% UB_heur=75.0 ||g||=1040.15 theta=9.68362e-06 alpha=0.115296 step=0.0100725 status=OPTIMAL
+[hc9u.txt] original-all it=01808 L_inc=0.7553394025342975 L_cert=0.7553394025342975 bestLB=0.7553394025342975 UB=42.0 gap=98.20% UB_heur=67.0 ||g||=24.5764 theta=0.00787309 alpha=0.115296 step=0.193492 status=OPTIMAL
+[hc9u.txt] original-all it=01810 L_inc=-210.22956960715308 L_cert=-210.22956960715308 bestLB=0.7553394025342975 UB=42.0 gap=98.20% UB_heur=85.0 ||g||=1503.82 theta=1.28593e-05 alpha=0.115296 step=0.0193381 status=OPTIMAL
+[hc9u.txt] original-all it=01820 L_inc=-39.325335944899756 L_cert=-39.325335944899756 bestLB=0.7553394025342975 UB=42.0 gap=98.20% UB_heur=71.0 ||g||=975.125 theta=9.86098e-06 alpha=0.115296 step=0.00961568 status=OPTIMAL
+[hc9u.txt] original-all it=01830 L_inc=-252.96725252524092 L_cert=-252.96725252524092 bestLB=0.7553394025342975 UB=42.0 gap=98.20% UB_heur=72.0 ||g||=1546.81 theta=1.42138e-05 alpha=0.115296 step=0.0219862 status=OPTIMAL
+[hc9u.txt] original-all it=01840 L_inc=-56.2206524579832 L_cert=-56.2206524579832 bestLB=0.7553394025342975 UB=42.0 gap=98.20% UB_heur=73.0 ||g||=1116.12 theta=9.09069e-06 alpha=0.115296 step=0.0101463 status=OPTIMAL
+[hc9u.txt] original-all it=01849 L_inc=0.794525954906088 L_cert=0.794525954906088 bestLB=0.794525954906088 UB=42.0 gap=98.11% UB_heur=74.0 ||g||=24.4073 theta=0.00797496 alpha=0.115296 step=0.194648 status=OPTIMAL
+[hc9u.txt] original-all it=01850 L_inc=-247.5963426374116 L_cert=-247.5963426374116 bestLB=0.794525954906088 UB=42.0 gap=98.11% UB_heur=75.0 ||g||=1546.81 theta=1.39552e-05 alpha=0.115296 step=0.021586 status=OPTIMAL
+[hc9u.txt] original-all it=01860 L_inc=-47.81802013928576 L_cert=-47.81802013928576 bestLB=0.794525954906088 UB=42.0 gap=98.11% UB_heur=81.0 ||g||=1040.13 theta=9.57202e-06 alpha=0.115296 step=0.00995613 status=OPTIMAL
+[hc9u.txt] original-all it=01870 L_inc=-210.80174916143287 L_cert=-210.80174916143287 bestLB=0.794525954906088 UB=42.0 gap=98.11% UB_heur=71.0 ||g||=1514.53 theta=1.27069e-05 alpha=0.115296 step=0.0192449 status=OPTIMAL
+[hc9u.txt] original-all it=01880 L_inc=-37.83999398533285 L_cert=-37.83999398533285 bestLB=0.794525954906088 UB=42.0 gap=98.11% UB_heur=74.0 ||g||=677.74 theta=2.00405e-05 alpha=0.115296 step=0.0135823 status=OPTIMAL
+[hc9u.txt] original-all it=01886 L_inc=0.826010133201082 L_cert=0.826010133201082 bestLB=0.826010133201082 UB=42.0 gap=98.03% UB_heur=71.0 ||g||=182.735 theta=0.000142166 alpha=0.115296 step=0.00656821 status=OPTIMAL
+[hc9u.txt] original-all it=01888 L_inc=0.8378596710693249 L_cert=0.8378596710693249 bestLB=0.8378596710693249 UB=42.0 gap=98.01% UB_heur=67.0 ||g||=25.2981 theta=0.00741545 alpha=0.115296 step=0.187597 status=OPTIMAL
+[hc9u.txt] original-all it=01890 L_inc=-203.53490408269 L_cert=-203.53490408269 bestLB=0.8378596710693249 UB=42.0 gap=98.01% UB_heur=79.0 ||g||=1459.52 theta=1.32895e-05 alpha=0.115296 step=0.0193963 status=OPTIMAL
+[hc9u.txt] original-all it=01900 L_inc=-43.38204900303206 L_cert=-43.38204900303206 bestLB=0.8378596710693249 UB=42.0 gap=98.01% UB_heur=70.0 ||g||=1008.15 theta=9.6856e-06 alpha=0.115296 step=0.00976458 status=OPTIMAL
+[hc9u.txt] original-all it=01910 L_inc=-222.23325640413637 L_cert=-222.23325640413637 bestLB=0.8378596710693249 UB=42.0 gap=98.01% UB_heur=66.0 ||g||=1688.31 theta=1.0688e-05 alpha=0.115296 step=0.0180446 status=OPTIMAL
+[hc9u.txt] original-all it=01920 L_inc=-42.43566670323596 L_cert=-42.43566670323596 bestLB=0.8378596710693249 UB=42.0 gap=98.01% UB_heur=75.0 ||g||=1101.34 theta=8.02595e-06 alpha=0.115296 step=0.00883931 status=OPTIMAL
+[hc9u.txt] original-all it=01930 L_inc=-185.3382646427834 L_cert=-185.3382646427834 bestLB=0.8378596710693249 UB=42.0 gap=98.01% UB_heur=76.0 ||g||=1578.26 theta=1.05228e-05 alpha=0.115296 step=0.0166077 status=OPTIMAL
+[hc9u.txt] original-all it=01940 L_inc=-31.18907267381709 L_cert=-31.18907267381709 bestLB=0.8378596710693249 UB=42.0 gap=98.01% UB_heur=73.0 ||g||=677.746 theta=1.83707e-05 alpha=0.115296 step=0.0124507 status=OPTIMAL
+[hc9u.txt] original-all it=01950 L_inc=-191.48193925297235 L_cert=-191.48193925297235 bestLB=0.8378596710693249 UB=42.0 gap=98.01% UB_heur=77.0 ||g||=1557.36 theta=1.10991e-05 alpha=0.115296 step=0.0172854 status=OPTIMAL
+[hc9u.txt] original-all it=01960 L_inc=-36.96794166001283 L_cert=-36.96794166001283 bestLB=0.8378596710693249 UB=42.0 gap=98.01% UB_heur=72.0 ||g||=829.882 theta=1.322e-05 alpha=0.115296 step=0.0109711 status=OPTIMAL
+[hc9u.txt] original-all it=01970 L_inc=-210.24914058555706 L_cert=-210.24914058555706 bestLB=0.8378596710693249 UB=42.0 gap=98.01% UB_heur=75.0 ||g||=1639.39 theta=1.08214e-05 alpha=0.115296 step=0.0177404 status=OPTIMAL
+[hc9u.txt] original-all it=01980 L_inc=-42.28754244497902 L_cert=-42.28754244497902 bestLB=0.8378596710693249 UB=42.0 gap=98.01% UB_heur=68.0 ||g||=940.906 theta=1.0977e-05 alpha=0.115296 step=0.0103284 status=OPTIMAL
+[hc9u.txt] original-all it=01990 L_inc=-224.26800862452188 L_cert=-224.26800862452188 bestLB=0.8378596710693249 UB=42.0 gap=98.01% UB_heur=67.0 ||g||=1608.97 theta=1.18587e-05 alpha=0.115296 step=0.0190803 status=OPTIMAL
+[hc9u.txt] original-all it=02000 L_inc=-40.762337857589024 L_cert=-40.762337857589024 bestLB=0.8378596710693249 UB=42.0 gap=98.01% UB_heur=83.0 ||g||=991.738 theta=9.70182e-06 alpha=0.115296 step=0.00962167 status=OPTIMAL
+[hc9u.txt] Comparação final: LB_LP=1.0 | LB_LR=0.8378596710693249 | melhoria=-0.1621403289306751 | classe=LR_pior_que_LP
+
+[ok] 1 instância(s) processada(s).
+[ok] Iterações salvas em: results_original_vs_lp/original_all_subgradient_iteracoes.csv
+[ok] Resumo salvo em: results_original_vs_lp/original_all_subgradient_resumo.csv

@@ -1,0 +1,18 @@
+1 arquivo(s) encontrado(s) em inputs
+Modo de relaxação: all
+Tiebreak menor fluxo: True
+CSV de iterações: results/lagrangeano_all_iteracoes.csv
+CSV de resumo: results/lagrangeano_all_resumo.csv
+
+================================================================================
+Arquivo: hc9u.txt
+R original: 1
+Modo de relaxação: all
+Tiebreak menor fluxo: True
+================================================================================
+[hc9u.txt] modo=all |V|=512 |A_r|=4608 |S|=|T|=128 R=1
+[hc9u.txt] UB inicial = 42.0
+Set parameter Username
+Academic license - for non-commercial use only - expires 2026-08-17
+[hc9u.txt] modo=all it=0001 L=0.0000 bestLB=0.0000 UB=42.0 gap=100.00% ||g||=17.0880 theta=0.00143836 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0010 L=0.4078 bestLB=0.4078 UB=42.0 gap=99.03% ||g||=314.4200 theta=4.20719e-06 pi=0.0100 status=OPTIMAL

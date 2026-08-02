@@ -1,0 +1,24 @@
+1 arquivo(s) encontrado(s) em inputs
+Relaxação: original/agregada, sem caminhos
+Modo de relaxação: in
+Método dual: subgradiente projetado
+CSV de iterações: results_original_in_subgradient/original_in_subgradient_iteracoes.csv
+CSV de resumo: results_original_in_subgradient/original_in_subgradient_resumo.csv
+
+================================================================================
+Arquivo: hc9u.txt
+R original: 1
+Relaxação: original/agregada, sem caminhos
+Modo de relaxação: in
+Método dual: subgradiente projetado
+|V|=512 |A_r|=4608 |S|=|T|=128 |VI|=256
+Multiplicadores: 512
+Fluxo inteiro no oracle: False
+UB inicial: 42.0
+Regra de passo: polyak
+alpha inicial: 2.0
+Tiebreak menor fluxo: True
+================================================================================
+Set parameter Username
+Academic license - for non-commercial use only - expires 2026-08-17
+[hc9u.txt] original-in it=00001 L_inc=44.0 L_cert=28.0 bestLB=28.0 UB=42.0 gap=33.33% UB_heur=44.0 ||g||=829.772 theta=0.01 alpha=2 step=0 status=TIME_LIMIT

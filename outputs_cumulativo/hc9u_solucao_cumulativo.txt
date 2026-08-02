@@ -1,0 +1,489 @@
+Instância: hc9u.txt
+Status: TIME_LIMIT
+Objetivo: 40.0
+Bound: 31.0
+Gap: 0.225
+Tempo: 3600.2235 s
+r: 1
+|S|: 128
+|V|: 512
+|E|: 2304
+|A dirigido|: 4608
+Variáveis y: 512
+Variáveis x: 4608
+Variáveis z: 512
+Variáveis a: 256
+Restrições conservação: 1024
+Restrições ativação: 512
+
+Estações abertas:
+101
+125
+135
+141
+146
+168
+187
+206
+212
+22
+235
+245
+248
+260
+281
+293
+303
+308
+32
+329
+342
+365
+371
+380
+396
+398
+407
+417
+42
+446
+449
+479
+488
+506
+51
+71
+80
+89
+9
+98
+
+Saltos usados no fluxo acumulado:
+1 -> 9 | consumo_saida=0 | fluxo=1.0
+9 -> 137 | consumo_saida=0 | fluxo=1.0
+9 -> 13 | consumo_saida=0 | fluxo=1.0
+11 -> 9 | consumo_saida=0 | fluxo=1.0
+258 -> 260 | consumo_saida=0 | fluxo=1.0
+130 -> 146 | consumo_saida=0 | fluxo=1.0
+66 -> 98 | consumo_saida=0 | fluxo=1.0
+42 -> 34 | consumo_saida=0 | fluxo=1.0
+22 -> 18 | consumo_saida=0 | fluxo=1.0
+10 -> 42 | consumo_saida=0 | fluxo=1.0
+6 -> 22 | consumo_saida=0 | fluxo=1.0
+260 -> 4 | consumo_saida=0 | fluxo=1.0
+260 -> 259 | consumo_saida=0 | fluxo=1.0
+131 -> 135 | consumo_saida=0 | fluxo=1.0
+67 -> 71 | consumo_saida=0 | fluxo=1.0
+51 -> 35 | consumo_saida=0 | fluxo=1.0
+19 -> 51 | consumo_saida=0 | fluxo=1.0
+7 -> 135 | consumo_saida=0 | fluxo=1.0
+260 -> 388 | consumo_saida=0 | fluxo=1.0
+324 -> 260 | consumo_saida=0 | fluxo=1.0
+264 -> 260 | consumo_saida=0 | fluxo=1.0
+261 -> 293 | consumo_saida=0 | fluxo=1.0
+133 -> 135 | consumo_saida=0 | fluxo=1.0
+69 -> 101 | consumo_saida=0 | fluxo=1.0
+101 -> 37 | consumo_saida=0 | fluxo=1.0
+21 -> 22 | consumo_saida=0 | fluxo=1.0
+86 -> 22 | consumo_saida=0 | fluxo=1.0
+22 -> 54 | consumo_saida=0 | fluxo=1.0
+22 -> 30 | consumo_saida=0 | fluxo=1.0
+135 -> 391 | consumo_saida=0 | fluxo=1.0
+199 -> 135 | consumo_saida=0 | fluxo=1.0
+135 -> 167 | consumo_saida=0 | fluxo=1.0
+135 -> 151 | consumo_saida=0 | fluxo=1.0
+135 -> 143 | consumo_saida=0 | fluxo=1.0
+327 -> 71 | consumo_saida=0 | fluxo=1.0
+71 -> 87 | consumo_saida=0 | fluxo=1.0
+71 -> 79 | consumo_saida=0 | fluxo=1.0
+168 -> 136 | consumo_saida=0 | fluxo=1.0
+80 -> 72 | consumo_saida=0 | fluxo=1.0
+40 -> 168 | consumo_saida=0 | fluxo=1.0
+32 -> 24 | consumo_saida=0 | fluxo=1.0
+80 -> 16 | consumo_saida=0 | fluxo=1.0
+265 -> 329 | consumo_saida=0 | fluxo=1.0
+89 -> 73 | consumo_saida=0 | fluxo=1.0
+42 -> 41 | consumo_saida=0 | fluxo=1.0
+25 -> 89 | consumo_saida=0 | fluxo=1.0
+42 -> 298 | consumo_saida=0 | fluxo=1.0
+170 -> 42 | consumo_saida=0 | fluxo=1.0
+58 -> 42 | consumo_saida=0 | fluxo=1.0
+42 -> 46 | consumo_saida=0 | fluxo=1.0
+44 -> 42 | consumo_saida=0 | fluxo=1.0
+268 -> 396 | consumo_saida=0 | fluxo=1.0
+396 -> 140 | consumo_saida=0 | fluxo=1.0
+76 -> 80 | consumo_saida=0 | fluxo=1.0
+28 -> 32 | consumo_saida=0 | fluxo=1.0
+141 -> 173 | consumo_saida=0 | fluxo=1.0
+157 -> 141 | consumo_saida=0 | fluxo=1.0
+270 -> 398 | consumo_saida=0 | fluxo=1.0
+206 -> 142 | consumo_saida=0 | fluxo=1.0
+78 -> 80 | consumo_saida=0 | fluxo=1.0
+271 -> 303 | consumo_saida=0 | fluxo=1.0
+303 -> 47 | consumo_saida=0 | fluxo=1.0
+31 -> 32 | consumo_saida=0 | fluxo=1.0
+80 -> 336 | consumo_saida=0 | fluxo=1.0
+208 -> 80 | consumo_saida=0 | fluxo=1.0
+80 -> 112 | consumo_saida=0 | fluxo=1.0
+96 -> 80 | consumo_saida=0 | fluxo=1.0
+32 -> 288 | consumo_saida=0 | fluxo=1.0
+160 -> 32 | consumo_saida=0 | fluxo=1.0
+32 -> 64 | consumo_saida=0 | fluxo=1.0
+281 -> 273 | consumo_saida=0 | fluxo=1.0
+145 -> 146 | consumo_saida=0 | fluxo=1.0
+89 -> 81 | consumo_saida=0 | fluxo=1.0
+51 -> 49 | consumo_saida=0 | fluxo=1.0
+146 -> 402 | consumo_saida=0 | fluxo=1.0
+146 -> 178 | consumo_saida=0 | fluxo=1.0
+154 -> 146 | consumo_saida=0 | fluxo=1.0
+146 -> 150 | consumo_saida=0 | fluxo=1.0
+179 -> 51 | consumo_saida=0 | fluxo=1.0
+51 -> 115 | consumo_saida=0 | fluxo=1.0
+59 -> 51 | consumo_saida=0 | fluxo=1.0
+55 -> 51 | consumo_saida=0 | fluxo=1.0
+51 -> 52 | consumo_saida=0 | fluxo=1.0
+308 -> 276 | consumo_saida=0 | fluxo=1.0
+148 -> 212 | consumo_saida=0 | fluxo=1.0
+212 -> 84 | consumo_saida=0 | fluxo=1.0
+342 -> 278 | consumo_saida=0 | fluxo=1.0
+407 -> 279 | consumo_saida=0 | fluxo=1.0
+409 -> 281 | consumo_saida=0 | fluxo=1.0
+313 -> 281 | consumo_saida=0 | fluxo=1.0
+281 -> 285 | consumo_saida=0 | fluxo=1.0
+281 -> 283 | consumo_saida=0 | fluxo=1.0
+282 -> 281 | consumo_saida=0 | fluxo=1.0
+89 -> 217 | consumo_saida=0 | fluxo=1.0
+91 -> 89 | consumo_saida=0 | fluxo=1.0
+90 -> 89 | consumo_saida=0 | fluxo=1.0
+155 -> 187 | consumo_saida=0 | fluxo=1.0
+93 -> 125 | consumo_saida=0 | fluxo=1.0
+61 -> 125 | consumo_saida=0 | fluxo=1.0
+289 -> 293 | consumo_saida=0 | fluxo=1.0
+417 -> 161 | consumo_saida=0 | fluxo=1.0
+97 -> 98 | consumo_saida=0 | fluxo=1.0
+98 -> 354 | consumo_saida=0 | fluxo=1.0
+226 -> 98 | consumo_saida=0 | fluxo=1.0
+98 -> 114 | consumo_saida=0 | fluxo=1.0
+106 -> 98 | consumo_saida=0 | fluxo=1.0
+98 -> 102 | consumo_saida=0 | fluxo=1.0
+98 -> 100 | consumo_saida=0 | fluxo=1.0
+308 -> 292 | consumo_saida=0 | fluxo=1.0
+164 -> 168 | consumo_saida=0 | fluxo=1.0
+421 -> 293 | consumo_saida=0 | fluxo=1.0
+293 -> 357 | consumo_saida=0 | fluxo=1.0
+293 -> 309 | consumo_saida=0 | fluxo=1.0
+293 -> 301 | consumo_saida=0 | fluxo=1.0
+293 -> 295 | consumo_saida=0 | fluxo=1.0
+294 -> 293 | consumo_saida=0 | fluxo=1.0
+101 -> 109 | consumo_saida=0 | fluxo=1.0
+103 -> 101 | consumo_saida=0 | fluxo=1.0
+166 -> 168 | consumo_saida=0 | fluxo=1.0
+168 -> 184 | consumo_saida=0 | fluxo=1.0
+168 -> 176 | consumo_saida=0 | fluxo=1.0
+303 -> 299 | consumo_saida=0 | fluxo=1.0
+171 -> 235 | consumo_saida=0 | fluxo=1.0
+235 -> 107 | consumo_saida=0 | fluxo=1.0
+431 -> 303 | consumo_saida=0 | fluxo=1.0
+319 -> 303 | consumo_saida=0 | fluxo=1.0
+303 -> 304 | consumo_saida=0 | fluxo=1.0
+306 -> 308 | consumo_saida=0 | fluxo=1.0
+307 -> 308 | consumo_saida=0 | fluxo=1.0
+308 -> 436 | consumo_saida=0 | fluxo=1.0
+372 -> 308 | consumo_saida=0 | fluxo=1.0
+316 -> 308 | consumo_saida=0 | fluxo=1.0
+308 -> 312 | consumo_saida=0 | fluxo=1.0
+245 -> 181 | consumo_saida=0 | fluxo=1.0
+125 -> 117 | consumo_saida=0 | fluxo=1.0
+248 -> 120 | consumo_saida=0 | fluxo=1.0
+187 -> 185 | consumo_saida=0 | fluxo=1.0
+121 -> 125 | consumo_saida=0 | fluxo=1.0
+187 -> 443 | consumo_saida=0 | fluxo=1.0
+251 -> 187 | consumo_saida=0 | fluxo=1.0
+191 -> 187 | consumo_saida=0 | fluxo=1.0
+187 -> 188 | consumo_saida=0 | fluxo=1.0
+124 -> 380 | consumo_saida=0 | fluxo=1.0
+125 -> 127 | consumo_saida=0 | fluxo=1.0
+125 -> 126 | consumo_saida=0 | fluxo=1.0
+446 -> 318 | consumo_saida=0 | fluxo=1.0
+446 -> 190 | consumo_saida=0 | fluxo=1.0
+449 -> 321 | consumo_saida=0 | fluxo=1.0
+449 -> 193 | consumo_saida=0 | fluxo=1.0
+212 -> 196 | consumo_saida=0 | fluxo=1.0
+342 -> 326 | consumo_saida=0 | fluxo=1.0
+198 -> 206 | consumo_saida=0 | fluxo=1.0
+329 -> 361 | consumo_saida=0 | fluxo=1.0
+345 -> 329 | consumo_saida=0 | fluxo=1.0
+329 -> 333 | consumo_saida=0 | fluxo=1.0
+329 -> 331 | consumo_saida=0 | fluxo=1.0
+330 -> 329 | consumo_saida=0 | fluxo=1.0
+202 -> 206 | consumo_saida=0 | fluxo=1.0
+235 -> 203 | consumo_saida=0 | fluxo=1.0
+206 -> 205 | consumo_saida=0 | fluxo=1.0
+206 -> 238 | consumo_saida=0 | fluxo=1.0
+222 -> 206 | consumo_saida=0 | fluxo=1.0
+338 -> 342 | consumo_saida=0 | fluxo=1.0
+210 -> 212 | consumo_saida=0 | fluxo=1.0
+371 -> 339 | consumo_saida=0 | fluxo=1.0
+211 -> 212 | consumo_saida=0 | fluxo=1.0
+212 -> 468 | consumo_saida=0 | fluxo=1.0
+244 -> 212 | consumo_saida=0 | fluxo=1.0
+212 -> 220 | consumo_saida=0 | fluxo=1.0
+341 -> 342 | consumo_saida=0 | fluxo=1.0
+213 -> 245 | consumo_saida=0 | fluxo=1.0
+470 -> 342 | consumo_saida=0 | fluxo=1.0
+342 -> 374 | consumo_saida=0 | fluxo=1.0
+350 -> 342 | consumo_saida=0 | fluxo=1.0
+342 -> 344 | consumo_saida=0 | fluxo=1.0
+248 -> 216 | consumo_saida=0 | fluxo=1.0
+380 -> 348 | consumo_saida=0 | fluxo=1.0
+351 -> 479 | consumo_saida=0 | fluxo=1.0
+223 -> 479 | consumo_saida=0 | fluxo=1.0
+355 -> 371 | consumo_saida=0 | fluxo=1.0
+227 -> 235 | consumo_saida=0 | fluxo=1.0
+245 -> 229 | consumo_saida=0 | fluxo=1.0
+488 -> 360 | consumo_saida=0 | fluxo=1.0
+232 -> 248 | consumo_saida=0 | fluxo=1.0
+235 -> 233 | consumo_saida=0 | fluxo=1.0
+491 -> 235 | consumo_saida=0 | fluxo=1.0
+239 -> 235 | consumo_saida=0 | fluxo=1.0
+235 -> 236 | consumo_saida=0 | fluxo=1.0
+380 -> 364 | consumo_saida=0 | fluxo=1.0
+365 -> 493 | consumo_saida=0 | fluxo=1.0
+381 -> 365 | consumo_saida=0 | fluxo=1.0
+365 -> 367 | consumo_saida=0 | fluxo=1.0
+366 -> 365 | consumo_saida=0 | fluxo=1.0
+369 -> 371 | consumo_saida=0 | fluxo=1.0
+241 -> 245 | consumo_saida=0 | fluxo=1.0
+371 -> 499 | consumo_saida=0 | fluxo=1.0
+371 -> 379 | consumo_saida=0 | fluxo=1.0
+375 -> 371 | consumo_saida=0 | fluxo=1.0
+501 -> 245 | consumo_saida=0 | fluxo=1.0
+245 -> 253 | consumo_saida=0 | fluxo=1.0
+246 -> 248 | consumo_saida=0 | fluxo=1.0
+247 -> 248 | consumo_saida=0 | fluxo=1.0
+248 -> 256 | consumo_saida=0 | fluxo=1.0
+506 -> 378 | consumo_saida=0 | fluxo=1.0
+250 -> 506 | consumo_saida=0 | fluxo=1.0
+384 -> 380 | consumo_saida=0 | fluxo=1.0
+385 -> 449 | consumo_saida=0 | fluxo=1.0
+398 -> 390 | consumo_saida=0 | fluxo=1.0
+398 -> 394 | consumo_saida=0 | fluxo=1.0
+396 -> 395 | consumo_saida=0 | fluxo=1.0
+460 -> 396 | consumo_saida=0 | fluxo=1.0
+428 -> 396 | consumo_saida=0 | fluxo=1.0
+396 -> 412 | consumo_saida=0 | fluxo=1.0
+397 -> 398 | consumo_saida=0 | fluxo=1.0
+462 -> 398 | consumo_saida=0 | fluxo=1.0
+398 -> 400 | consumo_saida=0 | fluxo=1.0
+407 -> 403 | consumo_saida=0 | fluxo=1.0
+405 -> 407 | consumo_saida=0 | fluxo=1.0
+439 -> 407 | consumo_saida=0 | fluxo=1.0
+407 -> 415 | consumo_saida=0 | fluxo=1.0
+408 -> 407 | consumo_saida=0 | fluxo=1.0
+446 -> 414 | consumo_saida=0 | fluxo=1.0
+417 -> 481 | consumo_saida=0 | fluxo=1.0
+433 -> 417 | consumo_saida=0 | fluxo=1.0
+417 -> 425 | consumo_saida=0 | fluxo=1.0
+419 -> 417 | consumo_saida=0 | fluxo=1.0
+418 -> 417 | consumo_saida=0 | fluxo=1.0
+424 -> 488 | consumo_saida=0 | fluxo=1.0
+430 -> 446 | consumo_saida=0 | fluxo=1.0
+438 -> 446 | consumo_saida=0 | fluxo=1.0
+442 -> 506 | consumo_saida=0 | fluxo=1.0
+445 -> 446 | consumo_saida=0 | fluxo=1.0
+446 -> 510 | consumo_saida=0 | fluxo=1.0
+448 -> 446 | consumo_saida=0 | fluxo=1.0
+465 -> 449 | consumo_saida=0 | fluxo=1.0
+449 -> 457 | consumo_saida=0 | fluxo=1.0
+453 -> 449 | consumo_saida=0 | fluxo=1.0
+451 -> 449 | consumo_saida=0 | fluxo=1.0
+449 -> 450 | consumo_saida=0 | fluxo=1.0
+456 -> 488 | consumo_saida=0 | fluxo=1.0
+463 -> 479 | consumo_saida=0 | fluxo=1.0
+479 -> 471 | consumo_saida=0 | fluxo=1.0
+506 -> 474 | consumo_saida=0 | fluxo=1.0
+479 -> 475 | consumo_saida=0 | fluxo=1.0
+477 -> 479 | consumo_saida=0 | fluxo=1.0
+479 -> 511 | consumo_saida=0 | fluxo=1.0
+479 -> 480 | consumo_saida=0 | fluxo=1.0
+484 -> 488 | consumo_saida=0 | fluxo=1.0
+486 -> 488 | consumo_saida=0 | fluxo=1.0
+488 -> 487 | consumo_saida=0 | fluxo=1.0
+488 -> 504 | consumo_saida=0 | fluxo=1.0
+488 -> 496 | consumo_saida=0 | fluxo=1.0
+490 -> 506 | consumo_saida=0 | fluxo=1.0
+506 -> 498 | consumo_saida=0 | fluxo=1.0
+505 -> 506 | consumo_saida=0 | fluxo=1.0
+506 -> 508 | consumo_saida=0 | fluxo=1.0
+
+Recargas usadas:
+v=9 | consumo_antes_recarga=1 | fluxo=2.0
+v=260 | consumo_antes_recarga=1 | fluxo=3.0
+v=22 | consumo_antes_recarga=1 | fluxo=3.0
+v=135 | consumo_antes_recarga=1 | fluxo=4.0
+v=71 | consumo_antes_recarga=1 | fluxo=2.0
+v=42 | consumo_antes_recarga=1 | fluxo=4.0
+v=141 | consumo_antes_recarga=1 | fluxo=1.0
+v=80 | consumo_antes_recarga=1 | fluxo=4.0
+v=32 | consumo_antes_recarga=1 | fluxo=3.0
+v=146 | consumo_antes_recarga=1 | fluxo=3.0
+v=51 | consumo_antes_recarga=1 | fluxo=4.0
+v=281 | consumo_antes_recarga=1 | fluxo=3.0
+v=89 | consumo_antes_recarga=1 | fluxo=3.0
+v=98 | consumo_antes_recarga=1 | fluxo=4.0
+v=293 | consumo_antes_recarga=1 | fluxo=4.0
+v=101 | consumo_antes_recarga=1 | fluxo=2.0
+v=168 | consumo_antes_recarga=1 | fluxo=3.0
+v=303 | consumo_antes_recarga=1 | fluxo=3.0
+v=308 | consumo_antes_recarga=1 | fluxo=4.0
+v=187 | consumo_antes_recarga=1 | fluxo=3.0
+v=125 | consumo_antes_recarga=1 | fluxo=3.0
+v=329 | consumo_antes_recarga=1 | fluxo=3.0
+v=206 | consumo_antes_recarga=1 | fluxo=3.0
+v=212 | consumo_antes_recarga=1 | fluxo=4.0
+v=342 | consumo_antes_recarga=1 | fluxo=4.0
+v=235 | consumo_antes_recarga=1 | fluxo=4.0
+v=365 | consumo_antes_recarga=1 | fluxo=2.0
+v=371 | consumo_antes_recarga=1 | fluxo=3.0
+v=245 | consumo_antes_recarga=1 | fluxo=3.0
+v=248 | consumo_antes_recarga=1 | fluxo=3.0
+v=380 | consumo_antes_recarga=1 | fluxo=2.0
+v=396 | consumo_antes_recarga=1 | fluxo=3.0
+v=398 | consumo_antes_recarga=1 | fluxo=3.0
+v=407 | consumo_antes_recarga=1 | fluxo=3.0
+v=417 | consumo_antes_recarga=1 | fluxo=3.0
+v=446 | consumo_antes_recarga=1 | fluxo=4.0
+v=449 | consumo_antes_recarga=1 | fluxo=4.0
+v=479 | consumo_antes_recarga=1 | fluxo=4.0
+v=488 | consumo_antes_recarga=1 | fluxo=4.0
+v=506 | consumo_antes_recarga=1 | fluxo=4.0
+
+Absorções nos destinos:
+t=436 | consumo_chegada=1 | fluxo=1.0
+t=253 | consumo_chegada=1 | fluxo=1.0
+t=394 | consumo_chegada=1 | fluxo=1.0
+t=403 | consumo_chegada=1 | fluxo=1.0
+t=498 | consumo_chegada=1 | fluxo=1.0
+t=298 | consumo_chegada=1 | fluxo=1.0
+t=220 | consumo_chegada=1 | fluxo=1.0
+t=278 | consumo_chegada=1 | fluxo=1.0
+t=127 | consumo_chegada=1 | fluxo=1.0
+t=499 | consumo_chegada=1 | fluxo=1.0
+t=402 | consumo_chegada=1 | fluxo=1.0
+t=73 | consumo_chegada=1 | fluxo=1.0
+t=395 | consumo_chegada=1 | fluxo=1.0
+t=203 | consumo_chegada=1 | fluxo=1.0
+t=256 | consumo_chegada=1 | fluxo=1.0
+t=292 | consumo_chegada=1 | fluxo=1.0
+t=299 | consumo_chegada=1 | fluxo=1.0
+t=109 | consumo_chegada=1 | fluxo=1.0
+t=34 | consumo_chegada=1 | fluxo=1.0
+t=336 | consumo_chegada=1 | fluxo=1.0
+t=205 | consumo_chegada=1 | fluxo=1.0
+t=161 | consumo_chegada=1 | fluxo=1.0
+t=480 | consumo_chegada=1 | fluxo=1.0
+t=364 | consumo_chegada=1 | fluxo=1.0
+t=30 | consumo_chegada=1 | fluxo=1.0
+t=167 | consumo_chegada=1 | fluxo=1.0
+t=450 | consumo_chegada=1 | fluxo=1.0
+t=285 | consumo_chegada=1 | fluxo=1.0
+t=140 | consumo_chegada=1 | fluxo=1.0
+t=354 | consumo_chegada=1 | fluxo=1.0
+t=238 | consumo_chegada=1 | fluxo=1.0
+t=344 | consumo_chegada=1 | fluxo=1.0
+t=504 | consumo_chegada=1 | fluxo=1.0
+t=273 | consumo_chegada=1 | fluxo=1.0
+t=87 | consumo_chegada=1 | fluxo=1.0
+t=493 | consumo_chegada=1 | fluxo=1.0
+t=312 | consumo_chegada=1 | fluxo=1.0
+t=37 | consumo_chegada=1 | fluxo=1.0
+t=331 | consumo_chegada=1 | fluxo=1.0
+t=137 | consumo_chegada=1 | fluxo=1.0
+t=107 | consumo_chegada=1 | fluxo=1.0
+t=181 | consumo_chegada=1 | fluxo=1.0
+t=190 | consumo_chegada=1 | fluxo=1.0
+t=84 | consumo_chegada=1 | fluxo=1.0
+t=188 | consumo_chegada=1 | fluxo=1.0
+t=326 | consumo_chegada=1 | fluxo=1.0
+t=233 | consumo_chegada=1 | fluxo=1.0
+t=425 | consumo_chegada=1 | fluxo=1.0
+t=412 | consumo_chegada=1 | fluxo=1.0
+t=52 | consumo_chegada=1 | fluxo=1.0
+t=471 | consumo_chegada=1 | fluxo=1.0
+t=388 | consumo_chegada=1 | fluxo=1.0
+t=150 | consumo_chegada=1 | fluxo=1.0
+t=117 | consumo_chegada=1 | fluxo=1.0
+t=339 | consumo_chegada=1 | fluxo=1.0
+t=400 | consumo_chegada=1 | fluxo=1.0
+t=35 | consumo_chegada=1 | fluxo=1.0
+t=361 | consumo_chegada=1 | fluxo=1.0
+t=100 | consumo_chegada=1 | fluxo=1.0
+t=295 | consumo_chegada=1 | fluxo=1.0
+t=185 | consumo_chegada=1 | fluxo=1.0
+t=318 | consumo_chegada=1 | fluxo=1.0
+t=321 | consumo_chegada=1 | fluxo=1.0
+t=151 | consumo_chegada=1 | fluxo=1.0
+t=283 | consumo_chegada=1 | fluxo=1.0
+t=41 | consumo_chegada=1 | fluxo=1.0
+t=193 | consumo_chegada=1 | fluxo=1.0
+t=64 | consumo_chegada=1 | fluxo=1.0
+t=276 | consumo_chegada=1 | fluxo=1.0
+t=236 | consumo_chegada=1 | fluxo=1.0
+t=374 | consumo_chegada=1 | fluxo=1.0
+t=24 | consumo_chegada=1 | fluxo=1.0
+t=136 | consumo_chegada=1 | fluxo=1.0
+t=468 | consumo_chegada=1 | fluxo=1.0
+t=178 | consumo_chegada=1 | fluxo=1.0
+t=184 | consumo_chegada=1 | fluxo=1.0
+t=49 | consumo_chegada=1 | fluxo=1.0
+t=196 | consumo_chegada=1 | fluxo=1.0
+t=475 | consumo_chegada=1 | fluxo=1.0
+t=496 | consumo_chegada=1 | fluxo=1.0
+t=173 | consumo_chegada=1 | fluxo=1.0
+t=391 | consumo_chegada=1 | fluxo=1.0
+t=474 | consumo_chegada=1 | fluxo=1.0
+t=79 | consumo_chegada=1 | fluxo=1.0
+t=443 | consumo_chegada=1 | fluxo=1.0
+t=176 | consumo_chegada=1 | fluxo=1.0
+t=481 | consumo_chegada=1 | fluxo=1.0
+t=357 | consumo_chegada=1 | fluxo=1.0
+t=81 | consumo_chegada=1 | fluxo=1.0
+t=414 | consumo_chegada=1 | fluxo=1.0
+t=390 | consumo_chegada=1 | fluxo=1.0
+t=4 | consumo_chegada=1 | fluxo=1.0
+t=415 | consumo_chegada=1 | fluxo=1.0
+t=143 | consumo_chegada=1 | fluxo=1.0
+t=301 | consumo_chegada=1 | fluxo=1.0
+t=229 | consumo_chegada=1 | fluxo=1.0
+t=114 | consumo_chegada=1 | fluxo=1.0
+t=216 | consumo_chegada=1 | fluxo=1.0
+t=487 | consumo_chegada=1 | fluxo=1.0
+t=360 | consumo_chegada=1 | fluxo=1.0
+t=333 | consumo_chegada=1 | fluxo=1.0
+t=367 | consumo_chegada=1 | fluxo=1.0
+t=102 | consumo_chegada=1 | fluxo=1.0
+t=288 | consumo_chegada=1 | fluxo=1.0
+t=510 | consumo_chegada=1 | fluxo=1.0
+t=309 | consumo_chegada=1 | fluxo=1.0
+t=259 | consumo_chegada=1 | fluxo=1.0
+t=120 | consumo_chegada=1 | fluxo=1.0
+t=112 | consumo_chegada=1 | fluxo=1.0
+t=47 | consumo_chegada=1 | fluxo=1.0
+t=16 | consumo_chegada=1 | fluxo=1.0
+t=18 | consumo_chegada=1 | fluxo=1.0
+t=217 | consumo_chegada=1 | fluxo=1.0
+t=304 | consumo_chegada=1 | fluxo=1.0
+t=46 | consumo_chegada=1 | fluxo=1.0
+t=279 | consumo_chegada=1 | fluxo=1.0
+t=457 | consumo_chegada=1 | fluxo=1.0
+t=508 | consumo_chegada=1 | fluxo=1.0
+t=348 | consumo_chegada=1 | fluxo=1.0
+t=54 | consumo_chegada=1 | fluxo=1.0
+t=378 | consumo_chegada=1 | fluxo=1.0
+t=72 | consumo_chegada=1 | fluxo=1.0
+t=511 | consumo_chegada=1 | fluxo=1.0
+t=126 | consumo_chegada=1 | fluxo=1.0
+t=142 | consumo_chegada=1 | fluxo=1.0
+t=379 | consumo_chegada=1 | fluxo=1.0
+t=13 | consumo_chegada=1 | fluxo=1.0
+t=115 | consumo_chegada=1 | fluxo=1.0

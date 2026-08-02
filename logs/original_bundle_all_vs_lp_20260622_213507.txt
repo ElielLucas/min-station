@@ -1,0 +1,79 @@
+1 arquivo(s) encontrado(s) em inputs
+Modo de relaxação: all
+Método dual: proximal bundle
+Comparação LP original x LR-Bundle: True
+Tiebreak menor fluxo: True
+Permitir oracle inexato: False
+CSV de iterações: results_original_bundle_vs_lp/original_all_bundle_iteracoes.csv
+CSV de resumo: results_original_bundle_vs_lp/original_all_bundle_resumo.csv
+
+================================================================================
+Arquivo: hc9u.txt
+R original: 1
+Modo de relaxação: all
+Método dual: proximal bundle
+Comparação LP original x LR-Bundle: True
+Tiebreak menor fluxo: True
+Permitir oracle inexato: False
+================================================================================
+[hc9u.txt] modo=all |V|=512 |A_r|=4608 |S|=|T|=128 R=1
+[hc9u.txt] Resolvendo relaxação linear da formulação original/agregada...
+Set parameter Username
+Academic license - for non-commercial use only - expires 2026-08-17
+[hc9u.txt] LP-original status=OPTIMAL LB_LP=1.0 runtime=0.240s vars=5120 constrs=1536
+[hc9u.txt] UB inicial = 42.0
+[hc9u.txt] it=0001 null q_trial=-32649 q_cert=-32649.0 bestLB_cert=0.0 UB=42.0 gap_cert=100.00% pred=292 act=-32649 ||step||=17.088 mu=2 status_sub=OPTIMAL
+[hc9u.txt] it=0010 null q_trial=0.17704 q_cert=0.1770398101976788 bestLB_cert=0.1770398101976788 UB=42.0 gap_cert=99.58% pred=0.8505 act=0.0505522 ||step||=0.00558873 mu=358.4 status_sub=OPTIMAL
+[hc9u.txt] it=0020 null q_trial=-2.85565 q_cert=-2.855654424197307 bestLB_cert=0.645532587472265 UB=42.0 gap_cert=98.46% pred=0.354131 act=-3.50119 ||step||=0.0122763 mu=1927.56 status_sub=OPTIMAL
+[hc9u.txt] it=0030 null q_trial=0.82781 q_cert=0.8278097241554447 bestLB_cert=0.8403405217309587 UB=42.0 gap_cert=98.00% pred=0.0798507 act=-0.0125308 ||step||=0.000976661 mu=29619.7 status_sub=OPTIMAL
+[hc9u.txt] it=0040 serious q_trial=0.902858 q_cert=0.9028584917784884 bestLB_cert=0.9028584917784884 UB=42.0 gap_cert=97.85% pred=0.0368202 act=0.00396648 ||step||=0.000800847 mu=19514.5 status_sub=OPTIMAL
+[hc9u.txt] it=0050 serious q_trial=0.924656 q_cert=0.9246558891593099 bestLB_cert=0.9246558891593099 UB=42.0 gap_cert=97.80% pred=0.00341628 act=0.000649757 ||step||=0.000142658 mu=104953 status_sub=OPTIMAL
+[hc9u.txt] it=0060 null q_trial=0.939078 q_cert=0.9390780389999922 bestLB_cert=0.9434337219541594 UB=42.0 gap_cert=97.75% pred=0.00414497 act=-0.00435568 ||step||=0.000204838 mu=197563 status_sub=OPTIMAL
+[hc9u.txt] it=0070 null q_trial=0.942097 q_cert=0.9420966563321213 bestLB_cert=0.9497617181728729 UB=42.0 gap_cert=97.74% pred=0.00243599 act=-0.00766506 ||step||=0.000101425 mu=371889 status_sub=OPTIMAL
+[hc9u.txt] it=0080 serious q_trial=0.959226 q_cert=0.9592258670607754 bestLB_cert=0.9592258670607754 UB=42.0 gap_cert=97.72% pred=0.00248973 act=0.000793834 ||step||=5.13123e-05 mu=245013 status_sub=OPTIMAL
+[hc9u.txt] it=0090 serious q_trial=0.968548 q_cert=0.9685480312870377 bestLB_cert=0.9685480312870377 UB=42.0 gap_cert=97.69% pred=0.00225275 act=0.000588138 ||step||=8.54641e-05 mu=161423 status_sub=OPTIMAL
+[hc9u.txt] it=0100 serious q_trial=0.976649 q_cert=0.9766488780660985 bestLB_cert=0.9766488780660985 UB=42.0 gap_cert=97.67% pred=0.00280568 act=0.000513822 ||step||=3.97971e-05 mu=303860 status_sub=OPTIMAL
+[hc9u.txt] it=0110 serious q_trial=0.979773 q_cert=0.9797726947493037 bestLB_cert=0.9797726947493037 UB=42.0 gap_cert=97.67% pred=0.000870327 act=0.000515585 ||step||=2.71692e-05 mu=490000 status_sub=OPTIMAL
+[hc9u.txt] it=0120 serious q_trial=0.981842 q_cert=0.9818418002647209 bestLB_cert=0.9818418002647209 UB=42.0 gap_cert=97.66% pred=0.000514399 act=0.000387917 ||step||=1.91511e-05 mu=686000 status_sub=OPTIMAL
+[hc9u.txt] it=0130 null q_trial=0.983867 q_cert=0.9838665822837047 bestLB_cert=0.9838830673108488 UB=42.0 gap_cert=97.66% pred=0.000786601 act=-1.6485e-05 ||step||=2.6609e-05 mu=1e+06 status_sub=OPTIMAL
+[hc9u.txt] it=0140 serious q_trial=0.985426 q_cert=0.9854258007732916 bestLB_cert=0.9854258007732916 UB=42.0 gap_cert=97.65% pred=0.000794372 act=0.000178957 ||step||=1.69967e-05 mu=700000 status_sub=OPTIMAL
+[hc9u.txt] it=0150 serious q_trial=0.986826 q_cert=0.9868261387173454 bestLB_cert=0.9868261387173454 UB=42.0 gap_cert=97.65% pred=0.00122208 act=0.000135177 ||step||=2.32759e-05 mu=490000 status_sub=OPTIMAL
+[hc9u.txt] it=0160 serious q_trial=0.98894 q_cert=0.9889395122950022 bestLB_cert=0.9889395122950022 UB=42.0 gap_cert=97.65% pred=0.0017981 act=0.0003638 ||step||=1.56365e-05 mu=700000 status_sub=OPTIMAL
+[hc9u.txt] it=0170 null q_trial=0.989831 q_cert=0.9898310225727905 bestLB_cert=0.9898796430867466 UB=42.0 gap_cert=97.64% pred=0.00137474 act=-4.86205e-05 ||step||=1.8758e-05 mu=1e+06 status_sub=OPTIMAL
+[hc9u.txt] it=0180 null q_trial=0.990365 q_cert=0.9903649496295054 bestLB_cert=0.9913460244624253 UB=42.0 gap_cert=97.64% pred=0.00113788 act=-0.000981075 ||step||=1.99123e-05 mu=1e+06 status_sub=OPTIMAL
+[hc9u.txt] it=0190 null q_trial=0.99208 q_cert=0.9920799286259728 bestLB_cert=0.9920799286259728 UB=42.0 gap_cert=97.64% pred=0.000902767 act=8.85575e-05 ||step||=1.36708e-05 mu=1e+06 status_sub=OPTIMAL
+[hc9u.txt] it=0200 serious q_trial=0.992424 q_cert=0.9924244650581887 bestLB_cert=0.9924244650581887 UB=42.0 gap_cert=97.64% pred=0.000623183 act=0.000116262 ||step||=1.78571e-05 mu=700000 status_sub=OPTIMAL
+[hc9u.txt] it=0210 null q_trial=0.99284 q_cert=0.9928401738679534 bestLB_cert=0.9928830900661799 UB=42.0 gap_cert=97.64% pred=0.000698449 act=-4.29162e-05 ||step||=1.3024e-05 mu=1e+06 status_sub=OPTIMAL
+[hc9u.txt] it=0220 null q_trial=0.991862 q_cert=0.9918621133213223 bestLB_cert=0.9934271669494281 UB=42.0 gap_cert=97.63% pred=0.00066336 act=-0.00156505 ||step||=1.71519e-05 mu=1e+06 status_sub=OPTIMAL
+[hc9u.txt] it=0230 serious q_trial=0.993681 q_cert=0.9936811443245465 bestLB_cert=0.9936811443245465 UB=42.0 gap_cert=97.63% pred=0.000551038 act=8.68363e-05 ||step||=1.13056e-05 mu=700000 status_sub=OPTIMAL
+[hc9u.txt] it=0240 null q_trial=0.993728 q_cert=0.9937282084646437 bestLB_cert=0.9938020447748102 UB=42.0 gap_cert=97.63% pred=0.000580459 act=-7.38363e-05 ||step||=1.09863e-05 mu=1e+06 status_sub=OPTIMAL
+[hc9u.txt] it=0250 null q_trial=0.992629 q_cert=0.9926294190890632 bestLB_cert=0.9940432164313922 UB=42.0 gap_cert=97.63% pred=0.00071705 act=-0.0014138 ||step||=1.48909e-05 mu=1e+06 status_sub=OPTIMAL
+[hc9u.txt] it=0260 null q_trial=0.994328 q_cert=0.9943282861720175 bestLB_cert=0.9943282861720175 UB=42.0 gap_cert=97.63% pred=0.000613183 act=4.7674e-05 ||step||=9.60882e-06 mu=1e+06 status_sub=OPTIMAL
+[hc9u.txt] it=0270 null q_trial=0.994452 q_cert=0.9944519900094043 bestLB_cert=0.9945493880227032 UB=42.0 gap_cert=97.63% pred=0.000507771 act=-9.7398e-05 ||step||=9.14163e-06 mu=1e+06 status_sub=OPTIMAL
+[hc9u.txt] it=0280 null q_trial=0.99382 q_cert=0.9938202815444398 bestLB_cert=0.9947361864180473 UB=42.0 gap_cert=97.63% pred=0.000511051 act=-0.000915905 ||step||=1.28595e-05 mu=1e+06 status_sub=OPTIMAL
+[hc9u.txt] it=0290 null q_trial=0.994812 q_cert=0.9948124003503518 bestLB_cert=0.9948144104286395 UB=42.0 gap_cert=97.63% pred=0.000487664 act=-2.01008e-06 ||step||=9.31948e-06 mu=1e+06 status_sub=OPTIMAL
+[hc9u.txt] it=0300 serious q_trial=0.995 q_cert=0.9950003660408822 bestLB_cert=0.9950003660408822 UB=42.0 gap_cert=97.63% pred=0.000487445 act=0.00011131 ||step||=8.94547e-06 mu=700000 status_sub=OPTIMAL
+[hc9u.txt] it=0310 null q_trial=0.99475 q_cert=0.9947502667301747 bestLB_cert=0.9950709083636533 UB=42.0 gap_cert=97.63% pred=0.000442216 act=-0.000320642 ||step||=8.15567e-06 mu=1e+06 status_sub=OPTIMAL
+[hc9u.txt] it=0320 null q_trial=0.995022 q_cert=0.9950221538669739 bestLB_cert=0.9951257791117645 UB=42.0 gap_cert=97.63% pred=0.00043712 act=-0.000103625 ||step||=7.37831e-06 mu=1e+06 status_sub=OPTIMAL
+[hc9u.txt] it=0330 null q_trial=0.99516 q_cert=0.9951596358365062 bestLB_cert=0.9951906899003765 UB=42.0 gap_cert=97.63% pred=0.000435445 act=-1.43399e-05 ||step||=7.19627e-06 mu=1e+06 status_sub=OPTIMAL
+[hc9u.txt] it=0340 null q_trial=0.99509 q_cert=0.9950903585298324 bestLB_cert=0.9952686745053552 UB=42.0 gap_cert=97.63% pred=0.0004084 act=-0.000143229 ||step||=6.83129e-06 mu=1e+06 status_sub=OPTIMAL
+[hc9u.txt] it=0350 null q_trial=0.995317 q_cert=0.9953168044981745 bestLB_cert=0.9953168044981745 UB=42.0 gap_cert=97.63% pred=0.000390104 act=2.75007e-05 ||step||=6.75728e-06 mu=1e+06 status_sub=OPTIMAL
+[hc9u.txt] it=0360 null q_trial=0.995267 q_cert=0.9952671329529783 bestLB_cert=0.9953168044981745 UB=42.0 gap_cert=97.63% pred=0.000385409 act=-2.21708e-05 ||step||=6.76525e-06 mu=1e+06 status_sub=OPTIMAL
+[hc9u.txt] it=0370 null q_trial=0.99513 q_cert=0.9951296411890417 bestLB_cert=0.9953302884219031 UB=42.0 gap_cert=97.63% pred=0.000389162 act=-0.000200647 ||step||=6.4933e-06 mu=1e+06 status_sub=OPTIMAL
+[hc9u.txt] it=0380 serious q_trial=0.995386 q_cert=0.9953860335658885 bestLB_cert=0.9953860335658885 UB=42.0 gap_cert=97.63% pred=0.00038162 act=5.57451e-05 ||step||=6.56899e-06 mu=700000 status_sub=OPTIMAL
+[hc9u.txt] it=0390 null q_trial=0.995409 q_cert=0.9954090991326535 bestLB_cert=0.9954090991326535 UB=42.0 gap_cert=97.63% pred=0.000358822 act=2.30656e-05 ||step||=6.32582e-06 mu=1e+06 status_sub=OPTIMAL
+[hc9u.txt] it=0400 null q_trial=0.995324 q_cert=0.9953239654308493 bestLB_cert=0.9954090991326535 UB=42.0 gap_cert=97.63% pred=0.000393808 act=-6.20681e-05 ||step||=7.64686e-06 mu=1e+06 status_sub=OPTIMAL
+[hc9u.txt] it=0410 null q_trial=0.995372 q_cert=0.995372182541279 bestLB_cert=0.9954090991326535 UB=42.0 gap_cert=97.63% pred=0.000385822 act=-1.3851e-05 ||step||=8.05649e-06 mu=1e+06 status_sub=OPTIMAL
+[hc9u.txt] it=0420 null q_trial=0.99517 q_cert=0.9951696860080125 bestLB_cert=0.9954358514771114 UB=42.0 gap_cert=97.63% pred=0.000370359 act=-0.000266165 ||step||=6.54922e-06 mu=1e+06 status_sub=OPTIMAL
+[hc9u.txt] it=0430 null q_trial=0.994745 q_cert=0.9947452490332812 bestLB_cert=0.9954358514771114 UB=42.0 gap_cert=97.63% pred=0.00030835 act=-0.000690602 ||step||=7.94791e-06 mu=1e+06 status_sub=OPTIMAL
+[hc9u.txt] it=0440 null q_trial=0.995411 q_cert=0.9954112210243989 bestLB_cert=0.9954358514771114 UB=42.0 gap_cert=97.63% pred=0.000295968 act=-2.46305e-05 ||step||=7.91424e-06 mu=1e+06 status_sub=OPTIMAL
+[hc9u.txt] it=0450 null q_trial=0.995474 q_cert=0.9954744640706157 bestLB_cert=0.9954918819520048 UB=42.0 gap_cert=97.63% pred=0.000288342 act=-1.56446e-05 ||step||=7.22653e-06 mu=1e+06 status_sub=OPTIMAL
+[hc9u.txt] it=0460 null q_trial=0.995194 q_cert=0.9951944228981655 bestLB_cert=0.9955762223990995 UB=42.0 gap_cert=97.63% pred=0.000319826 act=-0.0003818 ||step||=1.00764e-05 mu=1e+06 status_sub=OPTIMAL
+[hc9u.txt] it=0470 null q_trial=0.995671 q_cert=0.9956714200171958 bestLB_cert=0.9956714200171958 UB=42.0 gap_cert=97.63% pred=0.000295151 act=3.26499e-06 ||step||=6.46601e-06 mu=1e+06 status_sub=OPTIMAL
+[hc9u.txt] it=0480 null q_trial=0.995585 q_cert=0.9955848193502816 bestLB_cert=0.995743529746753 UB=42.0 gap_cert=97.63% pred=0.000295888 act=-0.00015871 ||step||=6.24057e-06 mu=1e+06 status_sub=OPTIMAL
+[hc9u.txt] it=0490 null q_trial=0.995849 q_cert=0.9958491698272667 bestLB_cert=0.9958491698272667 UB=42.0 gap_cert=97.63% pred=0.000227991 act=9.41749e-06 ||step||=5.62152e-06 mu=1e+06 status_sub=OPTIMAL
+[hc9u.txt] it=0500 null q_trial=0.995891 q_cert=0.9958905101511064 bestLB_cert=0.9958905101511064 UB=42.0 gap_cert=97.63% pred=0.000217711 act=1.34298e-05 ||step||=5.33437e-06 mu=1e+06 status_sub=OPTIMAL
+
+[ok] 1 instância(s) processada(s).
+[ok] Iterações salvas em: results_original_bundle_vs_lp/original_all_bundle_iteracoes.csv
+[ok] Resumo salvo em: results_original_bundle_vs_lp/original_all_bundle_resumo.csv

@@ -1,0 +1,22 @@
+1 arquivo(s) encontrado(s) em inputs
+Relaxação: caminhos, z_{s,v} <= y_v dualizada
+Método dual: subgradiente projetado
+CSV de iterações: results_path_subgradient_alpha1_decay07/path_subgradient_iteracoes.csv
+CSV de resumo: results_path_subgradient_alpha1_decay07/path_subgradient_resumo.csv
+
+================================================================================
+Arquivo: hc9u.txt
+R original: 1
+Relaxação: caminhos, dualizando z_{s,v} <= y_v
+Método dual: subgradiente projetado
+|V|=512 |A_r|=4608 |S|=|T|=128 |VI|=256
+Multiplicadores: 65536
+UB inicial: 42.0
+Regra de passo: polyak
+alpha inicial: 1.0
+================================================================================
+Set parameter Username
+Academic license - for non-commercial use only - expires 2026-08-17
+[hc9u.txt] subgrad it=00001 LB=0 bestLB=0 UB=42.0 gap=100.00% UB_heur=157.0 ||g||=28.2135 theta=0.0527638 alpha=1 step=1.48865
+[hc9u.txt] subgrad it=00010 LB=0.935367 bestLB=0.935367 UB=42.0 gap=97.77% UB_heur=290.0 ||g||=49.2544 theta=0.0169269 alpha=1 step=0.696808
+[hc9u.txt] subgrad it=00014 LB=1.54536 bestLB=1.54536 UB=42.0 gap=96.32% UB_heur=298.0 ||g||=50.8724 theta=0.0156316 alpha=1 step=0.664785

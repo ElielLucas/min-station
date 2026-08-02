@@ -1,0 +1,32 @@
+================================================================================
+PREPROCESSAMENTO | cc10-2p.txt | R=500
+================================================================================
+[Inicial] |V|=1024 | |S|=67 | |T|=67 | candidatos_iniciais=1024 | M_base=10240
+[Observação] Estações permitidas em todos os vértices, inclusive origens e destinos.
+[Observação] Por isso, arcos entrando em S ou saindo de T NÃO são removidos automaticamente.
+[Grafo original]
+  Poda iterativa de folhas sem terminais: |V| 1024 -> 1024 | removidos=0 (0.00%) | tempo=0.008s
+  Contração de grau 2: não aplicada por segurança (estações podem ser instaladas em todos os vértices). Vértices grau-2 não terminais remanescentes=0
+[Construção A^R]
+  A^R bruto normalizado: 339124 | loops_descartados=0 | fora_de_V=0 | duplicados=0 | tempo=0.518s
+  [Inicial | arcos forçados a zero] 339124 -> 339124 | removidos=0 (0.00%) | sem_saida_livre/estacao=0 | sem_entrada_livre/estacao=0 | ambos=0
+
+[Iteração 1]
+  [Iteração 1 - Alcance | candidatos] 1024 -> 1024 | removidos=0 (0.00%) | fora_RS=0 | fora_RT=0
+  [Iteração 1 - Alcance | arcos irrelevantes] 339124 -> 339124 | removidos=0 (0.00%) | u_fora_RS=0 | v_fora_RT=0 | ambos=0
+  [Iteração 1 - pós-alcance | arcos forçados a zero] 339124 -> 339124 | removidos=0 (0.00%) | sem_saida_livre/estacao=0 | sem_entrada_livre/estacao=0 | ambos=0
+  [Dominância Pred/Succ] 1024 -> 1024 | removidos=0 (0.00%) | pares_testados=523776 | pares_dominantes=0 | tempo=0.274s
+  [Iteração 1 - pós-dominância | arcos forçados a zero] 339124 -> 339124 | removidos=0 (0.00%) | sem_saida_livre/estacao=0 | sem_entrada_livre/estacao=0 | ambos=0
+  [Resumo iteração 1] candidatos 1024 -> 1024 | A^R 339124 -> 339124 | tempo=0.529s
+  [Estabilização] Nenhuma redução na iteração 1.
+
+[Diagnósticos finais sem remoção]
+[Diagnóstico | equivalência Pred/Succ] classes_nao_unitarias=0 | candidatos_em_classes=0 | maior_classe=0 | tempo=0.152s
+[Diagnóstico | quase-dominância] pares_avaliados=569971 | >=90%=1256 | >=95%=1256 | >=99%=1055 | tempo=11.119s
+[Diagnóstico | assinatura global Orig/Dest] classes_nao_unitarias=1 | candidatos_em_classes=1024 | maior_classe=1024 | tempo=1.793s
+
+[Resumo final do pré-processamento]
+  |V| original -> pré: 1024 -> 1024 | removidos_grafo=0
+  candidatos: 1024 -> 1024 | removidos=0 (0.00%)
+  A^R: 339124 -> 339124 | removidos=0 (0.00%)
+  tempo_total_preprocessamento=14.192s

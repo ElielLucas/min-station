@@ -1,0 +1,121 @@
+1 arquivo(s) encontrado(s) em inputs
+Modo de relaxação: all
+Tiebreak menor fluxo: True
+CSV de iterações: results/lagrangeano_all_iteracoes.csv
+CSV de resumo: results/lagrangeano_all_resumo.csv
+
+================================================================================
+Arquivo: hc9u.txt
+R original: 1
+Modo de relaxação: all
+Tiebreak menor fluxo: True
+================================================================================
+[hc9u.txt] modo=all |V|=512 |A_r|=4608 |S|=|T|=128 R=1
+[hc9u.txt] UB inicial = 42.0
+Set parameter Username
+Academic license - for non-commercial use only - expires 2026-08-17
+[hc9u.txt] modo=all it=0001 L=0.0000 bestLB=0.0000 UB=42.0 gap=100.00% ||g||=17.0880 theta=0.00143836 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0010 L=0.4078 bestLB=0.4078 UB=42.0 gap=99.03% ||g||=314.4200 theta=4.20719e-06 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0020 L=-0.1044 bestLB=0.5827 UB=42.0 gap=98.61% ||g||=677.7521 theta=9.16612e-07 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0030 L=-1.3804 bestLB=0.6819 UB=42.0 gap=98.38% ||g||=849.3573 theta=6.0133e-07 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0040 L=-7.8703 bestLB=0.7780 UB=42.0 gap=98.15% ||g||=1173.4153 theta=3.62192e-07 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0050 L=-3.1413 bestLB=0.7780 UB=42.0 gap=98.15% ||g||=1071.2217 theta=3.93383e-07 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0060 L=0.6192 bestLB=0.7780 UB=42.0 gap=98.15% ||g||=257.2228 theta=6.25431e-06 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0070 L=-8.2361 bestLB=0.8678 UB=42.0 gap=97.93% ||g||=1330.4299 theta=2.83813e-07 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0080 L=-3.5680 bestLB=0.8678 UB=42.0 gap=97.93% ||g||=1024.2771 theta=4.34335e-07 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0090 L=0.5249 bestLB=0.8678 UB=42.0 gap=97.93% ||g||=512.5269 theta=1.5789e-06 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0100 L=-15.1266 bestLB=0.9496 UB=42.0 gap=97.74% ||g||=1567.8610 theta=2.32393e-07 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0110 L=-9.6824 bestLB=0.9496 UB=42.0 gap=97.74% ||g||=1525.4855 theta=2.22089e-07 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0120 L=-4.9182 bestLB=0.9496 UB=42.0 gap=97.74% ||g||=1040.1557 theta=4.33655e-07 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0130 L=-0.5673 bestLB=0.9496 UB=42.0 gap=97.74% ||g||=677.6940 theta=9.26849e-07 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0140 L=-21.6967 bestLB=0.9778 UB=42.0 gap=97.67% ||g||=1678.8656 theta=2.25988e-07 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0150 L=-15.6180 bestLB=0.9778 UB=42.0 gap=97.67% ||g||=1659.2072 theta=2.09294e-07 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0160 L=-10.1168 bestLB=0.9778 UB=42.0 gap=97.67% ||g||=1619.2317 theta=1.98774e-07 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0170 L=-5.3424 bestLB=0.9778 UB=42.0 gap=97.67% ||g||=975.0965 theta=4.97914e-07 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0180 L=-0.9938 bestLB=0.9778 UB=42.0 gap=97.67% ||g||=600.8336 theta=1.19096e-06 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0190 L=-16.7465 bestLB=0.9778 UB=42.0 gap=97.67% ||g||=1459.5873 theta=2.75754e-07 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0200 L=-11.1302 bestLB=0.9778 UB=42.0 gap=97.67% ||g||=1448.3394 theta=2.5328e-07 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0210 L=-6.6435 bestLB=0.9778 UB=42.0 gap=97.67% ||g||=1008.1368 theta=4.78614e-07 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0220 L=-2.0605 bestLB=0.9778 UB=42.0 gap=97.67% ||g||=868.4444 theta=5.84206e-07 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0230 L=0.9627 bestLB=0.9780 UB=42.0 gap=97.67% ||g||=789.4251 theta=6.58502e-07 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0240 L=-14.6691 bestLB=0.9780 UB=42.0 gap=97.67% ||g||=1470.7920 theta=2.61965e-07 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0250 L=-9.6901 bestLB=0.9780 UB=42.0 gap=97.67% ||g||=1436.9938 theta=2.50321e-07 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0260 L=-4.8968 bestLB=0.9780 UB=42.0 gap=97.67% ||g||=1101.3785 theta=3.86607e-07 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0270 L=-0.6211 bestLB=0.9780 UB=42.0 gap=97.67% ||g||=653.1225 theta=9.99161e-07 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0280 L=-17.1604 bestLB=0.9849 UB=42.0 gap=97.66% ||g||=1536.1833 theta=2.50695e-07 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0290 L=-11.5254 bestLB=0.9849 UB=42.0 gap=97.66% ||g||=1470.7872 theta=2.47435e-07 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0300 L=-6.6111 bestLB=0.9849 UB=42.0 gap=97.66% ||g||=1055.7774 theta=4.36104e-07 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0310 L=-2.6161 bestLB=0.9849 UB=42.0 gap=97.66% ||g||=768.3613 theta=7.5572e-07 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0320 L=-21.2606 bestLB=0.9906 UB=42.0 gap=97.64% ||g||=1557.3977 theta=2.60816e-07 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0330 L=-15.4807 bestLB=0.9906 UB=42.0 gap=97.64% ||g||=1557.3589 theta=2.36998e-07 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0340 L=-9.9916 bestLB=0.9906 UB=42.0 gap=97.64% ||g||=1557.3517 theta=2.14368e-07 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0350 L=-5.1446 bestLB=0.9906 UB=42.0 gap=97.64% ||g||=1024.2577 theta=4.4938e-07 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0360 L=-1.0157 bestLB=0.9906 UB=42.0 gap=97.64% ||g||=701.5255 theta=8.74058e-07 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0370 L=0.9512 bestLB=0.9906 UB=42.0 gap=97.64% ||g||=627.5921 theta=1.04219e-06 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0380 L=-15.0113 bestLB=0.9906 UB=42.0 gap=97.64% ||g||=1481.8981 theta=2.59612e-07 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0390 L=-9.8287 bestLB=0.9906 UB=42.0 gap=97.64% ||g||=1459.4531 theta=2.43327e-07 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0400 L=-5.0979 bestLB=0.9906 UB=42.0 gap=97.64% ||g||=1130.4826 theta=3.68531e-07 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0410 L=-0.7612 bestLB=0.9906 UB=42.0 gap=97.64% ||g||=746.7203 theta=7.66892e-07 pi=0.0100 status=OPTIMAL
+[hc9u.txt] modo=all it=0420 L=0.9597 bestLB=0.9906 UB=42.0 gap=97.64% ||g||=314.5856 theta=2.90289e-06 pi=0.0070 status=OPTIMAL
+[hc9u.txt] modo=all it=0430 L=-8.8882 bestLB=0.9906 UB=42.0 gap=97.64% ||g||=1448.3359 theta=1.69815e-07 pi=0.0070 status=OPTIMAL
+[hc9u.txt] modo=all it=0440 L=-5.5822 bestLB=0.9906 UB=42.0 gap=97.64% ||g||=1525.4940 theta=1.43127e-07 pi=0.0070 status=OPTIMAL
+[hc9u.txt] modo=all it=0450 L=-2.5953 bestLB=0.9906 UB=42.0 gap=97.64% ||g||=1008.1632 theta=3.07132e-07 pi=0.0070 status=OPTIMAL
+[hc9u.txt] modo=all it=0460 L=0.2752 bestLB=0.9906 UB=42.0 gap=97.64% ||g||=627.5057 theta=7.41749e-07 pi=0.0070 status=OPTIMAL
+[hc9u.txt] modo=all it=0470 L=0.9366 bestLB=0.9906 UB=42.0 gap=97.64% ||g||=829.8866 theta=4.17365e-07 pi=0.0070 status=OPTIMAL
+[hc9u.txt] modo=all it=0480 L=0.9252 bestLB=0.9906 UB=42.0 gap=97.64% ||g||=314.5534 theta=2.90592e-06 pi=0.0070 status=OPTIMAL
+[hc9u.txt] modo=all it=0490 L=0.9065 bestLB=0.9906 UB=42.0 gap=97.64% ||g||=257.1847 theta=4.34892e-06 pi=0.0070 status=OPTIMAL
+[hc9u.txt] modo=all it=0500 L=-9.6176 bestLB=0.9906 UB=42.0 gap=97.64% ||g||=1514.7208 theta=1.57482e-07 pi=0.0070 status=OPTIMAL
+[hc9u.txt] modo=all it=0510 L=-6.1921 bestLB=0.9906 UB=42.0 gap=97.64% ||g||=1481.9185 theta=1.53612e-07 pi=0.0070 status=OPTIMAL
+[hc9u.txt] modo=all it=0520 L=-3.1765 bestLB=0.9906 UB=42.0 gap=97.64% ||g||=1145.1357 theta=1.68809e-07 pi=0.0049 status=OPTIMAL
+[hc9u.txt] modo=all it=0530 L=-1.0596 bestLB=0.9906 UB=42.0 gap=97.64% ||g||=940.8992 theta=2.38331e-07 pi=0.0049 status=OPTIMAL
+[hc9u.txt] modo=all it=0540 L=0.8419 bestLB=0.9906 UB=42.0 gap=97.64% ||g||=405.5117 theta=1.22643e-06 pi=0.0049 status=OPTIMAL
+[hc9u.txt] modo=all it=0550 L=-7.6667 bestLB=0.9906 UB=42.0 gap=97.64% ||g||=1536.1823 theta=1.03128e-07 pi=0.0049 status=OPTIMAL
+[hc9u.txt] modo=all it=0560 L=-5.3026 bestLB=0.9906 UB=42.0 gap=97.64% ||g||=1525.4678 theta=9.96035e-08 pi=0.0049 status=OPTIMAL
+[hc9u.txt] modo=all it=0570 L=-3.1006 bestLB=0.9906 UB=42.0 gap=97.64% ||g||=1071.1998 theta=1.92591e-07 pi=0.0049 status=OPTIMAL
+[hc9u.txt] modo=all it=0580 L=-0.9567 bestLB=0.9906 UB=42.0 gap=97.64% ||g||=1071.1595 theta=1.83451e-07 pi=0.0049 status=OPTIMAL
+[hc9u.txt] modo=all it=0590 L=0.7780 bestLB=0.9906 UB=42.0 gap=97.64% ||g||=923.3423 theta=2.36919e-07 pi=0.0049 status=OPTIMAL
+[hc9u.txt] modo=all it=0600 L=0.9676 bestLB=0.9906 UB=42.0 gap=97.64% ||g||=362.9038 theta=1.52665e-06 pi=0.0049 status=OPTIMAL
+[hc9u.txt] modo=all it=0610 L=0.9482 bestLB=0.9906 UB=42.0 gap=97.64% ||g||=314.5012 theta=2.03368e-06 pi=0.0049 status=OPTIMAL
+[hc9u.txt] modo=all it=0620 L=-5.6664 bestLB=0.9906 UB=42.0 gap=97.64% ||g||=1492.9307 theta=7.33545e-08 pi=0.0034 status=OPTIMAL
+[hc9u.txt] modo=all it=0630 L=-4.0878 bestLB=0.9906 UB=42.0 gap=97.64% ||g||=1492.9286 theta=7.09254e-08 pi=0.0034 status=OPTIMAL
+[hc9u.txt] modo=all it=0640 L=-2.5583 bestLB=0.9906 UB=42.0 gap=97.64% ||g||=1330.4297 theta=8.63453e-08 pi=0.0034 status=OPTIMAL
+[hc9u.txt] modo=all it=0650 L=-1.0902 bestLB=0.9906 UB=42.0 gap=97.64% ||g||=1024.2705 theta=1.40878e-07 pi=0.0034 status=OPTIMAL
+[hc9u.txt] modo=all it=0660 L=0.3094 bestLB=0.9906 UB=42.0 gap=97.64% ||g||=653.0969 theta=3.35256e-07 pi=0.0034 status=OPTIMAL
+[hc9u.txt] modo=all it=0670 L=0.9854 bestLB=0.9912 UB=42.0 gap=97.64% ||g||=314.4787 theta=1.42249e-06 pi=0.0034 status=OPTIMAL
+[hc9u.txt] modo=all it=0680 L=0.9710 bestLB=0.9912 UB=42.0 gap=97.64% ||g||=313.6546 theta=1.43048e-06 pi=0.0034 status=OPTIMAL
+[hc9u.txt] modo=all it=0690 L=-4.1603 bestLB=0.9912 UB=42.0 gap=97.64% ||g||=1481.9147 theta=7.20968e-08 pi=0.0034 status=OPTIMAL
+[hc9u.txt] modo=all it=0700 L=-2.6307 bestLB=0.9912 UB=42.0 gap=97.64% ||g||=1481.9159 theta=6.97077e-08 pi=0.0034 status=OPTIMAL
+[hc9u.txt] modo=all it=0710 L=-1.1789 bestLB=0.9912 UB=42.0 gap=97.64% ||g||=1187.2771 theta=1.05066e-07 pi=0.0034 status=OPTIMAL
+[hc9u.txt] modo=all it=0720 L=0.2263 bestLB=0.9912 UB=42.0 gap=97.64% ||g||=849.4039 theta=1.98595e-07 pi=0.0034 status=OPTIMAL
+[hc9u.txt] modo=all it=0730 L=0.9843 bestLB=0.9925 UB=42.0 gap=97.64% ||g||=600.8609 theta=3.89669e-07 pi=0.0034 status=OPTIMAL
+[hc9u.txt] modo=all it=0740 L=-4.6005 bestLB=0.9925 UB=42.0 gap=97.64% ||g||=1459.6116 theta=7.50257e-08 pi=0.0034 status=OPTIMAL
+[hc9u.txt] modo=all it=0750 L=-3.1047 bestLB=0.9925 UB=42.0 gap=97.64% ||g||=1470.8144 theta=7.15155e-08 pi=0.0034 status=OPTIMAL
+[hc9u.txt] modo=all it=0760 L=-1.6458 bestLB=0.9925 UB=42.0 gap=97.64% ||g||=1159.3236 theta=1.11385e-07 pi=0.0034 status=OPTIMAL
+[hc9u.txt] modo=all it=0770 L=-0.2112 bestLB=0.9925 UB=42.0 gap=97.64% ||g||=991.7583 theta=1.47201e-07 pi=0.0034 status=OPTIMAL
+[hc9u.txt] modo=all it=0780 L=0.9941 bestLB=0.9941 UB=42.0 gap=97.63% ||g||=182.6350 theta=4.2167e-06 pi=0.0034 status=OPTIMAL
+[hc9u.txt] modo=all it=0790 L=0.9768 bestLB=0.9941 UB=42.0 gap=97.63% ||g||=405.5216 theta=8.55649e-07 pi=0.0034 status=OPTIMAL
+[hc9u.txt] modo=all it=0800 L=0.9614 bestLB=0.9941 UB=42.0 gap=97.63% ||g||=405.5517 theta=8.55844e-07 pi=0.0034 status=OPTIMAL
+[hc9u.txt] modo=all it=0810 L=-3.2276 bestLB=0.9941 UB=42.0 gap=97.63% ||g||=1437.0287 theta=7.5122e-08 pi=0.0034 status=OPTIMAL
+[hc9u.txt] modo=all it=0820 L=-1.7573 bestLB=0.9941 UB=42.0 gap=97.63% ||g||=1318.0800 theta=8.63895e-08 pi=0.0034 status=OPTIMAL
+[hc9u.txt] modo=all it=0830 L=-0.3222 bestLB=0.9941 UB=42.0 gap=97.63% ||g||=1101.3693 theta=1.19673e-07 pi=0.0034 status=OPTIMAL
+[hc9u.txt] modo=all it=0840 L=0.9513 bestLB=0.9941 UB=42.0 gap=97.63% ||g||=314.4323 theta=1.4241e-06 pi=0.0034 status=OPTIMAL
+[hc9u.txt] modo=all it=0850 L=0.9751 bestLB=0.9941 UB=42.0 gap=97.63% ||g||=182.7731 theta=4.21228e-06 pi=0.0034 status=OPTIMAL
+[hc9u.txt] modo=all it=0860 L=0.9602 bestLB=0.9941 UB=42.0 gap=97.63% ||g||=362.9086 theta=1.06882e-06 pi=0.0034 status=OPTIMAL
+[hc9u.txt] modo=all it=0870 L=-3.8023 bestLB=0.9941 UB=42.0 gap=97.63% ||g||=1481.8632 theta=7.15427e-08 pi=0.0034 status=OPTIMAL
+[hc9u.txt] modo=all it=0880 L=-2.2719 bestLB=0.9941 UB=42.0 gap=97.63% ||g||=1402.3949 theta=5.4048e-08 pi=0.0024 status=OPTIMAL
+[hc9u.txt] modo=all it=0890 L=-1.2439 bestLB=0.9941 UB=42.0 gap=97.63% ||g||=1254.1803 theta=6.6008e-08 pi=0.0024 status=OPTIMAL
+[hc9u.txt] modo=all it=0900 L=-0.2423 bestLB=0.9941 UB=42.0 gap=97.63% ||g||=1008.1741 theta=9.97857e-08 pi=0.0024 status=OPTIMAL
+[hc9u.txt] modo=all it=0910 L=0.7312 bestLB=0.9941 UB=42.0 gap=97.63% ||g||=746.4003 theta=1.77857e-07 pi=0.0024 status=OPTIMAL
+[hc9u.txt] modo=all it=0920 L=-3.2360 bestLB=0.9941 UB=42.0 gap=97.63% ||g||=1459.6257 theta=5.09792e-08 pi=0.0024 status=OPTIMAL
+[hc9u.txt] modo=all it=0930 L=-2.1632 bestLB=0.9941 UB=42.0 gap=97.63% ||g||=1459.5971 theta=4.97721e-08 pi=0.0024 status=OPTIMAL
+[hc9u.txt] modo=all it=0940 L=-1.1322 bestLB=0.9941 UB=42.0 gap=97.63% ||g||=1159.3308 theta=7.70511e-08 pi=0.0024 status=OPTIMAL
+[hc9u.txt] modo=all it=0950 L=-0.2284 bestLB=0.9941 UB=42.0 gap=97.63% ||g||=1040.1374 theta=9.37164e-08 pi=0.0024 status=OPTIMAL
+[hc9u.txt] modo=all it=0960 L=0.7032 bestLB=0.9941 UB=42.0 gap=97.63% ||g||=746.7039 theta=1.77833e-07 pi=0.0024 status=OPTIMAL
+[hc9u.txt] modo=all it=0970 L=-3.5773 bestLB=0.9966 UB=42.0 gap=97.63% ||g||=1402.3849 theta=5.56425e-08 pi=0.0024 status=OPTIMAL
+[hc9u.txt] modo=all it=0980 L=-2.5589 bestLB=0.9966 UB=42.0 gap=97.63% ||g||=1425.5553 theta=5.26452e-08 pi=0.0024 status=OPTIMAL
+[hc9u.txt] modo=all it=0990 L=-1.5305 bestLB=0.9966 UB=42.0 gap=97.63% ||g||=1402.3751 theta=5.31444e-08 pi=0.0024 status=OPTIMAL
+[hc9u.txt] modo=all it=1000 L=-0.5316 bestLB=0.9966 UB=42.0 gap=97.63% ||g||=1173.3535 theta=7.4173e-08 pi=0.0024 status=OPTIMAL
+
+[ok] 1 instância(s) processada(s).
+[ok] Iterações salvas em: results/lagrangeano_all_iteracoes.csv
+[ok] Resumo salvo em: results/lagrangeano_all_resumo.csv

@@ -1,0 +1,2 @@
+instancia,status,objetivo,bound,gap,tempo,r,m,n_vertices,n_arestas,n_arcos_dirigidos,n_var_y,n_var_x,n_var_z,n_var_a,n_conservacao,n_ativacao
+hc9u.txt,TIME_LIMIT,40.0,31.0,0.225,3600.2235,1,128,512,2304,4608,512,4608,512,256,1024,512

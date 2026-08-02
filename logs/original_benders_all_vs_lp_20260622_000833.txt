@@ -1,0 +1,86 @@
+1 arquivo(s) encontrado(s) em inputs
+Relaxação: original/agregada, sem caminhos
+Método dual: Benders/Kelley cutting-plane
+Modo de relaxação: all
+CSV de iterações: results_original_benders_vs_lp/original_all_benders_iteracoes.csv
+CSV de resumo: results_original_benders_vs_lp/original_all_benders_resumo.csv
+
+================================================================================
+Arquivo: hc9u.txt
+R original: 1
+Relaxação: original/agregada, sem caminhos
+Método dual: Benders/Kelley cutting-plane
+Modo de relaxação: all
+|V|=512 |A_r|=4608 |S|=|T|=128 |VI|=256
+Multiplicadores: 1024
+lambda_max: 10.0
+Fluxo inteiro no oracle: False
+UB referência: 42.0
+Comparação LP original x LR-Benders: True
+================================================================================
+[hc9u.txt] Resolvendo relaxação linear da formulação original/agregada...
+Set parameter Username
+Academic license - for non-commercial use only - expires 2026-08-17
+[hc9u.txt] LP-original status=OPTIMAL LB_LP=1.0 runtime=0.269s
+[hc9u.txt] benders-all it=00001 L=0 bestLB=0 dualUB=5.6664e+06 gapDual=5.6664e+06 ||g||=17827.3 distLambda=320 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00010 L=-79.8442239 bestLB=0 dualUB=423.569 gapDual=423.569 ||g||=17354.9 distLambda=0.44396 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00020 L=-77.1320147 bestLB=0 dualUB=418.598 gapDual=418.598 ||g||=17016.6 distLambda=0.322868 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00030 L=-71.8531899 bestLB=0 dualUB=416.778 gapDual=416.778 ||g||=16722.4 distLambda=0.283472 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00040 L=-68.2150192 bestLB=0 dualUB=415.089 gapDual=415.089 ||g||=16328.3 distLambda=0.289953 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00050 L=-66.3561015 bestLB=0 dualUB=413.392 gapDual=413.392 ||g||=15905.2 distLambda=0.266443 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00060 L=-68.5900594 bestLB=0 dualUB=411.014 gapDual=411.014 ||g||=16149.5 distLambda=0.250769 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00070 L=-62.0352637 bestLB=0 dualUB=410.095 gapDual=410.095 ||g||=15842.4 distLambda=0.231549 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00080 L=-60.7299546 bestLB=0 dualUB=409.015 gapDual=409.015 ||g||=15545.7 distLambda=0.198999 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00090 L=-55.0279407 bestLB=0 dualUB=408.216 gapDual=408.216 ||g||=15184.2 distLambda=0.179132 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00100 L=-54.1952496 bestLB=0 dualUB=406.975 gapDual=406.975 ||g||=14909.7 distLambda=0.181447 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00110 L=-52.526807 bestLB=0 dualUB=406.071 gapDual=406.071 ||g||=14856.9 distLambda=0.185575 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00120 L=-57.0646449 bestLB=0 dualUB=404.938 gapDual=404.938 ||g||=15027.4 distLambda=0.179949 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00130 L=-56.1829061 bestLB=0 dualUB=403.649 gapDual=403.649 ||g||=15296.3 distLambda=0.169697 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00140 L=-50.769409 bestLB=0 dualUB=403.042 gapDual=403.042 ||g||=14546.4 distLambda=0.173792 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00150 L=-43.4562506 bestLB=0 dualUB=402.282 gapDual=402.282 ||g||=14585.3 distLambda=0.154261 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00160 L=-49.3811496 bestLB=0 dualUB=401.298 gapDual=401.298 ||g||=14175 distLambda=0.166772 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00170 L=-55.8159983 bestLB=0 dualUB=399.465 gapDual=399.465 ||g||=14460.7 distLambda=0.17708 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00180 L=-52.2687529 bestLB=0 dualUB=398.785 gapDual=398.785 ||g||=14335.2 distLambda=0.172198 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00190 L=-50.6552509 bestLB=0 dualUB=398.444 gapDual=398.444 ||g||=14258 distLambda=0.163833 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00200 L=-49.2745818 bestLB=0 dualUB=397.977 gapDual=397.977 ||g||=13886.6 distLambda=0.161044 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00210 L=-50.3951579 bestLB=0 dualUB=396.933 gapDual=396.933 ||g||=14291.7 distLambda=0.169663 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00220 L=-47.2879612 bestLB=0 dualUB=396.216 gapDual=396.216 ||g||=13799.9 distLambda=0.167779 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00230 L=-46.6026764 bestLB=0 dualUB=395.707 gapDual=395.707 ||g||=13983.8 distLambda=0.157029 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00240 L=-49.19498 bestLB=0 dualUB=395.106 gapDual=395.106 ||g||=13759 distLambda=0.157906 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00250 L=-47.6637703 bestLB=0 dualUB=394.123 gapDual=394.123 ||g||=13857.7 distLambda=0.159615 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00260 L=-47.5842275 bestLB=0 dualUB=393.414 gapDual=393.414 ||g||=13593.7 distLambda=0.159209 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00270 L=-46.5488671 bestLB=0 dualUB=392.856 gapDual=392.856 ||g||=13436.9 distLambda=0.16214 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00280 L=-48.5679688 bestLB=0 dualUB=392.255 gapDual=392.255 ||g||=13210.9 distLambda=0.15685 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00290 L=-48.3308954 bestLB=0 dualUB=391.433 gapDual=391.433 ||g||=12671.3 distLambda=0.157277 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00300 L=-48.1253537 bestLB=0 dualUB=390.641 gapDual=390.641 ||g||=13381.8 distLambda=0.157547 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00310 L=-46.5168172 bestLB=0 dualUB=389.992 gapDual=389.992 ||g||=13508.4 distLambda=0.158738 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00320 L=-42.2697573 bestLB=0 dualUB=389.411 gapDual=389.411 ||g||=13456.3 distLambda=0.155561 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00330 L=-43.9480692 bestLB=0 dualUB=389.037 gapDual=389.037 ||g||=13195.2 distLambda=0.147944 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00340 L=-38.2683628 bestLB=0 dualUB=388.502 gapDual=388.502 ||g||=12838.6 distLambda=0.141537 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00350 L=-42.2197963 bestLB=0 dualUB=387.635 gapDual=387.635 ||g||=12841.9 distLambda=0.154532 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00360 L=-46.8336448 bestLB=0 dualUB=386.641 gapDual=386.641 ||g||=12752.4 distLambda=0.160707 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00370 L=-45.5221266 bestLB=0 dualUB=386.194 gapDual=386.194 ||g||=13122.2 distLambda=0.148975 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00380 L=-44.5478517 bestLB=0 dualUB=385.789 gapDual=385.789 ||g||=12956.5 distLambda=0.147264 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00390 L=-47.3898561 bestLB=0 dualUB=385.46 gapDual=385.46 ||g||=12600.4 distLambda=0.150409 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00400 L=-38.9069595 bestLB=0 dualUB=384.969 gapDual=384.969 ||g||=12458.9 distLambda=0.148941 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00410 L=-46.5152953 bestLB=0 dualUB=384.306 gapDual=384.306 ||g||=12598 distLambda=0.149887 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00420 L=-43.8834377 bestLB=0 dualUB=383.7 gapDual=383.7 ||g||=12887.4 distLambda=0.149049 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00430 L=-47.2925632 bestLB=0 dualUB=383.285 gapDual=383.285 ||g||=12691.5 distLambda=0.159404 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00440 L=-39.0607692 bestLB=0 dualUB=382.723 gapDual=382.723 ||g||=12283.8 distLambda=0.152334 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00450 L=-46.4351851 bestLB=0 dualUB=381.939 gapDual=381.939 ||g||=12542.2 distLambda=0.157729 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00460 L=-42.2885613 bestLB=0 dualUB=381.315 gapDual=381.315 ||g||=12434.9 distLambda=0.148354 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00470 L=-49.1065139 bestLB=0 dualUB=380.896 gapDual=380.896 ||g||=12882.3 distLambda=0.153564 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00480 L=-45.0301282 bestLB=0 dualUB=380.431 gapDual=380.431 ||g||=12087 distLambda=0.153953 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00490 L=-44.652095 bestLB=0 dualUB=379.9 gapDual=379.9 ||g||=12337.2 distLambda=0.14964 statusSub=OPTIMAL statusMaster=OPTIMAL
+[hc9u.txt] benders-all it=00500 L=-48.4733201 bestLB=0 dualUB=379.482 gapDual=379.482 ||g||=12605.9 distLambda=0.146407 statusSub=OPTIMAL statusMaster=OPTIMAL
+
+--------------------------------------------------------------------------------
+Resumo hc9u.txt
+LP original: 1.0
+LR-Benders original: 0.0
+Classificação: LR_Benders_pior_que_LP_original
+--------------------------------------------------------------------------------
+
+[ok] 1 instância(s) processada(s).
+[ok] Iterações salvas em: results_original_benders_vs_lp/original_all_benders_iteracoes.csv
+[ok] Resumo salvo em: results_original_benders_vs_lp/original_all_benders_resumo.csv
