@@ -12,6 +12,7 @@ from ms_utils import (
     RegistSerieTemporal,
 )
 
+
 def construir_modelo_estendido_equivalente(S, T, VI, arcos):
     """Modelo estendido configurado para ser equivalente ao baseline."""
     S = list(S)
@@ -53,6 +54,7 @@ def construir_modelo_estendido_equivalente(S, T, VI, arcos):
     # somatórios auxiliares por robô s
     def soma_entrada(no, s):
         return quicksum(x[(s, u, v)] for (u, v) in arcos_entrada.get(no, []))
+
     def soma_saida(no, s):
         return quicksum(x[(s, u, v)] for (u, v) in arcos_saida.get(no, []))
 
@@ -61,12 +63,14 @@ def construir_modelo_estendido_equivalente(S, T, VI, arcos):
         # origem do próprio robô
         modelo.addConstr(soma_entrada(s, s) == 0, name=f"in_S_self[{s}]")
         modelo.addConstr(soma_saida(s, s)   == 1, name=f"out_S_self[{s}]")
+
         # outras origens não transitáveis por s
         for k in S:
             if k == s:
                 continue
             modelo.addConstr(soma_entrada(k, s) == 0, name=f"in_S_other[{s},{k}]")
             modelo.addConstr(soma_saida(k, s)   == 0, name=f"out_S_other[{s},{k}]")
+
         # destinos: entra em exatamente um (p[s,t]), nunca sai de T
         for t in T:
             modelo.addConstr(soma_entrada(t, s) == p[(s, t)], name=f"in_T[{s},{t}]")
@@ -75,18 +79,22 @@ def construir_modelo_estendido_equivalente(S, T, VI, arcos):
     # conservação e ativação em VI
     for s in S:
         for v in VI:
-            modelo.addConstr(soma_entrada(v, s) == soma_saida(v, s), name=f"flow_cons[{s},{v}]")
-            modelo.addConstr(soma_entrada(v, s) <= y[v], name=f"activate_in[{s},{v}]")
-            modelo.addConstr(soma_saida(v, s)   <= y[v], name=f"activate_out[{s},{v}]")
+            modelo.addConstr(
+                soma_entrada(v, s) == soma_saida(v, s),
+                name=f"flow_cons[{s},{v}]",
+            )
+            modelo.addConstr(
+                soma_entrada(v, s) <= y[v],
+                name=f"activate_in[{s},{v}]",
+            )
 
     modelo.update()
     return modelo, y, x, p, len(A), len(VI)
 
 
-
 def executar_para_R_estendido(nome_instancia, S, T, VI, V, adj, R,
                               tempo_limite_s=1200,
-                              pasta_plots = None,
+                              pasta_plots=None,
                               plot_amostra_s=5.0,
                               plot_escala_y="linear",
                               plot_corte_ini_s=0.5,
@@ -99,13 +107,21 @@ def executar_para_R_estendido(nome_instancia, S, T, VI, V, adj, R,
     t0 = time.monotonic()
 
     A = construir_arcos_alcance(V, adj, R)
-    modelo, y, x, p, tam_AR, tam_VI = construir_modelo_estendido_equivalente(S=S, T=T, VI=VI, arcos=A)
+    modelo, y, x, p, tam_AR, tam_VI = construir_modelo_estendido_equivalente(
+        S=S,
+        T=T,
+        VI=VI,
+        arcos=A,
+    )
     modelo.Params.TimeLimit = tempo_limite_s
 
     logger = RegistSerieTemporal(
-        nome_instancia, R, pasta_plots,
+        nome_instancia,
+        R,
+        pasta_plots,
         intervalo_amostra=plot_amostra_s,
-        suffix="_ext", titulo_tag="EXT"
+        suffix="_ext",
+        titulo_tag="EXT",
     )
 
     def callback(m, where):
@@ -116,12 +132,14 @@ def executar_para_R_estendido(nome_instancia, S, T, VI, V, adj, R,
                 ub = m.cbGet(GRB.Callback.MIP_OBJBST)
                 nos = int(m.cbGet(GRB.Callback.MIP_NODCNT))
                 logger.talvez_adicionar(t, lb, ub, nos)
+
             elif where == GRB.Callback.MIPSOL:
                 t = m.cbGet(GRB.Callback.RUNTIME)
                 ub = m.cbGet(GRB.Callback.MIPSOL_OBJ)
                 lb = m.cbGet(GRB.Callback.MIP_OBJBND)
                 nos = int(m.cbGet(GRB.Callback.MIP_NODCNT))
                 logger.talvez_adicionar(t, lb, ub, nos, forcar=True)
+
         except Exception:
             pass
 
@@ -141,30 +159,32 @@ def executar_para_R_estendido(nome_instancia, S, T, VI, V, adj, R,
             LS = float(modelo.ObjVal)
         except Exception:
             LS = None
+
     try:
         LI = float(modelo.ObjBound)
     except Exception:
         LI = None
+
     try:
         if solcount > 0:
             gap = float(modelo.MIPGap)
     except Exception:
         gap = None
 
-    n_vars = len(y) + len(x) + len(p)
-    n_cons = (
-        len(S) + len(T)
-        + 2*len(S) + 2*len(S)*(len(S)-1)
-        + 2*len(S)*len(T)
-        + 3*len(S)*len(VI)
-    )
+    n_vars = modelo.NumVars
+    n_cons = modelo.NumConstrs
 
     try:
         nos_busca_final = int(getattr(modelo, "NodeCount", 0))
-        logger.talvez_adicionar(tempo, LI if LI is not None else float("nan"),
-                                LS if LS is not None else float("nan"),
-                                nos_busca_final, forcar=True)
-        
+
+        logger.talvez_adicionar(
+            tempo,
+            LI if LI is not None else float("nan"),
+            LS if LS is not None else float("nan"),
+            nos_busca_final,
+            forcar=True,
+        )
+
         caminho_csv = logger.salvar_csv()
         caminho_png = logger.salvar_grafico(
             escala_y=plot_escala_y,
@@ -173,10 +193,12 @@ def executar_para_R_estendido(nome_instancia, S, T, VI, V, adj, R,
             mostrar_gap=plot_mostrar_gap,
             max_pontos=plot_max_pontos,
         )
-        if caminho_csv: 
+
+        if caminho_csv:
             print(f"Série salva em: {caminho_csv}")
-        if caminho_png: 
+        if caminho_png:
             print(f"Gráfico salvo em: {caminho_png}")
+
     except Exception as e:
         print(f"Aviso ao salvar série/plot: {e}")
 
@@ -205,17 +227,20 @@ def executar_para_R_estendido(nome_instancia, S, T, VI, V, adj, R,
 
 
 CSV_HEADER = [
-    "instance","R","N_nodes","M_base","A_R","m","VI","vars","cons",
-    "status","solcount","LI","LS","gap","runtime_s","nodes","timelimit","model"
+    "instance", "R", "N_nodes", "M_base", "A_R", "m", "VI", "vars", "cons",
+    "status", "solcount", "LI", "LS", "gap", "runtime_s", "nodes", "timelimit", "model"
 ]
+
 
 def write_csv(linhas, caminho_csv):
     primeira = not caminho_csv.exists()
+
     with caminho_csv.open("a", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=CSV_HEADER)
-        
+
         if primeira:
             w.writeheader()
+
         for r in linhas:
             w.writerow({k: r.get(k, "") for k in CSV_HEADER})
 
@@ -229,7 +254,7 @@ def varrer_R_e_coletar_estendido(caminho_instancia,
                                  plot_teto_pct,
                                  plot_max_pontos,
                                  plot_mostrar_gap):
-    
+
     nome = caminho_instancia.name
 
     try:
@@ -238,7 +263,15 @@ def varrer_R_e_coletar_estendido(caminho_instancia,
         print(f"[{nome}] ERRO no parsing: {e}")
         return []
 
-    S, T, VI, V, E_pesos, R0 = dados["S"], dados["T"], dados["VI"], dados["V"], dados["E"], dados["R"]
+    S, T, VI, V, E_pesos, R0 = (
+        dados["S"],
+        dados["T"],
+        dados["VI"],
+        dados["V"],
+        dados["E"],
+        dados["R"],
+    )
+
     adj = construir_adjacencia(E_pesos)
 
     linhas = []
@@ -248,26 +281,30 @@ def varrer_R_e_coletar_estendido(caminho_instancia,
         print(f"\n[{nome}][EXT] ===== R = {R_atual} =====")
 
         linha = executar_para_R_estendido(
-                nome_instancia=nome, 
-                S=S, 
-                T=T, 
-                VI=VI, 
-                V=V, 
-                adj=adj,
-                R=R_atual,
-                tempo_limite_s=tempo_limite_s,
-                pasta_plots=pasta_plots,
-                plot_amostra_s=plot_amostra_s,
-                plot_escala_y=plot_escala_y,
-                plot_corte_ini_s=plot_corte_ini_s,
-                plot_teto_pct=plot_teto_pct,
-                plot_max_pontos=plot_max_pontos,
-                plot_mostrar_gap=plot_mostrar_gap,
+            nome_instancia=nome,
+            S=S,
+            T=T,
+            VI=VI,
+            V=V,
+            adj=adj,
+            R=R_atual,
+            tempo_limite_s=tempo_limite_s,
+            pasta_plots=pasta_plots,
+            plot_amostra_s=plot_amostra_s,
+            plot_escala_y=plot_escala_y,
+            plot_corte_ini_s=plot_corte_ini_s,
+            plot_teto_pct=plot_teto_pct,
+            plot_max_pontos=plot_max_pontos,
+            plot_mostrar_gap=plot_mostrar_gap,
         )
 
         linhas.append(linha)
 
-        if (linha["status"] == GRB.INFEASIBLE) or (linha["A_R"] == 0) or (R_atual <= 0):
+        if (
+            (linha["status"] == GRB.INFEASIBLE)
+            or (linha["A_R"] == 0)
+            or (R_atual <= 0)
+        ):
             break
 
         R_atual -= 1.0
@@ -279,32 +316,56 @@ def main():
     ap = argparse.ArgumentParser(
         description="Solver MIN-STATION (estendido, equivalente ao baseline) — varre R e salva resultados."
     )
-    ap.add_argument("--inputs-dir", type=str, default="./inputs",
-                    help="Pasta de instâncias. Padrão: ./inputs")
-    ap.add_argument("--csv-out", type=str, default="results_min_station.csv",
-                    help="CSV de saída (append). Padrão: results_min_station.csv")
-    ap.add_argument("--time-limit", type=int, default=1200,
-                    help="Tempo máximo por execução (s). Padrão: 1200 (20 min)")
-    ap.add_argument("--plots-dir", type=str, default="plots",
-                    help="Salvar PNG e CSV da série temporal aqui.")
+
+    ap.add_argument(
+        "--inputs-dir",
+        type=str,
+        default="./inputs",
+        help="Pasta de instâncias. Padrão: ./inputs",
+    )
+
+    ap.add_argument(
+        "--csv-out",
+        type=str,
+        default="results_min_station.csv",
+        help="CSV de saída (append). Padrão: results_min_station.csv",
+    )
+
+    ap.add_argument(
+        "--time-limit",
+        type=int,
+        default=1200,
+        help="Tempo máximo por execução (s). Padrão: 1200 (20 min)",
+    )
+
+    ap.add_argument(
+        "--plots-dir",
+        type=str,
+        default="plots",
+        help="Salvar PNG e CSV da série temporal aqui.",
+    )
+
     args = ap.parse_args()
 
     pasta = Path(args.inputs_dir)
     arquivos = sorted([p for p in pasta.glob("*.txt") if p.is_file()])
+
     if not arquivos:
         print(f"Nenhum .txt em {pasta}.")
         return
 
     pasta_plots = Path(args.plots_dir) if args.plots_dir else None
+
     print(f"{len(arquivos)} arquivo(s) encontrados em {pasta}")
+
     total = 0
     caminho_csv = Path(args.csv_out)
 
     for p in arquivos:
-        print("\n" + "="*80)
+        print("\n" + "=" * 80)
         print(f"Arquivo: {p.name}")
-        print("="*80)
-        
+        print("=" * 80)
+
         linhas = varrer_R_e_coletar_estendido(
             p,
             tempo_limite_s=args.time_limit,
@@ -321,6 +382,7 @@ def main():
         total += len(linhas)
 
     print(f"\n[ok][EXT] {total} linha(s) salvas em {caminho_csv}")
+
 
 if __name__ == "__main__":
     main()

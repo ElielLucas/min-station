@@ -200,15 +200,25 @@ class RegistSerieTemporal:
         lbs = np.array([p[1] for p in self.pontos], dtype=float)
         ubs = np.array([p[2] for p in self.pontos], dtype=float)
 
+        # O Gurobi pode usar valores muito altos para representar infinito.
+        # Esses valores não devem ser considerados no gráfico.
+        limite_infinito = 1e90
+
+        lbs[~np.isfinite(lbs) | (np.abs(lbs) >= limite_infinito)] = np.nan
+        ubs[~np.isfinite(ubs) | (np.abs(ubs) >= limite_infinito)] = np.nan
+
         if len(ts) > max_pontos:
             idx = np.linspace(0, len(ts)-1, max_pontos).round().astype(int)
             ts, lbs, ubs = ts[idx], lbs[idx], ubs[idx]
 
         mascara = ts >= float(corte_inicial_s)
         ref = np.r_[lbs[mascara], ubs[mascara]]
-        ref = ref[~np.isnan(ref)]
+        ref = ref[np.isfinite(ref)]
+
         if ref.size == 0:
-            ref = np.r_[lbs, ubs][~np.isnan(np.r_[lbs, ubs])]
+            ref_total = np.r_[lbs, ubs]
+            ref = ref_total[np.isfinite(ref_total)]
+
         if ref.size == 0:
             print("[plot] sem valores numéricos")
             return None
@@ -232,16 +242,17 @@ class RegistSerieTemporal:
         ax.grid(True, which="both", linewidth=0.6, alpha=0.5)
         ax.legend(loc="best")
         tag = f" [{self.titulo_tag}]" if self.titulo_tag else ""
-        ax.set_title(f"Evolução dos limitantes — {self.instancia} (R={int(self.R)}){tag}")
+        ax.set_title(f"Evolução dos limitantes — {self.instancia} (r={int(self.R)}){tag}")
 
         if mostrar_gap:
             with np.errstate(divide='ignore', invalid='ignore'):
                 gap_pct = (ubs - lbs) / np.where(np.abs(ubs) > 1e-12, np.abs(ubs), np.nan) * 100.0
+
             ax2 = ax.twinx()
             ax2.plot(ts, gap_pct, linestyle=":", label="gap (%)")
 
             if np.isfinite(gap_pct).any():
-                topo = float(np.nanpercentile(gap_pct[~np.isnan(gap_pct)], 99.0))
+                topo = float(np.nanpercentile(gap_pct[np.isfinite(gap_pct)], 99.0))
                 ax2.set_ylim(0, max(5.0, topo*1.15))
 
             ax2.set_ylabel("Gap (%)")

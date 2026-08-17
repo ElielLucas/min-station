@@ -47,7 +47,6 @@ def construir_modelo_baseline(S, T, VI, arcos, custos_estacao=None):
         modelo.addConstr(quicksum(f[a] for a in arcos_entrada.get(v, [])) ==
                          quicksum(f[a] for a in arcos_saida.get(v, [])),    name=f"fluxo_cons[{v}]")
         modelo.addConstr(quicksum(f[a] for a in arcos_entrada.get(v, [])) <= m * y[v], name=f"ativa_in[{v}]")
-        modelo.addConstr(quicksum(f[a] for a in arcos_saida.get(v, []))   <= m * y[v], name=f"ativa_out[{v}]")
 
     modelo.update()
     return modelo, y, f, len(A), len(VI)
@@ -126,8 +125,8 @@ def executar_para_R(nome_instancia,
     except Exception:
         gap = None
 
-    n_vars = len(A) + tam_VI
-    n_cons = 2*len(S) + 2*len(T) + 3*tam_VI
+    n_vars = modelo.NumVars
+    n_cons = modelo.NumConstrs
 
     try:
         nos_busca_final = int(getattr(modelo, "NodeCount", 0))
