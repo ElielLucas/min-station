@@ -647,12 +647,23 @@ Cada linha segue a cadeia **propriedade → problema observado → técnica → 
   método). Detalhes em `resultados-e7-pli.md` §5.1. O E8 (`plano-experimentos-e8` no plano de
   execução) refaz a comparação com os mesmos cortes estáticos, um MIP start sempre viável e um
   oráculo com guarda de tempo — só depois disso o critério de abandono desta seção se aplica.
-- **Resultado [E8] — critério aplicado: A2 continua.** Comparação com mesmos cortes, mesmo start
-  primal e mesmo TL (300 s, uma seed). R-a (TNTP): o compacto vence em UB e LB nas quatro
-  instâncias; BC-y e CBI não saem do UB do primal. R-b/R-b': LB empata em hc9u (32) e o CBI dá o
-  melhor LB em hc10p (53 vs. 52) e bip42p (35 vs. 33); UB melhor no compacto. R-c: CBI prova
-  OPT(cc12-2p)=6 em 7,5 s, BC-y em 292 s, e o compacto não prova. Proposta a decidir: seguir A2 só
-  fora de R-a, com o CBI (mestre exato iterado) como variante principal. Ver `resultados-e8-pli.md`.
+- **Resultado [E8] — critério aplicado: A2 continua, mas o escopo proposto está sob suspeita
+  (ver benchmark-v1).** Comparação com mesmos cortes, mesmo start primal e mesmo TL (300 s, uma
+  seed). R-a (TNTP): o compacto vence em UB e LB nas quatro instâncias; BC-y e CBI não saem do UB
+  do primal. R-b/R-b': LB empata em hc9u (32) e o CBI dá o melhor LB em hc10p (53 vs. 52) e
+  bip42p (35 vs. 33); UB melhor no compacto. R-c: CBI prova OPT(cc12-2p)=6 em 7,5 s, BC-y em 292 s,
+  e o compacto não prova. Proposta a decidir: seguir A2 só fora de R-a, com o CBI (mestre exato
+  iterado) como variante principal. Ver `resultados-e8-pli.md`.
+  **Ressalva [benchmark-v1, 2026-09-26]:** as quatro instâncias que sustentam "compacto vence em
+  R-a" são TNTP — extensão ponderada e dirigida, terminais em folhas, e três das sete instâncias
+  TNTP do projeto são triviais (r ≥ λ\*, logo OPT = 0; ver `benchmark-v1.md` §5). A instância que
+  sustenta "CBI vence em R-c" é `cc12-2p`, extensão ponderada. Nas 70 instâncias do benchmark-v1,
+  fiéis a Das, o regime R-c não produz nenhuma instância difícil (17 de 19 resolvidas em ≤ 60 s,
+  as outras 2 em ≤ 600 s) — o regime em que o CBI venceu não se reproduz no problema de Das. As
+  instâncias R-a do benchmark-v1 (MAPF, Vienna, PUCN) têm caráter muito diferente das TNTP e ainda
+  não foram testadas com os três métodos. **A proposta de recorte de escopo ("A2 só fora de R-a")
+  fica suspensa até um veredito refeito sobre o benchmark-v1 (E12, `plano-pos-e8-adiado.md`)** —
+  mesmo status de suspensão que o E7 teve até o E8.
 
 ### Prioridade B
 

@@ -70,6 +70,10 @@ coluna `Ar_igual_E`): são exatamente as instâncias de Das com r=1 no mesmo gra
 Em cc10-2p/cc12-2p um salto pode ter duas arestas curtas mas não uma longa, o que
 nenhuma autonomia em passos reproduz.
 
+**Instâncias triviais.** Com o R gravado no arquivo, Chicago st5 (R=32), Philadelphia st39 (R=20)
+e Barcelona st54 (R=21) têm r ≥ λ\* (distância de gargalo do emparelhamento S–T), logo OPT = 0.
+Detalhes em `docs/technical/reference/benchmark-v1.md` §5.
+
 ## Q3 — Demonstração de equivalência do fluxo agregado
 
 **Status:** demonstração formal a consolidar.
@@ -138,4 +142,8 @@ de `dijkstra_to` justamente por causa da assimetria.
 
 Decidir: (a) manter as TNTP como extensão dirigida declarada, (b) simetrizar
 na conversão, ou (c) tirá-las das conclusões sobre o problema de Das.
+
+**Decisão (2026-09-26, delegada):** (a) para as instâncias atuais, que ficam fora das conclusões
+sobre Das; versão retrabalhada (não dirigida, com subdivisão e terminais fora das folhas) no
+lote 2 do benchmark-v1.
 

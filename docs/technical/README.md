@@ -11,8 +11,14 @@ technical/
 ├── README.md
 ├── governance/
 │   └── open-questions.md
+├── plans/
+│   └── plano-*.md            # planos de execução por rodada de experimentos
 └── reference/
     ├── source-map.md
+    ├── benchmark-v1.md        # metodologia e resultados das instâncias
+    ├── resultados-*.md        # relatórios por rodada (E0-E1, E2-E4, E7, E8, ...)
+    ├── direcoes-pli-min-station.md
+    ├── validacao-formulacao-base.md
     ├── min-station-das.pdf
     ├── artigo-sbpo.pdf
     └── formulacao-base-all-vertices.pdf
@@ -40,6 +46,7 @@ Nenhuma dessas fontes deve substituir silenciosamente as demais.
 | Ver diferenças entre versões | `reference/source-map.md` |
 | Ver pontos não resolvidos | `governance/open-questions.md` |
 | Entender implementação | `../context-ai/code-guidelines.md` + código real |
+| Escolher instâncias experimentais | `reference/benchmark-v1.md` + `../../instances/manifest.csv` |
 
 ## Regra sobre formulações experimentais
 

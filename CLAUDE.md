@@ -17,6 +17,7 @@ Depois, leia apenas o contexto aplicável à tarefa:
 | Alterar ou revisar código | `docs/context-ai/code-guidelines.md` + arquivos de código relevantes |
 | Verificar lacunas ou pontos ainda não decididos | `docs/technical/governance/open-questions.md` |
 | Comparar documentos/artigos | `docs/technical/reference/source-map.md` |
+| Escolher ou interpretar instâncias experimentais | `docs/technical/reference/benchmark-v1.md` + `instances/manifest.csv` |
 
 ## Objetivo do projeto
 
@@ -66,6 +67,7 @@ Esses elementos pertencem a outra variante/modelo e não devem contaminar o base
 - Antes de alterar código de modelagem, localizar onde conjuntos, variáveis, objetivo e restrições são realmente construídos.
 - Mudanças matemáticas devem vir acompanhadas de justificativa e, quando possível, casos pequenos verificáveis.
 - Ao comparar métodos, preservar a mesma definição de instância e registrar claramente qual formulação e configuração foram usadas.
+- Experimentos sobre o problema de Das usam as instâncias `classe = principal` de `instances/manifest.csv` (hoje as 22 antigas compatíveis + as 70 do benchmark-v1). Resultados obtidos em instâncias ponderadas ou dirigidas (classes `extensao_ponderada`/`extensao_dirigida`) devem ser rotulados como extensão, não generalizados para o problema de Das sem ressalva.
 - Não efetuar commit automaticamente. Só commitar quando solicitado ou aprovado pelo usuário.
 
 ## Ao revisar uma formulação ou método

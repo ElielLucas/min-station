@@ -38,7 +38,27 @@ Por isso:
 
 Detalhes em `open-questions.md` (Q2 e Q7).
 
-## Gerar instâncias
+## Benchmark-v1
+
+Instâncias compatíveis com Das derivadas de SteinLib, DIMACS 11, PACE 2018, MAPF (MovingAI) e
+redes urbanas (Boeing), geradas por regras documentadas:
+
+```bash
+python src/converters/build_benchmark.py     # instances/benchmark-v1/ a partir de raw-data/
+python src/converters/build_manifest.py      # instances/manifest.csv (proveniência + atributos)
+python experiments/benchmark/run_dificuldade.py   # protocolo de dificuldade (COMP, TL 600 s)
+```
+
+Metodologia e resultados em `docs/technical/reference/benchmark-v1.md`; plano em
+`docs/technical/plans/plano-benchmark-v1.md`. Experimentos principais usam as instâncias de
+classe `principal` do manifesto.
+
+Os downloads brutos em `raw-data/{boeing,dimacs11,mapf,pace2018}/` (~1,1 GB) não são versionados;
+só os 32 arquivos-fonte que `instances/benchmark-v1/spec.csv` de fato consome (9,4 MB) e os
+`SOURCES.md`/`SHA256SUMS` de proveniência. `experiments/benchmark/verify_regeneracao.py` confirma
+que regerar a partir do repositório reproduz o conteúdo do manifesto.
+
+## Gerar instâncias (conversores antigos)
 
 ```bash
 # TNTP (arcos dirigidos, comprimentos convertidos para km inteiros)
@@ -54,3 +74,9 @@ python src/converters/steinlib_to_minstation.py raw-data/steinlib/hc9u.stp insta
 
 Código em `experiments/cuts/`; resultados em `results/cuts/`; relatórios em
 `docs/technical/reference/resultados-*.md`.
+
+## Código de terceiros
+
+`RKO_Cpp_v1.0/` é um clone de terceiros (`github.com/RKO-solver/RKO_Cpp_v1.0`, Random-Key
+Optimizer para o TSP e afins), não versionado — tem `.git` próprio. Não faz parte do código de
+pesquisa deste projeto.
