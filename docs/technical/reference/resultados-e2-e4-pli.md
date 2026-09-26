@@ -253,6 +253,13 @@ cc10-2p e cc12-2p não têm `S∩T` nem são afetadas pelos defeitos de cortes c
 núcleo fecha instantaneamente, mas cc12-2p permanece aberta em `[6,7]` (núcleo não fecha) e
 Philadelphia st25 seguirá dependendo do compacto com cortes (E4) para bound mais forte.
 
+> **Atualização (E8):** cc12-2p está fechada, OPT = 6 (extensão ponderada, R = 500). Uma
+> solução ótima do núcleo com 6 estações é viável no modelo compacto (UB), e o núcleo C1 + C4-DM,
+> com os 50 cortes validados um a um, tem ótimo 6 (LB). Certificado em
+> `experiments/cuts/verify_e8_cc12_opt.py` e `results/cuts/e8_certificado_cc12.txt`. A frase
+> "núcleo não fecha" acima estava errada: o núcleo dá 6, e a instância só parecia aberta porque
+> nenhuma solução ótima do núcleo tinha sido testada no problema real.
+
 ---
 
 ## 6. E4 — Árvore curta com cortes estáticos (TL=300s), revisado com R correto

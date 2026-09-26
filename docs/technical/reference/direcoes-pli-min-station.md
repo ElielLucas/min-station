@@ -632,6 +632,27 @@ Cada linha segue a cadeia **propriedade → problema observado → técnica → 
 - **Técnica:** mestre em `y`, cortes combinatórios, separação por max-flow.
 - **Por que pode funcionar:** o bound se aproxima do da cobertura na medida em que a separação é completa, e os cortes clássicos fracionários garantem pelo menos `z_LP`. Os nós são LPs de `n` variáveis e a ramificação é só em `y`. No regime R-c, dá para evitar materializar `A_r` fora do max-flow.
 - **Como testar:** §14 E2.
+- **Resultado [E7] — suspenso, não decide A2.** BC-y completo (MIP start guloso + lazy 𝒵 no
+  MIPSOL + user cuts fracionários no MIPNODE) testado contra o compacto+A1 (COMP) em 7 instâncias,
+  TL=300s cada. BC-y não superou o COMP em LB final nem em tempo até o ótimo em nenhuma das 7. Uma
+  revisão posterior encontrou três confundidores que invalidam o experimento como medida do
+  método: (1) BC-y recebeu só C1 estático, COMP recebeu C1+C2+C4 — o critério de abandono abaixo
+  exige "os mesmos cortes de A1" nos dois lados, o que não aconteceu; (2) o MIP start podia
+  devolver `y` sem viabilidade garantida, então "sem incumbente" em R-a pode ser artefato do
+  start, não do método; (3) o separador não tinha guarda de tempo e reconstruía a rede inteira a
+  cada chamada, o que fez o `TimeLimit` estourar 5× em cc12-2p e deixou o callback consumir
+  70–99,9% do tempo em toda a bateria. Por isso a questão sobre A2 **não está decidida** — nem no
+  sentido de abandono (critério abaixo não foi testado em base justa) nem no de "inconclusivo por
+  callback caro" (o callback caro é ele próprio um dos confundidores, não uma medida limpa do
+  método). Detalhes em `resultados-e7-pli.md` §5.1. O E8 (`plano-experimentos-e8` no plano de
+  execução) refaz a comparação com os mesmos cortes estáticos, um MIP start sempre viável e um
+  oráculo com guarda de tempo — só depois disso o critério de abandono desta seção se aplica.
+- **Resultado [E8] — critério aplicado: A2 continua.** Comparação com mesmos cortes, mesmo start
+  primal e mesmo TL (300 s, uma seed). R-a (TNTP): o compacto vence em UB e LB nas quatro
+  instâncias; BC-y e CBI não saem do UB do primal. R-b/R-b': LB empata em hc9u (32) e o CBI dá o
+  melhor LB em hc10p (53 vs. 52) e bip42p (35 vs. 33); UB melhor no compacto. R-c: CBI prova
+  OPT(cc12-2p)=6 em 7,5 s, BC-y em 292 s, e o compacto não prova. Proposta a decidir: seguir A2 só
+  fora de R-a, com o CBI (mestre exato iterado) como variante principal. Ver `resultados-e8-pli.md`.
 
 ### Prioridade B
 
@@ -722,6 +743,12 @@ Cada linha segue a cadeia **propriedade → problema observado → técnica → 
   - número de cortes lazy e de user cuts;
   - tempo de max-flow por chamada e número de callbacks.
 - **Critério de abandono.** Abandonar se, nas quatro instâncias, o B&C em `y` não superar (b) em LB final nem em tempo até o ótimo, ou se a quantidade de cortes lazy crescer sem melhora de bound (por exemplo, mais de 10⁵ cortes com LB estagnado). Nesse caso, fica a formulação compacta com os cortes de A1.
+  - **[E7]** Não aplicável ainda: o experimento não comparou "base (U) com os mesmos cortes de
+    A1" nos dois lados (BC-y rodou só com C1). Ver nota de suspensão no bullet de A2 acima (§13)
+    e `resultados-e7-pli.md` §5.1. Este critério se aplica ao E8, não ao E7.
+  - **[E8]** Não satisfeito, logo A2 não é abandonada: em cc12-2p o CBI chega ao ótimo e o
+    compacto não, e o CBI tem LB maior em hc10p e bip42p. Em R-a o B&C em y não supera o compacto
+    em nenhuma instância (`resultados-e8-pli.md`).
 
 ---
 

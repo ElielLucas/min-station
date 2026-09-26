@@ -8,6 +8,8 @@
 
 **Resultado em uma frase:** sob distância em passos, a formulação é **exata**: para todo `C ⊆ V`, `C` é viável no MIN-STATION ⇔ existe `f` com `(f, χ_C)` viável na PLI. A versão com balanços separados (uma equação de origem, outra de destino) era inviável quando `S ∩ T ≠ ∅`, caso que Das permite (falso negativo) — **corrigido na rodada E5** com a adoção do balanço unificado (variante U, §8–9 abaixo), agora a formulação corrente em `baseline.py`. A correção foi local: só as equações de balanço mudaram.
 
+**Escopo da validação.** As provas abaixo supõem grafo não dirigido e distância em passos, como em Das. Das instâncias usadas nos experimentos, só hc9u, hc10p–hc12p e bip42p satisfazem isso (as quatro últimas via `A_r = E`); cc10-2p/cc12-2p são extensão ponderada e as TNTP são extensão ponderada e dirigida (ver `open-questions.md` Q2 e Q7). A formulação continua bem definida sobre qualquer dígrafo de alcance, mas a equivalência com o problema de Das só vale no primeiro grupo.
+
 ---
 
 ## 1. Definição do MIN-STATION segundo Das

@@ -60,6 +60,13 @@ O artigo da SBPO é referência científica e histórica, mas não define sozinh
 
 Documenta a evolução do baseline posterior ao artigo da SBPO, em que a variável de instalação passa a ser definida para todo `v ∈ V`.
 
+> **Desatualizado desde a rodada E5.** O PDF ainda usa balanços separados para
+> origens e destinos (equações (2)–(3)), que tornam o modelo inviável quando
+> `S ∩ T ≠ ∅`; o baseline atual usa o balanço unificado (variante U). O resumo
+> do PDF também repete o texto da SBPO ("vértices intermediários") e há
+> referências quebradas "(??)". Use-o só como registro histórico; a formulação
+> vigente está em `docs/context-ai/base-formulation.md` §6–7 e em `baseline.py`.
+
 Mudanças centrais:
 
 - objetivo `min Σ_{v∈V} y_v`;
@@ -113,7 +120,9 @@ Não existe uma precedência única para tudo. Use a fonte adequada:
 | Quais resultados teóricos originais são conhecidos? | Artigo de Das |
 | Como surgiu a primeira PLI do projeto? | Artigo da SBPO |
 | Como era a variante com estações apenas em intermediários? | Artigo da SBPO |
-| Qual é o baseline matemático atual? | `base-formulation.md` + formulação all-vertices |
+| Qual é o baseline matemático atual? | `base-formulation.md` (variante U); o PDF all-vertices é histórico |
+| Qual é a implementação do baseline? | `baseline.py` + `ms_utils.py` |
+| Qual métrica cada instância usa? | `open-questions.md` Q2 e Q7 |
 | Qual é o objetivo científico do projeto? | `RESEARCH.md` |
 | Que tipos de novas abordagens podem ser pesquisadas? | `research-direction.md` |
 | O que o software realmente executa hoje? | Código + configuração da execução |
