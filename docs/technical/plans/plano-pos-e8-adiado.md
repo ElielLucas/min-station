@@ -40,7 +40,37 @@ retomados nesta ordem, condicionados uns aos outros:
   em ≥ 3 instâncias e ≥ 2 famílias; caso contrário, A2 é encerrada para Das.
 
 Desenho experimental completo (instâncias, configurações, critérios de sucesso, o que cortar) no
-plano de execução desta sessão. Nenhuma dessas quatro baterias foi executada ainda — ficam para
-aprovação em separado.
+plano de execução desta sessão.
+
+## Situação após E9 e E10 (2026-09-26)
+
+Resultados em `docs/technical/reference/resultados-e9-e10-pli.md`. Mudanças nesta lista:
+
+- **E9 feito**, sem C3 e sem R6 além de L_bot (motivos no relatório). L_bot é dominado pela raiz
+  com cortes em todas as instâncias: **R6 além de L_bot sai da agenda**.
+- **E10 feito, inconclusivo quanto ao gap primal.** Os dois construtores falharam por escala e
+  por um desempate ruim no H3, não por falta de gap primal. O critério pré-registrado ("se H3
+  perder, o gargalo é dual") tinha uma inferência inválida e **não** se aplica.
+- **E10b feito, também inconclusivo.** O reparo da solução do núcleo venceu o UB do COMP em 1/30
+  (0/13 em MAPF/Vienna) e não ficou viável no prazo em 9/30. Nenhum dos dois desfechos
+  pré-registrados ocorreu — ambos os ramos valiam sobre MAPF/Vienna, e a única vitória
+  (`w23c23-seed`) está fora desse conjunto. Na fase `comp` dessa instância o start baixou o UB de
+  158 para 156 e deixou o LB em 141, o que **não** decide primal × dual: um MIP start age sobre o
+  incumbente, não sobre o dual. A pergunta passa para um instrumento baseado no solver
+  (COMP com `MIPFocus=1`, TL maior) — proposta, não executada; ver o relatório §7.
+- **E12 — filtro corrigido.** O núcleo é o LB da *primeira* iteração do CBI, não o teto: o CBI
+  acrescenta cortes 𝒵 e o LB sobe. "Rodar só onde OPT(núcleo) ≥ LB do COMP" vira ordem de
+  prioridade, não exclusão. Subconjunto prioritário: PUC/PUCN, onde o núcleo já supera o LB do
+  COMP de 600 s em 6 instâncias.
+- **E11 redefinido:** C4 na versão mochila (provada em `direcoes-pli-min-station.md` §5.4) com
+  δ ≥ 2; o C6 do §5.6 é só esboço e não entra. Condicionado a evidência de gap dual em MAPF/Vienna (instrumento do relatório §7, passo 1).
+- **C3 exato** (oráculo fracionário restrito) sai da agenda até o E11 falhar.
+- **Novo pré-requisito, acima de todos os demais: decidir o determinismo de `generate_C4_DM`.**
+  A função percorre `set`s e passa essa ordem a `_max_matching`; como emparelhamentos máximos não
+  são únicos, a família C4 gerada muda entre processos. Consequência medida: o ótimo do IP do
+  núcleo varia ±1 na mesma instância (`den312d-m50` dá 5 ou 6; `random-32-32-10-m25` dá 12 ou 13).
+  Os cortes continuam **válidos** (`is_valid_cut` aprova todos), então não há erro de resultado —
+  há falta de reprodutibilidade. Isso bloqueia o E12, cujo critério pré-registrado decide por
+  margens de 1 estação. Detalhes e opções em `resultados-e9-e10-pli.md` §6 e §7 (passo 0).
 
 

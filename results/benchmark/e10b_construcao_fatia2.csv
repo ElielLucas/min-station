@@ -1,0 +1,11 @@
+nome,familia,regime,n,m,n_arcos_alcance,lb_comp_600s,ub_comp_600s,nucleo_obj,nucleo_bound,nucleo_status,t_nucleo_s,n_reparo,n_poda,n_final,t_reparo_s,t_primal_s,vence_comp600,seed,tl_nucleo_s,tl_primal_s
+puc-hc9u-regiao-f4.txt,puc,R-b,512,128,4608,36.0,39.0,36.0,36.0,2,3.37,84,66,66,3.04,120.05,False,42,60,120
+pace18-t2-141-regiao-f4.txt,pace2018,R-a,294,19,7354,10.0,12.0,8.0,8.0,2,0.07,27,15,13,0.05,93.58,False,42,60,120
+mapf-random-32-32-10-m50-f8.txt,mapf,R-a,922,50,9192,54.0,71.0,43.0,43.0,2,0.4,431,99,99,13.91,120.0,False,42,60,120
+mapf-room-32-32-4-m10-f8.txt,mapf,R-a,682,10,11622,16.0,18.0,13.0,13.0,2,0.1,170,29,26,1.07,120.0,False,42,60,120
+puc-cc11-2u-seed-r1.txt,puc,R-a,2048,122,22526,92.0000000000001,102.0,92.0,92.0,2,5.41,370,175,175,23.98,120.03,False,42,60,120
+mapf-random-32-32-10-m25-f4.txt,mapf,R-a,922,25,28606,14.0,21.0,12.0,12.0,2,0.38,339,27,26,17.02,120.0,False,42,60,120
+puc-cc12-2u-seed-r1.txt,puc,R-a,4096,236,49148,165.0,200.0,164.0,164.0,2,30.77,,,,,,False,42,60,120
+mapf-warehouse-10-20-10-2-1-m50-f8.txt,mapf,R-a,5699,50,144984,81.0,126.0,79.0,79.0,2,3.14,,,,,,False,42,60,120
+vienna-I056-regiao-f4.txt,vienna,R-a,1991,25,381600,9.0,12.0,9.0,9.0,2,1.23,197,15,14,22.68,120.0,False,42,60,120
+mapf-warehouse-10-20-10-2-1-m25-f4.txt,mapf,R-a,5699,25,602328,29.0,52.99999995273603,28.0,28.0,2,2.95,,,,,,False,42,60,120

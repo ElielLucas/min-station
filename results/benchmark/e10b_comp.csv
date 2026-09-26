@@ -1,0 +1,2 @@
+nome,familia,regime,n_start,lb_comp_600s,ub_comp_600s,lb_com_start,ub_com_start,gap_com_start,status,t_solver_s,seed,threads,tl_s
+puc-w23c23-seed-r1.txt,puc,R-b,157,141.0,158.0,141.0,156.0,0.09615384615384616,9,600.07,42,4,600

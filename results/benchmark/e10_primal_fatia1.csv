@@ -1,0 +1,16 @@
+nome,familia,caminho,regime,n,m,n_arcos_alcance,ub_comp_600s,ub_melhor,n_estacoes_reverse,t_reverse_s,n_estacoes_h3,t_h3_s,vence_reverse,vence_comp600,seed,tl_s
+puc-cc9-2p-seed-r1.txt,puc,instances/benchmark-v1/puc/puc-cc9-2p-seed-r1.txt,R-a,512,32,4608,31.0,,59,60.03,101,60.01,False,False,42,60.0
+puc-hc9u-seed-r1.txt,puc,instances/benchmark-v1/puc/puc-hc9u-seed-r1.txt,R-b,512,128,4608,41.0,,254,60.02,84,60.09,True,False,42,60.0
+pace18-t2-141-regiao-f4.txt,pace2018,instances/benchmark-v1/pace2018/pace18-t2-141-regiao-f4.txt,R-a,294,19,7354,12.0,,21,60.02,22,60.0,False,False,42,60.0
+puc-bip42p-seed-r1.txt,puc,instances/benchmark-v1/puc/puc-bip42p-seed-r1.txt,R-b,1200,100,7964,43.0,,1086,60.16,92,60.07,True,False,42,60.0
+puc-cc10-2u-seed-r1.txt,puc,instances/benchmark-v1/puc/puc-cc10-2u-seed-r1.txt,R-a,1024,67,10240,58.0,,886,60.25,,20.17,False,False,42,60.0
+mapf-room-32-32-4-m10-f8.txt,mapf,instances/benchmark-v1/mapf/mapf-room-32-32-4-m10-f8.txt,R-a,682,10,11622,18.0,,29,60.04,,20.14,False,False,42,60.0
+puc-w3c571-seed-r1.txt,puc,instances/benchmark-v1/puc/puc-w3c571-seed-r1.txt,R-b,3997,1142,20556,1139.0,,3995,87.05,,20.93,False,False,42,60.0
+puc-hc11p-seed-r1.txt,puc,instances/benchmark-v1/puc/puc-hc11p-seed-r1.txt,R-b,2048,512,22528,156.0,,2043,62.82,,20.91,False,False,42,60.0
+mapf-random-32-32-10-m25-f4.txt,mapf,instances/benchmark-v1/mapf/mapf-random-32-32-10-m25-f4.txt,R-a,922,25,28606,21.0,,751,60.24,,20.24,False,False,42,60.0
+mapf-empty-32-32-m25-f4.txt,mapf,instances/benchmark-v1/mapf/mapf-empty-32-32-m25-f4.txt,R-a,1024,25,37180,19.0,,902,60.47,,20.28,False,False,42,60.0
+puc-hc12p-seed-r1.txt,puc,instances/benchmark-v1/puc/puc-hc12p-seed-r1.txt,R-b,4096,1024,49152,,,4095,121.8,,21.39,False,False,42,60.0
+mapf-warehouse-10-20-10-2-1-m50-f8.txt,mapf,instances/benchmark-v1/mapf/mapf-warehouse-10-20-10-2-1-m50-f8.txt,R-a,5699,50,144984,126.0,,5686,60.13,,20.19,False,False,42,60.0
+mapf-den312d-m25-f4.txt,mapf,instances/benchmark-v1/mapf/mapf-den312d-m25-f4.txt,R-a,2445,25,249528,17.0,,2429,63.83,,20.39,False,False,42,60.0
+vienna-I065-intercalado-f2.txt,vienna,instances/benchmark-v1/vienna/vienna-I065-intercalado-f2.txt,misto,3898,72,392398,20.0,,3893,60.01,,20.47,False,False,42,60.0
+mapf-warehouse-10-20-10-2-1-m25-f4.txt,mapf,instances/benchmark-v1/mapf/mapf-warehouse-10-20-10-2-1-m25-f4.txt,R-a,5699,25,602328,52.99999995273603,,5693,60.83,,20.28,False,False,42,60.0

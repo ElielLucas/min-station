@@ -112,18 +112,26 @@ def _make_mip(S, T, V, A_r, f_type, upfront_cuts, y_dict_ref=None):
 
 
 def measure_lp(S, T, V, A_r, f_type, upfront_cuts, use_c3=False,
-               c3_max_rounds=30, seed=42, threads=1):
+               c3_max_rounds=30, seed=42, threads=1, time_limit=None):
     """
     Resolve a relaxação LP do modelo com os cortes a priori.
     Se use_c3=True, itera separação de C3 até convergência.
 
-    Retorna dict com: lp_bound, n_c3_cuts, n_c3_rounds, time_s.
+    time_limit: opcional, segundos. Sem ele (padrão), sem limite — como
+    antes. Com ele, se o LP for interrompido antes da otimalidade (modelo
+    degenerado em f com |A_r| grande, ver A2 em direcoes-pli-min-station.md),
+    lp_bound continua sendo o ObjVal corrente, mas lp_status registra que não
+    é ótimo — não deve ser lido como z_LP provado nesse caso.
+
+    Retorna dict com: lp_bound, lp_status, n_c3_cuts, n_c3_rounds, time_s.
     """
     modelo, y, f, _ = _make_mip(S, T, V, A_r, f_type, upfront_cuts)
     lp = modelo.relax()
     lp.Params.OutputFlag = 0
     lp.Params.Seed       = seed
     lp.Params.Threads    = threads
+    if time_limit is not None:
+        lp.Params.TimeLimit = time_limit
 
     t0       = time.monotonic()
     n_c3     = 0

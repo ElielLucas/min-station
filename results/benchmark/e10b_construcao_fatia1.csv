@@ -1,0 +1,11 @@
+nome,familia,regime,n,m,n_arcos_alcance,lb_comp_600s,ub_comp_600s,nucleo_obj,nucleo_bound,nucleo_status,t_nucleo_s,n_reparo,n_poda,n_final,t_reparo_s,t_primal_s,vence_comp600,seed,tl_nucleo_s,tl_primal_s
+puc-cc9-2p-seed-r1.txt,puc,R-a,512,32,4608,30.0,31.0,27.0,27.0,2,0.2,78,43,43,0.28,120.0,False,42,60,120
+puc-w23c23-seed-r1.txt,puc,R-b,1081,276,6348,141.0,158.0,139.0,139.0,2,48.0,161,157,157,9.73,120.19,True,42,60,120
+puc-bip42p-seed-r1.txt,puc,R-b,1200,100,7964,33.0,43.0,37.0,35.0,9,61.85,128,59,59,3.74,120.03,False,42,60,120
+puc-hc10p-seed-r1.txt,puc,R-b,1024,256,10240,52.0,81.0,67.0,54.0,9,65.12,166,98,98,31.55,120.12,False,42,60,120
+puc-w3c571-seed-r1.txt,puc,R-b,3997,1142,20556,665.0,1139.0,571.0,571.0,2,55.88,,,,,,False,42,60,120
+pucn-cc3-10n-seed-r1.txt,pucn,R-a,1000,25,27000,17.0,26.0,18.0,18.0,2,1.08,79,40,34,0.39,120.0,False,42,60,120
+mapf-empty-32-32-m25-f4.txt,mapf,R-a,1024,25,37180,13.000005462938512,19.0,11.0,11.0,2,0.29,527,36,33,34.7,120.0,False,42,60,120
+mapf-random-64-64-20-m100-f4.txt,mapf,R-a,3270,100,121632,41.0,67.0,39.0,39.0,2,3.4,,,,,,False,42,60,120
+mapf-den312d-m25-f4.txt,mapf,R-a,2445,25,249528,15.0,17.0,13.0,13.0,2,1.01,,,,,,False,42,60,120
+mapf-den312d-m50-f2-rho.txt,mapf,misto,2445,50,549696,6.0,9.0,6.0,6.0,2,1.59,,,,,,False,42,60,120

@@ -664,6 +664,19 @@ Cada linha segue a cadeia **propriedade → problema observado → técnica → 
   não foram testadas com os três métodos. **A proposta de recorte de escopo ("A2 só fora de R-a")
   fica suspensa até um veredito refeito sobre o benchmark-v1 (E12, `plano-pos-e8-adiado.md`)** —
   mesmo status de suspensão que o E7 teve até o E8.
+- **Evidência [E9], sem veredito.** Nas instâncias D/A do benchmark-v1 (fiéis a Das), o IP do
+  núcleo em espaço-y (C1+C2+C4, TL 60 s) dá LB maior que o COMP após 600 s de B&B em 6 instâncias,
+  todas das famílias PUC/PUCN: bip42p (×2) 35 vs. 33, hc10p 54 vs. 52, hc11p 97 vs. 95,
+  pucn-cc3-10n 18 vs. 17, pucn-cc7-3n-regiao 10 vs. 9. Em MAPF e Vienna ocorre o contrário (o LB do
+  COMP fica acima do núcleo), sinal de que ali o acoplamento de fluxo pesa. Coerente com o E8
+  (melhor LB do CBI em hc10p e bip42p). Não decide A2 — não é o CBI completo —, mas define o
+  subconjunto em que o E12 deve rodar primeiro. Ver `resultados-e9-e10-pli.md`.
+  - *Ressalva de precisão [revisão E10b].* As margens são de 1 a 2 estações e `generate_C4_DM` não
+    é determinística entre processos (percorre `set`s antes do emparelhamento máximo, que não é
+    único), o que move o LB do núcleo em ±1 na mesma instância. Os cortes permanecem válidos, então
+    a leitura qualitativa — núcleo competitivo em PUC/PUCN, não em MAPF/Vienna — se sustenta; os
+    valores individuais, não. Das 6, só `pucn-cc3-10n` foi verificada estável (18 em 6 execuções).
+    Corrigir o determinismo é pré-requisito do E12, cujo critério decide por 1 estação.
 
 ### Prioridade B
 

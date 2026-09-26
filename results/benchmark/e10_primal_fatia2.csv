@@ -1,0 +1,16 @@
+nome,familia,caminho,regime,n,m,n_arcos_alcance,ub_comp_600s,ub_melhor,n_estacoes_reverse,t_reverse_s,n_estacoes_h3,t_h3_s,vence_reverse,vence_comp600,seed,tl_s
+puc-hc9u-regiao-f4.txt,puc,instances/benchmark-v1/puc/puc-hc9u-regiao-f4.txt,R-b,512,128,4608,39.0,,243,60.03,,20.22,False,False,42,60.0
+puc-w23c23-seed-r1.txt,puc,instances/benchmark-v1/puc/puc-w23c23-seed-r1.txt,R-b,1081,276,6348,158.0,,1039,60.05,,20.41,False,False,42,60.0
+puc-bip42p-regiao-f2.txt,puc,instances/benchmark-v1/puc/puc-bip42p-regiao-f2.txt,R-b,1200,100,7964,43.0,,1064,60.15,82,60.02,True,False,42,60.0
+mapf-random-32-32-10-m50-f8.txt,mapf,instances/benchmark-v1/mapf/mapf-random-32-32-10-m50-f8.txt,R-a,922,50,9192,71.0,,622,60.02,,20.21,False,False,42,60.0
+puc-hc10p-seed-r1.txt,puc,instances/benchmark-v1/puc/puc-hc10p-seed-r1.txt,R-b,1024,256,10240,81.0,,1003,60.02,,20.48,False,False,42,60.0
+mapf-room-32-32-4-m25-f4-rho.txt,mapf,instances/benchmark-v1/mapf/mapf-room-32-32-4-m25-f4-rho.txt,R-a,682,25,16206,20.0,,400,60.04,,20.28,False,False,42,60.0
+puc-cc11-2u-seed-r1.txt,puc,instances/benchmark-v1/puc/puc-cc11-2u-seed-r1.txt,R-a,2048,122,22526,102.0,,2028,60.56,,20.25,False,False,42,60.0
+pucn-cc3-10n-seed-r1.txt,pucn,instances/benchmark-v1/pucn/pucn-cc3-10n-seed-r1.txt,R-a,1000,25,27000,26.0,,914,60.47,70,60.01,True,False,42,60.0
+pucn-cc7-3n-seed-r1.txt,pucn,instances/benchmark-v1/pucn/pucn-cc7-3n-seed-r1.txt,R-a,2187,111,30616,80.0,,2163,60.32,,20.2,False,False,42,60.0
+puc-cc12-2u-seed-r1.txt,puc,instances/benchmark-v1/puc/puc-cc12-2u-seed-r1.txt,R-a,4096,236,49148,200.0,,4091,64.33,,20.15,False,False,42,60.0
+mapf-random-64-64-20-m100-f4.txt,mapf,instances/benchmark-v1/mapf/mapf-random-64-64-20-m100-f4.txt,R-a,3270,100,121632,67.0,,3259,63.88,,20.42,False,False,42,60.0
+pucn-cc7-3n-regiao-f2.txt,pucn,instances/benchmark-v1/pucn/pucn-cc7-3n-regiao-f2.txt,misto,2187,111,214326,13.0,,2183,68.83,,20.37,False,False,42,60.0
+vienna-I056-regiao-f4.txt,vienna,instances/benchmark-v1/vienna/vienna-I056-regiao-f4.txt,R-a,1991,25,381600,12.0,,1985,68.14,,20.26,False,False,42,60.0
+mapf-den312d-m50-f2-rho.txt,mapf,instances/benchmark-v1/mapf/mapf-den312d-m50-f2-rho.txt,misto,2445,50,549696,9.0,,2438,61.42,,20.79,False,False,42,60.0
+vienna-I065-regiao-f4.txt,vienna,instances/benchmark-v1/vienna/vienna-I065-regiao-f4.txt,R-a,3898,72,790270,19.0,,3897,110.57,,20.46,False,False,42,60.0

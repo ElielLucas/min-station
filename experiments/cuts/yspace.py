@@ -267,6 +267,7 @@ def solve_ip_yspace(S, T, V, adj, A_r, r,
         gap = float(mip.MIPGap) if mip.SolCount > 0 else None
     except Exception:
         gap = None
+    C = frozenset(v for v, var in y.items() if var.X > 0.5) if mip.SolCount > 0 else None
 
     return {
         'ip_obj':          obj,
@@ -278,4 +279,5 @@ def solve_ip_yspace(S, T, V, adj, A_r, r,
         'n_c1':            len(c1),
         'n_c2':            len(c2),
         'n_c4':            len(c4),
+        'C':               C,
     }
