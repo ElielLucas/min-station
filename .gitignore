@@ -1,8 +1,48 @@
+# ── Python ───────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.ipynb_checkpoints/
 
+# ── Sistema operacional e editores ───────────────────────────────────────
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
 
-/steinlib_raw
+# ── Saídas descartáveis de execução ──────────────────────────────────────
+# stdout das baterias, com timestamp no nome; o registro de pesquisa fica em
+# docs/technical/reference/ e os dados em results/.
+logs/
+**/solver_logs/
+**/timeseries/
+**/plots/
 /plots
 
+# ── Artefatos de solver ──────────────────────────────────────────────────
+*.lp
+*.mps
+*.sol
+*.ilp
+*.rlp
+gurobi.log
+gurobi.env
+
+# ── Dados brutos volumosos ───────────────────────────────────────────────
+# ~1,1 GB re-baixável. URL, versão, licença e SHA-256 em raw-data/<fonte>/SOURCES.md.
+# Os arquivos-fonte que o spec.csv realmente consome (32 arquivos, 9,4 MB) são
+# versionados explicitamente com `git add -f`, para o benchmark continuar
+# regenerável a partir do repositório.
+raw-data/boeing/
+raw-data/dimacs11/
+raw-data/mapf/
+raw-data/pace2018/
+/steinlib_raw
 /TransportationNetworks
-__pycache__/
-*.pyc
+
+# ── Código de terceiros ──────────────────────────────────────────────────
+# repositório git aninhado (tem .git próprio, 22 MB); origem registrada no README
+RKO_Cpp_v1.0/
