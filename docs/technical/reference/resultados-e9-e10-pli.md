@@ -290,19 +290,26 @@ Reparo < UB COMP (MAPF+Vienna): 0/13. Reparo < UB COMP (todas): 1/30.
   100%"; **essa conclusão estava errada**, por uma chamada com os argumentos fora de ordem
   (`is_valid_cut(S, T, A_r, Z, …)`, com `Z` em quarto lugar). Refeita a chamada, o validador reprova
   cortes em 3 das 5 instâncias principais com `S∩T ≠ ∅`, e `integer_oracle` confirma cada caso
-  exibindo solução viável em `V∖Z`. O diagnóstico completo, a causa raiz e a correção estão em
-  [`correcao-c4-dm.md`](correcao-c4-dm.md). Os números deste relatório foram produzidos **antes** da
-  correção; nenhuma das instâncias das tabelas acima tem `S∩T ≠ ∅`, exceto
-  `mapf-room-32-32-4-m25-f4-rho` e `mapf-den312d-m50-f2-rho` (§4), das quais só a segunda acusa
-  cortes inválidos.
+  exibindo solução viável em `V∖Z`. A causa era divergência entre implementação e teoria: o §5.4 de
+  `direcoes-pli-min-station.md` mede a deficiência contra `T` inteiro, e o código usava `T∖S`.
+  **Corrigido em 2026-09-26**, junto com o não-determinismo, e coberto por regressão nova
+  (`verify_c4_dm.py`) — ver [`correcao-c4-dm.md`](correcao-c4-dm.md).
+
+  **Efeito sobre este relatório.** Todos os números acima foram medidos antes da correção. Das
+  instâncias das tabelas, só duas têm `S∩T ≠ ∅` — `mapf-den312d-m50-f2-rho` e
+  `mapf-room-32-32-4-m25-f4-rho` — e a reavaliação corrigiu as referências de COMP usadas nas
+  colunas "LB COMP"/"UB COMP": den312d-m50 passa de LB 6 para **LB 4**, e room-m25-rho de UB 20
+  para **UB 19**. Nenhuma conclusão do relatório depende dessas duas linhas: as leituras por família
+  são medianas sobre 10 MAPF, e as afirmações sobre PUC/PUCN vêm de instâncias com `S∩T = ∅`. As
+  demais linhas não tinham cortes inválidos, mas carregam ±1 pelo não-determinismo, como já
+  registrado acima.
 
 ## 7. Próximos passos propostos (não executados)
 
-0. **Corrigir `generate_C4_DM`** (§6, dois últimos itens) antes de qualquer bateria nova: os cortes
-   inválidos comprometem a validade dos LBs, e o não-determinismo faz ±1 de ruído num E12 que decide
-   por margens de 1–2 estações. Plano de correção e reavaliação em
-   [`correcao-c4-dm.md`](correcao-c4-dm.md). Fixar `PYTHONHASHSEED` não resolve nenhum dos dois —
-   só esconde a variabilidade e mantém os cortes inválidos.
+0. ~~**Corrigir `generate_C4_DM`**~~ — **feito em 2026-09-26**, ver
+   [`correcao-c4-dm.md`](correcao-c4-dm.md). Era pré-requisito de tudo abaixo: cortes inválidos
+   comprometem a validade dos LBs e o não-determinismo põe ±1 de ruído num E12 que decide por
+   margens de 1–2 estações. Os passos seguintes já podem rodar sobre o gerador corrigido.
 1. **Primal × dual com o solver como instrumento.** COMP com `MIPFocus=1` (ênfase primal), 600 s e
    depois 1800 s, nas 13 D/A de MAPF/Vienna. Se o UB cair de forma apreciável com o LB parado, é
    evidência de que parte do gap era primal; se o UB mal se mover sob ênfase primal e TL triplicado,

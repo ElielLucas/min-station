@@ -65,12 +65,16 @@ Resultados em `docs/technical/reference/resultados-e9-e10-pli.md`. Mudanças nes
 - **E11 redefinido:** C4 na versão mochila (provada em `direcoes-pli-min-station.md` §5.4) com
   δ ≥ 2; o C6 do §5.6 é só esboço e não entra. Condicionado a evidência de gap dual em MAPF/Vienna (instrumento do relatório §7, passo 1).
 - **C3 exato** (oráculo fracionário restrito) sai da agenda até o E11 falhar.
-- **Novo pré-requisito, acima de todos os demais: decidir o determinismo de `generate_C4_DM`.**
-  A função percorre `set`s e passa essa ordem a `_max_matching`; como emparelhamentos máximos não
-  são únicos, a família C4 gerada muda entre processos. Consequência medida: o ótimo do IP do
-  núcleo varia ±1 na mesma instância (`den312d-m50` dá 5 ou 6; `random-32-32-10-m25` dá 12 ou 13).
-  Os cortes continuam **válidos** (`is_valid_cut` aprova todos), então não há erro de resultado —
-  há falta de reprodutibilidade. Isso bloqueia o E12, cujo critério pré-registrado decide por
-  margens de 1 estação. Detalhes e opções em `resultados-e9-e10-pli.md` §6 e §7 (passo 0).
+- **`generate_C4_DM` corrigida (2026-09-26) — pré-requisito cumprido.** A função tinha dois
+  defeitos: gerava cortes **inválidos** quando `S∩T ≠ ∅` (media a deficiência de Hall contra `T∖S`
+  em vez de `T` inteiro, divergindo do §5.4 de `direcoes-pli-min-station.md`) e não era
+  determinística entre processos. Ambos corrigidos, com regressão nova
+  (`experiments/cuts/verify_c4_dm.py`) que comprovadamente reprova o código anterior. Reavaliação
+  das 5 instâncias com `S∩T ≠ ∅` corrigiu 3 linhas do manifesto — inclusive um "ótimo provado" que
+  estava errado (`b-b09-intercalado-f2-rho`: 4 → 2). Nenhuma classe de dificuldade mudou, então a
+  seleção das 30 D/A e as análises do benchmark seguem válidas. Ver `correcao-c4-dm.md`.
+  **O E12 está desbloqueado**: o gerador agora é determinístico, e seu critério decide por margens
+  de 1 estação. As instâncias PUC/PUCN do subconjunto prioritário têm `S∩T = ∅`, logo não foram
+  afetadas pelos cortes inválidos; os LBs do E9 nelas podem variar em ±1 numa reexecução.
 
 

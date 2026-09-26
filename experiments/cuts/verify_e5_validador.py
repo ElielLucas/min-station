@@ -74,6 +74,7 @@ def main():
                                          validate_cuts=True)
             print(f'{label:<16} stage_lp={res["stage_lp"]}  stage_cuts={res["stage_cuts"]}')
         except Exception as e:
+            total_diverg += 1
             print(f'{label:<16} EXCEÇÃO: {type(e).__name__}: {e}')
 
     print()

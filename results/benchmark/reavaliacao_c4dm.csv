@@ -1,0 +1,6 @@
+nome,caminho,n,m,n_arcos_alcance,card_st,n_cortes_antes,n_cortes_depois,lb_antes,ub_antes,dif_antes,lb_depois,ub_depois,gap_depois,dif_depois,status,t_solver_s,lb_mudou,ub_mudou,tl_s,threads,seed
+b-b09-intercalado-f2-rho.txt,instances/benchmark-v1/steinlib-b/b-b09-intercalado-f2-rho.txt,75,19,592,2,,3,4.0,4.0,F,2.0,2.0,0.0,F,2,0.01,True,True,600,4,42
+i-i160-301-intercalado-f2-rho.txt,instances/benchmark-v1/steinlib-i/i-i160-301-intercalado-f2-rho.txt,160,20,1848,2,,9,5.0,5.0,F,5.0,5.0,0.0,F,2,0.03,False,False,600,4,42
+puc-w23c23-intercalado-f2-rho.txt,instances/benchmark-v1/puc/puc-w23c23-intercalado-f2-rho.txt,1081,276,6348,28,,496,128.0,128.0,F,128.0,128.0,0.0,F,2,7.2,False,False,600,4,42
+mapf-room-32-32-4-m25-f4-rho.txt,instances/benchmark-v1/mapf/mapf-room-32-32-4-m25-f4-rho.txt,682,25,16206,3,,33,16.0,20.0,A,16.0,19.0,0.15789473684210525,A,9,600.02,False,True,600,4,42
+mapf-den312d-m50-f2-rho.txt,instances/benchmark-v1/mapf/mapf-den312d-m50-f2-rho.txt,2445,50,549696,5,,11,6.0,9.0,A,4.0,9.0,0.5555555555555556,A,9,600.22,True,False,600,4,42

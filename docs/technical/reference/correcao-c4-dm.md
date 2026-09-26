@@ -71,10 +71,14 @@ A correção E5 anterior (`plano-experimentos-e5.md:128`) atacou o sintoma opost
 entrava nos dois lados como origem *e* destino não emparelhados, gerando corte que o Lema 5
 invalida. Removê-lo eliminou aquele caso e abriu este.
 
-O ponto que faltou: o bipartido de alcance direto `B_∅ = {(s,t) ∈ S×T : d(s,t) ≤ r}` contém o par
-`(v,v)` para todo `v ∈ S∩T`, já que `d(v,v) = 0 ≤ r`. Ele não aparece porque `A_r` é construído sem
-auto-laços (verificado: `v ∉ N⁺(v)` e `(v,v) ∉ A_r`). Com esse par presente, `v` nunca fica sem par
-— o Lema 5 é respeitado — e continua disponível como destino para outras origens.
+**A implementação divergia da teoria já documentada.** O §5.4 de `direcoes-pli-min-station.md`
+define o corte para `S' ⊆ S∖T` com a condição `|N⁺(S') ∩ T| < |S'|` — com `T` **inteiro**. A
+assimetria é deliberada e necessária: a origem precisa estar fora de `S∩T` para que o argumento de
+primeiro salto valha (um robô que parte de `v ∈ S∩T` pode ficar parado, e não precisa de relé), mas
+o *destino* não tem essa restrição. O código aplicava `T∖S` dos dois lados.
+
+Não se trata, portanto, de uma escolha de modelagem em aberto: a forma correta já estava provada no
+documento e a implementação é que não a seguia.
 
 ## 4. Por que nenhuma regressão pegou
 
@@ -107,14 +111,79 @@ foi 5 no E9 e 6 no E10b, ótimo *provado* nos dois, sem contradição porque os 
 Isso é independente da validade (atinge também instâncias com `S∩T = ∅`) e importa porque o E12
 decide por margens de 1–2 estações.
 
-## 6. Estado da correção
+## 6. A correção
+
+`generate_C4_DM` passa a emparelhar `S∖T` contra `T` inteiro, e `T∖S` contra `S` inteiro, como o
+§5.4 já especificava. Duas mudanças na mesma função, de naturezas distintas:
+
+1. **Validade:** a vizinhança que define a deficiência deixa de ser restrita a `T∖S` (resp. `S∖T`).
+   Só altera instâncias com `S∩T ≠ ∅`.
+2. **Determinismo:** as iterações passam a ser ordenadas (`sorted`) antes do emparelhamento máximo,
+   e a lista devolvida sai ordenada. Emparelhamento máximo não é único, e a ordem de iteração de um
+   `set` varia entre processos. Isso altera a família gerada em qualquer instância, com ou sem
+   `S∩T ≠ ∅`.
+
+Efeito medido nas instâncias que acusavam cortes inválidos:
+
+| Instância | antes | depois |
+|---|---|---|
+| `b-b09-intercalado-f2-rho` | 6 cortes, 3 inválidos | 3 cortes, 0 inválidos |
+| `i-i160-301-intercalado-f2-rho` | 10 cortes, 2 inválidos | 9 cortes, 0 inválidos |
+| `mapf-den312d-m50-f2-rho` | 15–16 cortes, até 5 inválidos | 11 cortes, 0 inválidos |
+
+Determinismo conferido em `den312d-m50`: quatro execuções com `PYTHONHASHSEED` distintos produzem a
+mesma lista de cortes (hash idêntico), contra 16/16/15 cortes e hashes distintos antes.
+
+### Rede de segurança
+
+- **`experiments/cuts/verify_c4_dm.py`** (novo): exige que todo corte gerado seja aprovado por
+  `is_valid_cut` *e* que `integer_oracle` confirme `V∖Z` inviável — divergência entre os dois
+  instrumentos também é falha. Cobre os gabaritos, as instâncias com `S∩T ≠ ∅` e um controle com
+  `S∩T = ∅`, repetindo em subprocessos com `PYTHONHASHSEED` distintos, porque uma execução só pode
+  passar por sorte. **Confirmado que reprova o código anterior à correção** (5 cortes inválidos em
+  `den312d-m50`), executado num worktree do commit `20d3fc1`.
+- **`verify_e5_validador.py`**: o `except Exception` do laço de validação passa a contar a exceção
+  como divergência. Antes, um `CorteInvalido` era impresso e o script ainda encerrava com
+  "0 divergências — validador correto".
+
+## 7. Reavaliação das instâncias afetadas
+
+Protocolo de dificuldade refeito nas 5 instâncias com `S∩T ≠ ∅`, mesma configuração do benchmark-v1
+(COMP = U + C1+C2+C4, Gurobi, 4 threads, seed 42, TL 600 s), por
+`experiments/benchmark/reavaliar_c4dm.py`. Resultado bruto em
+`results/benchmark/reavaliacao_c4dm.csv`.
+
+| Instância | LB antes | LB depois | UB antes | UB depois | classe | veredito |
+|---|---|---|---|---|---|---|
+| `b-b09-intercalado-f2-rho` | 4 | **2** | 4 | **2** | F → F | **ótimo publicado estava errado** |
+| `mapf-den312d-m50-f2-rho` | 6 | **4** | 9 | 9 | A → A | **LB publicado era inválido** |
+| `mapf-room-32-32-4-m25-f4-rho` | 16 | 16 | 20 | **19** | A → A | UB melhorou |
+| `i-i160-301-intercalado-f2-rho` | 5 | 5 | 5 | 5 | F → F | inalterado |
+| `puc-w23c23-intercalado-f2-rho` | 128 | 128 | 128 | 128 | F → F | inalterado |
+
+**`b-b09-intercalado-f2-rho` é o caso grave**: estava registrada como resolvida na otimalidade com
+4 estações, e o ótimo real é 2 — o dobro. Os cortes inválidos eliminavam toda solução com 2 ou 3
+estações, e o solver provou otimalidade dentro de um espaço de busca que já não continha o ótimo.
+Um "ótimo provado" pode estar errado quando o modelo contém corte inválido, e foi o que aconteceu.
+
+Em `mapf-den312d-m50-f2-rho` o LB caiu de 6 para 4: o valor anterior não era limite inferior válido.
+Em `mapf-room-32-32-4-m25-f4-rho`, que não acusava cortes inválidos, o UB melhorou de 20 para 19 —
+efeito da mudança de família de cortes, não de correção de erro.
+
+Nenhuma classe de dificuldade mudou, então o desenho do benchmark (partições, regimes, seleção das
+30 D/A) segue válido. `manifest.csv` atualizado nas três linhas, com `fonte_lb_ub` marcando a
+reavaliação; os valores anteriores ficam preservados em `reavaliacao_c4dm.csv`.
+
+## 8. Estado
 
 - [x] Diagnóstico e confirmação por dois instrumentos independentes.
 - [x] Alcance medido nas 75 instâncias principais.
-- [ ] Regressão dedicada (`verify_c4_dm.py`) e correção do `except` em `verify_e5_validador.py`.
-- [ ] Correção: auto-emparelhamento de `S∩T` no bipartido de DM, em vez da remoção.
-- [ ] Reavaliação das instâncias afetadas e atualização do `manifest.csv`.
+- [x] Regressão dedicada e correção do `except` em `verify_e5_validador.py`.
+- [x] Correção de validade e de determinismo em `generate_C4_DM`.
+- [x] Reavaliação das instâncias afetadas e atualização do `manifest.csv`.
 
-Todo resultado registrado antes desta data foi produzido com o gerador defeituoso. O alcance prático
-se restringe às instâncias com `S∩T ≠ ∅`, que são 5 entre as principais e nenhuma nas rodadas
-E1–E4, E7 e E8.
+Todo resultado registrado antes de 2026-09-26 foi produzido com o gerador defeituoso. O alcance da
+falha de **validade** se restringe às instâncias com `S∩T ≠ ∅` — 5 entre as principais, nenhuma nas
+rodadas E1–E4, E7 e E8, e das que aparecem em E9/E10/E10b só `den312d-m50` e `room-m25-rho`. A falha
+de **determinismo** alcança qualquer instância e move o LB em ±1; os números não regerados
+permanecem os da versão anterior e estão marcados como tal nos respectivos relatórios.

@@ -57,6 +57,15 @@ Regras nomeadas, gravadas no cabeçalho `# meta:` de cada instância e no manife
   `hc12p` e `bip42p`: mesmos S e T e mesmo dígrafo de alcance
   (`experiments/benchmark/verify_lote1a.py`).
 
+> **Correção de 2026-09-26 (`correcao-c4-dm.md`).** `generate_C4_DM` gerava cortes inválidos em
+> instâncias com `S∩T ≠ ∅`, e os cortes estáticos C1+C2+C4 entram no COMP, que é o método de
+> referência do protocolo de dificuldade. Três linhas do manifesto foram reavaliadas e corrigidas:
+> `b-b09-intercalado-f2-rho` (ótimo 4 → **2**), `mapf-den312d-m50-f2-rho` (LB 6 → **4**) e
+> `mapf-room-32-32-4-m25-f4-rho` (UB 20 → **19**). Nenhuma classe de dificuldade mudou, de modo que
+> as análises do §6 e a seleção das 30 D/A do §7 seguem válidas. As 65 instâncias com `S∩T = ∅` não
+> tinham cortes inválidos; seus LB/UB podem variar em ±1 numa reexecução por causa do
+> não-determinismo que a mesma correção eliminou, e não foram regerados.
+
 ## 5. Classificação das instâncias antigas
 
 Nenhum arquivo antigo foi movido; a classe está no manifesto.

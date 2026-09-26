@@ -227,14 +227,16 @@ def solve_ip_yspace(S, T, V, adj, A_r, r,
     """
     IP em y-space: y ∈ {0,1}^V, cortes C1+C2+C4 + extra_cuts.
 
-    validate_cuts: padrão False aqui, diferente de solve_lp_cutting_plane.
-    C1/C2/C4-DM já são validadas por oráculo nos gabaritos de regressão da
-    rodada E5 e não são as famílias onde o defeito de corte inválido foi
-    encontrado (esse estava em separate_classical_fracs/generate_C5_threshold,
-    exclusivas do laço de E2). A validação por corte custa O(|A_r|) cada
-    (is_valid_cut faz uma BFS no grafo inteiro), o que é proibitivo em
-    instâncias com |A_r| grande (minutos em cc12-2p) sem nenhum ganho aqui.
+    validate_cuts: padrão False aqui, diferente de solve_lp_cutting_plane,
+    porque validar custa O(|A_r|) por corte (is_valid_cut faz uma BFS no grafo
+    inteiro) — proibitivo com |A_r| grande. A rede de segurança de C1/C2/C4-DM
+    é a regressão verify_c4_dm.py, não a validação em tempo de execução.
     Ligue explicitamente se passar extra_cuts de origem não auditada.
+
+    Até 2026-09-26 esta docstring afirmava que C1/C2/C4-DM "já são validadas
+    por oráculo nos gabaritos de regressão da rodada E5". Era falso — nenhuma
+    regressão cobria a saída de generate_C4_DM, que gerava cortes inválidos
+    com S∩T != 0 (ver correcao-c4-dm.md).
 
     Retorna dict com: ip_obj, ip_bound, ip_gap, ip_status, time_s,
                       n_static_cuts, n_c1, n_c2, n_c4.

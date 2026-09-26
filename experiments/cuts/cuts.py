@@ -183,9 +183,21 @@ def generate_C4_DM(S, T, N_plus, N_minus):
     Dulmage-Mendelsohn em B_∅ (arcos diretos S→T em A_r).
     Por cada origem (destino) não emparelhada gera um corte via N+(S') (N-(T')).
 
-    Vértices em S ∩ T ficam de fora dos dois lados (como em C1/C2): pelo
-    Lema 5 de Das, o robô que parte de um vértice que também é alvo pode
-    simplesmente ficar parado ali, sem exigir emparelhamento nem estação.
+    Segue §5.4 de direcoes-pli-min-station.md: as origens candidatas são
+    S' ⊆ S∖T (um robô que parte de v ∈ S∩T pode ficar parado ali pelo Lema 5
+    de Das, e não sustenta o argumento de primeiro salto), mas a vizinhança
+    que define a deficiência é N⁺(S') ∩ T com T **inteiro** — um robô de S∖T
+    pode perfeitamente terminar em v ∈ S∩T, desde que o robô de v saia, que é
+    o que o balanço unificado permite (base-formulation.md §6.1). Do lado dos
+    destinos, o simétrico: T' ⊆ T∖S contra S inteiro.
+
+    Até 2026-09-26 o emparelhamento usava T∖S (e S∖T) também do lado da
+    vizinhança, suprimindo emparelhamentos legítimos com S∩T. Isso criava
+    deficiência de Hall inexistente e os cortes daí derivados cortavam
+    soluções viáveis. Ver correcao-c4-dm.md.
+
+    As iterações são ordenadas porque emparelhamento máximo não é único: sem
+    isso a família gerada muda entre processos, junto com o LB que ela produz.
     """
     S_set, T_set = set(S), set(T)
     S_only = S_set - T_set
@@ -193,9 +205,9 @@ def generate_C4_DM(S, T, N_plus, N_minus):
     cuts = set()
 
     # Lado S: origens que não alcançam nenhum destino diretamente
-    adj_S = {s: N_plus.get(s, set()) & T_only for s in S_only}
-    mfwd_s, mbwd_s = _max_matching(list(S_only), adj_S)
-    for s0 in (s for s in S_only if s not in mfwd_s):
+    adj_S = {s: sorted(set(N_plus.get(s, ())) & T_set) for s in S_only}
+    mfwd_s, mbwd_s = _max_matching(sorted(S_only), adj_S)
+    for s0 in sorted(s for s in S_only if s not in mfwd_s):
         S_prime = _alternating_reach([s0], adj_S, mbwd_s)
         N_prime = set()
         for s in S_prime:
@@ -204,9 +216,9 @@ def generate_C4_DM(S, T, N_plus, N_minus):
             cuts.add(frozenset(N_prime))
 
     # Lado T: destinos que não recebem nenhuma origem diretamente
-    adj_T = {t: N_minus.get(t, set()) & S_only for t in T_only}
-    mfwd_t, mbwd_t = _max_matching(list(T_only), adj_T)
-    for t0 in (t for t in T_only if t not in mfwd_t):
+    adj_T = {t: sorted(set(N_minus.get(t, ())) & S_set) for t in T_only}
+    mfwd_t, mbwd_t = _max_matching(sorted(T_only), adj_T)
+    for t0 in sorted(t for t in T_only if t not in mfwd_t):
         T_prime = _alternating_reach([t0], adj_T, mbwd_t)
         N_prime = set()
         for t in T_prime:
@@ -214,7 +226,7 @@ def generate_C4_DM(S, T, N_plus, N_minus):
         if N_prime:
             cuts.add(frozenset(N_prime))
 
-    return list(cuts)
+    return sorted(cuts, key=sorted)
 
 
 # ── C3: separação iterativa de LP via max-flow ────────────────────────────────
