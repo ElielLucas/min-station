@@ -202,16 +202,25 @@ def measure_root(S, T, V, A_r, f_type, upfront_cuts, gurobi_cuts=-1,
     }
 
 
-def measure_mip(S, T, V, A_r, f_type, upfront_cuts, seed=42, threads=1, time_limit=1200):
+def measure_mip(S, T, V, A_r, f_type, upfront_cuts, seed=42, threads=1, time_limit=1200,
+                y_start=None):
     """
     Resolve o MIP completo até otimalidade (ou time_limit).
     Usado em E0 para validar BASE-I == BASE-C.
+
+    y_start: dict opcional v -> 0/1 passado como MIP start só nas variáveis y
+    (o Gurobi completa f). Permite dar ao compacto o mesmo start dos métodos
+    em espaço-y.
     """
     modelo, y, f, _ = _make_mip(S, T, V, A_r, f_type, upfront_cuts)
     modelo.Params.OutputFlag = 0
     modelo.Params.Seed       = seed
     modelo.Params.Threads    = threads
     modelo.Params.TimeLimit  = time_limit
+    if y_start is not None:
+        for v in V:
+            y[v].Start = y_start.get(v, 0.0)
+        modelo.update()
 
     t0 = time.monotonic()
     modelo.optimize()

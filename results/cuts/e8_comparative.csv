@@ -1,0 +1,25 @@
+instancia,R,regime,metrica,n,m,n_arcos,config,seed,n_static_cuts,primal_obj,primal_t_s,primal_terminais,obj,bound,gap,status,t_solver_s,t_total_s,lazy_ou_iter,usercuts_ou_oraculo,params_metodo,y_star_feasible_compacto,ref_opt,threads,tl_s,gurobi,formulacao,commit
+Chicago_n400_m1130_st15.txt,7,R-a,ponderada+dirigida,400,15,10178,COMP,42,24,22,60.001,0,17.0,17.0,0.0,OPT,287.357,287.498,,,default,,17,4,300.0,12.0.3,U,0a0a796-dirty
+Chicago_n400_m1130_st15.txt,7,R-a,ponderada+dirigida,400,15,10178,BC-Y',42,24,22,60.001,0,22.0,14.000000000000004,0.3636363636363635,TL+guarda_TL,300.223,300.409,10539,204,LazyConstraints=1;user_cuts=on,FEASIBLE,17,4,300.0,12.0.3,U,0a0a796-dirty
+Chicago_n400_m1130_st15.txt,7,R-a,ponderada+dirigida,400,15,10178,CBI,42,24,22,60.001,0,22.0,14.0,0.36363636363636365,TL,300.501,300.636,94,4503,PoolSearchMode=2;PoolSolutions=50,FEASIBLE,17,4,300.0,12.0.3,U,0a0a796-dirty
+Barcelona_n930_m2522_st_15.txt,5,R-a,ponderada+dirigida,930,15,32648,COMP,42,28,29,60.001,0,15.0,15.0,0.0,OPT,108.023,108.457,,,default,,15,4,300.0,12.0.3,U,0a0a796-dirty
+Barcelona_n930_m2522_st_15.txt,5,R-a,ponderada+dirigida,930,15,32648,BC-Y',42,28,29,60.001,0,29.0,10.0,0.6551724137931034,INTERROMPIDO+guarda_TL,300.94,301.369,10383,203,LazyConstraints=1;user_cuts=on,FEASIBLE,15,4,300.0,12.0.3,U,0a0a796-dirty
+Barcelona_n930_m2522_st_15.txt,5,R-a,ponderada+dirigida,930,15,32648,CBI,42,28,29,60.001,0,29.0,10.0,0.6551724137931034,TL,300.474,300.786,80,3950,PoolSearchMode=2;PoolSolutions=50,FEASIBLE,15,4,300.0,12.0.3,U,0a0a796-dirty
+Philadelphia_n800_m2404_st_5.txt,2,R-a,ponderada+dirigida,800,5,5015,COMP,42,50,68,60.013,0,42.0,37.0,0.11904761904761904,TL,300.006,300.135,,,default,,41,4,300.0,12.0.3,U,0a0a796-dirty
+Philadelphia_n800_m2404_st_5.txt,2,R-a,ponderada+dirigida,800,5,5015,BC-Y',42,50,68,60.013,0,68.0,29.000000000000004,0.5735294117647058,TL+guarda_TL,300.128,300.28,11714,204,LazyConstraints=1;user_cuts=on,FEASIBLE,41,4,300.0,12.0.3,U,0a0a796-dirty
+Philadelphia_n800_m2404_st_5.txt,2,R-a,ponderada+dirigida,800,5,5015,CBI,42,50,68,60.013,0,68.0,29.0,0.5735294117647058,TL,300.166,300.251,170,8450,PoolSearchMode=2;PoolSolutions=50,FEASIBLE,41,4,300.0,12.0.3,U,0a0a796-dirty
+Philadelphia_n800_m2404_st_25.txt,3,R-a,ponderada+dirigida,800,25,9837,COMP,42,73,71,60.004,2,48.0,41.0,0.14583333333333334,TL,300.004,300.145,,,default,,,4,300.0,12.0.3,U,0a0a796-dirty
+Philadelphia_n800_m2404_st_25.txt,3,R-a,ponderada+dirigida,800,25,9837,BC-Y',42,73,71,60.004,2,71.0,34.000000000000014,0.52112676056338,TL+guarda_TL,300.699,300.882,9157,204,LazyConstraints=1;user_cuts=on,FEASIBLE,,4,300.0,12.0.3,U,0a0a796-dirty
+Philadelphia_n800_m2404_st_25.txt,3,R-a,ponderada+dirigida,800,25,9837,CBI,42,73,71,60.004,2,71.0,34.0,0.5211267605633803,TL,300.998,301.134,73,3600,PoolSearchMode=2;PoolSolutions=50,FEASIBLE,,4,300.0,12.0.3,U,0a0a796-dirty
+hc9u.txt,1,R-b,das,512,128,4608,COMP,42,256,59,60.044,4,40.0,32.0,0.2,TL,300.036,300.106,,,default,,,4,300.0,12.0.3,U,0a0a796-dirty
+hc9u.txt,1,R-b,das,512,128,4608,BC-Y',42,256,59,60.044,4,49.0,32.0,0.3469387755102041,TL,300.009,300.097,1031,39,LazyConstraints=1;user_cuts=on,FEASIBLE,,4,300.0,12.0.3,U,0a0a796-dirty
+hc9u.txt,1,R-b,das,512,128,4608,CBI,42,256,59,60.044,4,59.0,31.999999999995072,0.45762711864415134,TL,300.113,300.179,9,400,PoolSearchMode=2;PoolSolutions=50,FEASIBLE,,4,300.0,12.0.3,U,0a0a796-dirty
+hc10p.txt,150,R-b,das(r=1 via A_r=E),1024,256,10240,COMP,42,512,915,60.202,449,78.0,52.0,0.3333333333333333,TL,300.01,300.184,,,default,,,4,300.0,12.0.3,U,0a0a796-dirty
+hc10p.txt,150,R-b,das(r=1 via A_r=E),1024,256,10240,BC-Y',42,512,915,60.202,449,97.0,52.0,0.4639175257731959,INTERROMPIDO+guarda_TL,300.04,300.221,202,20,LazyConstraints=1;user_cuts=on,FEASIBLE,,4,300.0,12.0.3,U,0a0a796-dirty
+hc10p.txt,150,R-b,das(r=1 via A_r=E),1024,256,10240,CBI,42,512,915,60.202,449,915.0,53.0,0.9420765027322404,TL,300.015,300.241,1,0,PoolSearchMode=2;PoolSolutions=50,FEASIBLE,,4,300.0,12.0.3,U,0a0a796-dirty
+bip42p.txt,200,R-b',das(r=1 via A_r=E),1200,100,7964,COMP,42,200,767,60.015,127,43.0,33.0,0.23255813953488372,TL,300.005,300.147,,,default,,,4,300.0,12.0.3,U,0a0a796-dirty
+bip42p.txt,200,R-b',das(r=1 via A_r=E),1200,100,7964,BC-Y',42,200,767,60.015,127,70.0,34.0,0.5142857142857142,INTERROMPIDO+guarda_TL,300.801,300.985,1485,54,LazyConstraints=1;user_cuts=on,FEASIBLE,,4,300.0,12.0.3,U,0a0a796-dirty
+bip42p.txt,200,R-b',das(r=1 via A_r=E),1200,100,7964,CBI,42,200,767,60.015,127,767.0,35.0,0.954367666232073,TL,300.009,300.313,1,0,PoolSearchMode=2;PoolSolutions=50,FEASIBLE,,4,300.0,12.0.3,U,0a0a796-dirty
+cc12-2p.txt,500,R-c,ponderada,4096,236,2795100,COMP,42,50,4096,290.905,472,282.0,6.0,0.9787234042553191,TL,301.703,343.861,,,default,,,4,300.0,12.0.3,U,0a0a796-dirty
+cc12-2p.txt,500,R-c,ponderada,4096,236,2795100,BC-Y',42,50,4096,290.905,472,6.0,6.0,0.0,OPT,291.957,326.602,1,0,LazyConstraints=1;user_cuts=off,FEASIBLE,,4,300.0,12.0.3,U,0a0a796-dirty
+cc12-2p.txt,500,R-c,ponderada,4096,236,2795100,CBI,42,50,4096,290.905,472,6.0,6.0,0.0,OPT,7.504,40.553,1,9,PoolSearchMode=2;PoolSolutions=50,FEASIBLE,,4,300.0,12.0.3,U,0a0a796-dirty

@@ -1,0 +1,57 @@
+# Verificações do E8 (revisão pré-execução)
+
+## verify_e8_oracle.py
+=== 1. Exaustiva (todo C ⊆ V) ===
+Direct0                                   16 casos (15 com terminal em C), 0 divergências, 0 cortes inválidos, speedup=4.0x [OK]
+TermRelay                                 16 casos (15 com terminal em C), 0 divergências, 0 cortes inválidos, speedup=0.9x [OK]
+TermRelayForced                           32 casos (30 com terminal em C), 0 divergências, 0 cortes inválidos, speedup=1.0x [OK]
+Tri                                      512 casos (504 com terminal em C), 0 divergências, 0 cortes inválidos, speedup=1.2x [OK]
+StayPut                                    4 casos (3 com terminal em C), 0 divergências, 0 cortes inválidos, speedup=1.2x [OK]
+SharedTerminal                            32 casos (31 com terminal em C), 0 divergências, 0 cortes inválidos, speedup=1.0x [OK]
+F1(2,2)                                 8192 casos (7680 com terminal em C), 0 divergências, 0 cortes inválidos, speedup=1.3x [OK]
+F2(k=1)                                  128 casos (126 com terminal em C), 0 divergências, 0 cortes inválidos, speedup=1.1x [OK]
+PathM1                                    16 casos (12 com terminal em C), 0 divergências, 0 cortes inválidos, speedup=1.1x [OK]
+
+=== 2. Amostral nas instâncias reais (C sobre V inteiro) ===
+Chicago_n400_m1130_st15.txt              202 casos (195 com terminal em C), 0 divergências, 0 cortes inválidos, speedup=2.8x [OK]
+Philadelphia_n800_m2404_st_25.txt        202 casos (193 com terminal em C), 0 divergências, 0 cortes inválidos, speedup=2.2x [OK]
+hc9u.txt                                  32 casos (31 com terminal em C), 0 divergências, 0 cortes inválidos, speedup=1.6x [OK]
+cc10-2p.txt                               32 casos (30 com terminal em C), 0 divergências, 0 cortes inválidos, speedup=4.6x [OK]
+
+RESULTADO FINAL: 0 divergências, 0 cortes inválidos.
+
+## verify_e8_preprocess.py
+Direct0                            OPT sem=0.0 com=0.0 fix0=0 fix1=0 t_pp=0.0s [PASS]
+TermRelay                          OPT sem=1.0 com=1.0 fix0=0 fix1=1 t_pp=0.0s [PASS]
+TermRelayForced                    OPT sem=1.0 com=1.0 fix0=1 fix1=1 t_pp=0.0s [PASS]
+Tri                                OPT sem=2.0 com=2.0 fix0=0 fix1=0 t_pp=0.0s [PASS]
+StayPut                            OPT sem=0.0 com=0.0 fix0=0 fix1=0 t_pp=0.0s [PASS]
+SharedTerminal                     OPT sem=1.0 com=1.0 fix0=0 fix1=1 t_pp=0.0s [PASS]
+F1(2,2)                            OPT sem=9.0 com=9.0 fix0=0 fix1=9 t_pp=0.0s [PASS]
+F2(k=1)                            OPT sem=1.0 com=1.0 fix0=0 fix1=1 t_pp=0.0s [PASS]
+Sec59(L=7)                         OPT sem=7.0 com=7.0 fix0=0 fix1=7 t_pp=0.0s [PASS]
+PathM1                             OPT sem=2.0 com=2.0 fix0=0 fix1=2 t_pp=0.0s [PASS]
+Chicago_n400_m1130_st15.txt        OPT sem=17.0 com=17.0 fix0=15 fix1=2 t_pp=21.7s [PASS]
+
+RESULTADO FINAL: todos PASS
+
+## run_e8.py --so-smoke
+=== E8 smoke test nos gabaritos (primal + COMP + BC-Y' + CBI) ===
+
+  Direct0          OPT_ref=0.0  primal=0  COMP=0.0[OK]  BC-Y'=0.0[OK]  CBI=0.0[OK]
+  TermRelay        OPT_ref=1.0  primal=1  COMP=1.0[OK]  BC-Y'=1.0[OK]  CBI=1.0[OK]
+  TermRelayForced  OPT_ref=1.0  primal=1  COMP=1.0[OK]  BC-Y'=1.0[OK]  CBI=1.0[OK]
+  Tri              OPT_ref=2.0  primal=2  COMP=2.0[OK]  BC-Y'=2.0[OK]  CBI=2.0[OK]
+  StayPut          OPT_ref=0.0  primal=0  COMP=0.0[OK]  BC-Y'=0.0[OK]  CBI=0.0[OK]
+  SharedTerminal   OPT_ref=1.0  primal=1  COMP=1.0[OK]  BC-Y'=1.0[OK]  CBI=1.0[OK]
+  Sec59            OPT_ref=7.0  primal=7  COMP=7.0[OK]  BC-Y'=7.0[OK]  CBI=7.0[OK]
+
+
+## verify_e8_cc12_opt.py
+conferência do validador por componentes: 1275 cortes, 0 divergências
+cc12-2p: n=4096 m=236 |A_r|=2795100 R=500 (carga 17s)
+A_r simétrico: True
+UB: |C|=6 C=['109', '1157', '2387', '2873', '3834', '968'] oráculo=True compacto=True
+cortes C1+C4-DM: 50 únicos, 50 válidos (t=114s)
+núcleo C1+C4-DM: status=2 ótimo=6.0
+CERTIFICADO OPT(cc12-2p)=6: SIM

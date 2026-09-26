@@ -610,3 +610,97 @@ def assert_valid_cuts(S, T, A_r, cuts, origem='', N_plus=None, N_minus=None):
             raise CorteInvalido(
                 f'[{origem}] corte inválido |Z|={len(Z)}: {sorted(Z)[:20]}'
             )
+
+
+# ── Oráculo inteiro restrito (E8, Bloco 1) ────────────────────────────────────
+
+def _co_reachable_set(graph, cap, sink):
+    """Vértices que alcançam sink no residual (BFS reversa sobre capacidades)."""
+    visited = {sink}
+    queue = deque([sink])
+    while queue:
+        v = queue.popleft()
+        for u in graph.get(v, {}):
+            if u not in visited and cap.get((u, v), 0.0) > 1e-9:
+                visited.add(u)
+                queue.append(u)
+    return visited
+
+
+def integer_oracle(S, T, N_plus, C):
+    r"""
+    Testa viabilidade do modelo compacto (rede de fluxo agregada) para
+    y binário com C = {v : y_v = 1}, sem materializar A_r inteiro.
+
+    Equivalente a `_build_flow_net_aggregate(S, T, A_r, y_bin)` +
+    `_edmonds_karp` + `_extract_Z`, com y_bin[v] = 1 se v ∈ C senão 0, mas
+    O(|S∪T∪C| + arcos entre eles) em vez de O(|A_r|) — decisivo quando
+    |A_r| é grande (ex.: cc12-2p, |A_r| ≈ 2,8 milhões) e C é pequeno.
+
+    N_plus deve ser pré-computado uma vez por instância (`build_neighborhoods`)
+    e reaproveitado entre chamadas — não é reconstruído aqui.
+
+    Vértices fora de S∪T∪C têm capacidade de trânsito m*y_v = 0 no modelo
+    original, então são "becos sem saída" para o fluxo e podem ser omitidos
+    da rede sem alterar o valor do max-flow. Mas podem aparecer no corte 𝒵
+    como CANDIDATOS (vértices ainda não instalados que, se instalados,
+    quebrariam o corte) — capturados explicitamente no passo 2 abaixo, já
+    que não têm nó próprio na rede restrita.
+
+    Retorna (viavel: bool, Z: frozenset ou None). Se inviável, Z é o corte
+    combinatório mínimo do lado da fonte (Teorema 6).
+    """
+    m = len(S)
+    S_set, T_set = set(S), set(T)
+    C_set = set(C)
+    nodes = S_set | T_set | C_set
+
+    INF = 1e9
+    graph = {}
+    cap = {}
+
+    def arc(u, v, c):
+        graph.setdefault(u, {})[v] = None
+        graph.setdefault(v, {})[u] = None
+        cap[(u, v)] = cap.get((u, v), 0.0) + c
+        cap.setdefault((v, u), 0.0)
+
+    for v in nodes:
+        is_S = v in S_set
+        is_T = v in T_set
+        if is_S:
+            arc('_s', f'{v}_out', 1.0)
+        if is_T:
+            arc(f'{v}_in', '_t', 1.0)
+        if v in C_set:
+            cap_relay = float(m - 1 if (is_S or is_T) else m)
+        else:
+            cap_relay = 0.0
+        arc(f'{v}_in', f'{v}_out', cap_relay)
+
+    for u in nodes:
+        for w in N_plus.get(u, ()):
+            if w in nodes:
+                arc(f'{u}_out', f'{w}_in', INF)
+
+    flow = _edmonds_karp(graph, cap, '_s', '_t')
+    if flow >= m - 1e-6:
+        return True, None
+
+    # passo 1: corte restrito aos nós já modelados (S∪T∪C)
+    X = _reachable_set(graph, cap, '_s')
+    Z = _extract_Z(X, nodes, S_set, T_set, m)
+
+    # passo 2: candidatos não instalados adjacentes à fronteira alcançável.
+    # w ∉ nodes não tem nó próprio na rede restrita, mas se algum u com
+    # u_out ∈ X tem arco (u,w) em A_r (via N_plus completo, não filtrado),
+    # então w_in seria alcançável na rede completa (arco INF) enquanto
+    # w_out não (capacidade 0 com y_w=0) — mesma regra de _extract_Z.
+    for u in nodes:
+        if f'{u}_out' not in X:
+            continue
+        for w in N_plus.get(u, ()):
+            if w not in nodes:
+                Z.add(w)
+
+    return False, frozenset(Z)

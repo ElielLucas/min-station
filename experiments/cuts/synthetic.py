@@ -342,3 +342,27 @@ def make_SharedTerminal(r=1):
         'name': 'SharedTerminal',
         'OPT':  1.0,
     }
+
+
+def make_TermRelayForced(r=1):
+    """
+    S={s1,s2}, T={t1,t2}, arestas s1-t1, s2-t1, t1-t2, t2-x, autonomia r=1.
+
+    O robô 2 só alcança t2 passando por t1, e o vértice não terminal x
+    (pendurado em t2) não ajuda ninguém. OPT=1, única solução y_t1=1: o ótimo
+    exige estação em um destino. Com estações restritas a V∖(S∪T) a instância
+    fica inviável, o que torna o gabarito um teste direto de qualquer rotina
+    que só considere não terminais (heurística primal, vértices obrigatórios).
+    """
+    S = ['s1', 's2']
+    T = ['t1', 't2']
+    V = ['s1', 's2', 't1', 't2', 'x']
+    edges = [('s1', 't1', 1), ('s2', 't1', 1), ('t1', 't2', 1), ('t2', 'x', 1)]
+
+    adj = _adj_undirected(edges)
+    A_r = construir_arcos_alcance(V, adj, r)
+
+    return S, T, V, adj, A_r, r, {
+        'name': 'TermRelayForced',
+        'OPT':  1.0,
+    }
