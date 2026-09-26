@@ -14,6 +14,8 @@ O problema de referência foi definido por Arun Kumar Das. Dado um grafo `G = (V
 
 Os robôs são **não rotulados**: não existe pareamento origem-destino pré-fixado.
 
+Das não exige `S ∩ T = ∅`: um mesmo vértice pode ser origem de um robô e alvo de outro (a prova do Lema 5 do artigo depende explicitamente desse caso — o robô pode ficar parado ocupando o próprio alvo). O baseline atual trata isso com um balanço unificado (ver `docs/context-ai/base-formulation.md` §6); não reintroduzir a suposição de disjunção sem decisão explícita.
+
 ## 2. Objetivo científico
 
 O objetivo do projeto é avançar a resolução do MIN-STATION no âmbito de **Programação Linear Inteira e métodos exatos de otimização**.

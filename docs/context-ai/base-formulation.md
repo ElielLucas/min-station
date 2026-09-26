@@ -60,31 +60,29 @@ Minimizar o número total de estações:
 
 `min Σ_{v∈V} y_v`.
 
-## 6. Restrições correntes
+## 6. Restrições correntes (balanço unificado — variante U)
 
-As equações abaixo correspondem à versão atual da formulação quando origens e destinos são tratados por conjuntos separados.
+Das não exige `S` e `T` disjuntos (Q1, fechada na rodada E5): a definição do
+problema permite que um vértice seja origem de um robô e alvo de outro ao
+mesmo tempo, e a prova do Lema 5 do artigo depende disso. As equações
+abaixo usam por isso um balanço único por vértice, com indicadores
+`a_v = 1` se `v ∈ S` (senão 0) e `b_v = 1` se `v ∈ T` (senão 0):
 
-### 6.1 Balanço nas origens
+### 6.1 Balanço unificado
 
-Para todo `s ∈ S`:
+Para todo `v ∈ V`:
 
-`Σ_{v:(s,v)∈A_r} f_{s,v} - Σ_{u:(u,s)∈A_r} f_{u,s} = 1`.
+`Σ_{v:(v,w)∈A_r} f_{v,w} - Σ_{u:(u,v)∈A_r} f_{u,v} = a_v - b_v`.
 
-Interpretação: a origem produz uma unidade líquida de fluxo.
+Interpretação: `v ∈ S∖T` produz uma unidade líquida (equivale à antiga
+restrição 6.1 de balanço nas origens); `v ∈ T∖S` consome uma unidade líquida
+(equivale à antiga 6.2); `v ∉ S∪T` conserva fluxo (antiga 6.3); e
+`v ∈ S ∩ T` também conserva fluxo (`in(v) = out(v)`), permitindo que o robô
+que parte de `v` simplesmente fique parado ocupando o próprio alvo, sem
+exigir caminho nem estação (Lema 5 de Das).
 
-### 6.2 Balanço nos destinos
-
-Para todo `t ∈ T`:
-
-`Σ_{u:(u,t)∈A_r} f_{u,t} - Σ_{w:(t,w)∈A_r} f_{t,w} = 1`.
-
-Interpretação: o destino consome uma unidade líquida de fluxo.
-
-### 6.3 Conservação nos demais vértices
-
-Para todo `v ∈ V \ (S ∪ T)`:
-
-`Σ_{u:(u,v)∈A_r} f_{u,v} = Σ_{w:(v,w)∈A_r} f_{v,w}`.
+Quando `S ∩ T = ∅`, esta forma coincide exatamente com as três restrições
+separadas usadas antes desta rodada.
 
 ## 7. Ativação por instalação
 
@@ -96,41 +94,29 @@ O objetivo destas restrições é distinguir:
 
 Use `m = |S|`.
 
-### 7.1 Entrada em vértices que não são destinos
+### 7.1 Entrada
 
-Para todo `v ∈ V \ T`:
+Para todo `v ∈ V`:
 
-`Σ_{u:(u,v)∈A_r} f_{u,v} <= m y_v`.
+`Σ_{u:(u,v)∈A_r} f_{u,v} <= b_v + (m - b_v) y_v`.
 
-Sem estação, um vértice que não é destino não pode receber fluxo.
+Se `v ∉ T` (`b_v=0`): sem estação, `v` não pode receber fluxo algum
+(equivale à antiga 7.1). Se `v ∈ T` (`b_v=1`) e `y_v = 0`: `v` pode
+receber somente a unidade que termina nele (antiga 7.2).
 
-### 7.2 Entrada em destinos
+### 7.2 Saída
 
-Para todo `t ∈ T`:
+Para todo `v ∈ V`:
 
-`Σ_{u:(u,t)∈A_r} f_{u,t} <= 1 + (m-1)y_t`.
+`Σ_{w:(v,w)∈A_r} f_{v,w} <= a_v + (m - a_v) y_v`.
 
-Se `y_t = 0`, o destino pode receber somente a unidade que termina nele.
+Se `v ∉ S` (`a_v=0`): sem estação, `v` não pode emitir fluxo algum
+(equivale à antiga 7.3). Se `v ∈ S` (`a_v=1`) e `y_v = 0`: `v` pode emitir
+somente a unidade do robô que começa ali (antiga 7.4).
 
-Se `y_t = 1`, o destino pode receber fluxo adicional e funcionar como ponto de recarga.
-
-### 7.3 Saída de vértices que não são origens
-
-Para todo `v ∈ V \ S`:
-
-`Σ_{w:(v,w)∈A_r} f_{v,w} <= m y_v`.
-
-Sem estação, um vértice que não é origem não pode emitir fluxo.
-
-### 7.4 Saída das origens
-
-Para todo `s ∈ S`:
-
-`Σ_{w:(s,w)∈A_r} f_{s,w} <= 1 + (m-1)y_s`.
-
-Se `y_s = 0`, a origem pode emitir somente a unidade do robô que começa ali.
-
-Se `y_s = 1`, a origem também pode encaminhar fluxo adicional após recarga.
+Para `v ∈ S ∩ T`, as duas restrições ficam `in(v) <= 1 + (m-1)y_v` e
+`out(v) <= 1 + (m-1)y_v`: cada lado tem sua própria unidade livre, e
+qualquer fluxo além disso (trânsito de outro robô) exige `y_v = 1`.
 
 ## 8. Semântica das estações em terminais
 
@@ -161,28 +147,13 @@ Esse ponto deve aparecer na demonstração de correção da formulação, não a
 
 ## 10. Pontos ainda não fechados
 
-### 10.1 Interseção `S ∩ T`
+### 10.1 Interseção `S ∩ T` — RESOLVIDO (rodada E5)
 
-As restrições 6.1 e 6.2 entram em conflito se um mesmo vértice pertencer simultaneamente a `S` e `T`.
-
-O problema original não deve ser tratado como se `S` e `T` fossem necessariamente disjuntos sem uma decisão formal.
-
-Uma possível reformulação unificada, ainda **não adotada automaticamente**, é usar os indicadores:
-
-- `a_v = 1` se `v ∈ S`, 0 caso contrário;
-- `b_v = 1` se `v ∈ T`, 0 caso contrário.
-
-Balanço candidato:
-
-`out(v) - in(v) = a_v - b_v`.
-
-Ativações candidatas:
-
-`in(v) <= b_v + (m-b_v)y_v`
-
-`out(v) <= a_v + (m-a_v)y_v`.
-
-Essa alternativa deve ser analisada e aprovada antes de substituir a formulação corrente.
+Adotado o balanço unificado (variante U) descrito em §6 e §7. Não é mais
+uma alternativa candidata: é a formulação corrente, implementada em
+`baseline.py`. Verificado que coincide exatamente com a formulação anterior
+quando `S ∩ T = ∅` (caso de todas as 22 instâncias do repositório), então
+nenhum resultado experimental já obtido é invalidado.
 
 ### 10.2 Distância ponderada vs. passos
 
@@ -209,6 +180,6 @@ Antes de aceitar uma mudança na formulação, verificar:
 - [ ] toda transição respeita `r`;
 - [ ] não foi introduzida identidade de robô desnecessariamente;
 - [ ] não foi reintroduzida a formulação generalizada;
-- [ ] o caso `S ∩ T` foi preservado, resolvido ou explicitamente assumido fora do escopo;
+- [x] o caso `S ∩ T` é tratado pelo balanço unificado (§6, §10.1) — não reintroduzir balanços separados sem justificativa;
 - [ ] a equivalência entre fluxo e rotas permanece válida;
 - [ ] testes pequenos foram atualizados.

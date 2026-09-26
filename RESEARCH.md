@@ -14,7 +14,7 @@ A referência conceitual é o MIN-STATION definido por Das:
 
 - grafo simples, não direcionado e conexo `G = (V,E)`;
 - conjunto de origens `S ⊆ V`;
-- conjunto de destinos `T ⊆ V`;
+- conjunto de destinos `T ⊆ V` (Das não exige `S ∩ T = ∅`: um vértice pode ser origem de um robô e alvo de outro ao mesmo tempo);
 - `|S| = |T| = m`;
 - robôs não rotulados;
 - autonomia comum `r`;
@@ -34,7 +34,8 @@ A formulação base atual do repositório utiliza:
 3. autonomia comum;
 4. variáveis de instalação em qualquer `v ∈ V`;
 5. minimização da quantidade de estações;
-6. restrições específicas para permitir que origens e destinos sejam usados como estações quando necessário.
+6. restrições específicas para permitir que origens e destinos sejam usados como estações quando necessário;
+7. balanço unificado que admite `S ∩ T ≠ ∅` (rodada E5; ver `docs/context-ai/base-formulation.md` §6 e `docs/technical/governance/open-questions.md` Q1).
 
 Essa formulação é o **baseline atual para desenvolvimento e comparação**, não o limite do escopo científico do projeto.
 

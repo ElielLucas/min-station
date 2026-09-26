@@ -41,13 +41,6 @@ def construir_modelo_baseline(S, T, V, arcos, custos_estacao=None):
             f"MIN-STATION exige |S| = |T|. Recebido |S|={len(S)} e |T|={len(T)}."
         )
 
-    intersecao_ST = S_set & T_set
-    if intersecao_ST:
-        raise ValueError(
-            "Esta formulação assume S e T disjuntos. "
-            f"Vértices em ambos os conjuntos: {sorted(intersecao_ST)}"
-        )
-
     faltando_S = S_set - V_set
     faltando_T = T_set - V_set
 
@@ -105,58 +98,28 @@ def construir_modelo_baseline(S, T, V, arcos, custos_estacao=None):
         for v in V
     }
 
-    # Fluxo em fontes e sumidouros
-    # Balanço nas origens: sai uma unidade líquida de fluxo.
-    for s in S:
-        modelo.addConstr(
-            saida[s] - entrada[s] == 1,
-            name=f"balanco_origem[{s}]",
-        )
-
-    # Balanço nos destinos: entra uma unidade líquida de fluxo.
-    for t in T:
-        modelo.addConstr(
-            entrada[t] - saida[t] == 1,
-            name=f"balanco_destino[{t}]",
-        )
-
-    # Conservação de fluxo nos demais vértices.
+    # Balanço unificado (variante U): permite v ∈ S ∩ T, que Das não proíbe
+    # (Lema 5: um robô pode partir de um vértice que também é alvo de outro
+    # robô e ficar parado ocupando seu próprio alvo). Com S ∩ T = ∅, estas
+    # equações coincidem exatamente com o balanço separado origem/destino.
+    #   a_v = 1 se v ∈ S, senão 0;  b_v = 1 se v ∈ T, senão 0.
+    #   out(v) - in(v) = a_v - b_v
+    #   in(v)  <= b_v + (m - b_v) y_v
+    #   out(v) <= a_v + (m - a_v) y_v
     for v in V:
-        if v not in S_set and v not in T_set:
-            modelo.addConstr(
-                entrada[v] == saida[v],
-                name=f"fluxo_cons[{v}]",
-            )
-
-    # Ativação por instalação
-    # Entrada em vértices que não são destinos.
-    for v in V:
-        if v not in T_set:
-            modelo.addConstr(
-                entrada[v] <= m * y[v],
-                name=f"ativa_entrada_nao_destino[{v}]",
-            )
-
-    # Entrada nos destinos.
-    for t in T:
+        a_v = 1 if v in S_set else 0
+        b_v = 1 if v in T_set else 0
         modelo.addConstr(
-            entrada[t] <= 1 + (m - 1) * y[t],
-            name=f"ativa_entrada_destino[{t}]",
+            saida[v] - entrada[v] == a_v - b_v,
+            name=f"balanco[{v}]",
         )
-
-    # Saída de vértices que não são origens.
-    for v in V:
-        if v not in S_set:
-            modelo.addConstr(
-                saida[v] <= m * y[v],
-                name=f"ativa_saida_nao_origem[{v}]",
-            )
-
-    # Saída das origens.
-    for s in S:
         modelo.addConstr(
-            saida[s] <= 1 + (m - 1) * y[s],
-            name=f"ativa_saida_origem[{s}]",
+            entrada[v] <= b_v + (m - b_v) * y[v],
+            name=f"ativa_entrada[{v}]",
+        )
+        modelo.addConstr(
+            saida[v] <= a_v + (m - a_v) * y[v],
+            name=f"ativa_saida[{v}]",
         )
 
     modelo.update()

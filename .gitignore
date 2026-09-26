@@ -4,3 +4,5 @@
 /plots
 
 /TransportationNetworks
+__pycache__/
+*.pyc

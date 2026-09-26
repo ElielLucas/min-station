@@ -101,10 +101,10 @@ Não incorporar por padrão:
 
 Esses elementos pertencem à formulação generalizada do trabalho anterior e não ao baseline atual. Eles podem ser estudados em trabalhos específicos, mas não devem ser introduzidos automaticamente ao pesquisar técnicas para o MIN-STATION base.
 
-## 9. Atenção a `S ∩ T`
+## 9. `S ∩ T` — resolvido (rodada E5)
 
-Não assumir automaticamente que `S` e `T` são disjuntos.
+`S` e `T` não são necessariamente disjuntos: Das permite que um vértice seja origem de um robô e alvo de outro ao mesmo tempo (Lema 5 do artigo).
 
-A formulação corrente, escrita com balanços separados para origens e destinos, precisa de tratamento explícito se um mesmo vértice pertencer aos dois conjuntos.
+A formulação corrente usa um balanço unificado por vértice (ver `docs/context-ai/base-formulation.md` §6), que cobre esse caso sem exigir tratamento separado. Não reintroduzir balanços separados (origem/destino) sem justificativa — isso reproduziria o erro de modelagem documentado em `docs/technical/reference/validacao-formulacao-base.md` (P1).
 
-Esse ponto está registrado em `docs/technical/governance/open-questions.md` e deve ser resolvido formalmente antes de declarar equivalência completa com o problema original.
+Decisão registrada em `docs/technical/governance/open-questions.md` (Q1, fechada).

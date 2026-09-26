@@ -1,0 +1,6 @@
+instancia,n,m,n_arestas_E,n_arcos_Ar,grau_min,grau_max,grau_uniforme,todas_arestas_diferem_1_bit,S_inter_T,S_uniao_T,paridade_uniforme_SuT,arestas_internas_SuT,Ar_igual_E,linhas_C1,tamanho_linha_C1_min,tamanho_linha_C1_max,C2_subset_C1,C4_subset_C1,n_C2,n_C4,classes_assinatura,maior_classe_assinatura,lp_fechado_2elevkm1_sobre_k
+hc9u.txt,512,128,4608,4608,9,9,True,True,0,256,True,0,True,256,9,9,True,True,256,256,256,1,28.444444444444443
+hc10p.txt,1024,256,10240,10240,10,10,True,True,0,512,True,0,True,512,10,10,True,True,512,512,512,1,51.2
+hc11p.txt,2048,512,22528,22528,11,11,True,True,0,1024,True,0,True,1024,11,11,True,True,1024,1024,1024,1,93.0909090909091
+hc12p.txt,4096,1024,49152,49152,12,12,True,True,0,2048,True,0,True,2048,12,12,True,True,2048,2048,2048,1,170.66666666666666
+bip42p.txt,1200,100,7964,7964,1,31,False,False,0,200,,0,True,200,9,31,True,True,200,200,995,2,

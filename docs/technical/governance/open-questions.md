@@ -2,21 +2,40 @@
 
 Este arquivo registra pontos que não devem ser resolvidos por suposição da IA ou por conveniência da implementação.
 
-## Q1 — Como tratar `S ∩ T`?
+## Q1 — Como tratar `S ∩ T`? — FECHADA (rodada E5)
 
-**Status:** aberto.
+**Status:** fechada. Adotado o balanço unificado (variante U).
 
-A formulação corrente possui uma equação de balanço para cada origem e outra para cada destino. Se `v ∈ S ∩ T`, essas duas equações entram em conflito.
+Das não exige `S` e `T` disjuntos: a definição do Problem 1 usa `S ⊆ V`, `T ⊆ V`
+sem cláusula de disjunção, e a prova do Lema 5 depende explicitamente de um
+vértice que é origem e alvo ao mesmo tempo ("every robot is starting from a
+target position"; "The robot starting at s_i remains at s_i occupying the
+target t_o", p. 11–12 de `docs/technical/reference/min-station-das.pdf`). A
+formulação com balanços separados (uma equação por origem, outra por
+destino) ficava inviável para `v ∈ S ∩ T` (a soma das duas dá `0 = 2`),
+embora o MIN-STATION seja sempre viável — um falso negativo, documentado
+como P1 em `validacao-formulacao-base.md`.
 
-O problema de referência não deve ser tratado automaticamente como se `S` e `T` fossem disjuntos.
+Decisão: adotar o balanço unificado, com `a_v = 1_S(v)`, `b_v = 1_T(v)`:
 
-Alternativas a avaliar:
+```
+out(v) - in(v) = a_v - b_v
+in(v)  <= b_v + (m - b_v) y_v
+out(v) <= a_v + (m - a_v) y_v
+```
 
-- declarar formalmente `S ∩ T = ∅` para a variante estudada;
-- pré-processar vértices comuns com uma prova de validade;
-- adotar balanço unificado `out(v)-in(v)=1_S(v)-1_T(v)` e adaptar ativações.
+Verificado caso a caso (`base-formulation.md` §10.1) que esta forma coincide
+exatamente com a formulação anterior quando `S ∩ T = ∅` — nenhum resultado
+experimental já obtido é afetado, pois todas as 22 instâncias do repositório
+têm `|S ∩ T| = 0` por construção do gerador. Implementado em `baseline.py`
+(rodada E5); as famílias de cortes `generate_C4_DM` e as redes de fluxo em
+`experiments/cuts/cuts.py` foram revisadas para tratar `S ∩ T` de forma
+consistente com o Lema 5 (o robô pode ficar parado ocupando o próprio alvo,
+sem exigir estação).
 
-Não implementar uma dessas opções como decisão definitiva sem validação.
+As alternativas descartadas: declarar `S ∩ T = ∅` por decisão (restringiria
+o problema); pré-processar vértices comuns removendo-os de S e T (provado
+inválido por contraexemplo em `validacao-formulacao-base.md`, CE1').
 
 ## Q2 — O projeto resolve o MIN-STATION original ou uma versão ponderada?
 

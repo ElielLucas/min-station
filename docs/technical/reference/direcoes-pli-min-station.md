@@ -89,7 +89,7 @@ Consequências:
 
 ### 1.6 Simetria e degenerescência
 
-- **Em `y`.** Os automorfismos de `G` que preservam `S` e `T` geram soluções equivalentes. No hipercubo, cada vértice ímpar domina exatamente 9 terminais, o que produz muitas coberturas quase equivalentes: é um cenário clássico de estagnação do B&B [Hipótese].
+- **Em `y`.** Os automorfismos de `G` que preservam `S` e `T` geram soluções equivalentes. No hipercubo, cada vértice ímpar domina exatamente 9 terminais, o que produz muitas coberturas quase equivalentes. **[Evidência, E5]:** 0 gêmeos por C1 em hc9u–hc12p (maior classe de assinatura = 1); `Symmetry=2` do Gurobi não alterou resultado (sonda binária); orbital branching não testado. B2 encerrada por ausência de evidência positiva, não por prova de ausência de simetria (ver B2 em §13).
 - **Em `f`.** Para o mesmo `y` existem muitas soluções `f`: rotas alternativas, pareamentos alternativos, circulações entre estações. Isso gera degenerescência. Ramificar em `f` não tem valor, porque a integralidade de `f` é automática (§3).
 - **Vantagem da agregação.** Ela elimina a simetria de rótulos dos robôs. Essa é uma vantagem real da formulação atual e deve ser preservada em qualquer alternativa.
 
@@ -608,8 +608,8 @@ Baseada apenas no que já foi lido. As partes não analisadas estão indicadas.
 **Divergências registradas:**
 1. os `results_final_*.csv` são da variante VI;
 2. os scripts de "diversidade", "camadas" e "hall_capacity" não estão no repositório, então esses resultados não são reprodutíveis;
-3. o Benders remove `S ∩ T`, o que é inválido em geral, mas irrelevante para as instâncias atuais;
-4. `base-formulation.md` §10.1 trata a variante U como "não adotada", mas parte do código já a implementa.
+3. o Benders remove `S ∩ T` (pré-processamento provado inválido, CE1' de `validacao-formulacao-base.md`); script histórico, fora de uso, não corrigido nesta rodada;
+4. ~~`base-formulation.md` §10.1 trata a variante U como "não adotada", mas parte do código já a implementa~~ — **resolvida na rodada E5**: `baseline.py` adotou a variante U (Q1 fechada em `open-questions.md`), e `base-formulation.md` §10.1 já reflete isso.
 
 ---
 
@@ -640,9 +640,10 @@ Cada linha segue a cadeia **propriedade → problema observado → técnica → 
   - *Problema:* a cobertura com RHS 1 não conta multiplicidade (C6).
   - *Teste:* comparar o LP de F-b-cut com `LP_cov` em instâncias pequenas e médias.
   - *Por que é B:* a teoria mostra que as duas relaxações são incomparáveis; o ganho real é empírico.
-- **B2. Núcleo de cobertura e simetria** no regime de terminais densos.
-  - *Técnicas:* zero-half/`{0,½}`-CG sobre as linhas C1/C4, cortes mochila C6, quebra de simetria (representantes de gêmeos, fixação orbital).
-  - *Problema:* hc9u estagna em 31 mesmo com raiz 24.
+- **B2. Núcleo de cobertura e simetria** no regime de terminais densos — **encerrada na rodada E5, com evidência.**
+  - *Técnicas testadas:* fixação orbital na raiz (1 variável, grupo vértice-transitivo), representante de gêmeos (R3), parâmetro `Symmetry=2` do Gurobi.
+  - *Evidência [E5]:* hc9u–hc12p são hipercubos `Q_k` com `S ∪ T` = classe par inteira (verificado por medição, `verify_structure.py`); o grupo relevante (translações pares + permutações de coordenadas) é vértice-transitivo, então fixação orbital elimina só 1 variável; a assinatura por linha C1 é única para cada variável (0 classes de gêmeos com mais de 1 elemento em hc9u–hc12p); `Symmetry=2` empatou com o padrão do solver.
+  - *Achado que fecha a linha:* o núcleo de cobertura (C1+C2+C4-DM) de hc9u resolve na otimalidade em 2,1 s (E3) com OPT(núcleo)=32. Uma solução ótima do núcleo testada no modelo compacto é **inviável** (max-flow=108 < m=128). Isso mostra que aquela solução particular não resolve o problema real — o núcleo pode ter outras soluções de 32 estações não testadas; **OPT(hc9u) ∈ [32, 38] segue aberto**. O que é claro: o gap está em restrições de acoplamento de fluxo que C1 não captura (em hc*, C2=C4=C1), logo qualquer reforço do núcleo (zero-half, mochila C6) não move o LB e não fecha a instância. A família 𝒵 (Teorema 6), separada por max-flow, é o passo natural. Isso promove **A2** sobre B2 nesse regime.
 - **B3. `f` contínuo + prioridade de ramificação em `y`** na formulação compacta.
   - *Propriedade:* Prop. 3.2.
   - *Por que é B:* é barato e serve também como controle experimental de A1 e A2; o efeito no B&B é empírico.

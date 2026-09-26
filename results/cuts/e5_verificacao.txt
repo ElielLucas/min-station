@@ -1,0 +1,48 @@
+=== Gabaritos existentes (regressão pós-variante-U) ===
+F1(2,2)              OPT esperado=9  obtido=9.0  status=2  PASS
+F1(2,3)              OPT esperado=13  obtido=13.0  status=2  PASS
+F2(k=1)              OPT esperado=1.0  obtido=1.0  status=2  PASS
+Tri                  OPT esperado=2.0  obtido=2.0  status=2  PASS
+Sec59(L=7)           OPT esperado=7.0  obtido=7.0  status=2  PASS
+
+=== Gabaritos novos: validade de cortes (C.1) ===
+Direct0              OPT esperado=0.0  obtido=0.0  status=2  PASS
+TermRelay            OPT esperado=1.0  obtido=1.0  status=2  PASS
+
+=== Gabaritos novos: variante U / S∩T (B.4) ===
+  S=['a', 'b'] T=['a', 'b'] S∩T={'a', 'b'}
+StayPut              OPT esperado=0.0  obtido=0.0  status=2  PASS
+  S=['v', 'p1', 'p2'] T=['v', 'p3', 'p4'] S∩T={'v'}
+SharedTerminal       OPT esperado=1.0  obtido=1.0  status=2  PASS
+
+=== Validador is_valid_cut vs oráculo Gurobi (singletons e pares) ===
+
+Direct0          10 testes, 0 divergências  [OK]
+TermRelay        10 testes, 0 divergências  [OK]
+Tri              45 testes, 0 divergências  [OK]
+StayPut          3 testes, 0 divergências  [OK]
+SharedTerminal   15 testes, 0 divergências  [OK]
+
+=== Laço completo em y-space nos gabaritos (validate_cuts=True) ===
+
+Direct0          stage_lp={1: 0.0, 2: 0.0, 3: 0.0, 4: 0.0}  stage_cuts={1: 0, 2: 0, 3: 0, 4: 0}
+TermRelay        stage_lp={1: 1.0, 2: 1.0, 3: 1.0, 4: 1.0}  stage_cuts={1: 1, 2: 0, 3: 0, 4: 0}
+Sec59(L=7)       stage_lp={1: 2.0, 2: 2.0, 3: 7.0, 4: 7.0}  stage_cuts={1: 2, 2: 0, 3: 12, 4: 0}
+F2(k=1)          stage_lp={1: 1.0, 2: 1.0, 3: 1.0, 4: 1.0}  stage_cuts={1: 2, 2: 0, 3: 0, 4: 0}
+Tri              stage_lp={1: 1.5, 2: 1.5, 3: 1.5, 4: 1.5}  stage_cuts={1: 3, 2: 0, 3: 0, 4: 0}
+StayPut          stage_lp={1: 0.0, 2: 0.0, 3: 0.0, 4: 0.0}  stage_cuts={1: 0, 2: 0, 3: 0, 4: 0}
+SharedTerminal   stage_lp={1: 1.0, 2: 1.0, 3: 1.0, 4: 1.0}  stage_cuts={1: 1, 2: 0, 3: 0, 4: 0}
+
+RESULTADO FINAL: 0 divergências — validador correto.
+
+=== Verificação 5: Chicago R=26, laço espaço-y ===
+Chicago R=26 (arquivo), |A_r|=80019, m=15
+stage_lp: {1: 0.0, 2: 0.0, 3: 0.0, 4: 0.0}
+stage_cuts: {1: 0, 2: 0, 3: 0, 4: 0}
+PASS — LP=0 e 0 cortes em todos os estágios
+
+=== Regressão equivalência U ===
+hc9u.txt                                      esperado=28.444444  obtido=28.444444  PASS
+hc10p.txt                                     esperado=51.200000  obtido=51.200000  PASS
+cc10-2p.txt                                   esperado=2.615385  obtido=2.615385  PASS
+Philadelphia_n800_m2404_st_25.txt             esperado=28.044444  obtido=28.044444  PASS

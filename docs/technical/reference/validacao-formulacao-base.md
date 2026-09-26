@@ -6,7 +6,7 @@
 
 **Método:** leitura integral dos três PDFs e dos documentos de contexto, provas por decomposição de fluxo e casos pequenos verificados à mão, restrição por restrição. Nenhum código foi executado. A verificação computacional exaustiva fica como próximo passo recomendado (ver o fim do documento).
 
-**Resultado em uma frase:** sob `S ∩ T = ∅` e distância em passos, a formulação é **exata**: para todo `C ⊆ V`, `C` é viável no MIN-STATION ⇔ existe `f` com `(f, χ_C)` viável na PLI. Quando `S ∩ T ≠ ∅`, caso que Das permite, a formulação é **inviável** (falso negativo). A correção mínima é local: só as equações de balanço mudam.
+**Resultado em uma frase:** sob distância em passos, a formulação é **exata**: para todo `C ⊆ V`, `C` é viável no MIN-STATION ⇔ existe `f` com `(f, χ_C)` viável na PLI. A versão com balanços separados (uma equação de origem, outra de destino) era inviável quando `S ∩ T ≠ ∅`, caso que Das permite (falso negativo) — **corrigido na rodada E5** com a adoção do balanço unificado (variante U, §8–9 abaixo), agora a formulação corrente em `baseline.py`. A correção foi local: só as equações de balanço mudaram.
 
 ---
 
@@ -263,10 +263,10 @@ Todos verificados à mão.
 
 | # | Problema | Classificação | Afeta corretude? |
 |---|---|---|---|
-| P1 | `S ∩ T ≠ ∅` ⇒ (2)+(3) inconsistentes ⇒ PLI inviável, embora Das permita o caso e ele seja sempre viável (CE0, CE1) | **Erro de modelagem** em relação a Das. Rebaixável a **hipótese ausente** se o projeto declarar formalmente `S ∩ T = ∅` | Sim (falso negativo) |
+| P1 | `S ∩ T ≠ ∅` ⇒ (2)+(3) inconsistentes ⇒ PLI inviável, embora Das permita o caso e ele seja sempre viável (CE0, CE1) — **RESOLVIDO na rodada E5**: opção (B) abaixo adotada em `baseline.py` | Era erro de modelagem em relação a Das; corrigido | Não mais (era falso negativo) |
 | P2 | O PDF define `d` como "distância do caminho mais curto em G" sem fixar pesos unitários; Das exige passos | Ambiguidade | Só se `d` for ponderada |
 | P3 | Implementação: Dijkstra com pesos (`ms_utils.py`) e adjacência só `u→v`. Instâncias TNTP têm pesos ≠ 1 | Extensão ponderada/direcionada, não erro da formulação | Não para a PLI; sim para "comparar com Das" |
-| P4 | `preprocessamento/modelo_min_station_das_preprocess.py` já implementa o balanço unificado, que `base-formulation.md` §10.1 diz "não adotado"; `modelo_min_station_fluxo_2.py` rejeita `S ∩ T` com exceção | Divergência código × documentação | Não |
+| P4 | `preprocessamento/modelo_min_station_das_preprocess.py` já implementava o balanço unificado antes de `base-formulation.md` §10.1 adotá-lo — **RESOLVIDO na rodada E5** (documentação atualizada). Nota de higiene: `modelo_min_station_fluxo_2.py`, citado nesta seção como rejeitando `S ∩ T`, não existe mais no repositório; `experiments/alternative-formulations/modelo_min_station_fluxo.py` também tem balanços separados, sem essa guarda | Divergência código × documentação (já corrigida) | Não |
 | P5 | Redundâncias: (5) em S, (7) em T e uma de (5)/(7) em `V∖(S∪T)` | Apenas eficiência/documental | Não |
 | P6 | Texto do PDF: resumo ainda fala em "vértices intermediários"; referências "(??)–(??)"; "`\|S\|` limitante seguro para o total de fluxo" (é limite por vértice; `Σ f` pode exceder m); "o fluxo só atravessa vértices com estação" (confunde passagem física com junção de saltos); "em cada destino entra uma unidade" (é líquida) | Problema textual/documental | Não |
 | P7 | Big-M `m` torna a relaxação fraca: um robô que precisa de k estações contribui ≈ k/m ao limite linear | Apenas relaxação | Não |
@@ -276,7 +276,7 @@ Todos verificados à mão.
 
 ## 8. Correções mínimas necessárias
 
-Só **P1** é problema de corretude. Existem duas opções legítimas, e a escolha é do projeto:
+Só **P1** era problema de corretude. Existiam duas opções legítimas; o projeto escolheu (B) na rodada E5:
 
 **(A) Restringir o escopo:** declarar a hipótese `S ∩ T = ∅`. As equações não mudam, mas o modelo deixa de cobrir todo o MIN-STATION de Das. Atenção: instâncias com `S ∩ T ≠ ∅` **não** podem ser reduzidas fixando os robôs comuns (CE1').
 
@@ -387,12 +387,14 @@ Os agentes confirmaram, restrição a restrição:
 
 | Arquivo | Modelo implementado |
 |---|---|
-| `modelo_min_station_fluxo.py:72-94` | Variante (U) |
+| `experiments/alternative-formulations/modelo_min_station_fluxo.py:72-94` | Variante (U) |
 | `preprocessamento/modelo_min_station_das_preprocess.py:921-956` | Variante (U) |
-| `modelo_min_station_fluxo_2.py:108-160` | Formulação (2)–(8), rejeita `S ∩ T` com `ValueError` |
-| `lagrangeano_min_station.py`, `p_relaxation_min_station.py` | Formulação (2)–(8) |
+| `experiments/lagrangean/lagrangeano_min_station.py`, `p_relaxation_min_station.py` | Formulação (2)–(8), rejeitam `S ∩ T` com `ValueError` (scripts históricos, fora de uso; não corrigidos nesta rodada) |
+| `baseline.py` | Variante (U) — **adotada na rodada E5** (era formulação (2)–(8) até então) |
 
-`base-formulation.md §10.1` diz que (U) "não [foi] adotada". Com `S ∩ T = ∅`, as duas versões são idênticas e nenhum resultado experimental é invalidado; mas a documentação deve refletir isso.
+**Nota de higiene (E5):** a versão anterior desta tabela citava `modelo_min_station_fluxo_2.py:108-160`, arquivo que não existe mais no repositório. Removido.
+
+`base-formulation.md §10.1` dizia que (U) "não [foi] adotada" — **já corrigido**: (U) é a formulação corrente em `baseline.py` desde a rodada E5. Com `S ∩ T = ∅`, as duas versões são idênticas e nenhum resultado experimental anterior é invalidado.
 
 ### A.8 Instâncias com peso não unitário
 

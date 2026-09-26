@@ -1,0 +1,5 @@
+instancia,R,n,m,n_arcos,config,obj,bound,gap,status,n_lazy_cuts,n_lazy_calls,time_s,teto_nucleo,seed,threads
+hc9u.txt,1,512,128,4608,NUCLEO,32.0,32.0,0.0,2,0,0,2.267,32,42,4
+hc9u.txt,1,512,128,4608,BC-LAZY,52.0,32.0,0.38461538461538464,9,1234,1248,902.716,32,42,4
+bip42p.txt,200,1200,100,7964,NUCLEO,37.0,36.0,0.02702702702702703,9,0,0,900.008,,42,4
+bip42p.txt,200,1200,100,7964,BC-LAZY,,33.0,,9,1538,1538,910.879,,42,4
