@@ -310,12 +310,14 @@ Reparo < UB COMP (MAPF+Vienna): 0/13. Reparo < UB COMP (todas): 1/30.
    [`correcao-c4-dm.md`](correcao-c4-dm.md). Era pré-requisito de tudo abaixo: cortes inválidos
    comprometem a validade dos LBs e o não-determinismo põe ±1 de ruído num E12 que decide por
    margens de 1–2 estações. Os passos seguintes já podem rodar sobre o gerador corrigido.
-1. **Primal × dual com o solver como instrumento.** COMP com `MIPFocus=1` (ênfase primal), 600 s e
+1. ~~**Primal × dual com o solver como instrumento.** COMP com `MIPFocus=1` (ênfase primal), 600 s e
    depois 1800 s, nas 13 D/A de MAPF/Vienna. Se o UB cair de forma apreciável com o LB parado, é
    evidência de que parte do gap era primal; se o UB mal se mover sob ênfase primal e TL triplicado,
    é evidência de gap dual. Nenhum dos ramos é conclusivo isoladamente — ambos comparam contra o
    incumbente, não contra o OPT. Custo: ~2–6 h de máquina, sem código novo além de um parâmetro.
-   Substitui o E10b como resposta a essa pergunta.
+   Substitui o E10b como resposta a essa pergunta.~~ — **feito em 2026-09-27**, ver
+   [`resultados-e13-pli.md`](resultados-e13-pli.md). Veredito: **gap primal** (7/13 com Δ_UB ≥ 5%
+   sob `MIPFocus=1` e TL 1800 s), não dual — o passo 3 (E11) fica sem o gatilho que o condicionava.
 2. **E12 — CBI × COMP no subconjunto PUC/PUCN**, onde o núcleo já sai na frente, depois de corrigir
    o mestre do CBI (sem pool até o ótimo). As iterações do CBI também produzem soluções viáveis, o
    que serve de segundo instrumento primal. Critério pré-registrado em `plano-pos-e8-adiado.md`.
