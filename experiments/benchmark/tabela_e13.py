@@ -106,6 +106,30 @@ def veredito(base, longo):
           'nestas instâncias — é evidência para priorizar o próximo experimento, não prova.')
 
 
+def residual(base, longo):
+    """LB_melhor e UB_melhor entre os três braços, queda primal e gap residual."""
+    print('| Instância | LB_melhor | UB_melhor | queda primal | gap residual | residual > queda |')
+    print('|---|---|---|---|---|---|')
+    abertas = maior = 0
+    for r in sorted(base, key=lambda r: (r['familia'], int(r['n_arcos_alcance']))):
+        lg = longo.get(r['nome'], {})
+        lbs = [f(r['lb_controle']), f(r['lb_focus600']), f(lg.get('lb_focus1800'))]
+        ubs = [f(r['ub_controle']), f(r['ub_focus600']), f(lg.get('ub_focus1800'))]
+        lbs = [x for x in lbs if x is not None]
+        ubs = [x for x in ubs if x is not None]
+        lb, ub = max(lbs), min(ubs)
+        ub_ctrl = f(r['ub_controle'])
+        queda = None if not ub_ctrl else (ub_ctrl - ub) / ub_ctrl
+        gap = None if not ub else (ub - lb) / ub
+        aberta = ub - lb > 1e-6
+        supera = aberta and gap is not None and queda is not None and gap > queda
+        abertas += aberta
+        maior += supera
+        print(f"| `{r['nome'][:-4]}` | {num(lb)} | {num(ub)} | {pct(queda)} | {pct(gap)} | "
+              f"{'sim' if supera else 'não'} |")
+    print(f'\nNão resolvidas: {abertas}; residual > queda primal: **{maior}**.')
+
+
 def divergencias(base):
     difs = [r for r in base if r['controle_bate_manifesto'] != 'True']
     if not difs:
@@ -129,6 +153,8 @@ def main():
     print('## E13 — primal × dual em MAPF/Vienna\n')
     tabela_base(base, longo)
     veredito(base, longo)
+    print('\n## Gap residual\n')
+    residual(base, longo)
     divergencias(base)
 
 

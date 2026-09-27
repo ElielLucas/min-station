@@ -87,6 +87,36 @@ Três leituras importantes sobre a solidez deste veredito:
 Os dois ramos comparam contra o incumbente, nunca contra o OPT, que é desconhecido nestas instâncias
 — é evidência para priorizar o próximo experimento, não prova.
 
+### 3.1 Gap residual
+
+Saída de `residual()` em `experiments/benchmark/tabela_e13.py`. LB_melhor é o maior LB dos três
+braços e UB_melhor é o menor UB; a queda primal é `(UB_controle − UB_melhor)/UB_controle` e o gap
+residual é `(UB_melhor − LB_melhor)/UB_melhor`.
+
+| Instância | LB_melhor | UB_melhor | queda primal | gap residual | residual > queda |
+|---|---|---|---|---|---|
+| `mapf-random-32-32-10-m50-f8` | 54 | 68 | +8,1% | +20,6% | sim |
+| `mapf-room-32-32-4-m10-f8` | 16 | 18 | +0,0% | +11,1% | sim |
+| `mapf-room-32-32-4-m25-f4-rho` | 17 | 19 | +0,0% | +10,5% | sim |
+| `mapf-random-32-32-10-m25-f4` | 15 | 20 | +4,8% | +25,0% | sim |
+| `mapf-empty-32-32-m25-f4` | 13 | 18 | +0,0% | +27,8% | sim |
+| `mapf-random-64-64-20-m100-f4` | 41 | 63 | +7,4% | +34,9% | sim |
+| `mapf-warehouse-10-20-10-2-1-m50-f8` | 81 | 117 | +7,1% | +30,8% | sim |
+| `mapf-den312d-m25-f4` | 17 | 17 | +0,0% | +0,0% | não |
+| `mapf-den312d-m50-f2-rho` | 5 | 9 | +0,0% | +44,4% | sim |
+| `mapf-warehouse-10-20-10-2-1-m25-f4` | 29 | 42 | +14,3% | +31,0% | sim |
+| `vienna-I056-regiao-f4` | 9 | 11 | +8,3% | +18,2% | sim |
+| `vienna-I065-intercalado-f2` | 17 | 19 | +9,5% | +10,5% | sim |
+| `vienna-I065-regiao-f4` | 14 | 17 | +15,0% | +17,6% | sim |
+
+Não resolvidas: 12; residual > queda primal: **12**.
+
+O veredito da §3 prioriza o próximo experimento, mas não atribui o residual. Mesmo com o melhor UB
+encontrado, o gap continua entre 10,5% e 44,4% e supera a queda primal nas 12 instâncias não
+resolvidas (`warehouse-m50`: 81/117, 30,8% residual contra 7,1% de queda; `random-64`: 41/63, 34,9%
+contra 7,4%). Sem OPT não dá para dizer se esse residual está no LB ou no UB. O E13 provou que o UB
+não estava saturado. Não provou que o LB está bom.
+
 ## 4. Leitura por família
 
 O sinal não é uniforme por família. Das 7 instâncias com Δ_UB ≥ 5%, 5 são MAPF e 2 são Vienna; das 5
