@@ -216,19 +216,25 @@ def prepare_static_c1(S, T, A_r):
 def solve_cbi(S, T, V, static_cuts, N_plus, time_limit=300, seed=42, threads=4,
               pool_solutions=50, ub_start=None):
     """
-    Mestre exato iterado: resolve o núcleo (IP em y), testa as soluções do
-    pool no oráculo restrito, adiciona os cortes 𝒵 das inviáveis e repete.
+    Mestre exato iterado: resolve o núcleo (IP em y) sem pool até o ótimo,
+    testa a incumbente no oráculo restrito e, se ela for inviável, acrescenta
+    o corte 𝒵. Cada optimize deixa 5 s de reserva quando ainda há prazo, para
+    o teste e para a iteração seguinte. O mestre é reconstruído a cada
+    iteração como antes.
 
-    Ótimo provado só quando o mestre terminou com status OPTIMAL e uma
-    solução ótima dele é viável: o núcleo é uma relaxação (Teorema 6), então
+    Ótimo provado só quando o mestre terminou com status OPTIMAL e a
+    incumbente é viável: o núcleo é uma relaxação (Teorema 6), então
     seu ótimo é LB e a solução viável é UB com o mesmo valor. Se o mestre
-    parou pelo tempo, uma solução viável do pool é só UB.
+    parou pelo tempo, uma incumbente viável é só UB.
 
     LB reportado = maior ObjBound finito entre as iterações (cortes só são
     acrescentados, então todo ObjBound é LB válido do problema real).
 
     ub_start: dict opcional {'C': frozenset, 'obj': float} (ex.: heurística
     primal), usado como incumbente inicial.
+
+    pool_solutions permanece na assinatura e não é aplicado: o pool antes do
+    único optimize impedia o mestre de terminar.
 
     Retorna dict com: obj, bound, gap, status, time_s, iterations,
                       oracle_calls, n_cuts_total, y_star.
@@ -261,16 +267,17 @@ def solve_cbi(S, T, V, static_cuts, N_plus, time_limit=300, seed=42, threads=4,
             break
         it += 1
 
+        # Reserva para testar a incumbente e abrir outra iteração. Sem ela,
+        # o mestre que não fecha consome o prazo e o corte 𝒵 não chega a ser gerado.
+        reserva = 5.0
+        limite = remaining if remaining <= reserva + 1 else remaining - reserva
         mip, y = _build_ymodel(V, list(all_cuts), integer=True, seed=seed,
-                               threads=threads, time_limit=remaining)
+                               threads=threads, time_limit=limite)
         for C_ng in nogoods:
             mip.addConstr(
                 sum(y[v] for v in V if v not in C_ng)
                 + sum((1 - y[v]) for v in C_ng) >= 1
             )
-        mip.Params.PoolSearchMode = 2
-        mip.Params.PoolSolutions = pool_solutions
-        mip.Params.PoolGap = 0.0
         mip.optimize()
 
         mestre_otimo = (mip.Status == GRB.OPTIMAL)
@@ -283,40 +290,31 @@ def solve_cbi(S, T, V, static_cuts, N_plus, time_limit=300, seed=42, threads=4,
         if mip.SolCount == 0:
             break
         opt_val = mip.ObjVal
+        C = frozenset(v for v in V if y[v].X > 0.5)
+        if mestre_otimo and abs(len(C) - opt_val) > 0.5:
+            break
 
-        found = False
-        for k in range(mip.SolCount):
-            if time.monotonic() - t0 > time_limit:
-                break
-            mip.Params.SolutionNumber = k
-            C = frozenset(v for v in V if y[v].Xn > 0.5)
-            if mestre_otimo and abs(len(C) - opt_val) > 0.5:
-                continue
+        if C in testadas_inviaveis:
+            # Reapareceu apesar do corte gerado para ela (Z pode conter
+            # vértice de C quando a saturação é interna a um vértice
+            # instalado; o corte fica satisfeito por C). No-good explícito
+            # na próxima reconstrução do mestre garante progresso.
+            if C not in nogoods:
+                nogoods.append(C)
+            continue
 
-            if C in testadas_inviaveis:
-                # Reapareceu apesar do corte gerado para ela (Z pode conter
-                # vértice de C quando a saturação é interna a um vértice
-                # instalado; o corte fica satisfeito por C). No-good explícito
-                # na próxima reconstrução do mestre garante progresso.
-                if C not in nogoods:
-                    nogoods.append(C)
-                continue
-
-            oracle_calls += 1
-            viavel, Z = integer_oracle(S, T, N_plus, C)
-            if viavel:
-                if best_obj is None or len(C) < best_obj:
-                    best_C, best_obj = C, float(len(C))
-                if mestre_otimo and abs(len(C) - opt_val) <= 0.5:
-                    found = True
-                    break
-                continue
+        oracle_calls += 1
+        viavel, Z = integer_oracle(S, T, N_plus, C)
+        if viavel:
+            if best_obj is None or len(C) < best_obj:
+                best_C, best_obj = C, float(len(C))
+            if mestre_otimo and abs(len(C) - opt_val) <= 0.5:
+                lb = best_obj
+                return _resultado('OPT')
+        else:
             testadas_inviaveis.add(C)
             all_cuts.add(frozenset(Z))
 
-        if found:
-            lb = best_obj
-            return _resultado('OPT')
         if best_obj is not None and lb is not None and best_obj <= lb + 1e-9:
             return _resultado('OPT')
 
