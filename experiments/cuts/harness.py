@@ -260,6 +260,7 @@ def measure_mip(S, T, V, A_r, f_type, upfront_cuts, seed=42, threads=1, time_lim
         'mip_gap':    gap,
         'mip_status': status,
         'sol_count':  modelo.SolCount,
+        'node_count': int(modelo.NodeCount),
         'time_mip_s': t1 - t0,
     }
 

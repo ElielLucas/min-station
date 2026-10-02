@@ -237,13 +237,18 @@ def solve_cbi(S, T, V, static_cuts, N_plus, time_limit=300, seed=42, threads=4,
     único optimize impedia o mestre de terminar.
 
     Retorna dict com: obj, bound, gap, status, time_s, iterations,
-                      oracle_calls, n_cuts_total, y_star.
+                      oracle_calls, n_cuts_total, n_z_cuts, master_time_s,
+                      oracle_time_s, node_count, y_star.
     """
     all_cuts = set(frozenset(Z) for Z in (static_cuts or []))
+    n_static = len(all_cuts)
     nogoods = []  # C's que reapareceram apesar do corte y(Z)>=1 gerado para elas
     t0 = time.monotonic()
     it = 0
     oracle_calls = 0
+    master_s = 0.0
+    oracle_s = 0.0
+    node_count = 0
     lb = None
     best_C = ub_start['C'] if ub_start else None
     best_obj = float(ub_start['obj']) if ub_start else None
@@ -257,6 +262,9 @@ def solve_cbi(S, T, V, static_cuts, N_plus, time_limit=300, seed=42, threads=4,
             'obj': best_obj, 'bound': lb, 'gap': gap, 'status': status,
             'time_s': time.monotonic() - t0, 'iterations': it,
             'oracle_calls': oracle_calls, 'n_cuts_total': len(all_cuts),
+            'n_z_cuts': len(all_cuts) - n_static,
+            'master_time_s': master_s, 'oracle_time_s': oracle_s,
+            'node_count': node_count,
             'y_star': ({v: (1.0 if v in best_C else 0.0) for v in V}
                        if best_C is not None else None),
         }
@@ -278,7 +286,13 @@ def solve_cbi(S, T, V, static_cuts, N_plus, time_limit=300, seed=42, threads=4,
                 sum(y[v] for v in V if v not in C_ng)
                 + sum((1 - y[v]) for v in C_ng) >= 1
             )
+        tm = time.monotonic()
         mip.optimize()
+        master_s += time.monotonic() - tm
+        try:
+            node_count += int(mip.NodeCount)
+        except Exception:
+            pass
 
         mestre_otimo = (mip.Status == GRB.OPTIMAL)
         try:
@@ -304,7 +318,9 @@ def solve_cbi(S, T, V, static_cuts, N_plus, time_limit=300, seed=42, threads=4,
             continue
 
         oracle_calls += 1
+        to = time.monotonic()
         viavel, Z = integer_oracle(S, T, N_plus, C)
+        oracle_s += time.monotonic() - to
         if viavel:
             if best_obj is None or len(C) < best_obj:
                 best_C, best_obj = C, float(len(C))
