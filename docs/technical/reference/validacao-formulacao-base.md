@@ -1,5 +1,7 @@
 # Validação da formulação BASE atual (MIN-STATION, estações em todo V)
 
+**Changelog (2026-10-03).** Fechadas as seis lacunas do Apêndice A.10. A prova da variante U, com permanência e ótimo zero, está na §5.5. A verificação computacional recomendada no final deste arquivo foi executada em `experiments/cuts/verify_t2_validador_independente.py`.
+
 ## Contexto
 
 **Pedido:** validar matematicamente, sem executar código, a formulação base atual (`docs/technical/reference/formulacao-base-all-vertices.pdf`, espelhada em `docs/context-ai/base-formulation.md`) contra a definição do MIN-STATION de Das (`docs/technical/reference/min-station-das.pdf`). A validação cobre as duas direções da equivalência, procura contraexemplos e separa corretude, força e desempenho. A formulação generalizada da SBPO está fora do escopo.
@@ -216,7 +218,94 @@ Sob H1–H2, para todo `C ⊆ V`: `C` é viável no MIN-STATION ⇔ existe `f` c
 
 ### 5.4 Onde a prova falha: `S ∩ T ≠ ∅`
 
-Se `v ∈ S ∩ T`, somando (2) e (3) em `v` obtém-se `0 = 2`: a PLI é inviável. O MIN-STATION, por outro lado, é sempre viável: com `C = V`, cada aresta é um salto válido, porque G é conexo e `r ≥ 1`. É a única falha de corretude encontrada.
+Se `v ∈ S ∩ T`, somando (2) e (3) em `v` obtém-se `0 = 2`: a formulação com balanços separados é inviável. O MIN-STATION, por outro lado, é sempre viável quando G é conexo e `r ≥ 1`: com `C = V`, cada aresta é um salto válido. Essa falha é da formulação separada, não da variante U. A §5.5 prova a variante U sem a hipótese H1.
+
+### 5.5 Equivalência da variante U, com permanência
+
+A formulação provada aqui é a da §9, que é a variante U implementada em `baseline.py`: para todo `v ∈ V`,
+
+```
+out(v) − in(v) = a_v − b_v
+in(v)  ≤ b_v + (m − b_v) y_v
+out(v) ≤ a_v + (m − a_v) y_v
+```
+
+com `a_v = 1` se `v ∈ S` e `0` caso contrário, `b_v = 1` se `v ∈ T` e `0` caso contrário, `y_v ∈ {0,1}` e `f ≥ 0`. Quando `S ∩ T = ∅`, estas equações coincidem com (2)–(8) e o teorema da §5.3 aplica-se sem mudança.
+
+#### 5.5.1 Rede auxiliar N(y)
+
+Fixado `y`, a rede `N(y)` tem vértices `{σ, τ} ∪ {v_in, v_out : v ∈ V}` e arcos:
+
+| Arco | Capacidade | Quando |
+|---|---|---|
+| `σ → v_out` | 1 | `v ∈ S` |
+| `v_in → τ` | 1 | `v ∈ T` |
+| `v_out → v_in` | 1 | `v ∈ S ∩ T` |
+| `v_in → v_out` | `(m−1) y_v` | `v ∈ S ∪ T` |
+| `v_in → v_out` | `m y_v` | `v ∉ S ∪ T` |
+| `u_out → v_in` | `∞` | `(u,v) ∈ A_r` |
+
+O arco `v_out → v_in` é o arco de permanência. Não depende de `y_v` e não usa aresta de `G`. O caminho `σ → v_out → v_in → τ` é o robô que já está no próprio alvo. Para `v ∉ S ∩ T` esse arco não existe.
+
+Há `m` arcos saindo de `σ` e `m` arcos entrando em `τ`, cada um de capacidade 1. Um fluxo de valor `m` satura todos eles.
+
+#### 5.5.2 Decomposição e peso unitário
+
+**Lema.** Seja `g` um fluxo inteiro de valor `m` em `N(y)`. Então `g` é soma de `m` caminhos `σ–τ` de fluxo 1 e de ciclos de fluxo 1.
+
+A oferta em `σ` e a demanda em `τ` são inteiras, e as capacidades dos arcos de permanência, de trânsito e dos arcos `σ`/`τ` são inteiras. Pelo teorema de decomposição de fluxos inteiros (Ahuja–Magnanti–Orlin, Theorem 3.5), `g` decompõe-se em caminhos e ciclos, cada um com fluxo inteiro positivo. Cada caminho `σ–τ` usa exatamente um arco `σ → s_out` e exatamente um arco `t_in → τ`. Esses arcos têm capacidade 1, logo cada um deles carrega fluxo no máximo 1, e a soma dos caminhos é `m`. Portanto cada caminho tem fluxo exatamente 1, e há exatamente `m` caminhos.
+
+#### 5.5.3 Bijeção `π: S → T`
+
+**Lema.** Os `m` caminhos definem uma bijeção `π: S → T`.
+
+Cada origem `s` tem um único arco `σ → s_out`, de capacidade 1, e esse arco está saturado. Logo exatamente um caminho começa em `s`. Cada destino `t` tem um único arco `t_in → τ`, também saturado, logo exatamente um caminho termina em `t`. Defina `π(s)` como o destino do único caminho que começa em `s`. A função é bijetiva porque há `m` origens, `m` destinos e nenhum arco terminal é compartilhado.
+
+Se o caminho de `s` é `σ → s_out → s_in → τ`, então `π(s) = s`. Esse caminho só existe para `s ∈ S ∩ T`, porque só então existe o arco de permanência. Ele não usa `A_r` nem o arco de trânsito `s_in → s_out`. É o caso de ótimo zero quando todo robô permanece: `C = ∅` e `y ≡ 0` deixam o arco de permanência com capacidade 1.
+
+#### 5.5.4 Invariante de bateria
+
+**Lema.** Cada caminho `σ–τ` que não é permanência pura descreve uma rota válida de Das.
+
+O caminho, depois de `σ → s_out`, atravessa arcos `u_out → v_in` com `(u,v) ∈ A_r`, e só passa de `v_in` a `v_out` pelo arco de trânsito ou, no fim, de `t_in` a `τ`.
+
+Por definição de `A_r`, `d(u,v) ≤ r` em número de arestas (hipótese H2, herdada da §5.0). O robô parte de `s` com bateria `r`. Cada arco de `A_r` é um trecho percorrido com uma carga. Ao chegar a um vértice `v` cujo arco de trânsito `v_in → v_out` é usado pelo caminho, a capacidade desse arco é positiva, logo `y_v = 1`: o vértice é estação e a bateria volta a `r` antes do trecho seguinte. Ao longo do trecho até a próxima estação, ou até o destino, a bateria é pelo menos `r − d ≥ 0`. O destino final usa `t_in → τ` e não precisa ser estação. Isso é o invariante da §5.0, agora com o arco de permanência no lugar do trecho vazio `s = t`.
+
+#### 5.5.5 Ciclos
+
+**Lema.** Todo ciclo do fluxo decomposto só toca vértices com `y = 1`. Subtraí-lo preserva a viabilidade.
+
+Um ciclo não contém `σ` nem `τ`. Para entrar e sair da cópia dividida de um vértice `v` é preciso usar `v_in → v_out` ou fechar um ciclo `v_out → v_in → v_out` pelo arco de permanência junto com o de trânsito. O arco de permanência vai de `v_out` a `v_in` e só existe em `S ∩ T`. Voltar de `v_in` a `v_out` exige o arco de trânsito, cuja capacidade é `(m−1) y_v`. Com `y_v = 0` essa capacidade é 0, então o ciclo não fecha. Um vértice fora de `S ∪ T` só tem o arco de trânsito `v_in → v_out`, de capacidade `m y_v`, também 0 quando `y_v = 0`. Logo nenhum ciclo atravessa vértice com `y = 0`.
+
+Subtrair o ciclo diminui o fluxo em cada arco do ciclo e não altera o valor `σ–τ`. As capacidades continuam respeitadas, porque o fluxo só diminui. Os `m` caminhos permanecem. Os ciclos não criam rota de robô e não tornam viável um `y` que os caminhos, sozinhos, não tornariam viável.
+
+#### 5.5.6 Balanço e ativação por classe
+
+**Lema.** Para `y` binário fixo, existe fluxo inteiro `f` em `A_r` satisfazendo o balanço e as ativações da variante U se e somente se `N(y)` admite fluxo de valor `m`.
+
+As cinco classes:
+
+- **`v ∈ S ∖ T`.** Balanço `out − in = 1`. Ativação `in ≤ m y_v` e `out ≤ 1 + (m−1) y_v`. Em `N(y)` há `σ → v_out` de capacidade 1 e trânsito `(m−1) y_v`. Não há arco para `τ` nem arco de permanência. A unidade própria sai por `σ` sem estação. Fluxo adicional que deixa `v` usa o trânsito e exige `y_v = 1`.
+
+- **`v ∈ T ∖ S`.** Balanço `out − in = −1`. Ativação `in ≤ 1 + (m−1) y_v` e `out ≤ m y_v`. Em `N(y)` há `v_in → τ` de capacidade 1 e trânsito `(m−1) y_v`. A unidade que termina em `v` sai para `τ` sem estação. Fluxo adicional que entra e continua usa o trânsito e exige `y_v = 1`.
+
+- **`v ∈ S ∩ T`, robô parado.** O caminho de permanência leva fluxo 1 em `σ → v_out → v_in → τ` e fluxo 0 em `A_r`. Então `in(v) = out(v) = 0`, que satisfaz o balanço `0 = 0` e as ativações com `y_v = 0`. É o caso `S = T` com `C = ∅`: o valor do fluxo em `N(0)` é `m` e `OPT = 0`.
+
+- **`v ∈ S ∩ T`, troca.** Um robô parte de `v` e outro chega, sem terceiro robô em trânsito. Em `A_r`, `in(v) = out(v) = 1`. Em `N(y)` a partida usa `σ → v_out` e um arco de `A_r`; a chegada usa um arco de `A_r` e `v_in → τ`. Nenhum dos dois usa o trânsito. Com `y_v = 0` o trânsito tem capacidade 0, então um terceiro robô não passa. As ativações ficam `in ≤ 1` e `out ≤ 1`. O arco de permanência pode ficar sem uso: a troca não depende dele, e a permanência não depende da troca.
+
+- **`v ∈ V ∖ (S ∪ T)`.** Balanço `in = out`. Ativação `in ≤ m y_v` e `out ≤ m y_v`. Em `N(y)` o único arco interno é o trânsito de capacidade `m y_v`. Fluxo positivo por `v` exige `y_v = 1`.
+
+Nas duas direções a correspondência é a mesma. Dado `f` viável na variante U, a unidade própria de cada origem entra por `σ → s_out`, a unidade própria de cada destino sai por `t_in → τ`, o fluxo de `f` viaja nos arcos `u_out → v_in`, e o excesso além da unidade própria atravessa `v_in → v_out`. As capacidades de `N(y)` são exatamente as ativações. No sentido inverso, os `m` caminhos da §5.5.2, depois de apagar os ciclos, dão as rotas, e `f` é a soma dos trechos de `A_r` desses caminhos. O robô parado contribui 0 para `f`.
+
+#### 5.5.7 Fluxo contínuo
+
+Em `baseline.py` a variável `f` é inteira. Para `y` binário fixo, o conjunto de `f` viáveis é um poliedro de fluxo com ofertas e capacidades inteiras. A matriz de incidência de um dígrafo é totalmente unimodular, então todo vértice desse poliedro é inteiro. Permitir `f` contínuo não cria solução fracionária extrema e não muda a viabilidade para `y` binário. A decomposição da §5.5.2 aplica-se a uma solução inteira, que existe sempre que a relaxação contínua é viável.
+
+#### 5.5.8 Teorema
+
+Sob H2 (distância em número de arestas), sem hipótese sobre `S ∩ T`: para todo `C ⊆ V`, `C` é viável no MIN-STATION de Das se e somente se `N(χ_C)` tem fluxo de valor `m`, se e somente se existe `f` tal que `(f, χ_C)` é viável na variante U. Consequentemente `OPT` da PLI é igual a `OPT` do MIN-STATION. O caso `S = T` e `C = ∅` está coberto pelo caminho de permanência: o ótimo é 0 quando todo robô permanece no próprio vértice.
+
+H3 (G conexo) não entra na equivalência. Entra só para garantir que `C = V` é solução quando `r ≥ 1`. Um vértice isolado em `S ∩ T` continua viável por permanência, com `C = ∅`, mesmo sendo uma componente trivial.
 
 ---
 
@@ -420,17 +509,23 @@ Todos os casos com `S ∩ T = ∅` concordaram com o MIN-STATION. Todos os casos
 
 ### A.10 Lacunas de prova a preencher em versão formal
 
-Os agentes listaram os pontos que uma prova formal deve detalhar:
+Fechadas em 2026-10-03 na §5.5. Cada item aponta a subseção que o resolve.
 
-1. Definir a rede auxiliar `N` completa com `σ`, `τ` e arcos de capacidade 1 nas extremidades.
-2. Citar o teorema de decomposição de fluxos inteiros (Ahuja–Magnanti–Orlin, Thm. 3.5) e provar que cada caminho `σ–τ` tem peso 1.
-3. Provar a bijeção `π: S → T` explicitamente pela injetividade dos arcos terminais.
-4. Enunciar o invariante de bateria formalmente: ao partir de `x_i ∈ C`, a bateria vale `r`; ao longo do caminho mínimo até `x_{i+1}`, a bateria é `≥ r − d ≥ 0`.
-5. Separar dois casos no Lema dos ciclos: (i) ciclos não tocam vértices com `y = 0`; (ii) subtrair um ciclo mantém a viabilidade.
-6. Para a variante (U): refazer a análise de balanço e ativação por classe (`S ∖ T`, `T ∖ S`, `S ∩ T` com robô parado, `S ∩ T` com troca, `V ∖ (S ∪ T)`).
+1. Rede auxiliar `N` com `σ`, `τ` e arcos de capacidade 1 nas extremidades, mais o arco de permanência. **Fechado:** §5.5.1.
+2. Decomposição de fluxos inteiros (Ahuja–Magnanti–Orlin, Theorem 3.5) e peso 1 em cada caminho `σ–τ`. **Fechado:** §5.5.2.
+3. Bijeção `π: S → T` pela capacidade 1 dos arcos terminais. **Fechado:** §5.5.3.
+4. Invariante de bateria: carga `r` ao sair de uma estação, e `≥ r − d ≥ 0` até a próxima. **Fechado:** §5.5.4.
+5. Ciclos: não tocam `y = 0`; subtrair um ciclo preserva a viabilidade. **Fechado:** §5.5.5.
+6. Balanço e ativação da variante U por classe, incluindo permanência e troca. **Fechado:** §5.5.6. O fluxo contínuo está na §5.5.7. O teorema, na §5.5.8.
+
+Nenhuma das seis ficou como lacuna remanescente.
 
 ---
 
-## Verificação recomendada (não executada)
+## Verificação recomendada
 
-Script de teste pequeno com oráculo independente de `A_r` (BFS em estados `(vértice, bateria)` + emparelhamento perfeito), comparado com a PLI atual e com (B) em todos os grafos conexos com n ≤ 5, r ∈ {1,2,3}, m ≤ 3, incluindo `S ∩ T ≠ ∅`. Critério de sucesso: OPT igual e, para cada `C`, a mesma viabilidade. O modelo atual deve falhar exatamente nos casos com `S ∩ T ≠ ∅`.
+Executada em 2026-10-03. O validador independente está em `experiments/cuts/independent_validator.py` (estados `(vértice, bateria)` no grafo original, mais emparelhamento). A comparação com a PLI e com o oráculo está em `experiments/cuts/verify_t2_validador_independente.py`.
+
+Resultado registrado: grafos conexos rotulados com `n ≤ 4`, `r ∈ {1,2,3}`, `m ≤ 3`, todo `C ⊆ V`, contra o Gurobi e contra o oráculo: 7998 instâncias, 125922 conjuntos `C`, 0 divergências, 54,4 s. Há interseção `S ∩ T` nessa bateria. Para `n = 5` há 728 grafos conexos rotulados; a enumeração completa contra o Gurobi extrapola cerca de duas horas na taxa medida. A suíte compara uma amostra de 60 instâncias (semente 42, `r ∈ {1,2,3}`), 1920 conjuntos `C`, 0 divergências, 0,8 s. Os seis gabaritos de `synthetic.py` e os dois casos de permanência pura isolada entram à parte: 618 conjuntos `C`, 0 divergências.
+
+A frase antiga "o modelo atual deve falhar exatamente nos casos com `S ∩ T ≠ ∅`" descrevia a formulação de balanços separados. A variante U, que é o modelo atual, não falha nesses casos.
