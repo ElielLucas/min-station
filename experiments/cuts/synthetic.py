@@ -344,6 +344,46 @@ def make_SharedTerminal(r=1):
     }
 
 
+def make_StayPutIsolado(r=1):
+    """
+    S = T = {v}, sem arestas.
+
+    Permanência pura: o único robô já está no próprio alvo e não há troca
+    possível. OPT=0. make_StayPut não cobre este caso, porque a aresta a–b
+    permite uma troca que mascara a ausência do arco de permanência.
+    """
+    S = ['v']
+    T = ['v']
+    V = ['v']
+    adj = {'v': []}
+    A_r = construir_arcos_alcance(V, adj, r)
+    return S, T, V, adj, A_r, r, {
+        'name': 'StayPutIsolado',
+        'OPT':  0.0,
+    }
+
+
+def make_CaminhoABC(r=1):
+    """
+    Caminho a–b–c, S={a,b}, T={b,c}, r=1.
+
+    Caso CE1 de validacao-formulacao-base.md e §2.4 do parecer: C=∅ é
+    viável (o robô de a vai a b, o de b vai a c). Cancelar b de S e de T
+    deixaria S={a}, T={c} e exigiria estação. A interseção não pode ser
+    removida.
+    """
+    S = ['a', 'b']
+    T = ['b', 'c']
+    V = ['a', 'b', 'c']
+    edges = [('a', 'b', 1), ('b', 'c', 1)]
+    adj = _adj_undirected(edges)
+    A_r = construir_arcos_alcance(V, adj, r)
+    return S, T, V, adj, A_r, r, {
+        'name': 'CaminhoABC',
+        'OPT':  0.0,
+    }
+
+
 def make_TermRelayForced(r=1):
     """
     S={s1,s2}, T={t1,t2}, arestas s1-t1, s2-t1, t1-t2, t2-x, autonomia r=1.
