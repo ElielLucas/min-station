@@ -364,12 +364,15 @@ def _build_flow_net_aggregate(S, T, A_r, y_star):
       u_out → v_in       cap INF          para (u,v) ∈ A_r
 
     Um vértice em S ∩ T recebe os dois arcos de unidade própria (σ→v_out e
-    v_in→τ) — o Lema 5 de Das permite que o mesmo vértice seja origem de um
-    robô e alvo de outro. O arco terminal sai de t_in (não de t_out): é
-    t_in que reparte sua entrada entre a unidade que termina ali (grátis,
-    cap 1) e o trânsito de outros robôs (cap (m-1)*y_t) — ver base-formulation
-    §7.2. Sair de t_out forçaria a própria unidade terminal a atravessar o
-    gargalo de trânsito, contradizendo a formulação.
+    v_in→τ) e mais um arco de permanência v_out→v_in de capacidade 1,
+    independente de y. O Lema 5 de Das permite que o robô fique parado no
+    próprio alvo: o caminho σ→v_out→v_in→τ não usa aresta de A_r nem
+    estação. Sem esse arco a rede declara inviável o caso S=T={v} isolado.
+    O arco terminal sai de t_in (não de t_out): é t_in que reparte sua
+    entrada entre a unidade que termina ali (grátis, cap 1) e o trânsito
+    de outros robôs (cap (m-1)*y_t) — ver base-formulation §7.2. Sair de
+    t_out forçaria a própria unidade terminal a atravessar o gargalo de
+    trânsito, contradizendo a formulação.
 
     Max-flow σ→τ < m ⟹ existe corte fracionário violado.
     """
@@ -408,6 +411,8 @@ def _build_flow_net_aggregate(S, T, A_r, y_star):
             arc(f'{v}_in', f'{v}_out', (m - 1) * yv)
         else:
             arc(f'{v}_in', f'{v}_out', m * yv)
+        if is_S and is_T:
+            arc(f'{v}_out', f'{v}_in', 1.0)
 
     for u, v in A_r:
         arc(f'{u}_out', f'{v}_in', INF)
@@ -689,6 +694,8 @@ def integer_oracle(S, T, N_plus, C):
         else:
             cap_relay = 0.0
         arc(f'{v}_in', f'{v}_out', cap_relay)
+        if is_S and is_T:
+            arc(f'{v}_out', f'{v}_in', 1.0)
 
     for u in nodes:
         for w in N_plus.get(u, ()):
