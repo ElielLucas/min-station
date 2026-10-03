@@ -1,0 +1,3 @@
+nome,lb_melhor,ub_melhor,gap_absoluto,cutoff,mipfocus,lb,ub,status,status_nome,t_solver_s,veredito,seed,threads,tl_s,gurobi
+mapf-room-32-32-4-m10-f8.txt,16.0,18.0,2.0,17.5,3,16.0,,9,TIME_LIMIT,14399.35,inconclusivo,42,4,14400,12.0.3
+vienna-I056-regiao-f4.txt,9.0,11.0,2.0,10.5,3,9.0,,9,TIME_LIMIT,14399.58,inconclusivo,42,4,14400,12.0.3
