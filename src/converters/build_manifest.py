@@ -88,6 +88,8 @@ CAMPOS_MELHOR = ['lb_melhor', 'ub_melhor', 'fonte_melhor']
 # roda o baseline com TL 600 s e pode não ter fechado o ótimo). Ver os
 # relatórios citados na fonte de cada linha; não confundir com `lb`/`ub` de
 # CAMPOS_RES, que são só o resultado daquele protocolo.
+_E13 = 'E13, COMP C1+C2+C4, MIPFocus=1, TL 1800 s — resultados-e13-pli.md'
+
 MELHORES = {
     'hc9u.txt': (32, 38, 'LB: núcleo C1+C4-DM (E3); UB: verificado no compacto (E4). '
                          'OPT(hc9u) in [32, 38] segue aberto — resultados-e2-e4-pli.md'),
@@ -97,6 +99,19 @@ MELHORES = {
     'Barcelona_n930_m2522_st_15.txt': (15, 15, 'OPT provado no compacto, R=5 — resultados-e8-pli.md'),
     'Philadelphia_n800_m2404_st_5.txt': (41, 41, 'referência histórica não reprovada nesta linha, '
                                                   'R=2 — run_e8.py'),
+    # E13 contra o protocolo regenerado. Ficaram de fora mapf-empty-32-32-m25-f4
+    # (o protocolo tem LB 14 e o E13 tem 13) e mapf-room-32-32-4-m10-f8 (16/18 nos dois).
+    'mapf-den312d-m25-f4.txt': (17, 17, _E13),
+    'mapf-den312d-m50-f2-rho.txt': (5, 9, _E13),
+    'mapf-random-32-32-10-m25-f4.txt': (15, 20, _E13),
+    'mapf-random-32-32-10-m50-f8.txt': (54, 68, _E13),
+    'mapf-random-64-64-20-m100-f4.txt': (41, 63, _E13),
+    'mapf-room-32-32-4-m25-f4-rho.txt': (17, 19, _E13),
+    'mapf-warehouse-10-20-10-2-1-m25-f4.txt': (29, 42, _E13),
+    'mapf-warehouse-10-20-10-2-1-m50-f8.txt': (81, 117, _E13),
+    'vienna-I056-regiao-f4.txt': (9, 11, _E13),
+    'vienna-I065-intercalado-f2.txt': (17, 19, _E13),
+    'vienna-I065-regiao-f4.txt': (14, 17, _E13),
 }
 
 

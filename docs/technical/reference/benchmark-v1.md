@@ -198,8 +198,10 @@ servem de conjunto de regressão rápido, não de conjunto de comparação. A di
 
 ### 7.1 Instâncias D e A (referência para os próximos experimentos)
 
-LB e UB do protocolo da §6 ao fim dos 600 s; o gap é o do Gurobi. Não são ótimos provados, salvo
-onde indicado em outra fonte.
+LB e UB do protocolo da §6 ao fim dos 600 s, **antes** da regeneração da §8. E9, E10, E10b e E13
+usaram esta partição. A partição vigente está na §8.
+
+O gap é o do Gurobi. Não são ótimos provados, salvo onde indicado em outra fonte.
 
 | Instância | Regime | n | m | r | \|A_r\| | LB | UB | gap | Classe |
 |---|---|---|---|---|---|---|---|---|---|
@@ -253,3 +255,36 @@ Pendentes:
    código têm diâmetro pequeno, então λ\* é baixo e R-FRAC:4 cai em r = 1.
 3. Faltam as três seeds nas instâncias D/A (§10 pede 3 seeds). O protocolo atual usa só a seed 42.
 4. Falta a tag de versão que congela o benchmark-v1.
+
+## 8. Regeneração depois da correção do C4-DM
+
+O protocolo da §6 foi reexecutado com o gerador C4-DM corrigido, nas mesmas condições: COMP
+(U + C1+C2+C4), Gurobi 12.0.3, 4 threads, seed 42, TL 600 s, duas fatias. O protocolo anterior
+está em `results/benchmark/historico/dificuldade_v1_pre_c4fix_fatia{1,2}.csv`. O novo está em
+`results/benchmark/dificuldade_v1_fatia{1,2}.csv`. A comparação, gerada por
+`experiments/benchmark/comparar_regeneracao_c4fix.py`, está em
+`results/benchmark/regeneracao_c4fix.csv`.
+
+Contagens de classe, das 70 instâncias: F 35, A 26, M 5, D 4 antes; F 35, A 28, M 4, D 3 depois.
+O conjunto D/A passa de 30 para 31. Entrou uma instância e não saiu nenhuma:
+
+| Instância | Antes | Depois |
+|---|---|---|
+| `mapf-empty-32-32-m50-f2` | M, LB = UB = 6 | A, LB 4, UB 6 |
+
+Dentro de D/A, `puc-cc10-2u-seed-r1` passou de D (LB 53, UB 58) para A (LB 53, UB 60). O item 1 da
+§7.2 (D com 4 instâncias) descreve a partição anterior; nesta regeneração D ficou com 3.
+
+As três linhas corrigidas à mão em 2026-09-26 reaparecem no CSV novo com os valores corrigidos:
+`b-b09-intercalado-f2-rho` LB = UB = 2 (antes 4/4, classe F nos dois); `mapf-den312d-m50-f2-rho`
+LB 6 → 4, UB 9, classe A; `mapf-room-32-32-4-m25-f4-rho` UB 20 → 19, LB 16, classe A. No manifesto,
+`lb`/`ub`/`dificuldade` dessas três já estavam corrigidos; `fonte_lb_ub` agora aponta só para o
+protocolo regenerado.
+
+E9, E10, E10b e E13 usaram a partição D/A anterior e não são refeitos.
+
+A reconstrução completa de `build_manifest.py` também moveu `treewidth_ub` em 49 instâncias. Esse
+atributo vem da heurística de grau mínimo e não faz parte do protocolo de dificuldade; a aplicação
+ficou restrita a `dificuldade`, `lb`, `ub`, `fonte_lb_ub`, `lb_melhor`, `ub_melhor` e
+`fonte_melhor`. Onze das treze instâncias do E13 melhoraram LB ou UB em relação a este protocolo e
+entraram em `MELHORES`; `mapf-empty-32-32-m25-f4` e `mapf-room-32-32-4-m10-f8` não.
