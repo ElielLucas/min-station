@@ -153,6 +153,132 @@ def instancias_margem(out_dir=OUT_DIR):
     return [nome for nome in AVALIACAO if na_margem(chave, nome)]
 
 
+def _cel_lb(row):
+    if row is None:
+        return '—'
+    v = lb_estrela(_f(row['lb']))
+    return '—' if v is None else str(v)
+
+
+def _cel_ub(row):
+    if row is None:
+        return '—'
+    v = _f(row['ub'])
+    if v is None:
+        return '—'
+    return str(lb_estrela(v))
+
+
+def _cel_t(row):
+    if row is None:
+        return '—'
+    v = _f(row['t_metodo_s'])
+    if v is None:
+        return '—'
+    return f'{v:.1f}'.replace('.', ',')
+
+
+def _cel_st(row):
+    if row is None:
+        return '—'
+    if row['status_nome'] == 'OPTIMAL':
+        return 'ótimo'
+    if row['status_nome'] == 'TIME_LIMIT':
+        return 'TL'
+    return row['status_nome']
+
+
+def _linha(chave, nome, seed, fase, com_voto):
+    celulas = [f'`{nome[:-4]}`', str(seed)]
+    for braco in ('COMP', 'NUCLEO', 'CBI'):
+        row = chave.get((nome, braco, str(seed), fase))
+        celulas += [_cel_lb(row), _cel_ub(row), _cel_st(row), _cel_t(row)]
+    cbi = chave.get((nome, 'CBI', str(seed), fase))
+    if cbi is None:
+        celulas += ['—', '—']
+    else:
+        celulas += [cbi['iteracoes'] or '—', cbi['n_z'] or '—']
+    if com_voto:
+        celulas.append(resultado_instancia(chave, nome, 'COMP', seed) or '—')
+        celulas.append(resultado_instancia(chave, nome, 'NUCLEO', seed) or '—')
+    return '| ' + ' | '.join(celulas) + ' |'
+
+
+def _cabecalho(com_voto):
+    base = ('| Instância | seed | COMP LB* | UB | st | t | '
+            'NUCLEO LB* | UB | st | t | CBI LB* | UB | st | t | iter | n_z |')
+    sep = '|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|'
+    if com_voto:
+        base += ' vs COMP | vs NUCLEO |'
+        sep += '---|---|'
+    print(base)
+    print(sep)
+
+
+def _blococ(chave, nomes, seeds, fase, com_voto):
+    _cabecalho(com_voto)
+    for nome in nomes:
+        for seed in seeds:
+            if chave.get((nome, 'COMP', str(seed), fase)) is None:
+                continue
+            print(_linha(chave, nome, seed, fase, com_voto))
+
+
+def tabelas(linhas):
+    """Tabelas de LB* = ceil(LB − 1e-6). Não altera o critério de veredito()."""
+    chave = _chave(linhas)
+    aval = [n for n in AVALIACAO if (n, 'COMP', '42', 'A') in chave]
+    controles = []
+    dev = []
+    for row in linhas:
+        if row['fase'] == 'D' and row['nome'] not in dev:
+            dev.append(row['nome'])
+        if row['fase'] == 'A' and row['nome'] not in AVALIACAO and row['nome'] not in controles:
+            controles.append(row['nome'])
+
+    print('### Avaliação, seed 42')
+    print()
+    _blococ(chave, aval, ('42',), 'A', True)
+    print()
+    print('### Re-seeds 43 e 44')
+    print()
+    _blococ(chave, aval, ('43', '44'), 'R', True)
+    print()
+    print('### Agregado por instância (vitória ou derrota exige 2 de 3 seeds)')
+    print()
+    print('| Instância | contra COMP | contra NUCLEO |')
+    print('|---|---|---|')
+    for nome in aval:
+        print(f'| `{nome[:-4]}` | {agregar_seeds(chave, nome, "COMP")} | '
+              f'{agregar_seeds(chave, nome, "NUCLEO")} |')
+    print()
+    print('### Controles MAPF, seed 42')
+    print()
+    _blococ(chave, controles, ('42',), 'A', False)
+    print()
+    print('### Desenvolvimento, seed 42')
+    print()
+    _blococ(chave, dev, ('42',), 'D', False)
+    print()
+    commits = defaultdict(set)
+    for row in linhas:
+        commits[row['fase']].add(row['commit'])
+    print('### Commits por fase')
+    print()
+    for fase in sorted(commits):
+        print(f'- fase {fase}: {", ".join(sorted(commits[fase]))}')
+    manifesto = ROOT / 'instances' / 'manifest.csv'
+    por_nome = {r['nome']: r for r in csv.DictReader(manifesto.open(encoding='utf-8'))}
+    nomes = sorted({r['nome'] for r in linhas})
+    ruins = [n for n in nomes if por_nome[n]['rho_S_inter_T'] not in ('0', '0.0', '0.00')]
+    print()
+    print('### Checagem')
+    print()
+    print(f'- instâncias no CSV: {len(nomes)}')
+    print(f'- S∩T não vazio no manifesto: {len(ruins)} {ruins}')
+    print(f'- linhas: {len(linhas)}')
+
+
 def veredito(linhas):
     chave = _chave(linhas)
     por_grafo = defaultdict(list)
@@ -192,6 +318,8 @@ def main():
     if not linhas:
         print('sem CSV do E12')
         return 1
+    tabelas(linhas)
+    print()
     veredito(linhas)
     return 0
 
