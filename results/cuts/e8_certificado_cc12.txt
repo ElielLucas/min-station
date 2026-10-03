@@ -1,7 +1,7 @@
 conferência do validador por componentes: 1275 cortes, 0 divergências
-cc12-2p: n=4096 m=236 |A_r|=2795100 R=500 (carga 13s)
+cc12-2p: n=4096 m=236 |A_r|=2795100 R=500 (carga 12s)
 A_r simétrico: True
 UB: |C|=6 C=['109', '1157', '2387', '2873', '3834', '968'] oráculo=True compacto=True
-cortes C1+C4-DM: 50 únicos, 50 válidos (t=75s)
+cortes C1+C4-DM: 50 únicos, 50 válidos (t=74s)
 núcleo C1+C4-DM: status=2 ótimo=6.0
 CERTIFICADO OPT(cc12-2p)=6: SIM
