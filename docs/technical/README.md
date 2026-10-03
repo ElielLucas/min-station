@@ -12,7 +12,8 @@ technical/
 ├── governance/
 │   └── open-questions.md
 ├── plans/
-│   └── plano-*.md            # planos de execução por rodada de experimentos
+│   ├── plano-*.md            # planos de execução por rodada de experimentos
+│   └── backlog-continuacao.md # histórico e backlog de continuação
 └── reference/
     ├── source-map.md
     ├── benchmark-v1.md        # metodologia e resultados das instâncias
@@ -45,6 +46,7 @@ Nenhuma dessas fontes deve substituir silenciosamente as demais.
 | Entender a direção da pesquisa | `../../RESEARCH.md` + `../context-ai/research-direction.md` |
 | Ver diferenças entre versões | `reference/source-map.md` |
 | Ver pontos não resolvidos | `governance/open-questions.md` |
+| Ver o que já foi feito e o que falta | `plans/backlog-continuacao.md` |
 | Entender implementação | `../context-ai/code-guidelines.md` + código real |
 | Escolher instâncias experimentais | `reference/benchmark-v1.md` + `../../instances/manifest.csv` |
 

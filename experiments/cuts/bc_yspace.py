@@ -36,6 +36,8 @@ from cuts import (
     integer_oracle,
     separate_classical_fracs,
     InstanciaInviavel,
+    cortes_ordenados,
+    vertices_do_corte,
 )
 from yspace import _build_ymodel
 from primal import build_primal_solution
@@ -121,7 +123,7 @@ def solve_bc_yspace(S, T, V, A_r, static_cuts=None, time_limit=900,
                     raise InstanciaInviavel(
                         f'callback BC-y lazy: Z=∅ com C={sorted(C)[:10]}...'
                     )
-                vs = [v for v in Z if v in y]
+                vs = vertices_do_corte(Z, y)
                 if vs:
                     modelo.cbLazy(sum(y[v] for v in vs) >= 1)
                     contador['lazy_cuts'] += 1
@@ -136,8 +138,8 @@ def solve_bc_yspace(S, T, V, A_r, static_cuts=None, time_limit=900,
                     new_cuts = separate_classical_fracs(S, T, A_r, y_frac)
                 except InstanciaInviavel:
                     new_cuts = []
-                for Z in new_cuts:
-                    vs = [v for v in Z if v in y]
+                for Z in cortes_ordenados(new_cuts):
+                    vs = vertices_do_corte(Z, y)
                     if vs:
                         modelo.cbCut(sum(y[v] for v in vs) >= 1)
                         contador['user_cuts'] += 1
@@ -240,7 +242,8 @@ def solve_cbi(S, T, V, static_cuts, N_plus, time_limit=300, seed=42, threads=4,
                       oracle_calls, n_cuts_total, n_z_cuts, master_time_s,
                       oracle_time_s, node_count, y_star.
     """
-    all_cuts = set(frozenset(Z) for Z in (static_cuts or []))
+    all_cuts = cortes_ordenados(static_cuts or [])
+    vistos = set(all_cuts)
     n_static = len(all_cuts)
     nogoods = []  # C's que reapareceram apesar do corte y(Z)>=1 gerado para elas
     t0 = time.monotonic()
@@ -279,12 +282,12 @@ def solve_cbi(S, T, V, static_cuts, N_plus, time_limit=300, seed=42, threads=4,
         # o mestre que não fecha consome o prazo e o corte 𝒵 não chega a ser gerado.
         reserva = 5.0
         limite = remaining if remaining <= reserva + 1 else remaining - reserva
-        mip, y = _build_ymodel(V, list(all_cuts), integer=True, seed=seed,
+        mip, y = _build_ymodel(V, all_cuts, integer=True, seed=seed,
                                threads=threads, time_limit=limite)
-        for C_ng in nogoods:
+        for C_ng in sorted(nogoods, key=lambda c: tuple(sorted(c))):
             mip.addConstr(
                 sum(y[v] for v in V if v not in C_ng)
-                + sum((1 - y[v]) for v in C_ng) >= 1
+                + sum((1 - y[v]) for v in sorted(C_ng)) >= 1
             )
         tm = time.monotonic()
         mip.optimize()
@@ -329,7 +332,11 @@ def solve_cbi(S, T, V, static_cuts, N_plus, time_limit=300, seed=42, threads=4,
                 return _resultado('OPT')
         else:
             testadas_inviaveis.add(C)
-            all_cuts.add(frozenset(Z))
+            fz = frozenset(Z)
+            if fz not in vistos:
+                vistos.add(fz)
+                all_cuts.append(fz)
+                all_cuts.sort(key=lambda z: tuple(sorted(z)))
 
         if best_obj is not None and lb is not None and best_obj <= lb + 1e-9:
             return _resultado('OPT')

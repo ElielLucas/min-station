@@ -1,0 +1,73 @@
+# meta: classe=estrutural
+# meta: commit_gerador=97b290d-dirty
+# meta: das_compat=exata
+# meta: familia=bp
+# meta: fonte=gerador estrutural BP
+# meta: instancia_original=bp-q2-B3-s0
+# meta: nome=bp-nao-q2-B3-s0.txt
+# meta: observacao=items=2,2,2;q=2;B=3;rotulo=nao;certificado=inexistente;origem_certificado=dp-bin-packing;LB=8
+# meta: problema_original=MIN-STATION de Das, família BP
+# meta: referencia=familias-estruturais.md
+# meta: regra_ST=folhas de origem e de destino, uma por unidade de item e de caixa
+# meta: regra_r=r=1
+# meta: script=experiments/structural
+# meta: seed=0
+# meta: transformacao=G-UNIT; não dirigido; passos unitários
+# meta: url=
+# meta: versao_gerador=1
+N 23
+M 48
+R 1
+# u v length
+c0_0 u0 1
+c0_0 v0 1
+c0_1 u0 1
+c0_1 v1 1
+c1_0 u1 1
+c1_0 v0 1
+c1_1 u1 1
+c1_1 v1 1
+c2_0 u2 1
+c2_0 v0 1
+c2_1 u2 1
+c2_1 v1 1
+s0_0 u0 1
+s0_1 u0 1
+s1_0 u1 1
+s1_1 u1 1
+s2_0 u2 1
+s2_1 u2 1
+t0_0 v0 1
+t0_1 v0 1
+t0_2 v0 1
+t1_0 v1 1
+t1_1 v1 1
+t1_2 v1 1
+u0 c0_0 1
+u0 c0_1 1
+u0 s0_0 1
+u0 s0_1 1
+u1 c1_0 1
+u1 c1_1 1
+u1 s1_0 1
+u1 s1_1 1
+u2 c2_0 1
+u2 c2_1 1
+u2 s2_0 1
+u2 s2_1 1
+v0 c0_0 1
+v0 c1_0 1
+v0 c2_0 1
+v0 t0_0 1
+v0 t0_1 1
+v0 t0_2 1
+v1 c0_1 1
+v1 c1_1 1
+v1 c2_1 1
+v1 t1_0 1
+v1 t1_1 1
+v1 t1_2 1
+S 6
+s0_0 s0_1 s1_0 s1_1 s2_0 s2_1
+T 6
+t0_0 t0_1 t0_2 t1_0 t1_1 t1_2

@@ -7,8 +7,9 @@ listas de frozensets. O chamador decide como adicioná-las ao modelo Gurobi.
 Convenção: cada frozenset Z representa um corte  sum_{v in Z} y[v] >= 1.
 """
 
-from collections import deque
+from collections import defaultdict, deque
 from heapq import heappush, heappop
+from itertools import combinations
 
 
 class CorteInvalido(RuntimeError):
@@ -20,6 +21,27 @@ class InstanciaInviavel(RuntimeError):
 
 
 # ── Utilitários ───────────────────────────────────────────────────────────────
+
+def cortes_ordenados(cortes):
+    """Lista única de cortes em ordem lexicográfica. O conjunto não muda; a ordem não depende de hash."""
+    vistos = set()
+    unicos = []
+    for Z in cortes:
+        fz = frozenset(Z)
+        if fz not in vistos:
+            vistos.add(fz)
+            unicos.append(fz)
+    unicos.sort(key=lambda z: tuple(sorted(z)))
+    return unicos
+
+
+def vertices_do_corte(Z, presentes=None):
+    """Vértices do corte em ordem estável, opcionalmente filtrados por um mapa de variáveis."""
+    vs = sorted(Z)
+    if presentes is not None:
+        vs = [v for v in vs if v in presentes]
+    return vs
+
 
 def build_neighborhoods(A_r):
     """Retorna (N_plus, N_minus) indexados por vértice."""
@@ -539,6 +561,102 @@ def check_C3_violations(S, T, A_r, y_star):
                 cuts.append(frozenset(Z))
 
     return cuts
+
+
+def generate_C6(S, T, N_plus, N_minus, max_componente=16):
+    """Desigualdade mochila de Hall de primeiro salto, δ >= 2.
+
+    Para S' ⊆ S\\T com δ = |S'| − |N⁺(S') ∩ T| >= 2:
+        Σ_{v ∈ N⁺(S')} min(δ, |N⁻(v) ∩ S'|) y_v >= δ.
+
+    A enumeração é por componente do grafo em que duas origens se ligam
+    quando compartilham um vizinho. Componente maior que max_componente
+    contribui só com o conjunto inteiro. Cada corte é
+    (tupla ordenada de (vértice, coeficiente), δ).
+    """
+    S_fora = sorted(set(S) - set(T))
+    T_set = set(T)
+    viz = {s: set(N_plus.get(s, ())) for s in S_fora}
+    pai = {s: s for s in S_fora}
+
+    def achar(x):
+        while pai[x] != x:
+            pai[x] = pai[pai[x]]
+            x = pai[x]
+        return x
+
+    por_vizinho = defaultdict(list)
+    for s, nbrs in viz.items():
+        for v in nbrs:
+            por_vizinho[v].append(s)
+    for grupo in por_vizinho.values():
+        raiz = achar(grupo[0])
+        for s in grupo[1:]:
+            pai[achar(s)] = raiz
+
+    comps = defaultdict(list)
+    for s in S_fora:
+        comps[achar(s)].append(s)
+
+    cortes = []
+    incompletas = 0
+    for membros in comps.values():
+        membros = sorted(membros)
+        if len(membros) > max_componente:
+            alvos = [membros]
+            incompletas += 1
+        else:
+            alvos = []
+            for k in range(1, len(membros) + 1):
+                alvos.extend(combinations(membros, k))
+        for comb in alvos:
+            Sp = set(comb)
+            N = set()
+            for s in Sp:
+                N |= viz[s]
+            delta = len(Sp) - len(N & T_set)
+            if delta < 2:
+                continue
+            termos = []
+            for v in sorted(N):
+                coef = min(delta, len(set(N_minus.get(v, ())) & Sp))
+                if coef:
+                    termos.append((v, coef))
+            if termos:
+                cortes.append((tuple(termos), delta))
+    unicos = sorted(set(cortes), key=lambda c: (c[1], c[0]))
+    return unicos, incompletas
+
+
+def corte_ponderado_valido(S, T, V, adj, r, termos, rhs):
+    """True se nenhuma solução viável viola Σ a_v y_v >= rhs.
+
+    Vértices com coeficiente 0 entram todos em C: não aumentam o lado
+    esquerdo e só facilitam a viabilidade. A busca enumera subconjuntos
+    do suporte com soma estritamente menor que rhs e consulta o validador
+    independente. Não usa is_valid_cut.
+    """
+    from independent_validator import viavel
+
+    coef = dict(termos)
+    suporte = [(v, a) for v, a in sorted(coef.items()) if a > 0]
+    if len(suporte) > 22:
+        raise ValueError(f'suporte {len(suporte)} grande demais para a enumeração')
+    livres = [v for v in V if coef.get(v, 0) <= 0]
+    n = len(suporte)
+    for mascara in range(1 << n):
+        soma = 0
+        escolhidos = []
+        for i in range(n):
+            if mascara & (1 << i):
+                v, a = suporte[i]
+                soma += a
+                escolhidos.append(v)
+        if soma >= rhs:
+            continue
+        if viavel(S, T, V, adj, r, livres + escolhidos):
+            return False
+    return True
 
 
 # ── Validador de cortes ────────────────────────────────────────────────────────

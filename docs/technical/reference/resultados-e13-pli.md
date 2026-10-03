@@ -140,12 +140,25 @@ sob ênfase primal e TL maior. A leitura correta é por instância, não por fam
 | `vienna-I065-intercalado-f2` | 16 | 16 | 20 | 21 |
 | `mapf-warehouse-10-20-10-2-1-m25-f4` | 29 | 28 | 53 | 49 |
 
-Isto não é ruído de execução: a correção de `generate_C4_DM` (correcao-c4-dm.md) tornou a geração de
-cortes determinística, e essa ordenação mudou o caminho do B&B sob time limit em quase todas as
-instâncias, não só nas 2 que tiveram a família de cortes alterada em si. Uma delas mudou de classe —
-`mapf-den312d-m25-f4` era A com LB 15 no manifesto e agora fecha ao ótimo provado em 17. Os números
-do manifesto atual não são reproduzíveis com o código corrigido; isso reforça, sem decidir aqui, a
-necessidade de regerar o benchmark-v1 com o gerador de cortes corrigido.
+A divergência de 9 em 13 entre o manifesto e esta reexecução tem três causas candidatas. Este
+relatório não escolhe uma:
+
+1. ordem de construção do modelo: cortes e coeficientes percorriam `set` e `frozenset`, e essa
+   ordem depende de `PYTHONHASHSEED` (T6 ordena a construção em `harness.py`, `bc_yspace.py` e
+   `yspace.py`);
+2. parada por tempo de parede: o mesmo `TimeLimit` muda `NodeCount` e `Work` quando a máquina
+   está carregada (`decisao-orcamento-worklimit.md`);
+3. mudança do conjunto de cortes, nas instâncias em que `generate_C4_DM` passou a emitir outra
+   família (`correcao-c4-dm.md`).
+
+A correção do gerador explica a mudança de conjunto onde a família mudou. Não basta, sozinha, para
+as outras linhas. `mapf-den312d-m25-f4` era A com LB 15 no manifesto e nesta tabela fecha em 17;
+isso é observação da tabela, não atribuição a uma das três causas.
+
+A fase longa junta dois fatores. `run_e13.py`, função `fase_longo` (linhas 164–166), resolve com
+`TimeLimit` de 1800 s e `MIPFocus=1`. O braço `focus600` isola a ênfase no prazo de 600 s. Não há
+braço com 1800 s e `MIPFocus` padrão. O efeito dessa fase, quando citado, é conjunto
+(`protocolo-comparacao-pareada.md`).
 
 ## 6. Consequência para a agenda
 

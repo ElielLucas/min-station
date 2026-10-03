@@ -25,32 +25,50 @@ from cuts import (
     generate_C1,
     generate_C2,
     generate_C4_DM,
+    generate_C6,
     check_C3_violations,
     assert_valid_cuts,
+    cortes_ordenados,
+    vertices_do_corte,
 )
 
 
 # ── Adição de cortes ao modelo ────────────────────────────────────────────────
 
+def corte_ponderado(corte):
+    """Corte C6: ((v, coeficiente), ...), rhs com rhs >= 1."""
+    return (
+        isinstance(corte, tuple)
+        and len(corte) == 2
+        and isinstance(corte[0], tuple)
+        and isinstance(corte[1], int)
+    )
+
+
 def add_cuts_to_model(modelo, y, cuts_specs, validate=None):
     """
-    cuts_specs: lista de frozensets de vértices.
-    Adiciona  sum_{v in Z} y[v] >= 1  para cada frozenset Z.
-    Retorna número de restrições adicionadas.
+    Cortes unitários (frozenset) viram y(Z) >= 1, na ordem de cortes_ordenados.
+    Cortes ponderados (C6) viram soma coeficiente*y >= rhs, ordenados por
+    (rhs, coeficientes). Os dois grupos não se misturam na ordenação.
 
-    validate: opcional, tupla (S, T, A_r). Se dado, cada corte é checado por
-    assert_valid_cuts antes de entrar no modelo; um corte inválido aborta
-    (CorteInvalido) em vez de ser adicionado em silêncio.
+    validate: opcional, tupla (S, T, A_r). Vale só para os cortes unitários.
     """
-    if validate is not None:
+    unitarios = [c for c in cuts_specs if not corte_ponderado(c)]
+    ponderados = [c for c in cuts_specs if corte_ponderado(c)]
+    if validate is not None and unitarios:
         S, T, A_r = validate
-        assert_valid_cuts(S, T, A_r, cuts_specs, origem='add_cuts_to_model')
+        assert_valid_cuts(S, T, A_r, unitarios, origem='add_cuts_to_model')
 
     n = 0
-    for Z in cuts_specs:
-        vs = [v for v in Z if v in y]
+    for Z in cortes_ordenados(unitarios):
+        vs = vertices_do_corte(Z, y)
         if vs:
             modelo.addConstr(quicksum(y[v] for v in vs) >= 1)
+            n += 1
+    for coefs, rhs in sorted(ponderados, key=lambda c: (c[1], c[0])):
+        termos = [(coef, y[v]) for v, coef in coefs if v in y and coef]
+        if termos:
+            modelo.addConstr(quicksum(coef * var for coef, var in termos) >= rhs)
             n += 1
     return n
 
@@ -59,15 +77,18 @@ def prepare_cuts(S, T, V, adj, A_r, r, active_cuts):
     """
     Calcula todas as famílias de cortes pedidas (exceto C3, que é iterativo).
 
-    active_cuts: subconjunto de {'C1', 'C2', 'C4'}
+    active_cuts: subconjunto de {'C1', 'C2', 'C4', 'C6'}
     Retorna (lista_de_frozensets_únicos, contagens_por_família)
+
+    C6 não entra na lista unitária: counts['C6_cortes'] traz as desigualdades
+    ponderadas, para não passar por cortes_ordenados.
 
     counts['unicos'] registra o tamanho após deduplicação entre famílias,
     que pode ser bem menor que a soma bruta (ex.: C1==C2==C4 em hipercubos).
     """
     N_plus, N_minus = build_neighborhoods(A_r)
     all_cuts = []
-    counts   = {'C1': 0, 'C2': 0, 'C4': 0}
+    counts   = {'C1': 0, 'C2': 0, 'C4': 0, 'C6': 0, 'C6_cortes': []}
 
     if 'C1' in active_cuts:
         c = generate_C1(S, T, N_plus, N_minus)
@@ -84,7 +105,13 @@ def prepare_cuts(S, T, V, adj, A_r, r, active_cuts):
         all_cuts += c
         counts['C4'] = len(c)
 
-    all_cuts = list({frozenset(Z) for Z in all_cuts})
+    if 'C6' in active_cuts:
+        c6, incompletas = generate_C6(S, T, N_plus, N_minus)
+        counts['C6'] = len(c6)
+        counts['C6_cortes'] = c6
+        counts['C6_incompletas'] = incompletas
+
+    all_cuts = cortes_ordenados(all_cuts)
     counts['unicos'] = len(all_cuts)
 
     return all_cuts, counts
@@ -211,7 +238,7 @@ def measure_root(S, T, V, A_r, f_type, upfront_cuts, gurobi_cuts=-1,
 
 
 def measure_mip(S, T, V, A_r, f_type, upfront_cuts, seed=42, threads=1, time_limit=1200,
-                y_start=None, params=None):
+                y_start=None, params=None, coletar_incumbente=False):
     """
     Resolve o MIP completo até otimalidade (ou time_limit).
     Usado em E0 para validar BASE-I == BASE-C.
@@ -223,8 +250,16 @@ def measure_mip(S, T, V, A_r, f_type, upfront_cuts, seed=42, threads=1, time_lim
     params: dict opcional de parâmetros extras do Gurobi (ex.: {'MIPFocus': 1}),
     aplicado depois dos acima — quem passa pode sobrescrever Seed/Threads/
     TimeLimit de propósito. Registre no CSV do experimento o que foi passado.
+
+    coletar_incumbente: se True, um callback só de leitura registra o tempo do
+    primeiro e do melhor incumbente. Não adiciona corte. O padrão é False
+    para não alterar o caminho de busca dos experimentos já publicados.
+    Callback em measure_lp/measure_root não é ligado: essas funções medem
+    LP/raiz em volume alto e não têm incumbente inteiro.
     """
+    t_modelo = time.monotonic()
     modelo, y, f, _ = _make_mip(S, T, V, A_r, f_type, upfront_cuts)
+    time_modelo_s = time.monotonic() - t_modelo
     modelo.Params.OutputFlag = 0
     modelo.Params.Seed       = seed
     modelo.Params.Threads    = threads
@@ -236,8 +271,24 @@ def measure_mip(S, T, V, A_r, f_type, upfront_cuts, seed=42, threads=1, time_lim
             y[v].Start = y_start.get(v, 0.0)
         modelo.update()
 
+    incumbente = {'primeiro': None, 'melhor': None, 'obj': None}
+
+    def _cb_incumbente(m, where):
+        if where != GRB.Callback.MIPSOL:
+            return
+        t = float(m.cbGet(GRB.Callback.RUNTIME))
+        ub = float(m.cbGet(GRB.Callback.MIPSOL_OBJ))
+        if incumbente['primeiro'] is None:
+            incumbente['primeiro'] = t
+        if incumbente['obj'] is None or ub < incumbente['obj'] - 1e-8:
+            incumbente['obj'] = ub
+            incumbente['melhor'] = t
+
     t0 = time.monotonic()
-    modelo.optimize()
+    if coletar_incumbente:
+        modelo.optimize(_cb_incumbente)
+    else:
+        modelo.optimize()
     t1 = time.monotonic()
 
     status = modelo.Status
@@ -262,6 +313,11 @@ def measure_mip(S, T, V, A_r, f_type, upfront_cuts, seed=42, threads=1, time_lim
         'sol_count':  modelo.SolCount,
         'node_count': int(modelo.NodeCount),
         'time_mip_s': t1 - t0,
+        'time_modelo_s': time_modelo_s,
+        'time_to_first_incumbent_s': incumbente['primeiro'],
+        'time_to_best_incumbent_s': incumbente['melhor'],
+        'time_to_proof_s': (t1 - t0) if status == GRB.OPTIMAL else None,
+        'work': float(modelo.Work),
     }
 
 

@@ -1,0 +1,69 @@
+# meta: classe=estrutural
+# meta: commit_gerador=97b290d-dirty
+# meta: das_compat=exata
+# meta: familia=tr
+# meta: fonte=gerador estrutural TR
+# meta: instancia_original=tr-k2-L5-r2-sig2
+# meta: nome=tr-k2-L5-r2-sig2-m2.txt
+# meta: observacao=k=2;L=5;r=2;sigma=2;m=2;D=8
+# meta: problema_original=MIN-STATION de Das, família TR
+# meta: referencia=familias-estruturais.md
+# meta: regra_ST=m origens nas entradas, m destinos nas saídas dos corredores
+# meta: regra_r=r=2
+# meta: script=experiments/structural
+# meta: seed=0
+# meta: transformacao=G-UNIT; não dirigido; passos unitários
+# meta: url=
+# meta: versao_gerador=1
+N 18
+M 44
+R 2
+# u v length
+c0_1 c0_2 1
+c0_1 e0 1
+c0_2 c0_1 1
+c0_2 c0_3 1
+c0_2 c1_2 1
+c0_3 c0_2 1
+c0_3 c0_4 1
+c0_4 c0_3 1
+c0_4 c0_5 1
+c0_4 c1_4 1
+c0_5 c0_4 1
+c0_5 x0 1
+c1_1 c1_2 1
+c1_1 e1 1
+c1_2 c0_2 1
+c1_2 c1_1 1
+c1_2 c1_3 1
+c1_3 c1_2 1
+c1_3 c1_4 1
+c1_4 c0_4 1
+c1_4 c1_3 1
+c1_4 c1_5 1
+c1_5 c1_4 1
+c1_5 x1 1
+e0 c0_1 1
+e0 s0 1
+e0 s1 1
+e1 c1_1 1
+e1 s0 1
+e1 s1 1
+s0 e0 1
+s0 e1 1
+s1 e0 1
+s1 e1 1
+t0 x0 1
+t0 x1 1
+t1 x0 1
+t1 x1 1
+x0 c0_5 1
+x0 t0 1
+x0 t1 1
+x1 c1_5 1
+x1 t0 1
+x1 t1 1
+S 2
+s0 s1
+T 2
+t0 t1

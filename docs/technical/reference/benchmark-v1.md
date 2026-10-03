@@ -288,3 +288,50 @@ atributo vem da heurística de grau mínimo e não faz parte do protocolo de dif
 ficou restrita a `dificuldade`, `lb`, `ub`, `fonte_lb_ub`, `lb_melhor`, `ub_melhor` e
 `fonte_melhor`. Onze das treze instâncias do E13 melhoraram LB ou UB em relação a este protocolo e
 entraram em `MELHORES`; `mapf-empty-32-32-m25-f4` e `mapf-room-32-32-4-m10-f8` não.
+
+## 9. Consolidação por grafo de origem
+
+Contagens depois da regeneração da §8, nas 70 instâncias do benchmark-v1 (`classe = principal` e
+caminho em `instances/benchmark-v1/`): F 35, A 28, M 4, D 3. D/A soma 31. O manifesto inteiro tem
+92 linhas, das quais 75 são `principal` (5 legadas, sem dificuldade calculada, mais essas 70).
+
+Agrupar por `instancia_original`, coluna que já existia. Duas variantes do mesmo valor não contam
+como dois grafos independentes. `experiments/benchmark/tabela_e12.py` lê essa coluna; o dicionário
+`GRAFOS` que listava `hc9u` e `cc7-3n` à mão saiu. O veredito publicado do E12 não muda: uma
+vitória contra o COMP (`hc11p`) e nenhuma contra o núcleo. O rótulo do grafo passa a ser
+`instancia_original` (`hc11p` no lugar do nome de arquivo).
+
+`build_manifest.py` (`--so-grupos`, ou a reconstrução completa) grava:
+
+- `particoes_do_grupo` em cada linha: partições em que o grafo de origem aparece;
+- `duplicata_de`: outro arquivo com o mesmo N, o mesmo número de arcos, o mesmo R, os mesmos S e
+  T e o mesmo conjunto de arcos, ignorando peso e sha256;
+- `instances/grupos_origem.csv`: variantes e partições de cada origem, com `vazamento=sim` quando
+  o grafo está ao mesmo tempo em desenvolvimento e avaliação.
+
+A partição não foi reatribuída. Os 11 vazamentos continuam e agora estão marcados:
+`I065`, `apia-1.graphml`, `b06`, `b12`, `b18`, `bip42p`, `cc10-2u`, `hc10p`, `hc9u`, `lin06`,
+`w23c23`. Dois grafos têm duas variantes e as duas estão em avaliação: `cc7-3n` e `i160-301`.
+A única duplicata estrutural encontrada é `puc-hc9u-seed-r1.txt`, marcada `duplicata_de=hc9u.txt`.
+A checagem é `experiments/benchmark/verify_t8_consolidacao.py`.
+
+`--so-grupos` não reescreve `dificuldade`, `lb`, `ub`, `fonte_lb_ub`, `lb_melhor`, `ub_melhor`
+nem `fonte_melhor`. A correção manual da H17 nessas colunas permanece. A reconstrução completa
+continua podendo mover `treewidth_ub`; essa coluna não faz parte do protocolo de dificuldade.
+
+### Proveniência de um resultado publicado
+
+Exemplo, uma linha já gravada, não uma coluna nova em todo CSV histórico.
+`results/benchmark/e12_fatia1.csv`, braço COMP, `puc-hc11p-seed-r1.txt`, seed 42:
+
+| Campo | Valor |
+|---|---|
+| Hash da instância | `24271c14967d855dedec3f76654f8cff74c225789ef26f8c8ed8a7b1d55cdc90` (`manifest.csv`, coluna `sha256`) |
+| Commit | `1849e17-dirty` |
+| Família de cortes | C1+C2+C4, 1024 cortes únicos nessa linha |
+| Configuração | Gurobi 12.0.3, seed 42, 4 threads, `TimeLimit` 600 s, `PYTHONHASHSEED=0` |
+| Certificado | solver, status `TIME_LIMIT`, LB 95, UB 159; não é ótimo provado |
+
+O manifesto já traz `sha256` e `fonte_lb_ub` (método, prazo e seed do protocolo de dificuldade).
+Relatórios `resultados-e*.md` trazem commit, cortes e fonte do certificado de cada bateria. Um
+resultado novo segue o protocolo pareado e preenche os mesmos campos no CSV do experimento.

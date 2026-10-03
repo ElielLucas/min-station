@@ -335,6 +335,8 @@ Observação: o C3 **do lado das origens** é exatamente a projeção do modelo 
 1. **RHS 1.** Para `S' ⊆ S∖T` com `|N⁺(S') ∩ T| < |S'|`: `Σ_{v ∈ N⁺(S')} y_v ≥ 1`. Os destinos de `N⁺(S')` entram também, porque podem ser relés.
 2. **[Provado]** Pelo teorema de Hall nos arcos diretos, no máximo `|N⁺(S')∩T|` robôs de `S'` terminam em um salto. Os demais, pelo menos `δ(S') = |S'| − |N⁺(S')∩T| ≥ 1`, dão ≥ 2 saltos, e o primeiro ponto de parada deles é interior e está em `N⁺(S')`.
    - **Versão mochila:** `Σ_{v∈N⁺(S')} min(δ, |N⁻(v)∩S'|) y_v ≥ δ`. Cada estação `v` pode ser a primeira parada de no máximo `|N⁻(v)∩S'|` robôs de `S'`. O arredondamento dos coeficientes é válido para cobertura 0/1.
+
+   **Proposição 5.4.2 (mochila de Hall de primeiro salto).** Seja `S' ⊆ S\T` e `δ = |S'| − |N⁺(S') ∩ T|`, com `N⁺` e `N⁻` tomadas no dígrafo de alcance `A_r`. Se `δ ≥ 1`, toda solução viável da formulação base (variante U, `y` binário) satisfaz `Σ_{v ∈ N⁺(S')} min(δ, |N⁻(v) ∩ S'|) y_v ≥ δ`. A derivação, as condições de validade e os contraexemplos considerados estão em [`c6-hall-primeiro-salto.md`](c6-hall-primeiro-salto.md). A família do §5.6, também chamada C6 no esboço, não é esta proposição e não está implementada.
 3. Elimina F2: com `S' = {a_j, b_j}`, dá `y_{c_j} + y_{x_j} ≥ 1`, e o LP passa a valer `k = OPT`.
 4. **A priori, pela decomposição de Dulmage–Mendelsohn** [Provado]. Tome um emparelhamento máximo `M` do bipartido direto `B_∅`. Para cada origem `s₀` não emparelhada, seja `S'(s₀)` o conjunto de origens alcançáveis a partir de `s₀` por caminhos `M`-alternantes. Então `|N(S'(s₀))| = |S'(s₀)| − 1`, pois caso contrário haveria caminho aumentante. Isso gera `m − ν(B_∅)` cortes com Hopcroft–Karp; do lado dos destinos, o análogo. Em hc9u, `B_∅ = ∅` e esses cortes coincidem com C1.
    - **`B_∅` é o bipartido entre `S∖T` e `T` inteiro** (e, do lado dos destinos, entre `T∖S` e `S` inteiro). A assimetria é a do item 1: a origem precisa estar fora de `S∩T` para que o argumento de primeiro salto valha, mas o destino não — um robô de `S∖T` pode terminar em `v ∈ S∩T`, com o robô de `v` saindo, o que o balanço unificado permite.
@@ -679,6 +681,12 @@ Cada linha segue a cadeia **propriedade → problema observado → técnica → 
     a leitura qualitativa — núcleo competitivo em PUC/PUCN, não em MAPF/Vienna — se sustenta; os
     valores individuais, não. Das 6, só `pucn-cc3-10n` foi verificada estável (18 em 6 execuções).
     Corrigir o determinismo é pré-requisito do E12, cujo critério decide por 1 estação.
+- **Resultado [E12] — A2 encerrada para Das.** CBI, núcleo e COMP nas PUC/PUCN de avaliação,
+  mesmas cortes C1+C2+C4, TL 600 s, Gurobi 12.0.3 (`resultados-e12-pli.md`). Uma vitória contra
+  o COMP, no grafo `hc11p` (LB* 101 contra 95). Nenhuma vitória contra o núcleo. Onde o núcleo
+  fecha, os cortes 𝒵 não sobem o LB* acima dele. Os controles MAPF ficaram abaixo do COMP, como
+  esperado. O critério pedia pelo menos três grafos independentes, incluindo o PUCN, e uma
+  vitória contra o núcleo. Não ocorreu.
 
 ### Prioridade B
 

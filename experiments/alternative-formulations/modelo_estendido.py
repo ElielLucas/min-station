@@ -12,8 +12,13 @@ from ms_utils import (
     RegistSerieTemporal,
 )
 
-def construir_modelo_estendido_equivalente(S, T, VI, arcos):
-    """Modelo estendido configurado para ser equivalente ao baseline."""
+def construir_modelo_estendido_vi(S, T, VI, arcos):
+    """Modelo estendido com estação só em VI.
+
+    Não é equivalente ao baseline atual. y existe só nos vértices intermediários,
+    e a conservação impede saída de um destino e trânsito por outras origens.
+    O baseline (variante U) permite estação em todo V.
+    """
     S = list(S)
     T = list(T)
     VI = list(VI)
@@ -99,7 +104,7 @@ def executar_para_R_estendido(nome_instancia, S, T, VI, V, adj, R,
     t0 = time.monotonic()
 
     A = construir_arcos_alcance(V, adj, R)
-    modelo, y, x, p, tam_AR, tam_VI = construir_modelo_estendido_equivalente(S=S, T=T, VI=VI, arcos=A)
+    modelo, y, x, p, tam_AR, tam_VI = construir_modelo_estendido_vi(S=S, T=T, VI=VI, arcos=A)
     modelo.Params.TimeLimit = tempo_limite_s
 
     logger = RegistSerieTemporal(
@@ -277,7 +282,7 @@ def varrer_R_e_coletar_estendido(caminho_instancia,
 
 def main():
     ap = argparse.ArgumentParser(
-        description="Solver MIN-STATION (estendido, equivalente ao baseline) — varre R e salva resultados."
+        description="Solver MIN-STATION estendido, estação só em VI (não equivalente ao baseline) — varre R e salva resultados."
     )
     ap.add_argument("--inputs-dir", type=str, default="./inputs",
                     help="Pasta de instâncias. Padrão: ./inputs")

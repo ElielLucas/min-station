@@ -34,6 +34,8 @@ from cuts import (
     separate_classical_fracs,
     generate_C5_threshold,
     assert_valid_cuts,
+    cortes_ordenados,
+    vertices_do_corte,
 )
 
 
@@ -65,8 +67,8 @@ def _build_ymodel(V, static_cuts, integer=False, seed=42, threads=4,
     m.setObjective(quicksum(y.values()), GRB.MINIMIZE)
     m.update()
 
-    for Z in static_cuts:
-        vs = [v for v in Z if v in y]
+    for Z in cortes_ordenados(static_cuts):
+        vs = vertices_do_corte(Z, y)
         if vs:
             m.addConstr(quicksum(y[v] for v in vs) >= 1)
 
@@ -90,8 +92,8 @@ def _add_cuts(lp, y, cuts, validate=None, origem=''):
                            N_plus=N_plus, N_minus=N_minus)
 
     n = 0
-    for Z in cuts:
-        vs = [v for v in Z if lp.getVarByName(f'y[{v}]') is not None]
+    for Z in cortes_ordenados(cuts):
+        vs = [v for v in vertices_do_corte(Z) if lp.getVarByName(f'y[{v}]') is not None]
         if vs:
             lp.addConstr(quicksum(lp.getVarByName(f'y[{v}]') for v in vs) >= 1)
             n += 1
@@ -127,7 +129,7 @@ def solve_lp_cutting_plane(S, T, V, adj, A_r, r,
     static_C1 = generate_C1(S, T, N_plus, N_minus)
     static_C2 = generate_C2(S, T, adj, r, V)
     static_C4 = generate_C4_DM(S, T, N_plus, N_minus)
-    static_all = list(set(map(frozenset, static_C1 + static_C2 + static_C4)))
+    static_all = cortes_ordenados(static_C1 + static_C2 + static_C4)
 
     lp, y = _build_ymodel(V, static_all, integer=False, seed=seed,
                            threads=threads, time_limit=time_per_stage,
@@ -147,7 +149,7 @@ def solve_lp_cutting_plane(S, T, V, adj, A_r, r,
         y_star = _extract_y_star(lp, y)
         c3_o = check_C3_violations(S, T, A_r, y_star)
         c3_d = check_C3_violations_dest(S, T, A_r, y_star)
-        new_cuts = list(set(map(frozenset, c3_o + c3_d)))
+        new_cuts = cortes_ordenados(c3_o + c3_d)
         if not new_cuts:
             break
         n = _add_cuts(lp, y, new_cuts, validate=validate, origem='C3')
@@ -245,7 +247,7 @@ def solve_ip_yspace(S, T, V, adj, A_r, r,
     c1 = generate_C1(S, T, N_plus, N_minus)
     c2 = generate_C2(S, T, adj, r, V)
     c4 = generate_C4_DM(S, T, N_plus, N_minus)
-    static = list(set(map(frozenset, c1 + c2 + c4 + (extra_cuts or []))))
+    static = cortes_ordenados(c1 + c2 + c4 + (extra_cuts or []))
 
     validate = (S, T, A_r, N_plus, N_minus) if validate_cuts else None
     mip, y = _build_ymodel(V, static, integer=True, seed=seed,

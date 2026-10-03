@@ -152,8 +152,11 @@ Esse ponto deve aparecer na demonstração de correção da formulação, não a
 Adotado o balanço unificado (variante U) descrito em §6 e §7. Não é mais
 uma alternativa candidata: é a formulação corrente, implementada em
 `baseline.py`. Verificado que coincide exatamente com a formulação anterior
-quando `S ∩ T = ∅` (caso de todas as 22 instâncias do repositório), então
-nenhum resultado experimental já obtido é invalidado.
+quando `S ∩ T = ∅`. No manifesto atual, `S ∩ T ≠ ∅` ocorre em 5 instâncias
+`classe = principal`: `mapf-den312d-m50-f2-rho`, `mapf-room-32-32-4-m25-f4-rho`,
+`puc-w23c23-intercalado-f2-rho`, `b-b09-intercalado-f2-rho` e
+`i-i160-301-intercalado-f2-rho` (`rho_S_inter_T > 0`). A frase anterior desta
+seção falava em todas as 22 instâncias do repositório.
 
 ### 10.2 Distância ponderada vs. passos
 

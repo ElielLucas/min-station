@@ -77,4 +77,11 @@ Resultados em `docs/technical/reference/resultados-e9-e10-pli.md`. Mudanças nes
   de 1 estação. As instâncias PUC/PUCN do subconjunto prioritário têm `S∩T = ∅`, logo não foram
   afetadas pelos cortes inválidos; os LBs do E9 nelas podem variar em ±1 numa reexecução.
 
+## Situação após E12 (2026-10-02)
+
+Resultado em `docs/technical/reference/resultados-e12-pli.md`. **A2 encerrada para Das.** Uma
+vitória contra o COMP (`hc11p`) e nenhuma contra o núcleo. Onde o núcleo fecha, os cortes 𝒵 não
+sobem o LB*. Os controles MAPF se comportaram como esperado: o CBI ficou no núcleo e abaixo do
+COMP. O recorte "A2 só fora de R-a", suspenso até este veredito, não se sustenta no benchmark-v1.
+
 

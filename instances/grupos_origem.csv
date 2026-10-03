@@ -1,0 +1,93 @@
+instancia_original,n_variantes,variantes,particoes,vazamento
+Anaheim,1,inst_Anaheim_n416_m914_st_19.txt,legado,nao
+Barcelona,4,Barcelona_n930_m2522_st_15.txt | Barcelona_n930_m2522_st_25.txt | Barcelona_n930_m2522_st_50.txt | inst_Barcelona_n1020_m2522_st_54.txt,legado | legado | legado | legado,nao
+Chicago-Sketch,3,Chicago_n400_m1130_st10.txt | Chicago_n400_m1130_st15.txt | Chicago_n400_m1130_st5.txt,legado | legado | legado,nao
+I052,1,vienna-I052-regiao-f4.txt,desenvolvimento,nao
+I056,1,vienna-I056-regiao-f4.txt,avaliacao,nao
+I065,2,vienna-I065-intercalado-f2.txt | vienna-I065-regiao-f4.txt,avaliacao | desenvolvimento,sim
+Philadelphia,3,Philadelphia_n800_m2404_st_25.txt | Philadelphia_n800_m2404_st_39.txt | Philadelphia_n800_m2404_st_5.txt,legado | legado | legado,nao
+Track2/instance001.gr,1,pace18-t2-001-regiao-f2.txt,desenvolvimento,nao
+Track2/instance061.gr,1,pace18-t2-061-regiao-f4.txt,avaliacao,nao
+Track2/instance081.gr,1,pace18-t2-081-regiao-f2.txt,avaliacao,nao
+Track2/instance141.gr,1,pace18-t2-141-regiao-f4.txt,desenvolvimento,nao
+Track2/instance181.gr,1,pace18-t2-181-regiao-f2.txt,avaliacao,nao
+Track2/instance199.gr,1,pace18-t2-199-regiao-f4.txt,avaliacao,nao
+apia-1.graphml,2,urb-apia-m10-f8.txt | urb-apia-m25-f2.txt,desenvolvimento | avaliacao,sim
+b06,2,b-b06-intercalado-f2.txt | b-b06-regiao-f2.txt,desenvolvimento | avaliacao,sim
+b09,1,b-b09-intercalado-f2-rho.txt,avaliacao,nao
+b12,2,b-b12-intercalado-f2.txt | b-b12-regiao-f2.txt,desenvolvimento | avaliacao,sim
+b15,1,b-b15-regiao-f4.txt,avaliacao,nao
+b18,2,b-b18-intercalado-f2.txt | b-b18-regiao-f2.txt,desenvolvimento | avaliacao,sim
+belize_city-11.graphml,1,urb-belize_city-m25-f4.txt,avaliacao,nao
+bip42p,3,bip42p.txt | puc-bip42p-regiao-f2.txt | puc-bip42p-seed-r1.txt,legado | desenvolvimento | avaliacao,sim
+bp-q2-B2-s0,2,bp-nao-q2-B2-s0.txt | bp-sim-q2-B2-s0.txt,estrutural | estrutural,nao
+bp-q2-B3-s0,2,bp-nao-q2-B3-s0.txt | bp-sim-q2-B3-s0.txt,estrutural | estrutural,nao
+bp-q4-B60-s0,2,bp-nao-q4-B60-s0.txt | bp-sim-q4-B60-s0.txt,estrutural | estrutural,nao
+bp-q4-B60-s1,2,bp-nao-q4-B60-s1.txt | bp-sim-q4-B60-s1.txt,estrutural | estrutural,nao
+bp-q6-B60-s0,2,bp-nao-q6-B60-s0.txt | bp-sim-q6-B60-s0.txt,estrutural | estrutural,nao
+bp-q6-B60-s1,2,bp-nao-q6-B60-s1.txt | bp-sim-q6-B60-s1.txt,estrutural | estrutural,nao
+bp-q8-B60-s0,2,bp-nao-q8-B60-s0.txt | bp-sim-q8-B60-s0.txt,estrutural | estrutural,nao
+bp-q8-B60-s1,2,bp-nao-q8-B60-s1.txt | bp-sim-q8-B60-s1.txt,estrutural | estrutural,nao
+cc10-2p,1,cc10-2p.txt,legado,nao
+cc10-2u,2,puc-cc10-2u-regiao-f2.txt | puc-cc10-2u-seed-r1.txt,avaliacao | desenvolvimento,sim
+cc11-2u,1,puc-cc11-2u-seed-r1.txt,avaliacao,nao
+cc12-2p,1,cc12-2p.txt,legado,nao
+cc12-2u,2,cc12-2u.txt | puc-cc12-2u-seed-r1.txt,legado | avaliacao,nao
+cc3-10n,1,pucn-cc3-10n-seed-r1.txt,desenvolvimento,nao
+cc3-5n,1,pucn-cc3-5n-seed-r1.txt,avaliacao,nao
+cc5-3n,1,pucn-cc5-3n-seed-r1.txt,avaliacao,nao
+cc6-2n,1,pucn-cc6-2n-seed-r1.txt,desenvolvimento,nao
+cc6-3p,1,puc-cc6-3p-seed-r1.txt,desenvolvimento,nao
+cc7-3n,2,pucn-cc7-3n-regiao-f2.txt | pucn-cc7-3n-seed-r1.txt,avaliacao | avaliacao,nao
+cc9-2p,1,puc-cc9-2p-seed-r1.txt,avaliacao,nao
+den312d.map + den312d-random-1.scen (primeiros 25 agentes),1,mapf-den312d-m25-f4.txt,desenvolvimento,nao
+den312d.map + den312d-random-1.scen (primeiros 50 agentes),1,mapf-den312d-m50-f2-rho.txt,avaliacao,nao
+empty-32-32.map + empty-32-32-random-1.scen (primeiros 25 agentes),1,mapf-empty-32-32-m25-f4.txt,avaliacao,nao
+empty-32-32.map + empty-32-32-random-1.scen (primeiros 50 agentes),1,mapf-empty-32-32-m50-f2.txt,desenvolvimento,nao
+fnl4461fst,1,fnl4461fst.txt,legado,nao
+hb-q4-ndir2-p1-k1,1,hb-q4-ndir2-p1-k1-L2.txt,estrutural,nao
+hb-q5-ndir2-p1-k1,1,hb-q5-ndir2-p1-k1-L2.txt,estrutural,nao
+hb-q6-ndir1-p1-k1,1,hb-q6-ndir1-p1-k1-L2.txt,estrutural,nao
+hb-q6-ndir1-p1-k4,1,hb-q6-ndir1-p1-k4-L2.txt,estrutural,nao
+hb-q6-ndir1-p1-k8,1,hb-q6-ndir1-p1-k8-L2.txt,estrutural,nao
+hb-q6-ndir1-p2-k1,1,hb-q6-ndir1-p2-k1-L2.txt,estrutural,nao
+hb-q6-ndir1-p6-k1,1,hb-q6-ndir1-p6-k1-L2.txt,estrutural,nao
+hb-q6-ndir1-p6-k4,1,hb-q6-ndir1-p6-k4-L2.txt,estrutural,nao
+hb-q6-ndir1-p6-k8,1,hb-q6-ndir1-p6-k8-L2.txt,estrutural,nao
+hb-q8-ndir1-p1-k1,1,hb-q8-ndir1-p1-k1-L2.txt,estrutural,nao
+hc10p,3,hc10p.txt | puc-hc10p-regiao-f4.txt | puc-hc10p-seed-r1.txt,legado | avaliacao | desenvolvimento,sim
+hc11p,2,hc11p.txt | puc-hc11p-seed-r1.txt,legado | avaliacao,nao
+hc12p,2,hc12p.txt | puc-hc12p-seed-r1.txt,legado | avaliacao,nao
+hc9u,4,hc9u.txt | puc-hc9u-regiao-f2.txt | puc-hc9u-regiao-f4.txt | puc-hc9u-seed-r1.txt,legado | desenvolvimento | avaliacao | avaliacao,sim
+i080-001,1,i-i080-001-regiao-f2.txt,desenvolvimento,nao
+i080-041,1,i-i080-041-regiao-f2.txt,avaliacao,nao
+i080-301,1,i-i080-301-regiao-f2.txt,avaliacao,nao
+i080-341,1,i-i080-341-intercalado-f2.txt,desenvolvimento,nao
+i160-301,2,i-i160-301-intercalado-f2-rho.txt | i-i160-301-regiao-f2.txt,avaliacao | avaliacao,nao
+lin01,1,lin-lin01-regiao-f2.txt,desenvolvimento,nao
+lin03,1,lin-lin03-regiao-f4.txt,avaliacao,nao
+lin06,2,lin-lin06-intercalado-f2.txt | lin-lin06-regiao-f4.txt,avaliacao | desenvolvimento,sim
+lin23,1,lin23.txt,legado,nao
+lin37,1,lin37.txt,legado,nao
+maze-32-32-2.map + maze-32-32-2-random-1.scen (primeiros 10 agentes),1,mapf-maze-32-32-2-m10-f4.txt,avaliacao,nao
+maze-32-32-2.map + maze-32-32-2-random-1.scen (primeiros 25 agentes),1,mapf-maze-32-32-2-m25-f2.txt,avaliacao,nao
+mindelo-38.graphml,1,urb-mindelo-m25-f4.txt,desenvolvimento,nao
+random-32-32-10.map + random-32-32-10-random-1.scen (primeiros 25 agentes),1,mapf-random-32-32-10-m25-f4.txt,desenvolvimento,nao
+random-32-32-10.map + random-32-32-10-random-1.scen (primeiros 50 agentes),1,mapf-random-32-32-10-m50-f8.txt,avaliacao,nao
+random-64-64-20.map + random-64-64-20-random-1.scen (primeiros 100 agentes),1,mapf-random-64-64-20-m100-f4.txt,avaliacao,nao
+room-32-32-4.map + room-32-32-4-random-1.scen (primeiros 10 agentes),1,mapf-room-32-32-4-m10-f8.txt,desenvolvimento,nao
+room-32-32-4.map + room-32-32-4-random-1.scen (primeiros 25 agentes),1,mapf-room-32-32-4-m25-f4-rho.txt,avaliacao,nao
+sc-k3,3,sc-gf2-k3.txt | sc-rigida-k3-s0.txt | sc-rigida-k3-s1.txt,estrutural | estrutural | estrutural,nao
+sc-k4,3,sc-gf2-k4.txt | sc-rigida-k4-s0.txt | sc-rigida-k4-s1.txt,estrutural | estrutural | estrutural,nao
+sc-k5,3,sc-gf2-k5.txt | sc-rigida-k5-s0.txt | sc-rigida-k5-s1.txt,estrutural | estrutural | estrutural,nao
+sc-k6,3,sc-gf2-k6.txt | sc-rigida-k6-s0.txt | sc-rigida-k6-s1.txt,estrutural | estrutural | estrutural,nao
+sc-k7,3,sc-gf2-k7.txt | sc-rigida-k7-s0.txt | sc-rigida-k7-s1.txt,estrutural | estrutural | estrutural,nao
+st_helier-59.graphml,1,urb-st_helier-m10-f4.txt,avaliacao,nao
+tr-k2-L5-r2-sig2,1,tr-k2-L5-r2-sig2-m2.txt,estrutural,nao
+tr-k2-L5-r2-siginf,1,tr-k2-L5-r2-siginf-m2.txt,estrutural,nao
+tr-k3-L5-r2-sig2,1,tr-k3-L5-r2-sig2-m2.txt,estrutural,nao
+tr-k3-L5-r2-siginf,1,tr-k3-L5-r2-siginf-m2.txt,estrutural,nao
+w23c23,2,puc-w23c23-intercalado-f2-rho.txt | puc-w23c23-seed-r1.txt,desenvolvimento | avaliacao,sim
+w3c571,1,puc-w3c571-seed-r1.txt,avaliacao,nao
+warehouse-10-20-10-2-1.map + warehouse-10-20-10-2-1-random-1.scen (primeiros 25 agentes),1,mapf-warehouse-10-20-10-2-1-m25-f4.txt,avaliacao,nao
+warehouse-10-20-10-2-1.map + warehouse-10-20-10-2-1-random-1.scen (primeiros 50 agentes),1,mapf-warehouse-10-20-10-2-1-m50-f8.txt,desenvolvimento,nao

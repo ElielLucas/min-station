@@ -282,7 +282,7 @@ R=1 (já correto).
 | Barcelona st15 | 5 | override | BASE-C | 15 | **15** | 0% | **OPT** | 284 | 15 |
 | Barcelona st15 | 5 | override | CORTES | 16 | 14 | 12,5% | TL | 300 | 15 |
 | Barcelona st25 | 5 | override | BASE-I | 16 | 13 | 18,75% | TL | 300 | 16 |
-| Barcelona st25 | 5 | override | BASE-C | 16 | 16 | 0% | OPT | 299 | 16 |
+| Barcelona st25 | 5 | override | BASE-C | 16 | 16 | 0% | OPT | 299,432 | 16 |
 | **Barcelona st25** | **5** | override | **CORTES** | **16** | **16** | **0%** | **OPT** | **241** | 16 |
 | Philadelphia st5 | 2 | override | BASE-I | 41 | 35 | 14,6% | TL | 300 | 41 |
 | Philadelphia st5 | 2 | override | BASE-C | 41 | 36 | 12,2% | TL | 300 | 41 |
@@ -311,8 +311,9 @@ CORTES também deu **bound 14**, pior que o bound 15 de BASE-C que provou o óti
 piorou nos dois lados. O comportamento pode ser ruído de seed ou custo de modelo maior. O E7
 repetirá com 3 seeds antes de qualquer conclusão.
 
-**Barcelona st25 R=5 continua o resultado mais limpo:** CORTES prova otimalidade em 241s contra
-TL nos dois baselines (BASE-C chega perto, 299s, sem provar).
+**Barcelona st25 R=5 continua o resultado mais limpo:** CORTES prova otimalidade em 241s.
+BASE-C também prova o ótimo, em 299,432 s (`results/cuts/e4_arvore.csv`, status 2, OBJ = bound = 16).
+A frase anterior desta seção dizia que BASE-C não provava; o CSV e a tabela acima registram o contrário.
 
 **hc9u R=1 (aberta):** CORTES dá bound=32, batendo com o núcleo do E3 (mesma família de cortes,
 esperado). UB=38: o E4-CORTES achou obj=38 no modelo compacto com fluxo, tornando esse UB

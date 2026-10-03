@@ -89,6 +89,7 @@ Os nomes dos PDFs são uma convenção sugerida. Atualize `source-map.md` se os 
 | Novas formulações/técnicas de otimização | `docs/context-ai/research-direction.md` |
 | Mudanças de implementação | `docs/context-ai/code-guidelines.md` + código relevante |
 | Lacunas ou hipóteses não fechadas | `docs/technical/governance/open-questions.md` |
+| Backlog de continuação e histórico de tarefas | `docs/technical/plans/backlog-continuacao.md` |
 | Relação entre artigos/documentos | `docs/technical/reference/source-map.md` |
 
 Não carregar todos os arquivos por precaução. Ler o conjunto mínimo necessário para a tarefa.

@@ -26,10 +26,16 @@ AVALIACAO = (
     'pucn-cc7-3n-regiao-f2.txt',
     'pucn-cc7-3n-seed-r1.txt',
 )
-GRAFOS = {
-    'hc9u': ('puc-hc9u-regiao-f4.txt', 'puc-hc9u-seed-r1.txt'),
-    'cc7-3n': ('pucn-cc7-3n-regiao-f2.txt', 'pucn-cc7-3n-seed-r1.txt'),
-}
+
+
+def _origens():
+    """Chave de grafo = instancia_original do manifesto (regra da T8)."""
+    caminho = ROOT / 'instances' / 'manifest.csv'
+    with caminho.open(encoding='utf-8') as fh:
+        return {row['nome']: row['instancia_original'] for row in csv.DictReader(fh)}
+
+
+ORIGEM = _origens()
 NAO_ITERAVEL = {'puc-hc11p-seed-r1.txt', 'puc-w23c23-seed-r1.txt'}
 PUCN = 'cc7-3n'
 
@@ -116,10 +122,7 @@ def agregar_seeds(chave, nome, braco_b):
 
 
 def grafo_de(nome):
-    for grafo, membros in GRAFOS.items():
-        if nome in membros:
-            return grafo
-    return nome[:-4]
+    return ORIGEM.get(nome, nome[:-4])
 
 
 def agregar_grafo(resultados):

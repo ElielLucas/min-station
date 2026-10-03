@@ -83,6 +83,8 @@ CAMPOS_AT = ['n', 'arestas_nao_dirigidas', 'arcos_arquivo', 'arcos_sem_reverso',
              'densidade_alcance', 'classe_tamanho', 'regime']
 CAMPOS_RES = ['dificuldade', 'lb', 'ub', 'fonte_lb_ub', 'particao']
 CAMPOS_MELHOR = ['lb_melhor', 'ub_melhor', 'fonte_melhor']
+CAMPOS_GRUPO = ['duplicata_de', 'particoes_do_grupo']
+GRUPOS = ROOT / 'instances' / 'grupos_origem.csv'
 
 # Melhores limites provados até agora, fora do protocolo de dificuldade (que só
 # roda o baseline com TL 600 s e pode não ter fechado o ótimo). Ver os
@@ -174,10 +176,147 @@ def linha_nova(path):
     return linha, dados
 
 
+def assinatura_estrutural(caminho):
+    """N, número de arcos, R, S, T e o conjunto de arcos, sem peso e sem sha256."""
+    dados = ler_instancia(str(caminho))
+    arcos = tuple(sorted((u, v) for u, v, _w in dados['E']))
+    return (
+        len(dados['V']),
+        len(arcos),
+        float(dados['R']),
+        tuple(sorted(dados['S'])),
+        tuple(sorted(dados['T'])),
+        arcos,
+    )
+
+
+def anotar_grupos(saida):
+    """Agrupa por instancia_original e marca duplicata estrutural.
+
+    Não altera dificuldade, limites nem partição. A partição já decidida
+    continua; o vazamento entre desenvolvimento e avaliação fica registrado
+    em particoes_do_grupo e em instances/grupos_origem.csv.
+    """
+    por_origem = {}
+    for linha in saida:
+        por_origem.setdefault(linha['instancia_original'], []).append(linha)
+
+    por_assinatura = {}
+    for linha in saida:
+        caminho = ROOT / linha['caminho']
+        por_assinatura.setdefault(assinatura_estrutural(caminho), []).append(linha['nome'])
+
+    canonico = {}
+    for nomes in por_assinatura.values():
+        if len(nomes) < 2:
+            continue
+        primeiro = min(nomes)
+        for nome in nomes:
+            if nome != primeiro:
+                canonico[nome] = primeiro
+
+    with GRUPOS.open('w', newline='', encoding='utf-8') as fh:
+        w = csv.DictWriter(fh, fieldnames=[
+            'instancia_original', 'n_variantes', 'variantes', 'particoes', 'vazamento',
+        ])
+        w.writeheader()
+        for origem in sorted(por_origem):
+            grupo = sorted(por_origem[origem], key=lambda l: l['nome'])
+            particoes = [l.get('particao', '') for l in grupo]
+            conjunto = set(particoes)
+            w.writerow({
+                'instancia_original': origem,
+                'n_variantes': len(grupo),
+                'variantes': ' | '.join(l['nome'] for l in grupo),
+                'particoes': ' | '.join(particoes),
+                'vazamento': 'sim' if 'desenvolvimento' in conjunto and 'avaliacao' in conjunto else 'nao',
+            })
+
+    for linha in saida:
+        origem = linha['instancia_original']
+        partes = sorted({l.get('particao', '') for l in por_origem[origem]})
+        linha['particoes_do_grupo'] = '|'.join(partes)
+        linha['duplicata_de'] = canonico.get(linha['nome'], '')
+
+
+LIMITE_ATRIBUTOS_ESTRUTURAL = 200
+
+
+def _linhas_estruturais():
+    pasta = ROOT / 'instances' / 'estrutural'
+    if not pasta.exists():
+        return []
+    novas = []
+    for path in sorted(pasta.rglob('*.txt')):
+        linha, dados = linha_nova(path)
+        linha['classe'] = 'estrutural'
+        linha['particao'] = 'estrutural'
+        for k in CAMPOS_RES:
+            linha.setdefault(k, '')
+        linha['particao'] = 'estrutural'
+        for k in CAMPOS_MELHOR:
+            linha[k] = ''
+        if len(dados['V']) <= LIMITE_ATRIBUTOS_ESTRUTURAL:
+            at = calcular_atributos(dados, r=linha['r_usado'])
+            linha.update({k: at.get(k) for k in CAMPOS_AT})
+        else:
+            linha.update({k: '' for k in CAMPOS_AT})
+            linha['n'] = len(dados['V'])
+            linha['m'] = len(dados['S'])
+        novas.append(linha)
+    return novas
+
+
+def aplicar_estrutural():
+    """Troca as linhas estruturais e preserva dificuldade, limites e partição do restante."""
+    with OUT.open(encoding='utf-8') as fh:
+        reader = csv.DictReader(fh)
+        campos = list(reader.fieldnames)
+        saida = [row for row in reader if row.get('classe') != 'estrutural']
+    for extra in CAMPOS_GRUPO:
+        if extra not in campos:
+            campos.append(extra)
+    saida.extend(_linhas_estruturais())
+    anotar_grupos(saida)
+    with OUT.open('w', newline='', encoding='utf-8') as fh:
+        w = csv.DictWriter(fh, fieldnames=campos, extrasaction='ignore')
+        w.writeheader()
+        w.writerows(saida)
+    n_est = sum(1 for row in saida if row.get('classe') == 'estrutural')
+    print(f'{len(saida)} linhas, {n_est} estruturais; grupos em {GRUPOS.relative_to(ROOT)}')
+
+
+def aplicar_so_grupos():
+    """Reescreve só as colunas de grupo. As correções da H17 permanecem."""
+    with OUT.open(encoding='utf-8') as fh:
+        reader = csv.DictReader(fh)
+        campos = list(reader.fieldnames)
+        saida = list(reader)
+    for extra in CAMPOS_GRUPO:
+        if extra not in campos:
+            campos.append(extra)
+    anotar_grupos(saida)
+    with OUT.open('w', newline='', encoding='utf-8') as fh:
+        w = csv.DictWriter(fh, fieldnames=campos, extrasaction='ignore')
+        w.writeheader()
+        w.writerows(saida)
+    print(f'{len(saida)} linhas; grupos em {GRUPOS.relative_to(ROOT)}')
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--sem-atributos', action='store_true')
+    ap.add_argument('--so-grupos', action='store_true',
+                    help='só recalcula duplicata_de, particoes_do_grupo e grupos_origem.csv')
+    ap.add_argument('--estrutural', action='store_true',
+                    help='reescreve só as linhas classe=estrutural; não recalcula o restante')
     args = ap.parse_args()
+    if args.so_grupos:
+        aplicar_so_grupos()
+        return
+    if args.estrutural:
+        aplicar_estrutural()
+        return
 
     antigos = OUT.exists() and {row['nome']: row for row in csv.DictReader(OUT.open(encoding='utf-8'))} or {}
     linhas = []
@@ -188,6 +327,10 @@ def main():
         linhas.append((path, *linha_legado(path)))
     for path in sorted((ROOT / 'instances' / 'benchmark-v1').rglob('*.txt')):
         linhas.append((path, *linha_nova(path)))
+    pasta_est = ROOT / 'instances' / 'estrutural'
+    if pasta_est.exists():
+        for path in sorted(pasta_est.rglob('*.txt')):
+            linhas.append((path, *linha_nova(path)))
 
     dificuldade = {}
     for arq in sorted((ROOT / 'results' / 'benchmark').glob('dificuldade_v1*.csv')):
@@ -196,9 +339,18 @@ def main():
 
     saida = []
     for path, linha, dados in linhas:
-        if not args.sem_atributos and path.name not in PESADAS:
+        estrutural = linha.get('classe') == 'estrutural' or str(path).find('/estrutural/') >= 0
+        pular_atributos = (
+            args.sem_atributos
+            or path.name in PESADAS
+            or (estrutural and len(dados['V']) > LIMITE_ATRIBUTOS_ESTRUTURAL)
+        )
+        if not pular_atributos:
             at = calcular_atributos(dados, r=linha['r_usado'])
             linha.update({k: at.get(k) for k in CAMPOS_AT})
+        elif estrutural:
+            linha['n'] = len(dados['V'])
+            linha['m'] = len(dados['S'])
         velho = antigos.get(linha['nome'], {})
         for k in CAMPOS_RES:
             linha[k] = velho.get(k, '')
@@ -220,7 +372,10 @@ def main():
     # benchmark-v1, em ordem de nome, 1 de cada 3 vai para desenvolvimento
     por_familia = {}
     for linha in saida:
-        if linha['caminho'].startswith('instances/benchmark-v1/'):
+        if linha['caminho'].startswith('instances/estrutural/'):
+            linha['particao'] = 'estrutural'
+            linha['classe'] = 'estrutural'
+        elif linha['caminho'].startswith('instances/benchmark-v1/'):
             por_familia.setdefault(linha['caminho'].split('/')[2], []).append(linha)
         else:
             linha['particao'] = 'legado'
@@ -229,7 +384,8 @@ def main():
             linha['particao'] = 'desenvolvimento' if i % 3 == 0 else 'avaliacao'
 
     with OUT.open('w', newline='', encoding='utf-8') as fh:
-        w = csv.DictWriter(fh, fieldnames=CAMPOS_PROV + CAMPOS_AT + CAMPOS_RES + CAMPOS_MELHOR)
+        anotar_grupos(saida)
+        w = csv.DictWriter(fh, fieldnames=CAMPOS_PROV + CAMPOS_AT + CAMPOS_RES + CAMPOS_MELHOR + CAMPOS_GRUPO)
         w.writeheader()
         w.writerows(saida)
     print(f'\n{len(saida)} linhas em {OUT.relative_to(ROOT)}')

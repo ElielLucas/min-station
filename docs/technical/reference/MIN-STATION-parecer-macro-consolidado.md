@@ -1,5 +1,9 @@
 # MIN-STATION — parecer macro consolidado
 
+O plano operacional (histórico, linhas pausadas e tarefas T1–T22) está em
+`docs/technical/plans/backlog-continuacao.md`. Este parecer continua sendo a fonte
+científica; não é o quadro de tarefas.
+
 **Data:** 30/09/2026. **Commit auditado:** `e9d1ccb`, branch `novos_testes`.
 
 **Fontes consolidadas:**
