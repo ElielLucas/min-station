@@ -81,7 +81,35 @@ O contexto organizado da formulação está em:
 
 `docs/context-ai/base-formulation.md`.
 
-## 4. Documentos de contexto do repositório
+## 4. Artigo IJCAI 2026 (Das, Hanaka, Melissinos e Ono)
+
+**Arquivo:** `docs/technical/reference/novo_artigo_das_2026.pdf`
+
+**Referência:** Arun Kumar Das, Tesshu Hanaka, Nikolaos Melissinos e Hirotaka Ono, *Charging Station Placement for Anonymous Mobile Agents: A Parameterized Complexity Perspective*. In: Proceedings of the Thirty-Fifth International Joint Conference on Artificial Intelligence (IJCAI-26), Main Track, pp. 72–80, agosto de 2026. DOI 10.24963/ijcai.2026/9.
+
+### Papel na pesquisa
+
+É o **trabalho prévio mais próximo**. Estuda exatamente o MIN-STATION de Das (robôs anônimos, autonomia comum, estações em qualquer vértice, `|S| = |T| = k`, emparelhamento final livre), sob o nome CHARGING STATION PLACEMENT e com `k` no lugar de `m`.
+
+Usar para:
+
+- a equivalência `(G, r) ↔ (G^r, 1)` (Proposição 1, p.75) — o dígrafo de alcance do projeto é `G^r`;
+- a verificação polinomial de viabilidade por alcance e emparelhamento bipartido (Lemas 1–2, Teorema 1, p.75) e a pertinência a NP;
+- as reduções de Set Cover (Teorema 3, p.76) e de Bin Packing (Teorema 4, p.76), que as famílias estruturais SC e BP do projeto instanciam;
+- a complexidade clássica e parametrizada (Teoremas 2 e 5), os algoritmos FPT (Teoremas 6–8), o algoritmo polinomial em árvores (Teorema 9) e a `k`-aproximação (Teorema 10);
+- decidir o que **não** é contribuição do projeto.
+
+### Limite da fonte
+
+O artigo não contém formulação de PLI, solver, experimento nem benchmark. Não serve para afirmar desempenho de método. Duas observações verificadas sobre o texto (a construção literal de `D` admite relé sem estação em `S ∩ T ∖ C`; o esboço do Teorema 10 inverte uma desigualdade) estão registradas em `overlap-ijcai2026-min-station.md` §4.3 e não refutam teorema.
+
+### Sobreposição com o projeto
+
+O levantamento completo — definições atributo a atributo, matriz de sobreposição, classificação das contribuições e lista de correções — está em:
+
+`docs/technical/reference/overlap-ijcai2026-min-station.md`.
+
+## 5. Documentos de contexto do repositório
 
 ### `RESEARCH.md`
 
@@ -99,7 +127,7 @@ Orienta a investigação de novas formulações, fortalecimentos e métodos de s
 
 Registra hipóteses e decisões ainda não fechadas.
 
-## 5. Código do repositório
+## 6. Código do repositório
 
 O código é a fonte para afirmar **o que está implementado e executando** em uma determinada versão.
 
@@ -110,14 +138,16 @@ Se código e documentação divergirem:
 3. distinguir formulação desejada, formulação documentada e implementação atual;
 4. corrigir somente após decisão explícita.
 
-## 6. Precedência por tipo de pergunta
+## 7. Precedência por tipo de pergunta
 
 Não existe uma precedência única para tudo. Use a fonte adequada:
 
 | Pergunta | Fonte principal |
 |---|---|
 | O que é o MIN-STATION original? | Artigo de Das |
-| Quais resultados teóricos originais são conhecidos? | Artigo de Das |
+| Quais resultados teóricos originais são conhecidos? | Artigo de Das (NP-dificuldade, caminhos, ciclos) |
+| Complexidade parametrizada, verificação por matching, `G^r`, aproximação, árvores? | Artigo IJCAI 2026 |
+| O que já está na literatura e o que é contribuição do projeto? | `overlap-ijcai2026-min-station.md` |
 | Como surgiu a primeira PLI do projeto? | Artigo da SBPO |
 | Como era a variante com estações apenas em intermediários? | Artigo da SBPO |
 | Qual é o baseline matemático atual? | `base-formulation.md` (variante U); o PDF all-vertices é histórico |
@@ -128,7 +158,7 @@ Não existe uma precedência única para tudo. Use a fonte adequada:
 | O que o software realmente executa hoje? | Código + configuração da execução |
 | Quais pontos ainda estão abertos? | `open-questions.md` |
 
-## 7. Regra para novos artigos e experimentos
+## 8. Regra para novos artigos e experimentos
 
 Quando uma nova formulação ou técnica for incorporada:
 

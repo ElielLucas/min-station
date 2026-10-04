@@ -25,6 +25,8 @@ A referência conceitual é o MIN-STATION definido por Das:
 
 A solução do problema original é um conjunto `C ⊆ V`.
 
+O mesmo problema é estudado por Das, Hanaka, Melissinos e Ono (IJCAI 2026) sob o nome CHARGING STATION PLACEMENT, com `k` no lugar de `m`. Todos os atributos coincidem (ver `docs/technical/reference/overlap-ijcai2026-min-station.md` §3); os resultados desse artigo aplicam-se ao baseline do projeto.
+
 ## 3. Baseline atual
 
 A formulação base atual do repositório utiliza:
@@ -90,7 +92,8 @@ Resultados devem ser comparados sobre instâncias e configurações compatíveis
 Os artigos e documentos de referência fazem parte do contexto do projeto e têm papéis diferentes:
 
 - **Das:** definição do MIN-STATION e resultados teóricos originais;
-- **artigo da SBPO:** marco anterior da pesquisa, com a primeira formulação de PLI desenvolvida no projeto e a variante de estações apenas em vértices intermediários;
+- **Das, Hanaka, Melissinos e Ono (IJCAI 2026):** trabalho prévio mais próximo; mesmo problema; complexidade clássica e parametrizada, verificação polinomial de viabilidade por `G^r` e emparelhamento, reduções de Set Cover e Bin Packing, algoritmos FPT, árvores e `k`-aproximação. Não contém PLI, experimentos nem benchmark. O dígrafo de alcance, a verificação por matching e as construções BP e SC do projeto são, respectivamente, a Proposição 1, os Lemas 1–2/Teorema 1 e os Teoremas 4 e 3 desse artigo, e não contribuições do projeto;
+- **artigo da SBPO:** marco anterior da pesquisa, com a primeira formulação de PLI desenvolvida no projeto e a variante de estações apenas em vértices intermediários (com métrica ponderada). A afirmação do resumo de que o problema "ainda não foi tratado por PLI" vale com o escopo da busca registrada em `overlap-ijcai2026-min-station.md` §2 (LC-1) e refere-se a uma variante;
 - **formulação base atual:** baseline posterior, com estações permitidas em todos os vértices.
 
 O detalhamento e a precedência dessas fontes estão em:

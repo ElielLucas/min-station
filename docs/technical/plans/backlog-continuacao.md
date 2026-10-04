@@ -45,7 +45,7 @@ Nada do bloco 2 permanece parcial. A prova de equivalência da formulação base
 
 ### Ainda por fazer
 
-T22, na seção final. T1–T21 foram executadas. Specs: `specs/bloco1-corretude-terminais-sT/spec.md`, `specs/bloco2-confiabilidade-experimental/spec.md` e `specs/bloco3-pesquisa-instancias-estruturais/spec.md`.
+Nenhuma tarefa do parecer. T1–T22 foram executadas. Specs: `specs/bloco1-corretude-terminais-sT/spec.md`, `specs/bloco2-confiabilidade-experimental/spec.md`, `specs/bloco3-pesquisa-instancias-estruturais/spec.md` e `specs/bloco4-posicionamento-cientifico/spec.md`. Restam as edições de documentos científicos listadas em `docs/technical/reference/overlap-ijcai2026-min-station.md` §7.1 ("Passo posterior") e a redação do artigo, que não é tarefa deste backlog.
 
 ### Dependências
 
@@ -788,21 +788,23 @@ Formulação experimental, comparada à base. Não substitui o baseline.
 
 #### T22 — Mapear sobreposição com o artigo IJCAI 2026 e atualizar contribuição
 
-**Status:** `A FAZER`
+**Status:** `CONCLUÍDA` (2026-10-03). Evidência: `docs/technical/reference/overlap-ijcai2026-min-station.md`; spec em `specs/bloco4-posicionamento-cientifico/spec.md`.
 **Depende de:** nada para o levantamento. A narrativa do artigo espera o restante do backlog só no que for afirmação de resultado novo.
 
 **Descrição:** Revisar explicitamente o que já aparece no artigo de Das et al. de 2026 e o que permanece contribuição própria do projeto.
 
 **Critérios de aceite:**
 
-- Artigo IJCAI 2026 é incluído na bibliografia do projeto.
-- É criada uma tabela "resultado do projeto × resultado IJCAI".
-- Matching, `G^r` e argumentos de Hall são comparados.
-- Nenhuma ideia já existente na literatura é apresentada como contribuição inédita.
-- São identificadas claramente as contribuições ainda sustentáveis.
-- A narrativa do artigo é reorganizada em torno de cobertura × compatibilidade coletiva, conforme proposto no parecer.
+- Artigo IJCAI 2026 é incluído na bibliografia do projeto. — Feito: `overlap` §1; `source-map.md` §4; `RESEARCH.md` §7; `project-overview.md` §7.
+- É criada uma tabela "resultado do projeto × resultado IJCAI". — Feito: `overlap` §4 (matriz), §4.1 (cortes), §4.2 (classes e parâmetros).
+- Matching, `G^r` e argumentos de Hall são comparados. — Feito: `overlap` §4, linhas `G^r`, matching, Hall. Veredito: `SAME`/`IMPLEMENTATION`/`DIRECT CONSEQUENCE`.
+- As reduções de Set Cover (Teorema 3) e Bin Packing (Teorema 4) são comparadas com as famílias SC e BP. — Acrescentado na execução (a spec identificou a lacuna): `overlap` §4; BP e SC são instanciações, não construções novas.
+- A afirmação da SBPO sobre ausência de PLI é verificada por busca registrada. — Acrescentado: `overlap` §2 (LC-1), §7.1 #1–#2. Resultado: nenhuma PLI para o MIN-STATION no conjunto verificado; a afirmação fica qualificada por escopo e por variante.
+- Nenhuma ideia já existente na literatura é apresentada como contribuição inédita. — Feito: `overlap` §6, status `REMOVE` para `G^r`, matching, BP e SC como construções, C1–C2 como teoria.
+- São identificadas claramente as contribuições ainda sustentáveis. — Feito: `overlap` §6 (A–M com categoria T1–T5 e status), §6.1 (negativos), §7.5 (mapa de dependência).
+- A narrativa do artigo é reorganizada em torno de cobertura × compatibilidade coletiva, conforme proposto no parecer. — **Subsidiado, não executado:** a spec coloca a redação do artigo fora do escopo de T22. O subsídio está em `overlap` §9, com a ligação Set Cover ↔ núcleo de cobertura marcada como interpretativa até existir prova. A redação é tarefa separada.
 
-**Nota de estado:** Há um PDF em `docs/technical/reference/novo_artigo_das_2026.pdf`. Isso não cumpre a tabela nem a bibliografia. Literatura, não experimento.
+**Pendências derivadas (edição de documentos científicos, passo posterior à análise):** lista em `overlap` §7.1, itens marcados "Passo posterior" (`base-formulation.md`, `direcoes-pli-min-station.md`, `familias-estruturais.md`, `min-station-domain.md`, `docs/technical/README.md`, `benchmark-v1.md`, ponteiro no parecer §6). Fora do escopo de T22, registradas em `overlap` §7.4: `open-questions.md` Q1 e cabeçalho de `direcoes` ainda dizem que todas as instâncias têm `S ∩ T = ∅`.
 
 ---
 

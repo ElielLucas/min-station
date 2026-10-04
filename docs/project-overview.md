@@ -66,8 +66,10 @@ min-station/
 │       └── reference/
 │           ├── source-map.md
 │           ├── min-station-das.pdf
+│           ├── novo_artigo_das_2026.pdf
 │           ├── artigo-sbpo.pdf
-│           └── formulacao-base-all-vertices.pdf
+│           ├── formulacao-base-all-vertices.pdf
+│           └── overlap-ijcai2026-min-station.md
 └── ... código do projeto ...
 ```
 
@@ -135,7 +137,8 @@ Nem o pareamento origem-destino nem os caminhos são fornecidos como parte da en
 ## 7. Relação entre pesquisa e baseline
 
 - O **problema de Das** define o objeto teórico principal.
-- O **artigo da SBPO** registra uma etapa anterior da pesquisa e deve ser preservado como referência histórica/metodológica.
+- O **artigo IJCAI 2026** (Das, Hanaka, Melissinos e Ono, *Charging Station Placement for Anonymous Mobile Agents: A Parameterized Complexity Perspective*, pp. 72–80) estuda o mesmo problema e é o trabalho prévio mais próximo: `G^r`, verificação por matching, reduções de Set Cover e Bin Packing, FPT, árvores e aproximação já estão publicados ali. A sobreposição com o projeto está em `docs/technical/reference/overlap-ijcai2026-min-station.md`.
+- O **artigo da SBPO** registra uma etapa anterior da pesquisa (variante com estações só em `V ∖ (S ∪ T)` e métrica ponderada) e deve ser preservado como referência histórica/metodológica.
 - A **formulação em todos os vértices** é o baseline atual.
 - Novas formulações e técnicas podem substituir ou complementar o baseline em experimentos, desde que identificadas claramente.
 - Resultados negativos também devem ser documentados quando ajudam a explicar a estrutura do problema.
