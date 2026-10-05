@@ -25,13 +25,17 @@ out(v) <= a_v + (m - a_v) y_v
 ```
 
 Verificado caso a caso (`base-formulation.md` §10.1) que esta forma coincide
-exatamente com a formulação anterior quando `S ∩ T = ∅` — nenhum resultado
-experimental já obtido é afetado, pois todas as 22 instâncias do repositório
-têm `|S ∩ T| = 0` por construção do gerador. Implementado em `baseline.py`
-(rodada E5); as famílias de cortes `generate_C4_DM` e as redes de fluxo em
-`experiments/cuts/cuts.py` foram revisadas para tratar `S ∩ T` de forma
-consistente com o Lema 5 (o robô pode ficar parado ocupando o próprio alvo,
-sem exigir estação).
+exatamente com a formulação anterior quando `S ∩ T = ∅`. No manifesto atual,
+`S ∩ T ≠ ∅` ocorre em 5 instâncias `classe = principal`:
+`mapf-den312d-m50-f2-rho`, `mapf-room-32-32-4-m25-f4-rho`,
+`puc-w23c23-intercalado-f2-rho`, `b-b09-intercalado-f2-rho` e
+`i-i160-301-intercalado-f2-rho` (`rho_S_inter_T > 0`). As 22 instâncias
+anteriores ao benchmark-v1 tinham `|S ∩ T| = 0` por construção do gerador;
+os resultados obtidos só sobre elas não exercitam a interseção. Implementado
+em `baseline.py` (rodada E5); as famílias de cortes `generate_C4_DM` e as
+redes de fluxo em `experiments/cuts/cuts.py` foram revisadas para tratar
+`S ∩ T` de forma consistente com o Lema 5 (o robô pode ficar parado ocupando
+o próprio alvo, sem exigir estação).
 
 As alternativas descartadas: declarar `S ∩ T = ∅` por decisão (restringiria
 o problema); pré-processar vértices comuns removendo-os de S e T (provado
@@ -76,16 +80,16 @@ Detalhes em `docs/technical/reference/benchmark-v1.md` §5.
 
 ## Q3 — Demonstração de equivalência do fluxo agregado
 
-**Status:** demonstração formal a consolidar.
+**Status:** fechada (T5, 2026-10-03).
 
-O modelo usa fluxo inteiro agregado em vez de rotas individuais.
-
-A correção da formulação deve justificar as duas direções:
+A prova está em `validacao-formulacao-base.md` §5.5. Cobre as duas direções:
 
 1. uma solução do MIN-STATION gera uma solução inteira do PLI com o mesmo número de estações;
 2. uma solução inteira do PLI pode ser decomposta em rotas válidas de robôs, sem que ciclos de fluxo artificiais sejam necessários.
 
-Resultados computacionais iguais não substituem essa demonstração.
+A §5.5 trata `S ∩ T`, permanência, `S = T`, ótimo zero e fluxo contínuo. As
+seis lacunas do Apêndice A.10 estão marcadas fechadas. Resultados
+computacionais não substituem essa prova; a T5 a escreveu no repositório.
 
 ## Q4 — Como fortalecer o baseline atual?
 
@@ -114,23 +118,28 @@ A rota reconstruída deve respeitar a mesma métrica usada na construção de `A
 
 ## Q6 — Qual versão é a baseline experimental oficial?
 
-**Status:** deve ser definido quando novos experimentos forem consolidados.
+**Status:** fechada (`plano-proxima-fase.md` §8).
 
-Registrar para cada campanha:
+A comparação oficial é **COMP**: formulação base (variante U) + cortes
+estáticos C1+C2+C4, com `f` contínuo. A base U sem cortes permanece o
+baseline matemático. O núcleo (IP em `y` com C1+C2+C4-DM) é régua de
+cobertura, não o braço de comparação oficial.
+
+Cada campanha continua registrando:
 
 - commit/tag;
 - conjunto de instâncias;
 - convenção de distância;
 - versão do solver;
 - parâmetros não padrão;
-- limite de tempo;
-- formulação exata usada.
+- orçamento (`WorkLimit` / guarda de parede);
+- formulação e configuração exatas usadas.
 
 Não comparar resultados de versões diferentes como se fossem da mesma formulação.
 
 ## Q7 — Instâncias dirigidas estão no escopo?
 
-**Status:** aberta (levantada na revisão pré-E8).
+**Status:** fechada (H11, 2026-09-26).
 
 Das define o problema em grafo não dirigido. O conversor TNTP
 (`src/converters/gen_min_station_tntp_to_minstation.py`) mantém os arcos

@@ -1,5 +1,9 @@
 # Plano: commit do E13 e próximos passos
 
+> **Documento histórico.** Agenda imediata depois do E13. O programa de
+> pesquisa corrente está em `docs/technical/plans/plano-proxima-fase.md`.
+> Números e vereditos abaixo não foram reescritos.
+
 ## Contexto
 
 O E13 fechou com **veredito de gap primal** (7/13 com Δ_UB ≥ 5% sob `MIPFocus=1`, TL 1800 s — no

@@ -1,6 +1,6 @@
 # Direções de PLI para o MIN-STATION
 
-> **Natureza deste documento.** Análise teórica, feita sem executar código e sem alterar arquivos do repositório. Referência matemática: a formulação base validada (variante U, que coincide com a formulação (2)–(8) quando `S ∩ T = ∅`; é o caso de todas as instâncias do repositório). Evidência experimental: somente os CSVs de resultados e logs do Gurobi já lidos nesta sessão. Por instrução, nenhum outro resultado do repositório foi analisado.
+> **Natureza deste documento.** Análise teórica, feita sem executar código e sem alterar arquivos do repositório. Referência matemática: a formulação base validada (variante U, que coincide com a formulação (2)–(8) quando `S ∩ T = ∅`). A frase antiga deste cabeçalho, de que esse é o caso de todas as instâncias do repositório, está desatualizada: o manifesto tem 5 instâncias `principal` com `S ∩ T ≠ ∅` (`base-formulation.md` §10.1; `open-questions.md` Q1). As derivações do corpo que supõem disjunção permanecem como foram escritas. Evidência experimental: somente os CSVs de resultados e logs do Gurobi já lidos nesta sessão. Por instrução, nenhum outro resultado do repositório foi analisado.
 >
 > Cada afirmação tem uma marca:
 > - **[Provado]**: há prova neste documento ou no relatório de validação;

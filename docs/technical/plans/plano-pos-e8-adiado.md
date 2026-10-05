@@ -1,5 +1,10 @@
 # Plano pós-E8 adiado
 
+> **Documento histórico.** Agenda adiada depois do E8, retomada no
+> benchmark-v1 e nos experimentos E9–E14. O programa de pesquisa corrente
+> está em `docs/technical/plans/plano-proxima-fase.md`. Números e vereditos
+> abaixo não foram reescritos.
+
 Preservado para retomada depois do lote 1 do benchmark-v1 (`plano-benchmark-v1.md`).
 
 Itens originais (de `resultados-e8-pli.md` §7–8):

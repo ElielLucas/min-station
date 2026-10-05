@@ -1,8 +1,10 @@
 # Backlog de continuação — MIN-STATION
 
 Plano operacional do que já foi feito, do que está pausado e do que ainda falta.
-A fonte científica das tarefas futuras é o
+A fonte científica das tarefas T1–T22 é o
 [parecer macro consolidado](../reference/MIN-STATION-parecer-macro-consolidado.md).
+O programa de pesquisa depois dos Blocos 1–4 está em
+[`plano-proxima-fase.md`](plano-proxima-fase.md) (R1–R13 e Linha F).
 Este arquivo não executa pesquisa: só consolida histórico e backlog.
 
 As tarefas futuras (T1–T22) preservam título, descrição, critérios de aceite e a
@@ -45,7 +47,18 @@ Nada do bloco 2 permanece parcial. A prova de equivalência da formulação base
 
 ### Ainda por fazer
 
-Nenhuma tarefa do parecer. T1–T22 foram executadas. Specs: `specs/bloco1-corretude-terminais-sT/spec.md`, `specs/bloco2-confiabilidade-experimental/spec.md`, `specs/bloco3-pesquisa-instancias-estruturais/spec.md` e `specs/bloco4-posicionamento-cientifico/spec.md`. Restam as edições de documentos científicos listadas em `docs/technical/reference/overlap-ijcai2026-min-station.md` §7.1 ("Passo posterior") e a redação do artigo, que não é tarefa deste backlog.
+Nenhuma tarefa do parecer. T1–T22 foram executadas. Specs dos Blocos 1–4:
+`specs/bloco1-corretude-terminais-sT/spec.md`,
+`specs/bloco2-confiabilidade-experimental/spec.md`,
+`specs/bloco3-pesquisa-instancias-estruturais/spec.md` e
+`specs/bloco4-posicionamento-cientifico/spec.md`. A continuação está em
+`docs/technical/plans/plano-proxima-fase.md` e nas specs
+`specs/proxima-fase-a-fundacao/spec.md`,
+`specs/proxima-fase-b-formulacoes-fcc-fc3/spec.md`,
+`specs/proxima-fase-c-diagnostico-gap-plato/spec.md` e
+`specs/proxima-fase-d-certificadores-classes-especiais/spec.md`.
+As edições "Passo posterior" de `overlap` §7.1 e a redação do artigo
+continuam adiadas.
 
 ### Dependências
 
@@ -529,7 +542,7 @@ Spec detalhada de T6–T11: `specs/bloco2-confiabilidade-experimental/spec.md`.
 
 #### T8 — Consolidar o benchmark após a regeneração
 
-**Status:** `CONCLUÍDA` — `grupos_origem.csv`, `duplicata_de`, `verify_t8_consolidacao.py`. A partição não foi reatribuída; os 11 vazamentos ficaram marcados.
+**Status:** `CONCLUÍDA` — `grupos_origem.csv`, `duplicata_de`, `verify_t8_consolidacao.py`. R2 (2026-10-04) reatribuiu a partição por grafo de origem (`regra-particao-origem.md`); zero vazamento.
 **Depende de:** H17 (já feita)
 **Continua:** P4
 

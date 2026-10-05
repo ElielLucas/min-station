@@ -18,6 +18,8 @@ Depois, leia apenas o contexto aplicável à tarefa:
 | Verificar lacunas ou pontos ainda não decididos | `docs/technical/governance/open-questions.md` |
 | Ver o backlog de continuação e o histórico de tarefas | `docs/technical/plans/backlog-continuacao.md` |
 | Comparar documentos/artigos | `docs/technical/reference/source-map.md` |
+| O que já é contribuição vs. o que já estava na literatura | `docs/technical/reference/overlap-ijcai2026-min-station.md` |
+| Formulações alternativas em avaliação (F-CC, F-C3) | `docs/technical/reference/formulacao-fcc-configuracoes-conectadas.md` + `docs/technical/reference/formulacao-fc3-consistencia-trios.md` |
 | Escolher ou interpretar instâncias experimentais | `docs/technical/reference/benchmark-v1.md` + `instances/manifest.csv` |
 | Comparar dois métodos ou duas configurações | `docs/technical/reference/protocolo-comparacao-pareada.md` |
 

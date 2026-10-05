@@ -1,5 +1,11 @@
 # Plano: benchmark de instâncias MIN-STATION (benchmark-v1)
 
+> **Documento histórico.** Plano de construção do benchmark-v1 (lote 1).
+> O programa de pesquisa corrente está em
+> `docs/technical/plans/plano-proxima-fase.md`. A partição por grafo de
+> origem e a tag `benchmark-v1.0` são a tarefa R2 desse plano. Números e
+> vereditos abaixo não foram reescritos.
+
 ## Contexto
 
 O projeto tem poucas instâncias e não existe benchmark específico de MIN-STATION: Das é teórico

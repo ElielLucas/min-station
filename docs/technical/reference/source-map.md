@@ -109,7 +109,47 @@ O levantamento completo — definições atributo a atributo, matriz de sobrepos
 
 `docs/technical/reference/overlap-ijcai2026-min-station.md`.
 
-## 5. Documentos de contexto do repositório
+## 5. Pereira & Ravelo (ETC/CSBC 2026, aranhas)
+
+**Arquivo:** `docs/technical/reference/pereira-ravelo-2026-aranhas.md`
+
+**Referência:** Lucas Cardoso Pereira e Santiago Valdés Ravelo, *Placement of charging stations for energy-constrained robots in spider graphs*. Anais do Encontro de Teoria da Computação (ETC 2026) / 46º CSBC, publicado em 19 de julho de 2026.
+
+### Papel na pesquisa
+
+Artigo do mesmo grupo. Estuda o MIN-STATION de Das em grafos-aranha e dá um algoritmo guloso em `O(|V|)`. Não contém PLI.
+
+Usar para:
+
+- algoritmo de caminhos (revisão de Das) e de aranhas;
+- fonte de ótimos exatos em `n` grande, como certificador (tarefa R11 / Spec D);
+- conferir a referência 4 de `overlap-ijcai2026-min-station.md`.
+
+### Limite da fonte
+
+A prova no `.md` está em esboço e tem casos a testar (`plano-proxima-fase.md` §5). Não é baseline. Não define formulação nem protocolo experimental.
+
+## 6. Formulações em avaliação (F-CC e F-C3)
+
+**Arquivos:**
+
+- `docs/technical/reference/formulacao-fcc-configuracoes-conectadas.md` (F-CC);
+- `docs/technical/reference/formulacao-fc3-consistencia-trios.md` (F-C3).
+
+### Papel na pesquisa
+
+São **propostas externas em avaliação**, não o baseline. A cadeia de dominância adotada é `base ≤ F-CC ≤ F-C3 ≤ OPT`. O que foi conferido na análise de planejamento, o que é hipótese e o que falta estão no cabeçalho de estado de cada arquivo.
+
+Usar para:
+
+- definição das variáveis e restrições candidatas;
+- planejar F1–F3 e o portão GF1.
+
+### Limite da fonte
+
+Nenhuma das duas substitui a formulação base. Comparações oficiais continuam contra COMP (`open-questions.md` Q6). O documento de provas da F-C3 não está no repositório.
+
+## 7. Documentos de contexto do repositório
 
 ### `RESEARCH.md`
 
@@ -127,7 +167,7 @@ Orienta a investigação de novas formulações, fortalecimentos e métodos de s
 
 Registra hipóteses e decisões ainda não fechadas.
 
-## 6. Código do repositório
+## 8. Código do repositório
 
 O código é a fonte para afirmar **o que está implementado e executando** em uma determinada versão.
 
@@ -138,7 +178,7 @@ Se código e documentação divergirem:
 3. distinguir formulação desejada, formulação documentada e implementação atual;
 4. corrigir somente após decisão explícita.
 
-## 7. Precedência por tipo de pergunta
+## 9. Precedência por tipo de pergunta
 
 Não existe uma precedência única para tudo. Use a fonte adequada:
 
@@ -157,8 +197,10 @@ Não existe uma precedência única para tudo. Use a fonte adequada:
 | Que tipos de novas abordagens podem ser pesquisadas? | `research-direction.md` |
 | O que o software realmente executa hoje? | Código + configuração da execução |
 | Quais pontos ainda estão abertos? | `open-questions.md` |
+| O algoritmo de aranhas e o artigo de Pereira & Ravelo? | `pereira-ravelo-2026-aranhas.md` |
+| Qual é a F-CC / F-C3 (em avaliação, não baseline)? | `formulacao-fcc-configuracoes-conectadas.md`, `formulacao-fc3-consistencia-trios.md` |
 
-## 8. Regra para novos artigos e experimentos
+## 10. Regra para novos artigos e experimentos
 
 Quando uma nova formulação ou técnica for incorporada:
 
