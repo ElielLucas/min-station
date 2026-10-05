@@ -117,6 +117,22 @@ MELHORES = {
 }
 
 
+def lado_origem(instancia_original):
+    """Lado D/A pelo SHA-256 de instancia_original. Ver regra-particao-origem.md."""
+    digest = hashlib.sha256(instancia_original.encode('utf-8')).digest()
+    return 'desenvolvimento' if int.from_bytes(digest, 'big') % 3 == 0 else 'avaliacao'
+
+
+def aplicar_particao_origem(saida):
+    """Reatribui só D/A em benchmark-v1. Legado e estrutural não mudam de classe."""
+    for linha in saida:
+        caminho = linha.get('caminho', '')
+        if caminho.startswith('instances/estrutural/'):
+            linha['particao'] = 'estrutural'
+        elif caminho.startswith('instances/benchmark-v1/'):
+            linha['particao'] = lado_origem(linha['instancia_original'])
+
+
 def sha256(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
@@ -286,6 +302,26 @@ def aplicar_estrutural():
     print(f'{len(saida)} linhas, {n_est} estruturais; grupos em {GRUPOS.relative_to(ROOT)}')
 
 
+def aplicar_repartir_origem():
+    """Reatribui particao por grafo de origem. Preserva o restante das colunas."""
+    with OUT.open(encoding='utf-8') as fh:
+        reader = csv.DictReader(fh)
+        campos = list(reader.fieldnames)
+        saida = list(reader)
+    aplicar_particao_origem(saida)
+    for extra in CAMPOS_GRUPO:
+        if extra not in campos:
+            campos.append(extra)
+    anotar_grupos(saida)
+    with OUT.open('w', newline='', encoding='utf-8') as fh:
+        w = csv.DictWriter(fh, fieldnames=campos, extrasaction='ignore')
+        w.writeheader()
+        w.writerows(saida)
+    n_d = sum(1 for row in saida if row.get('particao') == 'desenvolvimento')
+    n_a = sum(1 for row in saida if row.get('particao') == 'avaliacao')
+    print(f'{len(saida)} linhas; D={n_d} A={n_a}; grupos em {GRUPOS.relative_to(ROOT)}')
+
+
 def aplicar_so_grupos():
     """Reescreve só as colunas de grupo. As correções da H17 permanecem."""
     with OUT.open(encoding='utf-8') as fh:
@@ -310,12 +346,17 @@ def main():
                     help='só recalcula duplicata_de, particoes_do_grupo e grupos_origem.csv')
     ap.add_argument('--estrutural', action='store_true',
                     help='reescreve só as linhas classe=estrutural; não recalcula o restante')
+    ap.add_argument('--repartir-origem', action='store_true',
+                    help='reatribui particao por SHA-256 de instancia_original (regra-particao-origem.md)')
     args = ap.parse_args()
     if args.so_grupos:
         aplicar_so_grupos()
         return
     if args.estrutural:
         aplicar_estrutural()
+        return
+    if args.repartir_origem:
+        aplicar_repartir_origem()
         return
 
     antigos = OUT.exists() and {row['nome']: row for row in csv.DictReader(OUT.open(encoding='utf-8'))} or {}
@@ -368,20 +409,14 @@ def main():
         print(f'{linha["nome"]:42s} {linha["classe"]:20s} {linha.get("classe_tamanho", "")} '
               f'{linha.get("regime", "")}', flush=True)
 
-    # partição desenvolvimento/avaliação (plano §10): dentro de cada família do
-    # benchmark-v1, em ordem de nome, 1 de cada 3 vai para desenvolvimento
-    por_familia = {}
+    # partição por grafo de origem (regra-particao-origem.md): SHA-256 de
+    # instancia_original; legado e estrutural ficam fora do D/A
     for linha in saida:
         if linha['caminho'].startswith('instances/estrutural/'):
-            linha['particao'] = 'estrutural'
             linha['classe'] = 'estrutural'
-        elif linha['caminho'].startswith('instances/benchmark-v1/'):
-            por_familia.setdefault(linha['caminho'].split('/')[2], []).append(linha)
-        else:
+        elif not linha['caminho'].startswith('instances/benchmark-v1/'):
             linha['particao'] = 'legado'
-    for grupo in por_familia.values():
-        for i, linha in enumerate(sorted(grupo, key=lambda l: l['nome'])):
-            linha['particao'] = 'desenvolvimento' if i % 3 == 0 else 'avaliacao'
+    aplicar_particao_origem(saida)
 
     with OUT.open('w', newline='', encoding='utf-8') as fh:
         anotar_grupos(saida)

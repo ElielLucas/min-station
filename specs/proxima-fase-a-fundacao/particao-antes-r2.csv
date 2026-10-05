@@ -1,0 +1,138 @@
+nome,instancia_original,particao
+Barcelona_n930_m2522_st_15.txt,Barcelona,legado
+Barcelona_n930_m2522_st_25.txt,Barcelona,legado
+Barcelona_n930_m2522_st_50.txt,Barcelona,legado
+Chicago_n400_m1130_st10.txt,Chicago-Sketch,legado
+Chicago_n400_m1130_st15.txt,Chicago-Sketch,legado
+Chicago_n400_m1130_st5.txt,Chicago-Sketch,legado
+Philadelphia_n800_m2404_st_25.txt,Philadelphia,legado
+Philadelphia_n800_m2404_st_39.txt,Philadelphia,legado
+Philadelphia_n800_m2404_st_5.txt,Philadelphia,legado
+bip42p.txt,bip42p,legado
+cc10-2p.txt,cc10-2p,legado
+cc12-2p.txt,cc12-2p,legado
+cc12-2u.txt,cc12-2u,legado
+fnl4461fst.txt,fnl4461fst,legado
+hc10p.txt,hc10p,legado
+hc11p.txt,hc11p,legado
+hc12p.txt,hc12p,legado
+hc9u.txt,hc9u,legado
+inst_Anaheim_n416_m914_st_19.txt,Anaheim,legado
+inst_Barcelona_n1020_m2522_st_54.txt,Barcelona,legado
+lin23.txt,lin23,legado
+lin37.txt,lin37,legado
+mapf-den312d-m25-f4.txt,den312d.map + den312d-random-1.scen (primeiros 25 agentes),desenvolvimento
+mapf-den312d-m50-f2-rho.txt,den312d.map + den312d-random-1.scen (primeiros 50 agentes),avaliacao
+mapf-empty-32-32-m25-f4.txt,empty-32-32.map + empty-32-32-random-1.scen (primeiros 25 agentes),avaliacao
+mapf-empty-32-32-m50-f2.txt,empty-32-32.map + empty-32-32-random-1.scen (primeiros 50 agentes),desenvolvimento
+mapf-maze-32-32-2-m10-f4.txt,maze-32-32-2.map + maze-32-32-2-random-1.scen (primeiros 10 agentes),avaliacao
+mapf-maze-32-32-2-m25-f2.txt,maze-32-32-2.map + maze-32-32-2-random-1.scen (primeiros 25 agentes),avaliacao
+mapf-random-32-32-10-m25-f4.txt,random-32-32-10.map + random-32-32-10-random-1.scen (primeiros 25 agentes),desenvolvimento
+mapf-random-32-32-10-m50-f8.txt,random-32-32-10.map + random-32-32-10-random-1.scen (primeiros 50 agentes),avaliacao
+mapf-random-64-64-20-m100-f4.txt,random-64-64-20.map + random-64-64-20-random-1.scen (primeiros 100 agentes),avaliacao
+mapf-room-32-32-4-m10-f8.txt,room-32-32-4.map + room-32-32-4-random-1.scen (primeiros 10 agentes),desenvolvimento
+mapf-room-32-32-4-m25-f4-rho.txt,room-32-32-4.map + room-32-32-4-random-1.scen (primeiros 25 agentes),avaliacao
+mapf-warehouse-10-20-10-2-1-m25-f4.txt,warehouse-10-20-10-2-1.map + warehouse-10-20-10-2-1-random-1.scen (primeiros 25 agentes),avaliacao
+mapf-warehouse-10-20-10-2-1-m50-f8.txt,warehouse-10-20-10-2-1.map + warehouse-10-20-10-2-1-random-1.scen (primeiros 50 agentes),desenvolvimento
+pace18-t2-001-regiao-f2.txt,Track2/instance001.gr,desenvolvimento
+pace18-t2-061-regiao-f4.txt,Track2/instance061.gr,avaliacao
+pace18-t2-081-regiao-f2.txt,Track2/instance081.gr,avaliacao
+pace18-t2-141-regiao-f4.txt,Track2/instance141.gr,desenvolvimento
+pace18-t2-181-regiao-f2.txt,Track2/instance181.gr,avaliacao
+pace18-t2-199-regiao-f4.txt,Track2/instance199.gr,avaliacao
+puc-bip42p-regiao-f2.txt,bip42p,desenvolvimento
+puc-bip42p-seed-r1.txt,bip42p,avaliacao
+puc-cc10-2u-regiao-f2.txt,cc10-2u,avaliacao
+puc-cc10-2u-seed-r1.txt,cc10-2u,desenvolvimento
+puc-cc11-2u-seed-r1.txt,cc11-2u,avaliacao
+puc-cc12-2u-seed-r1.txt,cc12-2u,avaliacao
+puc-cc6-3p-seed-r1.txt,cc6-3p,desenvolvimento
+puc-cc9-2p-seed-r1.txt,cc9-2p,avaliacao
+puc-hc10p-regiao-f4.txt,hc10p,avaliacao
+puc-hc10p-seed-r1.txt,hc10p,desenvolvimento
+puc-hc11p-seed-r1.txt,hc11p,avaliacao
+puc-hc12p-seed-r1.txt,hc12p,avaliacao
+puc-hc9u-regiao-f2.txt,hc9u,desenvolvimento
+puc-hc9u-regiao-f4.txt,hc9u,avaliacao
+puc-hc9u-seed-r1.txt,hc9u,avaliacao
+puc-w23c23-intercalado-f2-rho.txt,w23c23,desenvolvimento
+puc-w23c23-seed-r1.txt,w23c23,avaliacao
+puc-w3c571-seed-r1.txt,w3c571,avaliacao
+pucn-cc3-10n-seed-r1.txt,cc3-10n,desenvolvimento
+pucn-cc3-5n-seed-r1.txt,cc3-5n,avaliacao
+pucn-cc5-3n-seed-r1.txt,cc5-3n,avaliacao
+pucn-cc6-2n-seed-r1.txt,cc6-2n,desenvolvimento
+pucn-cc7-3n-regiao-f2.txt,cc7-3n,avaliacao
+pucn-cc7-3n-seed-r1.txt,cc7-3n,avaliacao
+b-b06-intercalado-f2.txt,b06,desenvolvimento
+b-b06-regiao-f2.txt,b06,avaliacao
+b-b09-intercalado-f2-rho.txt,b09,avaliacao
+b-b12-intercalado-f2.txt,b12,desenvolvimento
+b-b12-regiao-f2.txt,b12,avaliacao
+b-b15-regiao-f4.txt,b15,avaliacao
+b-b18-intercalado-f2.txt,b18,desenvolvimento
+b-b18-regiao-f2.txt,b18,avaliacao
+i-i080-001-regiao-f2.txt,i080-001,desenvolvimento
+i-i080-041-regiao-f2.txt,i080-041,avaliacao
+i-i080-301-regiao-f2.txt,i080-301,avaliacao
+i-i080-341-intercalado-f2.txt,i080-341,desenvolvimento
+i-i160-301-intercalado-f2-rho.txt,i160-301,avaliacao
+i-i160-301-regiao-f2.txt,i160-301,avaliacao
+lin-lin01-regiao-f2.txt,lin01,desenvolvimento
+lin-lin03-regiao-f4.txt,lin03,avaliacao
+lin-lin06-intercalado-f2.txt,lin06,avaliacao
+lin-lin06-regiao-f4.txt,lin06,desenvolvimento
+urb-apia-m10-f8.txt,apia-1.graphml,desenvolvimento
+urb-apia-m25-f2.txt,apia-1.graphml,avaliacao
+urb-belize_city-m25-f4.txt,belize_city-11.graphml,avaliacao
+urb-mindelo-m25-f4.txt,mindelo-38.graphml,desenvolvimento
+urb-st_helier-m10-f4.txt,st_helier-59.graphml,avaliacao
+vienna-I052-regiao-f4.txt,I052,desenvolvimento
+vienna-I056-regiao-f4.txt,I056,avaliacao
+vienna-I065-intercalado-f2.txt,I065,avaliacao
+vienna-I065-regiao-f4.txt,I065,desenvolvimento
+bp-nao-q2-B2-s0.txt,bp-q2-B2-s0,estrutural
+bp-nao-q2-B3-s0.txt,bp-q2-B3-s0,estrutural
+bp-nao-q4-B60-s0.txt,bp-q4-B60-s0,estrutural
+bp-nao-q4-B60-s1.txt,bp-q4-B60-s1,estrutural
+bp-nao-q6-B60-s0.txt,bp-q6-B60-s0,estrutural
+bp-nao-q6-B60-s1.txt,bp-q6-B60-s1,estrutural
+bp-nao-q8-B60-s0.txt,bp-q8-B60-s0,estrutural
+bp-nao-q8-B60-s1.txt,bp-q8-B60-s1,estrutural
+bp-sim-q2-B2-s0.txt,bp-q2-B2-s0,estrutural
+bp-sim-q2-B3-s0.txt,bp-q2-B3-s0,estrutural
+bp-sim-q4-B60-s0.txt,bp-q4-B60-s0,estrutural
+bp-sim-q4-B60-s1.txt,bp-q4-B60-s1,estrutural
+bp-sim-q6-B60-s0.txt,bp-q6-B60-s0,estrutural
+bp-sim-q6-B60-s1.txt,bp-q6-B60-s1,estrutural
+bp-sim-q8-B60-s0.txt,bp-q8-B60-s0,estrutural
+bp-sim-q8-B60-s1.txt,bp-q8-B60-s1,estrutural
+hb-q4-ndir2-p1-k1-L2.txt,hb-q4-ndir2-p1-k1,estrutural
+hb-q5-ndir2-p1-k1-L2.txt,hb-q5-ndir2-p1-k1,estrutural
+hb-q6-ndir1-p1-k1-L2.txt,hb-q6-ndir1-p1-k1,estrutural
+hb-q6-ndir1-p1-k4-L2.txt,hb-q6-ndir1-p1-k4,estrutural
+hb-q6-ndir1-p1-k8-L2.txt,hb-q6-ndir1-p1-k8,estrutural
+hb-q6-ndir1-p2-k1-L2.txt,hb-q6-ndir1-p2-k1,estrutural
+hb-q6-ndir1-p6-k1-L2.txt,hb-q6-ndir1-p6-k1,estrutural
+hb-q6-ndir1-p6-k4-L2.txt,hb-q6-ndir1-p6-k4,estrutural
+hb-q6-ndir1-p6-k8-L2.txt,hb-q6-ndir1-p6-k8,estrutural
+hb-q8-ndir1-p1-k1-L2.txt,hb-q8-ndir1-p1-k1,estrutural
+sc-gf2-k3.txt,sc-k3,estrutural
+sc-gf2-k4.txt,sc-k4,estrutural
+sc-gf2-k5.txt,sc-k5,estrutural
+sc-gf2-k6.txt,sc-k6,estrutural
+sc-gf2-k7.txt,sc-k7,estrutural
+sc-rigida-k3-s0.txt,sc-k3,estrutural
+sc-rigida-k3-s1.txt,sc-k3,estrutural
+sc-rigida-k4-s0.txt,sc-k4,estrutural
+sc-rigida-k4-s1.txt,sc-k4,estrutural
+sc-rigida-k5-s0.txt,sc-k5,estrutural
+sc-rigida-k5-s1.txt,sc-k5,estrutural
+sc-rigida-k6-s0.txt,sc-k6,estrutural
+sc-rigida-k6-s1.txt,sc-k6,estrutural
+sc-rigida-k7-s0.txt,sc-k7,estrutural
+sc-rigida-k7-s1.txt,sc-k7,estrutural
+tr-k2-L5-r2-sig2-m2.txt,tr-k2-L5-r2-sig2,estrutural
+tr-k2-L5-r2-siginf-m2.txt,tr-k2-L5-r2-siginf,estrutural
+tr-k3-L5-r2-sig2-m2.txt,tr-k3-L5-r2-sig2,estrutural
+tr-k3-L5-r2-siginf-m2.txt,tr-k3-L5-r2-siginf,estrutural

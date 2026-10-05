@@ -309,11 +309,15 @@ vitória contra o COMP (`hc11p`) e nenhuma contra o núcleo. O rótulo do grafo 
 - `instances/grupos_origem.csv`: variantes e partições de cada origem, com `vazamento=sim` quando
   o grafo está ao mesmo tempo em desenvolvimento e avaliação.
 
-A partição não foi reatribuída. Os 11 vazamentos continuam e agora estão marcados:
-`I065`, `apia-1.graphml`, `b06`, `b12`, `b18`, `bip42p`, `cc10-2u`, `hc10p`, `hc9u`, `lin06`,
-`w23c23`. Dois grafos têm duas variantes e as duas estão em avaliação: `cc7-3n` e `i160-301`.
-A única duplicata estrutural encontrada é `puc-hc9u-seed-r1.txt`, marcada `duplicata_de=hc9u.txt`.
-A checagem é `experiments/benchmark/verify_t8_consolidacao.py`.
+A partição por variante (1 em 3, ordem de nome) deixou 11 vazamentos, marcados
+aqui na regeneração H17: `I065`, `apia-1.graphml`, `b06`, `b12`, `b18`, `bip42p`,
+`cc10-2u`, `hc10p`, `hc9u`, `lin06`, `w23c23`. E9–E14 usaram essa partição.
+
+**R2 (2026-10-04).** A partição vigente é por grafo de origem
+(`docs/technical/reference/regra-particao-origem.md`). Zero vazamento.
+A checagem é `experiments/benchmark/verify_t8_consolidacao.py`. A única
+duplicata estrutural continua `puc-hc9u-seed-r1.txt` → `hc9u.txt`.
+Estado congelado, sem tag `benchmark-v1.0` até haver commit autorizado.
 
 `--so-grupos` não reescreve `dificuldade`, `lb`, `ub`, `fonte_lb_ub`, `lb_melhor`, `ub_melhor`
 nem `fonte_melhor`. A correção manual da H17 nessas colunas permanece. A reconstrução completa
