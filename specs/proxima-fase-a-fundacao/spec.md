@@ -37,7 +37,7 @@ grade; **[Hipótese]** untested; **[Sugestão]** planning proposal.
 | Partition of benchmark-v1 by origin graph | DONE | `regra-particao-origem.md`; 0 vazamento; `verify_t8_consolidacao.py` ok |
 | 12 SC Phase-E instances in the manifest | DONE | 12 rows, `classe=estrutural`; manifesto com 149 linhas |
 | Tag `benchmark-v1.0` | FROZEN, UNTAGGED | Sem autorização de commit |
-| Protocol-compliant 3-seed baseline, `LB*`/`UB*` | R3 DONE; R4 RUNNING | Pré-registro 2026-10-04T15:08:42-03:00; `WorkLimit=164`; CSV ainda em execução |
+| Protocol-compliant 3-seed baseline, `LB*`/`UB*` | DONE | 411 linhas em `results/benchmark/linha_base.csv`; tabela em `docs/technical/reference/resultados-linha-de-base.md` |
 | AV-1..AV-4 thresholds | PENDING USER CONFIRMATION | Marked as pending in the plan §2 |
 
 **Reusable infrastructure [Fato]:** `harness.measure_mip(coletar_incumbente=True)` (T9),
@@ -66,8 +66,8 @@ protocol-compliant baseline, no later spec can state that a method improved anyt
       where applicable, and no stale statement about closed questions.
 - [x] The benchmark partition is assigned by origin graph with zero leakage, frozen as
       `benchmark-v1.0` (tag only with user authorization).
-- [ ] A pre-registered baseline (base U, COMP, core) is executed under the paired protocol and
-      produces official `LB*` and `UB*` per instance. (R3 frozen; R4 running)
+- [x] A pre-registered baseline (base U, COMP, core) is executed under the paired protocol and
+      produces official `LB*` and `UB*` per instance.
 
 ## Out of Scope
 
@@ -294,11 +294,11 @@ more arms or more seeds without a new pre-registration.
 
 ## Success Criteria
 
-- [ ] No document the next-phase specs depend on carries a provisional name, an F-OD mention or a
+- [x] No document the next-phase specs depend on carries a provisional name, an F-OD mention or a
       stale question status.
-- [ ] Zero leakage by origin graph, verified by the existing verifier.
-- [ ] Pre-registration timestamped before the first baseline row.
-- [ ] Official `LB*`/`UB*` per instance with full provenance.
+- [x] Zero leakage by origin graph, verified by the existing verifier.
+- [x] Pre-registration timestamped before the first baseline row.
+- [x] Official `LB*`/`UB*` per instance with full provenance.
 
 ---
 

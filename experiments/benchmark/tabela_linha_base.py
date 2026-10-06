@@ -2,6 +2,7 @@
 """Agrega linha_base.csv em LB*/UB* por instância (Spec A R4)."""
 
 import csv
+import math
 import sys
 from pathlib import Path
 
@@ -9,7 +10,10 @@ RAIZ = Path(__file__).resolve().parents[2]
 CSV = RAIZ / 'results' / 'benchmark' / 'linha_base.csv'
 PRE = RAIZ / 'docs' / 'technical' / 'reference' / 'linha-de-base-pre-registro.md'
 
-BRACOS = ('base', 'comp', 'nucleo')
+BRACOS_LB = ('base', 'comp', 'nucleo')
+# O objetivo do núcleo é um limite do IP de cobertura, não um incumbente do
+# MIN-STATION. O ótimo do núcleo pode ficar abaixo do LB do COMP (cc9-2p).
+BRACOS_UB = ('base', 'comp')
 SEEDS_DA = {42, 43, 44}
 SEEDS_FM = {42}
 FORA = {
@@ -30,9 +34,11 @@ def desenho():
     return n
 
 
-def melhor(linhas, chave, sentido):
+def melhor(linhas, chave, sentido, bracos):
     cand = []
     for r in linhas:
+        if r['braco'] not in bracos:
+            continue
         raw = r.get(chave)
         if raw in (None, ''):
             continue
@@ -40,6 +46,10 @@ def melhor(linhas, chave, sentido):
     if not cand:
         return None, '', ''
     valor, braco, seed = (max if sentido == 'lb' else min)(cand)
+    if sentido == 'lb':
+        valor = math.ceil(valor - 1e-6)
+    else:
+        valor = math.floor(valor + 1e-6)
     return valor, braco, seed
 
 
@@ -66,8 +76,8 @@ def main():
     print('|---|---|---|---|---:|---|---:|---|---|')
     for nome in sorted(por):
         grupo = por[nome]
-        lb, lb_b, lb_s = melhor(grupo, 'mip_bound', 'lb')
-        ub, ub_b, ub_s = melhor(grupo, 'mip_obj', 'ub')
+        lb, lb_b, lb_s = melhor(grupo, 'mip_bound', 'lb', BRACOS_LB)
+        ub, ub_b, ub_s = melhor(grupo, 'mip_obj', 'ub', BRACOS_UB)
         guarda = any(r.get('guarda_parede') == '1' for r in grupo)
         dif = grupo[0].get('dificuldade', '')
         part = grupo[0].get('particao', '')
