@@ -1,130 +1,107 @@
 # F-C3 — formulação por componentes com consistência de trios
 
-> **Estado deste documento (R1, 2026-10-04).**
+> **Estado deste documento (F1, 2026-10-06).**
 >
-> - **Origem:** proposta externa, recebida como resposta de chat em primeira pessoa. O corpo
->   abaixo foi mantido como chegou, salvo o ajuste da cadeia de dominância e da tabela de
->   valores. Não é o baseline do projeto; é uma **formulação em avaliação** (Linha F de
->   `docs/technical/plans/plano-proxima-fase.md`). A reescrita como documento de referência é a
->   tarefa F1.
-> - **Conferido na análise de planejamento** (`plano-proxima-fase.md` §6.2, marca [Conferido],
->   ainda não escrito como prova no repositório): a separação `λ_W / α / β` preserva o LP da F-CC
->   (o politopo `{(a,b) ∈ [0,1]^S × [0,1]^T : Σa = Σb}` tem vértices inteiros), o que dá
->   `z_LP^F-CC ≤ z_LP^F-C3`.
-> - **Hipótese** (alegado no texto, não verificável no repositório): a família de 20 vértices e 7
->   robôs com valores 1/3/4 (base/F-CC/F-C3) e ótimo 4; a família geral com F-CC `= 1,5g` contra
->   F-C3 `= 2g`; o contraexemplo de 15 vértices com F-C3 `= 2,5` contra ótimo 3. Ficam como
->   [Hipótese] até o documento de provas ser obtido ou os valores serem reproduzidos (tarefa F3).
-> - **Falta:** o documento completo de provas (`MIN-STATION-formulacao-componentes-consistencia-trios.md`),
->   que o texto aponta para um sandbox externo e **não está no repositório**. Sem ele, F2/F3 seguem
->   com re-derivação própria. O número de trios é `O(m³)`; em escala exigiria separação preguiçosa,
->   que não está projetada.
-> - Cadeia de dominância adotada pelo projeto: `base ≤ F-CC ≤ F-C3 ≤ OPT`.
+> - **Papel:** formulação em avaliação, **não** o baseline.
+> - **Origem:** proposta externa. Este arquivo é o documento de referência no
+>   repositório. O texto em primeira pessoa foi descartado.
+> - Cadeia adotada: \(z_{\mathrm{LP}}^{\mathrm{base}} \le z_{\mathrm{LP}}^{\mathrm{F\text{-}CC}} \le z_{\mathrm{LP}}^{\mathrm{F\text{-}C3}} \le \mathrm{OPT}\).
+>   O primeiro elo é P2 (`PROVEN`). O segundo e o terceiro dependem das redes
+>   de trios e ficam `HYPOTHESIS`/`OPEN`.
+> - **Não implementar** a parte marcada `OPEN`. Uma implementação adivinhada
+>   mediria o palpite, não a F-C3.
+> - Documento externo de provas
+>   (`MIN-STATION-formulacao-componentes-consistencia-trios.md`): **ausente**
+>   deste repositório. Não bloqueia F2/F3 da F-CC.
 
-**Sim. Consegui desenvolver uma candidata cuja relaxação linear domina as anteriores, inclusive a formulação por componentes.** O ganho é matemático; ainda não podemos afirmar que ela será mais rápida.
+## 1. Relação com a F-CC
 
-Chamei-a de **F-C3: formulação por componentes com consistência de trios**. Ela evolui a F-CC em dois pontos.
+A F-CC usa uma variável \(\lambda_q\) por tripla \(q=(W,I,J)\). A F-C3
+pretende duas mudanças:
 
-**Primeiro, reduz a enumeração sem perder força.**
+1. separar a infraestrutura \(W\) das atribuições \(I,J\);
+2. acrescentar consistência de trios sobre essas atribuições.
 
-Na F-CC, cada variável representa uma combinação:
+A primeira mudança, sozinha, é a **forma separada** da F-CC. P7 em
+`provas-fcc-fc3.md` classifica a equivalência de LP como `PROVEN`. Essa
+forma **não** é a F-C3: falta o item 2.
 
-\[
-(W,I,J),
-\]
+## 2. Forma separada (parte fechada)
 
-em que \(W\) é uma infraestrutura conectada, \(I\) são as origens atendidas e \(J\), os destinos.
+Variáveis, para cada \(W\subseteq V\) não vazio e conexo em \(H=G^r\):
 
-Isso enumera muitos grupos diferentes para a mesma infraestrutura. Na nova representação, separamos essas decisões:
+| Variável | Domínio | Significado |
+|---|---|---|
+| \(y_v\) | \(\{0,1\}\) | instalação em \(v\in V\) |
+| \(\lambda_W\) | \(\ge 0\) | peso da infraestrutura \(W\) |
+| \(\alpha_{sW}\) | \(\ge 0\) | atribuição da origem \(s\in S\cap B(W)\) a \(W\) |
+| \(\beta_{tW}\) | \(\ge 0\) | atribuição do destino \(t\in T\cap B(W)\) a \(W\) |
+| \(d_{st}\) | \(\ge 0\) | atendimento direto, \((s,t)\in D\) |
 
-| Variável | Significado |
-|---|---|
-| \(y_v\) | Instalação de estação em \(v\) |
-| \(\lambda_W\) | Utilização da infraestrutura conectada \(W\) |
-| \(\alpha_{sW}\) | Atribuição da origem \(s\) a \(W\) |
-| \(\beta_{tW}\) | Atribuição do destino \(t\) a \(W\) |
-| \(d_{st}\) | Atendimento direto, sem recarga |
-
-Cada infraestrutura recebe a mesma quantidade de origens e destinos:
-
-\[
-\sum_s\alpha_{sW}=\sum_t\beta_{tW}.
-\]
-
-As atribuições dependem da utilização de \(W\):
+Restrições fechadas:
 
 \[
 \alpha_{sW}\le\lambda_W,
 \qquad
-\beta_{tW}\le\lambda_W.
+\beta_{tW}\le\lambda_W,
+\qquad
+\sum_{s}\alpha_{sW}=\sum_{t}\beta_{tW},
 \]
-
-E sua utilização depende das estações:
 
 \[
-\sum_{W:v\in W}\lambda_W\le y_v.
+\sum_{W\ni v}\lambda_W\le y_v,
+\qquad
+\sum_{W}\alpha_{sW}+\sum_{t:(s,t)\in D}d_{st}=1,
+\qquad
+\sum_{W}\beta_{tW}+\sum_{s:(s,t)\in D}d_{st}=1.
 \]
 
-**Demonstrei que essa representação preserva exatamente a força da relaxação da F-CC**, eliminando a enumeração explícita dos pares de grupos \(I,J\).
+Objetivo: \(\min\sum_v y_v\). \(H\), \(B(W)\) e \(D\) são os da F-CC,
+incluindo \(d_{ss}=0\) para \(s\in S\cap T\).
 
-**Segundo, representa conjuntamente decisões que antes podiam ser fracionadas de maneira incompatível.**
+## 3. Redes de trios — `OPEN`
 
-Considere três grupos que atendem:
+O resumo original afirma: para cada trio de origens e cada trio de destinos,
+uma rede auxiliar de oito estados (subconjuntos do trio) cujos fluxos devem
+concordar com \(\lambda,\alpha,\beta,d\); as transições impediriam que um
+integrante fosse atendido duas vezes; a construção seria um diagrama de
+decisão.
 
-\[
-\{s_1,s_2\},\qquad
-\{s_2,s_3\},\qquad
-\{s_1,s_3\}.
-\]
+**Pontos que o texto disponível não define:**
 
-A relaxação anterior pode usar metade de cada grupo. Assim, cada origem recebe atendimento total igual a 1.
+| # | Lacuna | Por que impede implementação |
+|---|---|---|
+| O1 | O que é uma **etapa** da rede | Sem o índice da etapa não há nós |
+| O2 | Conjunto de arcos (de qual estado para qual, em qual etapa) | Sem arcos não há fluxo |
+| O3 | Como o fluxo da rede se iguala a \(\lambda_W\), \(\alpha_{sW}\), \(\beta_{tW}\) e \(d_{st}\) | Sem as igualdades a rede não corta nada |
+| O4 | A rede é por trio global ou por trio \(\times W\) | Muda o tamanho e a semântica |
+| O5 | Ordem das etapas (sobre \(W\), sobre robôs, outra) | Altera o politopo |
 
-Entretanto, não é possível selecionar dois desses grupos completos numa mesma atribuição: eles repetiriam alguma origem. A relaxação está combinando atendimentos que não correspondem a uma mistura coerente de partições.
+Enquanto O1–O5 não tiverem definição no repositório, **não há modelo F-C3
+implementável**. O braço F-C3 de F3/GF1 fica `OPEN`. GF1 avalia só a F-CC
+(default da spec B).
 
-A F-C3 enfrenta isso representando **cada trio de origens conjuntamente**, e fazendo o mesmo para os destinos.
+## 4. Valores numéricos alegados — `HYPOTHESIS`
 
-Para cada trio, uma rede auxiliar registra quais integrantes já foram atribuídos. São oito estados possíveis por etapa, correspondentes aos subconjuntos do trio. As transições impedem que um integrante seja atendido duas vezes.
+Nenhuma das famílias abaixo está definida neste repositório. Só podem ser
+checadas se a instância for reconstruída a partir de uma definição
+completa **e** as redes de trios deixarem de ser `OPEN`.
 
-Os fluxos dessas redes precisam concordar com \(\lambda,\alpha,\beta,d\). Portanto, as atribuições individuais passam a ter um certificado de compatibilidade conjunta.
+| Alegação | Condição para checar | Status |
+|---|---|---|
+| Família com 20 vértices e 7 robôs: base \(1\), F-CC \(3\), F-C3 \(4\), OPT \(4\) | Gerador ou lista de arestas no repositório + F-C3 fechada | `HYPOTHESIS` |
+| Família geral: F-CC \(=1{,}5g\), F-C3 \(=2g\) (ótimo) | Definição do parâmetro \(g\) e da família | `HYPOTHESIS` |
+| Exemplo com 15 vértices: F-C3 \(=2{,}5\), OPT \(=3\) | Instância no repositório + F-C3 fechada | `HYPOTHESIS` |
 
-Essa representação por redes é uma construção conhecida de formulações estendidas com diagramas de decisão; a aplicação e as provas específicas para este modelo estão no documento. Não estou reivindicando novidade bibliográfica. [www.andrew.cmu.edu](https://www.andrew.cmu.edu/user/vanhoeve/papers/DD_TutORial.pdf?utm_source=chatgpt.com)
+F3 **não** ajusta medição nem alegação se houver divergência. Sem instância,
+não há comparação.
 
-**O que consegui demonstrar sobre a melhoria**
+## 5. Tamanho
 
-Para as formulações completas:
+Ainda com a forma separada, o número de \(W\) conexos é exponencial. As redes
+de trios, se definidas, acrescentam \(O(m^3)\) blocos. Em escala a F-C3
+exigiria separação preguiçosa, fora desta spec.
 
-\[
-\boxed{
-z_{\mathrm{LP}}^{\mathrm{baseline}}
-\le
-z_{\mathrm{LP}}^{\mathrm{F\text{-}CC}}
-\le
-z_{\mathrm{LP}}^{\mathrm{F\text{-}C3}}
-\le
-\mathrm{OPT}
-}
-\]
+## 6. O que F3 mede
 
-Além disso, construí uma família de grafos conexos em que a melhoria sobre F-CC é estrita. Um integrante dessa família possui **20 vértices e 7 robôs**:
-
-| Modelo | Limite da relaxação |
-|---|---:|
-| Baseline agregada | \(1\) |
-| F-CC | \(3\) |
-| **F-C3** | **\(4\)** |
-| Ótimo inteiro | **\(4\)** |
-
-Esses valores foram demonstrados analiticamente, sem executar solver. Como o limite anterior já era inteiro, o ganho de \(3\) para \(4\) vai além de arredondar o objetivo.
-
-Na família geral, F-CC vale \(1{,}5g\), enquanto F-C3 chega a \(2g\), que é o ótimo.
-
-**Ela continua representando o problema original.** A prova inclui estações em qualquer vértice, \(S\cap T\), permanência, compartilhamento de estações e pareamento livre. Somente \(y\) precisa ser binário; as demais variáveis podem ser contínuas.
-
-Há duas limitações importantes:
-
-- **O tamanho continua exponencial**, pois ainda consideramos conjuntos conectados \(W\). As redes de trios também acrescentam variáveis.
-- **A relaxação ainda pode ter gap.** Encontrei um exemplo de quinze vértices em que F-C3 vale \(2{,}5\), mas o ótimo é \(3\). Compatibilidade de trios não garante compatibilidade global.
-
-Portanto, esta é uma candidata **comprovadamente mais forte em relaxação** que as anteriores. **Ainda não há evidência suficiente para concluir que seja computacionalmente superior.**
-
-Registrei a formulação completa, as provas, a família de separação e o contraexemplo em MIN-STATION-formulacao-componentes-consistencia-trios.md[MIN-STATION-formulacao-componentes-consistencia-trios.md](sandbox:/workspace/scratch/c87335ddaac1/MIN-STATION-formulacao-componentes-consistencia-trios.md).
+F3 mede o LP da F-CC (forma separada, após P7). Não mede F-C3.

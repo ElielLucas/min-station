@@ -1,23 +1,15 @@
 # F-CC — formulação por configurações conectadas de estações
 
-> **Estado deste documento (R1, 2026-10-04).**
+> **Estado deste documento (F1, 2026-10-06).**
 >
-> - **Origem:** proposta externa, recebida como texto de chat e guardada sem alteração do corpo
->   matemático. Não é o baseline do projeto; é uma **formulação em avaliação** (Linha F de
->   `docs/technical/plans/plano-proxima-fase.md`, tarefas F1–F3).
-> - **Conferido na análise de planejamento** (`plano-proxima-fase.md` §6.1, marca [Conferido],
->   argumento refeito mas ainda não escrito como prova no repositório): exatidão para `y` binário
->   (compatibilidade dada por `C` é união de bicliques, uma por componente de `H[C]`, mais os pares
->   diretos; integralidade do emparelhamento bipartido); dominância sobre o LP da base
->   (`z_LP^base ≤ z_LP^F-CC`); implicação de C1 e C2 no LP; ausência de ganho no regime de cobertura
->   (SC-GF2: LP ≈ 2 contra `OPT = k`).
-> - **Hipótese** (não testado): implicação só parcial de C4 (`y(Z) ≥ δ/|S'|`, não `≥ 1`); ganho de
->   LP onde há compatibilidade (`Γ > 0`); ligação com o platô do núcleo (H-desc).
-> - **Falta:** prova escrita no repositório (tarefa F2) e medição do LP em instâncias pequenas
->   (tarefa F3). O custo é exponencial em `Q`; qualquer uso em escala depende de geração de colunas,
->   condicionada ao portão GF1.
-> - Cadeia de dominância adotada pelo projeto: `base ≤ F-CC ≤ F-C3 ≤ OPT`
->   (`plano-proxima-fase.md` §6.2).
+> - **Papel:** formulação em avaliação, **não** o baseline. Código:
+>   `experiments/alternative-formulations/fcc.py`.
+> - **Definição:** seções 1–5 fecham `y`, `λ_q`, `d_st`, `q=(W,I,J)`,
+>   conectividade em `H`, `B(W)`, pares diretos, R1–R3 e `S∩T`. Exemplo de
+>   montagem no final.
+> - **Provas (F2):** `docs/technical/reference/provas-fcc-fc3.md`.
+> - Cadeia adotada: `base ≤ F-CC ≤ F-C3 ≤ OPT`. O elo F-C3 permanece
+>   `HYPOTHESIS`/`OPEN` enquanto as redes de trios não tiverem definição.
 
 A formulação proposta é a **F-CC: formulação por configurações conectadas de estações**. Ela escolhe a infraestrutura de recarga e os grupos de origens e destinos atendidos por essa infraestrutura.
 
@@ -268,3 +260,18 @@ No sentido inverso, qualquer solução física pode ser representada agrupando s
 O modelo tem \(n+2m\) restrições principais, mas \(Q\) pode ser exponencial. A conectividade não desapareceu: ela está incorporada à definição das configurações.
 
 A exatidão apresentada considera **todas** as configurações de \(Q\). Restringir arbitrariamente essa família pode excluir soluções válidas e exige outra análise.
+
+**6. Exemplo de montagem (6 vértices)**
+
+Instância: \(V=\{s_1,s_2,u,w,t_1,t_2\}\), \(S=\{s_1,s_2\}\), \(T=\{t_1,t_2\}\), \(r=1\).
+Arestas de \(G\): \(s_1u\), \(s_2u\), \(uw\), \(wt_1\), \(wt_2\). Grafo conexo, \(S\cap T=\varnothing\).
+
+\(H=G^r=G\) (autonomia 1). Pares diretos: \(D=\varnothing\), porque \(d_G(s_i,t_j)=3>1\).
+
+\(B(\{w\})=\{u,w,t_1,t_2\}\). \(B(\{u\})=\{s_1,s_2,u,w\}\). \(B(\{u,w\})=V\).
+
+Uma configuração válida: \(W=\{u,w\}\) (conexo em \(H\)), \(I=\{s_1,s_2\}\), \(J=\{t_1,t_2\}\). R1/R2 com \(\lambda_q=1\) e \(y_u=y_w=1\) dão ótimo 2. Não existe \(W\) unitário com \(S\cap B(W)\) e \(T\cap B(W)\) ambos não vazios e do mesmo tamanho cobrindo as duas origens: \(\{u\}\) não alcança \(T\); \(\{w\}\) não alcança \(S\).
+
+Variáveis: \(y_v\) nos seis vértices; um \(\lambda_q\) por tripla \((W,I,J)\) com \(W\) conexo não vazio, \(I\subseteq S\cap B(W)\), \(J\subseteq T\cap B(W)\), \(|I|=|J|\ge 1\); nenhum \(d_{st}\).
+
+Restrições a escrever: duas R1 (\(s_1,s_2\)), duas R2 (\(t_1,t_2\)), seis R3.

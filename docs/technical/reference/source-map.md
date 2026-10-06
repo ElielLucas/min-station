@@ -147,7 +147,7 @@ Usar para:
 
 ### Limite da fonte
 
-Nenhuma das duas substitui a formulação base. Comparações oficiais continuam contra COMP (`open-questions.md` Q6). O documento de provas da F-C3 não está no repositório.
+Nenhuma das duas substitui a formulação base. Comparações oficiais continuam contra COMP (`open-questions.md` Q6). As redes de trios da F-C3 estão `OPEN` (`formulacao-fc3-consistencia-trios.md` §3). Provas da F-CC: `provas-fcc-fc3.md`. Medição F3 e portão GF1: `resultados-f3-fcc.md`, `decisao-gf1.md`.
 
 ## 7. Documentos de contexto do repositório
 

@@ -57,13 +57,13 @@ give a stronger bound than what already exists?
 
 ## Goals
 
-- [ ] F-CC and F-C3 are defined in the repository unambiguously, or each ambiguous point is marked
+- [x] F-CC and F-C3 are defined in the repository unambiguously, or each ambiguous point is marked
       `OPEN`.
-- [ ] Every structural property used later is classified `PROVEN`, `COMPUTATIONALLY VERIFIED`,
+- [x] Every structural property used later is classified `PROVEN`, `COMPUTATIONALLY VERIFIED`,
       `HYPOTHESIS` or `OPEN`, with a written proof for each `PROVEN`.
-- [ ] LP values of base, base+C1+C2+C4, core IP, F-CC and F-C3 are measured against an independent
+- [x] LP values of base, base+C1+C2+C4, core IP, F-CC and F-C3 are measured against an independent
       OPT on a pre-registered set of small instances.
-- [ ] GF1 is decided by a rule written before measurement.
+- [x] GF1 is decided by a rule written before measurement.
 
 ## Out of Scope
 
@@ -327,10 +327,10 @@ pre-registration.
 
 ## Success Criteria
 
-- [ ] Both formulations defined in the repository; every ambiguity marked `OPEN`.
-- [ ] P1–P11 labelled; every `PROVEN` label backed by a written proof.
-- [ ] F3 CSV regenerable from the pre-registration; claimed values checked or left as `HYPOTHESIS`.
-- [ ] GF1 issued by the pre-registered rule, with SC as negative control.
+- [x] Both formulations defined in the repository; every ambiguity marked `OPEN`.
+- [x] P1–P11 labelled; every `PROVEN` label backed by a written proof.
+- [x] F3 CSV regenerable from the pre-registration; claimed values checked or left as `HYPOTHESIS`.
+- [x] GF1 issued by the pre-registered rule, with SC as negative control.
 
 ---
 
