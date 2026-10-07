@@ -1,15 +1,20 @@
 # Backlog de continuação — MIN-STATION
 
-Plano operacional do que já foi feito, do que está pausado e do que ainda falta.
+Plano operacional consolidado do que foi executado, encerrado ou pausado. O backlog ativo T1–T22 está fechado no estado atual; o programa de pesquisa posterior permanece em `plano-proxima-fase.md`.
+
 A fonte científica das tarefas T1–T22 é o
+
 [parecer macro consolidado](../reference/MIN-STATION-parecer-macro-consolidado.md).
+
 O programa de pesquisa depois dos Blocos 1–4 está em
+
 [`plano-proxima-fase.md`](plano-proxima-fase.md) (R1–R13 e Linha F).
+
 Este arquivo não executa pesquisa: só consolida histórico e backlog.
 
-As tarefas futuras (T1–T22) preservam título, descrição, critérios de aceite e a
-ordem do parecer: corretude, confiabilidade experimental, pesquisa/instâncias,
-posicionamento científico.
+As tarefas T1–T22 preservam título, descrição, critérios de aceite e a ordem do parecer: corretude, confiabilidade experimental, pesquisa/instâncias e posicionamento científico. Todas estão hoje `CONCLUÍDA` ou `ENCERRADA`, conforme o caso.
+
+**Estado deste backlog em 2026-10-07:** `FECHADO` para T1–T22. R11 / Spec D também está concluída como `CONFIRMED DIVERGENCE`. Linhas `PAUSADA` e dívidas documentais explicitamente fora do backlog ativo não contam como trabalho pendente deste arquivo.
 
 ## Como ler
 
@@ -24,18 +29,24 @@ posicionamento científico.
 Distinções que este backlog não mistura:
 
 - **Problema de Das:** grafo simples, não dirigido, autonomia em passos, solução `C ⊆ V`.
+
 - **Formulação base:** fluxo agregado, dígrafo de alcance, `y_v` em todo `V`, variante U. Baseline, não o objetivo da pesquisa.
+
 - **Técnica experimental:** cortes, núcleo, CBI, BC-Y, Lagrangeana, preprocessamento. Não entra no baseline sem decisão explícita.
+
 - **Experimento:** uma rodada nomeada (E0–E14), com plano, relatório e CSV.
+
 - **Benchmark:** o protocolo e a partição do benchmark-v1, distintos das instâncias em si.
+
 - **Instância:** arquivo e linha do manifesto. `classe = principal` é o recorte de Das; `extensao_ponderada` e `extensao_dirigida` são extensão.
+
 - **Documentação/literatura:** Das, SBPO, parecer, artigo IJCAI 2026. Não substituem código nem CSV.
 
 ## Mapa
 
 ### Já feito
 
-Formulação base all-vertices e variante U; validação e correção de cortes, inclusive C4-DM; campanha E0–E8; benchmark-v1 (lote 1); E9, E10, E10b, E12, E13, E14; regeneração do protocolo de dificuldade depois do C4-DM.
+Formulação base all-vertices e variante U; validação e correção de cortes, inclusive C4-DM; campanha E0–E8; benchmark-v1; E9, E10, E10b, E12, E13, E14; regeneração e consolidação do protocolo de dificuldade; T1–T22; fases estruturais P/E aplicáveis; e R11 / Spec D.
 
 ### Encerrado ou pausado
 
@@ -43,70 +54,96 @@ A2 (CBI como método para o problema de Das) encerrada no E12. B2 (simetria em h
 
 ### Parcial
 
-Nada do bloco 2 permanece parcial. A prova de equivalência da formulação base foi fechada na T5 (`validacao-formulacao-base.md` §5.5).
+Nenhum item do backlog ativo permanece `PARCIAL`. P1–P4 foram fechadas pelas tarefas T5, T6, T9 e T8, respectivamente. A seção histórica correspondente foi atualizada para preservar o estado anterior sem mantê-lo como pendência.
 
 ### Ainda por fazer
 
-Nenhuma tarefa do parecer. T1–T22 foram executadas. Specs dos Blocos 1–4:
-`specs/bloco1-corretude-terminais-sT/spec.md`,
-`specs/bloco2-confiabilidade-experimental/spec.md`,
-`specs/bloco3-pesquisa-instancias-estruturais/spec.md` e
-`specs/bloco4-posicionamento-cientifico/spec.md`. A continuação está em
-`docs/technical/plans/plano-proxima-fase.md` e nas specs
-`specs/proxima-fase-a-fundacao/spec.md`,
-`specs/proxima-fase-b-formulacoes-fcc-fc3/spec.md`,
-`specs/proxima-fase-c-diagnostico-gap-plato/spec.md` e
-`specs/proxima-fase-d-certificadores-classes-especiais/spec.md`.
+Nenhuma tarefa ativa deste backlog. T1–T22 foram executadas ou encerradas com decisão registrada.
+
+Specs dos Blocos 1–4:
+
+- `specs/bloco1-corretude-terminais-sT/spec.md`
+- `specs/bloco2-confiabilidade-experimental/spec.md`
+- `specs/bloco3-pesquisa-instancias-estruturais/spec.md`
+- `specs/bloco4-posicionamento-cientifico/spec.md`
+
+A continuação científica posterior é controlada separadamente por `docs/technical/plans/plano-proxima-fase.md` (R1–R13 e Linha F) e pelas specs da próxima fase. Este arquivo não declara o programa R1–R13 inteiro como concluído; apenas registra o que já foi executado dentro do seu escopo e o estado conhecido de R11.
+
 R11 (Spec D): **CONCLUÍDA em 2026-10-07 — `CONFIRMED DIVERGENCE`**.
-Leituras/pré-registro, geradores, certificadores, verificações locais, manifesto
-de instâncias, lote oficial e fechamento estão versionados. Evidência:
-`results/structural/r11-certificadores.csv`,
-`docs/technical/reference/resultados-r11-certificadores.md`,
-`docs/technical/reference/auditoria-r11-divergencias.md` e
-`docs/technical/reference/conclusao-r11-certificadores.md`. Caminho/ciclo
-literais não são usados como oráculos exatos; aranhas permanecem
-leitura-dependentes e sem certificador exato universal.
-As edições "Passo posterior" de `overlap` §7.1 e a redação do artigo
-continuam adiadas.
+
+Evidência versionada:
+
+- `results/structural/r11-certificadores.csv`
+- `docs/technical/reference/resultados-r11-certificadores.md`
+- `docs/technical/reference/auditoria-r11-divergencias.md`
+- `docs/technical/reference/conclusao-r11-certificadores.md`
+- `experiments/structural/verify_r11_counterexamples.py`
+
+O fechamento pós-lote confirmou contraexemplos mínimos para caminho e ciclo e reproduziu SP-R2 nas leituras de aranha. Caminho/ciclo literais não são usados como oráculos exatos; aranhas permanecem leitura-dependentes e sem certificador exato universal.
+
+As edições "Passo posterior" de `overlap` §7.1 e a redação do artigo continuam adiadas e **fora do backlog ativo**.
 
 ### Dependências
 
 ```text
+
 T1, T2 → T3 → T4
+
 T5 em paralelo com T1–T4 (mesma etapa; a prova cita a rede corrigida)
+
 T6 antes de qualquer comparação nova de desempenho
+
 T7, T8, T11 em paralelo com T6
+
 T9 e T10 antes de T16, T19 e T21
+
 T12 → T13 → T14
+
 T15 depois de T12 na ordem recomendada; não bloqueia T13–T14
+
 T16 só se a linha CBI ainda for relevante depois do E12, e depois de T1 e T10
+
 T17 só se a linha CBI ainda for relevante depois do E12
+
 T18 em paralelo, restrita a instâncias pequenas
+
 T19 depois de T9, T10 e das famílias aplicáveis (T12–T17)
+
 T20 depois de T19
+
 T21 depois de T20
+
 T22 pode começar em paralelo; entra no artigo só depois do levantamento
+
 ```
 
 O E12 já encerrou A2 para instâncias de Das. T16 e T17 não reabrem essa bateria.
 
 ---
 
-## Inconsistências (não reconciliadas)
+## Inconsistências e dívidas documentais — estado atual
 
-Registradas aqui de propósito. Corrigi-las é trabalho da T11 ou de uma tarefa futura, não deste arquivo.
+Esta seção preserva as divergências históricas identificadas no parecer, mas não mantém como abertas as que já foram resolvidas pelas tarefas T1–T22.
 
-1. **E11 / C6 e o E14.** `resultados-e14-pli.md` aplica o critério pré-registrado: 0/4 com OPT = UB, então o E11 não volta à fila por esse gatilho. O parecer (§9, Etapa 3) e a T14 tratam C6 como linha matemática desacoplada do E14. As duas frases coexistem. A T14 foi executada como linha matemática, com derivação anterior à medição; o veredito do E14 permanece válido e não foi a autorização dessa medição.
-2. **Regeneração e a T8.** O passo 2 de `plano-pos-e13.md` foi executado (`benchmark-v1.md` §8). A T8 pede mais: partição por grafo de origem, `hc9u` e `puc-hc9u-seed-r1` deixando de contar como evidências independentes, e proveniência completa por resultado. A regeneração está em H17; a T8 continua `A FAZER`.
-3. **NodeCount e a T9.** `measure_mip` em `experiments/cuts/harness.py` já devolve `node_count`. Tempos do primeiro e do melhor incumbente, tempo até a prova e a separação geração/preprocessamento/heurística/solver não estão nesse retorno. A T9 continua `A FAZER`.
-4. **Oráculo e o E12.** O E12 restringiu a avaliação a `S∩T = ∅` e os controles MAPF não usam `-rho` (`resultados-e12-pli.md`). A reavaliação das linhas `-rho` do E10/E10b com oráculo corrigido não existe, porque a correção do oráculo (T1) não foi feita. A T4 continua `A FAZER`, com esse recorte do E12 já coberto.
-5. **T16 / T17 e o E12.** O teste discriminante COMP × núcleo × CBI em PUC/PUCN já rodou e encerrou A2 para Das. T16 e T17 valem para famílias novas, e só se a linha CBI continuar relevante. Não são repetição do E12.
-6. **Contagem de instâncias.** `CLAUDE.md` fala em "22 antigas compatíveis + as 70 do benchmark-v1". O manifesto atual tem 92 linhas: 75 `principal`, 11 `extensao_dirigida`, 3 `extensao_ponderada`, 3 `historico`. O parecer (§5, commit `e9d1ccb`) lê as 75 principais como 70 do benchmark-v1 mais 5 legadas e pede o texto "5 antigas + 70". A correção está na T11 e não foi aplicada.
-7. **Prosa do E13 e do E2–E4.** `resultados-e13-pli.md` §5 ainda diz que a divergência com o manifesto "não é ruído de execução" e não registra o confundimento `TimeLimit` × `MIPFocus`. `resultados-e2-e4-pli.md` ainda descreve Barcelona st25 de forma que o parecer marca como incorreta. Itens da T11.
-8. **Q1 e o benchmark posterior.** `open-questions.md` Q1 diz que as 22 instâncias da época têm `|S∩T| = 0` e que nenhum resultado anterior é afetado. Isso descreve a rodada E5. O benchmark-v1 depois introduziu 5 principais com sobreposição, e o C4-DM inválido afetou 3 (`correcao-c4-dm.md`). A frase de Q1 não foi atualizada.
-9. **Ranking A2.** `direcoes-pli-min-station.md` §13 acompanha A2 até o E9 e deixa o veredito para o E12. `resultados-e12-pli.md` encerra A2 para Das. O ranking não incorpora esse veredito. Não está na lista fechada da T11.
+1. **E11 / C6 e o E14 — RESOLVIDA.** O gatilho antigo do E14 não disparou (0/4 com OPT = UB), mas T14 tratou C6 como linha matemática independente, com derivação e validação próprias. O veredito do E14 permanece válido e não foi usado como autorização retroativa da T14.
 
-`benchmark-v1.md` §7.2 (classe D com 4 instâncias) descreve a partição anterior; §8 já diz que, depois da regeneração, D ficou com 3. Não é divergência escondida.
+2. **Regeneração e T8 — RESOLVIDA.** H17 regenerou o protocolo; T8 consolidou a partição por grafo de origem, registrou `grupos_origem.csv`/`duplicata_de` e a verificação `verify_t8_consolidacao.py`. R2 (2026-10-04) registra zero vazamento entre desenvolvimento e avaliação.
+
+3. **NodeCount e T9 — RESOLVIDA.** T9 ampliou a instrumentação, incluindo coleta de tempos de incumbente em `measure_mip` e inventário versionado em `schema-instrumentacao-mip.md`. `node_count` já era coletado; os runners históricos não foram reexecutados, o que é decisão de escopo, não pendência de T9.
+
+4. **Oráculo e E12 — RESOLVIDA.** T1 corrigiu a semântica de permanência em `S∩T`; T4 auditou os resultados em `revalidacao-oraculo-pos-t1.md` e concluiu que nenhum veredito publicado dependia do defeito a ponto de exigir reexecução. O recorte do E12 continua válido.
+
+5. **T16 / T17 e E12 — RESOLVIDA.** O E12 encerrou A2 para instâncias de Das. A decisão da Fase P não reabriu a bateria: T16 e T17 estão `ENCERRADA` no escopo testado.
+
+6. **Contagem de instâncias — RESOLVIDA pela T11.** A documentação passou a usar as contagens corrigidas e a distinção entre 5 legadas + 70 do benchmark-v1 quando aplicável.
+
+7. **Prosa do E13 e do E2–E4 — RESOLVIDA pela T11.** A documentação foi corrigida para registrar o confundimento `TimeLimit` × `MIPFocus` e corrigir o caso Barcelona st25.
+
+8. **Q1 e o benchmark posterior — DÍVIDA DOCUMENTAL FORA DO BACKLOG ATIVO.** O texto histórico de Q1 sobre as 22 instâncias da época não deve ser lido como caracterização do benchmark-v1 posterior, que contém instâncias principais com sobreposição. `overlap` §7.4 mantém a atualização editorial como passo posterior.
+
+9. **Ranking A2 — DÍVIDA DOCUMENTAL FORA DO BACKLOG ATIVO.** `direcoes-pli-min-station.md` §13 ainda precisa incorporar explicitamente o veredito posterior do E12. Isso não reabre A2 nem T1–T22.
+
+`benchmark-v1.md` §7.2 preserva a partição histórica anterior à regeneração; §8 registra o estado posterior. A coexistência é intencional e não constitui divergência escondida.
 
 ---
 
@@ -218,7 +255,7 @@ Instâncias de E0–E8 são, em grande parte, extensão ponderada ou dirigida. C
 
 **Descrição:** 70 instâncias fiéis a Das, manifesto, classificação de dificuldade e divisão desenvolvimento/avaliação. Plano em `plano-benchmark-v1.md`.
 
-**Resultado:** A dificuldade acompanha UB/m, não o tamanho do dígrafo de alcance. O regime R-c não produz instância difícil nesse lote. Classes na partição anterior à regeneração: F 35, A 26, M 5, D 4 (30 D/A). Lacunas de maturidade seguem abertas: D abaixo do alvo, `pucn` com dois níveis de r, uma seed, sem tag de versão. A partição por variante (não por grafo de origem) é dívida da T8.
+**Resultado:** A dificuldade acompanha UB/m, não o tamanho do dígrafo de alcance. O regime R-c não produz instância difícil nesse lote. Classes na partição anterior à regeneração: F 35, A 26, M 5, D 4 (30 D/A). Lacunas de maturidade do lote original incluíam D abaixo do alvo, `pucn` com dois níveis de r, uma seed e ausência de tag de versão. A dívida de partição por variante foi posteriormente fechada pela T8/R2, com partição por grafo de origem.
 
 **Evidência:** `docs/technical/reference/benchmark-v1.md`, `docs/technical/plans/plano-benchmark-v1.md`, `instances/manifest.csv`.
 
@@ -264,7 +301,7 @@ Q2 ainda registra como não decidido se conclusões por regime devem ser refeita
 
 **Evidência:** `docs/technical/reference/resultados-e13-pli.md`, `docs/technical/plans/plano-pos-e13.md` passos 0–1.
 
-A prosa da §5 do relatório ainda contradiz o parecer. Correção é a T11, não uma reabertura do E13.
+A prosa da §5 do relatório foi corrigida pela T11; isso não reabriu o E13.
 
 #### H15 — E14: Cutoff nas quatro D/A de gap absoluto 2
 
@@ -330,61 +367,71 @@ Isto não cumpre a T8.
 
 **Evidência:** `docs/technical/reference/direcoes-pli-min-station.md`.
 
+#### H21 — R11 / Spec D: certificadores de classes especiais
+
+**Status:** `CONCLUÍDA` em 2026-10-07 — `CONFIRMED DIVERGENCE`.
+
+**Descrição:** implementação e teste literal dos certificadores publicados/derivados para caminhos, ciclos e aranhas, com leituras explícitas, pré-registro, instâncias congeladas, referências exatas independentes e auditoria pós-lote.
+
+**Resultado:** o lote oficial produziu 80 linhas sobre 44 instâncias, sem `reference_failure`. Enumeração, baseline e F-CC foram consistentes onde aplicáveis. O Algoritmo 1 literal de caminhos e o Algoritmo 2 literal de ciclos possuem contraexemplos subótimos mínimos; para aranhas, SP-R2 reproduz divergência dependente da leitura, com `spider-A`/`spider-U` inviáveis e `spider-B` viável porém subótimo no caso auditado. O material de aranhas não fecha um certificador exato universal único.
+
+**Evidência:** `results/structural/r11-certificadores.csv`, `docs/technical/reference/resultados-r11-certificadores.md`, `docs/technical/reference/auditoria-r11-divergencias.md`, `docs/technical/reference/conclusao-r11-certificadores.md`, `experiments/structural/verify_r11_counterexamples.py`.
+
 ---
 
-## Parciais
+## Pendências históricas P1–P4 — fechadas
 
-Não marcar como concluído.
+P1–P4 registravam dívidas reais em versões anteriores deste backlog. Todas estão hoje fechadas; os textos abaixo preservam a origem da pendência e a evidência de fechamento.
 
 #### P1 — Prova de equivalência da formulação base
 
-**Status:** `CONCLUÍDA` (fechada pela T5; o texto abaixo descreve o estado anterior)
+**Status:** `CONCLUÍDA` — fechada pela T5.
 
-**Descrição:** `validacao-formulacao-base.md` escreve a correspondência restrição a restrição e uma prova que o próprio texto declara falha quando `S∩T ≠ ∅`. Q3 pede as duas direções (solução do problema → PLI, e decomposição do fluxo inteiro em rotas) e diz que igualdade computacional não substitui a prova. A variante U (H02) mudou o modelo depois dessa escrita.
+**Estado anterior:** a validação existente não cobria de forma completa `S∩T`, permanência, `S = T` e ótimo zero na rede corrigida.
 
-**Resultado:** Há validação e casos adversariais. Não há prova versionada que cubra permanência, `S = T` e ótimo zero na rede corrigida.
+**Fechamento:** `validacao-formulacao-base.md` §5.5 contém a prova na rede auxiliar corrigida pela T1; as lacunas antes registradas em A.10 foram fechadas.
 
-**Evidência:** `docs/technical/reference/validacao-formulacao-base.md` §5.4 e apêndice A.10, `docs/technical/governance/open-questions.md` Q3, parecer §2.3.
+**Evidência:** `docs/technical/reference/validacao-formulacao-base.md`, `docs/technical/governance/open-questions.md` Q3, T5.
 
-**O que falta:** nada. A T5 escreveu a prova na §5.5, com a rede auxiliar corrigida pela T1.
+**O que falta:** nada neste backlog.
 
 #### P2 — Determinismo da construção do modelo
 
-**Status:** `PARCIAL`
+**Status:** `CONCLUÍDA` — fechada pela T6.
 
-**Descrição:** O gerador C4-DM foi tornado determinístico (H04). O parecer ainda reproduz variação de ordem por `set`/`frozenset` na montagem do modelo em `harness.py` e `bc_yspace.py`. `PYTHONHASHSEED` foi usado no E12 como proteção entre braços, não como determinismo do modelo.
+**Estado anterior:** C4-DM já era determinístico, mas a montagem geral ainda dependia de ordem de `set`/`frozenset` em partes do harness.
 
-**Resultado:** Cortes C4 reprodutíveis. A construção geral do MIP não está ordenada de forma explícita.
+**Fechamento:** `cortes_ordenados` foi aplicado em `harness.py`, `bc_yspace.py` e `yspace.py`; `verify_t6_determinismo.py` confirma ordem estável entre sementes de hash testadas. `PYTHONHASHSEED` permanece proteção adicional, não mecanismo principal.
 
-**Evidência:** `docs/technical/reference/correcao-c4-dm.md`, parecer §3.1, `plano-pos-e13.md` §4.3.
+**Evidência:** T6, `docs/technical/reference/correcao-c4-dm.md`, `plano-pos-e13.md` §4.3.
 
-**O que falta:** T6.
+**O que falta:** nada neste backlog.
 
 #### P3 — Instrumentação do harness
 
-**Status:** `PARCIAL`
+**Status:** `CONCLUÍDA` — fechada pela T9.
 
-**Descrição:** `measure_mip` persiste objetivo, bound, gap, status, `sol_count`, `node_count` e tempo de MIP. A raiz tem bound e tempo próprios. Não há tempo do primeiro incumbente, tempo do melhor incumbente nem colunas separadas de geração, preprocessamento e heurística no retorno usado pelas rodadas recentes.
+**Estado anterior:** a instrumentação não permitia separar adequadamente a dinâmica do incumbente e outros componentes de execução exigidos pelo protocolo posterior.
 
-**Resultado:** Dá para ler LB, UB, gap e, onde o runner grava, nós. Não dá para separar dificuldade primal, dual e tamanho da árvore do jeito que a T9 exige.
+**Fechamento:** T9 ampliou `measure_mip`, incluindo coleta de incumbentes, e versionou o inventário em `schema-instrumentacao-mip.md`. `node_count`, LB, UB, gap e métricas já existentes foram preservados. Runners históricos não foram reexecutados.
 
-**Evidência:** `experiments/cuts/harness.py` (`measure_mip`), parecer §9 Etapa 2.
+**Evidência:** `experiments/cuts/harness.py`, `schema-instrumentacao-mip.md`, T9.
 
-**O que falta:** T9.
+**O que falta:** nada neste backlog.
 
 #### P4 — Consolidação do benchmark depois da regeneração
 
-**Status:** `PARCIAL`
+**Status:** `CONCLUÍDA` — fechada pela T8/R2.
 
-**Descrição:** H17 atualizou classes, limites e a nota de que E9–E13 usaram a partição antiga. A divisão desenvolvimento/avaliação continua por variante, em ordem de nome. `hc9u` e `puc-hc9u-seed-r1` seguem como duas linhas. Proveniência completa (versão dos cortes, origem do certificado, versão do código em cada resultado histórico) não está no manifesto.
+**Estado anterior:** H17 havia regenerado classes e limites, mas a divisão desenvolvimento/avaliação ainda era por variante e havia duplicidade de evidência por grafo de origem.
 
-**Resultado:** Protocolo de dificuldade regerado. Benchmark ainda não é a visão que a T8 define.
+**Fechamento:** T8 criou `grupos_origem.csv`, registrou `duplicata_de`, adicionou `verify_t8_consolidacao.py` e R2 (2026-10-04) reatribuiu a partição por grafo de origem com zero vazamento.
 
-**Evidência:** `docs/technical/reference/benchmark-v1.md` §7–§8, parecer §5.
+**Evidência:** `docs/technical/reference/benchmark-v1.md`, `regra-particao-origem.md`, T8.
 
-**O que falta:** T8.
+**O que falta:** nada neste backlog.
 
-Nada mais no repositório foi marcado `PARCIAL`. Trabalho só planejado está em `A FAZER` ou `PAUSADA`.
+Nenhum item P1–P4 permanece `PARCIAL`.
 
 ---
 
@@ -414,21 +461,24 @@ O núcleo inteiro como mecanismo de LB não está nesta tabela. O E12 separa o n
 
 ---
 
-## A fazer
+## Tarefas T1–T22 — estado final
 
-Ordem obrigatória do parecer: T1–T5, depois T6–T11, depois a sequência de famílias e o posicionamento. Critérios de aceite são os do arquivo de tarefas derivado do parecer.
+A ordem abaixo é a ordem histórica de execução definida pelo parecer. O backlog ativo está fechado: cada tarefa está `CONCLUÍDA` ou `ENCERRADA` conforme a evidência registrada.
 
 ### Bloco 1 — Corretude
 
 A etapa 1 é pré-requisito de método que use o oráculo em instância com `S∩T ≠ ∅`.
 
 Spec detalhada de T1–T5 (estado atual verificado, histórias, critérios EARS):
+
 `specs/bloco1-corretude-terminais-sT/spec.md`.
 
 #### T1 — Corrigir o oráculo para suportar permanência em `S∩T`
 
-**Status:** `CONCLUÍDA` — arco `v_out → v_in` de capacidade 1 em `integer_oracle` e `_build_flow_net_aggregate`. `verify_t1_oracle_sT.py`: 618 conjuntos `C`, 0 divergências.
+**Status:** `CONCLUÍDA` — arco `v_out → v_in` de capacidade 1 em `integer_oracle` e `\_build_flow_net_aggregate`. `verify_t1_oracle_sT.py`: 618 conjuntos `C`, 0 divergências.
+
 **Depende de:** nada
+
 **Bloqueia:** T3, T4 e qualquer uso novo do oráculo com sobreposição
 
 **Descrição:** Corrigir o `integer_oracle` e a rede agregada para representar corretamente o caso em que um robô já está em seu destino, sem obrigá-lo a sair do vértice. A solução pode usar o arco de permanência `v_out → v_in` ou uma modelagem equivalente com papéis separados.
@@ -436,15 +486,21 @@ Spec detalhada de T1–T5 (estado atual verificado, histórias, critérios EARS)
 **Critérios de aceite:**
 
 - O oráculo aceita corretamente o caso `S=T={v}` com nenhuma estação instalada.
+
 - O caso de sobreposição parcial de `S` e `T` retorna o mesmo resultado de viabilidade que o modelo base.
+
 - A correção não altera resultados dos casos com `S∩T=∅`.
+
 - `integer_oracle`, rede agregada e separação fracionária usam a mesma semântica corrigida.
+
 - Testes automatizados cobrem os novos comportamentos.
 
 #### T2 — Implementar validador independente de viabilidade
 
 **Status:** `CONCLUÍDA` — `experiments/cuts/independent_validator.py`. Exaustivo para `n ≤ 4` e amostra documentada para `n = 5`; ver `validacao-formulacao-base.md`, seção "Verificação recomendada".
+
 **Depende de:** nada
+
 **Bloqueia:** T3; também as famílias estruturais, que pedem enumeração de `C` em casos pequenos
 
 **Descrição:** Criar um segundo mecanismo de validação que não reutilize a construção de fluxo do oráculo. O parecer propõe estados `(v, bateria)` combinados com matching e enumeração de conjuntos `C` para grafos pequenos.
@@ -452,15 +508,21 @@ Spec detalhada de T1–T5 (estado atual verificado, histórias, critérios EARS)
 **Critérios de aceite:**
 
 - O validador não chama nem replica estruturalmente `integer_oracle`.
+
 - Representa deslocamento e consumo de bateria explicitamente.
+
 - Trata corretamente `S∩T`.
+
 - Consegue verificar a viabilidade de um conjunto `C`.
+
 - Permite enumerar `C` em instâncias pequenas para obter OPT.
+
 - Resultados coincidem com o modelo base nos casos de regressão conhecidos.
 
 #### T3 — Criar suíte de regressão de corretude para terminais
 
 **Status:** `CONCLUÍDA` — `experiments/cuts/verify_t3_regressao_terminais.py`. Evidência em `docs/technical/reference/regressao-terminais-t3.md`.
+
 **Depende de:** T1, T2
 
 **Descrição:** Transformar os contraexemplos identificados no parecer em uma suíte permanente de regressão.
@@ -468,15 +530,21 @@ Spec detalhada de T1–T5 (estado atual verificado, histórias, critérios EARS)
 **Critérios de aceite:**
 
 - Contém o caso de permanência pura `S=T={v}`.
+
 - Contém o caso de sobreposição parcial.
+
 - Contém a estrela `SharedTerminal`.
+
 - Contém o caminho `a-b-c` discutido no parecer.
+
 - Cada caso é validado no modelo base, no oráculo, na separação fracionária, na validação de cortes e no validador independente.
+
 - A suíte falha automaticamente em caso de divergência.
 
 #### T4 — Revalidar resultados experimentais afetados pelo antigo oráculo
 
 **Status:** `CONCLUÍDA` — auditoria em `docs/technical/reference/revalidacao-oraculo-pos-t1.md`. Nenhum veredito publicado dependeu do defeito a ponto de exigir reexecução.
+
 **Depende de:** T1
 
 **Descrição:** Identificar e reexecutar experimentos em que o oráculo defeituoso possa ter sido aplicado a instâncias com `S∩T ≠ ∅`.
@@ -484,28 +552,39 @@ Spec detalhada de T1–T5 (estado atual verificado, histórias, critérios EARS)
 **Critérios de aceite:**
 
 - E10 e E10b `-rho` são reavaliados.
+
 - É verificado se algum outro experimento utilizou o oráculo em instâncias com sobreposição.
+
 - Os controles MAPF do E12 são conferidos, se aplicável.
+
 - Resultados antigos afetados são marcados como obsoletos ou substituídos.
+
 - O relatório registra claramente o que mudou e o que permaneceu válido.
 
-**Nota de estado:** O E12 já conferiu `S∩T` vazio no próprio CSV e escolheu controles MAPF sem `-rho` (H16). Isso não substitui a reavaliação do E10/E10b.
+**Nota de estado:** a auditoria `revalidacao-oraculo-pos-t1.md` fechou T4. O E12 já havia usado controles sem sobreposição; E10/E10b e os demais usos relevantes foram auditados, e nenhum veredito publicado exigiu reexecução.
 
 #### T5 — Formalizar a prova de equivalência da formulação base
 
 **Status:** `CONCLUÍDA` — `validacao-formulacao-base.md` §5.5. As seis lacunas de A.10 estão marcadas fechadas.
+
 **Depende de:** a rede auxiliar corrigida (T1), no trecho que relaciona formulação e rede. O restante da prova pode ser escrito em paralelo.
-**Continua:** P1
+
+**Fechou:** P1
 
 **Descrição:** Escrever no repositório a prova completa de que a formulação base representa corretamente o MIN-STATION original, incluindo `S∩T`, permanência e trânsito por terminais.
 
 **Critérios de aceite:**
 
 - A prova está versionada em `docs`.
+
 - Trata explicitamente `S∩T`.
+
 - Trata `S=T` e o caso de ótimo zero.
+
 - Justifica a utilização de fluxo contínuo, quando aplicável.
+
 - Relaciona a formulação à rede auxiliar corrigida.
+
 - Todos os lemas necessários estão explicitados, sem depender apenas de testes computacionais.
 
 ### Bloco 2 — Confiabilidade experimental
@@ -517,8 +596,11 @@ Spec detalhada de T6–T11: `specs/bloco2-confiabilidade-experimental/spec.md`.
 #### T6 — Tornar determinística a construção dos modelos
 
 **Status:** `CONCLUÍDA` — `cortes_ordenados` em `harness.py`, `bc_yspace.py` e `yspace.py`. `verify_t6_determinismo.py`: `b-b15-regiao-f4` com 33 cortes, quatro ordens antigas e uma ordem nova nas sementes 0–3.
+
 **Depende de:** nada
-**Continua:** P2
+
+**Fechou:** P2
+
 **Bloqueia:** comparações novas de desempenho
 
 **Descrição:** Eliminar dependências da ordem de `set`, `frozenset` e hash do Python na geração dos modelos.
@@ -526,10 +608,15 @@ Spec detalhada de T6–T11: `specs/bloco2-confiabilidade-experimental/spec.md`.
 **Critérios de aceite:**
 
 - Lista de cortes é explicitamente ordenada.
+
 - Vértices de cada corte são ordenados.
+
 - Coeficientes e demais estruturas relevantes são adicionados em ordem determinística.
+
 - `harness.py` e `bc_yspace.py` são corrigidos.
+
 - Execuções com diferentes `PYTHONHASHSEED` produzem a mesma ordem de construção.
+
 - `PYTHONHASHSEED` passa a ser proteção adicional, e não o mecanismo principal de determinismo.
 
 **Nota de estado:** H04 já ordenou `generate_C4_DM`. O critério acima é o modelo inteiro.
@@ -537,6 +624,7 @@ Spec detalhada de T6–T11: `specs/bloco2-confiabilidade-experimental/spec.md`.
 #### T7 — Avaliar e padronizar orçamento determinístico com `WorkLimit`
 
 **Status:** `CONCLUÍDA` — `decisao-orcamento-worklimit.md`. `WorkLimit` na comparação de métodos, `TimeLimit` no lote de parede. Sem migração dos runners.
+
 **Depende de:** nada
 
 **Descrição:** Verificar a semântica de `WorkLimit` no Gurobi utilizado pelo projeto e decidir se ele deve substituir ou complementar `TimeLimit` nas comparações experimentais.
@@ -544,34 +632,47 @@ Spec detalhada de T6–T11: `specs/bloco2-confiabilidade-experimental/spec.md`.
 **Critérios de aceite:**
 
 - Comportamento do `WorkLimit` é confirmado para a versão do Gurobi do projeto.
+
 - Existe um experimento controlado comparando `TimeLimit` e `WorkLimit`.
+
 - A decisão de uso está documentada.
+
 - O protocolo experimental define explicitamente o orçamento adotado.
+
 - Caso `WorkLimit` não seja adotado, a justificativa fica registrada.
 
 #### T8 — Consolidar o benchmark após a regeneração
 
 **Status:** `CONCLUÍDA` — `grupos_origem.csv`, `duplicata_de`, `verify_t8_consolidacao.py`. R2 (2026-10-04) reatribuiu a partição por grafo de origem (`regra-particao-origem.md`); zero vazamento.
+
 **Depende de:** H17 (já feita)
-**Continua:** P4
+
+**Fechou:** P4
 
 **Descrição:** Reconstruir a visão oficial do benchmark depois do `plano-pos-e13`, eliminando inconsistências e vazamentos entre desenvolvimento e avaliação.
 
 **Critérios de aceite:**
 
 - Novas contagens e classes são registradas.
+
 - A partição passa a ser feita por grafo de origem, e não por variante.
+
 - `hc9u` e `puc-hc9u-seed-r1` deixam de contar como evidências independentes.
+
 - Cada resultado possui hash da instância, versão dos cortes, configuração, seed, origem do certificado e versão do código.
+
 - O manifesto é regenerável sem perder correções anteriores.
 
-**Nota de estado:** Contagens novas e a regeneração do protocolo estão em H17 e em `benchmark-v1.md` §8. Os outros critérios não.
+**Nota de estado:** H17 forneceu a regeneração; T8/R2 fechou os critérios restantes com agrupamento por origem, tratamento de duplicatas, verificação de vazamento e proveniência consolidada.
 
 #### T9 — Ampliar a instrumentação do harness experimental
 
 **Status:** `CONCLUÍDA` — tempos de incumbente em `measure_mip` (`coletar_incumbente`). Inventário em `schema-instrumentacao-mip.md`. Runners históricos não foram reexecutados.
+
 **Depende de:** nada
-**Continua:** P3
+
+**Fechou:** P3
+
 **Bloqueia:** T19
 
 **Descrição:** Adicionar as métricas que hoje impedem distinguir dificuldade primal, dificuldade dual e tamanho da árvore de busca. O parecer registra que `measure_mip` não coleta `NodeCount` nem os tempos dos incumbentes.
@@ -579,20 +680,29 @@ Spec detalhada de T6–T11: `specs/bloco2-confiabilidade-experimental/spec.md`.
 **Critérios de aceite:**
 
 - `NodeCount` é persistido.
+
 - Tempo do primeiro incumbente é persistido.
+
 - Tempo do melhor incumbente é persistido.
+
 - Tempo até a prova do ótimo é registrado quando disponível.
+
 - LB, UB, gap e bound de raiz continuam registrados.
+
 - Tempos de geração, preprocessing, heurística e solver são separados.
+
 - Para CBI, número de iterações e cortes é registrado.
+
 - CSVs/resultados possuem schema documentado.
 
-**Nota de estado:** `node_count` já sai de `measure_mip` (P3). O restante do critério não. O texto do parecer sobre `NodeCount` está desatualizado em relação ao código; o critério permanece até a persistência estar no protocolo, não só no retorno da função.
+**Nota de estado:** T9 está fechada. `node_count` permanece persistido; a coleta de incumbentes foi adicionada a `measure_mip` e o schema/inventário foi documentado. Runners históricos não foram reexecutados.
 
 #### T10 — Padronizar protocolo de comparações pareadas
 
 **Status:** `CONCLUÍDA` — `protocolo-comparacao-pareada.md`, citado em `CLAUDE.md`. A fase longa do E13 fica como efeito conjunto de prazo e `MIPFocus`.
+
 **Depende de:** T7, se o orçamento adotado for `WorkLimit`. Com `TimeLimit`, pode avançar em paralelo.
+
 **Bloqueia:** T16, T19, T21
 
 **Descrição:** Evitar experimentos como o E13, em que mudança de tempo e parâmetro ficam confundidas.
@@ -600,16 +710,23 @@ Spec detalhada de T6–T11: `specs/bloco2-confiabilidade-experimental/spec.md`.
 **Critérios de aceite:**
 
 - Métodos comparados recebem o mesmo orçamento.
+
 - Usam o mesmo start ou todos executam sem start.
+
 - Threads e demais parâmetros relevantes são equivalentes.
+
 - Comparações sensíveis a 1–2 unidades são repetidas com múltiplas seeds.
+
 - `NodeCount` faz parte da comparação.
+
 - Mudança de parâmetro nunca é confundida com mudança de tempo.
+
 - Cada experimento possui um controle explicitamente definido.
 
 #### T11 — Corrigir documentação inconsistente identificada no parecer
 
 **Status:** `CONCLUÍDA` — os sete itens de prosa. `construir_modelo_estendido_vi` não afirma equivalência com o baseline: y só em VI e destino sem saída.
+
 **Depende de:** nada
 
 **Descrição:** Aplicar as correções documentais já enumeradas pelo parecer.
@@ -617,15 +734,22 @@ Spec detalhada de T6–T11: `specs/bloco2-confiabilidade-experimental/spec.md`.
 **Critérios de aceite:**
 
 - `resultados-e13-pli.md` deixa de afirmar que a diferença "não é ruído de execução".
+
 - O confundimento `TimeLimit` × `MIPFocus` do E13 é documentado.
+
 - O resultado Barcelona st25 do E2/E4 é corrigido.
+
 - `CLAUDE.md` contém as contagens corretas.
+
 - Documentos da formulação deixam de assumir indevidamente `S∩T=∅`.
+
 - Comentários de `StayPut` e `SharedTerminal` são corrigidos.
+
 - É adicionado o gabarito de permanência pura.
+
 - `modelo_estendido.py` deixa de ser descrito como equivalente ao baseline.
 
-A inconsistência 9 (`direcoes-pli-min-station.md` §13 sem o veredito do E12) não está nesta lista. Fica visível na seção de inconsistências para não ser tratada como já coberta.
+A atualização de `direcoes-pli-min-station.md` §13 com o veredito do E12 permanece como dívida documental fora do backlog ativo e está registrada na seção de inconsistências/dívidas documentais.
 
 ### Bloco 3 — Pesquisa e instâncias estruturais
 
@@ -634,6 +758,7 @@ Ordem recomendada: BP, HB, E11/C6, SC, teste do CBI, TR, diagnóstico all-V, pil
 #### T12 — Implementar e validar a família estrutural BP
 
 **Status:** `CONCLUÍDA`
+
 **Depende de:** T2 para a enumeração de `C` nos casos pequenos; T6 antes de usar a família em comparação de desempenho
 
 **Descrição:** Criar o gerador da família baseada em Bin Packing para separar experimentalmente dificuldade de UB e dificuldade de LB.
@@ -641,17 +766,25 @@ Ordem recomendada: BP, HB, E11/C6, SC, teste do CBI, TR, diagnóstico all-V, pil
 **Critérios de aceite:**
 
 - Gerador recebe parâmetros `q`, `B`, itens e seed.
+
 - Produz pares "sim" e "não" comparáveis.
+
 - Nas instâncias "sim", existe certificado construtivo independente.
+
 - Nas "não", inexistência de partição é certificada por solver independente.
+
 - Nos casos pequenos, enumeração de `C` confirma o OPT.
+
 - Núcleo reproduz `2n+q`.
+
 - As propriedades matemáticas usadas pelo experimento estão documentadas.
+
 - Gerador é determinístico e produz `sha256`.
 
 #### T13 — Implementar e validar a família estrutural HB
 
 **Status:** `CONCLUÍDA`
+
 **Depende de:** T12 na ordem recomendada; T2 para enumeração
 
 **Descrição:** Implementar os bolsões de Hall para testar deficiências de multiplicidade e verificar se C6 realmente não fecha o gap de primeiro salto.
@@ -659,16 +792,23 @@ Ordem recomendada: BP, HB, E11/C6, SC, teste do CBI, TR, diagnóstico all-V, pil
 **Critérios de aceite:**
 
 - Gerador implementa `HB(q, ndir, p; k, L)`.
+
 - Casos pequenos são validados por enumeração.
+
 - C1 e C2 são vazios nos casos previstos.
+
 - Núcleo e OPT reproduzem as previsões teóricas.
+
 - A fórmula do LB é provada ou corrigida antes do piloto.
+
 - O comportamento do coeficiente C6 em destinos compartilhados é validado.
+
 - Resultado determina se E11 deve permanecer em primeiro salto ou migrar para desigualdades de segunda camada.
 
 #### T14 — Derivar, validar e implementar E11/C6
 
 **Status:** `CONCLUÍDA`
+
 **Depende de:** T13 (HB como controle). Não depende do gatilho do E14.
 
 **Descrição:** Tratar C6 como uma linha matemática independente: derivação, validação própria, implementação, medição. O parecer alerta que `is_valid_cut` atual não serve para RHS `δ ≥ 2`.
@@ -676,11 +816,17 @@ Ordem recomendada: BP, HB, E11/C6, SC, teste do CBI, TR, diagnóstico all-V, pil
 **Critérios de aceite:**
 
 - Desigualdade é formalmente derivada.
+
 - Condições de validade estão documentadas.
+
 - Existe validador específico para `δ ≥ 2`.
+
 - Casos pequenos são enumerados antes de qualquer benchmark.
+
 - Implementação passa no validador.
+
 - HB é utilizada como teste de controle.
+
 - Só depois dessas etapas são executadas medições de desempenho.
 
 **Nota de estado:** H15 encerrou o gatilho "E11 volta se o E14 certificar OPT = UB". Esta tarefa é a linha desacoplada do parecer. Medir desempenho antes da derivação e do validador viola o critério.
@@ -688,6 +834,7 @@ Ordem recomendada: BP, HB, E11/C6, SC, teste do CBI, TR, diagnóstico all-V, pil
 #### T15 — Implementar e validar a família estrutural SC
 
 **Status:** `CONCLUÍDA`
+
 **Depende de:** T6 antes de comparação de desempenho. Na ordem recomendada, depois de T14; a construção do gerador não espera o fim de T14.
 
 **Descrição:** Criar SC-GF2 e seu gêmeo rígido para separar efeitos de gap da relaxação e simetria.
@@ -695,16 +842,23 @@ Ordem recomendada: BP, HB, E11/C6, SC, teste do CBI, TR, diagnóstico all-V, pil
 **Critérios de aceite:**
 
 - Gerador SC-GF2(k) implementado.
+
 - Verificação automática de `OPT=k`.
+
 - Verificação automática da expressão de `LP+C1`.
+
 - Gêmeo rígido preserva tamanho/graus relevantes sem a mesma simetria.
+
 - OPT do gêmeo é certificado por um IP de Set Cover independente.
+
 - `classes_wl` ou mecanismo equivalente registra diferença estrutural.
+
 - Instâncias pequenas reproduzem os resultados esperados.
 
 #### T16 — Executar teste discriminante do núcleo e do CBI
 
 **Status:** `ENCERRADA`
+
 **Depende de:** T1, T10, T9. Só se a linha CBI continuar relevante depois do E12.
 
 **Descrição:** Separar a contribuição do núcleo inteiro, do oráculo e do processo iterativo do CBI, evitando concluir que "CBI venceu" quando o ganho veio apenas do núcleo.
@@ -712,10 +866,15 @@ Ordem recomendada: BP, HB, E11/C6, SC, teste do CBI, TR, diagnóstico all-V, pil
 **Critérios de aceite:**
 
 - COMP, núcleo isolado e CBI são executados separadamente.
+
 - Todos recebem o mesmo orçamento total.
+
 - Tempo do primal externo entra no orçamento quando aplicável.
+
 - Número de iterações e cortes é registrado.
+
 - LB produzido pelo núcleo é comparado diretamente com COMP.
+
 - O relatório atribui qualquer ganho ao componente correspondente.
 
 **Nota de estado:** H16 já fez esse desenho em PUC/PUCN e encerrou A2 para Das. Esta tarefa não repete o E12. Aplica-se a famílias novas, se a linha seguir.
@@ -723,6 +882,7 @@ Ordem recomendada: BP, HB, E11/C6, SC, teste do CBI, TR, diagnóstico all-V, pil
 #### T17 — Implementar e validar a família estrutural TR
 
 **Status:** `ENCERRADA`
+
 **Depende de:** a linha CBI continuar relevante depois do E12 (H16). Sem isso, o gerador não avança para benchmark.
 
 **Descrição:** Criar os corredores entrelaçados para testar se múltiplos ótimos inviáveis do núcleo degradam o CBI enquanto o COMP permanece simples.
@@ -730,16 +890,23 @@ Ordem recomendada: BP, HB, E11/C6, SC, teste do CBI, TR, diagnóstico all-V, pil
 **Critérios de aceite:**
 
 - Gerador `TR(k,L,r,σ)` implementado.
+
 - OPT reproduz `⌈D/r⌉−1`.
+
 - Para casos pequenos, a contagem de ótimos do núcleo é verificada.
+
 - A quantidade de soluções viáveis dentro dos ótimos é medida.
+
 - Variantes com e sem degraus são geradas.
+
 - CBI registra iterações por valor de `R`.
+
 - A tarefa só avança para benchmark se a linha CBI continuar relevante após E12.
 
 #### T18 — Avaliar desagregação all-V como diagnóstico de LP
 
 **Status:** `ENCERRADA`
+
 **Depende de:** nada. Não é candidata a método de produção neste passo.
 
 **Descrição:** Implementar a formulação desagregada apenas como ferramenta de diagnóstico em instâncias pequenas, antes de considerá-la uma alternativa computacional completa.
@@ -747,10 +914,15 @@ Ordem recomendada: BP, HB, E11/C6, SC, teste do CBI, TR, diagnóstico all-V, pil
 **Critérios de aceite:**
 
 - Formulação implementada fielmente.
+
 - Comparação inicial restrita a instâncias pequenas.
+
 - LP da desagregada é comparado com LP do COMP.
+
 - Custo em variáveis/restrições é registrado.
+
 - Nenhuma conclusão de desempenho é baseada apenas em força de LP.
+
 - Só há expansão caso apareça ganho estrutural relevante.
 
 Formulação experimental, comparada à base. Não substitui o baseline.
@@ -758,6 +930,7 @@ Formulação experimental, comparada à base. Não substitui o baseline.
 #### T19 — Executar piloto das famílias estruturais
 
 **Status:** `CONCLUÍDA`
+
 **Depende de:** T9, T10, T12, T13, T15 e, onde o critério cita o método, T14, T16 e T17
 
 **Descrição:** Executar a Fase P pré-registrada com BP, SC, HB e TR. O parecer define uma matriz inicial de 33 instâncias e os métodos COMP, BASE-C, núcleo, CBI e posteriormente C6.
@@ -765,16 +938,23 @@ Formulação experimental, comparada à base. Não substitui o baseline.
 **Critérios de aceite:**
 
 - Matriz contém as 33 instâncias previstas.
+
 - Parâmetros são fixados antes de observar resultados.
+
 - COMP, BASE-C e núcleo são executados em todas as células aplicáveis.
+
 - CBI só é executado após a correção/regressão do oráculo.
+
 - C6 só é executado após validação do E11.
+
 - Mesmo orçamento e condições são usados entre métodos.
+
 - Todas as métricas experimentais da Tarefa 9 são persistidas.
 
 #### T20 — Aplicar critérios de promoção ou descarte das famílias
 
 **Status:** `CONCLUÍDA`
+
 **Depende de:** T19
 
 **Descrição:** Evitar continuar investindo em famílias que apenas crescem em tamanho sem revelar um mecanismo estrutural. O parecer já pré-registra critérios de promoção à Fase E.
@@ -782,16 +962,23 @@ Formulação experimental, comparada à base. Não substitui o baseline.
 **Critérios de aceite:**
 
 - As propriedades previstas aparecem em todas as instâncias do piloto.
+
 - O fenômeno aparece em pelo menos 2 dos 3 níveis de tamanho.
+
 - Resultado é reproduzido em 3 seeds quando necessário.
+
 - A família discrimina pelo menos dois métodos ou famílias de cortes.
+
 - Critério específico de BP, SC, HB ou TR é aplicado.
+
 - Decisão final é registrada como `PROMOVER`, `DESCARTAR` ou `REVISAR TEORIA/GERADOR`.
+
 - Critério não é alterado retroativamente depois de observar resultados.
 
 #### T21 — Executar Fase E das famílias aprovadas
 
 **Status:** `CONCLUÍDA`
+
 **Depende de:** T20, T8 (separação desenvolvimento/avaliação), T10
 
 **Descrição:** Expandir somente as famílias que sobreviverem ao piloto, mantendo separação rígida entre desenvolvimento e avaliação.
@@ -799,11 +986,17 @@ Formulação experimental, comparada à base. Não substitui o baseline.
 **Critérios de aceite:**
 
 - Somente famílias aprovadas na Tarefa 20 entram.
+
 - São adicionados dois níveis de tamanho.
+
 - São utilizadas 5 seeds de geração.
+
 - São utilizadas 3 seeds do solver.
+
 - Avaliação usa seeds novas, não usadas no desenvolvimento.
+
 - Construtores/variantes relacionados permanecem no mesmo lado da divisão.
+
 - Nenhum parâmetro é escolhido depois de observar qual método venceu.
 
 ### Bloco 4 — Posicionamento científico
@@ -811,6 +1004,7 @@ Formulação experimental, comparada à base. Não substitui o baseline.
 #### T22 — Mapear sobreposição com o artigo IJCAI 2026 e atualizar contribuição
 
 **Status:** `CONCLUÍDA` (2026-10-03). Evidência: `docs/technical/reference/overlap-ijcai2026-min-station.md`; spec em `specs/bloco4-posicionamento-cientifico/spec.md`.
+
 **Depende de:** nada para o levantamento. A narrativa do artigo espera o restante do backlog só no que for afirmação de resultado novo.
 
 **Descrição:** Revisar explicitamente o que já aparece no artigo de Das et al. de 2026 e o que permanece contribuição própria do projeto.
@@ -818,12 +1012,19 @@ Formulação experimental, comparada à base. Não substitui o baseline.
 **Critérios de aceite:**
 
 - Artigo IJCAI 2026 é incluído na bibliografia do projeto. — Feito: `overlap` §1; `source-map.md` §4; `RESEARCH.md` §7; `project-overview.md` §7.
+
 - É criada uma tabela "resultado do projeto × resultado IJCAI". — Feito: `overlap` §4 (matriz), §4.1 (cortes), §4.2 (classes e parâmetros).
+
 - Matching, `G^r` e argumentos de Hall são comparados. — Feito: `overlap` §4, linhas `G^r`, matching, Hall. Veredito: `SAME`/`IMPLEMENTATION`/`DIRECT CONSEQUENCE`.
+
 - As reduções de Set Cover (Teorema 3) e Bin Packing (Teorema 4) são comparadas com as famílias SC e BP. — Acrescentado na execução (a spec identificou a lacuna): `overlap` §4; BP e SC são instanciações, não construções novas.
+
 - A afirmação da SBPO sobre ausência de PLI é verificada por busca registrada. — Acrescentado: `overlap` §2 (LC-1), §7.1 #1–#2. Resultado: nenhuma PLI para o MIN-STATION no conjunto verificado; a afirmação fica qualificada por escopo e por variante.
+
 - Nenhuma ideia já existente na literatura é apresentada como contribuição inédita. — Feito: `overlap` §6, status `REMOVE` para `G^r`, matching, BP e SC como construções, C1–C2 como teoria.
+
 - São identificadas claramente as contribuições ainda sustentáveis. — Feito: `overlap` §6 (A–M com categoria T1–T5 e status), §6.1 (negativos), §7.5 (mapa de dependência).
+
 - A narrativa do artigo é reorganizada em torno de cobertura × compatibilidade coletiva, conforme proposto no parecer. — **Subsidiado, não executado:** a spec coloca a redação do artigo fora do escopo de T22. O subsídio está em `overlap` §9, com a ligação Set Cover ↔ núcleo de cobertura marcada como interpretativa até existir prova. A redação é tarefa separada.
 
 **Pendências derivadas (edição de documentos científicos, passo posterior à análise):** lista em `overlap` §7.1, itens marcados "Passo posterior" (`base-formulation.md`, `direcoes-pli-min-station.md`, `familias-estruturais.md`, `min-station-domain.md`, `docs/technical/README.md`, `benchmark-v1.md`, ponteiro no parecer §6). Fora do escopo de T22, registradas em `overlap` §7.4: `open-questions.md` Q1 e cabeçalho de `direcoes` ainda dizem que todas as instâncias têm `S ∩ T = ∅`.
@@ -832,7 +1033,7 @@ Formulação experimental, comparada à base. Não substitui o baseline.
 
 ## Fora do backlog ativo
 
-O parecer pede para não transformar em tarefa agora, e este arquivo obedece:
+O parecer pede para não transformar estas linhas em tarefa agora, e este arquivo obedece:
 
 - novos ajustes da mesma Lagrangeana;
 - Benders clássico;
@@ -843,4 +1044,26 @@ O parecer pede para não transformar em tarefa agora, e este arquivo obedece:
 - geração de colunas;
 - FPT, modular-width, vertex cover e algoritmo de árvores, até o parâmetro justificar.
 
-Estão na tabela de linhas pausadas ou encerradas, com a evidência que sustenta a pausa.
+Também permanecem fora do backlog ativo:
+
+- edições "Passo posterior" de `overlap` §7.1;
+- atualização editorial de Q1 para distinguir a rodada E5 do benchmark-v1 posterior;
+- atualização do ranking A2 em `direcoes-pli-min-station.md` §13 com o veredito do E12;
+- redação/reorganização do artigo;
+- qualquer nova linha R1–R13/Linha F ainda não encerrada no `plano-proxima-fase.md`.
+
+Esses itens não tornam T1–T22 incompletas. As linhas de pesquisa pausadas só reabrem mediante nova evidência ou decisão explícita.
+
+---
+
+## Estado de fechamento
+
+**Backlog ativo T1–T22:** `FECHADO` em 2026-10-07.
+
+**P1–P4:** `CONCLUÍDA`.
+
+**R11 / Spec D:** `CONCLUÍDA — CONFIRMED DIVERGENCE`.
+
+**Linhas pausadas/encerradas:** permanecem fora da fila ativa conforme a evidência registrada.
+
+**Programa posterior R1–R13 e Linha F:** controlado por `docs/technical/plans/plano-proxima-fase.md`; não é declarado integralmente concluído por este arquivo.
