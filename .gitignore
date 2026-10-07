@@ -36,6 +36,7 @@ gurobi.env
 # Os arquivos-fonte que o spec.csv realmente consome (32 arquivos, 9,4 MB) são
 # versionados explicitamente com `git add -f`, para o benchmark continuar
 # regenerável a partir do repositório.
+raw-data/
 raw-data/boeing/
 raw-data/dimacs11/
 raw-data/mapf/
