@@ -102,13 +102,15 @@ def _configs_qij(W, S, T, neigh):
     return qs
 
 
-def construir_modelo_fcc(S, T, V, A_r, forma='qij', max_W=200000, y_fixo=None):
+def construir_modelo_fcc(
+    S, T, V, A_r, forma='qij', max_W=200000, y_fixo=None, integer_y=False,
+):
     """Devolve (modelo, y, extra, meta). extra depende da forma.
 
     forma: 'qij' (F-CC original) ou 'separada' (λ_W, α, β).
-    y_fixo: dict v -> 0/1 para teste de viabilidade; senão y contínuo em [0,1]
-    para o LP, ou binário se y_fixo is None and integer_y=False is handled
-    by caller via relax(). Aqui y é contínuo [0,1] salvo y_fixo.
+    y_fixo: dict v -> 0/1 para teste de viabilidade.
+    integer_y: quando True e y_fixo é None, cria y binário para OPT exacto.
+    O default False preserva a F-CC LP usada por F3.
     """
     if forma not in ('qij', 'separada'):
         raise ValueError(f'forma desconhecida: {forma!r}')
@@ -132,7 +134,10 @@ def construir_modelo_fcc(S, T, V, A_r, forma='qij', max_W=200000, y_fixo=None):
     modelo = Model(f'F-CC-{forma}')
     modelo.Params.OutputFlag = 0
     if y_fixo is None:
-        y = {v: modelo.addVar(lb=0.0, ub=1.0, name=f'y[{v}]') for v in V}
+        if integer_y:
+            y = {v: modelo.addVar(vtype=GRB.BINARY, name=f'y[{v}]') for v in V}
+        else:
+            y = {v: modelo.addVar(lb=0.0, ub=1.0, name=f'y[{v}]') for v in V}
     else:
         y = {}
         for v in V:
@@ -217,6 +222,7 @@ def construir_modelo_fcc(S, T, V, A_r, forma='qij', max_W=200000, y_fixo=None):
         'n_W': len(Ws),
         'n_D': len(D),
         'forma': forma,
+        'integer_y': bool(integer_y),
         'n_vars': modelo.NumVars,
         'n_cons': modelo.NumConstrs,
     }
@@ -251,3 +257,34 @@ def fcc_y_viavel(S, T, V, A_r, C, forma='qij', max_W=200000):
     ok = modelo.Status == GRB.OPTIMAL
     modelo.dispose()
     return ok
+
+
+def opt_fcc(
+    S, T, V, A_r, forma='separada', max_W=200000, seed=42, threads=1,
+    time_limit=1800,
+):
+    """Resolve a F-CC com ``y`` binário e exige prova de optimalidade.
+
+    É um helper de referência para R11. Não altera ``lp_fcc`` nem o protocolo
+    F3. ``CapExceeded`` continua sendo propagado. Status diferente de
+    ``GRB.OPTIMAL`` gera ``RuntimeError`` e nunca devolve incumbente como OPT.
+    """
+    modelo, _y, _extra, meta = construir_modelo_fcc(
+        S, T, V, A_r, forma=forma, max_W=max_W, integer_y=True,
+    )
+    modelo.Params.Seed = seed
+    modelo.Params.Threads = threads
+    modelo.Params.OutputFlag = 0
+    if time_limit is not None:
+        modelo.Params.TimeLimit = float(time_limit)
+    modelo.optimize()
+    status = int(modelo.Status)
+    meta = dict(meta)
+    meta['status'] = status
+    meta['runtime'] = float(getattr(modelo, 'Runtime', 0.0))
+    if status != GRB.OPTIMAL:
+        modelo.dispose()
+        raise RuntimeError(f'F-CC IP status {status}')
+    val = float(modelo.ObjVal)
+    modelo.dispose()
+    return val, meta

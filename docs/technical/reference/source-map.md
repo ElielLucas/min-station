@@ -129,6 +129,10 @@ Usar para:
 
 A prova no `.md` está em esboço e tem casos a testar (`plano-proxima-fase.md` §5). Não é baseline. Não define formulação nem protocolo experimental.
 
+### R11 (leituras, preparação e pré-registro, 2026-10-06→07)
+
+Interpretação executável: `docs/technical/reference/leituras-r11-certificadores.md`. Contrato do lote: `docs/technical/reference/pre-registro-r11-certificadores.md`. Implementação preparatória, ainda **não executada**: `experiments/structural/path_cycle.py`, `spider.py`, `r11_catalog.py`, `prepare_r11.py`, `verify_r11.py`, `run_r11.py`; cruzamento F-CC binário em `experiments/alternative-formulations/fcc.py::opt_fcc`. Spec: `specs/proxima-fase-d-certificadores-classes-especiais/spec.md`. Esses artefatos não substituem Das nem o `.md` das aranhas e ainda não constituem evidência experimental.
+
 ## 6. Formulações em avaliação (F-CC e F-C3)
 
 **Arquivos:**
@@ -198,6 +202,8 @@ Não existe uma precedência única para tudo. Use a fonte adequada:
 | O que o software realmente executa hoje? | Código + configuração da execução |
 | Quais pontos ainda estão abertos? | `open-questions.md` |
 | O algoritmo de aranhas e o artigo de Pereira & Ravelo? | `pereira-ravelo-2026-aranhas.md` |
+| Como ler os algoritmos de caminho/ciclo/aranha para implementar R11? | `leituras-r11-certificadores.md` |
+| Qual é o contrato experimental futuro de R11 (ainda sem CSV)? | `pre-registro-r11-certificadores.md` |
 | Qual é a F-CC / F-C3 (em avaliação, não baseline)? | `formulacao-fcc-configuracoes-conectadas.md`, `formulacao-fc3-consistencia-trios.md` |
 
 ## 10. Regra para novos artigos e experimentos

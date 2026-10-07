@@ -5,7 +5,7 @@ import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-GERADOR_VERSAO = '1'
+GERADOR_VERSAO = '2'
 
 
 def commit_atual():
@@ -24,7 +24,11 @@ def sha256_bytes(dados):
 
 
 def texto_instancia(S, T, V, arestas, r, meta):
-    """arestas: pares não dirigidos. O arquivo grava os dois sentidos, ordenados."""
+    """Serializa uma instância estrutural.
+
+    ``arestas`` contém pares não dirigidos. O arquivo grava os dois sentidos,
+    ordenados, com peso unitário para manter compatibilidade com ``ler_instancia``.
+    """
     arcos = []
     for u, v in arestas:
         a, b = (u, v) if str(u) <= str(v) else (v, u)
@@ -71,10 +75,17 @@ def adjacencia(arestas):
     return adj
 
 
-def conferir_fidelidade(S, T, V, arestas, r):
+def conferir_fidelidade(S, T, V, arestas, r, permitir_intersecao=False):
+    """Confere os invariantes comuns das instâncias estruturais.
+
+    Historicamente BP/HB/SC/TR foram construídas com ``S ∩ T = ∅``. O default
+    continua preservando essa semântica. R11 precisa exercitar o MIN-STATION
+    original, que permite interseção, e deve optar explicitamente por
+    ``permitir_intersecao=True``.
+    """
     if len(S) != len(T):
         raise ValueError(f'|S|={len(S)} |T|={len(T)}')
-    if set(S) & set(T):
+    if not permitir_intersecao and set(S) & set(T):
         raise ValueError('S∩T não é vazio')
     if float(r) != int(r) or int(r) < 1:
         raise ValueError(f'r={r} não é inteiro positivo')
@@ -83,6 +94,8 @@ def conferir_fidelidade(S, T, V, arestas, r):
         raise ValueError('terminal fora de V')
     if len(vistos) != len(V):
         raise ValueError('V tem repetição')
+    if len(set(S)) != len(S) or len(set(T)) != len(T):
+        raise ValueError('S ou T tem repetição')
     for u, v in arestas:
         if u == v or u not in vistos or v not in vistos:
             raise ValueError(f'aresta inválida {u}-{v}')

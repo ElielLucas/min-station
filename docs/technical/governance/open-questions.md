@@ -156,3 +156,17 @@ na conversão, ou (c) tirá-las das conclusões sobre o problema de Das.
 sobre Das; versão retrabalhada (não dirigida, com subdivisão e terminais fora das folhas) no
 lote 2 do benchmark-v1.
 
+## Q8 — Os algoritmos de caminhos, ciclos e aranhas concordam com a PLI?
+
+**Status:** leituras fechadas e implementação preparatória escrita; verificação, materialização e comparação experimental **não** feitas.
+
+A pergunta é a Q-8 de `plano-proxima-fase.md`. Interpretação executável:
+`docs/technical/reference/leituras-r11-certificadores.md`. Contrato do lote:
+`docs/technical/reference/pre-registro-r11-certificadores.md`. Código preparado,
+sem evidência ainda: `experiments/structural/{path_cycle,spider,r11_catalog,prepare_r11,verify_r11,run_r11}.py`.
+
+Não tratar as leituras como prova de correção nem como erratum. VAL-A2 já
+regista desacordo de contagem entre Algorithm 1 / Lemma 2 de Das e a
+definição (Problem 1). R11 mede isso no protocolo; não “corrige” o
+certificador para coincidir com o baseline.
+
