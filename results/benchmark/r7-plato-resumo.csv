@@ -1,0 +1,6 @@
+instancia,opt_core,n_gravados,truncado,n_viaveis_oracle,n_inviaveis,n_hdesc,n_inviaveis_nao_hdesc,n_Z_distintos,max_elimina_um_Z
+TR-k2-L5-r2,3.0,8,0,2,6,6,0,4,2
+"BP-nao-[3,1]-q2",6.0,2,0,0,2,2,0,2,1
+mapf-maze-32-32-2-m10-f4,5.0,200,1,0,200,200,0,55,49
+lin-lin03-regiao-f4,5.0,200,1,0,200,200,0,65,17
+puc-cc9-2p-seed-r1,27.0,200,1,0,200,200,0,66,21

@@ -54,12 +54,12 @@ preference rather than by evidence.
 
 ## Goals
 
-- [ ] `Γ` reported for every sampled instance in exactly one class: exact, lower bound, upper bound
+- [x] `Γ` reported for every sampled instance in exactly one class: exact, lower bound, upper bound
       or unknown — an interval is never presented as a value.
-- [ ] A single-factor primal-slack test (control vs `MIPFocus = 1`, same budget) with 3 seeds.
-- [ ] A plateau anatomy on 3–5 representative instances, with hypothesis H-desc classified as
+- [x] A single-factor primal-slack test (control vs `MIPFocus = 1`, same budget) with 3 seeds.
+- [x] A plateau anatomy on 3–5 representative instances, with hypothesis H-desc classified as
       CONFIRMED, PARTIALLY CONFIRMED or REFUTED.
-- [ ] Gate G1 issued by a pre-registered rule.
+- [x] Gate G1 issued by a pre-registered rule.
 
 ## Out of Scope
 
@@ -255,25 +255,25 @@ spec, if any, is opened next.
 
 | Requirement ID | Story | Phase | Status |
 |---|---|---|---|
-| DIAG-01 | P1: R5 | Design | Pending |
-| DIAG-02 | P1: R5 | Design | Pending |
-| DIAG-03 | P1: R5 | Design | Pending |
-| DIAG-04 | P1: R5 | Design | Pending |
-| DIAG-05 | P1: R6 | Design | Pending |
-| DIAG-06 | P1: R6 | Design | Pending |
-| DIAG-07 | P1: R6 | Design | Pending |
-| DIAG-08 | P1: R6 | Design | Pending |
-| DIAG-09 | P1: R6 | Design | Pending |
-| DIAG-10 | P1: R7 | Design | Pending |
-| DIAG-11 | P1: R7 | Design | Pending |
-| DIAG-12 | P1: R7 | Design | Pending |
-| DIAG-13 | P1: R7 | Design | Pending |
-| DIAG-14 | P1: R7 | Design | Pending |
-| DIAG-15 | P1: R7 | Design | Pending |
-| DIAG-16 | P1: G1 | Design | Pending |
-| DIAG-17 | P1: G1 | Design | Pending |
-| DIAG-18 | P1: G1 | Design | Pending |
-| DIAG-19 | P1: G1 | Design | Pending |
+| DIAG-01 | P1: R5 | Design | Complete |
+| DIAG-02 | P1: R5 | Design | Complete |
+| DIAG-03 | P1: R5 | Design | Complete |
+| DIAG-04 | P1: R5 | Design | Complete |
+| DIAG-05 | P1: R6 | Design | Complete |
+| DIAG-06 | P1: R6 | Design | Complete |
+| DIAG-07 | P1: R6 | Design | Complete |
+| DIAG-08 | P1: R6 | Design | Complete |
+| DIAG-09 | P1: R6 | Design | Complete |
+| DIAG-10 | P1: R7 | Design | Complete |
+| DIAG-11 | P1: R7 | Design | Complete |
+| DIAG-12 | P1: R7 | Design | Complete |
+| DIAG-13 | P1: R7 | Design | Complete |
+| DIAG-14 | P1: R7 | Design | Complete |
+| DIAG-15 | P1: R7 | Design | Complete |
+| DIAG-16 | P1: G1 | Design | Complete |
+| DIAG-17 | P1: G1 | Design | Complete |
+| DIAG-18 | P1: G1 | Design | Complete |
+| DIAG-19 | P1: G1 | Design | Complete |
 
 **Coverage:** 19 total, 0 mapped to tasks (`tasks.md` not created in this round), 19 unmapped.
 
@@ -281,10 +281,10 @@ spec, if any, is opened next.
 
 ## Success Criteria
 
-- [ ] Every `Γ` reported with its class; no interval presented as a value.
-- [ ] Primal test with one factor and 3 seeds.
-- [ ] H-desc classified with counts; any repeatable structure written as a hypothesis.
-- [ ] G1 issued by the pre-registered rule.
+- [x] Every `Γ` reported with its class; no interval presented as a value.
+- [x] Primal test with one factor and 3 seeds.
+- [x] H-desc classified with counts; any repeatable structure written as a hypothesis.
+- [x] G1 issued by the pre-registered rule.
 
 ---
 
@@ -300,12 +300,12 @@ spec, if any, is opened next.
 
 ## Future conditional work — BLOCKED
 
-- **M-A / R10, compatibility inequalities** (prefix `COMPAT-*`): released if G1 = compatibility.
+- **M-A / R10, compatibility inequalities** (prefix `COMPAT-*`): **released** by G1 (`decisao-g1.md`).
   Mandatory flow: derivation → proof → validator → enumeration → Spec D certifiers → effect on `Γ`
-  with SC as control → D/A development. At most 3 cycles.
-- **M-F / R8 and R9** (prefixes `CG-*`): released only if G1 = compatibility **and** Spec B
-  GF1 = PASS.
-- **M-B / R12, matheuristic** (prefix `PRIMAL-*`): released only if G1 = primal.
+  with SC as control → D/A development. At most 3 cycles. Not implemented in this spec.
+- **M-F / R8 and R9** (prefixes `CG-*`): **released** (G1 = compatibility and Spec B GF1 = PASS).
+  F-C3 trio networks remain OPEN.
+- **M-B / R12, matheuristic** (prefix `PRIMAL-*`): still blocked (G1 is not primal).
 - **R13, confirmation** (prefix `CONF-*`): released only when a method passes G2 (effect on ≥ 2 size
   levels and 3 seeds on the development partition).
 

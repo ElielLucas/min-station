@@ -1,0 +1,62 @@
+nome,amostra,familia,classe_gamma,opt,opt_core,gamma,gamma_lo,gamma_hi,fonte_opt,fonte_core,lb_star,ub_star,status_core,n,m,nota
+bip42p.txt,exact-F-legado,bip42p,unknown,,,,,,,linha_base.nucleo_nao_otimo,35,43,16,1200,100,núcleo sem prova
+hc10p.txt,exact-F-legado,hc10p,unknown,,,,,,,linha_base.nucleo_nao_otimo,56,77,16,1024,256,núcleo sem prova
+hc11p.txt,exact-F-legado,hc11p,unknown,,,,,,,linha_base.nucleo_nao_otimo,97,161,16,2048,512,núcleo sem prova
+hc12p.txt,exact-F-legado,hc12p,unknown,,,,,,,linha_base.nucleo_nao_otimo,171,376,16,4096,1024,núcleo sem prova
+hc9u.txt,interval-F-legado,hc9u,interval,,32,,0,9,LB*/UB* Spec A R4,linha_base.nucleo,32,41,2,512,128,OPT não provado; intervalo, não valor
+mapf-maze-32-32-2-m10-f4.txt,exact-F-legado,mapf,exact,7,5,2,,,linha_base LB*=UB*,linha_base.nucleo,7,7,2,666,10,
+mapf-maze-32-32-2-m25-f2.txt,exact-F-legado,mapf,exact,5,3,2,,,linha_base LB*=UB*,linha_base.nucleo,5,5,2,666,25,
+mapf-room-32-32-4-m10-f8.txt,interval-DA,mapf,interval,,13,,3,5,LB*/UB* Spec A R4,linha_base.nucleo,16,18,2,682,10,"OPT não provado; intervalo, não valor"
+pace18-t2-001-regiao-f2.txt,exact-F-legado,pace18,exact,3,2,1,,,linha_base LB*=UB*,linha_base.nucleo,3,3,2,74,12,
+pace18-t2-061-regiao-f4.txt,exact-F-legado,pace18,exact,7,6,1,,,linha_base LB*=UB*,linha_base.nucleo,7,7,2,528,42,
+pace18-t2-081-regiao-f2.txt,exact-F-legado,pace18,exact,3,2,1,,,linha_base LB*=UB*,linha_base.nucleo,3,3,2,237,38,
+pace18-t2-141-regiao-f4.txt,interval-DA,pace18,interval,,8,,2,4,LB*/UB* Spec A R4,linha_base.nucleo,10,12,2,294,19,"OPT não provado; intervalo, não valor"
+pace18-t2-181-regiao-f2.txt,exact-F-legado,pace18,exact,2,2,0,,,linha_base LB*=UB*,linha_base.nucleo,2,2,2,757,29,
+puc-bip42p-regiao-f2.txt,interval-DA,puc,unknown,,,,,,,linha_base.nucleo_nao_otimo,35,43,16,1200,100,núcleo sem prova
+puc-bip42p-seed-r1.txt,interval-DA,puc,unknown,,,,,,,linha_base.nucleo_nao_otimo,35,43,16,1200,100,núcleo sem prova
+puc-cc10-2u-regiao-f2.txt,exact-F-legado,puc,exact,2,2,0,,,linha_base LB*=UB*,linha_base.nucleo,2,2,2,1024,67,
+puc-cc10-2u-seed-r1.txt,interval-DA,puc,interval,,52,,1,5,LB*/UB* Spec A R4,linha_base.nucleo,53,57,2,1024,67,"OPT não provado; intervalo, não valor"
+puc-cc11-2u-seed-r1.txt,interval-DA,puc,interval,,92,,0,9,LB*/UB* Spec A R4,linha_base.nucleo,92,101,2,2048,122,"OPT não provado; intervalo, não valor"
+puc-cc12-2u-seed-r1.txt,interval-DA,puc,interval,,164,,1,29,LB*/UB* Spec A R4,linha_base.nucleo,165,193,2,4096,236,"OPT não provado; intervalo, não valor"
+puc-cc6-3p-seed-r1.txt,exact-F-legado,puc,exact,32,31,1,,,linha_base LB*=UB*,linha_base.nucleo,32,32,2,729,38,
+puc-cc9-2p-seed-r1.txt,interval-DA,puc,interval,,27,,3,4,LB*/UB* Spec A R4,linha_base.nucleo,30,31,2,512,32,"OPT não provado; intervalo, não valor"
+puc-hc10p-regiao-f4.txt,exact-F-legado,puc,exact,6,6,0,,,linha_base LB*=UB*,linha_base.nucleo,6,6,2,1024,256,
+puc-hc9u-regiao-f2.txt,exact-F-legado,puc,exact,5,4,1,,,linha_base LB*=UB*,linha_base.nucleo,5,5,2,512,128,
+puc-w23c23-intercalado-f2-rho.txt,exact-F-legado,puc,exact,128,128,0,,,linha_base LB*=UB*,linha_base.nucleo,128,128,2,1081,276,
+puc-w23c23-seed-r1.txt,interval-DA,puc,interval,,139,,1,17,LB*/UB* Spec A R4,linha_base.nucleo,140,156,2,1081,276,"OPT não provado; intervalo, não valor"
+pucn-cc3-10n-seed-r1.txt,interval-DA,pucn,interval,,18,,0,8,LB*/UB* Spec A R4,linha_base.nucleo,18,26,2,1000,25,"OPT não provado; intervalo, não valor"
+pucn-cc3-5n-seed-r1.txt,exact-F-legado,pucn,exact,8,5,3,,,linha_base LB*=UB*,linha_base.nucleo,8,8,2,125,6,
+pucn-cc5-3n-seed-r1.txt,exact-F-legado,pucn,exact,15,14,1,,,linha_base LB*=UB*,linha_base.nucleo,15,15,2,243,13,
+pucn-cc6-2n-seed-r1.txt,exact-F-legado,pucn,exact,6,4,2,,,linha_base LB*=UB*,linha_base.nucleo,6,6,2,64,6,
+b-b06-intercalado-f2.txt,exact-F-legado,b,exact,1,1,0,,,linha_base LB*=UB*,linha_base.nucleo,1,1,2,50,12,
+b-b06-regiao-f2.txt,exact-F-legado,b,exact,3,3,0,,,linha_base LB*=UB*,linha_base.nucleo,3,3,2,50,12,
+b-b09-intercalado-f2-rho.txt,exact-F-legado,b,exact,2,2,0,,,linha_base LB*=UB*,linha_base.nucleo,2,2,2,75,19,
+b-b12-intercalado-f2.txt,exact-F-legado,b,exact,7,7,0,,,linha_base LB*=UB*,linha_base.nucleo,7,7,2,75,19,
+b-b12-regiao-f2.txt,exact-F-legado,b,exact,3,3,0,,,linha_base LB*=UB*,linha_base.nucleo,3,3,2,75,19,
+b-b15-regiao-f4.txt,exact-F-legado,b,exact,9,8,1,,,linha_base LB*=UB*,linha_base.nucleo,9,9,2,100,25,
+b-b18-intercalado-f2.txt,exact-F-legado,b,exact,1,1,0,,,linha_base LB*=UB*,linha_base.nucleo,1,1,2,100,25,
+b-b18-regiao-f2.txt,exact-F-legado,b,exact,2,2,0,,,linha_base LB*=UB*,linha_base.nucleo,2,2,2,100,25,
+i-i080-001-regiao-f2.txt,exact-F-legado,i,exact,1,1,0,,,linha_base LB*=UB*,linha_base.nucleo,1,1,2,80,3,
+i-i080-041-regiao-f2.txt,exact-F-legado,i,exact,1,1,0,,,linha_base LB*=UB*,linha_base.nucleo,1,1,2,80,3,
+i-i080-301-regiao-f2.txt,exact-F-legado,i,exact,5,5,0,,,linha_base LB*=UB*,linha_base.nucleo,5,5,2,80,10,
+i-i080-341-intercalado-f2.txt,exact-F-legado,i,exact,2,2,0,,,linha_base LB*=UB*,linha_base.nucleo,2,2,2,80,10,
+i-i160-301-intercalado-f2-rho.txt,exact-F-legado,i,exact,5,5,0,,,linha_base LB*=UB*,linha_base.nucleo,5,5,2,160,20,
+i-i160-301-regiao-f2.txt,exact-F-legado,i,exact,4,4,0,,,linha_base LB*=UB*,linha_base.nucleo,4,4,2,160,20,
+lin-lin01-regiao-f2.txt,exact-F-legado,lin,exact,2,2,0,,,linha_base LB*=UB*,linha_base.nucleo,2,2,2,486,2,
+lin-lin03-regiao-f4.txt,exact-F-legado,lin,exact,7,5,2,,,linha_base LB*=UB*,linha_base.nucleo,7,7,2,484,4,
+lin-lin06-intercalado-f2.txt,exact-F-legado,lin,exact,3,3,0,,,linha_base LB*=UB*,linha_base.nucleo,3,3,2,649,7,
+lin-lin06-regiao-f4.txt,exact-F-legado,lin,exact,7,6,1,,,linha_base LB*=UB*,linha_base.nucleo,7,7,2,649,7,
+urb-apia-m10-f8.txt,exact-F-legado,urb,exact,8,8,0,,,linha_base LB*=UB*,linha_base.nucleo,8,8,2,1618,10,
+urb-belize_city-m25-f4.txt,exact-F-legado,urb,exact,4,4,0,,,linha_base LB*=UB*,linha_base.nucleo,4,4,2,2306,25,
+urb-st_helier-m10-f4.txt,exact-F-legado,urb,exact,4,4,0,,,linha_base LB*=UB*,linha_base.nucleo,4,4,2,1345,10,
+vienna-I056-regiao-f4.txt,interval-DA,vienna,interval,,9,,0,2,LB*/UB* Spec A R4,linha_base.nucleo,9,11,2,1991,25,"OPT não provado; intervalo, não valor"
+vienna-I065-intercalado-f2.txt,interval-DA,vienna,interval,,16,,0,4,LB*/UB* Spec A R4,linha_base.nucleo,16,20,2,3898,72,"OPT não provado; intervalo, não valor"
+vienna-I065-regiao-f4.txt,interval-DA,vienna,interval,,13,,1,7,LB*/UB* Spec A R4,linha_base.nucleo,14,20,2,3898,72,"OPT não provado; intervalo, não valor"
+SC-GF2-k3,exact-estrutural,sc,exact,3,3,0,,,teorema OPT=k,medir.nucleo,,,2,21,7,
+SC-GF2-k4,exact-estrutural,sc,exact,4,4,0,,,teorema OPT=k,medir.nucleo,,,2,45,15,
+BP-nao-q2-B10-s0,exact-estrutural,bp-nao,exact,15,14,1,,,DP sem partição → 2n+q+1,medir.nucleo,,,2,60,20,"items=[3, 3, 3, 5, 3, 3]"
+BP-nao-q2-B10-s1,exact-estrutural,bp-nao,exact,15,14,1,,,DP sem partição → 2n+q+1,medir.nucleo,,,2,60,20,"items=[3, 3, 3, 5, 3, 3]"
+"BP-nao-[3,1]-q2",exact-estrutural,bp-nao,exact,7,6,1,,,enum independent_validator,medir.nucleo,,,2,16,4,Apêndice B; validador n=16
+HB-q4-ndir2-p1,exact-estrutural,hb,exact,2,1,1,,,enum independent_validator,medir.nucleo,,,2,16,6,
+HB-q5-ndir2-p1,exact-estrutural,hb,exact,3,1,2,,,mip_base T5,medir.nucleo,,,2,21,8,
+TR-k2-L5-r2,exact-estrutural,tr,exact,3,3,0,,,fórmula TR (D+r-1)//r - 1,medir.nucleo,,,2,18,2,Γ esperado 0; platô
