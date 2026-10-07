@@ -8,6 +8,7 @@
 **GF1:** PASS. F-CC entra como cruzamento, não como construtor do `C` do certificador.
 **G1:** compatibility. R11 continua suporte. Este pré-registro não reabre G1 nem GF1.
 **F-C3:** `OPEN` em todas as linhas.
+**Registro pós-execução:** ver §19. O texto pré-lote abaixo é preservado deliberadamente como registro histórico e não é reescrito em retrospecto.
 
 Este arquivo congela o *contrato* da execução futura. A implementação preparatória existe, mas **nenhum teste R11, materialização oficial, enumeração, MIP, F-CC ou CSV foi executado nesta atualização**. Os hashes só passam a existir quando `prepare_r11.py` materializar os arquivos; o lote oficial não pode começar antes de esse manifesto estar congelado. Nenhum tamanho, semente ou variante entra depois de o CSV oficial começar, excepto novo pré-registro rotulado.
 
@@ -542,3 +543,65 @@ PYTHONHASHSEED=0 poetry run python experiments/structural/run_r11.py
 `prepare_r11.py` exige working tree limpa e não chama solver nem certificador. `run_r11.py` valida todos
 os hashes antes de chamar enumeração, baseline ou F-CC e é o único produtor
 oficial de `results/structural/r11-certificadores.csv`.
+
+---
+
+## 19. Registro pós-execução — append-only
+
+**Data:** 2026-10-07  
+**Status:** lote oficial executado; protocolo acima preservado.  
+**CSV:** `results/structural/r11-certificadores.csv`  
+**Commit registrado nas linhas do CSV:** `dd485dc`
+
+Esta seção é um registro de execução, **não** uma alteração retroativa do pré-registro.
+
+Antes de `run_r11.py`:
+
+- `verify_r11.py` passou;
+- regressões BP/HB/SC/TR passaram;
+- `verify_fcc.py` passou;
+- `prepare_r11.py` materializou as instâncias e `r11-manifest.csv`;
+- o runner validou existência e SHA-256 de cada arquivo antes de resolver qualquer referência.
+
+Cobertura materializada:
+
+```text
+44 instâncias
+37 micro
+7 medium
+80 linhas (instância,variante)
+```
+
+Referências na execução:
+
+```text
+baseline OPTIMAL: 80/80
+independent enumeration OPTIMAL: 69/80
+independent enumeration not_run_cap: 11/80
+F-CC OPTIMAL: 80/80
+F-CC cap_exceeded: 0/80
+F-C3: OPEN 80/80
+reference_failure: 0
+```
+
+O maior `n_W` observado foi 14664, abaixo de `max_W=200000`.
+
+Os SHA-256 oficiais permanecem na fonte versionada de verdade:
+
+```text
+instances/estrutural/r11-manifest.csv
+```
+
+e são repetidos por linha em:
+
+```text
+results/structural/r11-certificadores.csv
+```
+
+Nenhum ID, seed, tamanho, política `S/T`, variante, cap ou parâmetro de solver foi acrescentado ao lote depois da observação dos resultados.
+
+A interpretação pós-lote está em:
+
+- `docs/technical/reference/resultados-r11-certificadores.md`;
+- `docs/technical/reference/auditoria-r11-divergencias.md`;
+- `docs/technical/reference/conclusao-r11-certificadores.md`.

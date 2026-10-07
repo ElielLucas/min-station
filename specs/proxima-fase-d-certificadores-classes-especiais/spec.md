@@ -2,6 +2,8 @@
 
 Scope: task **R11 — S1, special graph classes** of `docs/technical/plans/plano-proxima-fase.md`.
 
+**Final status:** `COMPLETE — CONFIRMED DIVERGENCE` (2026-10-07).
+
 This spec implements the published exact polynomial algorithms for:
 
 - paths — Das, `O(n)`;
@@ -40,32 +42,28 @@ R11 was originally allowed to start immediately after R1. The repository has adv
 
 ## Current State
 
-**Audited:** 2026-10-07.
+**Audited:** 2026-10-07, after the official R11 run.
 
 | Item | Status | Evidence |
 |---|---|---|
-| Das path algorithm (`O(n)`) | IMPLEMENTED — NOT VERIFIED | `experiments/structural/path_cycle.py::certificar_path`; literal PATH-ALG1 |
-| Das cycle algorithm (`O(n²)`) | IMPLEMENTED — NOT VERIFIED | `experiments/structural/path_cycle.py::certificar_cycle`; literal DAS-A2 |
-| Pereira & Ravelo spider readings | IMPLEMENTED — NOT VERIFIED | `experiments/structural/spider.py`; `spider-A/B/U`; conservative `unspecified` where the source does not close INT-A |
-| Path generator | IMPLEMENTED — NOT MATERIALIZED | `experiments/structural/path_cycle.py` |
-| Cycle generator | IMPLEMENTED — NOT MATERIALIZED | `experiments/structural/path_cycle.py` |
-| Spider generator | IMPLEMENTED — NOT MATERIALIZED | `experiments/structural/spider.py` |
-| Frozen R11 catalog | IMPLEMENTED — NOT MATERIALIZED | `experiments/structural/r11_catalog.py` |
-| Instance preparation / hash manifest | IMPLEMENTED — NOT RUN | `experiments/structural/prepare_r11.py` |
-| Local verification script | IMPLEMENTED — NOT RUN | `experiments/structural/verify_r11.py` |
-| Official runner | IMPLEMENTED — NOT RUN | `experiments/structural/run_r11.py` |
-| Deterministic structural-instance writer | UPDATED — NOT REGRESSION-TESTED | `experiments/structural/io_instancia.py`; optional `permitir_intersecao` |
-| Existing structural generators | DONE | `bp.py`, `hb.py`, `sc.py`, `tr.py` |
-| Independent feasibility validator | DONE | `experiments/cuts/independent_validator.py::viavel` |
-| Independent optimum by subset enumeration | DONE | `experiments/cuts/independent_validator.py::opt_por_enumeracao` |
-| Baseline ILP | DONE | `baseline.py`; equivalence with MIN-STATION established by T5 |
-| F-CC definition | DONE | `docs/technical/reference/formulacao-fcc-configuracoes-conectadas.md` |
-| F-CC proof / verification | DONE | `docs/technical/reference/provas-fcc-fc3.md`, `experiments/alternative-formulations/verify_fcc.py` |
-| F-CC implementation | DONE; R11 binary helper ADDED — NOT RUN | `experiments/alternative-formulations/fcc.py::opt_fcc` |
-| F-CC experimental gate | DONE — `GF1 = PASS` | `docs/technical/reference/decisao-gf1.md` |
+| Das path algorithm (`O(n)`) | IMPLEMENTED + VERIFIED LITERAL | `experiments/structural/path_cycle.py::certificar_path`; 3 agreement / 12 suboptimal |
+| Das cycle algorithm (`O(n²)`) | IMPLEMENTED + VERIFIED LITERAL | `experiments/structural/path_cycle.py::certificar_cycle`; 2 agreement / 9 suboptimal |
+| Pereira & Ravelo spider readings | IMPLEMENTED + VERIFIED | `experiments/structural/spider.py`; `spider-A/B/U`; none is an exact universal certifier in the batch |
+| Path/cycle/spider generators | DONE | deterministic structural generators + official catalog |
+| Frozen R11 catalog | DONE | `experiments/structural/r11_catalog.py`; 44 official instances |
+| Instance preparation / hash manifest | DONE | `experiments/structural/prepare_r11.py`; `instances/estrutural/r11-manifest.csv` |
+| Local verification | PASS | `verify_r11.py` returned `ok: verify_r11` |
+| Structural regressions | PASS | BP/HB/SC/TR verification scripts returned `ok` after the `S∩T` infrastructure change |
+| Official runner | DONE | `experiments/structural/run_r11.py` produced 80 official rows |
+| Raw R11 evidence | DONE | `results/structural/r11-certificadores.csv`; commit column `dd485dc` |
+| Independent enumeration | CONSISTENT | `OPTIMAL` on all 69 micro rows; equals baseline/F-CC |
+| Baseline ILP | CONSISTENT | `OPTIMAL` on 80/80 rows |
+| F-CC binary cross-check | CONSISTENT | `OPTIMAL` on 80/80 rows; `reference_failure=0` |
 | F-C3 | `OPEN` | trio networks remain undefined precisely enough for implementation |
-| Compatibility diagnosis | DONE | R6/R7 |
-| G1 | DONE — compatibility | `docs/technical/reference/decisao-g1.md` |
+| Divergence audit | DONE | `docs/technical/reference/auditoria-r11-divergencias.md` |
+| Result report | DONE | `docs/technical/reference/resultados-r11-certificadores.md` |
+| Final conclusion | `CONFIRMED DIVERGENCE` | `docs/technical/reference/conclusao-r11-certificadores.md` |
+| Compatibility diagnosis / G1 | DONE — compatibility | R11 does not reopen G1 |
 
 ### Important correction to the original Spec D
 
@@ -209,16 +207,16 @@ Matching only the objective value is insufficient.
 
 ## Goals
 
-- [x] Implement exact certifier code for paths, cycles and spiders as literally as their sources permit; runtime verification remains pending.
+- [x] Implement exact certifier code for paths, cycles and spiders as literally as their sources permit and verify the implementations before the official batch.
 - [x] Record every non-trivial interpretation required to turn the publications into executable algorithms. (`docs/technical/reference/leituras-r11-certificadores.md`, 2026-10-06)
-- [x] Preserve the algorithm's explicit station set `C`, not only `|C|`, in the prepared certifier contract.
-- [x] Add deterministic generators for paths, cycles and spiders following the existing `experiments/structural/` pattern; materialization remains pending.
-- [x] Add opt-in `S∩T` support for R11 while preserving the previous default in existing structural families; regression execution remains pending.
-- [ ] Freeze the complete R11 comparison batch including materialized SHA-256 hashes before observing its comparison results.
-- [ ] Compare the specialized algorithms with the baseline, independent enumeration where tractable, and F-CC where its enumeration cap permits.
+- [x] Preserve each algorithm's explicit station set `C`, not only `|C|`.
+- [x] Add deterministic generators for paths, cycles and spiders following the existing `experiments/structural/` pattern and materialize the official instances.
+- [x] Add opt-in `S∩T` support for R11 while preserving the previous default in existing structural families; regressions BP/HB/SC/TR passed.
+- [x] Freeze the complete R11 comparison batch, including SHA-256 hashes, before observing comparison results.
+- [x] Compare the specialized algorithms with the baseline, independent enumeration where tractable, and F-CC under the frozen protocol.
 - [x] Keep F-C3 explicitly `OPEN`; never implement an inferred trio network.
-- [ ] Reduce every confirmed divergence to a reproducible minimal counterexample whenever practical.
-- [ ] Produce versioned raw evidence and human-readable research conclusions.
+- [x] Reduce/audit each confirmed divergence mechanism to a reproducible minimal witness whenever practical.
+- [x] Produce versioned raw evidence and human-readable research conclusions.
 
 ---
 
@@ -1615,61 +1613,57 @@ and SHALL be resolved before drawing a conclusion about the specialized algorith
 
 | Requirement ID | Story | Phase | Status |
 |---|---|---|---|
-| CERT-01 | R11a.1 | Source interpretation | Readings written (`leituras-r11-certificadores.md`) |
-| CERT-02 | R11a.1 | Source interpretation | Readings written |
-| CERT-03 | R11a.1 | Source interpretation | Readings written |
-| CERT-04 | R11a.2 | Structural infrastructure | Implemented; regression execution pending |
-| CERT-05 | R11a.2 | Structural infrastructure | Generators implemented; materialization pending |
-| CERT-06 | R11a.2 | `S∩T` compatibility | Implemented opt-in; regression execution pending |
-| CERT-07 | R11a.3 | Path certifier | Implemented; local verification pending |
-| CERT-08 | R11a.3 | Cycle certifier | Implemented; local verification pending |
-| CERT-09 | R11a.3 | Spider certifier | Implemented (`spider-A/B/U`); local verification pending |
-| CERT-10 | R11a.3 | Explicit station-set output | Implemented in common contract; verification pending |
-| CERT-11 | R11a.3 | Ambiguous/unspecified behavior | Implemented/documented; verification pending |
-| CERT-12 | R11a.4 | Local verification | Script implemented; execution pending |
-| CERT-13 | R11b.1 | Pre-registration | Frozen except SHA-256 manifest; CLI/mapping/caps closed; no batch run |
-| CERT-14 | R11b.2 | Hand-built spider readings | Definitions frozen in `r11_catalog.py`; materialization pending |
-| CERT-15 | R11b.3 | Exact references | Runner/reference policy implemented; execution pending |
-| CERT-16 | R11b.3 | F-CC cross-check | `opt_fcc` implemented; execution pending |
-| CERT-17 | R11b.3 | F-C3 remains OPEN | Complete — hard-coded/documented as `OPEN` |
-| CERT-18 | R11b.4 | Official runner | Implemented; official execution pending |
-| CERT-19 | R11b.5 | Raw CSV + provenance | Schema/writer implemented; CSV generation pending |
-| CERT-20 | R11b.6 | Reference consistency | Checks implemented; execution pending |
-| CERT-21 | R11b.7 | Special-case coverage | Catalog/tests defined; materialization/execution pending |
-| CERT-22 | R11c.1 | Human-readable report | Pending |
-| CERT-23 | R11c.2 | Divergence reduction | Pending |
-| CERT-24 | R11c.3 | Independent counterexample verification | Pending |
-| CERT-25 | R11c.4 | Reading-dependent classification | Pending |
-| CERT-26 | R11c.5 | Communication rule | Pending |
-| CERT-27 | R11c.6 | Conservative negative result | Pending |
-| CERT-28 | R11c.7 | Final conclusion | Pending |
+| CERT-01 | R11a.1 | Source interpretation | Complete — source readings versioned |
+| CERT-02 | R11a.1 | Source interpretation | Complete — executable source mapping recorded |
+| CERT-03 | R11a.1 | Source interpretation | Complete — SP-R1…SP-R5 explicit |
+| CERT-04 | R11a.2 | Structural infrastructure | Complete — infrastructure implemented; regressions BP/HB/SC/TR PASS |
+| CERT-05 | R11a.2 | Structural infrastructure | Complete — generators + materialized official instances |
+| CERT-06 | R11a.2 | `S∩T` compatibility | Complete — opt-in support; old families preserved |
+| CERT-07 | R11a.3 | Path certifier | Complete — literal `path-alg1` implemented and audited |
+| CERT-08 | R11a.3 | Cycle certifier | Complete — literal `cycle-alg2` implemented and audited |
+| CERT-09 | R11a.3 | Spider certifier | Complete — `spider-A/B/U` implemented and audited |
+| CERT-10 | R11a.3 | Explicit station-set output | Complete — `status,C,obj,variant,notes` recorded |
+| CERT-11 | R11a.3 | Ambiguous/unspecified behavior | Complete — conservative `unspecified` used for source gaps |
+| CERT-12 | R11a.4 | Local verification | Complete — `verify_r11.py` PASS before official batch |
+| CERT-13 | R11b.1 | Pre-registration | Complete — frozen protocol + append-only execution record |
+| CERT-14 | R11b.2 | Hand-built spider readings | Complete — SP-R1…SP-R5 materialized with SHA-256 |
+| CERT-15 | R11b.3 | Exact references | Complete — enum/baseline policies executed consistently |
+| CERT-16 | R11b.3 | F-CC cross-check | Complete — binary F-CC exact cross-check on 80/80 rows |
+| CERT-17 | R11b.3 | F-C3 remains OPEN | Complete — `OPEN` in all official rows |
+| CERT-18 | R11b.4 | Official runner | Complete — official runner executed |
+| CERT-19 | R11b.5 | Raw CSV + provenance | Complete — 80-row CSV with hashes/provenance |
+| CERT-20 | R11b.6 | Reference consistency | Complete — `reference_failure=0` |
+| CERT-21 | R11b.7 | Special-case coverage | Complete — frozen catalog executed |
+| CERT-22 | R11c.1 | Human-readable report | Complete — `resultados-r11-certificadores.md` |
+| CERT-23 | R11c.2 | Divergence reduction | Complete — reduced/audited by mechanism; path n=2, cycle n=3; SP-R2 minimal under its construction |
+| CERT-24 | R11c.3 | Independent counterexample verification | Complete — enum-based post-lot verifier + exact official references |
+| CERT-25 | R11c.4 | Reading-dependent classification | Complete — spider conclusions explicitly variant-dependent |
+| CERT-26 | R11c.5 | Communication rule | Complete — public-claim warning recorded |
+| CERT-27 | R11c.6 | Conservative negative result | Complete / branch not applicable — batch contains divergences; no false correctness claim |
+| CERT-28 | R11c.7 | Final conclusion | Complete — `CONFIRMED DIVERGENCE` |
 
-**Coverage:** 28 requirements.
-
-`tasks.md` is not created by this specification update. Execution tasks may be derived from these requirements in a later TLC task-decomposition step.
-
----
+**Coverage:** 28/28 requirements closed.
 
 # Success Criteria
 
 - [x] Source readings for Das and Pereira & Ravelo are versioned and sufficient to audit every executable branch.
-- [x] Deterministic generators for paths, cycles and spiders are implemented under `experiments/structural/` (not yet materialized/executed).
-- [ ] Existing structural infrastructure still passes regression after enabling optional `S∩T`.
-- [x] Path, cycle and spider certifiers are implemented to return explicit station sets/objectives without calling the baseline (runtime verification pending).
-- [x] Every official spider reading is explicit; unsupported mixed/ambiguous cases return `unspecified` by construction (runtime verification pending).
-- [ ] `verify_r11.py` passes before official instance materialization/final freeze and before the official batch.
-- [ ] The official batch is frozen before comparison results are observed.
-- [ ] Every official instance has deterministic provenance and `sha256`.
-- [ ] The official CSV is reproducible from the pre-registration.
-- [ ] Baseline and enumeration agree wherever both exact references are run.
-- [ ] Exact F-CC agrees with the certified OPT wherever its cap permits.
-- [x] F-C3 remains explicitly `OPEN` in the pre-registration and runner.
-- [ ] All successful algorithm outputs are independently checked for feasibility.
-- [ ] Every confirmed divergence is reduced and independently verified whenever practical.
-- [ ] The final report distinguishes agreement, divergence, unspecified behavior and reference failure.
-- [ ] The conclusion does not convert finite experimental agreement into a proof of correctness.
+- [x] Deterministic generators for paths, cycles and spiders are implemented under `experiments/structural/`.
+- [x] Existing structural infrastructure passes regression after enabling optional `S∩T`.
+- [x] Path, cycle and spider certifiers return explicit station sets/objectives without using the baseline to construct their answers.
+- [x] Every official spider reading is explicit; unsupported mixed/ambiguous cases return `unspecified`.
+- [x] `verify_r11.py` passed before the official batch.
+- [x] The official batch was frozen before comparison results were observed.
+- [x] Every official instance has deterministic provenance and `sha256`.
+- [x] The official CSV is reproducible from the pre-registration/manifest.
+- [x] Baseline and enumeration agree wherever both exact references were run.
+- [x] Exact F-CC agrees with the certified OPT on all official rows.
+- [x] F-C3 remains explicitly `OPEN`.
+- [x] All successful algorithm outputs are independently checked for feasibility.
+- [x] Confirmed divergence mechanisms are reduced and independently verified when practical.
+- [x] The final report distinguishes agreement, divergence, unspecified behavior and reference failure.
+- [x] The conclusion does not convert finite experimental evidence into an unsupported public erratum claim.
 
----
+**Final criterion:** satisfied. R11 is closed with `CONFIRMED DIVERGENCE`.
 
 # Inconsistencies Resolved by This Update
 
@@ -1685,6 +1679,7 @@ and SHALL be resolved before drawing a conclusion about the specialized algorith
 | 8 | Original spec did not separate station-set validity from objective agreement strongly enough | Both are now mandatory independent conditions for agreement | validation gap |
 | 9 | Original spec had only a generic divergence/agreement report | R11 now requires raw CSV, result report and stable conclusion document | reproducibility gap |
 | 10 | Spec D relationship text reflected the pre-B/pre-C state | A, B and C current outcomes are now consumed explicitly | stale project state |
+| 11 | Earlier acceptance text could be read as forcing `C=∅` when `r≥diam(G)` | The certifier remains literal; `r≥diam` is a test condition and any nonempty result is classified normally | specification-vs-fidelity conflict |
 
 ---
 
@@ -1717,6 +1712,20 @@ R12 / M-B = blocked
 R11 remains a parallel support line.
 
 Its execution does not require reopening either GF1 or G1.
+
+---
+
+# Final R11 Decision
+
+```text
+COMPLETE — CONFIRMED DIVERGENCE
+```
+
+The decision is grounded in `results/structural/r11-certificadores.csv`,
+`resultados-r11-certificadores.md` and `auditoria-r11-divergencias.md`. The
+path/cycle literal procedures are not valid exact certifiers for the current
+MIN-STATION definition; the tested spider readings do not form a universal
+exact certifier. Public claims of an erratum remain outside this spec.
 
 ---
 
@@ -1779,7 +1788,10 @@ docs/technical/reference/pre-registro-r11-certificadores.md
 results/structural/r11-certificadores.csv
 
 docs/technical/reference/resultados-r11-certificadores.md
+docs/technical/reference/auditoria-r11-divergencias.md
 docs/technical/reference/conclusao-r11-certificadores.md
+
+experiments/structural/verify_r11_counterexamples.py
 ```
 
 and this specification's requirement/status table has been updated to reflect the actual execution.

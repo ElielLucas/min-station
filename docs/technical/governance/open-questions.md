@@ -158,15 +158,25 @@ lote 2 do benchmark-v1.
 
 ## Q8 — Os algoritmos de caminhos, ciclos e aranhas concordam com a PLI?
 
-**Status:** leituras fechadas e implementação preparatória escrita; verificação, materialização e comparação experimental **não** feitas.
+**Status:** `RESOLVIDA — CONFIRMED DIVERGENCE` (R11, 2026-10-07).
 
-A pergunta é a Q-8 de `plano-proxima-fase.md`. Interpretação executável:
-`docs/technical/reference/leituras-r11-certificadores.md`. Contrato do lote:
-`docs/technical/reference/pre-registro-r11-certificadores.md`. Código preparado,
-sem evidência ainda: `experiments/structural/{path_cycle,spider,r11_catalog,prepare_r11,verify_r11,run_r11}.py`.
+Evidência:
 
-Não tratar as leituras como prova de correção nem como erratum. VAL-A2 já
-regista desacordo de contagem entre Algorithm 1 / Lemma 2 de Das e a
-definição (Problem 1). R11 mede isso no protocolo; não “corrige” o
-certificador para coincidir com o baseline.
+- leituras: `docs/technical/reference/leituras-r11-certificadores.md`;
+- pré-registro: `docs/technical/reference/pre-registro-r11-certificadores.md`;
+- CSV: `results/structural/r11-certificadores.csv`;
+- resultados: `docs/technical/reference/resultados-r11-certificadores.md`;
+- auditoria/redução: `docs/technical/reference/auditoria-r11-divergencias.md`;
+- conclusão: `docs/technical/reference/conclusao-r11-certificadores.md`.
 
+Resultado: `path-alg1` literal divergiu em 12/15 linhas (todas viáveis, mas
+subótimas); `cycle-alg2` divergiu em 9/11 e herda o mecanismo do caminho. Em
+aranhas, nenhuma das leituras `spider-A/B/U` constitui certificador exato
+universal; SP-R2 produz solução inviável em A/U e solução subótima em B.
+
+A pilha de referência foi consistente (`reference_failure=0`): enumeração no
+micro, baseline `OPTIMAL` e F-CC binária concordaram. F-C3 permanece `OPEN`.
+
+A resolução desta pergunta **não** equivale a publicar um erratum. Antes de
+alegação pública sobre erro em artigo: revisão humana final e comunicação aos
+autores.

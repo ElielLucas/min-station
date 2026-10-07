@@ -24,7 +24,7 @@ Usar para:
 
 ### Limite da fonte
 
-O artigo de Das não apresenta a formulação de PLI desenvolvida neste projeto. Portanto, não deve ser usado para inferir variáveis, restrições, implementação ou estratégia computacional do repositório.
+O artigo de Das não apresenta a formulação de PLI desenvolvida neste projeto. Portanto, não deve ser usado para inferir variáveis, restrições, implementação ou estratégia computacional do repositório. Após R11, os pseudocódigos literais de caminhos/ciclos também **não** devem ser usados como oráculos de OPT sem uma correção matemática adicional: a auditoria encontrou contraexemplos mínimos para Algorithms 1 e 2.
 
 ## 2. Artigo da SBPO
 
@@ -122,16 +122,18 @@ Artigo do mesmo grupo. Estuda o MIN-STATION de Das em grafos-aranha e dá um alg
 Usar para:
 
 - algoritmo de caminhos (revisão de Das) e de aranhas;
-- fonte de ótimos exatos em `n` grande, como certificador (tarefa R11 / Spec D);
+- fonte do **algoritmo alegadamente ótimo** para aranhas a ser estudado/auditado; após R11, **não usar como fonte de ótimo exato/certificador** sem uma nova correção e validação;
 - conferir a referência 4 de `overlap-ijcai2026-min-station.md`.
 
 ### Limite da fonte
 
-A prova no `.md` está em esboço e tem casos a testar (`plano-proxima-fase.md` §5). Não é baseline. Não define formulação nem protocolo experimental.
+A prova no `.md` está em esboço e deixa casos não fechados. R11 confirmou que as leituras executáveis testadas não formam um certificador exato universal; SP-R2 é o witness principal. Não é baseline e não deve ser usada como fonte automática de OPT.
 
-### R11 (leituras, preparação e pré-registro, 2026-10-06→07)
+### R11 (certificadores de classes especiais, 2026-10-06→07)
 
-Interpretação executável: `docs/technical/reference/leituras-r11-certificadores.md`. Contrato do lote: `docs/technical/reference/pre-registro-r11-certificadores.md`. Implementação preparatória, ainda **não executada**: `experiments/structural/path_cycle.py`, `spider.py`, `r11_catalog.py`, `prepare_r11.py`, `verify_r11.py`, `run_r11.py`; cruzamento F-CC binário em `experiments/alternative-formulations/fcc.py::opt_fcc`. Spec: `specs/proxima-fase-d-certificadores-classes-especiais/spec.md`. Esses artefatos não substituem Das nem o `.md` das aranhas e ainda não constituem evidência experimental.
+Leitura executável: `docs/technical/reference/leituras-r11-certificadores.md`. Pré-registro: `docs/technical/reference/pre-registro-r11-certificadores.md`. Evidência bruta: `results/structural/r11-certificadores.csv`. Interpretação: `docs/technical/reference/resultados-r11-certificadores.md`. Auditoria/redução: `docs/technical/reference/auditoria-r11-divergencias.md`. Conclusão: `docs/technical/reference/conclusao-r11-certificadores.md`. Spec: `specs/proxima-fase-d-certificadores-classes-especiais/spec.md`.
+
+**Veredito R11:** `CONFIRMED DIVERGENCE`. `path-alg1` e `cycle-alg2` literais não funcionam como certificadores exatos da definição corrente; as leituras de aranha também não produzem um certificador exato universal, com SP-R2 como witness principal. Isso é evidência interna; qualquer alegação pública de erratum exige revisão/comunicação aos autores.
 
 ## 6. Formulações em avaliação (F-CC e F-C3)
 
@@ -202,8 +204,11 @@ Não existe uma precedência única para tudo. Use a fonte adequada:
 | O que o software realmente executa hoje? | Código + configuração da execução |
 | Quais pontos ainda estão abertos? | `open-questions.md` |
 | O algoritmo de aranhas e o artigo de Pereira & Ravelo? | `pereira-ravelo-2026-aranhas.md` |
-| Como ler os algoritmos de caminho/ciclo/aranha para implementar R11? | `leituras-r11-certificadores.md` |
-| Qual é o contrato experimental futuro de R11 (ainda sem CSV)? | `pre-registro-r11-certificadores.md` |
+| Como ler os algoritmos de caminho/ciclo/aranha usados em R11? | `leituras-r11-certificadores.md` |
+| Qual foi o contrato experimental congelado de R11? | `pre-registro-r11-certificadores.md` |
+| O que aconteceu no lote R11? | `resultados-r11-certificadores.md` + `results/structural/r11-certificadores.csv` |
+| Quais divergências foram auditadas/reduzidas? | `auditoria-r11-divergencias.md` |
+| Qual é o veredito final de R11? | `conclusao-r11-certificadores.md` |
 | Qual é a F-CC / F-C3 (em avaliação, não baseline)? | `formulacao-fcc-configuracoes-conectadas.md`, `formulacao-fc3-consistencia-trios.md` |
 
 ## 10. Regra para novos artigos e experimentos

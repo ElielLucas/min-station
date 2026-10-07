@@ -57,12 +57,15 @@ Nenhuma tarefa do parecer. T1–T22 foram executadas. Specs dos Blocos 1–4:
 `specs/proxima-fase-b-formulacoes-fcc-fc3/spec.md`,
 `specs/proxima-fase-c-diagnostico-gap-plato/spec.md` e
 `specs/proxima-fase-d-certificadores-classes-especiais/spec.md`.
-R11 (Spec D): leituras e pré-registro escritos em 2026-10-06; preparação de
-implementação escrita em 2026-10-07 (`path_cycle.py`, `spider.py`,
-`r11_catalog.py`, `prepare_r11.py`, `verify_r11.py`, `run_r11.py` e `opt_fcc`).
-Nada disso foi executado como R11: regressões/verificação local, materialização
-das instâncias + `r11-manifest.csv`, lote oficial, CSV, relatório e conclusão
-continuam pendentes.
+R11 (Spec D): **CONCLUÍDA em 2026-10-07 — `CONFIRMED DIVERGENCE`**.
+Leituras/pré-registro, geradores, certificadores, verificações locais, manifesto
+de instâncias, lote oficial e fechamento estão versionados. Evidência:
+`results/structural/r11-certificadores.csv`,
+`docs/technical/reference/resultados-r11-certificadores.md`,
+`docs/technical/reference/auditoria-r11-divergencias.md` e
+`docs/technical/reference/conclusao-r11-certificadores.md`. Caminho/ciclo
+literais não são usados como oráculos exatos; aranhas permanecem
+leitura-dependentes e sem certificador exato universal.
 As edições "Passo posterior" de `overlap` §7.1 e a redação do artigo
 continuam adiadas.
 
