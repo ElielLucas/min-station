@@ -1,0 +1,28 @@
+# meta: classe=estrutural
+# meta: commit_gerador=73cbb16
+# meta: das_compat=exata
+# meta: estrato=micro
+# meta: familia=cycle
+# meta: fonte=R11 Spec D
+# meta: nome=cycle-hand-n3-opt0
+# meta: papel=OPT 0 possível
+# meta: referencia=pre-registro-r11-certificadores.md
+# meta: regra_ST=hand
+# meta: regra_r=2
+# meta: script=experiments/structural
+# meta: seed=hand
+# meta: versao_gerador=2
+N 3
+M 6
+R 2
+# u v length
+v0 v1 1
+v0 v2 1
+v1 v0 1
+v1 v2 1
+v2 v0 1
+v2 v1 1
+S 1
+v0
+T 1
+v1

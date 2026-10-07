@@ -1,0 +1,69 @@
+# meta: classe=estrutural
+# meta: commit_gerador=73cbb16
+# meta: das_compat=exata
+# meta: estrato=medium
+# meta: familia=spider
+# meta: fonte=R11 Spec D
+# meta: nome=spider-M-n24-k3-m2-s42
+# meta: papel=deterministic-seeded
+# meta: radiais=8,8,7
+# meta: referencia=pre-registro-r11-certificadores.md
+# meta: regra_ST=sitm
+# meta: regra_r=1
+# meta: script=experiments/structural
+# meta: seed=42
+# meta: versao_gerador=2
+N 24
+M 46
+R 1
+# u v length
+c r0_1 1
+c r1_1 1
+c r2_1 1
+r0_1 c 1
+r0_1 r0_2 1
+r0_2 r0_1 1
+r0_2 r0_3 1
+r0_3 r0_2 1
+r0_3 r0_4 1
+r0_4 r0_3 1
+r0_4 r0_5 1
+r0_5 r0_4 1
+r0_5 r0_6 1
+r0_6 r0_5 1
+r0_6 r0_7 1
+r0_7 r0_6 1
+r0_7 r0_8 1
+r0_8 r0_7 1
+r1_1 c 1
+r1_1 r1_2 1
+r1_2 r1_1 1
+r1_2 r1_3 1
+r1_3 r1_2 1
+r1_3 r1_4 1
+r1_4 r1_3 1
+r1_4 r1_5 1
+r1_5 r1_4 1
+r1_5 r1_6 1
+r1_6 r1_5 1
+r1_6 r1_7 1
+r1_7 r1_6 1
+r1_7 r1_8 1
+r1_8 r1_7 1
+r2_1 c 1
+r2_1 r2_2 1
+r2_2 r2_1 1
+r2_2 r2_3 1
+r2_3 r2_2 1
+r2_3 r2_4 1
+r2_4 r2_3 1
+r2_4 r2_5 1
+r2_5 r2_4 1
+r2_5 r2_6 1
+r2_6 r2_5 1
+r2_6 r2_7 1
+r2_7 r2_6 1
+S 2
+r2_5 r1_4
+T 2
+r2_5 r1_4

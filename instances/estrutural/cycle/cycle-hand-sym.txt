@@ -1,0 +1,34 @@
+# meta: classe=estrutural
+# meta: commit_gerador=73cbb16
+# meta: das_compat=exata
+# meta: estrato=micro
+# meta: familia=cycle
+# meta: fonte=R11 Spec D
+# meta: nome=cycle-hand-sym
+# meta: papel=simetria
+# meta: referencia=pre-registro-r11-certificadores.md
+# meta: regra_ST=hand
+# meta: regra_r=2
+# meta: script=experiments/structural
+# meta: seed=hand
+# meta: versao_gerador=2
+N 6
+M 12
+R 2
+# u v length
+v0 v1 1
+v0 v5 1
+v1 v0 1
+v1 v2 1
+v2 v1 1
+v2 v3 1
+v3 v2 1
+v3 v4 1
+v4 v3 1
+v4 v5 1
+v5 v0 1
+v5 v4 1
+S 2
+v0 v3
+T 2
+v1 v4

@@ -1,0 +1,46 @@
+# meta: classe=estrutural
+# meta: commit_gerador=73cbb16
+# meta: das_compat=exata
+# meta: estrato=micro
+# meta: familia=cycle
+# meta: fonte=R11 Spec D
+# meta: nome=cycle-m-n12-m2-s43
+# meta: papel=deterministic-seeded
+# meta: referencia=pre-registro-r11-certificadores.md
+# meta: regra_ST=sit1
+# meta: regra_r=2
+# meta: script=experiments/structural
+# meta: seed=43
+# meta: versao_gerador=2
+N 12
+M 24
+R 2
+# u v length
+v0 v1 1
+v0 v11 1
+v1 v0 1
+v1 v2 1
+v10 v11 1
+v10 v9 1
+v11 v0 1
+v11 v10 1
+v2 v1 1
+v2 v3 1
+v3 v2 1
+v3 v4 1
+v4 v3 1
+v4 v5 1
+v5 v4 1
+v5 v6 1
+v6 v5 1
+v6 v7 1
+v7 v6 1
+v7 v8 1
+v8 v7 1
+v8 v9 1
+v9 v10 1
+v9 v8 1
+S 2
+v4 v8
+T 2
+v4 v2

@@ -1,0 +1,47 @@
+# meta: classe=estrutural
+# meta: commit_gerador=73cbb16
+# meta: das_compat=exata
+# meta: estrato=micro
+# meta: familia=spider
+# meta: fonte=R11 Spec D
+# meta: nome=spider-reading-03
+# meta: papel=SP-R3: interno + cruzado + radial alvo já ativa
+# meta: radiais=4,4,4
+# meta: referencia=pre-registro-r11-certificadores.md
+# meta: regra_ST=hand
+# meta: regra_r=2
+# meta: script=experiments/structural
+# meta: seed=hand
+# meta: versao_gerador=2
+N 13
+M 24
+R 2
+# u v length
+c r0_1 1
+c r1_1 1
+c r2_1 1
+r0_1 c 1
+r0_1 r0_2 1
+r0_2 r0_1 1
+r0_2 r0_3 1
+r0_3 r0_2 1
+r0_3 r0_4 1
+r0_4 r0_3 1
+r1_1 c 1
+r1_1 r1_2 1
+r1_2 r1_1 1
+r1_2 r1_3 1
+r1_3 r1_2 1
+r1_3 r1_4 1
+r1_4 r1_3 1
+r2_1 c 1
+r2_1 r2_2 1
+r2_2 r2_1 1
+r2_2 r2_3 1
+r2_3 r2_2 1
+r2_3 r2_4 1
+r2_4 r2_3 1
+S 3
+r0_4 r1_4 r2_4
+T 3
+r0_2 r2_2 r2_1

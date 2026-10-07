@@ -1,0 +1,43 @@
+# meta: classe=estrutural
+# meta: commit_gerador=73cbb16
+# meta: das_compat=exata
+# meta: estrato=micro
+# meta: familia=spider
+# meta: fonte=R11 Spec D
+# meta: nome=spider-hand-len
+# meta: papel=radiais 1,3,6
+# meta: radiais=1,3,6
+# meta: referencia=pre-registro-r11-certificadores.md
+# meta: regra_ST=hand
+# meta: regra_r=2
+# meta: script=experiments/structural
+# meta: seed=hand
+# meta: versao_gerador=2
+N 11
+M 20
+R 2
+# u v length
+c r0_1 1
+c r1_1 1
+c r2_1 1
+r0_1 c 1
+r1_1 c 1
+r1_1 r1_2 1
+r1_2 r1_1 1
+r1_2 r1_3 1
+r1_3 r1_2 1
+r2_1 c 1
+r2_1 r2_2 1
+r2_2 r2_1 1
+r2_2 r2_3 1
+r2_3 r2_2 1
+r2_3 r2_4 1
+r2_4 r2_3 1
+r2_4 r2_5 1
+r2_5 r2_4 1
+r2_5 r2_6 1
+r2_6 r2_5 1
+S 1
+r2_6
+T 1
+r1_3
