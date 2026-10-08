@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""R6 — tabela Γ. Pré-registro: docs/technical/reference/pre-registro-r5.md.
+"""R6 — tabela Γ. Pré-registro: docs/technical/reference/experimentos/pre-registro-r5.md.
 
 Não mede F-CC. Não corre o teste primal (isso é run_r6_primal.py).
 """

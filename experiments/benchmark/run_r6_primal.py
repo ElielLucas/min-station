@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """R6 primal: COMP vs COMP+MIPFocus=1. Controle = linha_base braco=comp.
 
-Pré-registro: docs/technical/reference/pre-registro-r5.md
+Pré-registro: docs/technical/reference/experimentos/pre-registro-r5.md
 WorkLimit=164, 4 threads, seeds 42/43/44, D/A desenvolvimento, m<1000.
 """
 

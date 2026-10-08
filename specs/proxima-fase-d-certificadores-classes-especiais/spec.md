@@ -1,6 +1,6 @@
 # Next Phase D — Exact Certifiers for Special Graph Classes (MIN-STATION) Specification
 
-Scope: task **R11 — S1, special graph classes** of `docs/technical/plans/plano-proxima-fase.md`.
+Scope: task **R11 — S1, special graph classes** of `docs/technical/plans/execucao/plano-proxima-fase.md`.
 
 **Final status:** `COMPLETE — CONFIRMED DIVERGENCE` (2026-10-07).
 
@@ -29,7 +29,7 @@ Nothing in this spec assumes that a published algorithm is incorrect. Ambiguitie
 
 | Spec / line | Relation |
 |---|---|
-| A — Foundation | **R1 completed.** The Pereira & Ravelo transcription is already available as `docs/technical/reference/pereira-ravelo-2026-aranhas.md`. |
+| A — Foundation | **R1 completed.** The Pereira & Ravelo transcription is already available as `docs/technical/reference/artigos-externos/pereira-ravelo-2026-aranhas.md`. |
 | B — Formulations | **Completed through GF1.** F-CC is defined, implemented and computationally verified; `GF1 = PASS`. F-C3 remains `OPEN` because the trio networks are not defined precisely enough to implement. |
 | C — Diagnosis | **Completed through G1.** Compatibility is the selected direction; R10 and R8/R9 were released under their respective gates. R11 remains an independent support line. |
 | R8 / R9 — F-CC at scale | May use the certifiers produced here to validate exact results on paths, cycles and spiders. |
@@ -60,9 +60,9 @@ R11 was originally allowed to start immediately after R1. The repository has adv
 | Baseline ILP | CONSISTENT | `OPTIMAL` on 80/80 rows |
 | F-CC binary cross-check | CONSISTENT | `OPTIMAL` on 80/80 rows; `reference_failure=0` |
 | F-C3 | `OPEN` | trio networks remain undefined precisely enough for implementation |
-| Divergence audit | DONE | `docs/technical/reference/auditoria-r11-divergencias.md` |
-| Result report | DONE | `docs/technical/reference/resultados-r11-certificadores.md` |
-| Final conclusion | `CONFIRMED DIVERGENCE` | `docs/technical/reference/conclusao-r11-certificadores.md` |
+| Divergence audit | DONE | `docs/technical/reference/validacao-e-correcoes/auditoria-r11-divergencias.md` |
+| Result report | DONE | `docs/technical/reference/experimentos/resultados-r11-certificadores.md` |
+| Final conclusion | `CONFIRMED DIVERGENCE` | `docs/technical/reference/validacao-e-correcoes/conclusao-r11-certificadores.md` |
 | Compatibility diagnosis / G1 | DONE — compatibility | R11 does not reopen G1 |
 
 ### Important correction to the original Spec D
@@ -208,7 +208,7 @@ Matching only the objective value is insufficient.
 ## Goals
 
 - [x] Implement exact certifier code for paths, cycles and spiders as literally as their sources permit and verify the implementations before the official batch.
-- [x] Record every non-trivial interpretation required to turn the publications into executable algorithms. (`docs/technical/reference/leituras-r11-certificadores.md`, 2026-10-06)
+- [x] Record every non-trivial interpretation required to turn the publications into executable algorithms. (`docs/technical/reference/experimentos/leituras-r11-certificadores.md`, 2026-10-06)
 - [x] Preserve each algorithm's explicit station set `C`, not only `|C|`.
 - [x] Add deterministic generators for paths, cycles and spiders following the existing `experiments/structural/` pattern and materialize the official instances.
 - [x] Add opt-in `S∩T` support for R11 while preserving the previous default in existing structural families; regressions BP/HB/SC/TR passed.
@@ -417,7 +417,7 @@ In particular:
 1. The system SHALL create:
 
 ```text
-docs/technical/reference/leituras-r11-certificadores.md
+docs/technical/reference/experimentos/leituras-r11-certificadores.md
 ```
 
 2. The document SHALL identify the exact source sections used for:
@@ -452,7 +452,7 @@ SP-R5
 ### Evidence to produce
 
 ```text
-docs/technical/reference/leituras-r11-certificadores.md
+docs/technical/reference/experimentos/leituras-r11-certificadores.md
 ```
 
 ### Dependencies
@@ -757,7 +757,7 @@ Running the verification script from a clean checkout reproduces the assertions 
 1. Before running the official comparison, the system SHALL create:
 
 ```text
-docs/technical/reference/pre-registro-r11-certificadores.md
+docs/technical/reference/experimentos/pre-registro-r11-certificadores.md
 ```
 
 2. The pre-registration SHALL freeze:
@@ -825,7 +825,7 @@ Any exploratory follow-up requires a new labeled pre-registration.
 ### Evidence to produce
 
 ```text
-docs/technical/reference/pre-registro-r11-certificadores.md
+docs/technical/reference/experimentos/pre-registro-r11-certificadores.md
 ```
 
 ### Dependencies
@@ -1119,7 +1119,7 @@ Not every combination must occur, but every listed phenomenon SHALL appear in at
 ## Evidence to produce for R11b
 
 ```text
-docs/technical/reference/pre-registro-r11-certificadores.md
+docs/technical/reference/experimentos/pre-registro-r11-certificadores.md
 instances/estrutural/path/*
 instances/estrutural/cycle/*
 instances/estrutural/spider/*
@@ -1158,7 +1158,7 @@ Deleting the CSV and running the documented R11 command sequence from the frozen
 The system SHALL create:
 
 ```text
-docs/technical/reference/resultados-r11-certificadores.md
+docs/technical/reference/experimentos/resultados-r11-certificadores.md
 ```
 
 The report SHALL begin with reproducibility metadata:
@@ -1304,7 +1304,7 @@ The report SHALL state the tested coverage.
 The system SHALL create:
 
 ```text
-docs/technical/reference/conclusao-r11-certificadores.md
+docs/technical/reference/validacao-e-correcoes/conclusao-r11-certificadores.md
 ```
 
 Its primary conclusion SHALL be exactly one of:
@@ -1769,7 +1769,7 @@ None of those is automatically authorized by this spec.
 R11 is complete only when the repository contains the applicable versions of:
 
 ```text
-docs/technical/reference/leituras-r11-certificadores.md
+docs/technical/reference/experimentos/leituras-r11-certificadores.md
 
 experiments/structural/path_cycle.py
 experiments/structural/spider.py
@@ -1783,13 +1783,13 @@ instances/estrutural/cycle/*
 instances/estrutural/spider/*
 instances/estrutural/r11-manifest.csv
 
-docs/technical/reference/pre-registro-r11-certificadores.md
+docs/technical/reference/experimentos/pre-registro-r11-certificadores.md
 
 results/structural/r11-certificadores.csv
 
-docs/technical/reference/resultados-r11-certificadores.md
-docs/technical/reference/auditoria-r11-divergencias.md
-docs/technical/reference/conclusao-r11-certificadores.md
+docs/technical/reference/experimentos/resultados-r11-certificadores.md
+docs/technical/reference/validacao-e-correcoes/auditoria-r11-divergencias.md
+docs/technical/reference/validacao-e-correcoes/conclusao-r11-certificadores.md
 
 experiments/structural/verify_r11_counterexamples.py
 ```
@@ -1813,3 +1813,7 @@ source
 ```
 
 This is the complete scope of **Next Phase D — Exact Certifiers for Special Graph Classes**.
+
+---
+
+**Nota pós-análise N1-T0 (2026-10-07).** A auditoria R11 terminou em `CONFIRMED DIVERGENCE`. Os procedimentos literais de caminhos/ciclos/spiders são objetos de estudo e **não** certificadores exatos para N1/N2. Para OPT usar enumeração, MIP certificado, DP BP ou valor analítico com prova. As dependências históricas de R8/R10 dos certificadores literais estão superadas.

@@ -4,11 +4,11 @@ Plano operacional consolidado do que foi executado, encerrado ou pausado. O back
 
 A fonte científica das tarefas T1–T22 é o
 
-[parecer macro consolidado](../reference/MIN-STATION-parecer-macro-consolidado.md).
+[parecer macro consolidado](../../reference/documentacao-projeto/MIN-STATION-parecer-macro-consolidado.md).
 
 O programa de pesquisa depois dos Blocos 1–4 está em
 
-[`plano-proxima-fase.md`](plano-proxima-fase.md) (R1–R13 e Linha F).
+[`plano-proxima-fase.md`](../execucao/plano-proxima-fase.md) (R1–R13 e Linha F).
 
 Este arquivo não executa pesquisa: só consolida histórico e backlog.
 
@@ -67,16 +67,16 @@ Specs dos Blocos 1–4:
 - `specs/bloco3-pesquisa-instancias-estruturais/spec.md`
 - `specs/bloco4-posicionamento-cientifico/spec.md`
 
-A continuação científica posterior é controlada separadamente por `docs/technical/plans/plano-proxima-fase.md` (R1–R13 e Linha F) e pelas specs da próxima fase. Este arquivo não declara o programa R1–R13 inteiro como concluído; apenas registra o que já foi executado dentro do seu escopo e o estado conhecido de R11.
+A continuação científica posterior é controlada separadamente por `docs/technical/plans/execucao/plano-proxima-fase.md` (R1–R13 e Linha F) e pelas specs da próxima fase. Este arquivo não declara o programa R1–R13 inteiro como concluído; apenas registra o que já foi executado dentro do seu escopo e o estado conhecido de R11.
 
 R11 (Spec D): **CONCLUÍDA em 2026-10-07 — `CONFIRMED DIVERGENCE`**.
 
 Evidência versionada:
 
 - `results/structural/r11-certificadores.csv`
-- `docs/technical/reference/resultados-r11-certificadores.md`
-- `docs/technical/reference/auditoria-r11-divergencias.md`
-- `docs/technical/reference/conclusao-r11-certificadores.md`
+- `docs/technical/reference/experimentos/resultados-r11-certificadores.md`
+- `docs/technical/reference/validacao-e-correcoes/auditoria-r11-divergencias.md`
+- `docs/technical/reference/validacao-e-correcoes/conclusao-r11-certificadores.md`
 - `experiments/structural/verify_r11_counterexamples.py`
 
 O fechamento pós-lote confirmou contraexemplos mínimos para caminho e ciclo e reproduziu SP-R2 nas leituras de aranha. Caminho/ciclo literais não são usados como oráculos exatos; aranhas permanecem leitura-dependentes e sem certificador exato universal.
@@ -171,7 +171,7 @@ Cada item abaixo tem evidência no repositório. Números finos ficam nos relat�
 
 **Resultado:** `baseline.py` implementa a variante U. Com `S∩T = ∅` a forma coincide com a anterior.
 
-**Evidência:** `docs/technical/governance/open-questions.md` Q1, `docs/context-ai/base-formulation.md` §6 e §10.1, `docs/technical/reference/validacao-formulacao-base.md`.
+**Evidência:** `docs/technical/governance/open-questions.md` Q1, `docs/context-ai/base-formulation.md` §6 e §10.1, `docs/technical/reference/validacao-e-correcoes/validacao-formulacao-base.md`.
 
 #### H03 — Correção de cortes inválidos na campanha E5
 
@@ -181,7 +181,7 @@ Cada item abaixo tem evidência no repositório. Números finos ficam nos relat�
 
 **Resultado:** Cortes revisados para o Lema 5 de Das (o robô pode permanecer no próprio alvo). O relatório lista os defeitos como corrigidos.
 
-**Evidência:** `docs/technical/reference/resultados-e2-e4-pli.md` §2–§3 e §8.1, `docs/technical/plans/plano-experimentos-e5.md`.
+**Evidência:** `docs/technical/reference/experimentos/resultados-e2-e4-pli.md` §2–§3 e §8.1, `docs/technical/plans/execucao/plano-experimentos-e5.md`.
 
 #### H04 — Correção de `generate_C4_DM`
 
@@ -191,7 +191,7 @@ Cada item abaixo tem evidência no repositório. Números finos ficam nos relat�
 
 **Resultado:** Das 5 principais com sobreposição, 3 tinham cortes inválidos. Reavaliação corrigiu 3 linhas do manifesto, inclusive `b-b09-intercalado-f2-rho` (4 → 2). Nenhuma classe de dificuldade mudou nessa correção pontual. A regeneração completa do protocolo é H17.
 
-**Evidência:** `docs/technical/reference/correcao-c4-dm.md`, `experiments/cuts/verify_c4_dm.py`.
+**Evidência:** `docs/technical/reference/validacao-e-correcoes/correcao-c4-dm.md`, `experiments/cuts/verify_c4_dm.py`.
 
 ### Experimentos de cortes e decomposição
 
@@ -205,7 +205,7 @@ Instâncias de E0–E8 são, em grande parte, extensão ponderada ou dirigida. C
 
 **Resultado:** Hipótese A1 fortemente suportada no recorte testado (hc9u 1 → 29 com C1; hc10p 1 → 52; Philadelphia 3 → 34 com C1+C2; cc10-2p fecha na raiz). C4-DM eficaz em F2 sintética e redundante nas reais daquele conjunto. C3 melhora o LP em Philadelphia e não entra na raiz sem separação iterativa.
 
-**Evidência:** `docs/technical/reference/resultados-e0-e1-pli.md`, `docs/technical/plans/plano-experimentos-e0-e1.md`, `results/cuts/`.
+**Evidência:** `docs/technical/reference/experimentos/resultados-e0-e1-pli.md`, `docs/technical/plans/execucao/plano-experimentos-e0-e1.md`, `results/cuts/`.
 
 #### H06 — E2, E3 e E4: espaço-y, núcleo e árvore curta
 
@@ -215,7 +215,7 @@ Instâncias de E0–E8 são, em grande parte, extensão ponderada ou dirigida. C
 
 **Resultado:** O núcleo de hc9u resolve em poucos segundos (OPT do núcleo = 32) e uma solução ótima do núcleo testada no compacto é inviável. OPT(hc9u) ficou em [32, 38]. Cortes estáticos melhoram o LB e, em parte das instâncias pequenas, pioram o UB.
 
-**Evidência:** `docs/technical/reference/resultados-e2-e4-pli.md` §4–§6, `docs/technical/plans/plano-experimentos-e2-e4.md`.
+**Evidência:** `docs/technical/reference/experimentos/resultados-e2-e4-pli.md` §4–§6, `docs/technical/plans/execucao/plano-experimentos-e2-e4.md`.
 
 #### H07 — E6: branch-and-cut em y com corte lazy
 
@@ -225,7 +225,7 @@ Instâncias de E0–E8 são, em grande parte, extensão ponderada ou dirigida. C
 
 **Resultado:** Mecanismo validado e funcional. Insuficiente com C1 puro no prazo testado. Não decide A2.
 
-**Evidência:** `docs/technical/reference/resultados-e2-e4-pli.md` §7.
+**Evidência:** `docs/technical/reference/experimentos/resultados-e2-e4-pli.md` §7.
 
 #### H08 — E7: BC-y completo contra o compacto
 
@@ -235,7 +235,7 @@ Instâncias de E0–E8 são, em grande parte, extensão ponderada ou dirigida. C
 
 **Resultado:** BC-y não superou o COMP em LB final nem em tempo até o ótimo. Revisão posterior invalidou o experimento como medida do método: cortes estáticos diferentes, start sem viabilidade garantida, callback sem guarda de tempo. A2 ficou sem decisão.
 
-**Evidência:** `docs/technical/reference/resultados-e7-pli.md` §5.1 e §6, `docs/technical/plans/plano-experimentos-e7.md`.
+**Evidência:** `docs/technical/reference/experimentos/resultados-e7-pli.md` §5.1 e §6, `docs/technical/plans/execucao/plano-experimentos-e7.md`.
 
 #### H09 — E8: COMP × BC-Y' × CBI
 
@@ -245,7 +245,7 @@ Instâncias de E0–E8 são, em grande parte, extensão ponderada ou dirigida. C
 
 **Resultado:** No critério da época, A2 continua: em R-c o CBI prova o ótimo e o compacto não; em hc10p e bip42p o CBI tem o melhor LB, com uma iteração e zero cortes 𝒵 (ganho do núcleo, não da iteração). O recorte "A2 só fora de R-a" foi suspenso pelo benchmark-v1, porque R-c não produz instância difícil fiel a Das e as vitórias de R-a estão em TNTP. O veredito posterior para Das é H16.
 
-**Evidência:** `docs/technical/reference/resultados-e8-pli.md`, `docs/technical/plans/plano-experimentos-e8.md`, `results/cuts/e8_certificado_cc12.txt`.
+**Evidência:** `docs/technical/reference/experimentos/resultados-e8-pli.md`, `docs/technical/plans/execucao/plano-experimentos-e8.md`, `results/cuts/e8_certificado_cc12.txt`.
 
 ### Benchmark, instâncias e diagnóstico no problema de Das
 
@@ -257,7 +257,7 @@ Instâncias de E0–E8 são, em grande parte, extensão ponderada ou dirigida. C
 
 **Resultado:** A dificuldade acompanha UB/m, não o tamanho do dígrafo de alcance. O regime R-c não produz instância difícil nesse lote. Classes na partição anterior à regeneração: F 35, A 26, M 5, D 4 (30 D/A). Lacunas de maturidade do lote original incluíam D abaixo do alvo, `pucn` com dois níveis de r, uma seed e ausência de tag de versão. A dívida de partição por variante foi posteriormente fechada pela T8/R2, com partição por grafo de origem.
 
-**Evidência:** `docs/technical/reference/benchmark-v1.md`, `docs/technical/plans/plano-benchmark-v1.md`, `instances/manifest.csv`.
+**Evidência:** `docs/technical/reference/baseline-e-metodo/benchmark-v1.md`, `docs/technical/plans/execucao/plano-benchmark-v1.md`, `instances/manifest.csv`.
 
 #### H11 — Classificação de métrica e de grafos dirigidos
 
@@ -267,7 +267,7 @@ Instâncias de E0–E8 são, em grande parte, extensão ponderada ou dirigida. C
 
 **Resultado:** hc9u é Das em passos. hc10p–hc12p e bip42p são equivalentes a Das com r = 1 (`A_r = E`). cc10-2p/cc12-2p são extensão ponderada. Chicago, Barcelona e Philadelphia são extensão ponderada e dirigida. Três TNTP com o R do arquivo são triviais (OPT = 0).
 
-**Evidência:** `docs/technical/governance/open-questions.md` Q2 e Q7, `docs/technical/reference/benchmark-v1.md` §5.
+**Evidência:** `docs/technical/governance/open-questions.md` Q2 e Q7, `docs/technical/reference/baseline-e-metodo/benchmark-v1.md` §5.
 
 Q2 ainda registra como não decidido se conclusões por regime devem ser refeitas em passos. Isso não é uma tarefa nova; continua em `open-questions.md`.
 
@@ -279,7 +279,7 @@ Q2 ainda registra como não decidido se conclusões por regime devem ser refeita
 
 **Resultado:** `L_bot` é dominado pela raiz com cortes; R6 além de `L_bot` sai da agenda. O núcleo (TL 60 s) supera o LB do COMP (600 s) em 6 linhas, todas PUC/PUCN, por 1–2 estações. Em MAPF e Vienna o COMP fica acima. As 6 linhas não são 6 grafos independentes. Números medidos antes da correção do C4-DM; o relatório delimita o efeito.
 
-**Evidência:** `docs/technical/reference/resultados-e9-e10-pli.md` §2.
+**Evidência:** `docs/technical/reference/experimentos/resultados-e9-e10-pli.md` §2.
 
 #### H13 — E10 e E10b: primal construtivo
 
@@ -289,7 +289,7 @@ Q2 ainda registra como não decidido se conclusões por regime devem ser refeita
 
 **Resultado:** Inconclusivo quanto a gap primal ou dual. Os construtores devolvem soluções piores que o incumbente do Gurobi na maior parte das D/A. O reparo vence o UB do COMP em 1/30. Um MIP start melhor não move o LB. O critério "se H3 perder, o gargalo é dual" foi rejeitado como inferência inválida.
 
-**Evidência:** `docs/technical/reference/resultados-e9-e10-pli.md` §3–§5.
+**Evidência:** `docs/technical/reference/experimentos/resultados-e9-e10-pli.md` §3–§5.
 
 #### H14 — E13: ênfase primal em MAPF/Vienna
 
@@ -299,7 +299,7 @@ Q2 ainda registra como não decidido se conclusões por regime devem ser refeita
 
 **Resultado:** Veredito de gap primal no limiar (7/13 com Δ_UB ≥ 5%). A fase de 600 s sozinha daria o sinal oposto. O gap residual permanece entre cerca de 10% e 44% e supera a queda primal nas 12 não resolvidas. O experimento não atribui o residual ao LB ou ao UB. Nove controles divergem do manifesto.
 
-**Evidência:** `docs/technical/reference/resultados-e13-pli.md`, `docs/technical/plans/plano-pos-e13.md` passos 0–1.
+**Evidência:** `docs/technical/reference/experimentos/resultados-e13-pli.md`, `docs/technical/plans/execucao/plano-pos-e13.md` passos 0–1.
 
 A prosa da §5 do relatório foi corrigida pela T11; isso não reabriu o E13.
 
@@ -311,7 +311,7 @@ A prosa da §5 do relatório foi corrigida pela T11; isso não reabriu o E13.
 
 **Resultado:** 0/4 com OPT = UB. As quatro terminam em `TIME_LIMIT`. Nenhuma solução abaixo de UB_melhor. O único LB que se move é `mapf-room-32-32-4-m25-f4-rho` (17 → 18). O critério que devolvia o E11 à fila não dispara. O resultado não se estende às instâncias de residual 30–44%.
 
-**Evidência:** `docs/technical/reference/resultados-e14-pli.md`, `experiments/benchmark/run_e14.py`, `results/benchmark/e14_fatia{1,2}.csv`. Relatório e CSVs estavam fora do commit no momento desta consolidação.
+**Evidência:** `docs/technical/reference/experimentos/resultados-e14-pli.md`, `experiments/benchmark/run_e14.py`, `results/benchmark/e14_fatia{1,2}.csv`. Relatório e CSVs estavam fora do commit no momento desta consolidação.
 
 #### H16 — E12: CBI × núcleo × COMP em PUC/PUCN
 
@@ -321,7 +321,7 @@ A prosa da §5 do relatório foi corrigida pela T11; isso não reabriu o E13.
 
 **Resultado:** A2 encerrada para Das. Uma vitória contra o COMP, em um grafo (`hc11p`), e nenhuma vitória contra o núcleo. Onde o núcleo fecha, os cortes 𝒵 não sobem o LB acima dele. Controles MAPF repetem o esperado: CBI no núcleo e abaixo do COMP.
 
-**Evidência:** `docs/technical/reference/resultados-e12-pli.md`, `experiments/benchmark/run_e12.py`, `experiments/benchmark/tabela_e12.py`, `results/benchmark/e12_fatia{1,2}.csv`, `docs/technical/plans/plano-pos-e13.md` passo 4.
+**Evidência:** `docs/technical/reference/experimentos/resultados-e12-pli.md`, `experiments/benchmark/run_e12.py`, `experiments/benchmark/tabela_e12.py`, `results/benchmark/e12_fatia{1,2}.csv`, `docs/technical/plans/execucao/plano-pos-e13.md` passo 4.
 
 #### H17 — Regeneração do protocolo de dificuldade depois do C4-DM
 
@@ -331,7 +331,7 @@ A prosa da §5 do relatório foi corrigida pela T11; isso não reabriu o E13.
 
 **Resultado:** Classes das 70: F 35, A 28, M 4, D 3 (D/A passa de 30 para 31). Entra `mapf-empty-32-32-m50-f2` (M → A). As três correções manuais do C4-DM reaparecem no CSV novo. E9, E10, E10b e E13 usaram a partição anterior e não são refeitos. `treewidth_ub` mudou em 49 instâncias na reconstrução completa e não foi aplicado.
 
-**Evidência:** `docs/technical/reference/benchmark-v1.md` §8, `experiments/benchmark/comparar_regeneracao_c4fix.py`, `results/benchmark/regeneracao_c4fix.csv`, `results/benchmark/dificuldade_v1_fatia{1,2}.csv`, `results/benchmark/historico/`. Parte desses arquivos estava fora do commit no momento desta consolidação.
+**Evidência:** `docs/technical/reference/baseline-e-metodo/benchmark-v1.md` §8, `experiments/benchmark/comparar_regeneracao_c4fix.py`, `results/benchmark/regeneracao_c4fix.csv`, `results/benchmark/dificuldade_v1_fatia{1,2}.csv`, `results/benchmark/historico/`. Parte desses arquivos estava fora do commit no momento desta consolidação.
 
 Isto não cumpre a T8.
 
@@ -365,7 +365,7 @@ Isto não cumpre a T8.
 
 **Resultado:** A1 apoiada pela campanha inicial. Várias linhas D ficam descartadas por enquanto, com a justificativa no próprio documento. O ranking A2 está desatualizado em relação ao E12 (inconsistência 9).
 
-**Evidência:** `docs/technical/reference/direcoes-pli-min-station.md`.
+**Evidência:** `docs/technical/reference/tecnico/direcoes-pli-min-station.md`.
 
 #### H21 — R11 / Spec D: certificadores de classes especiais
 
@@ -375,7 +375,7 @@ Isto não cumpre a T8.
 
 **Resultado:** o lote oficial produziu 80 linhas sobre 44 instâncias, sem `reference_failure`. Enumeração, baseline e F-CC foram consistentes onde aplicáveis. O Algoritmo 1 literal de caminhos e o Algoritmo 2 literal de ciclos possuem contraexemplos subótimos mínimos; para aranhas, SP-R2 reproduz divergência dependente da leitura, com `spider-A`/`spider-U` inviáveis e `spider-B` viável porém subótimo no caso auditado. O material de aranhas não fecha um certificador exato universal único.
 
-**Evidência:** `results/structural/r11-certificadores.csv`, `docs/technical/reference/resultados-r11-certificadores.md`, `docs/technical/reference/auditoria-r11-divergencias.md`, `docs/technical/reference/conclusao-r11-certificadores.md`, `experiments/structural/verify_r11_counterexamples.py`.
+**Evidência:** `results/structural/r11-certificadores.csv`, `docs/technical/reference/experimentos/resultados-r11-certificadores.md`, `docs/technical/reference/validacao-e-correcoes/auditoria-r11-divergencias.md`, `docs/technical/reference/validacao-e-correcoes/conclusao-r11-certificadores.md`, `experiments/structural/verify_r11_counterexamples.py`.
 
 ---
 
@@ -391,7 +391,7 @@ P1–P4 registravam dívidas reais em versões anteriores deste backlog. Todas e
 
 **Fechamento:** `validacao-formulacao-base.md` §5.5 contém a prova na rede auxiliar corrigida pela T1; as lacunas antes registradas em A.10 foram fechadas.
 
-**Evidência:** `docs/technical/reference/validacao-formulacao-base.md`, `docs/technical/governance/open-questions.md` Q3, T5.
+**Evidência:** `docs/technical/reference/validacao-e-correcoes/validacao-formulacao-base.md`, `docs/technical/governance/open-questions.md` Q3, T5.
 
 **O que falta:** nada neste backlog.
 
@@ -403,7 +403,7 @@ P1–P4 registravam dívidas reais em versões anteriores deste backlog. Todas e
 
 **Fechamento:** `cortes_ordenados` foi aplicado em `harness.py`, `bc_yspace.py` e `yspace.py`; `verify_t6_determinismo.py` confirma ordem estável entre sementes de hash testadas. `PYTHONHASHSEED` permanece proteção adicional, não mecanismo principal.
 
-**Evidência:** T6, `docs/technical/reference/correcao-c4-dm.md`, `plano-pos-e13.md` §4.3.
+**Evidência:** T6, `docs/technical/reference/validacao-e-correcoes/correcao-c4-dm.md`, `plano-pos-e13.md` §4.3.
 
 **O que falta:** nada neste backlog.
 
@@ -427,7 +427,7 @@ P1–P4 registravam dívidas reais em versões anteriores deste backlog. Todas e
 
 **Fechamento:** T8 criou `grupos_origem.csv`, registrou `duplicata_de`, adicionou `verify_t8_consolidacao.py` e R2 (2026-10-04) reatribuiu a partição por grafo de origem com zero vazamento.
 
-**Evidência:** `docs/technical/reference/benchmark-v1.md`, `regra-particao-origem.md`, T8.
+**Evidência:** `docs/technical/reference/baseline-e-metodo/benchmark-v1.md`, `regra-particao-origem.md`, T8.
 
 **O que falta:** nada neste backlog.
 
@@ -521,7 +521,7 @@ Spec detalhada de T1–T5 (estado atual verificado, histórias, critérios EARS)
 
 #### T3 — Criar suíte de regressão de corretude para terminais
 
-**Status:** `CONCLUÍDA` — `experiments/cuts/verify_t3_regressao_terminais.py`. Evidência em `docs/technical/reference/regressao-terminais-t3.md`.
+**Status:** `CONCLUÍDA` — `experiments/cuts/verify_t3_regressao_terminais.py`. Evidência em `docs/technical/reference/analise-estrutural/regressao-terminais-t3.md`.
 
 **Depende de:** T1, T2
 
@@ -543,7 +543,7 @@ Spec detalhada de T1–T5 (estado atual verificado, histórias, critérios EARS)
 
 #### T4 — Revalidar resultados experimentais afetados pelo antigo oráculo
 
-**Status:** `CONCLUÍDA` — auditoria em `docs/technical/reference/revalidacao-oraculo-pos-t1.md`. Nenhum veredito publicado dependeu do defeito a ponto de exigir reexecução.
+**Status:** `CONCLUÍDA` — auditoria em `docs/technical/reference/validacao-e-correcoes/revalidacao-oraculo-pos-t1.md`. Nenhum veredito publicado dependeu do defeito a ponto de exigir reexecução.
 
 **Depende de:** T1
 
@@ -753,7 +753,7 @@ A atualização de `direcoes-pli-min-station.md` §13 com o veredito do E12 perm
 
 ### Bloco 3 — Pesquisa e instâncias estruturais
 
-Ordem recomendada: BP, HB, E11/C6, SC, teste do CBI, TR, diagnóstico all-V, piloto, decisão, expansão. T12–T20 estão executadas. A decisão da fase P está em `docs/technical/reference/decisao-fase-p.md`: BP e HB descartadas, SC promovida, T16 e TR encerradas sem bateria de CBI, desagregação sem expansão. A fase E de SC está em `fase-e-sc.md`: o GF2 em `k = 8` e `k = 9` repetiu a separação, e os gêmeos saíram sem certificado do set cover.
+Ordem recomendada: BP, HB, E11/C6, SC, teste do CBI, TR, diagnóstico all-V, piloto, decisão, expansão. T12–T20 estão executadas. A decisão da fase P está em `docs/technical/reference/decisoes/decisao-fase-p.md`: BP e HB descartadas, SC promovida, T16 e TR encerradas sem bateria de CBI, desagregação sem expansão. A fase E de SC está em `fase-e-sc.md`: o GF2 em `k = 8` e `k = 9` repetiu a separação, e os gêmeos saíram sem certificado do set cover.
 
 #### T12 — Implementar e validar a família estrutural BP
 
@@ -1003,7 +1003,7 @@ Formulação experimental, comparada à base. Não substitui o baseline.
 
 #### T22 — Mapear sobreposição com o artigo IJCAI 2026 e atualizar contribuição
 
-**Status:** `CONCLUÍDA` (2026-10-03). Evidência: `docs/technical/reference/overlap-ijcai2026-min-station.md`; spec em `specs/bloco4-posicionamento-cientifico/spec.md`.
+**Status:** `CONCLUÍDA` (2026-10-03). Evidência: `docs/technical/reference/documentacao-projeto/overlap-ijcai2026-min-station.md`; spec em `specs/bloco4-posicionamento-cientifico/spec.md`.
 
 **Depende de:** nada para o levantamento. A narrativa do artigo espera o restante do backlog só no que for afirmação de resultado novo.
 
@@ -1066,4 +1066,8 @@ Esses itens não tornam T1–T22 incompletas. As linhas de pesquisa pausadas só
 
 **Linhas pausadas/encerradas:** permanecem fora da fila ativa conforme a evidência registrada.
 
-**Programa posterior R1–R13 e Linha F:** controlado por `docs/technical/plans/plano-proxima-fase.md`; não é declarado integralmente concluído por este arquivo.
+**Programa posterior R1–R13 e Linha F:** controlado por `docs/technical/plans/execucao/plano-proxima-fase.md`; não é declarado integralmente concluído por este arquivo.
+
+---
+
+**Nota pós-análise N1-T0 (2026-10-07).** A pausa na antiga geração de colunas de conjuntos completos de estações não decide a F-CC: GF1=`PASS`. Contudo N1 não implementa colunas; eventual método de precificação e limite dual certificado pertence **exclusivamente** a N2, condicional à decisão N1. Não inferir que o pricing antigo pode ser reutilizado sem prova.

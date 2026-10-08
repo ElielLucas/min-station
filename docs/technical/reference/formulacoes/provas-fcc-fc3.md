@@ -66,92 +66,106 @@ e SharedTerminal, para todo \(C\subseteq V\), `fcc_y_viavel` coincide com
 
 ## P2 — \(z_{\mathrm{LP}}(\mathrm{base})\le z_{\mathrm{LP}}(\mathrm{F\text{-}CC})\)
 
-**Rótulo: `PROVEN`**
+**Rótulo: `PROVEN` — prova reescrita em N1-T1 (2026-10-07).**
 
-**Enunciado.** Toda solução viável da relaxação da F-CC induz uma solução
-viável da relaxação da base com o mesmo \(y\). Logo o mínimo da F-CC é
-pelo menos o da base.
+**Enunciado.** Toda solução do LP de F-CC induz um fluxo não negativo
+factível para a relaxação da baseline U, preservando o mesmo \(y\) e o
+objetivo. Isso não afirma que os politopos nas variáveis auxiliares coincidem.
 
-**Prova.** Seja \((y,\lambda,d)\) viável no LP da F-CC. Construa fluxo
-agregado em \(A_r\). Para cada \((s,t)\in D\) com \(s\neq t\), envie
-\(d_{st}\) pelo arco \((s,t)\in A_r\). Para \(s=t\), o peso \(d_{ss}\) não
-gera fluxo (permanência). Para cada \(q=(W,I,J)\), escolha uma raiz
-\(w_q\in W\) e, para cada \(s\in I_q\), um \(w_s\in W\) com \(d_G(s,w_s)\le r\)
-(existe porque \(s\in B(W)\)); análogo \(w_t\) para cada \(t\in J_q\).
-Envie \(\lambda_q\) ao longo de \(s\to w_s\), depois ao longo de uma
-caminhada em \(H[W]\) de \(w_s\) a \(w_t\) (saltos de \(A_r\)), depois
-\(w_t\to t\). Conservação: cada origem emite o total
-\(\sum_{q:s\in I_q}\lambda_q+\sum_t d_{st}=1\) (R1), cada destino absorve 1
-(R2), vértices internos conservam.
+**Prova.** Fixe \((y,\lambda,d)\) viável para F-CC. Para cada configuração
+\(q=(W_q,I_q,J_q)\), ponha \(k_q=|I_q|=|J_q|\) e escolha **uma bijeção**
+\(\pi_q:I_q\to J_q\). Para cada \(s\in I_q\), como ambos os terminais
+estão em \(B(W_q)\) e \(H[W_q]\) é conexo, existe caminho em \(H\) de
+\(s\) a \(\pi_q(s)\) cujos vértices internos estão em \(W_q\). Escolha
+**caminho simples**; um par coincidente \(s=t\) usa caminhada de comprimento
+zero. Envie \(\lambda_q\) por esse caminho. Para cada \((s,t)\in D\),
+\(s\ne t\), envie \(d_{st}\) no arco direto; \(d_{ss}\) não gera arco.
+Somando caminhos obtemos fluxo \(f\ge0\). Cada caminho não trivial de
+\(s\) a \(t\) contribui \(+1\) ao balanço em \(s\), \(-1\) em \(t\) e
+zero em todos os outros vértices. R1 e R2 implicam, inclusive no caso
+\(S\cap T\ne\varnothing\),
+\(\operatorname{out}(v)-\operatorname{in}(v)=a_v-b_v\), com
+\(a_v=1_{v\in S}\), \(b_v=1_{v\in T}\).
 
-Activação da base em \(v\): o fluxo que entra (sai) em \(v\) só usa
-configurações com \(v\in W_q\) ou um salto directo que termina (começa)
-em \(v\). A quantidade total que transita por \(v\) via configurações é
-no máximo \(m\sum_{q:v\in W_q}\lambda_q\le m y_v\) (R3 e \(|I_q|\le m\)).
-A restrição de entrada da base pede
-\(\mathrm{in}(v)\le b_v+(m-b_v)y_v\) com \(b_v\in\{0,1\}\). Vale
-\(m y_v\le b_v+(m-b_v)y_v\) para todo \(y_v\in[0,1]\), porque
-\(b_v y_v\le b_v\). O salto directo que chega a um destino conta na parcela
-\(b_v\) e não exige estação. O caso da saída é simétrico
-(\(a_v\) no lugar de \(b_v\)). Portanto \((y,f)\) é viável na relaxação da
-base e tem o mesmo custo.
+**Ativação de entrada.** Defina chegada final como a contribuição do último
+arco de um caminho cuja extremidade final é \(v\). Se \(v\in T\), seu
+peso total é no máximo 1 por R2 (e pode ser menor quando há permanência).
+Se \(v\notin T\), não há chegada final em \(v\). Toda outra entrada é
+**trânsito** e deve passar por um vértice interno de \(W_q\); caminhos
+simples garantem no máximo uma entrada em \(v\) por robô. Em uma
+configuração com \(v\in W_q\), se \(v\in J_q\), exatamente um dos
+\(k_q\) robôs termina em \(v\), logo no máximo \(k_q-1\le m-1\)
+atravessam \(v\) em trânsito. Se \(v\notin J_q\) **e** \(v\in T\),
+\(k_q\le m-1\), pois \(J_q\subseteq T\setminus\{v\}\). Portanto,
+para \(v\in T\), o trânsito total é no máximo
+\((m-1)\sum_{q:v\in W_q}\lambda_q\le(m-1)y_v\) por R3;
+somado à chegada final, dá
+\(\operatorname{in}(v)\le 1+(m-1)y_v\).
 
-**Cruzamento:** F3 aborta se `lp_fcc < lp_base - 1e-6` (`P2_REFUTADO`).
+Se \(v\notin T\), cada configuração que transita em \(v\) tem
+\(k_q\le m\), logo
+\(\operatorname{in}(v)\le m\sum_{q:v\in W_q}\lambda_q\le my_v\).
+Observe que o argumento inclui explicitamente entradas em destinos
+\(t\in J_q\setminus W_q\): são **chegadas finais gratuitas**, não
+trânsito, e sua soma está coberta por R2. Os demais caminhos não podem
+visitar esses destinos fora de \(W_q\) como vértices internos.
+
+**Ativação de saída.** É simétrica, mas com os papéis invertidos: a primeira
+saída em cada \(s\in S\) tem peso total no máximo 1 por R1; para
+\(v\in S\cap W_q\), se \(v\in I_q\), um dos \(k_q\) caminhos parte de
+\(v\) e no máximo \(k_q-1\) passam em trânsito; se \(v\notin I_q\)
+e \(v\in S\), então \(k_q\le m-1\). Segue
+\(\operatorname{out}(v)\le 1+(m-1)y_v\) se \(v\in S\),
+e \(\operatorname{out}(v)\le my_v\) caso contrário.
+Terminais que desempenham simultaneamente os papéis de origem e destino
+recebem as duas contagens gratuitas **separadamente**, como exige a U.
+
+As quatro ativações são exatamente
+\(\operatorname{in}(v)\le b_v+(m-b_v)y_v\) e
+\(\operatorname{out}(v)\le a_v+(m-a_v)y_v\); logo \((y,f)\)
+é factível no LP da baseline U, com mesmo custo. \(\square\)
+
+**Nota de evidência.** Esta é uma prova escrita, não um teste computacional.
+A verificação independente da argumentação matemática permanece distinta
+da reprodução experimental F3.
 
 ---
 
 ## P3 — o LP da F-CC implica C1
 
-**Rótulo: `COMPUTATIONALLY VERIFIED` (argumento escrito; não extraído como
-corte contra a solução F-CC em F3)**
+**Rótulo: `HYPOTHESIS` — N1-T1 (2026-10-07).**
 
-**Enunciado.** Toda solução do LP da F-CC satisfaz os cortes C1 de
-`cuts.generate_C1`.
+A versão histórica apresentava um argumento para C1, mas o rotulava
+`COMPUTATIONALLY VERIFIED` **sem** teste de implicação de todos os cortes.
+Não se preserva esse rótulo. Um teste correto minimizaria
+\(\sum_{v\in Z} y_v\) sobre o LP de F-CC para cada \(Z\) gerado por C1,
+em cada instância pré-declarada, exigindo valor \(\ge1-10^{-6}\).
 
-**Prova.** C1, lado das origens: se \(s\in S\setminus T\) e
-\(N^+(s)\cap T=\varnothing\) (nenhum destino a distância \(\le r\)), então
-não existe \((s,t)\in D\). R1 reduz-se a \(\sum_{q:s\in I_q}\lambda_q=1\).
-Se \(s\in I_q\), então \(s\in B(W_q)\), logo existe \(w\in W_q\) com
-\(d_G(s,w)\le r\). Como \(s\notin W_q\) ou, se \(s\in W_q\), o próprio \(s\)
-está em \(N^+(s)\)? Distância 0: \(s\in W_q\) implica \(s\in C\), e
-\(s\in N^+(s)\) não: \(N^+(s)\) são vizinhos em \(A_r\), \(u\neq s\). Se
-\(s\in W_q\), R3 dá \(\lambda_q\le y_s\). Se \(s\notin W_q\), o primeiro
-salto de recarga está em \(N^+(s)\). Em ambos os casos cada configuração
-que atende \(s\) cobra pelo menos uma estação em \(N^+(s)\cup\{s\}\).
+**Distância zero resolvida:** \(s\notin N^+(s)\), pois `A_r` omite
+\((s,s)\). A vizinhança fechada \(B(W)\) **inclui** \(W\), de forma que
+\(s\in W\) não implica \(s\in N^+(s)\). A demonstração histórica não
+fica automaticamente completa só por esclarecer essa distinção.
 
-C1 escrito no código é \(y(N^+(s))\ge 1\) **sem** incluir \(s\), e só quando
-\(N^+(s)\cap T=\varnothing\) e \(N^+(s)\neq\varnothing\). Se o atendimento
-usa \(s\) como estação e nenhum vértice de \(N^+(s)\), C1 poderia falhar.
-Isso só é possível se \(s\in W_q\) e \(s\) alcança \(T\) via estações em
-\(W_q\) sem o primeiro salto sair para \(N^+(s)\) — o primeiro salto a
-partir de \(s\in C\) vai a algum \(v\in N^+(s)\cap W_q\), portanto
-\(N^+(s)\) contém uma estação da mesma configuração. Somando R3 nesses
-vértices: \(\sum_{v\in N^+(s)} y_v \ge \sum_{v\in N^+(s)}\sum_{q:v\in W_q}\lambda_q \ge \sum_{q:s\in I_q}\lambda_q=1\),
-porque cada tal \(q\) tem pelo menos um vértice de \(W_q\) em \(N^+(s)\)
-(o primeiro salto a partir de \(s\), ou um vizinho em \(H[W_q]\)). Se
-\(W_q=\{s\}\), então \(T\cap B(\{s\})\neq\varnothing\) para \(J_q\neq\varnothing\),
-logo algum \(t\in N^+(s)\cap T\), contradizendo a hipótese de C1. Portanto
-\(|W_q|\ge 2\) ou o primeiro salto existe em \(N^+(s)\). O lado dos destinos
-é simétrico.
+Até haver prova revisada ou teste de implicação, **P3 não é usada para
+afirmar inclusão de politopos**. Comparar apenas objetivos de LP não
+serviria como teste de implicação.
 
 ---
 
 ## P4 — o LP da F-CC implica C2
 
-**Rótulo: `COMPUTATIONALLY VERIFIED` (argumento de banda escrito; F3 não
-testa violação de C2 na solução F-CC)**
+**Rótulo: `HYPOTHESIS` — N1-T1 (2026-10-07).**
 
-**Enunciado.** Toda solução do LP da F-CC satisfaz os cortes C2 (bandas de
-distância).
+O argumento histórico de bandas não substitui uma prova revisada para
+cada corte efetivamente retornado por `cuts.generate_C2` (incluindo
+regras da implementação e incidência dos terminais). Nenhum teste do
+mínimo do lado esquerdo de **cada** C2 sobre o LP F-CC foi registrado.
+A etiqueta anterior `COMPUTATIONALLY VERIFIED` era incompatível com a
+evidência; ela foi retirada.
 
-**Prova.** Para \(s\in S\setminus T\) com \(D_s=\min_{t\in T}d_G(s,t)>r\),
-não há par directo. Qualquer configuração que atenda \(s\) tem \(W_q\)
-conexo em \(H\) e \(s\in B(W_q)\). Uma caminhada de \(s\) até um destino
-em \(B(W_q)\) atravessa cada banda \((a,a+r]\) com \(a+r<D_s\). A
-conectividade em \(H\) força pelo menos uma estação da configuração em
-cada banda (senão um salto de comprimento \(\le r\) saltaria a banda,
-contradizendo a definição da banda). Somando R3 na banda:
-\(y(\mathrm{banda})\ge\sum_{q:s\in I_q}\lambda_q=1\). Destinos: simétrico.
+Para elevar o rótulo, escrever uma prova de implicação para todos os
+cortes gerados ou executar um teste de implicação por corte e instância,
+com tolerância \(10^{-6}\). Comparar valores objetivos não basta.
 
 ---
 
@@ -174,40 +188,55 @@ relativa à F-CC. F3 não usa P6.
 
 ---
 
-## P7 — forma separada \(\lambda_W,\alpha,\beta\) tem o mesmo LP que a F-CC
+## P7 — F-CA com CA5 tem a mesma projeção em \(y\) que F-CC
 
-**Rótulo: `PROVEN`**
+**Rótulo: `PROVEN` — prova reparada em N1-T1 (2026-10-07).**
 
-**Enunciado.** Seja \(z_Q\) o valor do LP com variáveis \(\lambda_q\)
-indexadas por \(Q=\{(W,I,J)\}\) e \(z_{\mathrm{sep}}\) o LP com
-\(\lambda_W\), \(\alpha_{sW}\le\lambda_W\), \(\beta_{tW}\le\lambda_W\),
-\(\sum_s\alpha_{sW}=\sum_t\beta_{tW}\), e as mesmas R1–R3 em termos de
-\(\alpha,\beta,\lambda_W\). Então \(z_Q=z_{\mathrm{sep}}\).
+A F-CA da SOURCE (§3) usa, por \(W\), \(\lambda_W\), \(\alpha_{sW}\)
+e \(\beta_{tW}\), com CA1–CA6, inclusive
+\(\lambda_W\le\sum_s\alpha_{sW}\) (**CA5**).
+O código histórico `fcc.py` na forma `separada` omite CA5.
 
-**Prova.** (\(z_{\mathrm{sep}}\le z_Q\)) Dada \(\lambda_q\), ponha
-\(\lambda_W=\sum_{I,J}\lambda_{(W,I,J)}\),
-\(\alpha_{sW}=\sum_{I\ni s,J}\lambda_{(W,I,J)}\),
-\(\beta_{tW}=\sum_{J\ni t,I}\lambda_{(W,I,J)}\). As caixas
-\(\alpha\le\lambda_W\) valem porque cada \(\lambda_{(W,I,J)}\) com \(s\in I\)
-é parcela de \(\lambda_W\). O equilíbrio \(\sum\alpha=\sum\beta\) é
-\(\sum_{I,J}|I|\lambda=\sum_{I,J}|J|\lambda\). R1–R3 passam.
+**F-CC → F-CA.** Agrupar \(\lambda_{(W,I,J)}\) produz \(\lambda_W\),
+\(\alpha\) e \(\beta\). Toda configuração possui
+\(|I|=|J|\ge1\), portanto também satisfaz CA5: para um dado \(W\),
+\(\sum_s\alpha_{sW}=\sum_{I,J}|I|\lambda_{(W,I,J)}\ge\lambda_W\).
+Atendimento, equilíbrio e instalações não mudam.
 
-(\(z_Q\le z_{\mathrm{sep}}\)) Fixe \(W\) com \(\lambda_W>0\). Seja
-\(a_s=\alpha_{sW}/\lambda_W\in[0,1]\) para \(s\in S\cap B(W)\) (zero fora),
-e \(b_t\) análogo. Então \(\sum a=\sum b\). O politopo
-\(P=\{(a,b)\in[0,1]^{S'}\times[0,1]^{T'}:\sum a=\sum b\}\) tem vértices
-inteiros: a matriz da igualdade é TU com limites de caixa; num vértice,
-no máximo uma coordenada é fracionária, e a igualdade força essa
-coordenada a ser inteira. Todo ponto de \(P\) é combinação convexa de
-vértices \((1_I,1_J)\) com \(|I|=|J|\). Distribuindo \(\lambda_W\) por
-esses vértices obtêm-se \(\lambda_{(W,I,J)}\) que reproduzem \(\alpha,\beta\).
-Se \(\lambda_W=0\), então \(\alpha=\beta=0\). R1–R3 e o objectivo em \(y\)
-não mudam.
+**F-CA → F-CC.** Quando \(\lambda_W=0\), CA3 força \(\alpha=\beta=0\).
+Quando \(\lambda_W>0\), normalize
+\(a_s=\alpha_{sW}/\lambda_W\),
+\(b_t=\beta_{tW}/\lambda_W\). Por CA3–CA5,
+\(0\le a,b\le1\), \(\sum_s a_s=\sum_t b_t\ge1\).
+Esse politopo é a envoltória convexa das incidências
+\((1_I,1_J)\) com \(|I|=|J|\ge1\): se a desigualdade de soma
+não for ativa, a igualdade e os limites inteiros deixam no máximo uma
+coordenada fracionária, impossível pela soma inteira dos demais termos;
+quando é ativa, as duas somas são 1 e a face é produto de simplexos.
+Decompor \((a,b)\) nessas incidências e multiplicar os coeficientes por
+\(\lambda_W\) reconstrói pesos de configurações não vazias,
+preservando \(\lambda_W\), \(\alpha\), \(\beta\), \(d\) e \(y\).
 
-**Cruzamento:** `verify_fcc.py` compara os dois LPs nas seis instâncias de
-P1; diferença \(<10^{-6}\).
+**Remoção da massa vazia no código histórico.** Considere agora um ponto
+da forma `separada` **sem CA5**. Em cada \(W\) escreva
+\(h_W=\sum_s\alpha_{sW}=\sum_t\beta_{tW}\) e defina
+\(\lambda'_W=\min\{\lambda_W,h_W\}\). Como cada
+\(\alpha_{sW},\beta_{tW}\le h_W\) e \(\le\lambda_W\), CA3 segue
+válida para \(\lambda'_W\); CA5 passa a valer. \(\alpha\), \(\beta\),
+\(d\) não mudam; CA1, CA2 e CA4 continuam iguais. O único coeficiente
+alterado é \(\lambda_W\), que **diminui**, logo CA6 se torna mais
+frouxa. Assim a massa correspondente a \(I=J=\varnothing\) é descartada:
+não reproduzimos necessariamente as marginais **antigas** de
+\(\lambda_W\), mas preservamos a projeção em \(y\) e o objetivo.
+Em particular, com \(h_W=0\), \(\lambda'_W=0\).
 
-F3 pode portanto medir F-CC na forma separada.
+Portanto F-CC, F-CA **com CA5** e a implementação `separada` **sem CA5**
+possuem a mesma projeção em \(y\) e o mesmo mínimo LP, embora os
+polítopos de variáveis auxiliares sejam diferentes. \(\square\)
+
+**Evidência computacional histórica:** `verify_fcc.py` testa igualdade
+de valores LP em seu conjunto declarado, o que apoia a reprodução de
+valores mas **não** demonstra igualdade de projeções.
 
 ---
 
@@ -262,8 +291,8 @@ reconstrução, F3 não compara. Condição de checagem: ver
 |---|---|
 | P1 | `PROVEN` |
 | P2 | `PROVEN` |
-| P3 | `COMPUTATIONALLY VERIFIED` |
-| P4 | `COMPUTATIONALLY VERIFIED` |
+| P3 | `HYPOTHESIS` |
+| P4 | `HYPOTHESIS` |
 | P5 | `HYPOTHESIS` |
 | P6 | `OPEN` |
 | P7 | `PROVEN` |
@@ -271,3 +300,10 @@ reconstrução, F3 não compara. Condição de checagem: ver
 | P9 | `HYPOTHESIS` (medição em F3) |
 | P10 | `PROVEN` |
 | P11 | `HYPOTHESIS` |
+
+## Nota pós-análise N1-T1 — 2026-10-07
+
+P2 e P7 receberam provas completas acima (`PROVEN`). P3 e P4 permanecem
+`HYPOTHESIS` até prova revisada ou teste de implicação **por corte**.
+Nenhum rótulo `COMPUTATIONALLY VERIFIED` foi atribuído por igualdade de
+objetivos. A reprodução numérica F3 não foi executada nesta edição.

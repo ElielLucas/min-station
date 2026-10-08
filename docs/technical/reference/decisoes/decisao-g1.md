@@ -1,9 +1,9 @@
 # G1 — portão de método (Spec C)
 
 **Data:** 2026-10-06
-**Regra:** `docs/technical/reference/pre-registro-r5.md` §5, congelada antes da medição
-**GF1:** PASS (`docs/technical/reference/decisao-gf1.md`)
-**Evidência:** `docs/technical/reference/resultados-r6-gamma.md`, `resultados-r6-primal.md`, `resultados-r7-plato.md`
+**Regra:** `docs/technical/reference/experimentos/pre-registro-r5.md` §5, congelada antes da medição
+**GF1:** PASS (`docs/technical/reference/decisoes/decisao-gf1.md`)
+**Evidência:** `docs/technical/reference/experimentos/resultados-r6-gamma.md`, `resultados-r6-primal.md`, `resultados-r7-plato.md`
 
 ## Veredito
 
@@ -58,3 +58,7 @@ R7 (`resultados-r7-plato.md`): H-desc **CONFIRMED** nos C gravados (608 inviáve
 | R13 `CONF-*` | bloqueado até G2 |
 
 Fluxo mandatório de M-A, se aberto: derivação → prova → validador → enumeração → certificadores da Spec D → efeito em Γ com SC como controlo → D/A desenvolvimento. No máximo 3 ciclos. Nada disto foi feito aqui.
+
+---
+
+**Nota de auditoria N1-T0 (2026-10-07).** O veredito **G1 é independente dos resultados R7**: seu gatilho usa R5/R6, não frequência ou cobertura dos cortes Z. Em R7, o contador histórico `max_elimina_um_Z` é frequência de retorno; `n_origens_sem_par` mede origens de grau zero, não déficit máximo. H-desc é caracterização de viabilidade, não identificação causal. As evidências R7 corrigidas informam N1, sem mudar G1.

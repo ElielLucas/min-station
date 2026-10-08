@@ -1,3 +1,10 @@
+> **Nota N1-T2 — 2026-10-07 (vigente):** este arquivo é um **resumo histórico**,
+> anterior à recuperação da SOURCE de 01/10. A única definição de F-C3 para
+> futuras implementações é `docs/technical/reference/formulacoes/formulacao-fc3-canonica-v1.md`.
+> O trecho histórico `d_ss=0` é incorreto: a distância `d_G(s,s)=0`, mas a
+> variável de permanência `d_ss` é livre em `[0,1]`. Os pontos O1–O5 estão
+> definidos na SOURCE §5. **MR-F3 permanece `OPEN`; não implementar redes.**
+
 # F-C3 — formulação por componentes com consistência de trios
 
 > **Estado deste documento (F1, 2026-10-06).**

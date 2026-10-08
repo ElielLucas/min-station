@@ -1,7 +1,7 @@
 # Resultados R7 — anatomia do platô do núcleo
 
 **Data:** 2026-10-06
-**Pré-registro:** `docs/technical/reference/pre-registro-r5.md` §4
+**Pré-registro:** `docs/technical/reference/experimentos/pre-registro-r5.md` §4
 **CSV:** `results/benchmark/r7-plato.csv`, resumo `results/benchmark/r7-plato-resumo.csv`
 **Cap:** N = 200 ótimos do núcleo por instância. Sem CBI. Sem laço iterativo.
 **H-desc:** um C inviável é caso H-desc se o emparelhamento perfeito no grafo de pares (arcos diretos em D ∪ bicliques B(K) das componentes de H[C]) falha.
@@ -51,3 +51,7 @@ Os C inviáveis falham porque as componentes de H[C] não induzem um emparelhame
 Hipótese de família válida (R10, ainda bloqueado): desigualdades que exigem que o suporte de y, ou um subconjunto pago, seja compatível com uma configuração conexa em H que cubra os pares exigidos — a mesma motivação da F-CC, agora com evidência de platô além dos gadgets. Não se implementa nesta spec.
 
 Não se encontrou uma família de cortes Z repetíveis que substitua essa hipótese: os Z são muitos e cada um cobre uma fracção pequena do pool (exceto um Z no maze, 49/200).
+
+---
+
+**Nota de auditoria N1-T0/T4 (2026-10-07).** `max_elimina_um_Z` no resumo antigo registra apenas **frequência de retorno** de um Z pelo oráculo, não quantas instalações seriam eliminadas por ele. `n_origens_sem_par` conta **grau zero** em `B_C`, não origens não emparelhadas por matching máximo. H-desc é a própria caracterização da viabilidade por componentes e emparelhamento, **não** mecanismo causal novo. A releitura offline separa retorno/cobertura (cc9: **21/27**), deficiência de Hall e testemunhas. Resultados válidos só para os 610 C gravados, incluindo três pools truncados em 200; ver `n1-t4-auditoria-r7.md`.

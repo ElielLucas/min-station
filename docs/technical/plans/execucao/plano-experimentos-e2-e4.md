@@ -4,15 +4,15 @@
 
 E0, E1' e E1 terminaram. Este plano consolida o que foi aprendido (com as referências
 históricas levantadas no repositório), corrige erros do relatório
-`docs/technical/reference/resultados-e0-e1-pli.md` e propõe a próxima rodada. O foco é
+`docs/technical/reference/experimentos/resultados-e0-e1-pli.md` e propõe a próxima rodada. O foco é
 evidência rápida para decidir **qual linha de PLI testar em seguida**: consolidar o compacto
 com cortes (A1), branch-and-cut só em y (A2) ou núcleo de cobertura e simetria (B2).
 
 Restrições mantidas: não usar `lin23` nem `lin37`; não alterar a formulação base nem os
 scripts históricos; não usar Benders clássico nem Lagrangeana nova; não commitar sem pedido.
 
-**Passo 0, ao aprovar:** salvar este plano em `docs/technical/plans/plano-experimentos-e2-e4.md`
-e o plano anterior em `docs/technical/plans/plano-experimentos-e0-e1.md`; corrigir o relatório
+**Passo 0, ao aprovar:** salvar este plano em `docs/technical/plans/execucao/plano-experimentos-e2-e4.md`
+e o plano anterior em `docs/technical/plans/execucao/plano-experimentos-e0-e1.md`; corrigir o relatório
 (§1.4). Nenhuma execução nesse passo.
 
 ---
@@ -241,7 +241,7 @@ Tudo em `experiments/cuts/`, sem tocar nos scripts históricos.
 - `run_e2.py` (E2 e E3) e `run_e4.py`.
 - Saídas:
   - `results/cuts/e2_yspace.csv`, `e3_cobertura_ip.csv`, `e4_arvore.csv`;
-  - relatório `docs/technical/reference/resultados-e2-e4-pli.md`.
+  - relatório `docs/technical/reference/experimentos/resultados-e2-e4-pli.md`.
 
 ## 6. Verificação
 - Gabaritos sintéticos (§3, E2) antes das reais. Se algum falhar, parar e diagnosticar.

@@ -1,6 +1,6 @@
 # Next Phase B — Connected-Configuration Formulations F-CC and F-C3 (MIN-STATION) Specification
 
-Scope: tasks F1, F2, F3 and gate **GF1** of `docs/technical/plans/plano-proxima-fase.md`. This
+Scope: tasks F1, F2, F3 and gate **GF1** of `docs/technical/plans/execucao/plano-proxima-fase.md`. This
 spec decides, cheaply and on small instances only, whether the two alternative formulations F-CC and
 F-C3 strengthen the lower bound in the compatibility regime (`Γ > 0`) enough to justify investing in
 methods at scale. It contains **no column generation** and **no benchmark instance**.
@@ -357,3 +357,7 @@ pre-registration.
   Spec C's G1 and, for projections, by GF1.
 
 Nothing in this spec authorizes them.
+
+---
+
+**Nota pós-análise N1-T0 (2026-10-07).** F-CC F1–F3 concluídos e GF1=`PASS`; não mais `NOT STARTED`. O braço de F-C3 (F1/F2/F3 originais) foi absorvido por N1-T2/T3/T5 e ainda não tem medições. A definição vigente é `docs/technical/reference/formulacoes/formulacao-fc3-canonica-v1.md`, com MR-F3 `OPEN`. Não alterar nem reinterpretar o pré-registro F3 histórico.

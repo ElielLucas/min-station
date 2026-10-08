@@ -16,12 +16,12 @@ Depois, leia apenas o contexto aplicável à tarefa:
 | Propor ou avaliar novas abordagens de PLI | `docs/context-ai/research-direction.md` + formulação/código relevante |
 | Alterar ou revisar código | `docs/context-ai/code-guidelines.md` + arquivos de código relevantes |
 | Verificar lacunas ou pontos ainda não decididos | `docs/technical/governance/open-questions.md` |
-| Ver o backlog de continuação e o histórico de tarefas | `docs/technical/plans/backlog-continuacao.md` |
-| Comparar documentos/artigos | `docs/technical/reference/source-map.md` |
-| O que já é contribuição vs. o que já estava na literatura | `docs/technical/reference/overlap-ijcai2026-min-station.md` |
-| Formulações alternativas em avaliação (F-CC, F-C3) | `docs/technical/reference/formulacao-fcc-configuracoes-conectadas.md` + `docs/technical/reference/formulacao-fc3-consistencia-trios.md` |
-| Escolher ou interpretar instâncias experimentais | `docs/technical/reference/benchmark-v1.md` + `instances/manifest.csv` |
-| Comparar dois métodos ou duas configurações | `docs/technical/reference/protocolo-comparacao-pareada.md` |
+| Ver o backlog de continuação e o histórico de tarefas | `docs/technical/plans/historico/backlog-continuacao.md` |
+| Comparar documentos/artigos | `docs/technical/reference/tecnico/source-map.md` |
+| O que já é contribuição vs. o que já estava na literatura | `docs/technical/reference/documentacao-projeto/overlap-ijcai2026-min-station.md` |
+| Formulações alternativas em avaliação (F-CC, F-C3) | `docs/technical/reference/formulacoes/formulacao-fcc-configuracoes-conectadas.md` + `docs/technical/reference/formulacoes/formulacao-fc3-consistencia-trios.md` |
+| Escolher ou interpretar instâncias experimentais | `docs/technical/reference/baseline-e-metodo/benchmark-v1.md` + `instances/manifest.csv` |
+| Comparar dois métodos ou duas configurações | `docs/technical/reference/baseline-e-metodo/protocolo-comparacao-pareada.md` |
 
 ## Objetivo do projeto
 
@@ -71,7 +71,7 @@ Esses elementos pertencem a outra variante/modelo e não devem contaminar o base
 - Antes de alterar código de modelagem, localizar onde conjuntos, variáveis, objetivo e restrições são realmente construídos.
 - Mudanças matemáticas devem vir acompanhadas de justificativa e, quando possível, casos pequenos verificáveis.
 - Ao comparar métodos, preservar a mesma definição de instância e registrar claramente qual formulação e configuração foram usadas.
-- Experimentos sobre o problema de Das usam as instâncias `classe = principal` de `instances/manifest.csv` (75 principal: 5 legadas + 70 do benchmark-v1; ver `docs/technical/reference/benchmark-v1.md`). Resultados obtidos em instâncias ponderadas ou dirigidas (classes `extensao_ponderada`/`extensao_dirigida`) devem ser rotulados como extensão, não generalizados para o problema de Das sem ressalva.
+- Experimentos sobre o problema de Das usam as instâncias `classe = principal` de `instances/manifest.csv` (75 principal: 5 legadas + 70 do benchmark-v1; ver `docs/technical/reference/baseline-e-metodo/benchmark-v1.md`). Resultados obtidos em instâncias ponderadas ou dirigidas (classes `extensao_ponderada`/`extensao_dirigida`) devem ser rotulados como extensão, não generalizados para o problema de Das sem ressalva.
 - Não efetuar commit automaticamente. Só commitar quando solicitado ou aprovado pelo usuário.
 
 ## Ao revisar uma formulação ou método

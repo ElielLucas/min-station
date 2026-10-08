@@ -2,7 +2,7 @@
 
 **Data:** 2026-10-06
 **Regra:** `experiments/alternative-formulations/pre-registro-f3.md` (congelada antes da medição)
-**Evidência:** `results/alternative-formulations/f3-fcc.csv` e `docs/technical/reference/resultados-f3-fcc.md`
+**Evidência:** `results/alternative-formulations/f3-fcc.csv` e `docs/technical/reference/experimentos/resultados-f3-fcc.md`
 
 ## Veredito
 
@@ -51,3 +51,7 @@ PYTHONHASHSEED=0 poetry run python experiments/alternative-formulations/run_f3.p
 ```
 
 O CSV deve coincidir com a tabela de `resultados-f3-fcc.md`. Aplicar a regra acima ao CSV reproduz `PASS`.
+
+---
+
+**Nota pós-análise N1-T0 (2026-10-07).** Em SC-GF2-k3, o LP **F-CC é `NOT MEASURED`**, excluído por `max_W`; a frase histórica “Não há ganho em SC” se refere no máximo ao comparador set-cover versus COMP, não ao ganho/ausência de ganho F-CC. Verificar o comparador na nova pré-inscrição antes de reutilizar a frase. **GF1=`PASS` permanece inalterado.**

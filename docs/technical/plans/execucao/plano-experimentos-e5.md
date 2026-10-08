@@ -2,7 +2,7 @@
 
 ## Contexto
 
-As rodadas E0–E4 terminaram e o relatório `docs/technical/reference/resultados-e2-e4-pli.md`
+As rodadas E0–E4 terminaram e o relatório `docs/technical/reference/experimentos/resultados-e2-e4-pli.md`
 já foi revisado. Duas investigações posteriores encontraram problemas de natureza diferente, e
 esta rodada trata os dois antes de qualquer experimento novo.
 
@@ -40,7 +40,7 @@ origem-destino; não reintroduzir estações apenas em vértices intermediários
 documentar em português brasileiro.
 
 **Passo 0, ao aprovar:** copiar este plano para
-`docs/technical/plans/plano-experimentos-e5.md`. Nenhuma execução nesse passo.
+`docs/technical/plans/execucao/plano-experimentos-e5.md`. Nenhuma execução nesse passo.
 
 ---
 
@@ -83,7 +83,7 @@ Erro de corretude, então vem antes das demais correções. Tudo aqui é **conse
 
 ### B.1 Provar a equivalência antes de implementar
 
-Registrar em `docs/technical/reference/validacao-formulacao-base.md` a verificação caso a caso
+Registrar em `docs/technical/reference/validacao-e-correcoes/validacao-formulacao-base.md` a verificação caso a caso
 de que U generaliza a formulação atual, com `a_v = 1_S(v)` e `b_v = 1_T(v)`:
 
 | Caso | `a,b` | Balanço U | Equivale a |
@@ -381,7 +381,7 @@ formulação (U), conforme Q6.
 - **documentação**: `open-questions.md` (Q1), `base-formulation.md` (§10.1),
   `validacao-formulacao-base.md` (P1), `direcoes-pli-min-station.md` (§1.6, linha 612, B2),
   `RESEARCH.md`, `project-overview.md`, `resultados-e2-e4-pli.md`,
-  `docs/technical/plans/plano-experimentos-e5.md`
+  `docs/technical/plans/execucao/plano-experimentos-e5.md`
 
 Consulta, não alterar: `min-station-das.pdf`, `direcoes-pli-min-station.md` §3.1–§5.5,
 `modelo_min_station_das_preprocess.py:921-956` (variante U já implementada),

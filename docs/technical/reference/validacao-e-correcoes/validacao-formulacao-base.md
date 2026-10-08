@@ -529,3 +529,7 @@ Executada em 2026-10-03. O validador independente está em `experiments/cuts/ind
 Resultado registrado: grafos conexos rotulados com `n ≤ 4`, `r ∈ {1,2,3}`, `m ≤ 3`, todo `C ⊆ V`, contra o Gurobi e contra o oráculo: 7998 instâncias, 125922 conjuntos `C`, 0 divergências, 54,4 s. Há interseção `S ∩ T` nessa bateria. Para `n = 5` há 728 grafos conexos rotulados; a enumeração completa contra o Gurobi extrapola cerca de duas horas na taxa medida. A suíte compara uma amostra de 60 instâncias (semente 42, `r ∈ {1,2,3}`), 1920 conjuntos `C`, 0 divergências, 0,8 s. Os seis gabaritos de `synthetic.py` e os dois casos de permanência pura isolada entram à parte: 618 conjuntos `C`, 0 divergências.
 
 A frase antiga "o modelo atual deve falhar exatamente nos casos com `S ∩ T ≠ ∅`" descrevia a formulação de balanços separados. A variante U, que é o modelo atual, não falha nesses casos.
+
+---
+
+**Nota pós-análise N1-T0 (2026-10-07).** A equação vigente é a variante U de `baseline.py`: `out(v)-in(v)=a_v-b_v` para todos os vértices, inclusive `S∩T`. Quadros antigos de balanços separados neste relatório são **históricos**. A equivalência base/instalação usa a prova já corrigida e verificação T2 independente; o R11 auditado não constitui oráculo universal.

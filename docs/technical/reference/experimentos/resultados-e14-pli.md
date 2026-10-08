@@ -3,7 +3,7 @@
 **Data:** 2026-09-30
 **Formulação:** baseline, variante U, fluxo contínuo, cortes C1+C2+C4
 **Ambiente:** Gurobi 12.0.3, seed 42, 4 threads, TL 14400 s, 2 fatias
-**Plano:** passo 3 de `docs/technical/plans/plano-pos-e13.md`
+**Plano:** passo 3 de `docs/technical/plans/execucao/plano-pos-e13.md`
 **Dados:** `results/benchmark/e14_fatia{1,2}.csv`
 **Tabela:** gerada a partir desses CSVs
 

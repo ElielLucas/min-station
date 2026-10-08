@@ -2,7 +2,7 @@
 
 > **Documento histórico.** Plano de construção do benchmark-v1 (lote 1).
 > O programa de pesquisa corrente está em
-> `docs/technical/plans/plano-proxima-fase.md`. A partição por grafo de
+> `docs/technical/plans/execucao/plano-proxima-fase.md`. A partição por grafo de
 > origem e a tag `benchmark-v1.0` são a tarefa R2 desse plano. Números e
 > vereditos abaixo não foram reescritos.
 
@@ -30,7 +30,7 @@ Fatos de base (verificados nesta sessão):
 
 ## 0. Linha E8 adiada (preservada, não descartada)
 
-Ao aprovar, salvar em `docs/technical/plans/plano-pos-e8-adiado.md`. Itens (de
+Ao aprovar, salvar em `docs/technical/plans/execucao/plano-pos-e8-adiado.md`. Itens (de
 `resultados-e8-pli.md` §7–8), a retomar sobre o benchmark Das:
 1. E8 com 3 seeds (`run_e8.py --seeds 42 43 44`).
 2. CBI com mestre sem pool até o ótimo e enumeração só depois (não termina em hc10p/bip42p).
@@ -206,7 +206,7 @@ resultado de pesquisa.
   reaproveita `parse_stp` (`steinlib_to_minstation.py`), a leitura TNTP
   (`gen_min_station_tntp_to_minstation.py`) e `construir_arcos_alcance` (`ms_utils.py`).
 - Teste: regerar tudo a partir de `raw-data/` e conferir os SHA-256.
-- Documento `docs/technical/reference/benchmark-v1.md` com metodologia e justificativas.
+- Documento `docs/technical/reference/baseline-e-metodo/benchmark-v1.md` com metodologia e justificativas.
 
 ## 8. Primeiro lote (≈ 50 instâncias)
 
@@ -257,7 +257,7 @@ O usuário delegou as decisões pendentes à recomendação técnica:
 
 ## Etapas de execução (após aprovação)
 
-1. Salvar este plano em `docs/technical/plans/plano-benchmark-v1.md` e a §0 em
+1. Salvar este plano em `docs/technical/plans/execucao/plano-benchmark-v1.md` e a §0 em
    `plano-pos-e8-adiado.md`. Verificar: arquivos criados.
 2. `instances/manifest.csv` com as 22 instâncias atuais classificadas, sem mover arquivos.
    Verificar: cada arquivo de `instances/` aparece uma vez.

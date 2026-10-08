@@ -1,7 +1,7 @@
 # Block 3 — Research and Structural Instances (MIN-STATION) Specification
 
-Scope: T12–T21 from `docs/technical/plans/backlog-continuacao.md`, with scientific basis in
-`docs/technical/reference/MIN-STATION-parecer-macro-consolidado.md` §11 (structural families,
+Scope: T12–T21 from `docs/technical/plans/historico/backlog-continuacao.md`, with scientific basis in
+`docs/technical/reference/documentacao-projeto/MIN-STATION-parecer-macro-consolidado.md` §11 (structural families,
 pilot matrix, promotion criteria) and §9 Stage 3.
 
 Every statement in Current State was checked in this session by reading the code and the current

@@ -2,7 +2,7 @@
 
 **Data:** 2026-09-27
 **Formulação:** baseline, variante U (`baseline.py`), dígrafo de alcance, fluxo contínuo, cortes
-C1+C2+C4 (C4-DM corrigido — ver [`correcao-c4-dm.md`](correcao-c4-dm.md))
+C1+C2+C4 (C4-DM corrigido — ver [`correcao-c4-dm.md`](../validacao-e-correcoes/correcao-c4-dm.md))
 **Ambiente:** Gurobi 12.0.3, Python 3.12, seed 42, 4 threads, 2 fatias por fase (nunca 3 — satura a
 máquina de 12 núcleos, ver cabeçalho de `run_e13.py`)
 **Plano:** passo 1 do §7 de [`resultados-e9-e10-pli.md`](resultados-e9-e10-pli.md)

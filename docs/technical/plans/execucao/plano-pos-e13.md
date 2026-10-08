@@ -1,7 +1,7 @@
 # Plano: commit do E13 e próximos passos
 
 > **Documento histórico.** Agenda imediata depois do E13. O programa de
-> pesquisa corrente está em `docs/technical/plans/plano-proxima-fase.md`.
+> pesquisa corrente está em `docs/technical/plans/execucao/plano-proxima-fase.md`.
 > Números e vereditos abaixo não foram reescritos.
 
 ## Contexto
@@ -32,8 +32,8 @@ Três pendências concretas saíram da leitura do código:
 
 Arquivos: `experiments/cuts/harness.py` (parâmetro `params` em `measure_mip`),
 `experiments/benchmark/run_e13.py`, `experiments/benchmark/tabela_e13.py`,
-`results/benchmark/e13_{base,longo}_fatia{1,2}.csv`, `docs/technical/reference/resultados-e13-pli.md`,
-`docs/technical/reference/resultados-e9-e10-pli.md`.
+`results/benchmark/e13_{base,longo}_fatia{1,2}.csv`, `docs/technical/reference/experimentos/resultados-e13-pli.md`,
+`docs/technical/reference/experimentos/resultados-e9-e10-pli.md`.
 
 Mensagem: `feat(e13): primal × dual via MIPFocus=1 em MAPF/Vienna — veredito gap primal (7/13, limiar)`,
 com corpo curto (critério, inversão em relação à fase base, divergência de 9/13 com o manifesto) e a
@@ -276,7 +276,7 @@ surpresa e investigado antes do relatório.
 
 - `experiments/benchmark/run_e12.py` (`--fase D|A|R`, `--fatia k/2`), retomável como os anteriores;
 - `experiments/benchmark/tabela_e12.py`, que gera as tabelas e o veredito a partir dos CSVs;
-- `docs/technical/reference/resultados-e12-pli.md`.
+- `docs/technical/reference/experimentos/resultados-e12-pli.md`.
 
 ## Fora desta rodada
 

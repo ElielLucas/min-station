@@ -1,6 +1,6 @@
 """Fluxo desagregado por origem, estações em todo V.
 
-A formulação está em docs/technical/reference/desagregacao-por-origem.md.
+A formulação está em docs/technical/reference/analise-estrutural/desagregacao-por-origem.md.
 Não substitui baseline.py.
 """
 

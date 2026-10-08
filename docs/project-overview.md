@@ -91,8 +91,8 @@ Os nomes dos PDFs são uma convenção sugerida. Atualize `source-map.md` se os 
 | Novas formulações/técnicas de otimização | `docs/context-ai/research-direction.md` |
 | Mudanças de implementação | `docs/context-ai/code-guidelines.md` + código relevante |
 | Lacunas ou hipóteses não fechadas | `docs/technical/governance/open-questions.md` |
-| Backlog de continuação e histórico de tarefas | `docs/technical/plans/backlog-continuacao.md` |
-| Relação entre artigos/documentos | `docs/technical/reference/source-map.md` |
+| Backlog de continuação e histórico de tarefas | `docs/technical/plans/historico/backlog-continuacao.md` |
+| Relação entre artigos/documentos | `docs/technical/reference/tecnico/source-map.md` |
 
 Não carregar todos os arquivos por precaução. Ler o conjunto mínimo necessário para a tarefa.
 
@@ -137,7 +137,7 @@ Nem o pareamento origem-destino nem os caminhos são fornecidos como parte da en
 ## 7. Relação entre pesquisa e baseline
 
 - O **problema de Das** define o objeto teórico principal.
-- O **artigo IJCAI 2026** (Das, Hanaka, Melissinos e Ono, *Charging Station Placement for Anonymous Mobile Agents: A Parameterized Complexity Perspective*, pp. 72–80) estuda o mesmo problema e é o trabalho prévio mais próximo: `G^r`, verificação por matching, reduções de Set Cover e Bin Packing, FPT, árvores e aproximação já estão publicados ali. A sobreposição com o projeto está em `docs/technical/reference/overlap-ijcai2026-min-station.md`.
+- O **artigo IJCAI 2026** (Das, Hanaka, Melissinos e Ono, *Charging Station Placement for Anonymous Mobile Agents: A Parameterized Complexity Perspective*, pp. 72–80) estuda o mesmo problema e é o trabalho prévio mais próximo: `G^r`, verificação por matching, reduções de Set Cover e Bin Packing, FPT, árvores e aproximação já estão publicados ali. A sobreposição com o projeto está em `docs/technical/reference/documentacao-projeto/overlap-ijcai2026-min-station.md`.
 - O **artigo da SBPO** registra uma etapa anterior da pesquisa (variante com estações só em `V ∖ (S ∪ T)` e métrica ponderada) e deve ser preservado como referência histórica/metodológica.
 - A **formulação em todos os vértices** é o baseline atual.
 - Novas formulações e técnicas podem substituir ou complementar o baseline em experimentos, desde que identificadas claramente.

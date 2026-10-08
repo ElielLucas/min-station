@@ -1,7 +1,7 @@
 # Protocolo de comparação pareada
 
 **Data:** 2026-10-03
-**Orçamento:** a decisão de `docs/technical/reference/decisao-orcamento-worklimit.md`. Comparação de métodos usa `WorkLimit`. Lote com prazo de parede usa `TimeLimit`. Os dois não se misturam no mesmo veredito.
+**Orçamento:** a decisão de `docs/technical/reference/decisoes/decisao-orcamento-worklimit.md`. Comparação de métodos usa `WorkLimit`. Lote com prazo de parede usa `TimeLimit`. Os dois não se misturam no mesmo veredito.
 
 Este protocolo vale para experimento confirmatório. Um piloto pode explorar configuração; o relatório desse piloto não fecha veredito de método.
 

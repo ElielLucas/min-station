@@ -76,7 +76,7 @@ nenhuma autonomia em passos reproduz.
 
 **Instâncias triviais.** Com o R gravado no arquivo, Chicago st5 (R=32), Philadelphia st39 (R=20)
 e Barcelona st54 (R=21) têm r ≥ λ\* (distância de gargalo do emparelhamento S–T), logo OPT = 0.
-Detalhes em `docs/technical/reference/benchmark-v1.md` §5.
+Detalhes em `docs/technical/reference/baseline-e-metodo/benchmark-v1.md` §5.
 
 ## Q3 — Demonstração de equivalência do fluxo agregado
 
@@ -162,12 +162,12 @@ lote 2 do benchmark-v1.
 
 Evidência:
 
-- leituras: `docs/technical/reference/leituras-r11-certificadores.md`;
-- pré-registro: `docs/technical/reference/pre-registro-r11-certificadores.md`;
+- leituras: `docs/technical/reference/experimentos/leituras-r11-certificadores.md`;
+- pré-registro: `docs/technical/reference/experimentos/pre-registro-r11-certificadores.md`;
 - CSV: `results/structural/r11-certificadores.csv`;
-- resultados: `docs/technical/reference/resultados-r11-certificadores.md`;
-- auditoria/redução: `docs/technical/reference/auditoria-r11-divergencias.md`;
-- conclusão: `docs/technical/reference/conclusao-r11-certificadores.md`.
+- resultados: `docs/technical/reference/experimentos/resultados-r11-certificadores.md`;
+- auditoria/redução: `docs/technical/reference/validacao-e-correcoes/auditoria-r11-divergencias.md`;
+- conclusão: `docs/technical/reference/validacao-e-correcoes/conclusao-r11-certificadores.md`.
 
 Resultado: `path-alg1` literal divergiu em 12/15 linhas (todas viáveis, mas
 subótimas); `cycle-alg2` divergiu em 9/11 e herda o mecanismo do caminho. Em

@@ -4,8 +4,8 @@
 **Spec:** `specs/proxima-fase-d-certificadores-classes-especiais/spec.md`  
 **CSV oficial:** `results/structural/r11-certificadores.csv`  
 **Commit registrado no CSV:** `dd485dc`  
-**Pré-registro:** `docs/technical/reference/pre-registro-r11-certificadores.md`  
-**Leituras:** `docs/technical/reference/leituras-r11-certificadores.md`
+**Pré-registro:** `docs/technical/reference/experimentos/pre-registro-r11-certificadores.md`  
+**Leituras:** `docs/technical/reference/experimentos/leituras-r11-certificadores.md`
 
 ## 1. Objetivo
 

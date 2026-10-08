@@ -13,7 +13,7 @@ Instruções para assistentes de IA estão em `CLAUDE.md`.
 | Definição do problema | `docs/technical/reference/min-station-das.pdf`, resumido em `docs/context-ai/min-station-domain.md` |
 | Formulação matemática do baseline | `docs/context-ai/base-formulation.md` (balanço unificado, variante U) |
 | Implementação do baseline | `baseline.py` (`construir_modelo_baseline`) e `ms_utils.py` (leitura e dígrafo de alcance) |
-| Plano experimental vigente | `docs/technical/plans/` (o mais recente) e `docs/technical/reference/direcoes-pli-min-station.md` §13–14 |
+| Plano experimental vigente | `docs/technical/plans/` (o mais recente) e `docs/technical/reference/tecnico/direcoes-pli-min-station.md` §13–14 |
 | Pontos em aberto | `docs/technical/governance/open-questions.md` |
 
 Documentos históricos, que **não** descrevem o baseline atual:
@@ -49,8 +49,8 @@ python src/converters/build_manifest.py      # instances/manifest.csv (proveniê
 python experiments/benchmark/run_dificuldade.py   # protocolo de dificuldade (COMP, TL 600 s)
 ```
 
-Metodologia e resultados em `docs/technical/reference/benchmark-v1.md`; plano em
-`docs/technical/plans/plano-benchmark-v1.md`. Experimentos principais usam as instâncias de
+Metodologia e resultados em `docs/technical/reference/baseline-e-metodo/benchmark-v1.md`; plano em
+`docs/technical/plans/execucao/plano-benchmark-v1.md`. Experimentos principais usam as instâncias de
 classe `principal` do manifesto.
 
 Os downloads brutos em `raw-data/{boeing,dimacs11,mapf,pace2018}/` (~1,1 GB) não são versionados;
@@ -80,3 +80,7 @@ Código em `experiments/cuts/`; resultados em `results/cuts/`; relatórios em
 `RKO_Cpp_v1.0/` é um clone de terceiros (`github.com/RKO-solver/RKO_Cpp_v1.0`, Random-Key
 Optimizer para o TSP e afins), não versionado — tem `.git` próprio. Não faz parte do código de
 pesquisa deste projeto.
+
+---
+
+**Nota pós-análise N1-T0 (2026-10-07).** F-CC em `experiments/alternative-formulations/fcc.py` é a formulação atualmente estudada em F3/GF1, não apenas código histórico. As versões antigas de decomposição e desagregação são antecedentes. O estudo N1 está em `specs/proxima-fase-n1-informacao-compatibilidade/spec.md`; o documento F-C3 canônico ainda depende de MR-F3. Os comandos de geração de instâncias acima produzem arquivos de saída e não pressupõem que seus nomes de destino já existam.

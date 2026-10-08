@@ -3,7 +3,7 @@
 **Data:** 2026-09-26
 **Formulação:** baseline, variante U (`baseline.py`), dígrafo de alcance, fluxo contínuo
 **Ambiente:** Gurobi 12.0.3, Python 3.12, seed 42; commit `d384ceb` + alterações desta rodada
-**Plano:** `docs/technical/plans/plano-pos-e8-adiado.md` (repriorização e situação após E9/E10)
+**Plano:** `docs/technical/plans/execucao/plano-pos-e8-adiado.md` (repriorização e situação após E9/E10)
 **Dados:** `results/benchmark/e9_raiz_fatia{1,2,3}.csv`, `e10_primal_fatia{1,2}.csv`,
 `e10b_construcao_fatia*.csv`, `e10b_comp_fatia*.csv`
 **Tabelas:** geradas por `experiments/benchmark/tabela_e9_e10.py` a partir dos CSVs (nenhum número
@@ -275,7 +275,7 @@ Reparo < UB COMP (MAPF+Vienna): 0/13. Reparo < UB COMP (todas): 1/30.
 - Uma seed em tudo. Os LPs são determinísticos; o núcleo com TL e os construtores com prazo não.
 - **`generate_C4_DM` não é determinística entre processos** — achado desta revisão, não previsto no
   plano. Ela percorre `S_only`/`T_only`, que são `set`s de rótulos, e passa essa ordem a
-  `_max_matching` ([cuts.py:191–197](../../../experiments/cuts/cuts.py#L191-L197)). Emparelhamentos
+  `_max_matching` ([cuts.py:191–197](../../../../experiments/cuts/cuts.py#L191-L197)). Emparelhamentos
   máximos não são únicos: mudando a ordem, mudam as origens não emparelhadas, as regiões
   alternantes e, portanto, a família C4 gerada. Verificado variando `PYTHONHASHSEED` no mesmo
   código e na mesma instância: `den312d-m50` gera 16, 16 ou 15 cortes distintos; o ótimo do núcleo
@@ -293,7 +293,7 @@ Reparo < UB COMP (MAPF+Vienna): 0/13. Reparo < UB COMP (todas): 1/30.
   exibindo solução viável em `V∖Z`. A causa era divergência entre implementação e teoria: o §5.4 de
   `direcoes-pli-min-station.md` mede a deficiência contra `T` inteiro, e o código usava `T∖S`.
   **Corrigido em 2026-09-26**, junto com o não-determinismo, e coberto por regressão nova
-  (`verify_c4_dm.py`) — ver [`correcao-c4-dm.md`](correcao-c4-dm.md).
+  (`verify_c4_dm.py`) — ver [`correcao-c4-dm.md`](../validacao-e-correcoes/correcao-c4-dm.md).
 
   **Efeito sobre este relatório.** Todos os números acima foram medidos antes da correção. Das
   instâncias das tabelas, só duas têm `S∩T ≠ ∅` — `mapf-den312d-m50-f2-rho` e
@@ -307,7 +307,7 @@ Reparo < UB COMP (MAPF+Vienna): 0/13. Reparo < UB COMP (todas): 1/30.
 ## 7. Próximos passos propostos (não executados)
 
 0. ~~**Corrigir `generate_C4_DM`**~~ — **feito em 2026-09-26**, ver
-   [`correcao-c4-dm.md`](correcao-c4-dm.md). Era pré-requisito de tudo abaixo: cortes inválidos
+   [`correcao-c4-dm.md`](../validacao-e-correcoes/correcao-c4-dm.md). Era pré-requisito de tudo abaixo: cortes inválidos
    comprometem a validade dos LBs e o não-determinismo põe ±1 de ruído num E12 que decide por
    margens de 1–2 estações. Os passos seguintes já podem rodar sobre o gerador corrigido.
 1. ~~**Primal × dual com o solver como instrumento.** COMP com `MIPFocus=1` (ênfase primal), 600 s e

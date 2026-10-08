@@ -2,7 +2,7 @@
 
 > **Documento histórico.** Agenda adiada depois do E8, retomada no
 > benchmark-v1 e nos experimentos E9–E14. O programa de pesquisa corrente
-> está em `docs/technical/plans/plano-proxima-fase.md`. Números e vereditos
+> está em `docs/technical/plans/execucao/plano-proxima-fase.md`. Números e vereditos
 > abaixo não foram reescritos.
 
 Preservado para retomada depois do lote 1 do benchmark-v1 (`plano-benchmark-v1.md`).
@@ -49,7 +49,7 @@ plano de execução desta sessão.
 
 ## Situação após E9 e E10 (2026-09-26)
 
-Resultados em `docs/technical/reference/resultados-e9-e10-pli.md`. Mudanças nesta lista:
+Resultados em `docs/technical/reference/experimentos/resultados-e9-e10-pli.md`. Mudanças nesta lista:
 
 - **E9 feito**, sem C3 e sem R6 além de L_bot (motivos no relatório). L_bot é dominado pela raiz
   com cortes em todas as instâncias: **R6 além de L_bot sai da agenda**.
@@ -84,7 +84,7 @@ Resultados em `docs/technical/reference/resultados-e9-e10-pli.md`. Mudanças nes
 
 ## Situação após E12 (2026-10-02)
 
-Resultado em `docs/technical/reference/resultados-e12-pli.md`. **A2 encerrada para Das.** Uma
+Resultado em `docs/technical/reference/experimentos/resultados-e12-pli.md`. **A2 encerrada para Das.** Uma
 vitória contra o COMP (`hc11p`) e nenhuma contra o núcleo. Onde o núcleo fecha, os cortes 𝒵 não
 sobem o LB*. Os controles MAPF se comportaram como esperado: o CBI ficou no núcleo e abaixo do
 COMP. O recorte "A2 só fora de R-a", suspenso até este veredito, não se sustenta no benchmark-v1.

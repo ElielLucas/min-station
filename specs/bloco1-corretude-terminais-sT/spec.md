@@ -1,8 +1,8 @@
 # Block 1 — Correctness (MIN-STATION) Specification
 
-Scope: T1–T5 from `docs/technical/plans/backlog-continuacao.md`, with scientific basis in
-`docs/technical/reference/MIN-STATION-parecer-macro-consolidado.md` (§2, §9) and
-`docs/technical/reference/validacao-formulacao-base.md` (§5.4, Appendix A.9–A.10). No
+Scope: T1–T5 from `docs/technical/plans/historico/backlog-continuacao.md`, with scientific basis in
+`docs/technical/reference/documentacao-projeto/MIN-STATION-parecer-macro-consolidado.md` (§2, §9) and
+`docs/technical/reference/validacao-e-correcoes/validacao-formulacao-base.md` (§5.4, Appendix A.9–A.10). No
 tasks from Blocks 2–4 (experimental reliability, synthetic families/new formulations,
 scientific positioning) are included in this spec.
 
@@ -679,10 +679,10 @@ The backlog already names likely candidates:
 **Affected files/components**
 (read-only plus a new document; no production-code modification):
 
-- `docs/technical/reference/resultados-e9-e10-pli.md`
-- `docs/technical/reference/resultados-e13-pli.md`
-- `docs/technical/reference/resultados-e14-pli.md`
-- `docs/technical/reference/resultados-e12-pli.md`
+- `docs/technical/reference/experimentos/resultados-e9-e10-pli.md`
+- `docs/technical/reference/experimentos/resultados-e13-pli.md`
+- `docs/technical/reference/experimentos/resultados-e14-pli.md`
+- `docs/technical/reference/experimentos/resultados-e12-pli.md`
   (already checked)
 
 - `experiments/benchmark/run_e12.py`
@@ -759,7 +759,7 @@ The verification consists of:
 
 **Evidence to produce:** new document, for example:
 
-`docs/technical/reference/revalidacao-oraculo-pos-t1.md`
+`docs/technical/reference/validacao-e-correcoes/revalidacao-oraculo-pos-t1.md`
 
 containing the complete audit table and any rerun results.
 
@@ -869,7 +869,7 @@ but not as a numbered lemma/proof in the same formal style as the rest of the do
 
 **Affected files/components:**
 
-- `docs/technical/reference/validacao-formulacao-base.md`
+- `docs/technical/reference/validacao-e-correcoes/validacao-formulacao-base.md`
 
   - Section 5 (main proof) gains items 1–5 above as numbered subsections or lemmas.
   - Sections 8/9 gain item 6.

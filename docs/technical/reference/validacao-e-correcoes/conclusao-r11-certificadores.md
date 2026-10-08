@@ -2,9 +2,9 @@
 
 **Data:** 2026-10-07  
 **Spec:** `specs/proxima-fase-d-certificadores-classes-especiais/spec.md`  
-**Pré-registro:** `docs/technical/reference/pre-registro-r11-certificadores.md`  
-**Resultados:** `docs/technical/reference/resultados-r11-certificadores.md`  
-**Auditoria:** `docs/technical/reference/auditoria-r11-divergencias.md`  
+**Pré-registro:** `docs/technical/reference/experimentos/pre-registro-r11-certificadores.md`  
+**Resultados:** `docs/technical/reference/experimentos/resultados-r11-certificadores.md`  
+**Auditoria:** `docs/technical/reference/validacao-e-correcoes/auditoria-r11-divergencias.md`  
 **CSV:** `results/structural/r11-certificadores.csv`
 
 ## Veredito

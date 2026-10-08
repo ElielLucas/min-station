@@ -2,7 +2,7 @@
 """T14: validade do C6 em casos enumerados, controle negativo em BP, LB em HB.
 
 A previsão (LB ≈ 1 por bolsão, OPT = 3) está em
-docs/technical/reference/c6-hall-primeiro-salto.md e foi escrita antes desta
+docs/technical/reference/tecnico/c6-hall-primeiro-salto.md e foi escrita antes desta
 medição. Corte inválido interrompe antes de medir o LB.
 """
 

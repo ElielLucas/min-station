@@ -3,7 +3,7 @@
 **Data:** 2026-09-26
 **Formulação:** baseline, variante U (`baseline.py`), dígrafo de alcance, fluxo contínuo no COMP
 **Ambiente:** Gurobi 12.0.3, Python 3.12, 4 threads, seed 42, TL de solver 300 s, commit `0a0a796-dirty`
-**Plano:** `docs/technical/plans/plano-experimentos-e8.md` (inclui a revisão pré-execução)
+**Plano:** `docs/technical/plans/execucao/plano-experimentos-e8.md` (inclui a revisão pré-execução)
 **Dados:** `results/cuts/e8_comparative.csv`; verificações em `results/cuts/e8_verificacao.txt`
 
 ## 1. Pergunta

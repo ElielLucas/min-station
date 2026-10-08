@@ -3,7 +3,7 @@
 **Data:** 2026-10-02
 **Formulação:** baseline, variante U, fluxo contínuo no COMP, cortes estáticos C1+C2+C4 nos três braços
 **Ambiente:** Gurobi 12.0.3, `PYTHONHASHSEED=0`, seed 42 na fase A, seeds 43 e 44 na fase R, 4 threads, TL 600 s, 2 fatias
-**Plano:** passo 4 de `docs/technical/plans/plano-pos-e13.md` (§4.7)
+**Plano:** passo 4 de `docs/technical/plans/execucao/plano-pos-e13.md` (§4.7)
 **Dados:** `results/benchmark/e12_fatia{1,2}.csv`
 **Tabelas e veredito:** saída de `experiments/benchmark/tabela_e12.py`. `LB*` = ⌈LB − 10⁻⁶⌉. Nenhum número foi copiado à mão.
 

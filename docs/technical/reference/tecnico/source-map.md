@@ -107,11 +107,11 @@ O artigo não contém formulação de PLI, solver, experimento nem benchmark. N�
 
 O levantamento completo — definições atributo a atributo, matriz de sobreposição, classificação das contribuições e lista de correções — está em:
 
-`docs/technical/reference/overlap-ijcai2026-min-station.md`.
+`docs/technical/reference/documentacao-projeto/overlap-ijcai2026-min-station.md`.
 
 ## 5. Pereira & Ravelo (ETC/CSBC 2026, aranhas)
 
-**Arquivo:** `docs/technical/reference/pereira-ravelo-2026-aranhas.md`
+**Arquivo:** `docs/technical/reference/artigos-externos/pereira-ravelo-2026-aranhas.md`
 
 **Referência:** Lucas Cardoso Pereira e Santiago Valdés Ravelo, *Placement of charging stations for energy-constrained robots in spider graphs*. Anais do Encontro de Teoria da Computação (ETC 2026) / 46º CSBC, publicado em 19 de julho de 2026.
 
@@ -131,7 +131,7 @@ A prova no `.md` está em esboço e deixa casos não fechados. R11 confirmou que
 
 ### R11 (certificadores de classes especiais, 2026-10-06→07)
 
-Leitura executável: `docs/technical/reference/leituras-r11-certificadores.md`. Pré-registro: `docs/technical/reference/pre-registro-r11-certificadores.md`. Evidência bruta: `results/structural/r11-certificadores.csv`. Interpretação: `docs/technical/reference/resultados-r11-certificadores.md`. Auditoria/redução: `docs/technical/reference/auditoria-r11-divergencias.md`. Conclusão: `docs/technical/reference/conclusao-r11-certificadores.md`. Spec: `specs/proxima-fase-d-certificadores-classes-especiais/spec.md`.
+Leitura executável: `docs/technical/reference/experimentos/leituras-r11-certificadores.md`. Pré-registro: `docs/technical/reference/experimentos/pre-registro-r11-certificadores.md`. Evidência bruta: `results/structural/r11-certificadores.csv`. Interpretação: `docs/technical/reference/experimentos/resultados-r11-certificadores.md`. Auditoria/redução: `docs/technical/reference/validacao-e-correcoes/auditoria-r11-divergencias.md`. Conclusão: `docs/technical/reference/validacao-e-correcoes/conclusao-r11-certificadores.md`. Spec: `specs/proxima-fase-d-certificadores-classes-especiais/spec.md`.
 
 **Veredito R11:** `CONFIRMED DIVERGENCE`. `path-alg1` e `cycle-alg2` literais não funcionam como certificadores exatos da definição corrente; as leituras de aranha também não produzem um certificador exato universal, com SP-R2 como witness principal. Isso é evidência interna; qualquer alegação pública de erratum exige revisão/comunicação aos autores.
 
@@ -139,8 +139,8 @@ Leitura executável: `docs/technical/reference/leituras-r11-certificadores.md`. 
 
 **Arquivos:**
 
-- `docs/technical/reference/formulacao-fcc-configuracoes-conectadas.md` (F-CC);
-- `docs/technical/reference/formulacao-fc3-consistencia-trios.md` (F-C3).
+- `docs/technical/reference/formulacoes/formulacao-fcc-configuracoes-conectadas.md` (F-CC);
+- `docs/technical/reference/formulacoes/formulacao-fc3-consistencia-trios.md` (F-C3).
 
 ### Papel na pesquisa
 

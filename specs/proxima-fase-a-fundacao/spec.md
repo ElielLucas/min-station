@@ -1,6 +1,6 @@
 # Next Phase A — Foundation and Experimental Baseline (MIN-STATION) Specification
 
-Scope: tasks R1–R4 of `docs/technical/plans/plano-proxima-fase.md` (the source of truth for the
+Scope: tasks R1–R4 of `docs/technical/plans/execucao/plano-proxima-fase.md` (the source of truth for the
 current research program). This spec makes the repository clean, versioned and experimentally
 comparable, and produces the official reference bounds `LB*` and `UB*` against which every later
 claim of advance is measured.
@@ -37,15 +37,15 @@ grade; **[Hipótese]** untested; **[Sugestão]** planning proposal.
 | Partition of benchmark-v1 by origin graph | DONE | `regra-particao-origem.md`; 0 vazamento; `verify_t8_consolidacao.py` ok |
 | 12 SC Phase-E instances in the manifest | DONE | 12 rows, `classe=estrutural`; manifesto com 149 linhas |
 | Tag `benchmark-v1.0` | FROZEN, UNTAGGED | Sem autorização de commit |
-| Protocol-compliant 3-seed baseline, `LB*`/`UB*` | DONE | 411 linhas em `results/benchmark/linha_base.csv`; tabela em `docs/technical/reference/resultados-linha-de-base.md` |
+| Protocol-compliant 3-seed baseline, `LB*`/`UB*` | DONE | 411 linhas em `results/benchmark/linha_base.csv`; tabela em `docs/technical/reference/experimentos/resultados-linha-de-base.md` |
 | AV-1..AV-4 thresholds | PENDING USER CONFIRMATION | Marked as pending in the plan §2 |
 
 **Reusable infrastructure [Fato]:** `harness.measure_mip(coletar_incumbente=True)` (T9),
 `cortes_ordenados` (T6), `WorkLimit` handling in `experiments/structural/piloto.py`, the
-calibration procedure in `docs/technical/reference/piloto-fase-p.md`, core solvers
+calibration procedure in `docs/technical/reference/fases-piloto-e-extensoes/piloto-fase-p.md`, core solvers
 (`run_e12.py:nucleo`, `piloto.py:_resolver_nucleo`, `medir.py:nucleo`),
 `experiments/benchmark/verify_t8_consolidacao.py`, `src/converters/build_manifest.py`
-(`--so-grupos`), and `docs/technical/reference/protocolo-comparacao-pareada.md`.
+(`--so-grupos`), and `docs/technical/reference/baseline-e-metodo/protocolo-comparacao-pareada.md`.
 
 ---
 
@@ -200,7 +200,7 @@ baseline frozen in writing before the first solve.
 **Required tests:** none; the check is the timestamp of the pre-registration preceding the first CSV
 row.
 
-**Evidence to produce:** `docs/technical/reference/linha-de-base-pre-registro.md` (name to confirm).
+**Evidence to produce:** `docs/technical/reference/baseline-e-metodo/linha-de-base-pre-registro.md` (name to confirm).
 
 **Risks:** calibration on one instance may not represent all families; this is a documented property
 of `WorkLimit`, not a reason to recalibrate per family.
@@ -321,3 +321,7 @@ R8 (column generation), R9 (branch-and-price), R10 (compatibility inequalities),
 (matheuristic) and R13 (confirmation) have **no spec**. They are created only when Spec B's GF1 or
 Spec C's G1 releases them, and R13 only when a method passes G2. Nothing in this spec authorizes
 them.
+
+---
+
+**Nota pós-análise N1-T0 (2026-10-07).** As tarefas operacionais R1–R4 da Fundação foram executadas. A tabela antiga de rastreabilidade com `Pending` é uma fotografia do pré-registro e não a situação corrente; pendências específicas de AV/traceabilidade permanecem separadas. Ver análise consolidada §15 e as evidências em `docs/technical/reference/baseline-e-metodo/`. Não reinterpretar os `Pending` antigos como invalidação de resultados.

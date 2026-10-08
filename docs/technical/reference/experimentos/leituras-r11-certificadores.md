@@ -35,18 +35,18 @@ Fora deste arquivo: código dos geradores/certificadores, `verify_r11.py`, mater
 | DAS-L5 | mesmo | Lemma 5, p. 11–12 | Existe aresta não atravessada; permanência na prova |
 | DAS-A2 | mesmo | Algorithm 2, p. 13 | Ciclo por `n` quebras |
 | DAS-T3 | mesmo | Theorem 3, p. 13 | `O(n²)` |
-| VAL-A2 | `docs/technical/reference/validacao-formulacao-base.md` | §1; Apêndice A.2 | Invariantes; armadilha `⌊L/r⌋` vs definição |
+| VAL-A2 | `docs/technical/reference/validacao-e-correcoes/validacao-formulacao-base.md` | §1; Apêndice A.2 | Invariantes; armadilha `⌊L/r⌋` vs definição |
 | BF-U | `docs/context-ai/base-formulation.md` | §6–7 | Balanço unificado; `S∩T`; permanência |
 | POV | `docs/project-overview.md` | §6 | Invariantes do problema base |
-| PR-DEF | `docs/technical/reference/pereira-ravelo-2026-aranhas.md` | §2 | Aranha, centro, radiais |
+| PR-DEF | `docs/technical/reference/artigos-externos/pereira-ravelo-2026-aranhas.md` | §2 | Aranha, centro, radiais |
 | PR-REV | mesmo | §3 | Revisão do guloso de caminhos |
 | PR-L1 | mesmo | Lemma 1, p. do `.md` após §4 | Guloso na radial, folha → centro |
 | PR-L2 | mesmo | Lemma 2 | Matching carga restante × alvo mais longe |
 | PR-T1 | mesmo | Theorem 1 | `O(|V|)`; condições para estação no centro |
-| PLAN-5 | `docs/technical/plans/plano-proxima-fase.md` | §5 | Cinco leituras SP-R1…SP-R5, já como hipótese |
-| FCC | `docs/technical/reference/formulacao-fcc-configuracoes-conectadas.md` | definição | Referência de cruzamento futuro; **não** entra no certificador |
-| GF1 | `docs/technical/reference/decisao-gf1.md` | veredito | F-CC disponível como referência; F-C3 `OPEN` |
-| G1 | `docs/technical/reference/decisao-g1.md` | veredito | R11 continua linha de suporte |
+| PLAN-5 | `docs/technical/plans/execucao/plano-proxima-fase.md` | §5 | Cinco leituras SP-R1…SP-R5, já como hipótese |
+| FCC | `docs/technical/reference/formulacoes/formulacao-fcc-configuracoes-conectadas.md` | definição | Referência de cruzamento futuro; **não** entra no certificador |
+| GF1 | `docs/technical/reference/decisoes/decisao-gf1.md` | veredito | F-CC disponível como referência; F-C3 `OPEN` |
+| G1 | `docs/technical/reference/decisoes/decisao-g1.md` | veredito | R11 continua linha de suporte |
 
 Não há PDF original de Pereira & Ravelo no repositório. A fonte de aranhas é só o `.md` acima.
 

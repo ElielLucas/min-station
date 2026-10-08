@@ -25,7 +25,7 @@ A referência conceitual é o MIN-STATION definido por Das:
 
 A solução do problema original é um conjunto `C ⊆ V`.
 
-O mesmo problema é estudado por Das, Hanaka, Melissinos e Ono (IJCAI 2026) sob o nome CHARGING STATION PLACEMENT, com `k` no lugar de `m`. Todos os atributos coincidem (ver `docs/technical/reference/overlap-ijcai2026-min-station.md` §3); os resultados desse artigo aplicam-se ao baseline do projeto.
+O mesmo problema é estudado por Das, Hanaka, Melissinos e Ono (IJCAI 2026) sob o nome CHARGING STATION PLACEMENT, com `k` no lugar de `m`. Todos os atributos coincidem (ver `docs/technical/reference/documentacao-projeto/overlap-ijcai2026-min-station.md` §3); os resultados desse artigo aplicam-se ao baseline do projeto.
 
 ## 3. Baseline atual
 
@@ -98,4 +98,4 @@ Os artigos e documentos de referência fazem parte do contexto do projeto e têm
 
 O detalhamento e a precedência dessas fontes estão em:
 
-`docs/technical/reference/source-map.md`
+`docs/technical/reference/tecnico/source-map.md`

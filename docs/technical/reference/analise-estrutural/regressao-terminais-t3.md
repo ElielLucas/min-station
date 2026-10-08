@@ -2,7 +2,7 @@
 
 **Data:** 2026-10-03
 **Suíte:** `experiments/cuts/verify_t3_regressao_terminais.py`
-**Commit:** o commit que introduz este arquivo (`git log -1 -- docs/technical/reference/regressao-terminais-t3.md`).
+**Commit:** o commit que introduz este arquivo (`git log -1 -- docs/technical/reference/analise-estrutural/regressao-terminais-t3.md`).
 
 ## Casos
 

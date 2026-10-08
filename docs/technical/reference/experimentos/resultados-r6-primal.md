@@ -1,7 +1,7 @@
 # Resultados R6 — teste primal (um fator)
 
 **Data:** 2026-10-06
-**Pré-registro:** `docs/technical/reference/pre-registro-r5.md` §3
+**Pré-registro:** `docs/technical/reference/experimentos/pre-registro-r5.md` §3
 **CSV:** `results/benchmark/r6-primal.csv`
 **Controle:** `braco=comp` de `linha_base.csv`, copiado, não reexecutado
 **Experimental:** COMP, `MIPFocus = 1`, demais parâmetros iguais (`WorkLimit = 164`, `TimeLimit = 1800` guarda, 4 threads, sem MIP start, seeds 42/43/44)

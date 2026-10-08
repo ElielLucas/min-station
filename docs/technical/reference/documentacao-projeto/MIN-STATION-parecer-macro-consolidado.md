@@ -1,7 +1,7 @@
 # MIN-STATION — parecer macro consolidado
 
 O plano operacional (histórico, linhas pausadas e tarefas T1–T22) está em
-`docs/technical/plans/backlog-continuacao.md`. Este parecer continua sendo a fonte
+`docs/technical/plans/historico/backlog-continuacao.md`. Este parecer continua sendo a fonte
 científica; não é o quadro de tarefas.
 
 **Data:** 30/09/2026. **Commit auditado:** `e9d1ccb`, branch `novos_testes`.
@@ -412,11 +412,11 @@ instâncias for pequeno, ou, no caso das árvores, depois de implementar e valid
 
 | Arquivo | Correção |
 |---|---|
-| `docs/technical/reference/resultados-e13-pli.md` §5 (l.143) | Retirar "Isto não é ruído de execução"; listar as três causas candidatas (§3) |
-| `docs/technical/reference/resultados-e13-pli.md` | Registrar o confundimento TL × `MIPFocus` do braço de 1800 s |
-| `docs/technical/reference/resultados-e2-e4-pli.md` (l.314–315) | Barcelona st25: BASE-C provou o ótimo em 299,4 s |
+| `docs/technical/reference/experimentos/resultados-e13-pli.md` §5 (l.143) | Retirar "Isto não é ruído de execução"; listar as três causas candidatas (§3) |
+| `docs/technical/reference/experimentos/resultados-e13-pli.md` | Registrar o confundimento TL × `MIPFocus` do braço de 1800 s |
+| `docs/technical/reference/experimentos/resultados-e2-e4-pli.md` (l.314–315) | Barcelona st25: BASE-C provou o ótimo em 299,4 s |
 | `CLAUDE.md` (l.70) | "5 antigas compatíveis + 70 do benchmark-v1" |
-| `docs/technical/reference/validacao-formulacao-base.md` (l.102) e `docs/context-ai/base-formulation.md` (l.155) | Remover ou qualificar a hipótese `S∩T = ∅` |
+| `docs/technical/reference/validacao-e-correcoes/validacao-formulacao-base.md` (l.102) e `docs/context-ai/base-formulation.md` (l.155) | Remover ou qualificar a hipótese `S∩T = ∅` |
 | `experiments/cuts/synthetic.py` (`StayPut`, `SharedTerminal`) | Corrigir os comentários de mecanismo; acrescentar um gabarito de permanência pura |
 | `experiments/alternative-formulations/modelo_estendido.py` | O nome "equivalente ao baseline" é enganoso: o modelo é VI-only e bloqueia trânsito por terminais |
 

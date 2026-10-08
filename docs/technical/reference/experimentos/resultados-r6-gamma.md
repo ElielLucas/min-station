@@ -1,7 +1,7 @@
 # Resultados R6 — Γ e classificação
 
 **Data:** 2026-10-06
-**Pré-registro:** `docs/technical/reference/pre-registro-r5.md` (congelado 2026-10-06T10:40:00-03:00, antes desta medição)
+**Pré-registro:** `docs/technical/reference/experimentos/pre-registro-r5.md` (congelado 2026-10-06T10:40:00-03:00, antes desta medição)
 **CSV:** `results/benchmark/r6-gamma.csv`
 **Núcleo:** IP em `y` com C1+C2+C4-DM, o mesmo da linha de base.
 **Definição:** `Γ = OPT − OPT_core`. Intervalo nunca é apresentado como valor único.
@@ -129,3 +129,7 @@ As instâncias F (e os gadgets) entram em `exact` precisamente porque o solver p
 | bp-nao | sim (1) | conta |
 | hb | sim (1, 2) | conta |
 | sc, tr, urb, i | não (todos 0) | não conta para o limiar ≥ 2 |
+
+---
+
+**Nota pós-análise N1-T0 (2026-10-07).** Resultados P/E e baseline rotulados por `-dirty` requerem snapshot, diff arquivado ou hash completo dos códigos quando forem reutilizados como reprodução exata. Hash do gerador de cortes isolado não substitui proveniência de todo o experimento. N1 precisa preservar `PYTHONHASHSEED=0`, versões e hashes por braço.

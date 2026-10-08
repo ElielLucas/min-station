@@ -8,7 +8,7 @@
 - incluir nos próximos testes as duas formulações alternativas, para ver se superam o que existe hoje.
 
 **O que a aprovação de 2026-10-03 fez:**
-- este documento foi salvo como `docs/technical/plans/plano-proxima-fase.md`;
+- este documento foi salvo como `docs/technical/plans/execucao/plano-proxima-fase.md`;
 - os três arquivos novos foram renomeados conforme a §6.4:
   `formulacao-fcc-configuracoes-conectadas.md`,
   `formulacao-fc3-consistencia-trios.md`,
@@ -634,3 +634,7 @@ resultado teórico e negativo documentado.
 3. Se possível, fornecer o documento completo de provas da F-C3 (família de separação,
    contraexemplo de 15 vértices, família geral). Não é bloqueante: sem ele, F2/F3 seguem com
    re-derivação própria e os valores alegados ficam `[Hipótese]` até serem confirmados.
+
+---
+
+**Nota pós-análise N1-T0 (2026-10-07).** Este plano R1–R13 é histórico; a análise consolidada (07/10) e specs N1/N2 têm precedência. F-CC passou GF1 nos tipos HB, BP-não e Sec59; no controle SC F-CC não foi medida por `max_W`. R11 encerrou em divergência confirmada e não é oráculo. R8/R10 fundidos na pergunta N1; R9 e R12 continuam bloqueados. As previsões antigas de BP/HB não sobrescrevem os CSVs efetivamente obtidos.

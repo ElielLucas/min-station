@@ -1,7 +1,7 @@
 # Resultados da linha de base — Spec A R4
 
 **Data:** 2026-10-06
-**Contrato:** `docs/technical/reference/linha-de-base-pre-registro.md`, congelado em 2026-10-04T15:08:42-03:00, antes da primeira linha do CSV.
+**Contrato:** `docs/technical/reference/baseline-e-metodo/linha-de-base-pre-registro.md`, congelado em 2026-10-04T15:08:42-03:00, antes da primeira linha do CSV.
 **Dados:** `results/benchmark/linha_base.csv`
 **Tabela:** saída de `experiments/benchmark/tabela_linha_base.py`. Nenhum número desta tabela foi copiado à mão.
 **Commit gravado em toda linha:** `9b93650-dirty` (capturado no início de `medir`; a execução continuou depois dos commits de R1–R3).
@@ -21,7 +21,7 @@
 
 ## 2. LB* e UB* por instância
 
-Fonte: `results/benchmark/linha_base.csv`. Contrato: `docs/technical/reference/linha-de-base-pre-registro.md`.
+Fonte: `results/benchmark/linha_base.csv`. Contrato: `docs/technical/reference/baseline-e-metodo/linha-de-base-pre-registro.md`.
 Linhas: 411 (desenho 411).
 
 | Instância | Dificuldade | Partição | Fora AV | LB* | fonte LB* | UB* | fonte UB* | guarda |
@@ -140,3 +140,7 @@ Os seis casos em que o E9 viu o núcleo (60 s) acima do COMP (600 s) repetem o s
 **As quatro F em que o E9 viu o núcleo abaixo do ótimo repetem o mesmo par.** O núcleo fica em 5, 2, 4 e 5, e o COMP prova 7, 3, 6 e 7, nesta ordem: maze, pace-001, `pucn-cc6-2n`, lin03. As outras quatro F daquela regressão (`w23c23-intercalado`, `b-b12-intercalado`, `i-i080-301`, `urb-apia-m10`) fecham com núcleo e COMP no mesmo inteiro, como no E9.
 
 **Os controles MAPF do E12 repetem o núcleo abaixo do COMP.** `mapf-random-32-32-10-m50-f8`: LB* 53 e UB* 71, contra 53 e 72 na seed 42 do E12; o núcleo fica em 43. `mapf-empty-32-32-m25-f4`: LB* 13 e UB* 18, contra 14 e 18; o núcleo fica em 11. A queda de 14 para 13 é uma unidade, a margem que o próprio E9 já marcava como instável.
+
+---
+
+**Nota pós-análise N1-T0 (2026-10-07).** O UB histórico 38 para hc9u e o UB 41 de rodada posterior não são contradição: 41 é incumbente pior, não invalida solução anterior de 38 que ainda deve ter sua viabilidade auditável. Não mesclar protocolos/versões dos dois relatórios. Execuções identificadas como `-dirty` não representam snapshot limpo reprodutível por hash de commit; exigir patch/snapshot ou hashes dos arquivos usados nas próximas medições.

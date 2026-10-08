@@ -1,7 +1,7 @@
 # Block 2 — Experimental Reliability (MIN-STATION) Specification
 
-Scope: T6–T11 from `docs/technical/plans/backlog-continuacao.md`, with scientific basis in
-`docs/technical/reference/MIN-STATION-parecer-macro-consolidado.md`
+Scope: T6–T11 from `docs/technical/plans/historico/backlog-continuacao.md`, with scientific basis in
+`docs/technical/reference/documentacao-projeto/MIN-STATION-parecer-macro-consolidado.md`
 (§3, §5, §9 Stage 2, §10).
 
 All facts below were checked in this session through code inspection and direct execution —
@@ -570,8 +570,8 @@ inherits the same risks already observed.
 |---|---|---|---|
 | Granularity of this spec (Specify only) | Each story (T6–T11) contains its objective, evidence, affected files, acceptance criteria, risks, and dependencies directly in `spec.md`, without formal `design.md` / `tasks.md` files | Same pattern adopted in Block 1, following the explicit user request ("create only the spec") | n |
 | Where to implement the new instrumentation infrastructure (T9) | Extend `harness.measure_mip` with a callback based on `RegistSerieTemporal` (already exists and is currently used only by `baseline.py`), rather than creating a parallel callback mechanism | Avoids duplicating already written and tested sampling logic; `RegistSerieTemporal` already solves the "time to incumbent" problem through `MIP` / `MIPSOL` sampling | n |
-| Name/location for the budget-decision document (T7) | `docs/technical/reference/decisao-orcamento-worklimit.md` (new) | Follows the project's existing naming pattern (`resultados-e*-pli.md`, `correcao-c4-dm.md`) for versioned protocol decisions | n |
-| Name/location for the paired-comparison protocol (T10) | `docs/technical/reference/protocolo-comparacao-pareada.md` (new), referenced from `CLAUDE.md` | Same pattern; it must be a document that future `plano-experimentos-e*.md` files can cite, not merely an isolated section |
+| Name/location for the budget-decision document (T7) | `docs/technical/reference/decisoes/decisao-orcamento-worklimit.md` (new) | Follows the project's existing naming pattern (`resultados-e*-pli.md`, `correcao-c4-dm.md`) for versioned protocol decisions | n |
+| Name/location for the paired-comparison protocol (T10) | `docs/technical/reference/baseline-e-metodo/protocolo-comparacao-pareada.md` (new), referenced from `CLAUDE.md` | Same pattern; it must be a document that future `plano-experimentos-e*.md` files can cite, not merely an isolated section |
 | Scope of the correction in `modelo_estendido.py` (T11) | Read the body of `construir_modelo_estendido_equivalente` before deciding whether to rename the function/description or merely qualify the docstring with the actual restrictions (VI-only, terminal transit blocked) | This session confirmed the misleading surface-level claim (name and description) but did not inspect the internal constraints. The exact correction is an implementation decision, not a spec decision | n |
 | Handling the `i160-301` case (new duplicate not cited in the assessment) | Include it in the same T8 source-graph grouping mechanism, with no special case | It is structurally the same type of issue as `cc7-3n`, already handled ad hoc by E12. The general T8 fix (group by `instancia_original`) solves both with one rule | n |
 
@@ -1260,7 +1260,7 @@ so the decision is not based on one sample.
 
 **Evidence to produce:**
 
-`docs/technical/reference/decisao-orcamento-worklimit.md`
+`docs/technical/reference/decisoes/decisao-orcamento-worklimit.md`
 
 containing:
 
@@ -1412,7 +1412,7 @@ It must include:
 **Affected files/components:**
 
 - New:
-  `docs/technical/reference/protocolo-comparacao-pareada.md`.
+  `docs/technical/reference/baseline-e-metodo/protocolo-comparacao-pareada.md`.
 
 - `CLAUDE.md`:
   reference the new protocol in the existing
@@ -1761,7 +1761,7 @@ for every published result.
   Evaluate migration during implementation
   without retroactively breaking E12's published result.
 
-- `docs/technical/reference/benchmark-v1.md`
+- `docs/technical/reference/baseline-e-metodo/benchmark-v1.md`
 
   Add a consolidation section containing:
 

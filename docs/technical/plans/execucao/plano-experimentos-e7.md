@@ -3,7 +3,7 @@
 ## Contexto
 
 A rodada E5 terminou: E2, E3, E4 e E6 rodaram, e o relatório
-`docs/technical/reference/resultados-e2-e4-pli.md` foi reescrito. Uma auditoria contra os CSVs,
+`docs/technical/reference/experimentos/resultados-e2-e4-pli.md` foi reescrito. Uma auditoria contra os CSVs,
 os logs e o plano E5 encontrou três tipos de problema, que precisam ser resolvidos antes de
 qualquer experimento novo:
 
@@ -24,7 +24,7 @@ qualquer experimento novo:
 Depois disso vem o **E7**: comparar o branch-and-cut em y, completo, com o compacto em uma
 instância de cada regime, para decidir se A2 vira a linha principal da pesquisa.
 
-**Passo 0, ao aprovar:** copiar este plano para `docs/technical/plans/plano-experimentos-e7.md`.
+**Passo 0, ao aprovar:** copiar este plano para `docs/technical/plans/execucao/plano-experimentos-e7.md`.
 
 ---
 

@@ -1,5 +1,5 @@
 """
-Gera as tabelas e o veredito de docs/technical/reference/resultados-e13-pli.md
+Gera as tabelas e o veredito de docs/technical/reference/experimentos/resultados-e13-pli.md
 a partir dos CSVs de results/benchmark/ (e13_base*, e13_longo*).
 
 O veredito sai daqui, não da leitura à mão: o critério foi pré-registrado no

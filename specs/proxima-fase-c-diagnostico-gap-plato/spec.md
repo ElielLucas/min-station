@@ -1,6 +1,6 @@
 # Next Phase C — Diagnosis of the Remaining Gap and of the Core Plateau (MIN-STATION) Specification
 
-Scope: tasks R5, R6, R7 and gate **G1** of `docs/technical/plans/plano-proxima-fase.md`. This spec
+Scope: tasks R5, R6, R7 and gate **G1** of `docs/technical/plans/execucao/plano-proxima-fase.md`. This spec
 determines whether the remaining gap is mainly on the lower-bound side (collective compatibility) or
 on the upper-bound side (primal), measures the compatibility gap `Γ` exactly where possible and as an
 interval elsewhere, and dissects why optimal core solutions are infeasible. It produces the evidence
@@ -310,3 +310,7 @@ spec, if any, is opened next.
   levels and 3 seeds on the development partition).
 
 Nothing in this spec authorizes them.
+
+---
+
+**Nota pós-análise N1-T0 (2026-10-07).** R5/R6/G1 concluídos; G1 é portão operacional e não identifica mecanismo matemático. R7 coletado, mas sua interpretação corrigida está em `docs/technical/reference/experimentos/n1-t4-auditoria-r7.md`. R8/R10 foram reunidos na pergunta N1/N2; R9 continua bloqueado pela decisão N2, independentemente de antigos rótulos `released`.

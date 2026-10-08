@@ -1,7 +1,7 @@
 """R11 — caminhos e ciclos: geradores e certificadores literais de Das.
 
 O certificador de caminho implementa PATH-ALG1 exatamente como documentado em
-``docs/technical/reference/leituras-r11-certificadores.md``. Em particular,
+``docs/technical/reference/experimentos/leituras-r11-certificadores.md``. Em particular,
 ``Vcounter`` conta vértices ativos e os testes ``v in S`` e ``v in T`` são
 independentes. Não há reparo para fazê-lo coincidir com o baseline.
 

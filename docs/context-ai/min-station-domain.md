@@ -105,6 +105,6 @@ Esses elementos pertencem à formulação generalizada do trabalho anterior e n�
 
 `S` e `T` não são necessariamente disjuntos: Das permite que um vértice seja origem de um robô e alvo de outro ao mesmo tempo (Lema 5 do artigo).
 
-A formulação corrente usa um balanço unificado por vértice (ver `docs/context-ai/base-formulation.md` §6), que cobre esse caso sem exigir tratamento separado. Não reintroduzir balanços separados (origem/destino) sem justificativa — isso reproduziria o erro de modelagem documentado em `docs/technical/reference/validacao-formulacao-base.md` (P1).
+A formulação corrente usa um balanço unificado por vértice (ver `docs/context-ai/base-formulation.md` §6), que cobre esse caso sem exigir tratamento separado. Não reintroduzir balanços separados (origem/destino) sem justificativa — isso reproduziria o erro de modelagem documentado em `docs/technical/reference/validacao-e-correcoes/validacao-formulacao-base.md` (P1).
 
 Decisão registrada em `docs/technical/governance/open-questions.md` (Q1, fechada).

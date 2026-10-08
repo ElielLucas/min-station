@@ -7,7 +7,7 @@
 > - **Definição:** seções 1–5 fecham `y`, `λ_q`, `d_st`, `q=(W,I,J)`,
 >   conectividade em `H`, `B(W)`, pares diretos, R1–R3 e `S∩T`. Exemplo de
 >   montagem no final.
-> - **Provas (F2):** `docs/technical/reference/provas-fcc-fc3.md`.
+> - **Provas (F2):** `docs/technical/reference/formulacoes/provas-fcc-fc3.md`.
 > - Cadeia adotada: `base ≤ F-CC ≤ F-C3 ≤ OPT`. O elo F-C3 permanece
 >   `HYPOTHESIS`/`OPEN` enquanto as redes de trios não tiverem definição.
 

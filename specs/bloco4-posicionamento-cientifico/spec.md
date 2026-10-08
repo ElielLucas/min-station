@@ -1,6 +1,6 @@
 # Block 4 — Scientific Positioning (MIN-STATION) Specification
 
-Scope: T22 from `docs/technical/plans/backlog-continuacao.md` — map the overlap with Das, Hanaka,
+Scope: T22 from `docs/technical/plans/historico/backlog-continuacao.md` — map the overlap with Das, Hanaka,
 Melissinos and Ono, *Charging Station Placement for Anonymous Mobile Agents: A Parameterized
 Complexity Perspective*, IJCAI-26, pp. 72–80, and rewrite the project's contribution claims on top
 of that comparison.
@@ -168,7 +168,7 @@ contribution, never a T1 one on its own.
 - **`RESEARCH.md` does not cite the IJCAI paper.** Its §7 "Fontes principais" lists only Das, the
   SBPO article and the current base formulation. Verified: zero occurrences of "IJCAI".
 - **`docs/project-overview.md` does not cite it.** Zero occurrences.
-- **`docs/technical/reference/source-map.md` does not cite it** — and this is the document
+- **`docs/technical/reference/tecnico/source-map.md` does not cite it** — and this is the document
   `CLAUDE.md` designates for "Comparar documentos/artigos". It describes exactly three sources:
   Das's original, the SBPO article, and the all-vertices formulation PDF. Zero occurrences of
   "IJCAI".
@@ -204,7 +204,7 @@ things the project has been treating as open ground. `G^r` is a published propos
 by reachability-plus-matching is a published theorem, and the two structural families the project
 built in Block 3 (BP and SC) instantiate the paper's own reductions. At the same time the three
 documents that carry the project's scientific frame — `RESEARCH.md`, `docs/project-overview.md` and
-`docs/technical/reference/source-map.md` — do not cite the paper at all, while thirty technical
+`docs/technical/reference/tecnico/source-map.md` — do not cite the paper at all, while thirty technical
 documents already do; and the project's one public novelty claim, in the SBPO abstract, asserts that
 the problem "has not yet been addressed through Integer Linear Programming" without a recorded
 literature search and without noting that the SBPO formulation models a restricted variant. Without
@@ -279,7 +279,7 @@ The search is specified in Required Literature Checks and stops when those claim
 
 | Assumption / decision | Chosen default | Rationale | Confirmed? |
 |---|---|---|---|
-| Where the overlap matrix lives | `docs/technical/reference/overlap-ijcai2026-min-station.md`, a new reference document | Matches the naming of every other evidence document produced by Blocks 1–3 | n |
+| Where the overlap matrix lives | `docs/technical/reference/documentacao-projeto/overlap-ijcai2026-min-station.md`, a new reference document | Matches the naming of every other evidence document produced by Blocks 1–3 | n |
 | Whether `source-map.md` gains a fourth source or a rewrite | Add the IJCAI paper as a fourth numbered source with its own "Papel na pesquisa" and "Limite da fonte", in the existing style | The file's structure already supports it; a rewrite would churn text that is still correct | n |
 | How to treat the SBPO article | As a prior publication of the project that models a **variant** (stations in `V∖(S∪T)`), whose abstract claim must be qualified rather than silently dropped | It is the group's own published record; the honest move is a written qualification, not a retraction that no reader can see | n |
 | Priority between SBPO (LVIII SBPO) and IJCAI-26 | Treat as **UNRESOLVED** until the two publication dates are established from the official records | Both are 2026; guessing either way would be an unsupported priority claim | n |
@@ -658,7 +658,7 @@ The audit is not limited to these rows; it must sweep the documents listed in T2
 
 ## Evidence to Produce
 
-1. **Overlap matrix** — `docs/technical/reference/overlap-ijcai2026-min-station.md`, with the
+1. **Overlap matrix** — `docs/technical/reference/documentacao-projeto/overlap-ijcai2026-min-station.md`, with the
    definitions table, the theory rows, the cut table and the ILP section.
 2. **Contribution table** — candidate, category, prior literature, project evidence, final status.
 3. **Claim-correction list** — file, current claim, problem, evidence, recommended claim.
@@ -765,7 +765,7 @@ T22.1 and the literature checks can start immediately. Nothing here waits on new
 | SCI-39 | P3: T22.6 | Design | Done (`overlap-ijcai2026-min-station.md` §10) |
 | SCI-40 | P3: T22.6 | Design | Done (`overlap-ijcai2026-min-station.md` §10) |
 
-**Coverage:** 40 total, 40 delivered in `docs/technical/reference/overlap-ijcai2026-min-station.md` (mapping per requirement in its §10); 0 mapped to `tasks.md` (not created in this round, by explicit user
+**Coverage:** 40 total, 40 delivered in `docs/technical/reference/documentacao-projeto/overlap-ijcai2026-min-station.md` (mapping per requirement in its §10); 0 mapped to `tasks.md` (not created in this round, by explicit user
 request), 40 unmapped.
 
 ---

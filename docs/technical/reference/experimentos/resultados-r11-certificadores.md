@@ -2,10 +2,10 @@
 
 **Data:** 2026-10-07  
 **Spec:** `specs/proxima-fase-d-certificadores-classes-especiais/spec.md`  
-**Pré-registro:** `docs/technical/reference/pre-registro-r11-certificadores.md`  
-**Leituras:** `docs/technical/reference/leituras-r11-certificadores.md`  
+**Pré-registro:** `docs/technical/reference/experimentos/pre-registro-r11-certificadores.md`  
+**Leituras:** `docs/technical/reference/experimentos/leituras-r11-certificadores.md`  
 **CSV:** `results/structural/r11-certificadores.csv`  
-**Auditoria:** `docs/technical/reference/auditoria-r11-divergencias.md`  
+**Auditoria:** `docs/technical/reference/validacao-e-correcoes/auditoria-r11-divergencias.md`  
 **Commit registrado no CSV:** `dd485dc`  
 **F-C3:** `OPEN` em todo o lote
 
@@ -264,4 +264,4 @@ O lote não terminou em “nenhuma divergência”. Portanto o ramo aplicável d
 CONFIRMED DIVERGENCE
 ```
 
-A formulação precisa desse veredito está em `docs/technical/reference/conclusao-r11-certificadores.md`.
+A formulação precisa desse veredito está em `docs/technical/reference/validacao-e-correcoes/conclusao-r11-certificadores.md`.

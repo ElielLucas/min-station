@@ -186,3 +186,7 @@ Antes de aceitar uma mudança na formulação, verificar:
 - [x] o caso `S ∩ T` é tratado pelo balanço unificado (§6, §10.1) — não reintroduzir balanços separados sem justificativa;
 - [ ] a equivalência entre fluxo e rotas permanece válida;
 - [ ] testes pequenos foram atualizados.
+
+---
+
+**Nota pós-análise N1-T0 (2026-10-07).** Esta é a baseline U vigente, não F-CC nem F-C3. A prova de correspondência com Das foi fechada para `S∩T`, com permanência. Não usar procedimentos literais de R11 como certificados. F-CC tem GF1=`PASS`; F-C3 só possui definição canônica em revisão MR-F3, sem valores de LP N1 certificados.

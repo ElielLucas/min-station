@@ -1,0 +1,6 @@
+instancia,arquivo,n_pool,truncado,n_Z,max_z_freq_retorno,max_z_n_instalacoes_cortadas,divergencias_oracle_matching,categoria_viavel,categoria_sem_alcance_individual,categoria_deficiencia_Hall_sem_grau_zero,categoria_inexplicado
+TR-k2-L5-r2,instances/estrutural/tr/tr-k2-L5-r2-siginf-m2.txt,8,0,4,2,2,0,2,6,0,0
+"BP-nao-[3,1]-q2",instances/estrutural/bp/bp-nao-q2-B2-s0.txt,2,0,2,1,1,0,0,0,2,0
+mapf-maze-32-32-2-m10-f4,instances/benchmark-v1/mapf/mapf-maze-32-32-2-m10-f4.txt,200,1,55,49,49,0,0,199,1,0
+lin-lin03-regiao-f4,instances/benchmark-v1/steinlib-lin/lin-lin03-regiao-f4.txt,200,1,65,17,17,0,0,200,0,0
+puc-cc9-2p-seed-r1,instances/benchmark-v1/puc/puc-cc9-2p-seed-r1.txt,200,1,66,21,27,0,0,200,0,0

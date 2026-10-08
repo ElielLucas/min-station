@@ -1,6 +1,6 @@
 # Benchmark MIN-STATION v1 (versão preliminar, lote 1)
 
-**Plano:** `docs/technical/plans/plano-benchmark-v1.md`
+**Plano:** `docs/technical/plans/execucao/plano-benchmark-v1.md`
 **Gerador:** `src/converters/build_benchmark.py` + `instances/benchmark-v1/spec.csv`
 **Manifesto:** `instances/manifest.csv` (`src/converters/build_manifest.py`)
 **Atributos:** `src/converters/instance_features.py`
@@ -314,7 +314,7 @@ aqui na regeneração H17: `I065`, `apia-1.graphml`, `b06`, `b12`, `b18`, `bip42
 `cc10-2u`, `hc10p`, `hc9u`, `lin06`, `w23c23`. E9–E14 usaram essa partição.
 
 **R2 (2026-10-04).** A partição vigente é por grafo de origem
-(`docs/technical/reference/regra-particao-origem.md`). Zero vazamento.
+(`docs/technical/reference/analise-estrutural/regra-particao-origem.md`). Zero vazamento.
 A checagem é `experiments/benchmark/verify_t8_consolidacao.py`. A única
 duplicata estrutural continua `puc-hc9u-seed-r1.txt` → `hc9u.txt`.
 Estado congelado, sem tag `benchmark-v1.0` até haver commit autorizado.

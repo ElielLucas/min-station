@@ -1,5 +1,5 @@
 """
-Gera as tabelas de docs/technical/reference/resultados-e9-e10-pli.md a partir
+Gera as tabelas de docs/technical/reference/experimentos/resultados-e9-e10-pli.md a partir
 dos CSVs de results/benchmark/ (E9, E10 e, se existir, E10b).
 
 Uso: python experiments/benchmark/tabela_e9_e10.py

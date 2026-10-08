@@ -445,4 +445,4 @@ com C2 defeituoso e serão remedidos no Bloco 2 da rodada E7.
 `bc_yspace.py` (novo), `run_e2.py`, `run_e4.py`, `run_e6.py` (novo), `verify_structure.py` (novo).*
 *Resultados em `results/cuts/e2_yspace.csv`, `e3_cobertura_ip.csv`, `e4_arvore.csv`,
 `e5_estrutura.csv`, `e6_bc_y.csv`.*
-*Plano desta rodada: `docs/technical/plans/plano-experimentos-e5.md`.*
+*Plano desta rodada: `docs/technical/plans/execucao/plano-experimentos-e5.md`.*
