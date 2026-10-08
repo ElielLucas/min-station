@@ -1,0 +1,10 @@
+instancia,n,m,n_instalacoes,viavel_sim_fc3_nao,viavel_nao_fc3_sim,viavel_sim_fcck_nao,viavel_nao_fcck_sim,viavel_sim_fc3k_nao,viavel_nao_fc3k_sim,n_viaveis,n_inviaveis
+StayPutIsolado,1,1,2,0,0,0,0,0,0,2,0
+StayPut,2,2,4,0,0,0,0,0,0,4,0
+Direct0,4,2,16,0,0,0,0,0,0,16,0
+TermRelay,4,2,16,0,0,0,0,0,0,8,8
+TermRelayForced,5,2,32,0,0,0,0,0,0,16,16
+CaminhoABC,3,2,8,0,0,0,0,0,0,8,0
+SharedTerminal,5,3,32,0,0,0,0,0,0,16,16
+MultiComp-N1,8,3,256,0,0,0,0,0,0,64,192
+Tri,9,3,512,0,0,0,0,0,0,256,256
