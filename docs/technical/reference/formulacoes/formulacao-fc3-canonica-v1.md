@@ -1,7 +1,7 @@
-# F-C3 — definição canônica v1.0.0 (N1-T2)
+# F-C3 — definição canônica v1.0.1 (N1-T2)
 
 **Data da consolidação:** 2026-10-07. **Status da definição:** `SOURCE` reconciliada;
-**status de validação MR-F3:** `OPEN` — **NÃO IMPLEMENTAR as redes até revisão aceita**.
+**status MR-F3 atual:** `ACCEPTED` para revisão matemática documental de F-C3, com justificativas em [`revisao-mr-f3-n1.md`](revisao-mr-f3-n1.md). **Não significa** validação computacional, aceite por parecerista humano ou liberação de resultados de LP: o gate de equivalência por instalação da N1-T3 continua obrigatório.
 
 **Documento fonte preservado:** `docs/technical/reference/formulacoes/formulacao-fc3-componentes-trios.md`,
 redigido em **01/10/2026**, recuperado e conferido em **07/10/2026**,
@@ -40,8 +40,9 @@ rede de trio possui estados `(j,B)` (`j=0,…,nW`, `B⊆U`), não utilização,
 utilização com `R⊆(U\B)∩S_Wj` ou `T_Wj`, **incluindo `R=∅`**,
 e arcos `(nW,B)→ω`. Cada trio exige C31–C34.
 
-**Gate:** o texto abaixo fixa o objeto da revisão; ele **não é** a
-aceitação MR-F3 e não autoriza execução de LP F-C3 antes do gate.
+**Gate:** as restrições abaixo são a definição implementável aprovada na revisão
+matemática documental MR-F3. A implementação em N1-T3 ainda exige o teste de
+equivalência por instalação, nos dois sentidos, antes de medir o LP de F-C3.
 
 ---
 
@@ -433,7 +434,7 @@ Não é imposto pareamento fixo, capacidade unitária, sincronização ou proibi
 
 ---
 
-## 7. Relação de dominância usada em N1 — `DERIVED`, sob MR-F3
+## 7. Relação de dominância usada em N1 — `DERIVED`, MR-F3 aceita
 
 F-C3 é F-CA com redes adicionais, portanto sua projeção fracionária em
 `y` está contida na de F-CA. Pelo argumento de decomposição de F-CA
@@ -443,21 +444,21 @@ admite representação por caminhos nas redes (§6), `z_LP(F-C3) ≤ OPT`.
 A cadeia relativa à baseline U depende **separadamente** da P2 revisada;
 N1 não utiliza o elo com F-OD da versão SOURCE.
 
-**Status:** `HYPOTHESIS` para qualquer propriedade ainda não aprovada
-pelo registro MR-F3. Não se confundem prova analítica, execução numérica
-e superioridade computacional.
+**Status:** `PROVEN` quanto à relação matemática, após revisão MR-F3;
+consulte [`revisao-mr-f3-n1.md`](revisao-mr-f3-n1.md), itens R1–R4. Isso não atesta
+valores calculados por solver, equivalência computacional ou desempenho.
 
-## 8–9. Regressões analíticas da SOURCE — `SOURCE`, revisão pendente
+## 8–9. Regressões analíticas da SOURCE — `SOURCE`, provas revisadas
 
 - SOURCE §8: construção de `g` triângulos unidos por pontes, `n=11g−2`,
   `m=4g−1`, `r=1`; `g=2` tem **20 vértices**, **7 pares**,
   previsão `z_LP(F-CC)=3`, `z_LP(F-C3)=OPT=4`.
 - SOURCE §9: transformação do ciclo ímpar de cinco vértices, `n=15`,
   `m=5`, `r=1`, previsão `z_LP(F-C3)=5/2 < OPT=3`.
-- Esses valores estão escritos como argumentos analíticos na SOURCE,
-  não como resultados de solver obtidos nesta fase. Enquanto a revisão
-  matemática dos argumentos e os testes exigidos não forem aceitos,
-  sua classificação N1 permanece `HYPOTHESIS`, não `PROVEN`.
+- Esses valores são proposições analíticas `PROVEN` **apenas** no sentido
+  matemático, por revisão escrita MR-F3 (itens R5–R6), e **não** medições
+  numéricas nem certificação computacional. A comparação posterior com
+  os valores de SOURCE §§8–9 continua sendo teste de regressão N1-T3.
 - A discussão de `F-OD` na SOURCE é **histórica**; não entra na cadeia
   de N1 nem autoriza dependência de fontes `UNRECOVERED`.
 
@@ -505,11 +506,12 @@ restritos nesta fase.
 | `d_G(s,s)=0` versus `d_ss` livre | §2, §3 (d_st), §6.3 | Erro `d_ss=0` | `SOURCE` + esclarecimento `DERIVED` | Variável pode valer 1 |
 | Separação F-C3 versus C3-cut | nomenclatura do projeto | Ambígua | `NEW` | Convenção obrigatória |
 
-## MR-F3 — registro de revisão (07/10/2026)
+## MR-F3 — registro inicial (07/10/2026; estado histórico substituído)
 
-**Estado global: `OPEN` — não aceito.** A recuperação da fonte e a
-identificação textual das restrições não equivalem à validação de toda
-argumentação e de suas consequências. Registro por argumento:
+**Estado naquela edição: `OPEN` — não aceito.** Este registro é mantido como
+histórico. O parecer matemático posterior de 07/10/2026, em
+[`revisao-mr-f3-n1.md`](revisao-mr-f3-n1.md), concluiu `ACCEPTED` e
+substitui o estado inicial sem apagar seu histórico. Registro inicial:
 
 | Argumento | Revisão nesta edição | Rótulo |
 |---|---|---|
@@ -525,3 +527,20 @@ argumentação e de suas consequências. Registro por argumento:
 linha a linha dos itens ainda pendentes, com registro explícito de
 argumentos aceitos/refutados; só então é permitido implementar as redes
 F-C3. Um teste de LP isolado não substitui revisão do modelo.
+
+
+## MR-F3 — atualização pós-revisão (2026-10-07; versão 1.0.1)
+
+- **Decisão atual:** `ACCEPTED` para a revisão matemática documental.
+- **Objeto aceito:** CA1–CA6 (com CA5); redes completas C31–C34 para os
+  `2·binom(m,3)` trios; `d_ss` permitido; exatidão para `y` binário;
+  relação de dominância P8; casos analíticos P11.
+- **Evidência:** [`revisao-mr-f3-n1.md`](revisao-mr-f3-n1.md),
+  argumentos R1–R7 e tabela de verificação. A SOURCE permanece intacta.
+- **Escopo do aceite:** derivação/checagem de matemática em texto,
+  **não** teste de implementação, não execução de Gurobi e não parecer humano.
+- **Etapa seguinte autorizada:** escrever o modelo novo F-C3 em N1-T3,
+  sem tocar na baseline, COMP, núcleo ou `fcc.py`; antes de qualquer
+  `z_LP(F-C3)` é obrigatório testar equivalência para **todo** `C⊆V`
+  das instâncias de validação, conferir os dois sentidos e interromper
+  se houver divergência. Regressões numéricas §§8–9 permanecem pendentes.

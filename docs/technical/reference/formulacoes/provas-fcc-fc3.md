@@ -242,11 +242,36 @@ valores mas **não** demonstra igualdade de projeções.
 
 ## P8 — \(z_{\mathrm{LP}}(\mathrm{F\text{-}CC})\le z_{\mathrm{LP}}(\mathrm{F\text{-}C3})\le\mathrm{OPT}\)
 
-**Rótulo: `HYPOTHESIS`** (redes de trios `OPEN`)
+**Rótulo: `PROVEN` — revisão matemática documental MR-F3 (2026-10-07).**
 
-Sem a definição das redes, F-C3 não é um modelo. A desigualdade da
-esquerda para a **forma separada** é igualdade (P7), não um fortalecimento.
-F3 não mede F-C3.
+**Enunciado.** Considere a F-C3 canônica v1.0.1 com CA5 e todas as
+redes C31–C34, `y` contínuo na relaxação e `W` enumerados uma única vez.
+O limite LP de F-C3 nunca é inferior ao LP de F-CC, nem superior ao ótimo
+inteiro do MIN-STATION.
+
+**Prova da primeira desigualdade.** Remover os fluxos de trios de F-C3
+deixa uma solução viável do núcleo F-CA. P7 prova que a projeção em `y`
+de F-CA (com CA5) coincide com a da F-CC. Como a função objetivo usa
+apenas `y`, minimizar sobre a projeção menor de F-C3 não diminui o
+valor ótimo. Para `m<3` não há trios e vale igualdade com F-CA.
+
+**Prova da segunda desigualdade.** Fixe qualquer instalação viável `C`.
+Escolha um pareamento físico, representando as rotas diretas por `d` e
+as rotas que recarregam por componentes conexas distintas `W` de `H[C]`.
+Em cada trio, percorra os `W` selecionados na ordem fixa, usando em cada
+etapa o arco de utilização com `R` igual à interseção do grupo servido
+com o trio (inclusive `R=∅`), e o arco de não utilização nos demais `W`.
+No fim, os membros restantes são diretamente atendidos. O caminho
+unitário satisfaz C31–C34; portanto `y=χ_C` estende-se a uma solução
+inteira de F-C3, com custo `|C|`. O LP de F-C3 é relaxação desse modelo,
+logo seu ótimo não excede `OPT`.
+
+**Condições de domínio:** `d_ss` é livre para `s∈S∩T`; estações podem
+estar em terminais, terminais podem ser relés e `H[C]` pode ter várias
+componentes. Não se confunde esta prova matemática com o teste
+computacional por instalação de N1-T3.
+
+**Parecer:** [`revisao-mr-f3-n1.md`](revisao-mr-f3-n1.md), itens R2–R4.
 
 ---
 
@@ -275,13 +300,49 @@ F-CC viável com \(y=0\).
 
 ---
 
-## P11 — valores 20/15 vértices e família \(1{,}5g\) vs \(2g\)
+## P11 — família triangular e ciclo de cinco vértices
 
-**Rótulo: `HYPOTHESIS`**
+**Rótulo: `PROVEN` — revisão matemática documental MR-F3 (2026-10-07).**
 
-Instâncias não definidas no repositório. Redes F-C3 `OPEN`. Sem
-reconstrução, F3 não compara. Condição de checagem: ver
-`formulacao-fc3-consistencia-trios.md` §4.
+**Construção SOURCE §8.** Seja `L_g` formado por `g` triângulos ligados
+por pontes entre os vértices `a_i`. Para cada vértice `u` introduza
+candidato `c_u`, e para cada aresta `e={u,v}` introduza `s_e,t_e`
+adjacentes somente a `c_u,c_v`, com `r=1`. Então
+`n=11g−2`, `m=4g−1`. Qualquer rota requer pelo menos um extremo
+candidato instalado de cada aresta; cobrir cada triângulo exige dois,
+e instalar `a_i,b_i` por triângulo é suficiente. Assim `OPT=2g`.
+
+Cada `s_e` precisa de infraestrutura elegível contendo `c_u` ou `c_v`.
+CA1, CA3 e CA6 implicam `y_cu+y_cv≥1`. Somando por triângulo,
+`z_LP(F-CC)≥3g/2`. A solução com `y_c=1/2`, `λ_{ {c} }=1/2`, atribuindo
+cada origem/destino igualmente aos candidatos extremos, atinge
+`3g/2`; P7 transfere o valor para F-CA.
+
+Para cada trio de origens correspondente às três arestas internas do
+triângulo `i`, seja `ρ_iW` o peso dos arcos de utilização de `W` que
+atribuem pelo menos duas dessas origens. Cada caminho unitário pode
+conter no máximo um tal arco, logo `Σ_W ρ_iW≤1`. Se `k_i` é o número
+de candidatos do triângulo `i` presentes em `W`, a massa de suas três
+origens atribuída a `W` é no máximo `(2k_i−1)λ_W+ρ_iW` quando `k_i>0`
+e zero quando `k_i=0`. Com `k=Σ_i k_i`, `h=#{i:k_i>0}`, a conexão de `W`
+no grafo bipartido obriga `|W|≥2k−1≥2k−h`. Logo, somando as atribuições
+das `3g` origens internas, `3g≤Σ_W |W|λ_W+g≤Σ_v y_v+g`.
+Portanto `z_LP(F-C3)≥2g`, e a solução inteira dá igualdade.
+
+**Controle SOURCE §9.** Na mesma transformação do ciclo `C_5`,
+`n=15`, `m=5`, `OPT=3` e `z_LP(F-CC)=5/2`, pelas cinco desigualdades
+`y_cu+y_cv≥1` e pelo ponto simétrico `y_c=1/2`. Todo trio de arestas
+do `C_5` forma uma floresta; é possível atribuir `x_c∈{0,1}` com
+`x_u+x_v=1` em cada aresta do trio. Misturar `x` e seu complemento
+em peso `1/2` constrói a rede exigida, inclusive os arcos de uso com
+`R=∅`. Assim `z_LP(F-C3)=5/2<OPT=3`.
+
+**Limites das afirmações:** resultados são matemáticos, não medidos por
+solver. A construção de 20 vértices e a do ciclo devem ser submetidas
+à regressão numérica de N1-T3, sujeitas aos caps congelados.
+
+**Prova detalhada e verificações:**
+[`revisao-mr-f3-n1.md`](revisao-mr-f3-n1.md), R5–R6.
 
 ---
 
@@ -296,10 +357,10 @@ reconstrução, F3 não compara. Condição de checagem: ver
 | P5 | `HYPOTHESIS` |
 | P6 | `OPEN` |
 | P7 | `PROVEN` |
-| P8 | `HYPOTHESIS` |
+| P8 | `PROVEN` (MR-F3 matemático) |
 | P9 | `HYPOTHESIS` (medição em F3) |
 | P10 | `PROVEN` |
-| P11 | `HYPOTHESIS` |
+| P11 | `PROVEN` (MR-F3 matemático) |
 
 ## Nota pós-análise N1-T1 — 2026-10-07
 
@@ -307,3 +368,12 @@ P2 e P7 receberam provas completas acima (`PROVEN`). P3 e P4 permanecem
 `HYPOTHESIS` até prova revisada ou teste de implicação **por corte**.
 Nenhum rótulo `COMPUTATIONALLY VERIFIED` foi atribuído por igualdade de
 objetivos. A reprodução numérica F3 não foi executada nesta edição.
+
+
+## Nota MR-F3 — 2026-10-07
+
+P8 e P11 passam a `PROVEN` por revisão documental das demonstrações.
+Os argumentos e ressalvas estão em
+[`revisao-mr-f3-n1.md`](revisao-mr-f3-n1.md).
+O rótulo não afirma equivalência computacional por instalação, execução
+de solver, melhoria de tempo de execução ou validação por parecerista humano.
