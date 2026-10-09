@@ -1,0 +1,289 @@
+{
+  "decision": "PROMOTE FCC + EXISTING CUTS",
+  "frozen_at_utc": "2026-10-09T03:17:03.483351+00:00",
+  "instances": [
+    {
+      "B0_reference": 1.0,
+      "B0_source": "N1-T5 lp_comp/core_ip",
+      "expected_positive_increment": 1.0,
+      "family": "hb",
+      "full_lp_reference": 2.0,
+      "full_lp_source": "N1-T5 lp_fcc_k",
+      "instance_sha256": "3d9c8386265cd47469bebc64e9ae4faa7f81ecdd22d38180b00cd77c78a6ea42",
+      "k_sha256": "b7070e80a413118cb0a0975393d4d1ad3cc61cd40fff66cfc11e00f0273c85fa",
+      "level": 1,
+      "m": 6,
+      "n": 16,
+      "name": "HB-q4-ndir2-p1",
+      "r": 1,
+      "source": "N1-T5"
+    },
+    {
+      "B0_reference": 6.0,
+      "B0_source": "N1-T5 lp_comp/core_ip",
+      "expected_positive_increment": 1.0,
+      "family": "bp-nao",
+      "full_lp_reference": 7.0,
+      "full_lp_source": "N1-T5 lp_fcc_k",
+      "instance_sha256": "d4bbbff3646acd8a9f1d087a040b2944f44fcf136debe1c6f3e7916ed5798d35",
+      "k_sha256": "db632df6dee04cf1987096b64d3379a62836f04b726db82d0249c88e1ff09ec8",
+      "level": 1,
+      "m": 4,
+      "n": 16,
+      "name": "BP-nao-[3,1]-q2",
+      "r": 1,
+      "source": "N1-T5"
+    },
+    {
+      "B0_reference": null,
+      "B0_source": "recompute COMP LP and core IP at N2 under same budget",
+      "expected_positive_increment": null,
+      "family": "hb",
+      "full_lp_reference": null,
+      "full_lp_source": "NOT MEASURED: above N1 enumeration cap",
+      "instance_sha256": "2b6f05f65c79106be45afe165b4f9f38866e5576588b22ebd021d8a040c1fd72",
+      "level": 2,
+      "m": 10,
+      "n": 26,
+      "name": "HB-q6-ndir2-p1",
+      "parameters": {
+        "L": 2,
+        "k": 1,
+        "ndir": 2,
+        "p": 1,
+        "q": 6
+      },
+      "r": 1,
+      "source": "hb.construir"
+    },
+    {
+      "B0_reference": null,
+      "B0_source": "recompute COMP LP and core IP at N2 under same budget",
+      "expected_positive_increment": null,
+      "family": "bp-nao",
+      "full_lp_reference": null,
+      "full_lp_source": "NOT MEASURED: above N1 enumeration cap",
+      "instance_sha256": "543065bb845b206fde1d61d1580bb7d4158a418cc42e8c68f5a44657b08c9e1a",
+      "level": 2,
+      "m": 6,
+      "n": 23,
+      "name": "BP-nao-[2,2,2]-q2",
+      "parameters": {
+        "B": 3,
+        "items": [
+          2,
+          2,
+          2
+        ],
+        "q": 2
+      },
+      "r": 1,
+      "source": "bp.construir"
+    }
+  ],
+  "note": "Level 2 is structural development-only; not the benchmark-v1 evaluation partition. No full-LP result is imputed.",
+  "path": "B",
+  "prereg_sha256": "df7a797523818941e487c03ff10bf6ded8b9135b1f2341f5215f5c2473d645cd",
+  "pricing": "EXACT REQUIRED FOR CERTIFICATION",
+  "protocol": {
+    "PYTHONHASHSEED": "0",
+    "WorkLimit_total": 164.0,
+    "branching": false,
+    "certification": "CERTIFIED only with full exact pricing dual feasibility or an independently reviewed globally valid derived bound; else B0 if separately certified, otherwise UNCERTIFIED",
+    "change_limit": 1,
+    "family_types": [
+      "hb",
+      "bp-nao"
+    ],
+    "gate": "PASS only with certified controls, gain over B0 in both families and both levels, >=50% of positive known LP increment at level 1 within total budget and viable cost; otherwise FAIL",
+    "integer_round": "ceil(LB - 1e-6), only when LB certified",
+    "min_recovery_fraction": 0.5,
+    "reference": "B0=max(LP COMP, core IP) on the same instance",
+    "seed": 42,
+    "size_levels": [
+      1,
+      2
+    ],
+    "solver_params_source": "Spec A / linha-de-base-pre-registro.md; WorkLimit=164, Threads=4",
+    "stop": [
+      "uncertified bound",
+      "pricing exhausts total budget without gain",
+      "gain disappears at both size levels",
+      "total cost eliminates advantage",
+      "no minimal scaling beyond enumeration cap"
+    ],
+    "threads": 4,
+    "tolerance": 1e-06,
+    "wall_guard_seconds": 1800,
+    "work_accounting": "sum of solver Work for every solve, plus recorded non-solver wall time; never equate work to wall seconds",
+    "work_includes": [
+      "instance preparation",
+      "reachability",
+      "K",
+      "master",
+      "all pricing calls",
+      "separation",
+      "validation",
+      "reference computation"
+    ]
+  },
+  "read_only_gate_signature_sha256": "f4e6fcdd84c121735524e2fa805718f4de3fecf674063f5a028cb31c2f18ce2a",
+  "representation": "F-CC + K",
+  "restricted_master_is_lower_bound": false,
+  "root_only": true,
+  "runner_sha256": "578c653d0182e93058673f78264936cd2e08f1320085236b34f8a74a9fbf38a3",
+  "small_regressions": [
+    {
+      "full_lp": 0.0,
+      "k_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "name": "Direct0",
+      "phase": "N1-T5"
+    },
+    {
+      "full_lp": 1.0,
+      "k_hash": "ee81a2ce3923793b417fce982c8f0fe98bcea3a8d942e25a247d6613b4d74c7c",
+      "name": "TermRelay",
+      "phase": "N1-T5"
+    },
+    {
+      "full_lp": 1.0,
+      "k_hash": "d0dbb8db286eca0763f5ab66706df3e43f95959cd3e50f683bcd9aef5a2dbf5b",
+      "name": "TermRelayForced",
+      "phase": "N1-T5"
+    },
+    {
+      "full_lp": 0.0,
+      "k_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "name": "StayPut",
+      "phase": "N1-T5"
+    },
+    {
+      "full_lp": 0.0,
+      "k_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "name": "StayPutIsolado",
+      "phase": "N1-T5"
+    },
+    {
+      "full_lp": 1.0,
+      "k_hash": "19ca678aa4801b5586017f5eeaf1aafebb6f6a8b257b4b2856c85f2caf63e08f",
+      "name": "SharedTerminal",
+      "phase": "N1-T5"
+    },
+    {
+      "full_lp": 0.0,
+      "k_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "name": "CaminhoABC",
+      "phase": "N1-T5"
+    },
+    {
+      "full_lp": 1.5,
+      "k_hash": "998400cba8b06351fecd1ceffaae084aa3dcc02388ad15ab01da883a6df74dde",
+      "name": "Tri",
+      "phase": "N1-T5"
+    },
+    {
+      "full_lp": 9.0,
+      "k_hash": "693736117dfa7eed0bb0b6536d8f55a31792f5f81813d6c888e65ee3532e7849",
+      "name": "F1(m=2,k=2)",
+      "phase": "N1-T5"
+    },
+    {
+      "full_lp": 1.0,
+      "k_hash": "2e25e3b1de6c2a1b0835ffea592bd4c2105fc4edee7efc4644f856cc83f71dd0",
+      "name": "F2(k=1,L=3)",
+      "phase": "N1-T5"
+    },
+    {
+      "full_lp": 5.0,
+      "k_hash": "e11d3fc66897c125d53b4c8881214303363eaa95311c2b70cdff1e11774a1dc8",
+      "name": "Sec59(L=7)",
+      "phase": "N1-T5"
+    },
+    {
+      "full_lp": 2.0,
+      "k_hash": "b7070e80a413118cb0a0975393d4d1ad3cc61cd40fff66cfc11e00f0273c85fa",
+      "name": "HB-q4-ndir2-p1",
+      "phase": "N1-T5"
+    },
+    {
+      "full_lp": 3.0,
+      "k_hash": "5ac59e34ce9159cb3a844c78266ffd91311d2ab200114708116857575e0bd417",
+      "name": "HB-q5-ndir2-p1",
+      "phase": "N1-T5"
+    },
+    {
+      "full_lp": 7.0,
+      "k_hash": "db632df6dee04cf1987096b64d3379a62836f04b726db82d0249c88e1ff09ec8",
+      "name": "BP-nao-[3,1]-q2",
+      "phase": "N1-T5"
+    },
+    {
+      "full_lp": 3.0,
+      "k_hash": "2ca418711fd3b2a2c385ecafa1b97c7af5de6ff12c54c55cdc3d3a8683c82b68",
+      "name": "TR-k2-L5-r2",
+      "phase": "N1-T5"
+    },
+    {
+      "full_lp": 3.0,
+      "k_hash": "1d34e1a0f3d17398f05c043e7a923c2b807a20d09ce3cf10f1fdefad0beff832",
+      "name": "SOURCE-g2",
+      "phase": "N1-T5"
+    },
+    {
+      "full_lp": 2.5,
+      "k_hash": "2c5c392911af34a19c326563d5a8d786fbb9826b7a1afda984f58d315eee2b07",
+      "name": "SOURCE-C5",
+      "phase": "N1-T5"
+    },
+    {
+      "full_lp": 1.5,
+      "name": "T6-TRI-01-obstruction",
+      "phase": "N1-T6"
+    },
+    {
+      "full_lp": 2.0,
+      "name": "T6-TRI-01-control",
+      "phase": "N1-T6"
+    },
+    {
+      "full_lp": 1.0,
+      "name": "T6-F2-01-obstruction",
+      "phase": "N1-T6"
+    },
+    {
+      "full_lp": 0.0,
+      "name": "T6-F2-01-control",
+      "phase": "N1-T6"
+    },
+    {
+      "full_lp": 3.5,
+      "name": "T6-SEC59-01-obstruction",
+      "phase": "N1-T6"
+    },
+    {
+      "full_lp": 0.0,
+      "name": "T6-SEC59-01-control",
+      "phase": "N1-T6"
+    }
+  ],
+  "source_hashes": {
+    "docs/technical/plans/execucao/n1-t7-decisao-cientifica.md": "190504f00cf41cf1b9d585e4f96ff42db9fab9a1d51dcd6016ce0532dd449c72",
+    "docs/technical/reference/baseline-e-metodo/linha-de-base-pre-registro.md": "96d521c5d69480ccb0ddc21b95f486f15b7945a5c14622180d2019569a31b8c6",
+    "docs/technical/reference/formulacoes/revisao-mr-f3-n1.md": "aaea4d9d7ec12cb7adbe3441a46bdadb229c2c6091017ab1295863a55564a084",
+    "experiments/alternative-formulations/fcc.py": "318d045e0f4ed5462085aac9c3f72ae1854346185bdad8dd5e03b9920730d919",
+    "experiments/alternative-formulations/fcc_k.py": "b52fc23bb0575bc950b09661217b88d4a91370926450b0ebba6cc03d1f63ae01",
+    "experiments/alternative-formulations/n1-t5-freeze.json": "8135c5a043d4a03e2d7ea673287cdf86d3f7171b7b18394a600038f9da2f20e7",
+    "experiments/alternative-formulations/verify_n1_t7_gate.py": "70a4d2d645c62f31f57937c2fa7b18340eff4ae96b615de39361d1d7e2499f2d",
+    "experiments/cuts/cuts.py": "4952ac563156bc616105251b414e8c2778a3859be94ff5ed183c2d9cd8ffaebb",
+    "experiments/cuts/harness.py": "9287c03ea978f82a1d69ebd25c2a2d95f40e6895a02bc7a0b575075728fdf73c",
+    "experiments/structural/bp.py": "9b51ebd4ec169b06de78e8faef3b320b11ae3702cf99d317eb3597c4751e1f4f",
+    "experiments/structural/hb.py": "f25117c73a2c9a60cf40fa65321d0263ac1b9088b36dfc1c29829fb8055fb8a4",
+    "experiments/structural/io_instancia.py": "c27ffc14987232510184b28f834de14d421f2ecd5217a3832c5b82bef8835d39",
+    "results/alternative-formulations/n1-t5-diagnostico.csv": "c53106a1accfc7e082fa97d0c3b2fbc91b2ead2c7fcc3898c3bfeb91be8733f9",
+    "results/alternative-formulations/n1-t6-diagnostico.csv": "43b28e24f93ae933584a8187233da4660fc81047c5de84f132e9c18a9776432b",
+    "specs/proxima-fase-n1-informacao-compatibilidade/spec.md": "3690c31f8ef654785db5aeced027ee427f6630fed7a47564d97e62c6b7b428dd",
+    "specs/proxima-fase-n2-limite-compatibilidade-certificado/spec.md": "4b220b66639be24411cd691dbcee83e8b4c70d6c93cb37c74d03e289e40e3d90"
+  },
+  "state": "FROZEN",
+  "task": "N2-T1"
+}
