@@ -1,0 +1,180 @@
+{
+  "freeze_hash": "60f4b533d76fdb1e6e05cd59123aa163ec50fe39e926e67edcd368aa5c50517c",
+  "generated_hash": "ce4ce8d9672812043c2f97b25f1149bd3e006ba6b4fca626a64d189bf4ea9e40",
+  "pairs": [
+    {
+      "family": "tri",
+      "pair_id": "T6-TRI-01",
+      "pair_status": "CERTIFIED",
+      "variants": [
+        {
+          "C_star": [
+            "a",
+            "b"
+          ],
+          "direct_terminal_arcs": [],
+          "method": "opt_por_enumeracao",
+          "n_subsets_at_most": 512,
+          "name": "T6-TRI-01-obstruction",
+          "opt": 2,
+          "opt_without_terminal_stations": 2,
+          "reason": "",
+          "status": "CERTIFIED",
+          "terminal_station_shortcut": false
+        },
+        {
+          "C_star": [
+            "a",
+            "b"
+          ],
+          "direct_terminal_arcs": [],
+          "method": "opt_por_enumeracao",
+          "n_subsets_at_most": 512,
+          "name": "T6-TRI-01-control",
+          "opt": 2,
+          "opt_without_terminal_stations": 2,
+          "reason": "",
+          "status": "CERTIFIED",
+          "terminal_station_shortcut": false
+        }
+      ]
+    },
+    {
+      "family": "f2",
+      "pair_id": "T6-F2-01",
+      "pair_status": "CERTIFIED",
+      "variants": [
+        {
+          "C_star": [
+            "x1"
+          ],
+          "direct_terminal_arcs": [
+            [
+              "a1",
+              "c1"
+            ],
+            [
+              "b1",
+              "c1"
+            ],
+            [
+              "e1",
+              "d1"
+            ],
+            [
+              "e1",
+              "g1"
+            ]
+          ],
+          "method": "opt_por_enumeracao",
+          "n_subsets_at_most": 128,
+          "name": "T6-F2-01-obstruction",
+          "opt": 1,
+          "opt_without_terminal_stations": 1,
+          "reason": "",
+          "status": "CERTIFIED",
+          "terminal_station_shortcut": false
+        },
+        {
+          "C_star": [],
+          "direct_terminal_arcs": [
+            [
+              "a1",
+              "c1"
+            ],
+            [
+              "b1",
+              "g1"
+            ],
+            [
+              "e1",
+              "d1"
+            ],
+            [
+              "e1",
+              "g1"
+            ]
+          ],
+          "method": "opt_por_enumeracao",
+          "n_subsets_at_most": 128,
+          "name": "T6-F2-01-control",
+          "opt": 0,
+          "opt_without_terminal_stations": 0,
+          "reason": "controle com atalho intencional, OPT=0",
+          "status": "CERTIFIED",
+          "terminal_station_shortcut": false
+        }
+      ]
+    },
+    {
+      "family": "sec59",
+      "pair_id": "T6-SEC59-01",
+      "pair_status": "CERTIFIED",
+      "variants": [
+        {
+          "C_star": [
+            "w1",
+            "w2",
+            "w3",
+            "w4"
+          ],
+          "direct_terminal_arcs": [
+            [
+              "s1",
+              "t1"
+            ],
+            [
+              "s2",
+              "t1"
+            ],
+            [
+              "s3",
+              "t2"
+            ],
+            [
+              "s3",
+              "t3"
+            ]
+          ],
+          "method": "opt_por_enumeracao",
+          "n_subsets_at_most": 1024,
+          "name": "T6-SEC59-01-obstruction",
+          "opt": 4,
+          "opt_without_terminal_stations": 4,
+          "reason": "",
+          "status": "CERTIFIED",
+          "terminal_station_shortcut": false
+        },
+        {
+          "C_star": [],
+          "direct_terminal_arcs": [
+            [
+              "s1",
+              "t1"
+            ],
+            [
+              "s2",
+              "t2"
+            ],
+            [
+              "s3",
+              "t2"
+            ],
+            [
+              "s3",
+              "t3"
+            ]
+          ],
+          "method": "opt_por_enumeracao",
+          "n_subsets_at_most": 1024,
+          "name": "T6-SEC59-01-control",
+          "opt": 0,
+          "opt_without_terminal_stations": 0,
+          "reason": "controle com atalho intencional, OPT=0",
+          "status": "CERTIFIED",
+          "terminal_station_shortcut": false
+        }
+      ]
+    }
+  ]
+}

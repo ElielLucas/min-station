@@ -1,0 +1,113 @@
+{
+  "caps": {
+    "max_W": 200000,
+    "n": 10,
+    "network_arcs": 5000000,
+    "pairs": 12,
+    "time_limit_per_lp_seconds": 600
+  },
+  "certificate": "independent_validator.opt_por_enumeracao, n<=10; witness C",
+  "frozen_utc": "2026-10-09T02:34:28.073718+00:00",
+  "gate_t5": {
+    "eligible_rows": [
+      {
+        "family": "sec59",
+        "gamma": 5.0,
+        "instancia": "Sec59(L=7)",
+        "residual": 2.0
+      }
+    ],
+    "families": [
+      "sec59"
+    ],
+    "n_distinct": 1,
+    "source_hashes": {
+      "docs/technical/plans/execucao/n1-t5-diagnostico.md": "aea90a415ffb69852f585dffebe339a00200ecb7830dc30e3abafe34fb4515af",
+      "experiments/alternative-formulations/n1-t5-freeze.json": "8135c5a043d4a03e2d7ea673287cdf86d3f7171b7b18394a600038f9da2f20e7",
+      "results/alternative-formulations/n1-t5-diagnostico.csv": "c53106a1accfc7e082fa97d0c3b2fbc91b2ead2c7fcc3898c3bfeb91be8733f9",
+      "results/alternative-formulations/n1-t5-reproducao.json": "e9987d443d2774fda1462b0b3c450661baa4875bebc649c7f177aafad3eebe6e",
+      "results/alternative-formulations/n1-t5-testemunhas.json": "4cc426622a2e53b17b966c24b7238b0cb7365d1e30c98db2d463c43bcabea2ec"
+    },
+    "triggered": true
+  },
+  "measurement_arms": [
+    "lp_base",
+    "lp_comp",
+    "core_ip",
+    "lp_fcc",
+    "lp_fcc_k",
+    "lp_fc3",
+    "lp_fc3_k",
+    "OPT"
+  ],
+  "non_replacement": "par excluido permanece excluido; nenhum par adicional",
+  "obstruction_method": "assinatura de arestas obrigatorias por familia",
+  "paired_control_method": "uma remocao e uma adicao de aresta unitaria",
+  "pairs": [
+    {
+      "add": [
+        "s1",
+        "c"
+      ],
+      "change": "relocalizar somente s1-b para s1-c; rompe a simetria do ciclo",
+      "factory": "Tri(r=1)",
+      "family": "tri",
+      "id": "T6-TRI-01",
+      "obstruction": "sobreposicao ciclica das incidencias origem/destino em tres reles",
+      "remove": [
+        "s1",
+        "b"
+      ]
+    },
+    {
+      "add": [
+        "b1",
+        "g1"
+      ],
+      "change": "relocalizar somente b1-c1 para b1-g1; remove incidencia comum a c1",
+      "factory": "F2(k=1,L=3,r=1)",
+      "family": "f2",
+      "id": "T6-F2-01",
+      "obstruction": "duas origens competem diretamente pelo mesmo destino c1 (bolsao de Hall)",
+      "remove": [
+        "b1",
+        "c1"
+      ]
+    },
+    {
+      "add": [
+        "s2",
+        "t2"
+      ],
+      "change": "relocalizar somente s2-t1 para s2-t2; injeta atalho direto de controle",
+      "factory": "Sec59(L=4,r=1)",
+      "family": "sec59",
+      "id": "T6-SEC59-01",
+      "obstruction": "duas origens compartilham t1 e acesso alternativo exige corredor longo",
+      "remove": [
+        "s2",
+        "t1"
+      ]
+    }
+  ],
+  "solver": {
+    "hashseed": "0",
+    "seed": 42,
+    "threads": 1,
+    "tolerance": 1e-06
+  },
+  "source_hashes": {
+    "experiments/alternative-formulations/fc3.py": "25a66b3d4023d7d9e8454dd4db285ac7f5241137da2efcfe70a85b6350f9c129",
+    "experiments/alternative-formulations/fcc.py": "318d045e0f4ed5462085aac9c3f72ae1854346185bdad8dd5e03b9920730d919",
+    "experiments/alternative-formulations/fcc_k.py": "b52fc23bb0575bc950b09661217b88d4a91370926450b0ebba6cc03d1f63ae01",
+    "experiments/alternative-formulations/n1_t6_pairs.py": "2851b2f545ee2e0725ad4f9e98eabb7ebdf3e6b1ab0553b2e22ed02b88e40b57",
+    "experiments/alternative-formulations/run_n1_t6.py": "0cedc0b8ce5241d3f61e3f92a15de0aea6d6a5f28ef97b3f12debcd4858a043f",
+    "experiments/cuts/independent_validator.py": "fb18fd4a02533120129efc68c0acb6078c29f3af8dbade5f8d4852c7973cd352",
+    "experiments/cuts/synthetic.py": "09740c2f5beea3a61f29fed61095e67b54196cf30632286bba5496d452b22b26",
+    "ms_utils.py": "bc49d8e21bd70a62b5789de5d03bffdb09914a6456752d59ac249ad50179abcc",
+    "specs/proxima-fase-n1-informacao-compatibilidade/spec.md": "3690c31f8ef654785db5aeced027ee427f6630fed7a47564d97e62c6b7b428dd"
+  },
+  "status": "FROZEN",
+  "task": "N1-T6",
+  "terminal_shortcuts": "arcos diretos S->T e estacoes em terminais; OPT=0 exclui somente a variante de obstrucao; controle com OPT=0 e valido"
+}

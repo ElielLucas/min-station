@@ -1,0 +1,10 @@
+{
+  "checked_utc": "2026-10-08T17:00:44.479387+00:00",
+  "comparison": "all fields/rows; numeric tolerance 1e-6",
+  "eps": 1e-06,
+  "f3_historical_sha256": "8987c387a04dbf808dbcecf35e4b17a6d828f001c78504e311026ae26a9c2c60",
+  "f3_reproduced_sha256": "8987c387a04dbf808dbcecf35e4b17a6d828f001c78504e311026ae26a9c2c60",
+  "freeze_sha256": "8135c5a043d4a03e2d7ea673287cdf86d3f7171b7b18394a600038f9da2f20e7",
+  "rows": 16,
+  "state": "COMPUTATIONALLY VERIFIED"
+}

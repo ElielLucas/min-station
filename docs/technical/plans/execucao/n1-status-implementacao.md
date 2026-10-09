@@ -42,3 +42,37 @@ PYTHONHASHSEED=0 python experiments/alternative-formulations/verify_fcc_k_n1.py
 **Antes de rodar `run_f3.py`:** preservar cópia do CSV histórico para comparação de cada valor com tolerância `1e-6`, pois esse runner escreve no arquivo de saída histórico. Não sobrescrever evidências anteriores sem registrar e comparar os hashes.
 
 **Próxima etapa lógica:** revisão matemática independente e aceitação explícita do MR-F3; só depois implementar F-C3 segundo as redes C31–C34 e validar toda instalação para cada modelo novo. Em paralelo, executar os testes F-CC + K e reprodução F3 em Gurobi. Não iniciar T5 sem os gates anteriores.
+
+---
+
+## Atualização posterior — N1-T3, N1-T5 e gatilho N1-T6 (2026-10-08)
+
+> **Nota histórica:** a tabela inicial acima reflete o estado de 07/10/2026 e **não é mais o status atual**. Esta atualização registra fatos posteriores sem reescrever o histórico ou os pré-registros congelados.
+
+| Tarefa | Estado atualizado | Evidência / ressalva |
+|---|---|---|
+| N1-T2 | `ACCEPTED` (MR-F3) | `docs/technical/reference/formulacoes/revisao-mr-f3-n1.md` aceita revisão matemática; não substitui o teste computacional |
+| N1-T3 | `COMPUTATIONALLY VERIFIED` no conjunto testado | `results/alternative-formulations/n1-t3-validacao.csv`, `n1-t3-lp-invariantes.csv` e `n1-t3-source-regressoes.csv`: 9 instâncias, 878 instalações sem discordância; SOURCE-C5 LP = 2,5; SOURCE-g2 `NOT MEASURED` por cap |
+| N1-T4 | `DONE` na auditoria dos pools registrados | `results/benchmark/n1-r7-auditoria-resumo.csv`; mantém o limite de inferência aos pools registrados |
+| N1-T5 | `COMPUTATIONALLY VERIFIED` no diagnóstico congelado | `experiments/alternative-formulations/n1-t5-freeze.json`, `results/alternative-formulations/n1-t5-diagnostico.csv`, `n1-t5-testemunhas.json` e `docs/technical/plans/execucao/n1-t5-diagnostico.md`; 18 linhas de instância, com braços `NOT MEASURED` explicitamente identificados |
+| N1-T6 | `TRIGGERED / IMPLEMENTED — NOT MEASURED` | N1-T5 detectou apenas a família `sec59` com `Γ > 0` e `LP F-CC+K < OPT`; a tarefa exige congelar antes de gerar os três pares definidos em `n1_t6_pairs.py`. Ver `docs/technical/plans/execucao/n1-t6-preparacao.md` |
+| N1-T7 | `PENDING` | Decisão científica final somente após concluir N1-T6 e aplicar o gate original da spec |
+
+**Interpretação do resultado T5:** `Tri` apresentou LP F-CC+K = 1,5, LP F-C3+K = 2,0 e OPT = 2,0, com testemunha de incompatibilidade registrada. `Sec59(L=7)` apresentou `Δ_trio = 0`; nos controles SOURCE, os braços excluídos por cap permanecem `NOT MEASURED`. Esses fatos **não são** a decisão promocional N1-T7.
+
+**Nota operacional:** nenhum commit ou experimento novo é criado por esta atualização documental. Os comandos `freeze`, `generate`, `certify`, `measure` e `report` da N1-T6 são descritos no documento de preparação. Resultados dos pares T6 só passam a existir após execução explícita no ambiente do pesquisador.
+
+---
+
+## Atualização posterior — encerramento de N1-T6 e gate N1-T7 (2026-10-08)
+
+> Esta seção substitui **somente o estado operacional**, não altera as notas históricas acima nem os congelamentos T5/T6.
+
+| Tarefa | Estado atual | Evidência e limite |
+|---|---|---|
+| N1-T5 | `COMPUTATIONALLY VERIFIED` (conjunto congelado) | 18 instâncias, com exclusões `NOT MEASURED` preservadas; relatório `n1-t5-diagnostico.md` |
+| N1-T6 | `COMPUTATIONALLY VERIFIED` para braços medidos; 6 variantes `CERTIFIED` | `n1-t6-diagnostico.csv`, `n1-t6-certificados.json`, `n1-t6-diagnostico.md`; correção da serialização `A_r` documentada em `n1-t6-errata-serializacao-ar.md`, sem alterar o runner congelado |
+| N1-T7 | `DECIDED — PROMOTE FCC + EXISTING CUTS` | `n1-t7-decisao-cientifica.md`; seleção única do caminho B de N2, sem trio. Gatilhos rederiváveis por `verify_n1_t7_gate.py` |
+| N2 | `ACTIVATED FOR T1 ONLY` | `specs/proxima-fase-n2-limite-compatibilidade-certificado/spec.md`; iniciar pré-registro e derivação teórica antes de código, medição e certificação. N3/R9 permanecem bloqueados |
+
+O ganho estrito de F-C3+K foi medido somente na família `tri` e nesses casos o core IP já alcançava OPT. A escolha de F-CC+K se apoia em ganho sobre B0 nas famílias `sec59`, `hb` e `bp-nao`, com testemunha de complementaridade dos cortes K em `Sec59(L=7)`. Não tratar os valores LP como evidência de melhoria de tempo computacional.

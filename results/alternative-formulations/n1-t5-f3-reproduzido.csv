@@ -1,0 +1,17 @@
+nome,tipo,n,m,r,lp_base,lp_c1c2c4,nucleo,lp_fcc,lp_fc3,opt,fonte_opt,gamma,n_W,lp_setcover,status,motivo
+Direct0,gadget,4,2,1,0.0,0.0,0.0,0.0,OPEN,0,enum,0.0,6,,ok,
+TermRelay,gadget,4,2,1,1.0,1.0,1.0,1.0,OPEN,1,enum,0.0,10,,ok,
+TermRelayForced,gadget,5,2,1,1.0,1.0,1.0,1.0,OPEN,1,enum,0.0,14,,ok,
+StayPut,gadget,2,2,1,0.0,0.0,0.0,0.0,OPEN,0,enum,0.0,3,,ok,
+StayPutIsolado,gadget,1,1,1,0.0,0.0,0.0,0.0,OPEN,0,enum,0.0,1,,ok,
+SharedTerminal,gadget,5,3,1,0.5,1.0,1.0,0.5,OPEN,1,enum,0.0,20,,ok,
+CaminhoABC,gadget,3,2,1,0.0,0.0,0.0,0.0,OPEN,0,enum,0.0,6,,ok,
+Tri,tri,9,3,1,1.0,1.5,2.0,1.5,OPEN,2,enum,0.0,246,,ok,
+"F1(m=2,k=2)",f1,13,2,1,5.0,9.0,9.0,9.0,OPEN,9,enum,0.0,144,,ok,
+"F2(k=1,L=3)",f2,7,3,1,0.3333333333333333,1.0,1.0,1.0,OPEN,1,enum,0.0,40,,ok,
+Sec59(L=7),sec59,13,3,1,2.333333333333333,3.6666666666666665,2.0,4.5,OPEN,7,enum,5.0,94,,ok,
+HB-q4-ndir2-p1,hb,16,6,1,0.3333333333333333,1.0,1.0,2.0,OPEN,2,enum,1.0,9341,,ok,
+HB-q5-ndir2-p1,hb,21,8,1,0.375,1.0833333333333335,1.0,3.0,OPEN,3.0,mip_base,2.0,163616,,ok,
+"BP-nao-[3,1]-q2",bp-nao,16,4,1,3.0,6.0,6.0,7.0,OPEN,7,enum,1.0,2752,,ok,
+TR-k2-L5-r2,tr,18,2,2,3.0,3.0,3.0,3.0,OPEN,3.0,mip_base,0.0,83845,,ok,
+SC-GF2-k3,sc-gf2,21,7,1,1.0,1.75,3.0,,OPEN,3.0,mip_base,0.0,200001,1.75,excluida,|W|=200001 > max_W=200000

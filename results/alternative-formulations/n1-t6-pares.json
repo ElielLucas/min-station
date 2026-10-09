@@ -1,0 +1,1771 @@
+{
+  "freeze_hash": "60f4b533d76fdb1e6e05cd59123aa163ec50fe39e926e67edcd368aa5c50517c",
+  "pair_count": 3,
+  "pairs": [
+    {
+      "graphs": [
+        {
+          "A_r": [
+            [
+              "a",
+              "s1"
+            ],
+            [
+              "a",
+              "s3"
+            ],
+            [
+              "a",
+              "t1"
+            ],
+            [
+              "a",
+              "t3"
+            ],
+            [
+              "b",
+              "s1"
+            ],
+            [
+              "b",
+              "s2"
+            ],
+            [
+              "b",
+              "t1"
+            ],
+            [
+              "b",
+              "t2"
+            ],
+            [
+              "c",
+              "s2"
+            ],
+            [
+              "c",
+              "s3"
+            ],
+            [
+              "c",
+              "t2"
+            ],
+            [
+              "c",
+              "t3"
+            ],
+            [
+              "s1",
+              "a"
+            ],
+            [
+              "s1",
+              "b"
+            ],
+            [
+              "s2",
+              "b"
+            ],
+            [
+              "s2",
+              "c"
+            ],
+            [
+              "s3",
+              "a"
+            ],
+            [
+              "s3",
+              "c"
+            ],
+            [
+              "t1",
+              "a"
+            ],
+            [
+              "t1",
+              "b"
+            ],
+            [
+              "t2",
+              "b"
+            ],
+            [
+              "t2",
+              "c"
+            ],
+            [
+              "t3",
+              "a"
+            ],
+            [
+              "t3",
+              "c"
+            ]
+          ],
+          "S": [
+            "s1",
+            "s2",
+            "s3"
+          ],
+          "T": [
+            "t1",
+            "t2",
+            "t3"
+          ],
+          "V": [
+            "s1",
+            "s2",
+            "s3",
+            "t1",
+            "t2",
+            "t3",
+            "a",
+            "b",
+            "c"
+          ],
+          "adj": {
+            "a": [
+              [
+                "s1",
+                1
+              ],
+              [
+                "s3",
+                1
+              ],
+              [
+                "t1",
+                1
+              ],
+              [
+                "t3",
+                1
+              ]
+            ],
+            "b": [
+              [
+                "s1",
+                1
+              ],
+              [
+                "s2",
+                1
+              ],
+              [
+                "t1",
+                1
+              ],
+              [
+                "t2",
+                1
+              ]
+            ],
+            "c": [
+              [
+                "s2",
+                1
+              ],
+              [
+                "s3",
+                1
+              ],
+              [
+                "t2",
+                1
+              ],
+              [
+                "t3",
+                1
+              ]
+            ],
+            "s1": [
+              [
+                "a",
+                1
+              ],
+              [
+                "b",
+                1
+              ]
+            ],
+            "s2": [
+              [
+                "b",
+                1
+              ],
+              [
+                "c",
+                1
+              ]
+            ],
+            "s3": [
+              [
+                "a",
+                1
+              ],
+              [
+                "c",
+                1
+              ]
+            ],
+            "t1": [
+              [
+                "a",
+                1
+              ],
+              [
+                "b",
+                1
+              ]
+            ],
+            "t2": [
+              [
+                "b",
+                1
+              ],
+              [
+                "c",
+                1
+              ]
+            ],
+            "t3": [
+              [
+                "a",
+                1
+              ],
+              [
+                "c",
+                1
+              ]
+            ]
+          },
+          "edges": [
+            [
+              "a",
+              "s1"
+            ],
+            [
+              "a",
+              "s3"
+            ],
+            [
+              "a",
+              "t1"
+            ],
+            [
+              "a",
+              "t3"
+            ],
+            [
+              "b",
+              "s1"
+            ],
+            [
+              "b",
+              "s2"
+            ],
+            [
+              "b",
+              "t1"
+            ],
+            [
+              "b",
+              "t2"
+            ],
+            [
+              "c",
+              "s2"
+            ],
+            [
+              "c",
+              "s3"
+            ],
+            [
+              "c",
+              "t2"
+            ],
+            [
+              "c",
+              "t3"
+            ]
+          ],
+          "family": "tri",
+          "graph_hash": "f5c7513ed922f6df930dad14893c0b3a46475b5dd2290401d678169de5017504",
+          "name": "T6-TRI-01-obstruction",
+          "pair_id": "T6-TRI-01",
+          "r": 1,
+          "role": "obstruction",
+          "shortcut_diagnostics": {
+            "direct_origin_destination_arcs": [],
+            "terminal_shortcut_review": "Apenas diagnostico; OPT=0 exclui par na fase certify; atalho introduzido no controle e explicito na receita",
+            "terminal_to_terminal_arcs": [],
+            "terminals_can_be_stations": true
+          }
+        },
+        {
+          "A_r": [
+            [
+              "a",
+              "s1"
+            ],
+            [
+              "a",
+              "s3"
+            ],
+            [
+              "a",
+              "t1"
+            ],
+            [
+              "a",
+              "t3"
+            ],
+            [
+              "b",
+              "s2"
+            ],
+            [
+              "b",
+              "t1"
+            ],
+            [
+              "b",
+              "t2"
+            ],
+            [
+              "c",
+              "s1"
+            ],
+            [
+              "c",
+              "s2"
+            ],
+            [
+              "c",
+              "s3"
+            ],
+            [
+              "c",
+              "t2"
+            ],
+            [
+              "c",
+              "t3"
+            ],
+            [
+              "s1",
+              "a"
+            ],
+            [
+              "s1",
+              "c"
+            ],
+            [
+              "s2",
+              "b"
+            ],
+            [
+              "s2",
+              "c"
+            ],
+            [
+              "s3",
+              "a"
+            ],
+            [
+              "s3",
+              "c"
+            ],
+            [
+              "t1",
+              "a"
+            ],
+            [
+              "t1",
+              "b"
+            ],
+            [
+              "t2",
+              "b"
+            ],
+            [
+              "t2",
+              "c"
+            ],
+            [
+              "t3",
+              "a"
+            ],
+            [
+              "t3",
+              "c"
+            ]
+          ],
+          "S": [
+            "s1",
+            "s2",
+            "s3"
+          ],
+          "T": [
+            "t1",
+            "t2",
+            "t3"
+          ],
+          "V": [
+            "s1",
+            "s2",
+            "s3",
+            "t1",
+            "t2",
+            "t3",
+            "a",
+            "b",
+            "c"
+          ],
+          "adj": {
+            "a": [
+              [
+                "s1",
+                1
+              ],
+              [
+                "s3",
+                1
+              ],
+              [
+                "t1",
+                1
+              ],
+              [
+                "t3",
+                1
+              ]
+            ],
+            "b": [
+              [
+                "s2",
+                1
+              ],
+              [
+                "t1",
+                1
+              ],
+              [
+                "t2",
+                1
+              ]
+            ],
+            "c": [
+              [
+                "s1",
+                1
+              ],
+              [
+                "s2",
+                1
+              ],
+              [
+                "s3",
+                1
+              ],
+              [
+                "t2",
+                1
+              ],
+              [
+                "t3",
+                1
+              ]
+            ],
+            "s1": [
+              [
+                "a",
+                1
+              ],
+              [
+                "c",
+                1
+              ]
+            ],
+            "s2": [
+              [
+                "b",
+                1
+              ],
+              [
+                "c",
+                1
+              ]
+            ],
+            "s3": [
+              [
+                "a",
+                1
+              ],
+              [
+                "c",
+                1
+              ]
+            ],
+            "t1": [
+              [
+                "a",
+                1
+              ],
+              [
+                "b",
+                1
+              ]
+            ],
+            "t2": [
+              [
+                "b",
+                1
+              ],
+              [
+                "c",
+                1
+              ]
+            ],
+            "t3": [
+              [
+                "a",
+                1
+              ],
+              [
+                "c",
+                1
+              ]
+            ]
+          },
+          "edges": [
+            [
+              "a",
+              "s1"
+            ],
+            [
+              "a",
+              "s3"
+            ],
+            [
+              "a",
+              "t1"
+            ],
+            [
+              "a",
+              "t3"
+            ],
+            [
+              "b",
+              "s2"
+            ],
+            [
+              "b",
+              "t1"
+            ],
+            [
+              "b",
+              "t2"
+            ],
+            [
+              "c",
+              "s1"
+            ],
+            [
+              "c",
+              "s2"
+            ],
+            [
+              "c",
+              "s3"
+            ],
+            [
+              "c",
+              "t2"
+            ],
+            [
+              "c",
+              "t3"
+            ]
+          ],
+          "family": "tri",
+          "graph_hash": "9810222b2b56850b97809fbde6c4b844aa6a04919559dd886f3e18c23247e813",
+          "name": "T6-TRI-01-control",
+          "pair_id": "T6-TRI-01",
+          "r": 1,
+          "role": "control",
+          "shortcut_diagnostics": {
+            "direct_origin_destination_arcs": [],
+            "terminal_shortcut_review": "Apenas diagnostico; OPT=0 exclui par na fase certify; atalho introduzido no controle e explicito na receita",
+            "terminal_to_terminal_arcs": [],
+            "terminals_can_be_stations": true
+          }
+        }
+      ],
+      "recipe": {
+        "add": [
+          "s1",
+          "c"
+        ],
+        "change": "relocalizar somente s1-b para s1-c; rompe a simetria do ciclo",
+        "factory": "Tri(r=1)",
+        "family": "tri",
+        "id": "T6-TRI-01",
+        "obstruction": "sobreposicao ciclica das incidencias origem/destino em tres reles",
+        "remove": [
+          "s1",
+          "b"
+        ]
+      }
+    },
+    {
+      "graphs": [
+        {
+          "A_r": [
+            [
+              "a1",
+              "c1"
+            ],
+            [
+              "a1",
+              "x1"
+            ],
+            [
+              "b1",
+              "c1"
+            ],
+            [
+              "b1",
+              "x1"
+            ],
+            [
+              "c1",
+              "a1"
+            ],
+            [
+              "c1",
+              "b1"
+            ],
+            [
+              "d1",
+              "e1"
+            ],
+            [
+              "d1",
+              "x1"
+            ],
+            [
+              "e1",
+              "d1"
+            ],
+            [
+              "e1",
+              "g1"
+            ],
+            [
+              "g1",
+              "e1"
+            ],
+            [
+              "x1",
+              "a1"
+            ],
+            [
+              "x1",
+              "b1"
+            ],
+            [
+              "x1",
+              "d1"
+            ]
+          ],
+          "S": [
+            "a1",
+            "b1",
+            "e1"
+          ],
+          "T": [
+            "c1",
+            "d1",
+            "g1"
+          ],
+          "V": [
+            "a1",
+            "b1",
+            "e1",
+            "x1",
+            "c1",
+            "d1",
+            "g1"
+          ],
+          "adj": {
+            "a1": [
+              [
+                "c1",
+                1
+              ],
+              [
+                "x1",
+                1
+              ]
+            ],
+            "b1": [
+              [
+                "c1",
+                1
+              ],
+              [
+                "x1",
+                1
+              ]
+            ],
+            "c1": [
+              [
+                "a1",
+                1
+              ],
+              [
+                "b1",
+                1
+              ]
+            ],
+            "d1": [
+              [
+                "e1",
+                1
+              ],
+              [
+                "x1",
+                1
+              ]
+            ],
+            "e1": [
+              [
+                "d1",
+                1
+              ],
+              [
+                "g1",
+                1
+              ]
+            ],
+            "g1": [
+              [
+                "e1",
+                1
+              ]
+            ],
+            "x1": [
+              [
+                "a1",
+                1
+              ],
+              [
+                "b1",
+                1
+              ],
+              [
+                "d1",
+                1
+              ]
+            ]
+          },
+          "edges": [
+            [
+              "a1",
+              "c1"
+            ],
+            [
+              "a1",
+              "x1"
+            ],
+            [
+              "b1",
+              "c1"
+            ],
+            [
+              "b1",
+              "x1"
+            ],
+            [
+              "d1",
+              "e1"
+            ],
+            [
+              "d1",
+              "x1"
+            ],
+            [
+              "e1",
+              "g1"
+            ]
+          ],
+          "family": "f2",
+          "graph_hash": "f1d649bb203faa4f683b98c384232bd1d833082b73c18f64311c508d81b07cfb",
+          "name": "T6-F2-01-obstruction",
+          "pair_id": "T6-F2-01",
+          "r": 1,
+          "role": "obstruction",
+          "shortcut_diagnostics": {
+            "direct_origin_destination_arcs": [
+              [
+                "a1",
+                "c1"
+              ],
+              [
+                "b1",
+                "c1"
+              ],
+              [
+                "e1",
+                "d1"
+              ],
+              [
+                "e1",
+                "g1"
+              ]
+            ],
+            "terminal_shortcut_review": "Apenas diagnostico; OPT=0 exclui par na fase certify; atalho introduzido no controle e explicito na receita",
+            "terminal_to_terminal_arcs": [
+              [
+                "a1",
+                "c1"
+              ],
+              [
+                "b1",
+                "c1"
+              ],
+              [
+                "c1",
+                "a1"
+              ],
+              [
+                "c1",
+                "b1"
+              ],
+              [
+                "d1",
+                "e1"
+              ],
+              [
+                "e1",
+                "d1"
+              ],
+              [
+                "e1",
+                "g1"
+              ],
+              [
+                "g1",
+                "e1"
+              ]
+            ],
+            "terminals_can_be_stations": true
+          }
+        },
+        {
+          "A_r": [
+            [
+              "a1",
+              "c1"
+            ],
+            [
+              "a1",
+              "x1"
+            ],
+            [
+              "b1",
+              "g1"
+            ],
+            [
+              "b1",
+              "x1"
+            ],
+            [
+              "c1",
+              "a1"
+            ],
+            [
+              "d1",
+              "e1"
+            ],
+            [
+              "d1",
+              "x1"
+            ],
+            [
+              "e1",
+              "d1"
+            ],
+            [
+              "e1",
+              "g1"
+            ],
+            [
+              "g1",
+              "b1"
+            ],
+            [
+              "g1",
+              "e1"
+            ],
+            [
+              "x1",
+              "a1"
+            ],
+            [
+              "x1",
+              "b1"
+            ],
+            [
+              "x1",
+              "d1"
+            ]
+          ],
+          "S": [
+            "a1",
+            "b1",
+            "e1"
+          ],
+          "T": [
+            "c1",
+            "d1",
+            "g1"
+          ],
+          "V": [
+            "a1",
+            "b1",
+            "e1",
+            "x1",
+            "c1",
+            "d1",
+            "g1"
+          ],
+          "adj": {
+            "a1": [
+              [
+                "c1",
+                1
+              ],
+              [
+                "x1",
+                1
+              ]
+            ],
+            "b1": [
+              [
+                "g1",
+                1
+              ],
+              [
+                "x1",
+                1
+              ]
+            ],
+            "c1": [
+              [
+                "a1",
+                1
+              ]
+            ],
+            "d1": [
+              [
+                "e1",
+                1
+              ],
+              [
+                "x1",
+                1
+              ]
+            ],
+            "e1": [
+              [
+                "d1",
+                1
+              ],
+              [
+                "g1",
+                1
+              ]
+            ],
+            "g1": [
+              [
+                "b1",
+                1
+              ],
+              [
+                "e1",
+                1
+              ]
+            ],
+            "x1": [
+              [
+                "a1",
+                1
+              ],
+              [
+                "b1",
+                1
+              ],
+              [
+                "d1",
+                1
+              ]
+            ]
+          },
+          "edges": [
+            [
+              "a1",
+              "c1"
+            ],
+            [
+              "a1",
+              "x1"
+            ],
+            [
+              "b1",
+              "g1"
+            ],
+            [
+              "b1",
+              "x1"
+            ],
+            [
+              "d1",
+              "e1"
+            ],
+            [
+              "d1",
+              "x1"
+            ],
+            [
+              "e1",
+              "g1"
+            ]
+          ],
+          "family": "f2",
+          "graph_hash": "cb838e99a6210575b690e888fa1f4689091581b06ab4b2098e64b880195e96b1",
+          "name": "T6-F2-01-control",
+          "pair_id": "T6-F2-01",
+          "r": 1,
+          "role": "control",
+          "shortcut_diagnostics": {
+            "direct_origin_destination_arcs": [
+              [
+                "a1",
+                "c1"
+              ],
+              [
+                "b1",
+                "g1"
+              ],
+              [
+                "e1",
+                "d1"
+              ],
+              [
+                "e1",
+                "g1"
+              ]
+            ],
+            "terminal_shortcut_review": "Apenas diagnostico; OPT=0 exclui par na fase certify; atalho introduzido no controle e explicito na receita",
+            "terminal_to_terminal_arcs": [
+              [
+                "a1",
+                "c1"
+              ],
+              [
+                "b1",
+                "g1"
+              ],
+              [
+                "c1",
+                "a1"
+              ],
+              [
+                "d1",
+                "e1"
+              ],
+              [
+                "e1",
+                "d1"
+              ],
+              [
+                "e1",
+                "g1"
+              ],
+              [
+                "g1",
+                "b1"
+              ],
+              [
+                "g1",
+                "e1"
+              ]
+            ],
+            "terminals_can_be_stations": true
+          }
+        }
+      ],
+      "recipe": {
+        "add": [
+          "b1",
+          "g1"
+        ],
+        "change": "relocalizar somente b1-c1 para b1-g1; remove incidencia comum a c1",
+        "factory": "F2(k=1,L=3,r=1)",
+        "family": "f2",
+        "id": "T6-F2-01",
+        "obstruction": "duas origens competem diretamente pelo mesmo destino c1 (bolsao de Hall)",
+        "remove": [
+          "b1",
+          "c1"
+        ]
+      }
+    },
+    {
+      "graphs": [
+        {
+          "A_r": [
+            [
+              "s1",
+              "t1"
+            ],
+            [
+              "s1",
+              "w1"
+            ],
+            [
+              "s2",
+              "t1"
+            ],
+            [
+              "s2",
+              "w1"
+            ],
+            [
+              "s3",
+              "t2"
+            ],
+            [
+              "s3",
+              "t3"
+            ],
+            [
+              "t1",
+              "s1"
+            ],
+            [
+              "t1",
+              "s2"
+            ],
+            [
+              "t2",
+              "s3"
+            ],
+            [
+              "t2",
+              "w4"
+            ],
+            [
+              "t3",
+              "s3"
+            ],
+            [
+              "w1",
+              "s1"
+            ],
+            [
+              "w1",
+              "s2"
+            ],
+            [
+              "w1",
+              "w2"
+            ],
+            [
+              "w2",
+              "w1"
+            ],
+            [
+              "w2",
+              "w3"
+            ],
+            [
+              "w3",
+              "w2"
+            ],
+            [
+              "w3",
+              "w4"
+            ],
+            [
+              "w4",
+              "t2"
+            ],
+            [
+              "w4",
+              "w3"
+            ]
+          ],
+          "S": [
+            "s1",
+            "s2",
+            "s3"
+          ],
+          "T": [
+            "t1",
+            "t2",
+            "t3"
+          ],
+          "V": [
+            "s1",
+            "s2",
+            "s3",
+            "t1",
+            "t2",
+            "t3",
+            "w1",
+            "w2",
+            "w3",
+            "w4"
+          ],
+          "adj": {
+            "s1": [
+              [
+                "t1",
+                1
+              ],
+              [
+                "w1",
+                1
+              ]
+            ],
+            "s2": [
+              [
+                "t1",
+                1
+              ],
+              [
+                "w1",
+                1
+              ]
+            ],
+            "s3": [
+              [
+                "t2",
+                1
+              ],
+              [
+                "t3",
+                1
+              ]
+            ],
+            "t1": [
+              [
+                "s1",
+                1
+              ],
+              [
+                "s2",
+                1
+              ]
+            ],
+            "t2": [
+              [
+                "s3",
+                1
+              ],
+              [
+                "w4",
+                1
+              ]
+            ],
+            "t3": [
+              [
+                "s3",
+                1
+              ]
+            ],
+            "w1": [
+              [
+                "s1",
+                1
+              ],
+              [
+                "s2",
+                1
+              ],
+              [
+                "w2",
+                1
+              ]
+            ],
+            "w2": [
+              [
+                "w1",
+                1
+              ],
+              [
+                "w3",
+                1
+              ]
+            ],
+            "w3": [
+              [
+                "w2",
+                1
+              ],
+              [
+                "w4",
+                1
+              ]
+            ],
+            "w4": [
+              [
+                "t2",
+                1
+              ],
+              [
+                "w3",
+                1
+              ]
+            ]
+          },
+          "edges": [
+            [
+              "s1",
+              "t1"
+            ],
+            [
+              "s1",
+              "w1"
+            ],
+            [
+              "s2",
+              "t1"
+            ],
+            [
+              "s2",
+              "w1"
+            ],
+            [
+              "s3",
+              "t2"
+            ],
+            [
+              "s3",
+              "t3"
+            ],
+            [
+              "t2",
+              "w4"
+            ],
+            [
+              "w1",
+              "w2"
+            ],
+            [
+              "w2",
+              "w3"
+            ],
+            [
+              "w3",
+              "w4"
+            ]
+          ],
+          "family": "sec59",
+          "graph_hash": "f22d2ea4030ec1b4cae2b7e3fbfa7aeda928c1519b5afefdc572499802dd4602",
+          "name": "T6-SEC59-01-obstruction",
+          "pair_id": "T6-SEC59-01",
+          "r": 1,
+          "role": "obstruction",
+          "shortcut_diagnostics": {
+            "direct_origin_destination_arcs": [
+              [
+                "s1",
+                "t1"
+              ],
+              [
+                "s2",
+                "t1"
+              ],
+              [
+                "s3",
+                "t2"
+              ],
+              [
+                "s3",
+                "t3"
+              ]
+            ],
+            "terminal_shortcut_review": "Apenas diagnostico; OPT=0 exclui par na fase certify; atalho introduzido no controle e explicito na receita",
+            "terminal_to_terminal_arcs": [
+              [
+                "s1",
+                "t1"
+              ],
+              [
+                "s2",
+                "t1"
+              ],
+              [
+                "s3",
+                "t2"
+              ],
+              [
+                "s3",
+                "t3"
+              ],
+              [
+                "t1",
+                "s1"
+              ],
+              [
+                "t1",
+                "s2"
+              ],
+              [
+                "t2",
+                "s3"
+              ],
+              [
+                "t3",
+                "s3"
+              ]
+            ],
+            "terminals_can_be_stations": true
+          }
+        },
+        {
+          "A_r": [
+            [
+              "s1",
+              "t1"
+            ],
+            [
+              "s1",
+              "w1"
+            ],
+            [
+              "s2",
+              "t2"
+            ],
+            [
+              "s2",
+              "w1"
+            ],
+            [
+              "s3",
+              "t2"
+            ],
+            [
+              "s3",
+              "t3"
+            ],
+            [
+              "t1",
+              "s1"
+            ],
+            [
+              "t2",
+              "s2"
+            ],
+            [
+              "t2",
+              "s3"
+            ],
+            [
+              "t2",
+              "w4"
+            ],
+            [
+              "t3",
+              "s3"
+            ],
+            [
+              "w1",
+              "s1"
+            ],
+            [
+              "w1",
+              "s2"
+            ],
+            [
+              "w1",
+              "w2"
+            ],
+            [
+              "w2",
+              "w1"
+            ],
+            [
+              "w2",
+              "w3"
+            ],
+            [
+              "w3",
+              "w2"
+            ],
+            [
+              "w3",
+              "w4"
+            ],
+            [
+              "w4",
+              "t2"
+            ],
+            [
+              "w4",
+              "w3"
+            ]
+          ],
+          "S": [
+            "s1",
+            "s2",
+            "s3"
+          ],
+          "T": [
+            "t1",
+            "t2",
+            "t3"
+          ],
+          "V": [
+            "s1",
+            "s2",
+            "s3",
+            "t1",
+            "t2",
+            "t3",
+            "w1",
+            "w2",
+            "w3",
+            "w4"
+          ],
+          "adj": {
+            "s1": [
+              [
+                "t1",
+                1
+              ],
+              [
+                "w1",
+                1
+              ]
+            ],
+            "s2": [
+              [
+                "t2",
+                1
+              ],
+              [
+                "w1",
+                1
+              ]
+            ],
+            "s3": [
+              [
+                "t2",
+                1
+              ],
+              [
+                "t3",
+                1
+              ]
+            ],
+            "t1": [
+              [
+                "s1",
+                1
+              ]
+            ],
+            "t2": [
+              [
+                "s2",
+                1
+              ],
+              [
+                "s3",
+                1
+              ],
+              [
+                "w4",
+                1
+              ]
+            ],
+            "t3": [
+              [
+                "s3",
+                1
+              ]
+            ],
+            "w1": [
+              [
+                "s1",
+                1
+              ],
+              [
+                "s2",
+                1
+              ],
+              [
+                "w2",
+                1
+              ]
+            ],
+            "w2": [
+              [
+                "w1",
+                1
+              ],
+              [
+                "w3",
+                1
+              ]
+            ],
+            "w3": [
+              [
+                "w2",
+                1
+              ],
+              [
+                "w4",
+                1
+              ]
+            ],
+            "w4": [
+              [
+                "t2",
+                1
+              ],
+              [
+                "w3",
+                1
+              ]
+            ]
+          },
+          "edges": [
+            [
+              "s1",
+              "t1"
+            ],
+            [
+              "s1",
+              "w1"
+            ],
+            [
+              "s2",
+              "t2"
+            ],
+            [
+              "s2",
+              "w1"
+            ],
+            [
+              "s3",
+              "t2"
+            ],
+            [
+              "s3",
+              "t3"
+            ],
+            [
+              "t2",
+              "w4"
+            ],
+            [
+              "w1",
+              "w2"
+            ],
+            [
+              "w2",
+              "w3"
+            ],
+            [
+              "w3",
+              "w4"
+            ]
+          ],
+          "family": "sec59",
+          "graph_hash": "140752d130e11ed813cc74a1b07aaff8490be3dd90b137c5a02763a0c9cd0ef0",
+          "name": "T6-SEC59-01-control",
+          "pair_id": "T6-SEC59-01",
+          "r": 1,
+          "role": "control",
+          "shortcut_diagnostics": {
+            "direct_origin_destination_arcs": [
+              [
+                "s1",
+                "t1"
+              ],
+              [
+                "s2",
+                "t2"
+              ],
+              [
+                "s3",
+                "t2"
+              ],
+              [
+                "s3",
+                "t3"
+              ]
+            ],
+            "terminal_shortcut_review": "Apenas diagnostico; OPT=0 exclui par na fase certify; atalho introduzido no controle e explicito na receita",
+            "terminal_to_terminal_arcs": [
+              [
+                "s1",
+                "t1"
+              ],
+              [
+                "s2",
+                "t2"
+              ],
+              [
+                "s3",
+                "t2"
+              ],
+              [
+                "s3",
+                "t3"
+              ],
+              [
+                "t1",
+                "s1"
+              ],
+              [
+                "t2",
+                "s2"
+              ],
+              [
+                "t2",
+                "s3"
+              ],
+              [
+                "t3",
+                "s3"
+              ]
+            ],
+            "terminals_can_be_stations": true
+          }
+        }
+      ],
+      "recipe": {
+        "add": [
+          "s2",
+          "t2"
+        ],
+        "change": "relocalizar somente s2-t1 para s2-t2; injeta atalho direto de controle",
+        "factory": "Sec59(L=4,r=1)",
+        "family": "sec59",
+        "id": "T6-SEC59-01",
+        "obstruction": "duas origens compartilham t1 e acesso alternativo exige corredor longo",
+        "remove": [
+          "s2",
+          "t1"
+        ]
+      }
+    }
+  ]
+}

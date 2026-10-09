@@ -1,0 +1,104 @@
+{
+  "freeze_sha256": "8135c5a043d4a03e2d7ea673287cdf86d3f7171b7b18394a600038f9da2f20e7",
+  "rows": [
+    {
+      "instancia": "SharedTerminal",
+      "label": "COMPUTATIONALLY VERIFIED",
+      "lp_fcc": 0.5,
+      "violated_K": [
+        {
+          "Z": [
+            "v"
+          ],
+          "lhs": 0.5,
+          "rhs": 1.0,
+          "violation": 0.5
+        }
+      ],
+      "y_star": {
+        "p1": 0.0,
+        "p2": 0.0,
+        "p3": 0.0,
+        "p4": 0.0,
+        "v": 0.5
+      }
+    },
+    {
+      "instancia": "Tri",
+      "k_hash": "998400cba8b06351fecd1ceffaae084aa3dcc02388ad15ab01da883a6df74dde",
+      "label": "COMPUTATIONALLY VERIFIED",
+      "mechanism": "consistencia de trios",
+      "opt_lp_fc3_k": 2.0,
+      "opt_lp_fcc_k": 1.5,
+      "status_fc3_k_y_fixed": "INFEASIBLE (Gurobi GRB.INFEASIBLE)",
+      "y_star_fcc_k": {
+        "a": 0.5,
+        "b": 0.5,
+        "c": 0.5,
+        "s1": 0.0,
+        "s2": 0.0,
+        "s3": 0.0,
+        "t1": 0.0,
+        "t2": 0.0,
+        "t3": 0.0
+      }
+    },
+    {
+      "instancia": "Sec59(L=7)",
+      "label": "COMPUTATIONALLY VERIFIED",
+      "lp_fcc": 4.5,
+      "violated_K": [
+        {
+          "Z": [
+            "t1",
+            "w1"
+          ],
+          "lhs": 0.5,
+          "rhs": 1.0,
+          "violation": 0.5
+        }
+      ],
+      "y_star": {
+        "s1": 0.0,
+        "s2": 0.0,
+        "s3": 0.5,
+        "t1": 0.0,
+        "t2": 0.5,
+        "t3": 0.0,
+        "w1": 0.5,
+        "w2": 0.5,
+        "w3": 0.5,
+        "w4": 0.5,
+        "w5": 0.5,
+        "w6": 0.5,
+        "w7": 0.5
+      }
+    },
+    {
+      "explanation": "O y* do LP COMP, que satisfaz todo K, nao admite extensao F-CC+K.",
+      "instancia": "Sec59(L=7)",
+      "k_hash": "e11d3fc66897c125d53b4c8881214303363eaa95311c2b70cdff1e11774a1dc8",
+      "label": "COMPUTATIONALLY VERIFIED",
+      "mechanism": "COMP versus configuracoes conexas + K",
+      "opt_lp_comp": 3.6666666666666665,
+      "opt_lp_fcc_k": 5.0,
+      "status_fcc_k_y_fixed": "INFEASIBLE (Gurobi GRB.INFEASIBLE)",
+      "y_star_comp": {
+        "s1": 0.0,
+        "s2": 0.0,
+        "s3": 0.0,
+        "t1": 0.6666666666666667,
+        "t2": 0.0,
+        "t3": 0.0,
+        "w1": 0.3333333333333333,
+        "w2": 0.3333333333333333,
+        "w3": 0.3333333333333333,
+        "w4": 0.3333333333333333,
+        "w5": 0.3333333333333333,
+        "w6": 0.3333333333333333,
+        "w7": 1.0
+      }
+    }
+  ],
+  "state": "COMPUTATIONALLY VERIFIED"
+}
