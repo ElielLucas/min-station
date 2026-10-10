@@ -16,6 +16,8 @@ import subprocess
 from pathlib import Path
 
 from fc_core import LPResult, MIPResult
+from fc_integrity import (SCHEMA, generated_inventory, input_inventory,
+                          source_inventory, sha256_file, dump_json_bytes)
 from fc_evidence import (
     INCONCLUSIVE, NOT_CERTIFIED, RATIONAL_VERIFIED,
     checked_rational_lb, certified_gap, exact_text,
@@ -247,14 +249,15 @@ def _git_info(root: Path):
     }
 
 
-def _sha256_file(path: Path):
-    return hashlib.sha256(path.read_bytes()).hexdigest()
-
-
 def reproducibility_manifest(root: Path, cfg, instances, environment, commands, limitations,
-                             generated_files):
-    """Hashes dos arquivos de formulação REUTILIZADOS (não dos novos), para
-    provar que nada congelado foi tocado por esta comparação."""
+                             generated_files, *, strict_generated=False):
+    """FC-04: proveniência por bytes de código, modelo, entradas e saídas.
+
+    `generated_files` aceita apenas arquivos existentes para inventário completo
+    quando strict_generated=True (usado no runner). Para compatibilidade com
+    testes legados, a API pública permite lista descritiva com arquivos ainda
+    não escritos quando strict_generated=False.
+    """
     referenced = [
         'baseline.py', 'experiments/cuts/harness.py', 'experiments/cuts/cuts.py',
         'experiments/cuts/independent_validator.py',
@@ -262,21 +265,44 @@ def reproducibility_manifest(root: Path, cfg, instances, environment, commands, 
         'experiments/alternative-formulations/fcc_k.py',
         'instances/manifest.csv',
     ]
-    hashes = {rel: _sha256_file(root / rel) for rel in referenced if (root / rel).is_file()}
+    hashes = {rel: sha256_file(root / rel) for rel in referenced if (root / rel).is_file()}
+    missing = [item for item in generated_files if not (root / item).is_file()]
+    if missing and strict_generated:
+        raise ValueError(f'INTEGRITY_ERROR: saídas ausentes ao finalizar: {missing}')
     return {
+        'artifact_schema': SCHEMA,
         'git': _git_info(root),
         'config': cfg.as_dict(),
         'environment': environment,
-        'reused_files_sha256': hashes,
+        'reused_files_sha256': hashes,  # compatibilidade com consumidores anteriores
+        'code_files_sha256': source_inventory(root),
+        'input_files_sha256': input_inventory(root, instances),
+        'generated_files_sha256': generated_inventory(
+            root, (p for p in generated_files if (root / p).is_file())),
         'instances': [
-            {'nome': i.nome, 'classe': i.classe, 'familia': i.familia, 'n': i.n, 'm': i.m,
-             'r': i.r, 'instance_sha256': i.instance_sha256}
+            {'nome': i.nome, 'caminho': i.caminho, 'classe': i.classe,
+             'familia': i.familia, 'n': i.n, 'm': i.m, 'r': i.r,
+             'instance_sha256': i.instance_sha256,
+             'instance_content_sha256': i.instance_content_sha256,
+             'metadata_checks': i.metadata_checks or {}}
             for i in instances
         ],
         'commands': commands,
         'limitations': limitations,
         'generated_files': generated_files,
     }
+
+
+def finalize_manifest(path: Path, manifest) -> str:
+    """Publica JSON + checksum de JSON; sem hash autorreferencial."""
+    if path.exists() or path.with_suffix('.sha256').exists():
+        raise FileExistsError(f'manifesto já existe, não sobrescrever: {path}')
+    encoded = dump_json_bytes(manifest)
+    checksum = hashlib.sha256(encoded).hexdigest()
+    path.write_bytes(encoded)
+    path.with_suffix('.sha256').write_text(checksum + '  ' + path.name + '\n',
+                                             encoding='ascii')
+    return checksum
 
 
 def write_json(path: Path, data):

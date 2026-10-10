@@ -1,6 +1,6 @@
 # FC-04 — Identidade de instâncias, integridade e relatórios — Specification
 
-**Status:** RASCUNHO (não implementada)  
+**Status:** IMPLEMENTADA EM VALIDAÇÃO (aceite integrado pendente)  
 **Prioridade:** P1  
 **Pré-requisito:** FC-01, FC-02 e FC-03 (schema final)  
 **Caminho:** `specs/fc-04-integridade-manifesto-e-relatorios/`  

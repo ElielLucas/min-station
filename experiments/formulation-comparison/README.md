@@ -182,3 +182,51 @@ PYTHONHASHSEED=0 python -m unittest discover \
 
 A FC-02 **não altera** `baseline.py`, `harness.py`, `fcc.py`, `fcc_k.py`,
 certificadores ou resultados congelados de N1/N2.
+
+## FC-04 — Integridade de instâncias, manifestos e relatórios
+
+Os novos experimentos conferem **antes do solver** dois identificadores distintos:
+
+- `sha256`: SHA-256 de todos os bytes do arquivo de instância;
+- `sha256_conteudo`: SHA-256 do conteúdo normalizado sem linhas `# meta:`
+  (regra do manifesto histórico; **não** equivale ao hash bruto).
+
+Campos declarados como `n`, `m`, `r`, `r_arquivo`, `r_usado`, número de
+arestas/arcos e cabeçalhos `N`/`M` são confrontados com a instância real.
+Métricas derivadas não recalculadas aparecem como `UNSUPPORTED`, não `MATCH`.
+Arquivos divergentes são rejeitados com `INTEGRITY_ERROR`, sem resolver modelo.
+
+O novo `artifact_schema=FC04-v1` gera no diretório da rodada:
+`manifest.json` (hashes SHA-256 de código, entradas e saídas),
+`manifest.sha256` (checksum do próprio JSON, sem referência circular),
+`results.csv`, `evolution.csv`, `run.log` e opcionalmente gráficos `.png`.
+Em `scalability`, também `scalability_summary.json`. Os hashes finais são
+calculados depois da geração dos artefatos e o código é conferido contra um
+snapshot capturado antes de iniciar as execuções. Novos arquivos após a
+finalização serão considerados alterações não auditadas.
+
+```bash
+# Execute da raiz do repositório; os exemplos usam caminhos relativos.
+PYTHONHASHSEED=0 python experiments/formulation-comparison/run_comparison.py \
+  --tier pilot --modalities A,B --formulations comp_mip,fcc_k,baseline \
+  --time-limit 120 --lp-time-limit 60 --plots
+
+python experiments/formulation-comparison/verify_comparison_artifacts.py \
+  results/formulation-comparison/pilot-<TIMESTAMP>/
+
+PYTHONHASHSEED=0 python -m unittest discover \
+  -s experiments/formulation-comparison -p 'test_*.py' -v
+python -m ruff check experiments/formulation-comparison
+```
+
+O auditor não usa Gurobi, não altera os resultados e retorna código de saída
+0 somente quando todos os checks passam. **O checksum não é uma assinatura
+contra adulteração maliciosa**; para essa garantia, arquive uma cópia/assinatura
+independente. A auditoria não transforma evidência numérica em prova racional.
+
+A contagem de escalabilidade é por **instância única**, combinando observações
+`lp_fcc_k` (modalidade A) e `fcc_k` (modalidade B). A evidência histórica
+`scalability-20261010T071119Z` contém **9/10 acima do cap**, não 8/10.
+Essa contagem se refere somente aos dez casos observados e **não** aos 75
+casos principais. Execuções históricas anteriores ao schema FC04-v1 são
+preservadas; o auditor novo não as declara válidas retroativamente.

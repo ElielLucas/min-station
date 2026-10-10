@@ -69,14 +69,21 @@ def _order_tasks(instances, formulations=DEFAULT_FORMULATIONS):
     return tasks
 
 
-def run(tier, cfg, out_dir, modalities, formulations=DEFAULT_FORMULATIONS):
+def run(tier, cfg, out_dir, modalities, formulations=DEFAULT_FORMULATIONS, *, plots=False):
     import fc_core as fcore
     from fc_pairing import assess_primary_pair
     from fc_evidence import physical_upper_bound, safe_solver_bound
+    from fc_integrity import scalability_from_csv, source_inventory
 
+    # Congela o inventário antes da leitura/otimização. Um arquivo de código
+    # alterado durante a rodada não pode ser publicado como se fosse executado.
+    code_at_start = source_inventory(ROOT)
     shared_start = time.monotonic()
     instances = fi.pool(tier)
     shared_instance_load_s = time.monotonic() - shared_start
+    # FC-04: fail-closed se a pasta já contiver qualquer artefato anterior.
+    if out_dir.exists() and any(out_dir.iterdir()):
+        raise FileExistsError(f'FC04: pasta de resultados não vazia: {out_dir}')
     out_dir.mkdir(parents=True, exist_ok=True)
     results_csv = out_dir / 'results.csv'
     evolution_csv = out_dir / 'evolution.csv'
@@ -157,11 +164,30 @@ def run(tier, cfg, out_dir, modalities, formulations=DEFAULT_FORMULATIONS):
                                   append=all_results_written)
                 all_results_written = True
 
+    # Artefatos completos são finalizados ANTES do manifesto e seu sidecar.
+    if not results_csv.exists():
+        rep.write_csv(results_csv, rep.RESULTS_FIELDS, [])
+    if not evolution_csv.exists():
+        rep.write_csv(evolution_csv, rep.EVOLUTION_FIELDS, [])
+    if plots:
+        from fc_plot_evolution import plot
+        from fc_plot_evolution import load_points
+        names = [i.nome for i in instances]
+        for name in names:
+            if load_points(evolution_csv, name):
+                plot(evolution_csv, name, out_dir / f'evolution-{Path(name).stem}.png')
+    scalability = None
+    if tier == 'scalability':
+        scalability = scalability_from_csv(
+            results_csv, expected_instances=[i.nome for i in instances],
+        )
+        rep.write_json(out_dir / 'scalability_summary.json', scalability)
     commands = [
         f'PYTHONHASHSEED=0 python run_comparison.py --tier {tier} '
         f'--modalities {",".join(modalities)} --time-limit {cfg.time_limit_s} '
-        f'--threads {cfg.threads} --seed {cfg.seed} '
-        f'--formulations {",".join(formulations)}',
+        f'--threads {cfg.threads} --seed {cfg.seed} --max-w {cfg.max_w} '
+        f'--lp-time-limit {cfg.lp_time_limit_s} '
+        f'--formulations {",".join(formulations)}' + (' --plots' if plots else ''),
     ]
     limitations = [
         'F-CC+K (Modalidades A e B) usa enumeração completa de (W,I,J); instâncias acima do '
@@ -180,13 +206,18 @@ def run(tier, cfg, out_dir, modalities, formulations=DEFAULT_FORMULATIONS):
         'rational_verification=NOT_CERTIFIED e certified_gap_status=INCONCLUSIVE por padrão.',
         'FC-03: colunas legadas ambíguas lb_best, ub_best, gap_abs, gap_rel, '
         'optimality_proven e time_to_proof_s permanecem vazias no schema FC03-v1.',
+        'FC-04: relatório de escalabilidade mede somente as instâncias selecionadas no lote; '
+        'nenhuma conclusão é estendida às 75 instâncias principais não sondadas.',
         'Este experimento é independente da N2 (N2-T2B/N2-T3..T6); não usa a geração de colunas '
         'na raiz nem reabre a decisão N2 FAIL.',
     ]
-    generated = [str(p.relative_to(ROOT)) for p in (results_csv, evolution_csv, log_path)
-                if p.exists()]
+    generated = [p.relative_to(ROOT).as_posix() for p in sorted(out_dir.rglob('*'))
+                 if p.is_file() and p.name not in ('manifest.json', 'manifest.sha256')]
+    if source_inventory(ROOT) != code_at_start:
+        raise ValueError('INTEGRITY_ERROR: código alterado durante a execução; '
+                         'não publicar manifesto como se representasse o código executado')
     manifest = rep.reproducibility_manifest(ROOT, cfg, instances, environment, commands,
-                                            limitations, generated)
+                                            limitations, generated, strict_generated=True)
     manifest['shared_instance_loading_wall_s'] = shared_instance_load_s
     manifest['tier'] = tier
     manifest['modalities'] = list(modalities)
@@ -197,8 +228,9 @@ def run(tier, cfg, out_dir, modalities, formulations=DEFAULT_FORMULATIONS):
     manifest['rational_verifier_executed'] = False
     manifest['rational_proofs_automatically_generated'] = False
     manifest['solver_numeric_bounds_are_rational_proofs'] = False
+    manifest['scalability_summary'] = scalability
     manifest['errors'] = [{'instance': n, 'stage': s, 'traceback': tb} for n, s, tb in errors]
-    rep.write_json(out_dir / 'manifest.json', manifest)
+    rep.finalize_manifest(out_dir / 'manifest.json', manifest)
     print(f'Concluído. {len(errors)} falha(s). Artefatos em {out_dir}')
     return len(errors)
 
@@ -220,6 +252,8 @@ def main(argv=None):
     parser.add_argument('--seed', type=int, default=42)
     parser.add_argument('--max-w', type=int, default=200000)
     parser.add_argument('--out-dir', type=Path, default=None)
+    parser.add_argument('--plots', action='store_true',
+                        help='gera PNGs da evolução antes de finalizar o manifesto')
     args = parser.parse_args(argv)
 
     modalities = tuple(sorted(set(args.modalities.split(','))))
@@ -249,7 +283,8 @@ def main(argv=None):
         ts = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
         out_dir = RESULTS_DIR / f'{args.tier}-{ts}'
 
-    n_errors = run(args.tier, cfg, out_dir, modalities, formulations=formulations)
+    n_errors = run(args.tier, cfg, out_dir, modalities, formulations=formulations,
+                   plots=args.plots)
     return 1 if n_errors else 0
 
 

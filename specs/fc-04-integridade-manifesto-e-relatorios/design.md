@@ -1,7 +1,7 @@
 # FC-04 — Identidade de instâncias, integridade e relatórios — Design
 
 **Spec:** `specs/fc-04-integridade-manifesto-e-relatorios/spec.md`  
-**Status:** RASCUNHO  
+**Status:** IMPLEMENTADA EM VALIDAÇÃO (consulte `validation.md`)  
 **Dependência:** FC-01, FC-02 e FC-03 (schema final)
 
 ## Architecture Overview

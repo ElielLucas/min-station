@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import csv
 import hashlib
+import math
 import signal
 import sys
 from dataclasses import dataclass
@@ -28,7 +29,6 @@ for p in (ROOT, ROOT / 'experiments' / 'cuts', ROOT / 'experiments' / 'alternati
         sys.path.insert(0, str(p))
 
 from ms_utils import construir_adjacencia, construir_arcos_alcance, ler_instancia  # noqa: E402
-from fcc import grafo_H, enumerar_conexos  # noqa: E402
 
 MANIFEST = ROOT / 'instances' / 'manifest.csv'
 EXCLUDED_NAMES = frozenset({'lin23.txt', 'lin37.txt'})  # classe=historico; instrução explícita
@@ -55,6 +55,8 @@ class Instance:
     adj: dict
     A_r: tuple
     instance_sha256: str
+    instance_content_sha256: str = ""
+    metadata_checks: dict | None = None
 
 
 def _familia(caminho):
@@ -71,12 +73,48 @@ def load_manifest(path=MANIFEST):
         return list(csv.DictReader(fh))
 
 
+def _declared(row, field, converter, actual, checks, *, tolerance=None):
+    """Valida um campo numérico do manifesto contra o dado efetivamente lido."""
+    raw = (row.get(field) or '').strip()
+    if not raw:
+        checks[field] = {'status': 'NOT_DECLARED'}
+        return
+    try:
+        expected = converter(raw)
+    except (ValueError, TypeError) as exc:
+        raise ValueError(f'INTEGRITY_ERROR: {field} inválido no manifesto: {raw!r}') from exc
+    if isinstance(expected, float) and not math.isfinite(expected):
+        raise ValueError(f'INTEGRITY_ERROR: {field} não finito no manifesto')
+    match = (math.isclose(actual, expected, rel_tol=0, abs_tol=tolerance)
+             if tolerance is not None else actual == expected)
+    if not match:
+        raise ValueError(f'INTEGRITY_ERROR: metadado {field} divergente: '
+                         f'manifesto={expected!r} arquivo={actual!r}')
+    checks[field] = {'status': 'MATCH', 'expected': expected, 'observed': actual}
+
+
+def _source_header(conteudo: bytes):
+    """Valida N/M/R declarados dentro do arquivo, sem confiar em warnings de ms_utils."""
+    header = {}
+    for line in conteudo.decode('utf-8').splitlines():
+        words = line.strip().split()
+        if len(words) == 2 and words[0] in ('N', 'M', 'R'):
+            key = words[0]
+            if key in header:
+                raise ValueError(f'INTEGRITY_ERROR: cabeçalho {key} duplicado')
+            try:
+                header[key] = float(words[1]) if key == 'R' else int(words[1])
+            except ValueError as exc:
+                raise ValueError(f'INTEGRITY_ERROR: cabeçalho {key} inválido') from exc
+            if key == 'R':
+                break
+    return header
+
+
 def load_instance(row, root=ROOT):
-    """Materializa uma linha do manifesto em um objeto `Instance` completo."""
+    """Valida bytes, dois contratos de hash e metadados ANTES da otimização."""
     caminho = root / row['caminho']
     conteudo = caminho.read_bytes()
-    # O manifesto distingue SHA bruto (`sha256`) e SHA sem linhas # meta:
-    # (`sha256_conteudo`). Conferir ambos contra seus contratos corretos.
     sha_bytes = hashlib.sha256(conteudo).hexdigest()
     sha_normalizado = hashlib.sha256('\n'.join(
         ln for ln in conteudo.decode('utf-8').splitlines()
@@ -89,15 +127,46 @@ def load_instance(row, root=ROOT):
     if digest_conteudo and digest_conteudo != sha_normalizado:
         raise ValueError(f'INTEGRITY_ERROR: sha256_conteudo (sem metadados) divergente em {caminho}')
     dados = ler_instancia(str(caminho))
-    adj = construir_adjacencia(dados['E'])
+    header = _source_header(conteudo)
+    checks = {}
+    n = len(dados['V'])
+    arcs = len(dados['E'])
+    undirected = len({tuple(sorted((u, v))) for u, v, _ in dados['E']})
+    if len(dados['S']) != len(dados['T']):
+        raise ValueError('INTEGRITY_ERROR: |S| difere de |T| na instância')
+    _declared(row, 'n', int, n, checks)
+    _declared(row, 'm', int, len(dados['S']), checks)
+    _declared(row, 'arestas_nao_dirigidas', int, undirected, checks)
+    _declared(row, 'arcos_arquivo', int, arcs, checks)
+    _declared(row, 'r_arquivo', float, float(dados['R']), checks, tolerance=1e-9)
+    # r_usado pode diferir de R do arquivo para instâncias históricas;
+    # ambas as identidades são registradas, jamais confundidas.
     r = float(row['r']) if row.get('r') else float(dados['R'])
+    _declared(row, 'r', float, r, checks, tolerance=1e-9)
+    _declared(row, 'r_usado', float, r, checks, tolerance=1e-9)
+    if 'N' in header and header['N'] != n:
+        raise ValueError(f'INTEGRITY_ERROR: N do arquivo={header["N"]} diverge dos nós={n}')
+    if 'M' in header and header['M'] != arcs:
+        raise ValueError(f'INTEGRITY_ERROR: M do arquivo={header["M"]} diverge dos arcos={arcs}')
+    checks['file_N'] = {'status': 'MATCH' if 'N' in header else 'NOT_DECLARED'}
+    checks['file_M'] = {'status': 'MATCH' if 'M' in header else 'NOT_DECLARED'}
+    # Demais metadados topológicos do manifesto dependem de métricas externas
+    # (WL, treewidth, planaridade) não reimplementadas neste loader.
+    for field in ('planar', 'classes_wl', 'treewidth_ub', 'frac_folhas',
+                  'diametro_exato', 'dificuldade', 'densidade_alcance'):
+        if (row.get(field) or '').strip():
+            checks[field] = {'status': 'UNSUPPORTED',
+                             'reason': 'metrica derivada não recalculada por este loader'}
+    checks['sha256'] = {'status': 'MATCH' if digest_bruto else 'NOT_DECLARED'}
+    checks['sha256_conteudo'] = {'status': 'MATCH' if digest_conteudo else 'NOT_DECLARED'}
+    adj = construir_adjacencia(dados['E'])
     A_r = tuple(construir_arcos_alcance(dados['V'], adj, r))
     return Instance(
         nome=row['nome'], caminho=row['caminho'], classe=row['classe'],
-        familia=_familia(row['caminho']), n=int(row['n']) if row['n'] else len(dados['V']),
-        m_arestas=int(row.get('arestas_nao_dirigidas') or 0), r=r,
+        familia=_familia(row['caminho']), n=n, m_arestas=undirected, r=r,
         m=len(dados['S']), S=tuple(dados['S']), T=tuple(dados['T']), V=tuple(dados['V']),
         adj=dict(adj), A_r=A_r, instance_sha256=sha_bytes,
+        instance_content_sha256=sha_normalizado, metadata_checks=checks,
     )
 
 
@@ -119,6 +188,7 @@ def tractability_probe(instance, max_w=200000, wall_guard_s=15):
     Requer SIGALRM (não funciona em threads secundárias nem Windows); chame
     sempre na thread principal.
     """
+    from fcc import grafo_H, enumerar_conexos
     H = grafo_H(instance.V, instance.A_r)
     anterior = signal.signal(signal.SIGALRM, _alarm)
     signal.alarm(int(wall_guard_s))

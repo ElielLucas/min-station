@@ -6,7 +6,7 @@ Implementar com `/tlc-spec-driven` ativado, seguindo os gates dos scripts origin
 
 **Spec:** `specs/fc-04-integridade-manifesto-e-relatorios/spec.md`  
 **Design:** `specs/fc-04-integridade-manifesto-e-relatorios/design.md`  
-**Status:** Draft — não executado  
+**Status:** implementação local realizada; homologação integrada pendente (consulte `validation.md`)  
 **Pré-requisito externo:** FC-01, FC-02 e FC-03 (schema final)
 
 ## Test Coverage Matrix

@@ -1,6 +1,6 @@
 # Comparação formulação base × F-CC+K — protocolo experimental (novo, independente da N2)
 
-**Estado:** `PILOTO EXECUTADO E VALIDADO`; bateria principal de 3.600 s/execução **não** executada
+**Estado:** `PILOTO HISTÓRICO EXECUTADO` (FC-04 corrige os critérios de auditoria, sem sobrescrever os CSVs antigos); bateria principal de 3.600 s/execução **não** executada
 automaticamente (ver §8). **Independente da N2**: não reabre, não mede nem reinterpreta a decisão
 `N2 FAIL` (`docs/technical/plans/execucao/n2-t6-gate-decisao-cientifica.md`). Não altera N1/N2, o
 freeze N2-T1, resultados históricos, ou arquivos congelados.
@@ -111,14 +111,14 @@ Antes de escolher instâncias, sondou-se `fcc.enumerar_conexos` (contagem de `W`
 **Conclusão empírica, reproduzida em `test_comparison.py::InstancePoolTests` e em
 `fc_instances.tractability_probe`:** a enumeração completa de `(W,I,J)` deixa de ser tratável por
 volta de `n≈23–26` para as famílias HB/BP (dependendo da densidade específica), e já falha no
-**menor** tamanho disponível das famílias SC e TR mais densas. **Todas as 75 instâncias
-`classe=principal`** (mínimo `n=50`) estão, neste levantamento, acima do cap de 200.000 — portanto
-fora do alcance de uma comparação *direta e exata* via F-CC+K completo. Esta é a limitação central
-do item 8 do objetivo: **uma comparação formulação-a-formulação conclusiva com F-CC+K só é possível
-em instâncias pequenas e estruturais** (famílias HB/BP até `n≈23`); no benchmark-v1 oficial, só a
-formulação base é executável por este caminho, e qualquer afirmação sobre F-CC+K nessa escala
-exigiria retomar a geração de colunas certificada — que é exatamente o que a N2 tentou e não
-conseguiu demonstrar.
+**menor** tamanho disponível das famílias SC e TR mais densas. As **três instâncias `classe=principal` efetivamente sondadas** neste levantamento
+(`b-b06-intercalado-f2`, `pucn-cc6-2n-seed-r1` e
+`pace18-t2-001-regiao-f2`) ultrapassaram o cap utilizado. **As demais
+instâncias do universo de 75 não foram sondadas** e não devem ser declaradas
+intratáveis a partir desses três resultados. Nas famílias HB/BP examinadas,
+a fronteira depende da estrutura específica: há casos tratáveis com 23 vértices
+e casos acima do cap com 25 ou mais. Não há teorema nem evidência de
+inviabilidade universal para a F-CC+K completa no benchmark-v1.
 
 Isso **não** é uma reinterpretação do `N2 FAIL`: é uma constatação independente, sobre uma
 propriedade diferente (a enumeração completa, não a geração de colunas), que explica por que as
@@ -132,7 +132,7 @@ benchmark-v1.
 - **Principal** (`MAIN_NAMES`, 6 = piloto + 4): adiciona `hb-q5-ndir2-p1-k1-L2`,
   `hb-q6-ndir1-p6-k1-L2`, `bp-sim-q2-B2-s0`, `bp-nao-q2-B3-s0` — duas famílias estruturais (HB, BP),
   dois níveis de tamanho cada, todos confirmados tratáveis em §4.
-- **Escalabilidade** (`SCALABILITY_NAMES`, 10): instâncias **acima** do cap (HB em 3 tamanhos, BP,
+- **Escalabilidade** (`SCALABILITY_NAMES`, 10): predominantemente instâncias **acima** do cap (HB em 3 tamanhos, BP,
   SC em 2 controles da mesma família, TR em 2 tamanhos) mais duas `classe=principal` reais
   (`b-b06-regiao-f2`, `pucn-cc6-2n-seed-r1`) para medir a formulação base isoladamente na escala do
   benchmark oficial, documentando onde F-CC+K completo para de responder.
@@ -153,11 +153,11 @@ benchmark-v1.
 | Memória | `resource.ru_maxrss` do processo (KB, Linux, cumulativo — **não** isolado por chamada) | idem | idem |
 | SO / Python | Linux 6.8.0-146-generic / Python 3.12.3 | idem | idem |
 
-A ordem de execução intercala `baseline`/`fcc_k` e alterna qual roda primeiro por instância
-(`run_comparison._order_tasks`), para reduzir viés de aquecimento. O limite de tempo é por
-execução de solver (uma chamada = uma formulação = uma instância); não há laço de múltiplas
-chamadas nesta comparação (diferente da geração de colunas da N2), então "orçamento global não
-reiniciado por chamada" não se aplica aqui além do próprio `TimeLimit` de cada `model.optimize()`.
+Na campanha histórica, a ordem de execução intercalava `baseline`/`fcc_k` e alterna qual roda primeiro por instância
+(`run_comparison._order_tasks`), para reduzir viés de aquecimento. A partir da FC-01 o limite de tempo é **global de parede por braço**, desde
+inicialização e preparação até resolução e validação; não é somente o
+`TimeLimit` de `model.optimize()`. Os relatos anteriores descrevem uma
+versão antiga do executor.
 
 ## 7. Resultados do piloto (reais, 2026-10-10)
 
@@ -189,9 +189,11 @@ Para reforçar o piloto sem comprometer o teto de 3.600 s, executaram-se também
 `scalability` (`TimeLimit=60s`) e `main` (`TimeLimit=120s`) — ainda dentro do regime de piloto
 (≤120 s/execução), não a bateria principal:
 
-- **`scalability-20261010T071119Z`** (10 instâncias, 0 falhas): confirma a fronteira do §4 em
-  condições de solve real — o texto histórico reportava 8/10, mas uma auditoria
-  posterior do CSV identificou 9/10; conferir a FC-04 antes de publicar a contagem final. As
+- **`scalability-20261010T071119Z`** (10 instâncias, 0 falhas): o
+  `results.csv` contém **9/10 instâncias distintas com `fcc_k=CAP_EXCEEDED`**
+  (18 linhas CAP em A/B) e **1/10 com `fcc_k=OPTIMAL`**
+  (`tr-k2-L5-r2-sig2-m2`). A contagem histórica 8/10 estava incorreta;
+  contar por instância evita dupla contagem. As
   instâncias acima do cap de F-CC+K terminam `NOT_MEASURED_CAP_EXCEEDED` antes
   mesmo de montar o MIP; a formulação base resolve as 10, inclusive as duas `classe=principal`
   reais (`b-b06`: OPT=3 em 0,05 s; `pucn-cc6-2n`: OPT=6 em 0,20 s), e `tr-k2-L5-r2-sig2-m2`
@@ -237,9 +239,11 @@ hipótese, embora a Modalidade A costume terminar bem antes do teto). Recomenda-
    `--time-limit 3600`, monitorando;
 2. Rodar `scalability` com tempos mais curtos (ela já documenta o cap, não precisa de 1 h por
    execução para instâncias que falham na enumeração antes de montar o modelo);
-3. **Não** tentar forçar F-CC+K completo em `classe=principal`: o cap de enumeração as torna
-   inviáveis por construção, não por falta de tempo — aumentar `max_W` não resolveria sem
-   reabrir a questão de certificação que a N2 deixou em aberto.
+3. **Não** executar indiscriminadamente F-CC+K completo nas demais
+   instâncias `classe=principal` antes de uma sondagem controlada. Nas três
+   instâncias principais sondadas o cap foi ultrapassado; **isso não equivale
+   à impossibilidade de enumerar todas as 75**. Aumentar `max_W` mudaria
+   custo e escopo experimental e exigiria novo pré-registro.
 
 ## 9. Comandos de execução local
 
@@ -290,9 +294,10 @@ N1/N2, `instances/manifest.csv` ou `results/alternative-formulations/` foi alter
 2. Memória é `resource.ru_maxrss` do processo Python inteiro, cumulativa entre chamadas — não um
    isolamento preciso por execução; serve como indicador grosseiro, não como medição de pico por
    instância isolado.
-3. `classe=principal` (benchmark-v1 oficial, 75 instâncias) está, neste levantamento, inteiramente
-   fora do alcance de F-CC+K completo; a comparação direta formulação-a-formulação nessa escala
-   não é possível sem reabrir a questão de certificação que a N2 deixou sem solução.
+3. A sondagem efetivamente mediu **três instâncias `classe=principal`**, todas acima do cap;
+   **72 não foram testadas pela sondagem**. Não extrapolar 3/75 para 75/75.
+   O limite de enumeração observado é experimental e não demonstra impossibilidade
+   matemática ou computacional nas outras 72.
 4. A bateria de 3.600 s/execução não foi executada (§8); os números de §7.1 usam orçamentos
    reduzidos (60–120 s) e já indicam custo crescente rápido de F-CC+K completo mesmo dentro do cap.
 5. Esta comparação não usa, não mede e não certifica a geração de colunas da N2; qualquer
@@ -339,3 +344,59 @@ sinalizadas com `evidence_source=SOLVER_NUMERIC_CALLBACK_NOT_RATIONAL`.
 `results/formulation-comparison/` anterior à FC-03 **não é migrado nem
 reescrito**; comparar saídas de versões diferentes exige distinguir o schema.
 A fase N2 continua fechada com `N2 FAIL`.
+
+
+## FC-04 — Identidade por bytes, manifesto e contagens verificáveis
+
+**Regra normativa para novas execuções (`artifact_schema=FC04-v1`):**
+
+1. `fc_instances.load_instance` confere os dois hashes presentes no manifesto
+   de entrada: `sha256` cobre **todos os bytes brutos**, enquanto
+   `sha256_conteudo` cobre o texto sem linhas `# meta:` conforme a regra
+   original do projeto. Ambos são recomputados. Campos ausentes recebem
+   `NOT_DECLARED`, não são tratados como conferidos.
+2. O loader confere `n`, `m`, `r`, `r_arquivo`, `r_usado`,
+   `arestas_nao_dirigidas` e `arcos_arquivo` contra os dados lidos, além
+   dos cabeçalhos `N`/`M` do arquivo. Divergência gera `INTEGRITY_ERROR`
+   **antes do solver**. Métricas derivadas não recalculadas (por exemplo
+   planaridade e treewidth) aparecem como `UNSUPPORTED`, nunca `MATCH`.
+3. `manifest.json` enumera SHA-256 de `code_files_sha256`,
+   `input_files_sha256`, `generated_files_sha256` com caminhos relativos à
+   raiz do repositório. Cobre os módulos `fc_*.py`, código base/cortes/F-CC+K,
+   CSVs, log, resumo e PNGs produzidos **antes de finalizar**.
+   `manifest.sha256` contém o hash externo do próprio JSON, evitando
+   referência circular. Ele detecta corrupção acidental do manifesto, mas
+   **não é assinatura criptográfica autenticada**; arquive a cópia/assinatura
+   em local independente se precisar de proteção contra adulteração maliciosa.
+4. Execute `verify_comparison_artifacts.py <run_dir>` para uma auditoria
+   **somente leitura**. Um arquivo medido ou script modificado, ausente,
+   desconhecido ou com caminho fora do repositório causa `INTEGRITY_FAIL`.
+   Um gráfico adicionado depois da finalização também invalida o inventário;
+   use `--plots` no executor para publicar PNGs antes do manifesto.
+5. O lote `scalability` publica `scalability_summary.json` calculado a partir
+   de `results.csv`, agrupando por **instância única** e considerando tanto
+   `lp_fcc_k` (A) quanto `fcc_k` (B), com categorias
+   `CAP_EXCEEDED`, `OPTIMAL_NUMERIC`, `INCONCLUSIVE` e `NOT_TESTED`. A
+   auditoria recompõe o resumo independentemente do gerador. **Os casos
+   não selecionados não são inferidos**. No arquivo histórico
+   `scalability-20261010T071119Z/results.csv`, foram 9/10 instâncias acima
+   do cap (não 8/10); isso não atesta 75/75 principais.
+
+Comandos para novas execuções (não auditam retroativamente manifestos antigos):
+
+```bash
+PYTHONHASHSEED=0 python experiments/formulation-comparison/run_comparison.py \
+  --tier pilot --modalities A,B --formulations comp_mip,fcc_k,baseline \
+  --time-limit 120 --lp-time-limit 60 --plots
+
+python experiments/formulation-comparison/verify_comparison_artifacts.py \
+  results/formulation-comparison/pilot-<TIMESTAMP>/
+
+PYTHONHASHSEED=0 python -m unittest discover \
+  -s experiments/formulation-comparison -p 'test_fc04_*.py' -v
+```
+
+**Limite de interpretação:** a auditoria FC-04 demonstra consistência e
+recomputabilidade dos bytes e das contagens, **não demonstra otimalidade
+racional**. Permanecem vigentes `NOT_CERTIFIED` e `INCONCLUSIVE` da FC-03,
+e a decisão congelada `N2 FAIL`.
