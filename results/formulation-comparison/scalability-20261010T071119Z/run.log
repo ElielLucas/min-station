@@ -1,0 +1,60 @@
+== hb-q6-ndir1-p2-k1-L2.txt (n=25, m=11, r=1.0, família=hb, classe=estrutural)
+   A/lp_base: OPTIMAL valor=0.4545454545454546 cert=CERTIFIED_LP t=0.006s
+   A/lp_comp: OPTIMAL valor=1.2727272727272727 cert=CERTIFIED_LP t=0.004s
+   A/lp_fcc_k: CAP_EXCEEDED valor=None cert=NOT_MEASURED_CAP_EXCEEDED t=1.962s
+   B/baseline: OPTIMAL ub=3.0 lb=3.0 cert=CERTIFIED_MIP_OPTIMAL t=0.008s work=0.0010 validado=True
+   B/fcc_k: CAP_EXCEEDED ub=None lb=None cert=NOT_MEASURED_CAP_EXCEEDED t=0.000s work=0.0000 validado=None
+== hb-q6-ndir1-p1-k1-L2.txt (n=28, m=11, r=1.0, família=hb, classe=estrutural)
+   A/lp_base: OPTIMAL valor=0.4545454545454546 cert=CERTIFIED_LP t=0.005s
+   A/lp_comp: OPTIMAL valor=1.290909090909091 cert=CERTIFIED_LP t=0.005s
+   A/lp_fcc_k: CAP_EXCEEDED valor=None cert=NOT_MEASURED_CAP_EXCEEDED t=1.513s
+   B/fcc_k: CAP_EXCEEDED ub=None lb=None cert=NOT_MEASURED_CAP_EXCEEDED t=0.000s work=0.0000 validado=None
+   B/baseline: OPTIMAL ub=3.0 lb=3.0 cert=CERTIFIED_MIP_OPTIMAL t=0.009s work=0.0017 validado=True
+== hb-q8-ndir1-p1-k1-L2.txt (n=38, m=15, r=1.0, família=hb, classe=estrutural)
+   A/lp_base: OPTIMAL valor=0.4666666666666666 cert=CERTIFIED_LP t=0.006s
+   A/lp_comp: OPTIMAL valor=1.342857142857143 cert=CERTIFIED_LP t=0.006s
+   A/lp_fcc_k: CAP_EXCEEDED valor=None cert=NOT_MEASURED_CAP_EXCEEDED t=1.003s
+   B/baseline: OPTIMAL ub=3.0 lb=3.0 cert=CERTIFIED_MIP_OPTIMAL t=0.026s work=0.0052 validado=True
+   B/fcc_k: CAP_EXCEEDED ub=None lb=None cert=NOT_MEASURED_CAP_EXCEEDED t=0.000s work=0.0000 validado=None
+== bp-sim-q2-B3-s0.txt (n=26, m=6, r=1.0, família=bp, classe=estrutural)
+   A/lp_base: OPTIMAL valor=3.0 cert=CERTIFIED_LP t=0.004s
+   A/lp_comp: OPTIMAL valor=10.0 cert=CERTIFIED_LP t=0.004s
+   A/lp_fcc_k: CAP_EXCEEDED valor=None cert=NOT_MEASURED_CAP_EXCEEDED t=1.736s
+   B/fcc_k: CAP_EXCEEDED ub=None lb=None cert=NOT_MEASURED_CAP_EXCEEDED t=0.000s work=0.0000 validado=None
+   B/baseline: OPTIMAL ub=10.0 lb=10.0 cert=CERTIFIED_MIP_OPTIMAL t=0.004s work=0.0005 validado=True
+== sc-gf2-k3.txt (n=21, m=7, r=1.0, família=sc, classe=estrutural)
+   A/lp_base: OPTIMAL valor=1.0 cert=CERTIFIED_LP t=0.004s
+   A/lp_comp: OPTIMAL valor=1.75 cert=CERTIFIED_LP t=0.004s
+   A/lp_fcc_k: CAP_EXCEEDED valor=None cert=NOT_MEASURED_CAP_EXCEEDED t=1.176s
+   B/baseline: OPTIMAL ub=3.0 lb=3.0 cert=CERTIFIED_MIP_OPTIMAL t=0.018s work=0.0042 validado=True
+   B/fcc_k: CAP_EXCEEDED ub=None lb=None cert=NOT_MEASURED_CAP_EXCEEDED t=0.000s work=0.0000 validado=None
+== sc-rigida-k3-s0.txt (n=21, m=7, r=1.0, família=sc, classe=estrutural)
+   A/lp_base: OPTIMAL valor=1.0 cert=CERTIFIED_LP t=0.005s
+   A/lp_comp: OPTIMAL valor=1.75 cert=CERTIFIED_LP t=0.004s
+   A/lp_fcc_k: CAP_EXCEEDED valor=None cert=NOT_MEASURED_CAP_EXCEEDED t=1.187s
+   B/fcc_k: CAP_EXCEEDED ub=None lb=None cert=NOT_MEASURED_CAP_EXCEEDED t=0.000s work=0.0000 validado=None
+   B/baseline: OPTIMAL ub=2.0 lb=2.0 cert=CERTIFIED_MIP_OPTIMAL t=0.010s work=0.0024 validado=True
+== tr-k2-L5-r2-sig2-m2.txt (n=18, m=2, r=2.0, família=tr, classe=estrutural)
+   A/lp_base: OPTIMAL valor=3.0 cert=CERTIFIED_LP t=0.004s
+   A/lp_comp: OPTIMAL valor=3.0 cert=CERTIFIED_LP t=0.004s
+   A/lp_fcc_k: OPTIMAL valor=3.0 cert=CERTIFIED_LP t=24.335s
+   B/baseline: OPTIMAL ub=3.0 lb=3.0 cert=CERTIFIED_MIP_OPTIMAL t=0.003s work=0.0008 validado=True
+   B/fcc_k: OPTIMAL ub=3.0 lb=3.0 cert=CERTIFIED_MIP_OPTIMAL t=10.760s work=9.8030 validado=True
+== tr-k3-L5-r2-sig2-m2.txt (n=25, m=2, r=2.0, família=tr, classe=estrutural)
+   A/lp_base: OPTIMAL valor=3.0 cert=CERTIFIED_LP t=0.005s
+   A/lp_comp: OPTIMAL valor=3.0 cert=CERTIFIED_LP t=0.005s
+   A/lp_fcc_k: CAP_EXCEEDED valor=None cert=NOT_MEASURED_CAP_EXCEEDED t=0.829s
+   B/fcc_k: CAP_EXCEEDED ub=None lb=None cert=NOT_MEASURED_CAP_EXCEEDED t=0.000s work=0.0000 validado=None
+   B/baseline: OPTIMAL ub=3.0 lb=3.0 cert=CERTIFIED_MIP_OPTIMAL t=0.008s work=0.0019 validado=True
+== b-b06-regiao-f2.txt (n=50, m=12, r=2.0, família=steinlib-b, classe=principal)
+   A/lp_base: OPTIMAL valor=0.5833333333333333 cert=CERTIFIED_LP t=0.016s
+   A/lp_comp: OPTIMAL valor=2.3333333333333335 cert=CERTIFIED_LP t=0.014s
+   A/lp_fcc_k: CAP_EXCEEDED valor=None cert=NOT_MEASURED_CAP_EXCEEDED t=0.846s
+   B/baseline: OPTIMAL ub=3.0 lb=3.0 cert=CERTIFIED_MIP_OPTIMAL t=0.052s work=0.0151 validado=True
+   B/fcc_k: CAP_EXCEEDED ub=None lb=None cert=NOT_MEASURED_CAP_EXCEEDED t=0.000s work=0.0000 validado=None
+== pucn-cc6-2n-seed-r1.txt (n=64, m=6, r=1.0, família=pucn, classe=principal)
+   A/lp_base: OPTIMAL valor=1.3333333333333333 cert=CERTIFIED_LP t=0.011s
+   A/lp_comp: OPTIMAL valor=4.111111111111111 cert=CERTIFIED_LP t=0.011s
+   A/lp_fcc_k: CAP_EXCEEDED valor=None cert=NOT_MEASURED_CAP_EXCEEDED t=0.778s
+   B/fcc_k: CAP_EXCEEDED ub=None lb=None cert=NOT_MEASURED_CAP_EXCEEDED t=0.000s work=0.0000 validado=None
+   B/baseline: OPTIMAL ub=6.0 lb=6.0 cert=CERTIFIED_MIP_OPTIMAL t=0.203s work=0.0420 validado=True

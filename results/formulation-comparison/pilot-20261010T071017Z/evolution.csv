@@ -1,0 +1,7 @@
+instance_name,formulation,modality,mark_s,observed_time_s,lb,ub,nodes,work
+hb-q4-ndir2-p1-k1-L2.txt,baseline,B/C,final,0.0052089691162109375,2.0,2.0,1,0.0007507189140099278
+hb-q4-ndir2-p1-k1-L2.txt,fcc_k,B/C,1.0,1.326570987701416,0.0,8.0,0,1.3834521028506361
+hb-q4-ndir2-p1-k1-L2.txt,fcc_k,B/C,final,2.381187915802002,2.0,2.0,1,2.3107140035831852
+bp-nao-q2-B2-s0.txt,baseline,B/C,final,0.005155086517333984,7.0,7.0,1,0.00030958983697478986
+bp-nao-q2-B2-s0.txt,fcc_k,B/C,1.0,1.7661008834838867,7.0,7.0,0,2.683184425855764
+bp-nao-q2-B2-s0.txt,fcc_k,B/C,final,1.8021619319915771,7.0,7.0,1,2.683184425855764

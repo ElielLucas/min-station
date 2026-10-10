@@ -1,0 +1,202 @@
+#!/usr/bin/env python3
+"""Comparação base × F-CC+K — executor independente da fase N2.
+
+Não reabre N1/N2: reutiliza as formulações já validadas (`baseline.py`,
+`experiments/cuts/harness.py`, `experiments/alternative-formulations/fcc.py`
+e `fcc_k.py`) em um experimento novo, isolado, com seus próprios arquivos de
+resultado. A N2 encerrou com `N2 FAIL` (ver
+`docs/technical/plans/execucao/n2-t6-gate-decisao-cientifica.md`); nada
+aqui reinterpreta ou mede o master restrito/pricing da N2 — a Modalidade B
+usa o F-CC+K *completo*, por enumeração total de `(W,I,J)`, não a geração
+de colunas na raiz.
+
+Exemplos:
+    PYTHONHASHSEED=0 python run_comparison.py --tier pilot
+    PYTHONHASHSEED=0 python run_comparison.py --tier main --time-limit 3600 \\
+        --threads 4 --seed 42
+    PYTHONHASHSEED=0 python run_comparison.py --tier scalability \\
+        --modalities A --time-limit 600
+
+Cada execução grava em `results/formulation-comparison/<tier>-<timestamp>/`,
+sem sobrescrever rodadas anteriores. Não faz commit.
+"""
+from __future__ import annotations
+
+import argparse
+import sys
+import traceback
+from datetime import datetime, timezone
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parent.parent
+if str(HERE) not in sys.path:
+    sys.path.insert(0, str(HERE))
+
+import fc_config as fcfg  # noqa: E402
+import fc_instances as fi  # noqa: E402
+import fc_reporting as rep  # noqa: E402
+
+RESULTS_DIR = ROOT / 'results' / 'formulation-comparison'
+
+
+def _check_gurobi():
+    """Retorna (ok, mensagem). Nunca troca de solver silenciosamente."""
+    try:
+        import gurobipy as gp
+    except ImportError as exc:
+        return False, f'gurobipy não instalado neste ambiente: {exc}'
+    try:
+        m = gp.Model()
+        m.dispose()
+    except gp.GurobiError as exc:
+        return False, f'Gurobi sem licença/recursos utilizáveis neste ambiente: {exc}'
+    return True, ''
+
+
+def _order_tasks(instances):
+    """Intercala baseline/fcc_k e alterna qual roda primeiro por instância,
+    para reduzir viés de aquecimento (ver protocolo, §7)."""
+    tasks = []
+    for idx, inst in enumerate(instances):
+        order = ('baseline', 'fcc_k') if idx % 2 == 0 else ('fcc_k', 'baseline')
+        tasks.append((inst, order))
+    return tasks
+
+
+def run(tier, cfg, out_dir, modalities):
+    import fc_core as fcore
+
+    instances = fi.pool(tier)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    results_csv = out_dir / 'results.csv'
+    evolution_csv = out_dir / 'evolution.csv'
+    log_path = out_dir / 'run.log'
+    environment = fcfg.environment_manifest()
+    print(f'[{tier}] {len(instances)} instâncias; modalidades={modalities}; saída={out_dir}')
+
+    all_results_written = False
+    errors = []
+    with log_path.open('w', encoding='utf-8') as log:
+        def report(msg):
+            print(msg)
+            log.write(msg + '\n')
+            log.flush()
+
+        for inst, order in _order_tasks(instances):
+            report(f'== {inst.nome} (n={inst.n}, m={inst.m}, r={inst.r}, '
+                   f'família={inst.familia}, classe={inst.classe})')
+            a_results = {}
+            if 'A' in modalities:
+                try:
+                    a_results = fcore.run_modality_a(inst, cfg)
+                    for k in ('lp_base', 'lp_comp', 'lp_fcc_k'):
+                        r = a_results.get(k)
+                        if r:
+                            report(f'   A/{k}: {r.status} valor={r.value} '
+                                   f'cert={r.certification} t={r.time_s:.3f}s')
+                except Exception:  # noqa: BLE001 - falha de uma instância não derruba o lote
+                    tb = traceback.format_exc()
+                    report(f'   A: FALHA\n{tb}')
+                    errors.append((inst.nome, 'A', tb))
+
+            b_baseline = b_fcc_k = None
+            if 'B' in modalities:
+                runners = {'baseline': fcore.run_modality_b_baseline,
+                          'fcc_k': fcore.run_modality_b_fcc_k}
+                outcome = {}
+                for formulation in order:
+                    try:
+                        outcome[formulation] = runners[formulation](inst, cfg)
+                        r = outcome[formulation]
+                        report(f'   B/{formulation}: {r.status_name} ub={r.objective_ub} '
+                               f'lb={r.objective_lb} cert={r.certification} '
+                               f't={r.time_s:.3f}s work={r.work:.4f} '
+                               f'validado={r.physically_validated}')
+                    except Exception:  # noqa: BLE001
+                        tb = traceback.format_exc()
+                        report(f'   B/{formulation}: FALHA\n{tb}')
+                        errors.append((inst.nome, f'B/{formulation}', tb))
+                b_baseline, b_fcc_k = outcome.get('baseline'), outcome.get('fcc_k')
+
+            if b_baseline is not None and b_fcc_k is not None:
+                rows, evo = rep.rows_for_instance(inst, a_results, b_baseline, b_fcc_k)
+                rep.write_csv(results_csv, rep.RESULTS_FIELDS, rows, append=all_results_written)
+                rep.write_csv(evolution_csv, rep.EVOLUTION_FIELDS, evo,
+                             append=all_results_written)
+                all_results_written = True
+            elif a_results:
+                rows = rep.rows_for_modality_a(inst, a_results)
+                rep.write_csv(results_csv, rep.RESULTS_FIELDS, rows, append=all_results_written)
+                all_results_written = True
+
+    commands = [
+        f'PYTHONHASHSEED=0 python run_comparison.py --tier {tier} '
+        f'--modalities {",".join(modalities)} --time-limit {cfg.time_limit_s} '
+        f'--threads {cfg.threads} --seed {cfg.seed}',
+    ]
+    limitations = [
+        'F-CC+K (Modalidades A e B) usa enumeração completa de (W,I,J); instâncias acima do '
+        'cap de enumeração (max_w) são marcadas NOT_MEASURED_CAP_EXCEEDED, nunca aproximadas.',
+        'O lote scalability inclui instâncias deliberadamente acima do cap, para documentar a '
+        'fronteira de escalabilidade, não para comparar diretamente as duas formulações nelas.',
+        'Memória é resource.ru_maxrss do processo Python (cumulativa, não isolada por chamada); '
+        'ver fc_config.ExperimentConfig.memory_metric.',
+        'Este experimento é independente da N2 (N2-T2B/N2-T3..T6); não usa a geração de colunas '
+        'na raiz nem reabre a decisão N2 FAIL.',
+    ]
+    generated = [str(p.relative_to(ROOT)) for p in (results_csv, evolution_csv, log_path)
+                if p.exists()]
+    manifest = rep.reproducibility_manifest(ROOT, cfg, instances, environment, commands,
+                                            limitations, generated)
+    manifest['tier'] = tier
+    manifest['modalities'] = list(modalities)
+    manifest['errors'] = [{'instance': n, 'stage': s, 'traceback': tb} for n, s, tb in errors]
+    rep.write_json(out_dir / 'manifest.json', manifest)
+    print(f'Concluído. {len(errors)} falha(s). Artefatos em {out_dir}')
+    return len(errors)
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__,
+                                     formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument('--tier', choices=('pilot', 'main', 'scalability'), required=True)
+    parser.add_argument('--modalities', default='A,B',
+                        help='subconjunto separado por vírgula de {A,B} (C é coletada junto com B)')
+    parser.add_argument('--time-limit', type=float, default=None,
+                        help='segundos por execução de MIP (Modalidade B); default 3600, '
+                             'ou 120 com --tier pilot')
+    parser.add_argument('--lp-time-limit', type=float, default=600.0)
+    parser.add_argument('--threads', type=int, default=4)
+    parser.add_argument('--seed', type=int, default=42)
+    parser.add_argument('--max-w', type=int, default=200000)
+    parser.add_argument('--out-dir', type=Path, default=None)
+    args = parser.parse_args(argv)
+
+    modalities = tuple(sorted(set(args.modalities.split(','))))
+
+    ok, msg = _check_gurobi()
+    if not ok:
+        print(f'ERRO: {msg}')
+        print('Nenhum solver alternativo foi usado. Execute este comando em um ambiente com '
+             'licença Gurobi válida.')
+        return 2
+
+    time_limit = args.time_limit
+    if time_limit is None:
+        time_limit = 120.0 if args.tier == 'pilot' else 3600.0
+    cfg = fcfg.ExperimentConfig(threads=args.threads, seed=args.seed, time_limit_s=time_limit,
+                                lp_time_limit_s=args.lp_time_limit, max_w=args.max_w,
+                                modalities=('A', 'B', 'C'))
+
+    out_dir = args.out_dir
+    if out_dir is None:
+        ts = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
+        out_dir = RESULTS_DIR / f'{args.tier}-{ts}'
+
+    n_errors = run(args.tier, cfg, out_dir, modalities)
+    return 1 if n_errors else 0
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())

@@ -1,0 +1,36 @@
+== hb-q4-ndir2-p1-k1-L2.txt (n=16, m=6, r=1.0, família=hb, classe=estrutural)
+   A/lp_base: OPTIMAL valor=0.3333333333333333 cert=CERTIFIED_LP t=0.003s
+   A/lp_comp: OPTIMAL valor=1.0 cert=CERTIFIED_LP t=0.003s
+   A/lp_fcc_k: OPTIMAL valor=2.0 cert=CERTIFIED_LP t=3.936s
+   B/baseline: OPTIMAL ub=2.0 lb=2.0 cert=CERTIFIED_MIP_OPTIMAL t=0.006s work=0.0008 validado=True
+   B/fcc_k: OPTIMAL ub=2.0 lb=2.0 cert=CERTIFIED_MIP_OPTIMAL t=2.408s work=2.3107 validado=True
+== bp-nao-q2-B2-s0.txt (n=16, m=4, r=1.0, família=bp, classe=estrutural)
+   A/lp_base: OPTIMAL valor=3.0 cert=CERTIFIED_LP t=0.008s
+   A/lp_comp: OPTIMAL valor=6.0 cert=CERTIFIED_LP t=0.004s
+   A/lp_fcc_k: OPTIMAL valor=7.0 cert=CERTIFIED_LP t=0.804s
+   B/fcc_k: OPTIMAL ub=7.0 lb=7.0 cert=CERTIFIED_MIP_OPTIMAL t=1.711s work=2.6832 validado=True
+   B/baseline: OPTIMAL ub=7.0 lb=7.0 cert=CERTIFIED_MIP_OPTIMAL t=0.004s work=0.0003 validado=True
+== hb-q5-ndir2-p1-k1-L2.txt (n=21, m=8, r=1.0, família=hb, classe=estrutural)
+   A/lp_base: OPTIMAL valor=0.375 cert=CERTIFIED_LP t=0.003s
+   A/lp_comp: OPTIMAL valor=1.0833333333333335 cert=CERTIFIED_LP t=0.004s
+   A/lp_fcc_k: OPTIMAL valor=3.0 cert=CERTIFIED_LP t=141.788s
+   B/baseline: OPTIMAL ub=3.0 lb=3.0 cert=CERTIFIED_MIP_OPTIMAL t=0.015s work=0.0024 validado=True
+   B/fcc_k: OPTIMAL ub=3.0 lb=3.0 cert=CERTIFIED_MIP_OPTIMAL t=47.655s work=38.9430 validado=True
+== hb-q6-ndir1-p6-k1-L2.txt (n=23, m=11, r=1.0, família=hb, classe=estrutural)
+   A/lp_base: OPTIMAL valor=0.45454545454545453 cert=CERTIFIED_LP t=0.004s
+   A/lp_comp: OPTIMAL valor=1.0 cert=CERTIFIED_LP t=0.004s
+   A/lp_fcc_k: OPTIMAL valor=1.0 cert=CERTIFIED_LP t=83.514s
+   B/fcc_k: OPTIMAL ub=1.0 lb=1.0 cert=CERTIFIED_MIP_OPTIMAL t=48.617s work=38.7940 validado=True
+   B/baseline: OPTIMAL ub=1.0 lb=1.0 cert=CERTIFIED_MIP_OPTIMAL t=0.004s work=0.0002 validado=True
+== bp-sim-q2-B2-s0.txt (n=19, m=4, r=1.0, família=bp, classe=estrutural)
+   A/lp_base: OPTIMAL valor=3.0 cert=CERTIFIED_LP t=0.005s
+   A/lp_comp: OPTIMAL valor=8.0 cert=CERTIFIED_LP t=0.005s
+   A/lp_fcc_k: OPTIMAL valor=8.0 cert=CERTIFIED_LP t=5.805s
+   B/baseline: OPTIMAL ub=8.0 lb=8.0 cert=CERTIFIED_MIP_OPTIMAL t=0.004s work=0.0003 validado=True
+   B/fcc_k: OPTIMAL ub=8.0 lb=8.0 cert=CERTIFIED_MIP_OPTIMAL t=2.337s work=2.6997 validado=True
+== bp-nao-q2-B3-s0.txt (n=23, m=6, r=1.0, família=bp, classe=estrutural)
+   A/lp_base: OPTIMAL valor=3.0 cert=CERTIFIED_LP t=0.003s
+   A/lp_comp: OPTIMAL valor=8.0 cert=CERTIFIED_LP t=0.003s
+   A/lp_fcc_k: OPTIMAL valor=9.0 cert=CERTIFIED_LP t=92.394s
+   B/fcc_k: OPTIMAL ub=9.0 lb=9.0 cert=CERTIFIED_MIP_OPTIMAL t=35.098s work=35.6235 validado=True
+   B/baseline: OPTIMAL ub=9.0 lb=9.0 cert=CERTIFIED_MIP_OPTIMAL t=0.005s work=0.0004 validado=True

@@ -1,0 +1,12 @@
+== hb-q4-ndir2-p1-k1-L2.txt (n=16, m=6, r=1.0, família=hb, classe=estrutural)
+   A/lp_base: OPTIMAL valor=0.3333333333333333 cert=CERTIFIED_LP t=0.005s
+   A/lp_comp: OPTIMAL valor=1.0 cert=CERTIFIED_LP t=0.005s
+   A/lp_fcc_k: OPTIMAL valor=2.0 cert=CERTIFIED_LP t=3.856s
+   B/baseline: OPTIMAL ub=2.0 lb=2.0 cert=CERTIFIED_MIP_OPTIMAL t=0.005s work=0.0008 validado=True
+   B/fcc_k: OPTIMAL ub=2.0 lb=2.0 cert=CERTIFIED_MIP_OPTIMAL t=2.381s work=2.3107 validado=True
+== bp-nao-q2-B2-s0.txt (n=16, m=4, r=1.0, família=bp, classe=estrutural)
+   A/lp_base: OPTIMAL valor=3.0 cert=CERTIFIED_LP t=0.002s
+   A/lp_comp: OPTIMAL valor=6.0 cert=CERTIFIED_LP t=0.002s
+   A/lp_fcc_k: OPTIMAL valor=7.0 cert=CERTIFIED_LP t=0.778s
+   B/fcc_k: OPTIMAL ub=7.0 lb=7.0 cert=CERTIFIED_MIP_OPTIMAL t=1.802s work=2.6832 validado=True
+   B/baseline: OPTIMAL ub=7.0 lb=7.0 cert=CERTIFIED_MIP_OPTIMAL t=0.005s work=0.0003 validado=True

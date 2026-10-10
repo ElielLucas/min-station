@@ -1,0 +1,160 @@
+{
+  "git": {
+    "branch": "novos_testes",
+    "commit": "fc9c1a2d87db63a95670e3510df6c5953b6d922f",
+    "dirty": true
+  },
+  "config": {
+    "threads": 4,
+    "seed": 42,
+    "time_limit_s": 60.0,
+    "lp_time_limit_s": 30.0,
+    "max_w": 200000,
+    "checkpoints_s": [
+      1.0,
+      5.0,
+      10.0,
+      30.0,
+      60.0,
+      120.0,
+      300.0,
+      600.0,
+      1800.0,
+      3600.0
+    ],
+    "modalities": [
+      "A",
+      "B",
+      "C"
+    ],
+    "memory_metric": "ru_maxrss_kb_process_cumulative"
+  },
+  "environment": {
+    "python_version": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "platform": "Linux-6.8.0-146-generic-x86_64-with-glibc2.39",
+    "processor": "x86_64",
+    "gurobi_version": "12.0.3",
+    "gurobi_available": true
+  },
+  "reused_files_sha256": {
+    "baseline.py": "f10dcf2e506072f806a5ac5b3af9d7d7292817beeae868bea92c3bf66d20fcb1",
+    "experiments/cuts/harness.py": "9287c03ea978f82a1d69ebd25c2a2d95f40e6895a02bc7a0b575075728fdf73c",
+    "experiments/cuts/cuts.py": "4952ac563156bc616105251b414e8c2778a3859be94ff5ed183c2d9cd8ffaebb",
+    "experiments/cuts/independent_validator.py": "fb18fd4a02533120129efc68c0acb6078c29f3af8dbade5f8d4852c7973cd352",
+    "experiments/alternative-formulations/fcc.py": "318d045e0f4ed5462085aac9c3f72ae1854346185bdad8dd5e03b9920730d919",
+    "experiments/alternative-formulations/fcc_k.py": "b52fc23bb0575bc950b09661217b88d4a91370926450b0ebba6cc03d1f63ae01",
+    "instances/manifest.csv": "218c490bd3ba3e34740bc23f13b07ba864f0d624755aca9b992a8f23f6afad08"
+  },
+  "instances": [
+    {
+      "nome": "hb-q6-ndir1-p2-k1-L2.txt",
+      "classe": "estrutural",
+      "familia": "hb",
+      "n": 25,
+      "m": 11,
+      "r": 1.0,
+      "instance_sha256": "6e9b6ca6f9560ac92f9e53eaba48ddbea5aa200d0003ac1968284852ab6504b4"
+    },
+    {
+      "nome": "hb-q6-ndir1-p1-k1-L2.txt",
+      "classe": "estrutural",
+      "familia": "hb",
+      "n": 28,
+      "m": 11,
+      "r": 1.0,
+      "instance_sha256": "89f8a4567ddab3a3c8945ed85abd58891747f4604655d20c4efc1dde4aed4020"
+    },
+    {
+      "nome": "hb-q8-ndir1-p1-k1-L2.txt",
+      "classe": "estrutural",
+      "familia": "hb",
+      "n": 38,
+      "m": 15,
+      "r": 1.0,
+      "instance_sha256": "6e01d7d2c2781ea7e7a6455917877b02133db53d861f8facbe3762c13b817fa6"
+    },
+    {
+      "nome": "bp-sim-q2-B3-s0.txt",
+      "classe": "estrutural",
+      "familia": "bp",
+      "n": 26,
+      "m": 6,
+      "r": 1.0,
+      "instance_sha256": "e345bab4a9478aefb039458c2d5787a2f20d187da86bab08ef39f727bd4856e8"
+    },
+    {
+      "nome": "sc-gf2-k3.txt",
+      "classe": "estrutural",
+      "familia": "sc",
+      "n": 21,
+      "m": 7,
+      "r": 1.0,
+      "instance_sha256": "9f338d4a92f25a6353b556a84215029209940d5cbd4d11821b4e54a71fff75c9"
+    },
+    {
+      "nome": "sc-rigida-k3-s0.txt",
+      "classe": "estrutural",
+      "familia": "sc",
+      "n": 21,
+      "m": 7,
+      "r": 1.0,
+      "instance_sha256": "5d716281461ce19f7f34bb3b6e89d7fa6b3f3ae940306153d03a2e52d5ba7ea0"
+    },
+    {
+      "nome": "tr-k2-L5-r2-sig2-m2.txt",
+      "classe": "estrutural",
+      "familia": "tr",
+      "n": 18,
+      "m": 2,
+      "r": 2.0,
+      "instance_sha256": "a0f6d09c3ade97fc8532de56448ea2e3fca877cf442cc598d02ee684f900fd76"
+    },
+    {
+      "nome": "tr-k3-L5-r2-sig2-m2.txt",
+      "classe": "estrutural",
+      "familia": "tr",
+      "n": 25,
+      "m": 2,
+      "r": 2.0,
+      "instance_sha256": "5535fc441fdd4b51a0063ec3602305dad2059b413a312b7b15cbafbc19b820c1"
+    },
+    {
+      "nome": "b-b06-regiao-f2.txt",
+      "classe": "principal",
+      "familia": "steinlib-b",
+      "n": 50,
+      "m": 12,
+      "r": 2.0,
+      "instance_sha256": "998ea1640263601214f3e23b7c78a5ebb38f35e581f523c9eaf5bf9f0bc3c768"
+    },
+    {
+      "nome": "pucn-cc6-2n-seed-r1.txt",
+      "classe": "principal",
+      "familia": "pucn",
+      "n": 64,
+      "m": 6,
+      "r": 1.0,
+      "instance_sha256": "6ae2059b39644bafb3a440f2657ef51bdc8082339b34b3dbeb624e2b9bce777a"
+    }
+  ],
+  "commands": [
+    "PYTHONHASHSEED=0 python run_comparison.py --tier scalability --modalities A,B --time-limit 60.0 --threads 4 --seed 42"
+  ],
+  "limitations": [
+    "F-CC+K (Modalidades A e B) usa enumeração completa de (W,I,J); instâncias acima do cap de enumeração (max_w) são marcadas NOT_MEASURED_CAP_EXCEEDED, nunca aproximadas.",
+    "O lote scalability inclui instâncias deliberadamente acima do cap, para documentar a fronteira de escalabilidade, não para comparar diretamente as duas formulações nelas.",
+    "Memória é resource.ru_maxrss do processo Python (cumulativa, não isolada por chamada); ver fc_config.ExperimentConfig.memory_metric.",
+    "Este experimento é independente da N2 (N2-T2B/N2-T3..T6); não usa a geração de colunas na raiz nem reabre a decisão N2 FAIL."
+  ],
+  "generated_files": [
+    "results/formulation-comparison/scalability-20261010T071119Z/results.csv",
+    "results/formulation-comparison/scalability-20261010T071119Z/evolution.csv",
+    "results/formulation-comparison/scalability-20261010T071119Z/run.log"
+  ],
+  "tier": "scalability",
+  "modalities": [
+    "A",
+    "B"
+  ],
+  "errors": []
+}
