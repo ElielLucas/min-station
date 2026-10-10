@@ -300,6 +300,11 @@ class RestrictedMaster:
         self._H = grafo_H(self.V, self._A_r)
 
     @property
+    def reach_graph(self):
+        """H=G^r validado (vizinhanças abertas, imutáveis) para o pricing."""
+        return _freeze({v: frozenset(self._H[v]) for v in self.V})
+
+    @property
     def columns(self):
         """Q_R em ordem de inserção; triplas e conjuntos são imutáveis."""
         return tuple(self._lam)
