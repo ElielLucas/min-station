@@ -4,6 +4,12 @@ Matemática: revisão v2.1, §§2--6. Componentes: RestrictedMaster (Entrega 1) 
 price() (Entrega 2). Não implementa branching, certificação N2-T3, ENUM/N1/N2,
 regressão N2-T4 nem escrita de resultados.
 
+Extensão E4: parâmetro certification_hook=None. No modo opt-out o algoritmo
+legado e seu resultado são idênticos. No modo opt-in o recorder certificado
+opera em prepare/accept em cada snapshot válido ANTES do pricing e de
+add_column, somente após checar que não houve overrun de orçamento. O
+ColumnGenerationResult continua NUMÉRICO/UNCERTIFIED em ambos os modos.
+
 Uso:
     result = run_column_generation(S, T, V, adj, A_r, r, K=K, k_hash=digest,
                                    max_iterations=200, work_limit=164.0)
@@ -195,7 +201,7 @@ def run_column_generation(S, T, V, adj, A_r, r, *, K=None, k_hash=None,
                           master_params=None, pricing_params=None,
                           entry_tolerance=1e-7, monotonicity_tolerance=1e-7,
                           rc_agreement_tolerance=1e-9,
-                          pricer=price, clock=time.monotonic):
+                          pricer=price, clock=time.monotonic, certification_hook=None):
     """Geração de colunas na raiz; ver docstring do módulo.
 
     max_iterations limita as chamadas de pricing; ao atingi-lo, o master já
@@ -205,6 +211,10 @@ def run_column_generation(S, T, V, adj, A_r, r, *, K=None, k_hash=None,
     APIs; seus TimeLimit/WorkLimit valem por chamada e nunca excedem o
     restante global. pricer e clock são pontos de substituição para testes.
     """
+    if certification_hook is not None and not (
+            callable(getattr(certification_hook, 'prepare', None))
+            and callable(getattr(certification_hook, 'accept', None))):
+        raise ValueError('certification_hook exige métodos prepare e accept')
     _validate_settings(max_iterations, work_limit, time_limit, entry_tolerance,
                        monotonicity_tolerance, rc_agreement_tolerance)
     master_params = dict(master_params or {})
@@ -340,6 +350,32 @@ def run_column_generation(S, T, V, adj, A_r, r, *, K=None, k_hash=None,
                     record['degenerate_step'] = True
                     degenerate += 1
             last_objective, objective_current = mres.objective_rmp, True
+
+            # E4: snapshot só existe durante esta resolução. Preparar um evento
+            # imutável sem consultar o modelo após add_column/dispose. O evento
+            # só é aceito se o orçamento GLOBAL continuar válido após a prova;
+            # eventuais certificados de iterações anteriores seguem preservados.
+            if certification_hook is not None:
+                pending = budget_stop()
+                if pending:
+                    stop, message = pending
+                    close(stop, message)
+                    break
+                _rw, rt = remaining()
+                event = certification_hook.prepare(master, snapshot, iteration=iteration,
+                                                   remaining_time=rt)
+                exceeded = overrun()
+                if exceeded:
+                    stop, message = exceeded
+                    close(stop, message)
+                    break
+                # Quando o exato limite é atingido, não aceitar a prova tardia.
+                pending = budget_stop()
+                if pending:
+                    stop, message = pending
+                    close(stop, message)
+                    break
+                certification_hook.accept(event)
 
             if iteration >= max_iterations:
                 stop, message = ITERATION_LIMIT, f'{max_iterations} chamadas de pricing'
