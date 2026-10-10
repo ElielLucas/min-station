@@ -23,12 +23,32 @@ RESULTS_FIELDS = [
     'gap_abs', 'gap_rel', 'optimality_proven', 'time_s', 'work', 'ru_maxrss_kb_before',
     'ru_maxrss_kb_after', 'n_vars', 'n_cons', 'time_to_first_feasible_s', 'time_to_best_s',
     'time_to_proof_s', 'nodes', 'physically_validated', 'observations',
+    'wall_total_s', 'solver_runtime_s', 'stop_reason', 'wall_startup_s',
+    'wall_k_preparation_s', 'wall_model_build_s', 'wall_solve_s',
+    'wall_validation_s', 'wall_supervisor_shutdown_s', 'wall_phases_json',
 ]
 
 EVOLUTION_FIELDS = [
     'instance_name', 'formulation', 'modality', 'mark_s', 'observed_time_s', 'lb', 'ub', 'nodes',
     'work',
 ]
+
+
+def _wall_fields(result):
+    phases = dict(result.phase_wall_s)
+    return {
+        'wall_total_s': result.time_s,
+        'solver_runtime_s': result.solver_runtime_s if result.solver_runtime_s is not None else '',
+        'stop_reason': (result.stop_reason or
+                        (result.status if isinstance(result, LPResult) else result.status_name)),
+        'wall_startup_s': phases.get('startup', 0.0),
+        'wall_k_preparation_s': phases.get('k_preparation', 0.0),
+        'wall_model_build_s': phases.get('model_build', 0.0),
+        'wall_solve_s': phases.get('solve', 0.0),
+        'wall_validation_s': phases.get('validation', 0.0),
+        'wall_supervisor_shutdown_s': phases.get('supervisor_shutdown', 0.0),
+        'wall_phases_json': json.dumps(phases, sort_keys=True),
+    }
 
 
 def _lp_row(instance, result: LPResult):
@@ -40,12 +60,14 @@ def _lp_row(instance, result: LPResult):
         'modality': 'A', 'status': result.status, 'certification': result.certification,
         'objective_primal': '', 'lb_best': result.value if result.value is not None else '',
         'ub_best': '', 'gap_abs': '', 'gap_rel': '', 'optimality_proven': '',
-        'time_s': result.time_s, 'work': '', 'ru_maxrss_kb_before': '', 'ru_maxrss_kb_after': '',
+        'time_s': result.time_s, 'work': result.work if result.work is not None else '',
+        'ru_maxrss_kb_before': '', 'ru_maxrss_kb_after': '',
         'n_vars': result.n_vars if result.n_vars is not None else '',
         'n_cons': result.n_cons if result.n_cons is not None else '',
         'time_to_first_feasible_s': '', 'time_to_best_s': '', 'time_to_proof_s': '', 'nodes': '',
         'physically_validated': '',
         'observations': (f'{result.formulation}; K={result.n_K}; {result.reason}').strip('; '),
+        **_wall_fields(result),
     }
 
 
@@ -62,8 +84,10 @@ def _mip_row(instance, result: MIPResult):
         'gap_rel': result.gap_rel if result.gap_rel is not None else '',
         'optimality_proven': result.status_name == 'OPTIMAL',
         'time_s': result.time_s, 'work': result.work,
-        'ru_maxrss_kb_before': result.ru_maxrss_kb_before,
-        'ru_maxrss_kb_after': result.ru_maxrss_kb_after,
+        'ru_maxrss_kb_before': (result.ru_maxrss_kb_before
+                                 if result.ru_maxrss_kb_before is not None else ''),
+        'ru_maxrss_kb_after': (result.ru_maxrss_kb_after
+                                if result.ru_maxrss_kb_after is not None else ''),
         'n_vars': result.n_vars, 'n_cons': result.n_cons,
         'time_to_first_feasible_s': result.time_to_first_feasible_s
         if result.time_to_first_feasible_s is not None else '',
@@ -72,6 +96,7 @@ def _mip_row(instance, result: MIPResult):
         'nodes': result.nodes, 'physically_validated': result.physically_validated
         if result.physically_validated is not None else '',
         'observations': result.reason,
+        **_wall_fields(result),
     }
 
 

@@ -24,6 +24,7 @@ from __future__ import annotations
 
 import argparse
 import sys
+import time
 import traceback
 from datetime import datetime, timezone
 from pathlib import Path
@@ -67,7 +68,9 @@ def _order_tasks(instances):
 def run(tier, cfg, out_dir, modalities):
     import fc_core as fcore
 
+    shared_start = time.monotonic()
     instances = fi.pool(tier)
+    shared_instance_load_s = time.monotonic() - shared_start
     out_dir.mkdir(parents=True, exist_ok=True)
     results_csv = out_dir / 'results.csv'
     evolution_csv = out_dir / 'evolution.csv'
@@ -94,7 +97,11 @@ def run(tier, cfg, out_dir, modalities):
                         r = a_results.get(k)
                         if r:
                             report(f'   A/{k}: {r.status} valor={r.value} '
-                                   f'cert={r.certification} t={r.time_s:.3f}s')
+                                   f'cert={r.certification} wall={r.time_s:.3f}s '
+                                   f'solver={r.solver_runtime_s} work={r.work} '
+                                   f'stop={r.stop_reason} reason={r.reason.splitlines()[0] if r.reason else ""}')
+                            if r.status in ('WORKER_ERROR', 'SOLVER_UNAVAILABLE'):
+                                errors.append((inst.nome, f'A/{k}', r.reason))
                 except Exception:  # noqa: BLE001 - falha de uma instância não derruba o lote
                     tb = traceback.format_exc()
                     report(f'   A: FALHA\n{tb}')
@@ -111,8 +118,11 @@ def run(tier, cfg, out_dir, modalities):
                         r = outcome[formulation]
                         report(f'   B/{formulation}: {r.status_name} ub={r.objective_ub} '
                                f'lb={r.objective_lb} cert={r.certification} '
-                               f't={r.time_s:.3f}s work={r.work:.4f} '
-                               f'validado={r.physically_validated}')
+                               f'wall={r.time_s:.3f}s solver={r.solver_runtime_s} work={r.work:.4f} '
+                               f'stop={r.stop_reason} validado={r.physically_validated} '
+                               f'reason={r.reason.splitlines()[0] if r.reason else ""}')
+                        if r.status_name in ('WORKER_ERROR', 'SOLVER_UNAVAILABLE'):
+                            errors.append((inst.nome, f'B/{formulation}', r.reason))
                     except Exception:  # noqa: BLE001
                         tb = traceback.format_exc()
                         report(f'   B/{formulation}: FALHA\n{tb}')
@@ -140,7 +150,7 @@ def run(tier, cfg, out_dir, modalities):
         'cap de enumeração (max_w) são marcadas NOT_MEASURED_CAP_EXCEEDED, nunca aproximadas.',
         'O lote scalability inclui instâncias deliberadamente acima do cap, para documentar a '
         'fronteira de escalabilidade, não para comparar diretamente as duas formulações nelas.',
-        'Memória é resource.ru_maxrss do processo Python (cumulativa, não isolada por chamada); '
+        'Memória é resource.ru_maxrss do worker isolado (pico cumulativo do worker); '
         'ver fc_config.ExperimentConfig.memory_metric.',
         'Este experimento é independente da N2 (N2-T2B/N2-T3..T6); não usa a geração de colunas '
         'na raiz nem reabre a decisão N2 FAIL.',
@@ -149,6 +159,7 @@ def run(tier, cfg, out_dir, modalities):
                 if p.exists()]
     manifest = rep.reproducibility_manifest(ROOT, cfg, instances, environment, commands,
                                             limitations, generated)
+    manifest['shared_instance_loading_wall_s'] = shared_instance_load_s
     manifest['tier'] = tier
     manifest['modalities'] = list(modalities)
     manifest['errors'] = [{'instance': n, 'stage': s, 'traceback': tb} for n, s, tb in errors]
@@ -164,9 +175,10 @@ def main(argv=None):
     parser.add_argument('--modalities', default='A,B',
                         help='subconjunto separado por vírgula de {A,B} (C é coletada junto com B)')
     parser.add_argument('--time-limit', type=float, default=None,
-                        help='segundos por execução de MIP (Modalidade B); default 3600, '
+                        help='segundos globais por braço de MIP, incluindo montagem e validação; default 3600, '
                              'ou 120 com --tier pilot')
-    parser.add_argument('--lp-time-limit', type=float, default=600.0)
+    parser.add_argument('--lp-time-limit', type=float, default=600.0,
+                        help='segundos globais por braço LP, incluindo K, montagem e solver')
     parser.add_argument('--threads', type=int, default=4)
     parser.add_argument('--seed', type=int, default=42)
     parser.add_argument('--max-w', type=int, default=200000)

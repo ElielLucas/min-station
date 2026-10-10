@@ -1,0 +1,12 @@
+== hb-q4-ndir2-p1-k1-L2.txt (n=16, m=6, r=1.0, família=hb, classe=estrutural)
+   A/lp_base: OPTIMAL valor=0.3333333333333333 cert=CERTIFIED_LP wall=0.806s solver=0.0008890628814697266 work=0.00019960000652625125 stop=OPTIMAL reason=
+   A/lp_comp: OPTIMAL valor=1.0 cert=CERTIFIED_LP wall=0.696s solver=0.0012309551239013672 work=0.00020559046949305388 stop=OPTIMAL reason=
+   A/lp_fcc_k: OPTIMAL valor=2.0 cert=CERTIFIED_LP wall=4.185s solver=1.0423331260681152 work=0.6762870672539164 stop=OPTIMAL reason=
+   B/baseline: OPTIMAL ub=2.0 lb=2.0 cert=CERTIFIED_MIP_OPTIMAL wall=0.778s solver=0.0059239864349365234 work=0.0008 stop=OPTIMAL validado=True reason=
+   B/fcc_k: OPTIMAL ub=2.0 lb=2.0 cert=CERTIFIED_MIP_OPTIMAL wall=5.448s solver=2.332366943359375 work=2.3107 stop=OPTIMAL validado=True reason=
+== bp-nao-q2-B2-s0.txt (n=16, m=4, r=1.0, família=bp, classe=estrutural)
+   A/lp_base: OPTIMAL valor=3.0 cert=CERTIFIED_LP wall=0.688s solver=0.0008261203765869141 work=0.00012863789602040812 stop=OPTIMAL reason=
+   A/lp_comp: OPTIMAL valor=6.0 cert=CERTIFIED_LP wall=0.668s solver=0.0007519721984863281 work=0.00015080056382086175 stop=OPTIMAL reason=
+   A/lp_fcc_k: OPTIMAL valor=7.0 cert=CERTIFIED_LP wall=1.549s solver=0.29170894622802734 work=0.1440766837716315 stop=OPTIMAL reason=
+   B/fcc_k: OPTIMAL ub=7.0 lb=7.0 cert=CERTIFIED_MIP_OPTIMAL wall=2.843s solver=1.665177822113037 work=2.6832 stop=OPTIMAL validado=True reason=
+   B/baseline: OPTIMAL ub=7.0 lb=7.0 cert=CERTIFIED_MIP_OPTIMAL wall=0.663s solver=0.005450010299682617 work=0.0003 stop=OPTIMAL validado=True reason=

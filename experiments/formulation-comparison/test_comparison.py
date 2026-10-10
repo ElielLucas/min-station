@@ -40,6 +40,16 @@ BP_Q2_B2_ROW = {
 PILOT_CFG = fcfg.ExperimentConfig(time_limit_s=60.0, lp_time_limit_s=30.0)
 
 
+class ModuleIsolationTests(unittest.TestCase):
+    """Evita importar fc_* antigos de alternative-formulations por engano."""
+
+    def test_modules_come_from_formulation_comparison(self):
+        for module in (fcfg, fcore, fi, rep):
+            with self.subTest(module=module.__name__):
+                self.assertEqual(Path(module.__file__).resolve().parent, HERE,
+                                 f'Módulo sombreado: {module.__name__} em {module.__file__}')
+
+
 class ConfigTests(unittest.TestCase):
     def test_rejects_invalid_values(self):
         for bad in (dict(threads=0), dict(time_limit_s=-1), dict(lp_time_limit_s=0),
@@ -133,6 +143,9 @@ class ModalityATests(unittest.TestCase):
         for r in results.values():
             if hasattr(r, 'certification'):
                 self.assertEqual(r.certification, fcore.CERTIFIED_LP)
+                self.assertIsNotNone(r.solver_runtime_s)
+                self.assertIsNotNone(r.work)
+                self.assertGreaterEqual(r.time_s + 0.01, r.solver_runtime_s)
         # Monotonicidade exigida pela cadeia base <= COMP <= F-CC+K <= OPT (P2, N1).
         self.assertLessEqual(results['lp_base'].value, results['lp_comp'].value + 1e-9)
         self.assertLessEqual(results['lp_comp'].value, results['lp_fcc_k'].value + 1e-9)
@@ -145,6 +158,8 @@ class ModalityATests(unittest.TestCase):
         r = results['lp_fcc_k']
         self.assertEqual(r.certification, fcore.NOT_MEASURED_CAP_EXCEEDED)
         self.assertIsNone(r.value)  # nunca 0 nem um palpite
+        self.assertGreater(r.time_s, 0.0)
+        self.assertEqual(r.status, 'CAP_EXCEEDED')
 
 
 class ModalityBTests(unittest.TestCase):
@@ -162,6 +177,9 @@ class ModalityBTests(unittest.TestCase):
         self.assertEqual(rf.certification, fcore.CERTIFIED_MIP_OPTIMAL)
         self.assertTrue(rb.physically_validated)
         self.assertTrue(rf.physically_validated)
+        self.assertGreater(rb.time_s, 0.0)
+        self.assertGreater(rf.time_s, 0.0)
+        self.assertTrue(dict(rf.phase_wall_s).get('model_build', 0.0) > 0.0)
         self.assertEqual(rb.gap_abs, 0.0)
         self.assertEqual(rf.gap_abs, 0.0)
 
@@ -215,7 +233,12 @@ class ModalityBTests(unittest.TestCase):
         inst = fi.load_instance(HB_Q4_ROW)
         tight = fcfg.ExperimentConfig(time_limit_s=0.0001, lp_time_limit_s=1.0)
         r = fcore.run_modality_b_fcc_k(inst, tight)
-        self.assertIn(r.status_name, ('TIME_LIMIT', 'OPTIMAL'))
+        self.assertIn(r.status_name, ('TIMEOUT_PREPARATION', 'TIMEOUT_SOLVER',
+                                      'TIMEOUT_VALIDATION', 'TIME_LIMIT', 'OPTIMAL'))
+        if r.status_name.startswith('TIMEOUT_'):
+            self.assertIsNone(r.objective_ub)
+            self.assertIsNone(r.objective_lb)
+            self.assertIsNone(r.time_to_proof_s)
         if r.status_name == 'TIME_LIMIT':
             self.assertIn(r.certification,
                           (fcore.CERTIFIED_MIP_BOUND, fcore.UNCERTIFIED_NO_INCUMBENT))
@@ -225,8 +248,10 @@ class ModalityBTests(unittest.TestCase):
         inst = fi.load_instance(HB_Q4_ROW)
         cfg = fcfg.ExperimentConfig(time_limit_s=60.0, lp_time_limit_s=5.0)
         results = fcore.run_modality_a(inst, cfg)
-        for key in ('lp_base', 'lp_comp'):
-            self.assertLessEqual(results[key].time_s, 5.0 + 2.0)  # folga de overhead, não travou
+        for key in ('lp_base', 'lp_comp', 'lp_fcc_k'):
+            self.assertLessEqual(results[key].time_s, 5.0 + 2.0)
+            self.assertEqual(results[key].time_s, results[key].time_s)
+            self.assertTrue(results[key].phase_wall_s)
 
 
 class ReportingTests(unittest.TestCase):

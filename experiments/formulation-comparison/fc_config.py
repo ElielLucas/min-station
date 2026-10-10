@@ -20,7 +20,7 @@ class ExperimentConfig:
     """Parâmetros de uma rodada. Imutável: cada rodada grava sua própria cópia.
 
     `time_limit_s` é o limite por execução de MIP (Modalidade B/C), global
-    por chamada ao solver — não reiniciado entre formulações nem dentro de
+    por braço (preparação, solver e validação) — não reiniciado entre formulações nem dentro de
     uma mesma chamada. `lp_time_limit_s` é um teto de segurança separado
     para a Modalidade A (LPs devem ser rápidos; um teto evita travar o lote
     inteiro por degenerescência, ver nota em `harness.measure_lp`).
@@ -35,12 +35,13 @@ class ExperimentConfig:
     max_w: int = 200000
     checkpoints_s: tuple = CHECKPOINT_MARKS_S
     modalities: tuple = MODALITIES
-    memory_metric: str = 'ru_maxrss_kb_process_cumulative'
+    memory_metric: str = 'ru_maxrss_kb_worker_process_cumulative'
 
     def __post_init__(self):
         if self.threads < 1:
             raise ValueError('threads deve ser >= 1')
-        if self.time_limit_s <= 0 or self.lp_time_limit_s <= 0:
+        if (not math.isfinite(self.time_limit_s) or self.time_limit_s <= 0 or
+                not math.isfinite(self.lp_time_limit_s) or self.lp_time_limit_s <= 0):
             raise ValueError('limites de tempo devem ser positivos')
         if self.max_w < 1:
             raise ValueError('max_w deve ser >= 1')
