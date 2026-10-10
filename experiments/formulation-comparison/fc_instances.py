@@ -38,9 +38,8 @@ EXCLUDED_NAMES = frozenset({'lin23.txt', 'lin37.txt'})  # classe=historico; inst
 class Instance:
     """Instância materializada: S, T, V, adj, A_r, r e metadados do manifesto.
 
-    `instance_sha256` é o hash do conteúdo do arquivo (`sha256_conteudo` do
-    manifesto, quando presente; caso contrário recomputado aqui), usado para
-    conferir que as duas formulações resolvem exatamente a mesma instância.
+    `instance_sha256` é sempre o SHA dos bytes reais (`sha256` do manifesto).
+    `sha256_conteudo` é verificado separadamente excluindo linhas `# meta:`.
     """
     nome: str
     caminho: str
@@ -76,7 +75,19 @@ def load_instance(row, root=ROOT):
     """Materializa uma linha do manifesto em um objeto `Instance` completo."""
     caminho = root / row['caminho']
     conteudo = caminho.read_bytes()
-    sha_conteudo = row.get('sha256_conteudo') or hashlib.sha256(conteudo).hexdigest()
+    # O manifesto distingue SHA bruto (`sha256`) e SHA sem linhas # meta:
+    # (`sha256_conteudo`). Conferir ambos contra seus contratos corretos.
+    sha_bytes = hashlib.sha256(conteudo).hexdigest()
+    sha_normalizado = hashlib.sha256('\n'.join(
+        ln for ln in conteudo.decode('utf-8').splitlines()
+        if not ln.startswith('# meta:')
+    ).encode('utf-8')).hexdigest()
+    digest_bruto = (row.get('sha256') or '').strip()
+    digest_conteudo = (row.get('sha256_conteudo') or '').strip()
+    if digest_bruto and digest_bruto != sha_bytes:
+        raise ValueError(f'INTEGRITY_ERROR: sha256 (bytes) divergente em {caminho}')
+    if digest_conteudo and digest_conteudo != sha_normalizado:
+        raise ValueError(f'INTEGRITY_ERROR: sha256_conteudo (sem metadados) divergente em {caminho}')
     dados = ler_instancia(str(caminho))
     adj = construir_adjacencia(dados['E'])
     r = float(row['r']) if row.get('r') else float(dados['R'])
@@ -86,7 +97,7 @@ def load_instance(row, root=ROOT):
         familia=_familia(row['caminho']), n=int(row['n']) if row['n'] else len(dados['V']),
         m_arestas=int(row.get('arestas_nao_dirigidas') or 0), r=r,
         m=len(dados['S']), S=tuple(dados['S']), T=tuple(dados['T']), V=tuple(dados['V']),
-        adj=dict(adj), A_r=A_r, instance_sha256=sha_conteudo,
+        adj=dict(adj), A_r=A_r, instance_sha256=sha_bytes,
     )
 
 

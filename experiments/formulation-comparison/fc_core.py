@@ -19,6 +19,8 @@ comparação altera N1/N2.
 from __future__ import annotations
 
 import resource
+import hashlib
+import json
 import math
 import sys
 import time
@@ -44,6 +46,7 @@ from gurobipy import GRB  # noqa: E402
 
 from baseline import construir_modelo_baseline  # noqa: E402
 from harness import _make_mip  # noqa: E402
+from cuts import assert_valid_cuts  # noqa: E402
 from fcc_k import build_fcc_plus_k, prepare_k  # noqa: E402
 from fc_budget import BoundedOutcome, run_bounded  # noqa: E402
 
@@ -150,6 +153,7 @@ class LPResult:
     work: float | None = None
     phase_wall_s: tuple = ()
     stop_reason: str = ''
+    k_sha256: str | None = None
 
 
 @dataclass(frozen=True)
@@ -178,11 +182,33 @@ class MIPResult:
     solver_runtime_s: float | None = None
     phase_wall_s: tuple = ()
     stop_reason: str = ''
+    instance_sha256: str | None = None
+    k_sha256: str | None = None
+    n_K: int | None = None
+    n_K_added: int | None = None
+    k_validated: bool = False
+    physical_ub_status: str = 'NOT_ASSESSED'
+
+
+def _digest_k(K):
+    """Verifica independentemente o digest que prepare_k afirma produzir.
+
+    Serialização canônica idêntica ao contrato de fcc_k.prepare_k; sem
+    reimplementar famílias de cortes nem suas desigualdades.
+    """
+    canonical = [sorted(str(v) for v in Z) for Z in K]
+    payload = json.dumps(canonical, ensure_ascii=False, separators=(',', ':')).encode('utf8')
+    return hashlib.sha256(payload).hexdigest()
 
 
 def _k_for(instance):
     K, k_hash, _counts = prepare_k(instance.S, instance.T, instance.V, instance.adj,
                                    instance.A_r, instance.r)
+    if _digest_k(K) != k_hash:
+        raise ValueError('INTEGRITY_ERROR: prepare_k devolveu hash inconsistente com K')
+    # O solver compacto não valida cortes automaticamente na construção.
+    # Fazemos a verificação ANTES de adicionar K a QUALQUER braço MIP/LP.
+    assert_valid_cuts(instance.S, instance.T, instance.A_r, K, origem='FC-02-K')
     return K, k_hash
 
 
@@ -248,7 +274,7 @@ def _lp_job(ctx, instance, cfg, formulation):
                                              else f'STATUS_{lp.Status}'),
             certification=CERTIFIED_LP if optimal else NOT_MEASURED_SOLVER_ERROR,
             time_s=ctx.elapsed(), n_K=len(cuts), n_vars=n_vars, n_cons=n_cons,
-            solver_runtime_s=runtime, work=work,
+            solver_runtime_s=runtime, work=work, k_sha256=k_hash,
             stop_reason='OPTIMAL' if optimal else ('TIME_LIMIT_SOLVER' if lp.Status == GRB.TIME_LIMIT
                                                    else f'Gurobi status {lp.Status}'),
         )
@@ -355,13 +381,17 @@ def _solve_mip_with_evolution(model, cfg, formulation, y_vars, n_vars, n_cons, c
 
 
 def _mip_job(ctx, instance, cfg, formulation):
+    """Um orçamento FC-01 por braço; K gerado e validado dentro do worker."""
     model = None
     try:
         ctx.phase('k_preparation')
-        if formulation == 'fcc_k':
+        if formulation in ('comp_mip', 'fcc_k'):
             K, k_hash = _k_for(instance)
+        elif formulation == 'baseline':
+            K, k_hash = [], None
         else:
-            K = k_hash = None
+            raise ValueError(f'Formulação inteira desconhecida: {formulation}')
+
         ctx.phase('model_build')
         if formulation == 'fcc_k':
             model, y, _extra, meta = build_fcc_plus_k(
@@ -369,16 +399,38 @@ def _mip_job(ctx, instance, cfg, formulation):
                 K=K, k_hash=k_hash, max_W=cfg.max_w, integer_y=True,
             )
             n_vars, n_cons = meta['n_vars'], meta['n_cons']
+            n_added = meta['n_K_added']
+        elif formulation == 'comp_mip':
+            # Reuso literal da variante U: y binário, fluxo f CONTÍNUO.
+            model, y, f, n_added = _make_mip(
+                instance.S, instance.T, instance.V, instance.A_r, 'cont', K,
+            )
+            n_vars, n_cons = model.NumVars, model.NumConstrs
+            if any(var.VType != GRB.BINARY for var in y.values()):
+                raise ValueError('INTEGRITY_ERROR: COMP contém y não binário')
+            if any(var.VType != GRB.CONTINUOUS for var in f.values()):
+                raise ValueError('INTEGRITY_ERROR: COMP contém fluxo f não contínuo')
         else:
             model, y, f, _n_arcos, n_vert = construir_modelo_baseline(
                 instance.S, instance.T, instance.V, instance.A_r,
             )
             n_vars, n_cons = len(f) + n_vert, 3 * n_vert
+            n_added = 0
+
+        if n_added != len(K):
+            raise ValueError(f'INTEGRITY_ERROR: esperados {len(K)} cortes, adicionados {n_added}')
+
         result = _solve_mip_with_evolution(model, cfg, formulation, y, n_vars, n_cons, ctx)
+        result = replace(result, instance_sha256=instance.instance_sha256,
+                         k_sha256=k_hash, n_K=len(K), n_K_added=n_added,
+                         k_validated=(formulation in ('comp_mip', 'fcc_k')))
         if result.objective_ub is not None:
             ctx.phase('validation')
             validado = _validate(instance, set(result.installed))
-            result = replace(result, physically_validated=validado)
+            status = ('UB_PHYSICAL_VALIDATED' if validado is True
+                      else 'INVALID_PHYSICAL_WITNESS' if validado is False
+                      else 'UNVERIFIED_VALIDATOR_UNAVAILABLE')
+            result = replace(result, physically_validated=validado, physical_ub_status=status)
         return replace(result, ru_maxrss_kb_after=_ru_maxrss_kb())
     finally:
         if model is not None:
@@ -409,6 +461,11 @@ def _run_mip_bounded(instance, cfg, formulation):
         return _failed_mip(formulation, outcome)
     return replace(outcome.value, time_s=outcome.wall_total_s,
                    phase_wall_s=outcome.phase_wall_s)
+
+
+def run_modality_b_comp(instance, cfg):
+    """FC-02: MIP COMP+K, fluxo contínuo, mesmo prazo global que F-CC+K."""
+    return _run_mip_bounded(instance, cfg, 'comp_mip')
 
 
 def run_modality_b_baseline(instance, cfg):

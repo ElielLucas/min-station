@@ -26,6 +26,9 @@ RESULTS_FIELDS = [
     'wall_total_s', 'solver_runtime_s', 'stop_reason', 'wall_startup_s',
     'wall_k_preparation_s', 'wall_model_build_s', 'wall_solve_s',
     'wall_validation_s', 'wall_supervisor_shutdown_s', 'wall_phases_json',
+    'comparison_role', 'pair_status', 'pair_reason', 'k_sha256', 'n_K',
+    'n_K_added', 'k_validated', 'physical_ub_status', 'pair_instance_sha256',
+    'pair_k_sha256',
 ]
 
 EVOLUTION_FIELDS = [
@@ -67,11 +70,15 @@ def _lp_row(instance, result: LPResult):
         'time_to_first_feasible_s': '', 'time_to_best_s': '', 'time_to_proof_s': '', 'nodes': '',
         'physically_validated': '',
         'observations': (f'{result.formulation}; K={result.n_K}; {result.reason}').strip('; '),
+        'comparison_role': 'lp_control', 'pair_status': '', 'pair_reason': '',
+        'k_sha256': result.k_sha256 or '', 'n_K': result.n_K if result.n_K is not None else '',
+        'n_K_added': '', 'k_validated': '', 'physical_ub_status': '',
+        'pair_instance_sha256': '', 'pair_k_sha256': '',
         **_wall_fields(result),
     }
 
 
-def _mip_row(instance, result: MIPResult):
+def _mip_row(instance, result: MIPResult, pair=None):
     return {
         'instance_name': instance.nome, 'classe': instance.classe, 'familia': instance.familia,
         'n': instance.n, 'm_arestas': instance.m_arestas, 'm_robos': instance.m, 'r': instance.r,
@@ -96,6 +103,22 @@ def _mip_row(instance, result: MIPResult):
         'nodes': result.nodes, 'physically_validated': result.physically_validated
         if result.physically_validated is not None else '',
         'observations': result.reason,
+        'comparison_role': ('primary' if result.formulation in ('comp_mip', 'fcc_k')
+                            else 'ablation_no_k'),
+        'pair_status': (pair.status if pair is not None and
+                        result.formulation in ('comp_mip', 'fcc_k') else
+                        'ABLATION_ONLY' if result.formulation == 'baseline' else 'NOT_ASSESSED'),
+        'pair_reason': (pair.reason if pair is not None and
+                        result.formulation in ('comp_mip', 'fcc_k') else ''),
+        'k_sha256': result.k_sha256 or '',
+        'n_K': result.n_K if result.n_K is not None else '',
+        'n_K_added': result.n_K_added if result.n_K_added is not None else '',
+        'k_validated': result.k_validated,
+        'physical_ub_status': result.physical_ub_status,
+        'pair_instance_sha256': (pair.instance_sha256 or '') if pair is not None and
+        result.formulation in ('comp_mip', 'fcc_k') else '',
+        'pair_k_sha256': (pair.k_sha256 or '') if pair is not None and
+        result.formulation in ('comp_mip', 'fcc_k') else '',
         **_wall_fields(result),
     }
 
@@ -106,16 +129,19 @@ def rows_for_modality_a(instance, a_results):
             if k in a_results]
 
 
-def rows_for_instance(instance, a_results, b_baseline, b_fcc_k):
-    """Monta as linhas de `results.csv` e `evolution.csv` para uma instância."""
-    rows = []
-    for key in ('lp_base', 'lp_comp', 'lp_fcc_k'):
-        if key in a_results:
-            rows.append(_lp_row(instance, a_results[key]))
-    rows.append(_mip_row(instance, b_baseline))
-    rows.append(_mip_row(instance, b_fcc_k))
+def rows_for_instance(instance, a_results, b_baseline=None, b_fcc_k=None,
+                      *, b_comp_mip=None, pair=None):
+    """FC-02: par primário COMP+K × FCC+K e ablação sem K opcional.
+
+    A assinatura antiga (instance, a, baseline, fcc) permanece aceita nos
+    testes de regressão FC-01; esses dados legados não são par FC-02 válido.
+    """
+    rows = rows_for_modality_a(instance, a_results)
     evolution = []
-    for result in (b_baseline, b_fcc_k):
+    for result in (b_comp_mip, b_fcc_k, b_baseline):
+        if result is None:
+            continue
+        rows.append(_mip_row(instance, result, pair))
         for point in result.evolution:
             evolution.append({
                 'instance_name': instance.nome, 'formulation': result.formulation,

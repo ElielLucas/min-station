@@ -12,6 +12,7 @@ altera seus arquivos.
 from __future__ import annotations
 
 import sys
+import hashlib
 import tempfile
 import unittest
 from pathlib import Path
@@ -25,6 +26,7 @@ import fc_core as fcore  # noqa: E402
 import fc_instances as fi  # noqa: E402
 import fc_reporting as rep  # noqa: E402
 from fc_core import EvolutionTracker  # noqa: E402
+from fc_pairing import assess_primary_pair  # noqa: E402
 
 HB_Q4_ROW = {
     'nome': 'hb-q4-ndir2-p1-k1-L2.txt',
@@ -113,7 +115,7 @@ class InstancePoolTests(unittest.TestCase):
         rows = {r['nome']: r for r in fi.load_manifest()}
         row = rows['hb-q4-ndir2-p1-k1-L2.txt']
         inst = fi.load_instance(row)
-        self.assertEqual(inst.instance_sha256, row['sha256_conteudo'])
+        self.assertEqual(inst.instance_sha256, row['sha256'])
         self.assertEqual(inst.n, 16)
         self.assertEqual(inst.m, 6)
 
@@ -310,3 +312,87 @@ class ConfigReproducibilityEndToEndTest(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class FC02GurobiIntegrationTests(unittest.TestCase):
+    """FC-02: exigem Gurobi real e verificam modelos, hashes e cortes reais."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.inst = fi.load_instance(HB_Q4_ROW)
+        cls.comp = fcore.run_modality_b_comp(cls.inst, PILOT_CFG)
+        cls.fcc = fcore.run_modality_b_fcc_k(cls.inst, PILOT_CFG)
+
+    def test_comp_mip_and_fcc_k_are_complete_and_same_k(self):
+        pair = assess_primary_pair(self.inst, self.comp, self.fcc)
+        self.assertEqual(pair.status, 'PAIR_VALID', pair.reason)
+        self.assertTrue(self.comp.k_validated)
+        self.assertTrue(self.fcc.k_validated)
+        self.assertEqual(self.comp.n_K, self.comp.n_K_added)
+        self.assertEqual(self.fcc.n_K, self.fcc.n_K_added)
+        self.assertEqual(self.comp.k_sha256, self.fcc.k_sha256)
+        self.assertEqual(self.comp.instance_sha256, self.inst.instance_sha256)
+        self.assertEqual(self.fcc.instance_sha256, self.inst.instance_sha256)
+        self.assertEqual(self.comp.status_name, 'OPTIMAL')
+        self.assertEqual(self.fcc.status_name, 'OPTIMAL')
+        self.assertAlmostEqual(self.comp.objective_ub, 2.0, places=7)
+        self.assertAlmostEqual(self.fcc.objective_ub, 2.0, places=7)
+        self.assertEqual(self.comp.physical_ub_status, 'UB_PHYSICAL_VALIDATED')
+        self.assertEqual(self.fcc.physical_ub_status, 'UB_PHYSICAL_VALIDATED')
+
+    def test_comp_structural_binary_y_continuous_f(self):
+        from harness import _make_mip
+        from gurobipy import GRB
+        cuts, k_hash = fcore._k_for(self.inst)
+        model, y, f, n_added = _make_mip(
+            self.inst.S, self.inst.T, self.inst.V, self.inst.A_r, 'cont', cuts,
+        )
+        try:
+            self.assertTrue(all(var.VType == GRB.BINARY for var in y.values()))
+            self.assertTrue(all(var.VType == GRB.CONTINUOUS for var in f.values()))
+            self.assertEqual(n_added, len(cuts))
+            self.assertEqual(k_hash, self.comp.k_sha256)
+        finally:
+            model.dispose()
+
+    def test_report_primary_pair_and_no_k_ablation(self):
+        rb = fcore.run_modality_b_baseline(self.inst, PILOT_CFG)
+        pair = assess_primary_pair(self.inst, self.comp, self.fcc)
+        rows, evolution = rep.rows_for_instance(
+            self.inst, {}, rb, self.fcc, b_comp_mip=self.comp, pair=pair,
+        )
+        self.assertEqual(len(rows), 3)
+        mapped = {r['formulation']: r for r in rows}
+        self.assertEqual(mapped['comp_mip']['comparison_role'], 'primary')
+        self.assertEqual(mapped['fcc_k']['comparison_role'], 'primary')
+        self.assertEqual(mapped['baseline']['comparison_role'], 'ablation_no_k')
+        self.assertEqual(mapped['baseline']['pair_status'], 'ABLATION_ONLY')
+        for f in ('comp_mip', 'fcc_k'):
+            self.assertEqual(mapped[f]['pair_status'], 'PAIR_VALID')
+            self.assertEqual(mapped[f]['pair_k_sha256'], pair.k_sha256)
+            self.assertEqual(mapped[f]['physical_ub_status'], 'UB_PHYSICAL_VALIDATED')
+        self.assertEqual(mapped['baseline']['k_sha256'], '')
+        self.assertEqual(len(evolution), sum(len(x.evolution)
+                         for x in (self.comp, self.fcc, rb)))
+
+    def test_cap_fcc_mip_never_becomes_paired(self):
+        tight = fcfg.ExperimentConfig(time_limit_s=20.0, max_w=1)
+        capped = fcore.run_modality_b_fcc_k(self.inst, tight)
+        self.assertEqual(capped.status_name, 'CAP_EXCEEDED', capped.reason)
+        self.assertEqual(capped.certification, fcore.NOT_MEASURED_CAP_EXCEEDED)
+        self.assertIsNone(capped.objective_lb)
+        self.assertIsNone(capped.objective_ub)
+        self.assertNotEqual(assess_primary_pair(self.inst, self.comp, capped).status,
+                            'PAIR_VALID')
+
+    def test_manifest_hash_is_verified_from_bytes(self):
+        with tempfile.TemporaryDirectory() as temp:
+            orig = ROOT / HB_Q4_ROW['caminho']
+            copied = Path(temp) / 'copy.txt'
+            copied.write_bytes(orig.read_bytes())
+            row = dict(HB_Q4_ROW, caminho='copy.txt', sha256='0' * 64)
+            with self.assertRaisesRegex(ValueError, 'INTEGRITY_ERROR'):
+                fi.load_instance(row, root=Path(temp))
+            row['sha256'] = hashlib.sha256(copied.read_bytes()).hexdigest()
+            good = fi.load_instance(row, root=Path(temp))
+            self.assertEqual(good.instance_sha256, row['sha256'])

@@ -1,0 +1,16 @@
+== hb-q4-ndir2-p1-k1-L2.txt (n=16, m=6, r=1.0, família=hb, classe=estrutural)
+   A/lp_base: OPTIMAL valor=0.3333333333333333 cert=CERTIFIED_LP wall=0.740s solver=0.0009260177612304688 work=0.00019960000652625125 stop=OPTIMAL reason=
+   A/lp_comp: OPTIMAL valor=1.0 cert=CERTIFIED_LP wall=0.706s solver=0.000997781753540039 work=0.00020559046949305388 stop=OPTIMAL reason=
+   A/lp_fcc_k: OPTIMAL valor=2.0 cert=CERTIFIED_LP wall=4.282s solver=1.0569651126861572 work=0.6762870672539164 stop=OPTIMAL reason=
+   B/comp_mip: OPTIMAL ub=2.0 lb=2.0 cert=CERTIFIED_MIP_OPTIMAL wall=0.683s solver=0.004549980163574219 work=0.0006 stop=OPTIMAL validado=True k=b7070e80a413118cb0a0975393d4d1ad3cc61cd40fff66cfc11e00f0273c85fa reason=
+   B/fcc_k: OPTIMAL ub=2.0 lb=2.0 cert=CERTIFIED_MIP_OPTIMAL wall=6.514s solver=2.7512319087982178 work=2.3107 stop=OPTIMAL validado=True k=b7070e80a413118cb0a0975393d4d1ad3cc61cd40fff66cfc11e00f0273c85fa reason=
+   B/baseline: OPTIMAL ub=2.0 lb=2.0 cert=CERTIFIED_MIP_OPTIMAL wall=1.046s solver=0.013952970504760742 work=0.0008 stop=OPTIMAL validado=True k=None reason=
+   B/PRIMARY_PAIR: PAIR_VALID k=b7070e80a413118cb0a0975393d4d1ad3cc61cd40fff66cfc11e00f0273c85fa reason=
+== bp-nao-q2-B2-s0.txt (n=16, m=4, r=1.0, família=bp, classe=estrutural)
+   A/lp_base: OPTIMAL valor=3.0 cert=CERTIFIED_LP wall=1.031s solver=0.0018460750579833984 work=0.00012863789602040812 stop=OPTIMAL reason=
+   A/lp_comp: OPTIMAL valor=6.0 cert=CERTIFIED_LP wall=1.384s solver=0.0008308887481689453 work=0.00015080056382086175 stop=OPTIMAL reason=
+   A/lp_fcc_k: OPTIMAL valor=7.0 cert=CERTIFIED_LP wall=2.563s solver=0.7025790214538574 work=0.1440766837716315 stop=OPTIMAL reason=
+   B/fcc_k: OPTIMAL ub=7.0 lb=7.0 cert=CERTIFIED_MIP_OPTIMAL wall=4.734s solver=2.6274309158325195 work=2.6832 stop=OPTIMAL validado=True k=db632df6dee04cf1987096b64d3379a62836f04b726db82d0249c88e1ff09ec8 reason=
+   B/comp_mip: OPTIMAL ub=7.0 lb=7.0 cert=CERTIFIED_MIP_OPTIMAL wall=1.314s solver=0.008079051971435547 work=0.0003 stop=OPTIMAL validado=True k=db632df6dee04cf1987096b64d3379a62836f04b726db82d0249c88e1ff09ec8 reason=
+   B/baseline: OPTIMAL ub=7.0 lb=7.0 cert=CERTIFIED_MIP_OPTIMAL wall=1.175s solver=0.011829137802124023 work=0.0003 stop=OPTIMAL validado=True k=None reason=
+   B/PRIMARY_PAIR: PAIR_VALID k=db632df6dee04cf1987096b64d3379a62836f04b726db82d0249c88e1ff09ec8 reason=

@@ -100,3 +100,65 @@ PYTHONHASHSEED=0 python experiments/formulation-comparison/run_comparison.py \
 Não execute o lote completo de 3.600s antes do gate FC-05. FC-01 corrige
 contabilização e interrupção; não redefine prova racional nem comparação
 COMP inteiro × F-CC+K (tarefas FC-03/FC-02).
+
+## FC-02 — Comparação inteira justa COMP+K × F-CC+K
+
+O par **primário** da Modalidade B agora é:
+
+- `comp_mip`: `harness._make_mip(..., f_type='cont', upfront_cuts=K)`;
+  estações `y` binárias, fluxos `f` contínuos, todos os cortes K aplicados.
+- `fcc_k`: `fcc_k.build_fcc_plus_k(..., K=K, integer_y=True)`;
+  enumeração completa sob cap e o mesmo K.
+
+`baseline` mantém o modelo U legado, **sem K**, e é somente **ablação
+opcional**, não mais o controle científico principal.
+
+Cada braço usa seu próprio orçamento FC-01, com os mesmos valores de
+`seed`, `threads`, `time_limit_s`, `max_w` e a mesma instância. A ordem dos
+dois braços principais alterna entre instâncias. K é produzido e validado
+dentro de cada worker, sob o relógio do próprio braço; o hash é confrontado
+entre braços **antes** de declarar o par comparável. O hash da instância
+é dos bytes reais, confrontado com `sha256` do manifesto. O campo separado
+`sha256_conteudo` é validado após remover as linhas `# meta:`: não confundir
+essas duas semânticas do manifesto.
+
+`results.csv` acrescenta `comparison_role`, `pair_status`, `pair_reason`,
+`k_sha256`, `n_K`, `n_K_added`, `k_validated`, `physical_ub_status`,
+`pair_instance_sha256` e `pair_k_sha256`.
+
+- `PAIR_VALID`: instância e K idênticos, cortes íntegros e incumbentes,
+  quando existentes, fisicamente validados pelo oráculo independente. **Não**
+  significa valores racionalmente certificados nem otimalidade dos braços.
+- `PAIR_NOT_AVAILABLE`: braço ausente, timeout, cap, erro ou status sem
+  evidência suficiente. Os valores não são inferidos.
+- `INTEGRITY_ERROR`: hashes diferentes, cortes não validados/aplicados ou
+  falha explícita de integridade dos cortes.
+- `INVALID_PHYSICAL_WITNESS`: pelo menos uma incumbente não foi validada.
+- `ABLATION_ONLY`: linha do baseline sem K, fora do par primário.
+
+Os campos antigos `CERTIFIED_LP`, `CERTIFIED_MIP_OPTIMAL` e
+`CERTIFIED_MIP_BOUND` descrevem os **status numéricos do Gurobi** na versão
+FC-01. A revisão dessa terminologia é objeto da FC-03; não atribua a esses
+rótulos uma prova racional independente.
+
+```bash
+# Par principal, sem ablação
+PYTHONHASHSEED=0 python experiments/formulation-comparison/run_comparison.py \
+  --tier pilot --modalities A,B --time-limit 120 --lp-time-limit 60
+
+# Par principal + ablação sem K (três braços MIP)
+PYTHONHASHSEED=0 python experiments/formulation-comparison/run_comparison.py \
+  --tier pilot --modalities A,B --formulations comp_mip,fcc_k,baseline \
+  --time-limit 120 --lp-time-limit 60
+
+# Testes independentes de Gurobi
+PYTHONHASHSEED=0 python -m unittest discover \
+  -s experiments/formulation-comparison -p 'test_fc02_*.py' -v
+
+# Suíte integral — requer licença Gurobi
+PYTHONHASHSEED=0 python -m unittest discover \
+  -s experiments/formulation-comparison -p 'test_*.py' -v
+```
+
+A FC-02 **não altera** `baseline.py`, `harness.py`, `fcc.py`, `fcc_k.py`,
+certificadores ou resultados congelados de N1/N2.

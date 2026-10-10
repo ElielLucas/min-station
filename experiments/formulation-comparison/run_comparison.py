@@ -40,6 +40,9 @@ import fc_reporting as rep  # noqa: E402
 
 RESULTS_DIR = ROOT / 'results' / 'formulation-comparison'
 
+DEFAULT_FORMULATIONS = ('comp_mip', 'fcc_k')
+ALLOWED_FORMULATIONS = frozenset((*DEFAULT_FORMULATIONS, 'baseline'))
+
 
 def _check_gurobi():
     """Retorna (ok, mensagem). Nunca troca de solver silenciosamente."""
@@ -55,18 +58,20 @@ def _check_gurobi():
     return True, ''
 
 
-def _order_tasks(instances):
-    """Intercala baseline/fcc_k e alterna qual roda primeiro por instância,
-    para reduzir viés de aquecimento (ver protocolo, §7)."""
+def _order_tasks(instances, formulations=DEFAULT_FORMULATIONS):
+    """Alterna ordem do PAR e roda ablação, se solicitada, separadamente."""
+    primary = tuple(f for f in DEFAULT_FORMULATIONS if f in formulations)
+    optional = tuple(f for f in formulations if f not in primary)
     tasks = []
     for idx, inst in enumerate(instances):
-        order = ('baseline', 'fcc_k') if idx % 2 == 0 else ('fcc_k', 'baseline')
-        tasks.append((inst, order))
+        order = primary if idx % 2 == 0 else tuple(reversed(primary))
+        tasks.append((inst, order + optional))
     return tasks
 
 
-def run(tier, cfg, out_dir, modalities):
+def run(tier, cfg, out_dir, modalities, formulations=DEFAULT_FORMULATIONS):
     import fc_core as fcore
+    from fc_pairing import assess_primary_pair
 
     shared_start = time.monotonic()
     instances = fi.pool(tier)
@@ -76,7 +81,8 @@ def run(tier, cfg, out_dir, modalities):
     evolution_csv = out_dir / 'evolution.csv'
     log_path = out_dir / 'run.log'
     environment = fcfg.environment_manifest()
-    print(f'[{tier}] {len(instances)} instâncias; modalidades={modalities}; saída={out_dir}')
+    print(f'[{tier}] {len(instances)} instâncias; modalidades={modalities}; '
+          f'formulations={formulations}; saída={out_dir}')
 
     all_results_written = False
     errors = []
@@ -86,7 +92,7 @@ def run(tier, cfg, out_dir, modalities):
             log.write(msg + '\n')
             log.flush()
 
-        for inst, order in _order_tasks(instances):
+        for inst, order in _order_tasks(instances, formulations):
             report(f'== {inst.nome} (n={inst.n}, m={inst.m}, r={inst.r}, '
                    f'família={inst.familia}, classe={inst.classe})')
             a_results = {}
@@ -107,19 +113,21 @@ def run(tier, cfg, out_dir, modalities):
                     report(f'   A: FALHA\n{tb}')
                     errors.append((inst.nome, 'A', tb))
 
-            b_baseline = b_fcc_k = None
+            b_results = {}
+            pair = None
             if 'B' in modalities:
-                runners = {'baseline': fcore.run_modality_b_baseline,
-                          'fcc_k': fcore.run_modality_b_fcc_k}
-                outcome = {}
+                runners = {'comp_mip': fcore.run_modality_b_comp,
+                           'fcc_k': fcore.run_modality_b_fcc_k,
+                           'baseline': fcore.run_modality_b_baseline}
                 for formulation in order:
                     try:
-                        outcome[formulation] = runners[formulation](inst, cfg)
-                        r = outcome[formulation]
+                        b_results[formulation] = runners[formulation](inst, cfg)
+                        r = b_results[formulation]
                         report(f'   B/{formulation}: {r.status_name} ub={r.objective_ub} '
                                f'lb={r.objective_lb} cert={r.certification} '
-                               f'wall={r.time_s:.3f}s solver={r.solver_runtime_s} work={r.work:.4f} '
-                               f'stop={r.stop_reason} validado={r.physically_validated} '
+                               f'wall={r.time_s:.3f}s solver={r.solver_runtime_s} '
+                               f'work={r.work:.4f} stop={r.stop_reason} '
+                               f'validado={r.physically_validated} k={r.k_sha256} '
                                f'reason={r.reason.splitlines()[0] if r.reason else ""}')
                         if r.status_name in ('WORKER_ERROR', 'SOLVER_UNAVAILABLE'):
                             errors.append((inst.nome, f'B/{formulation}', r.reason))
@@ -127,23 +135,30 @@ def run(tier, cfg, out_dir, modalities):
                         tb = traceback.format_exc()
                         report(f'   B/{formulation}: FALHA\n{tb}')
                         errors.append((inst.nome, f'B/{formulation}', tb))
-                b_baseline, b_fcc_k = outcome.get('baseline'), outcome.get('fcc_k')
+                pair = assess_primary_pair(inst, b_results.get('comp_mip'),
+                                           b_results.get('fcc_k'))
+                report(f'   B/PRIMARY_PAIR: {pair.status} '
+                       f'k={pair.k_sha256} reason={pair.reason}')
+                if pair.status in ('INTEGRITY_ERROR', 'INVALID_PHYSICAL_WITNESS'):
+                    errors.append((inst.nome, 'B/PRIMARY_PAIR', pair.reason))
 
-            if b_baseline is not None and b_fcc_k is not None:
-                rows, evo = rep.rows_for_instance(inst, a_results, b_baseline, b_fcc_k)
-                rep.write_csv(results_csv, rep.RESULTS_FIELDS, rows, append=all_results_written)
-                rep.write_csv(evolution_csv, rep.EVOLUTION_FIELDS, evo,
-                             append=all_results_written)
-                all_results_written = True
-            elif a_results:
-                rows = rep.rows_for_modality_a(inst, a_results)
-                rep.write_csv(results_csv, rep.RESULTS_FIELDS, rows, append=all_results_written)
+            if a_results or b_results:
+                rows, evo = rep.rows_for_instance(
+                    inst, a_results, b_results.get('baseline'), b_results.get('fcc_k'),
+                    b_comp_mip=b_results.get('comp_mip'), pair=pair,
+                )
+                rep.write_csv(results_csv, rep.RESULTS_FIELDS, rows,
+                              append=all_results_written)
+                if evo:
+                    rep.write_csv(evolution_csv, rep.EVOLUTION_FIELDS, evo,
+                                  append=all_results_written)
                 all_results_written = True
 
     commands = [
         f'PYTHONHASHSEED=0 python run_comparison.py --tier {tier} '
         f'--modalities {",".join(modalities)} --time-limit {cfg.time_limit_s} '
-        f'--threads {cfg.threads} --seed {cfg.seed}',
+        f'--threads {cfg.threads} --seed {cfg.seed} '
+        f'--formulations {",".join(formulations)}',
     ]
     limitations = [
         'F-CC+K (Modalidades A e B) usa enumeração completa de (W,I,J); instâncias acima do '
@@ -152,6 +167,10 @@ def run(tier, cfg, out_dir, modalities):
         'fronteira de escalabilidade, não para comparar diretamente as duas formulações nelas.',
         'Memória é resource.ru_maxrss do worker isolado (pico cumulativo do worker); '
         'ver fc_config.ExperimentConfig.memory_metric.',
+        'FC-02: par inteiro primário COMP+K (y binário, fluxo contínuo) × F-CC+K; '
+        'baseline sem K é ablação opcional, nunca controle principal.',
+        'PAIR_VALID certifica somente comparabilidade dos parâmetros e validade física das '
+        'incumbentes observadas; não constitui prova racional independente de otimalidade.',
         'Este experimento é independente da N2 (N2-T2B/N2-T3..T6); não usa a geração de colunas '
         'na raiz nem reabre a decisão N2 FAIL.',
     ]
@@ -162,6 +181,9 @@ def run(tier, cfg, out_dir, modalities):
     manifest['shared_instance_loading_wall_s'] = shared_instance_load_s
     manifest['tier'] = tier
     manifest['modalities'] = list(modalities)
+    manifest['formulations'] = list(formulations)
+    manifest['primary_comparison'] = ['comp_mip', 'fcc_k']
+    manifest['optional_ablation'] = 'baseline'
     manifest['errors'] = [{'instance': n, 'stage': s, 'traceback': tb} for n, s, tb in errors]
     rep.write_json(out_dir / 'manifest.json', manifest)
     print(f'Concluído. {len(errors)} falha(s). Artefatos em {out_dir}')
@@ -174,6 +196,8 @@ def main(argv=None):
     parser.add_argument('--tier', choices=('pilot', 'main', 'scalability'), required=True)
     parser.add_argument('--modalities', default='A,B',
                         help='subconjunto separado por vírgula de {A,B} (C é coletada junto com B)')
+    parser.add_argument('--formulations', default=','.join(DEFAULT_FORMULATIONS),
+                        help='braços MIP: comp_mip,fcc_k[,baseline]; baseline sem K é ablação')
     parser.add_argument('--time-limit', type=float, default=None,
                         help='segundos globais por braço de MIP, incluindo montagem e validação; default 3600, '
                              'ou 120 com --tier pilot')
@@ -186,6 +210,12 @@ def main(argv=None):
     args = parser.parse_args(argv)
 
     modalities = tuple(sorted(set(args.modalities.split(','))))
+    if not modalities or set(modalities) - {'A', 'B'}:
+        parser.error('--modalities deve conter apenas A,B')
+    formulations = tuple(f.strip() for f in args.formulations.split(',') if f.strip())
+    if (not formulations or len(formulations) != len(set(formulations)) or
+            set(formulations) - ALLOWED_FORMULATIONS):
+        parser.error('--formulations aceita comp_mip,fcc_k,baseline, sem repetições')
 
     ok, msg = _check_gurobi()
     if not ok:
@@ -206,7 +236,7 @@ def main(argv=None):
         ts = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
         out_dir = RESULTS_DIR / f'{args.tier}-{ts}'
 
-    n_errors = run(args.tier, cfg, out_dir, modalities)
+    n_errors = run(args.tier, cfg, out_dir, modalities, formulations=formulations)
     return 1 if n_errors else 0
 
 
