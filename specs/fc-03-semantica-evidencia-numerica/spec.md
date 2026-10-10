@@ -1,6 +1,6 @@
 # FC-03 — Semântica de limites, certificados e convergência — Specification
 
-**Status:** RASCUNHO (não implementada)  
+**Status:** EM VALIDAÇÃO — implementação local concluída; aceite integrado pendente  
 **Prioridade:** P1  
 **Pré-requisito:** FC-02; pode evoluir em paralelo com FC-04 após a interface estabilizada  
 **Caminho:** `specs/fc-03-semantica-evidencia-numerica/`  

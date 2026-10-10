@@ -1,0 +1,16 @@
+== hb-q4-ndir2-p1-k1-L2.txt (n=16, m=6, r=1.0, família=hb, classe=estrutural)
+   A/lp_base: OPTIMAL valor=0.3333333333333333 solver_evidence=SOLVER_NUMERIC_OPTIMAL rational=NOT_CERTIFIED wall=0.776s solver=0.0008790493011474609 work=0.00019960000652625125 stop=OPTIMAL reason=
+   A/lp_comp: OPTIMAL valor=1.0 solver_evidence=SOLVER_NUMERIC_OPTIMAL rational=NOT_CERTIFIED wall=0.696s solver=0.0010409355163574219 work=0.00020559046949305388 stop=OPTIMAL reason=
+   A/lp_fcc_k: OPTIMAL valor=2.0 solver_evidence=SOLVER_NUMERIC_OPTIMAL rational=NOT_CERTIFIED wall=4.283s solver=1.083096981048584 work=0.6762870672539164 stop=OPTIMAL reason=
+   B/comp_mip: OPTIMAL ub=2.0 lb_numeric=2.0 solver_evidence=SOLVER_NUMERIC_OPTIMAL rational=NOT_CERTIFIED physical_ub=2 wall=0.689s solver=0.005003929138183594 work=0.0006 stop=OPTIMAL validado=True k=b7070e80a413118cb0a0975393d4d1ad3cc61cd40fff66cfc11e00f0273c85fa reason=
+   B/fcc_k: OPTIMAL ub=2.0 lb_numeric=2.0 solver_evidence=SOLVER_NUMERIC_OPTIMAL rational=NOT_CERTIFIED physical_ub=2 wall=5.651s solver=2.334183931350708 work=2.3107 stop=OPTIMAL validado=True k=b7070e80a413118cb0a0975393d4d1ad3cc61cd40fff66cfc11e00f0273c85fa reason=
+   B/baseline: OPTIMAL ub=2.0 lb_numeric=2.0 solver_evidence=SOLVER_NUMERIC_OPTIMAL rational=NOT_CERTIFIED physical_ub=2 wall=0.681s solver=0.005773067474365234 work=0.0008 stop=OPTIMAL validado=True k=None reason=
+   B/PRIMARY_PAIR: PAIR_VALID k=b7070e80a413118cb0a0975393d4d1ad3cc61cd40fff66cfc11e00f0273c85fa reason=
+== bp-nao-q2-B2-s0.txt (n=16, m=4, r=1.0, família=bp, classe=estrutural)
+   A/lp_base: OPTIMAL valor=3.0 solver_evidence=SOLVER_NUMERIC_OPTIMAL rational=NOT_CERTIFIED wall=0.677s solver=0.0007560253143310547 work=0.00012863789602040812 stop=OPTIMAL reason=
+   A/lp_comp: OPTIMAL valor=6.0 solver_evidence=SOLVER_NUMERIC_OPTIMAL rational=NOT_CERTIFIED wall=0.683s solver=0.000820159912109375 work=0.00015080056382086175 stop=OPTIMAL reason=
+   A/lp_fcc_k: OPTIMAL valor=7.0 solver_evidence=SOLVER_NUMERIC_OPTIMAL rational=NOT_CERTIFIED wall=1.530s solver=0.3034529685974121 work=0.1440766837716315 stop=OPTIMAL reason=
+   B/fcc_k: OPTIMAL ub=7.0 lb_numeric=7.0 solver_evidence=SOLVER_NUMERIC_OPTIMAL rational=NOT_CERTIFIED physical_ub=7 wall=2.954s solver=1.7347428798675537 work=2.6832 stop=OPTIMAL validado=True k=db632df6dee04cf1987096b64d3379a62836f04b726db82d0249c88e1ff09ec8 reason=
+   B/comp_mip: OPTIMAL ub=7.0 lb_numeric=7.0 solver_evidence=SOLVER_NUMERIC_OPTIMAL rational=NOT_CERTIFIED physical_ub=7 wall=0.676s solver=0.003777027130126953 work=0.0003 stop=OPTIMAL validado=True k=db632df6dee04cf1987096b64d3379a62836f04b726db82d0249c88e1ff09ec8 reason=
+   B/baseline: OPTIMAL ub=7.0 lb_numeric=7.0 solver_evidence=SOLVER_NUMERIC_OPTIMAL rational=NOT_CERTIFIED physical_ub=7 wall=0.852s solver=0.0054318904876708984 work=0.0003 stop=OPTIMAL validado=True k=None reason=
+   B/PRIMARY_PAIR: PAIR_VALID k=db632df6dee04cf1987096b64d3379a62836f04b726db82d0249c88e1ff09ec8 reason=

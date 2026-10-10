@@ -1,0 +1,108 @@
+{
+  "git": {
+    "branch": "novos_testes",
+    "commit": "254cf604a79fdfc59371b22ed5bd3d198ce0f379",
+    "dirty": true
+  },
+  "config": {
+    "threads": 4,
+    "seed": 42,
+    "time_limit_s": 120.0,
+    "lp_time_limit_s": 60.0,
+    "max_w": 200000,
+    "checkpoints_s": [
+      1.0,
+      5.0,
+      10.0,
+      30.0,
+      60.0,
+      120.0,
+      300.0,
+      600.0,
+      1800.0,
+      3600.0
+    ],
+    "modalities": [
+      "A",
+      "B",
+      "C"
+    ],
+    "memory_metric": "ru_maxrss_kb_worker_process_cumulative"
+  },
+  "environment": {
+    "python_version": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "platform": "Linux-6.8.0-146-generic-x86_64-with-glibc2.39",
+    "processor": "x86_64",
+    "gurobi_version": "12.0.3",
+    "gurobi_available": true
+  },
+  "reused_files_sha256": {
+    "baseline.py": "f10dcf2e506072f806a5ac5b3af9d7d7292817beeae868bea92c3bf66d20fcb1",
+    "experiments/cuts/harness.py": "9287c03ea978f82a1d69ebd25c2a2d95f40e6895a02bc7a0b575075728fdf73c",
+    "experiments/cuts/cuts.py": "4952ac563156bc616105251b414e8c2778a3859be94ff5ed183c2d9cd8ffaebb",
+    "experiments/cuts/independent_validator.py": "fb18fd4a02533120129efc68c0acb6078c29f3af8dbade5f8d4852c7973cd352",
+    "experiments/alternative-formulations/fcc.py": "318d045e0f4ed5462085aac9c3f72ae1854346185bdad8dd5e03b9920730d919",
+    "experiments/alternative-formulations/fcc_k.py": "b52fc23bb0575bc950b09661217b88d4a91370926450b0ebba6cc03d1f63ae01",
+    "instances/manifest.csv": "218c490bd3ba3e34740bc23f13b07ba864f0d624755aca9b992a8f23f6afad08"
+  },
+  "instances": [
+    {
+      "nome": "hb-q4-ndir2-p1-k1-L2.txt",
+      "classe": "estrutural",
+      "familia": "hb",
+      "n": 16,
+      "m": 6,
+      "r": 1.0,
+      "instance_sha256": "65336031d2f606ac8029d2ac1714fc9b5cd4711826b93cd80cfc552fa6bd481e"
+    },
+    {
+      "nome": "bp-nao-q2-B2-s0.txt",
+      "classe": "estrutural",
+      "familia": "bp",
+      "n": 16,
+      "m": 4,
+      "r": 1.0,
+      "instance_sha256": "a4383c76f76dad63302b2f8fdbd3ac572c771a094ca9aaa8d19573cf3d0364d9"
+    }
+  ],
+  "commands": [
+    "PYTHONHASHSEED=0 python run_comparison.py --tier pilot --modalities A,B --time-limit 120.0 --threads 4 --seed 42 --formulations comp_mip,fcc_k,baseline"
+  ],
+  "limitations": [
+    "F-CC+K (Modalidades A e B) usa enumeração completa de (W,I,J); instâncias acima do cap de enumeração (max_w) são marcadas NOT_MEASURED_CAP_EXCEEDED, nunca aproximadas.",
+    "O lote scalability inclui instâncias deliberadamente acima do cap, para documentar a fronteira de escalabilidade, não para comparar diretamente as duas formulações nelas.",
+    "Memória é resource.ru_maxrss do worker isolado (pico cumulativo do worker); ver fc_config.ExperimentConfig.memory_metric.",
+    "FC-02: par inteiro primário COMP+K (y binário, fluxo contínuo) × F-CC+K; baseline sem K é ablação opcional, nunca controle principal.",
+    "PAIR_VALID confirma somente comparabilidade dos parâmetros e validade física das incumbentes observadas; não constitui prova racional independente de otimalidade.",
+    "FC-03: solver_numeric_* são dados de ponto flutuante do Gurobi. ObjBound de modelo completo é apenas bound numérico; jamais certificado racional sem verifier.",
+    "FC-03: nenhum comprovante racional independente é produzido automaticamente; rational_verification=NOT_CERTIFIED e certified_gap_status=INCONCLUSIVE por padrão.",
+    "FC-03: colunas legadas ambíguas lb_best, ub_best, gap_abs, gap_rel, optimality_proven e time_to_proof_s permanecem vazias no schema FC03-v1.",
+    "Este experimento é independente da N2 (N2-T2B/N2-T3..T6); não usa a geração de colunas na raiz nem reabre a decisão N2 FAIL."
+  ],
+  "generated_files": [
+    "results/formulation-comparison/pilot-20261010T195802Z/results.csv",
+    "results/formulation-comparison/pilot-20261010T195802Z/evolution.csv",
+    "results/formulation-comparison/pilot-20261010T195802Z/run.log"
+  ],
+  "shared_instance_loading_wall_s": 0.0035340479807928205,
+  "tier": "pilot",
+  "modalities": [
+    "A",
+    "B"
+  ],
+  "formulations": [
+    "comp_mip",
+    "fcc_k",
+    "baseline"
+  ],
+  "primary_comparison": [
+    "comp_mip",
+    "fcc_k"
+  ],
+  "optional_ablation": "baseline",
+  "evidence_schema": "FC03-v1",
+  "rational_verifier_executed": false,
+  "rational_proofs_automatically_generated": false,
+  "solver_numeric_bounds_are_rational_proofs": false,
+  "errors": []
+}

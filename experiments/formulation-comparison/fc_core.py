@@ -49,6 +49,10 @@ from harness import _make_mip  # noqa: E402
 from cuts import assert_valid_cuts  # noqa: E402
 from fcc_k import build_fcc_plus_k, prepare_k  # noqa: E402
 from fc_budget import BoundedOutcome, run_bounded  # noqa: E402
+from fc_evidence import (  # noqa: E402
+    NOT_CERTIFIED, NOT_MEASURED,
+    solver_classification, context_digest,
+)
 
 try:
     from independent_validator import viavel
@@ -57,16 +61,9 @@ except ImportError:  # pragma: no cover - deps do ambiente, não do código
 
 NOT_MEASURED_CAP_EXCEEDED = 'NOT_MEASURED_CAP_EXCEEDED'
 NOT_MEASURED_SOLVER_ERROR = 'NOT_MEASURED_SOLVER_ERROR'
-CERTIFIED_LP = 'CERTIFIED_LP'  # LP exato (não restrito), relaxação dual-factível válida
-CERTIFIED_MIP_OPTIMAL = 'CERTIFIED_MIP_OPTIMAL'
-CERTIFIED_MIP_BOUND = 'CERTIFIED_MIP_BOUND'  # ObjBound de B&B nativo sobre o modelo COMPLETO
-# ^ Distinção deliberada do caso N2: aqui o MIP já contém TODAS as colunas
-# (enumeração completa), então o ObjBound de um branch-and-bound nativo do
-# Gurobi é o bound dual-padrão de uma árvore de B&B sobre uma formulação
-# fechada — não o ObjBound de um MIP auxiliar de pricing sobre um master
-# restrito exponencial (essa é a situação específica que a revisão v2.1 da
-# N2-T2B trata como não certificável). As duas situações não são a mesma.
-UNCERTIFIED_NO_INCUMBENT = 'UNCERTIFIED_NO_INCUMBENT'
+# FC-03: solver outputs do not independently certify rational mathematics.
+# Legacy CERTIFIED_* constants are intentionally removed; historical CSVs remain intact.
+UNCERTIFIED_NO_INCUMBENT = NOT_CERTIFIED
 
 
 def _ru_maxrss_kb():
@@ -154,6 +151,11 @@ class LPResult:
     phase_wall_s: tuple = ()
     stop_reason: str = ''
     k_sha256: str | None = None
+    solver_evidence: str = NOT_MEASURED
+    rational_evidence: object | None = None
+    model_complete: bool = False
+    instance_sha256: str | None = None
+    model_context_sha256: str | None = None
 
 
 @dataclass(frozen=True)
@@ -188,6 +190,10 @@ class MIPResult:
     n_K_added: int | None = None
     k_validated: bool = False
     physical_ub_status: str = 'NOT_ASSESSED'
+    solver_evidence: str = NOT_MEASURED
+    rational_evidence: object | None = None
+    model_complete: bool = False
+    model_context_sha256: str | None = None
 
 
 def _digest_k(K):
@@ -272,9 +278,16 @@ def _lp_job(ctx, instance, cfg, formulation):
             formulation=formulation, value=float(lp.ObjVal) if optimal else None,
             status='OPTIMAL' if optimal else ('TIME_LIMIT' if lp.Status == GRB.TIME_LIMIT
                                              else f'STATUS_{lp.Status}'),
-            certification=CERTIFIED_LP if optimal else NOT_MEASURED_SOLVER_ERROR,
+            certification=NOT_CERTIFIED if optimal else NOT_MEASURED_SOLVER_ERROR,
             time_s=ctx.elapsed(), n_K=len(cuts), n_vars=n_vars, n_cons=n_cons,
             solver_runtime_s=runtime, work=work, k_sha256=k_hash,
+            solver_evidence=solver_classification(
+                'OPTIMAL' if optimal else ('TIME_LIMIT' if lp.Status == GRB.TIME_LIMIT
+                                          else f'STATUS_{lp.Status}'), model_complete=True),
+            model_complete=True, instance_sha256=instance.instance_sha256,
+            model_context_sha256=context_digest(
+                instance_sha256=instance.instance_sha256, formulation=formulation,
+                modality='A', k_sha256=k_hash, model_complete=True),
             stop_reason='OPTIMAL' if optimal else ('TIME_LIMIT_SOLVER' if lp.Status == GRB.TIME_LIMIT
                                                    else f'Gurobi status {lp.Status}'),
         )
@@ -356,12 +369,7 @@ def _solve_mip_with_evolution(model, cfg, formulation, y_vars, n_vars, n_cons, c
     ub = float(model.ObjVal) if sol_count > 0 else None
     gap_abs = (ub - lb) if ub is not None and lb is not None else None
     gap_rel = (gap_abs / ub) if gap_abs is not None and ub and ub > 1e-9 else None
-    if status == GRB.OPTIMAL:
-        certification = CERTIFIED_MIP_OPTIMAL
-    elif sol_count > 0:
-        certification = CERTIFIED_MIP_BOUND
-    else:
-        certification = UNCERTIFIED_NO_INCUMBENT
+    certification = NOT_CERTIFIED  # a B&B solver run is not a rational verifier
     installed = tuple(sorted(v for v, var in y_vars.items() if var.X > 0.5)) if sol_count else ()
     work = float(model.Work)
     tracker.final(ctx.elapsed(), lb, ub, int(getattr(model, 'NodeCount', 0)), work)
@@ -377,6 +385,9 @@ def _solve_mip_with_evolution(model, cfg, formulation, y_vars, n_vars, n_cons, c
         installed=installed, physically_validated=None,
         evolution=tuple(tracker.points), reason='', solver_runtime_s=runtime,
         stop_reason='OPTIMAL' if status == GRB.OPTIMAL else status_name,
+        solver_evidence=solver_classification(status_name, model_complete=True,
+                                              numeric_bound=lb),
+        model_complete=True,
     )
 
 
@@ -422,6 +433,10 @@ def _mip_job(ctx, instance, cfg, formulation):
 
         result = _solve_mip_with_evolution(model, cfg, formulation, y, n_vars, n_cons, ctx)
         result = replace(result, instance_sha256=instance.instance_sha256,
+                         model_context_sha256=context_digest(
+                             instance_sha256=instance.instance_sha256,
+                             formulation=formulation, modality='B',
+                             k_sha256=k_hash, model_complete=True),
                          k_sha256=k_hash, n_K=len(K), n_K_added=n_added,
                          k_validated=(formulation in ('comp_mip', 'fcc_k')))
         if result.objective_ub is not None:

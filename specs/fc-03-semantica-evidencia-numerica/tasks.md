@@ -2,11 +2,11 @@
 
 ## Execution Protocol (MANDATORY -- do not skip)
 
-Implementar com `/tlc-spec-driven` ativado, seguindo os gates dos scripts originais e verificador independente (autor ≠ verificador). **Este arquivo é planejamento, não representa execução.** Não modificar branch remoto, não criar PR/push; commits locais somente mediante autorização específica do usuário.
+Implementar com `/tlc-spec-driven` ativado, seguindo os gates dos scripts originais e verificador independente (autor ≠ verificador). **A execução e seus limites estão registrados em `validation.md`; este arquivo descreve o planejamento de tarefas.** Não modificar branch remoto, não criar PR/push; commits locais somente mediante autorização específica do usuário.
 
 **Spec:** `specs/fc-03-semantica-evidencia-numerica/spec.md`  
 **Design:** `specs/fc-03-semantica-evidencia-numerica/design.md`  
-**Status:** Draft — não executado  
+**Status:** Implementação local realizada; integração Gurobi/Ruff e verificação independente pendentes  
 **Pré-requisito externo:** FC-02; pode evoluir em paralelo com FC-04 após a interface estabilizada
 
 ## Test Coverage Matrix

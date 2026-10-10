@@ -49,7 +49,7 @@ def _result(formulation):
     r.time_s = 1.0
     r.solver_runtime_s = 0.1
     r.work = 0.5
-    r.certification = 'CERTIFIED_MIP_OPTIMAL'
+    r.certification = 'NOT_CERTIFIED'
     r.gap_abs = 0.0
     r.gap_rel = 0.0
     r.time_to_first_feasible_s = 0.3

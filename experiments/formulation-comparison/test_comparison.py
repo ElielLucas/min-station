@@ -144,7 +144,7 @@ class ModalityATests(unittest.TestCase):
         self.assertAlmostEqual(results['lp_fcc_k'].value, 2.0, places=7)
         for r in results.values():
             if hasattr(r, 'certification'):
-                self.assertEqual(r.certification, fcore.CERTIFIED_LP)
+                self.assertEqual(r.certification, fcore.NOT_CERTIFIED)
                 self.assertIsNotNone(r.solver_runtime_s)
                 self.assertIsNotNone(r.work)
                 self.assertGreaterEqual(r.time_s + 0.01, r.solver_runtime_s)
@@ -173,10 +173,10 @@ class ModalityBTests(unittest.TestCase):
         self.assertEqual(rf.status_name, 'OPTIMAL')
         self.assertAlmostEqual(rb.objective_ub, 2.0, places=7)
         self.assertAlmostEqual(rf.objective_ub, 2.0, places=7)
-        self.assertEqual(rb.objective_ub, rb.objective_lb)  # otimalidade: UB=LB exatos
+        self.assertEqual(rb.objective_ub, rb.objective_lb)  # valores reportados iguais dentro da precisão do solver
         self.assertEqual(rf.objective_ub, rf.objective_lb)
-        self.assertEqual(rb.certification, fcore.CERTIFIED_MIP_OPTIMAL)
-        self.assertEqual(rf.certification, fcore.CERTIFIED_MIP_OPTIMAL)
+        self.assertEqual(rb.certification, fcore.NOT_CERTIFIED)
+        self.assertEqual(rf.certification, fcore.NOT_CERTIFIED)
         self.assertTrue(rb.physically_validated)
         self.assertTrue(rf.physically_validated)
         self.assertGreater(rb.time_s, 0.0)
@@ -208,10 +208,10 @@ class ModalityBTests(unittest.TestCase):
         rb = fcore.run_modality_b_baseline(inst, PILOT_CFG)
         rf = fcore.run_modality_b_fcc_k(inst, PILOT_CFG)
         for r in (rb, rf):
-            self.assertIn(r.certification, (fcore.CERTIFIED_MIP_OPTIMAL,
-                                            fcore.CERTIFIED_MIP_BOUND,
+            self.assertIn(r.certification, (fcore.NOT_CERTIFIED,
+                                            fcore.NOT_CERTIFIED,
                                             fcore.UNCERTIFIED_NO_INCUMBENT))
-            self.assertNotEqual(r.certification, 'CERTIFIED')  # nunca o rótulo genérico
+            self.assertNotEqual(r.certification, 'CERTIFIED')  # rotulagem explícita sem prova racional
         import fc_core
         src = Path(fc_core.__file__).read_text(encoding='utf-8')
         self.assertNotIn('RestrictedMaster', src)
@@ -243,7 +243,7 @@ class ModalityBTests(unittest.TestCase):
             self.assertIsNone(r.time_to_proof_s)
         if r.status_name == 'TIME_LIMIT':
             self.assertIn(r.certification,
-                          (fcore.CERTIFIED_MIP_BOUND, fcore.UNCERTIFIED_NO_INCUMBENT))
+                          (fcore.NOT_CERTIFIED, fcore.UNCERTIFIED_NO_INCUMBENT))
             self.assertIsNone(r.time_to_proof_s)  # sem prova, sem tempo de prova
 
     def test_budget_is_forwarded_and_not_exceeded_on_lp(self):

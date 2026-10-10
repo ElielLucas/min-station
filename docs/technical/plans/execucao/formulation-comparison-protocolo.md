@@ -8,6 +8,15 @@ freeze N2-T1, resultados históricos, ou arquivos congelados.
 (`git status` sujo apenas pelos arquivos novos listados em §9; nenhum arquivo rastreado foi alterado).
 **Código:** `experiments/formulation-comparison/`. **Resultados:** `results/formulation-comparison/`.
 
+> **Atualização FC-03 (2026-10-10) — prevalece sobre rótulos históricos abaixo.**
+> Os valores de `GRB.OPTIMAL`, `ObjBound` e `ObjVal` são **evidência numérica
+> do solver**, não certificados racionais verificados independentemente. A nova
+> publicação usa `solver_numeric_*`, `rational_verified_*` e `physical_feasible_ub`
+> como eixos separados. `PAIR_VALID` significa integridade do par, e não
+> otimalidade racionalmente demonstrada. Os CSVs antigos e o encerramento
+> `N2 FAIL` ficam preservados. As medições e frases históricas deste documento
+> são relatos da campanha anterior, não evidência racional adicional.
+
 ## 1. Objeto da comparação
 
 **A. Formulação base (Das, variante U):** `baseline.construir_modelo_baseline` — `y` binário em
@@ -52,16 +61,19 @@ deve evitar.
 
 ## 3. Modalidades efetivamente comparáveis
 
-- **Modalidade A — LP exato.** `lp_base` (base sem cortes), `lp_comp` (base + `K`, = COMP oficial
-  da N1), `lp_fcc_k` (F-CC+K completo). Os três são resolvidos até `GRB.OPTIMAL`; o valor só é
-  relatado quando o status é ótimo (`CERTIFIED_LP`), nunca como `ObjVal` parcial.
-- **Modalidade B — IP exato.** MIP completo de cada formulação, com `TimeLimit` único, `Threads`
-  e `Seed` idênticos. `CERTIFIED_MIP_OPTIMAL` quando `GRB.OPTIMAL`; `CERTIFIED_MIP_BOUND` quando
-  interrompido com incumbente (o `ObjBound` de um branch-and-bound nativo do Gurobi sobre o modelo
-  **já fechado** — todas as colunas presentes — é o bound dual padrão de uma árvore de B&B, **não**
-  o `ObjBound` de um MIP auxiliar de pricing sobre um master exponencial restrito; essa é
-  exatamente a distinção que a revisão v2.1 da N2-T2B exige não confundir, e aqui ela não se
-  aplica porque não há colunas faltando); `UNCERTIFIED_NO_INCUMBENT` sem solução viável.
+- **Modalidade A — LP completo.** `lp_base` (base sem cortes), `lp_comp` (base + `K`, = COMP da N1),
+  `lp_fcc_k` (F-CC+K com enumeração completa). `GRB.OPTIMAL` libera o valor como
+  `solver_numeric_lp_objective`, sob tolerâncias numéricas; `rational_verification`
+  permanece `NOT_CERTIFIED` na ausência de verificador independente.
+- **Modalidade B — MIP completo.** `comp_mip` (`y` binário, fluxo contínuo,
+  com K) e `fcc_k` (com o mesmo K) compõem o par principal; `baseline` sem K é
+  apenas ablação. `ObjBound` de um MIP completo pode constituir
+  `solver_numeric_mip_lb` mesmo se `TIME_LIMIT`, inclusive sem incumbente,
+  mas **não** é certificado racional. MIP restrito/incompleto e pricing nunca
+  publicam seu bound como LB global. A incumbente numérica é separada do
+  `physical_feasible_ub`, que depende de `independent_validator.viavel` e
+  corresponde à cardinalidade inteira da instalação validada. Sem LB racional
+  independente mais UB físico, `certified_gap_status=INCONCLUSIVE`.
 - **Modalidade C — evolução.** Coletada como subproduto do mesmo solve de Modalidade B, via um
   único callback compartilhado pelas duas formulações (`fc_core.EvolutionTracker`), nos marcos
   1/5/10/30/60/120/300/600/1800/3600 s. Cada ponto registra o **tempo real observado** na primeira
@@ -165,8 +177,8 @@ passam independentemente no oráculo `independent_validator.viavel`.
 
 Itens de verificação do piloto (§8 do pedido): ambas representam a mesma instância (mesmo
 `instance_sha256`, mesmo `S,T,V,adj,A_r` passados às duas); resultados consistentes entre si e com
-a história; soluções validadas fisicamente; nenhum LB atribuído sem prova (`CERTIFIED_LP` só com
-`GRB.OPTIMAL`; `CERTIFIED_MIP_OPTIMAL` só com status ótimo); tempo/Work contabilizados e plausíveis;
+a história; soluções validadas fisicamente; nenhum limite inferior racional atribuído sem verificador independente
+(os resultados `GRB.OPTIMAL` são numéricos); tempo/Work contabilizados e plausíveis;
 orçamento (120 s) nunca atingido; CSV/JSON/log gerados e íntegros; nenhum resultado inconclusivo
 classificado como sucesso (testado explicitamente com `sc-gf2-k3`, que devolve
 `NOT_MEASURED_CAP_EXCEEDED`, nunca um valor).
@@ -178,7 +190,9 @@ Para reforçar o piloto sem comprometer o teto de 3.600 s, executaram-se também
 (≤120 s/execução), não a bateria principal:
 
 - **`scalability-20261010T071119Z`** (10 instâncias, 0 falhas): confirma a fronteira do §4 em
-  condições de solve real — 8/10 instâncias de F-CC+K terminam `NOT_MEASURED_CAP_EXCEEDED` antes
+  condições de solve real — o texto histórico reportava 8/10, mas uma auditoria
+  posterior do CSV identificou 9/10; conferir a FC-04 antes de publicar a contagem final. As
+  instâncias acima do cap de F-CC+K terminam `NOT_MEASURED_CAP_EXCEEDED` antes
   mesmo de montar o MIP; a formulação base resolve as 10, inclusive as duas `classe=principal`
   reais (`b-b06`: OPT=3 em 0,05 s; `pucn-cc6-2n`: OPT=6 em 0,20 s), e `tr-k2-L5-r2-sig2-m2`
   (tratável) reproduz `lp_fcc_k=OPT=3`, igual à base — um caso em que F-CC+K **não** melhora o LP.
@@ -187,7 +201,7 @@ Para reforçar o piloto sem comprometer o teto de 3.600 s, executaram-se também
   rapidamente — `hb-q5-ndir2-p1` levou **141,8 s** só para o LP (`n_vars` da ordem de `10^5`)
   contra `0,004 s` da base, e **47,7 s** para o IP (`Work=38,9`) contra `0,015 s`/`Work=0,002` da
   base; `bp-nao-q2-B3` levou **92,4 s** (LP) e **35,1 s** (IP). Em todas as 6 instâncias as duas
-  formulações provaram o mesmo ótimo inteiro (`GRB.OPTIMAL`, `CERTIFIED_MIP_OPTIMAL`) e a
+  formulações reportaram o mesmo ótimo numérico (`GRB.OPTIMAL`, sem certificado racional independente) e a
   instalação encontrada por cada uma passou em `independent_validator.viavel`. Gráficos reais
   (`fc_plot_evolution.py`, pontos exatamente como gravados, sem interpolação):
   `results/formulation-comparison/main-20261010T071251Z/evolution-hb-q5.png` e
@@ -297,3 +311,31 @@ OK
 python -m ruff check experiments/formulation-comparison/*.py
 All checks passed!
 ```
+
+## FC-03 — Contrato de evidência e leitura dos novos relatórios
+
+A partir da versão `evidence_schema=FC03-v1`, a coluna legada `certification`
+publica `NOT_CERTIFIED` por padrão. Apenas uma prova racional externa
+**efetivamente aceita** por verificador independente, vinculada ao contexto
+verificado e à instância, permitiria `RATIONAL_VERIFIED`. O executor atual
+**não executa** tal verificador. `model_context_sha256` é o hash da identidade
+canônica de contexto (instância, formulação, modalidade, K e completude), **não**
+um hash da matriz de restrições ou uma prova da correção matemática da
+formulação.
+
+| Eixo | Campos novos | Interpretação |
+|---|---|---|
+| Numérico | `solver_evidence`, `solver_numeric_status`, `solver_numeric_lp_objective`, `solver_numeric_mip_lb`, `solver_numeric_mip_incumbent`, `solver_numeric_gap_*`, `solver_optimality_reported` | Dados de ponto flutuante de modelo completo; não são uma prova racional |
+| Racional | `rational_verification`, `rational_verified_lb_exact`, `rational_proof_id`, `rational_proof_sha256`, `rational_verifier_id`, `rational_checked_*` | Vazios/`NOT_CERTIFIED` até verificador matemático independente |
+| Viabilidade física | `physical_ub_status`, `physical_feasible_ub`, `physical_ub_provenance` | Valor inteiro do conjunto de estações validado pelo oráculo físico |
+| Gap certificado | `certified_gap_status`, `certified_gap_abs_exact`, `certified_gap_rel_exact` | `INCONCLUSIVE` sem LB racional global e UB físico da mesma instância |
+
+Por segurança, os campos legados ambíguos `lb_best`, `ub_best`, `gap_abs`,
+`gap_rel`, `optimality_proven`, `time_to_proof_s` permanecem vazios no CSV
+FC03-v1. Para os tempos numéricos usar `solver_time_to_optimal_s`. As colunas
+`lb`/`ub` de `evolution.csv` são apenas **amostras numéricas do callback**,
+sinalizadas com `evidence_source=SOLVER_NUMERIC_CALLBACK_NOT_RATIONAL`.
+
+`results/formulation-comparison/` anterior à FC-03 **não é migrado nem
+reescrito**; comparar saídas de versões diferentes exige distinguir o schema.
+A fase N2 continua fechada com `N2 FAIL`.

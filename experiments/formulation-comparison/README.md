@@ -15,6 +15,7 @@ Metodologia completa, auditoria matemática e limitações:
 | `fc_instances.py` | Carrega `instances/manifest.csv`; seleciona lotes `pilot`/`main`/`scalability`; sonda tratabilidade da enumeração F-CC+K |
 | `fc_budget.py` | **FC-01:** relógio monotônico, deadlines globais e processos `spawn` interrompíveis |
 | `fc_config.py` | `ExperimentConfig` (threads/seed/time limits/checkpoints) e captura de ambiente |
+| `fc_evidence.py` | **FC-03:** classificação de evidência numérica, UB físico e recibo opcional de prova racional independente |
 | `fc_core.py` | Modalidades A (LP exato), B (IP exato) e C (evolução); reusa `baseline.py`, `experiments/cuts/harness.py`, `fcc.py`/`fcc_k.py`, `independent_validator.py` |
 | `fc_reporting.py` | CSV de resultados/evolução, manifesto de reprodutibilidade |
 | `run_comparison.py` | CLI |
@@ -42,15 +43,35 @@ Cada execução cria `results/formulation-comparison/<tier>-<timestamp>/` com `r
 `evolution.csv`, `manifest.json` (hashes, config, ambiente, comandos, limitações) e `run.log`.
 Nenhuma execução sobrescreve outra, altera N1/N2 ou faz commit.
 
-## Rótulos de certificação usados
+## Status e proveniência de evidência — FC-03
 
-- `CERTIFIED_LP`: LP exato resolvido até `GRB.OPTIMAL` (Modalidade A).
-- `CERTIFIED_MIP_OPTIMAL`: MIP completo com prova de otimalidade (Modalidade B).
-- `CERTIFIED_MIP_BOUND`: `ObjBound` de um branch-and-bound **nativo** do Gurobi sobre o modelo já
-  fechado (todas as colunas presentes) — diferente do `ObjBound` de um MIP auxiliar de pricing
-  sobre um master restrito exponencial, que a N2-T2B trata como não certificável.
-- `NOT_MEASURED_CAP_EXCEEDED`: enumeração de `(W,I,J)` acima de `max_W`; nunca um valor aproximado.
-- `UNCERTIFIED_NO_INCUMBENT`: `TimeLimit` atingido sem nenhuma solução viável.
+**Nenhum rótulo `CERTIFIED_*` significa certificação matemática independente.**
+No novo schema `FC03-v1` eles foram removidos. `GRB.OPTIMAL` vira
+`SOLVER_NUMERIC_OPTIMAL` (sujeito às tolerâncias numéricas). `ObjBound` de um
+MIP completo com `TIME_LIMIT` vira `SOLVER_NUMERIC_BOUND` e não vira prova
+racional. `ObjBoundC` de pricing/MIP restrito não é limite global físico.
+
+A coluna `certification` agora é `NOT_CERTIFIED` por padrão. Uma prova
+externa aceita por um verificador matemático independente, com identificador,
+SHA-256 do artefato, instância e contexto compatíveis, pode ser anexada pela
+API opt-in `fc_evidence.attach_independent_proof`, mas o runner **não** gera
+nem importa provas automaticamente. O ID de contexto **não** é hash da
+matriz completa do modelo.
+
+`physical_feasible_ub` é a cardinalidade exata de instalação aceita pelo
+validador físico independente. Não derivar UB físico apenas de `ObjVal`.
+`certified_gap_status=INCONCLUSIVE` até existir um LB racional verificado e
+um UB físico da mesma instância.
+
+Os campos antigos ambíguos `lb_best`, `ub_best`, `gap_abs`, `gap_rel`,
+`optimality_proven` e `time_to_proof_s` estão intencionalmente vazios em
+`results.csv`; usar as novas colunas `solver_numeric_*`, `rational_*`,
+`physical_feasible_ub`, `solver_time_to_optimal_s` e `certified_gap_*`.
+Os pontos `evolution.csv` identificam explicitamente `evidence_source` numérica.
+
+`NOT_MEASURED_CAP_EXCEEDED` continua sendo um resultado de interrupção real,
+sem objetivo/bound fictício. CSVs históricos anteriores à FC-03 permanecem
+inalterados e podem usar rótulos antigos; **não os reinterpretar retroativamente**.
 
 ## FC-01 — Orçamento global real
 
@@ -136,10 +157,9 @@ essas duas semânticas do manifesto.
 - `INVALID_PHYSICAL_WITNESS`: pelo menos uma incumbente não foi validada.
 - `ABLATION_ONLY`: linha do baseline sem K, fora do par primário.
 
-Os campos antigos `CERTIFIED_LP`, `CERTIFIED_MIP_OPTIMAL` e
-`CERTIFIED_MIP_BOUND` descrevem os **status numéricos do Gurobi** na versão
-FC-01. A revisão dessa terminologia é objeto da FC-03; não atribua a esses
-rótulos uma prova racional independente.
+Os rótulos `CERTIFIED_LP`, `CERTIFIED_MIP_OPTIMAL` e `CERTIFIED_MIP_BOUND`
+são legados da FC-01/FC-02 e não são mais publicados. O contrato normativo
+novo está na seção **Status e proveniência de evidência — FC-03** acima.
 
 ```bash
 # Par principal, sem ablação

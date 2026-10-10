@@ -72,6 +72,7 @@ def _order_tasks(instances, formulations=DEFAULT_FORMULATIONS):
 def run(tier, cfg, out_dir, modalities, formulations=DEFAULT_FORMULATIONS):
     import fc_core as fcore
     from fc_pairing import assess_primary_pair
+    from fc_evidence import physical_upper_bound, safe_solver_bound
 
     shared_start = time.monotonic()
     instances = fi.pool(tier)
@@ -103,7 +104,8 @@ def run(tier, cfg, out_dir, modalities, formulations=DEFAULT_FORMULATIONS):
                         r = a_results.get(k)
                         if r:
                             report(f'   A/{k}: {r.status} valor={r.value} '
-                                   f'cert={r.certification} wall={r.time_s:.3f}s '
+                                   f'solver_evidence={r.solver_evidence} rational={r.certification} '
+                                   f'wall={r.time_s:.3f}s '
                                    f'solver={r.solver_runtime_s} work={r.work} '
                                    f'stop={r.stop_reason} reason={r.reason.splitlines()[0] if r.reason else ""}')
                             if r.status in ('WORKER_ERROR', 'SOLVER_UNAVAILABLE'):
@@ -124,7 +126,8 @@ def run(tier, cfg, out_dir, modalities, formulations=DEFAULT_FORMULATIONS):
                         b_results[formulation] = runners[formulation](inst, cfg)
                         r = b_results[formulation]
                         report(f'   B/{formulation}: {r.status_name} ub={r.objective_ub} '
-                               f'lb={r.objective_lb} cert={r.certification} '
+                               f'lb_numeric={safe_solver_bound(r)} solver_evidence={r.solver_evidence} '
+                               f'rational={r.certification} physical_ub={physical_upper_bound(r)} '
                                f'wall={r.time_s:.3f}s solver={r.solver_runtime_s} '
                                f'work={r.work:.4f} stop={r.stop_reason} '
                                f'validado={r.physically_validated} k={r.k_sha256} '
@@ -169,8 +172,14 @@ def run(tier, cfg, out_dir, modalities, formulations=DEFAULT_FORMULATIONS):
         'ver fc_config.ExperimentConfig.memory_metric.',
         'FC-02: par inteiro primário COMP+K (y binário, fluxo contínuo) × F-CC+K; '
         'baseline sem K é ablação opcional, nunca controle principal.',
-        'PAIR_VALID certifica somente comparabilidade dos parâmetros e validade física das '
+        'PAIR_VALID confirma somente comparabilidade dos parâmetros e validade física das '
         'incumbentes observadas; não constitui prova racional independente de otimalidade.',
+        'FC-03: solver_numeric_* são dados de ponto flutuante do Gurobi. ObjBound de '
+        'modelo completo é apenas bound numérico; jamais certificado racional sem verifier.',
+        'FC-03: nenhum comprovante racional independente é produzido automaticamente; '
+        'rational_verification=NOT_CERTIFIED e certified_gap_status=INCONCLUSIVE por padrão.',
+        'FC-03: colunas legadas ambíguas lb_best, ub_best, gap_abs, gap_rel, '
+        'optimality_proven e time_to_proof_s permanecem vazias no schema FC03-v1.',
         'Este experimento é independente da N2 (N2-T2B/N2-T3..T6); não usa a geração de colunas '
         'na raiz nem reabre a decisão N2 FAIL.',
     ]
@@ -184,6 +193,10 @@ def run(tier, cfg, out_dir, modalities, formulations=DEFAULT_FORMULATIONS):
     manifest['formulations'] = list(formulations)
     manifest['primary_comparison'] = ['comp_mip', 'fcc_k']
     manifest['optional_ablation'] = 'baseline'
+    manifest['evidence_schema'] = 'FC03-v1'
+    manifest['rational_verifier_executed'] = False
+    manifest['rational_proofs_automatically_generated'] = False
+    manifest['solver_numeric_bounds_are_rational_proofs'] = False
     manifest['errors'] = [{'instance': n, 'stage': s, 'traceback': tb} for n, s, tb in errors]
     rep.write_json(out_dir / 'manifest.json', manifest)
     print(f'Concluído. {len(errors)} falha(s). Artefatos em {out_dir}')
