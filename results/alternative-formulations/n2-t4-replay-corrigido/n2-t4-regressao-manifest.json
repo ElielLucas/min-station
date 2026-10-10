@@ -1,0 +1,36 @@
+{
+  "cg_evaluated": 22,
+  "config": {
+    "enum_cap": 2048,
+    "max_iterations": 300,
+    "note": "Limites por controle são somente da regressão, não alteram pré-registro N2-T1",
+    "seed": 42,
+    "threads": 1,
+    "time_limit_per_case_s": 600.0,
+    "tolerance": "1/1000000",
+    "work_limit_per_case": null
+  },
+  "csv_sha256": "62032d439ce86b62673b50e1cb3936e56fcea8cfef59c5a2376baf4b077c4153",
+  "eligible_checked": 23,
+  "exact_domain_exceptions": [
+    "T5:Direct0"
+  ],
+  "exception_policy": "Direct0 fora do domínio G conexo: prova independente de LP=0; requer decisão explícita antes de N2-T5",
+  "excluded": [
+    "T5:SC-GF2-k3"
+  ],
+  "expected_eligible": 23,
+  "failures": [],
+  "n1_sources_sha256": {
+    "experiments/alternative-formulations/n1-t5-freeze.json": "8135c5a043d4a03e2d7ea673287cdf86d3f7171b7b18394a600038f9da2f20e7",
+    "experiments/alternative-formulations/n1-t6-freeze.json": "60f4b533d76fdb1e6e05cd59123aa163ec50fe39e926e67edcd368aa5c50517c",
+    "results/alternative-formulations/n1-t5-diagnostico.csv": "c53106a1accfc7e082fa97d0c3b2fbc91b2ead2c7fcc3898c3bfeb91be8733f9",
+    "results/alternative-formulations/n1-t6-diagnostico.csv": "43b28e24f93ae933584a8187233da4660fc81047c5de84f132e9c18a9776432b",
+    "results/alternative-formulations/n1-t6-pares.json": "ce4ce8d9672812043c2f97b25f1149bd3e006ba6b4fca626a64d189bf4ea9e40"
+  },
+  "n2_t1_sha256": "b036e9d0fe8f446dfcaca2716df85054c73dbb8702484aacce3c807e6574de71",
+  "passed": 23,
+  "scope": "prospective N1 regression only; NOT N2-T5 measurements or N2 PASS",
+  "status": "SCOPE_EXCEPTION_REVIEW_BLOCK_N2_T5",
+  "task": "N2-T4"
+}

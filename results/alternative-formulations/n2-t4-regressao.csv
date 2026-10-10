@@ -1,0 +1,2 @@
+id,n1_source,name,n,m,r,reference_lp_fcc_k,reference_status,reference_k_hash,instance_sha256,lp_certification_status,lp_lb_exact,lp_lb_floor_12dp,physical_status,g2_status,u_exact,stop_reason,rmp_objective_diagnostic,objective_reflects_all_columns,iterations,pricing_calls,columns_added,total_work,wall_seconds,comparison,justification
+T5:Direct0,T5,Direct0,4,2,1,0.0,COMPUTATIONALLY VERIFIED,4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945,2c9bb8b358f865c24085ed3656b16c074a367ea5a3c57cf7ccb3e4853231a7f2,,,,,,,,,,,,,,,FAIL,ValueError: G desconexo
