@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="1010" viewBox="0 0 920 1010">
+<rect width="100%" height="100%" fill="white"/>
+<text x="32" y="28" font-family="sans-serif" font-size="18">N2-T5 — LB físico certificado × Work cumulativo</text>
+<text x="42" y="65" font-size="15" font-family="sans-serif">HB-q4-ndir2-p1</text>
+<path d="M70,95 V239 H840" stroke="#222" stroke-width="1.1" fill="none"/>
+<text x="375" y="267" font-size="12" font-family="sans-serif">Work Gurobi acumulado</text>
+<text x="20" y="105" font-size="12" font-family="sans-serif">LB</text>
+<path d="M103.98,169.00 H141.32 V169.00 H152.83 V169.00 H204.32 V169.00 H245.88 V169.00 H313.38 V169.00 H328.70 V169.00 H347.98 V169.00 H379.12 V169.00 H443.50 V169.00 H501.24 V169.00 H532.08 V169.00 H588.51 V169.00 H643.77 V169.00 H707.55 V169.00 H789.24 V169.00 H802.54 V169.00 H820.00 V169.00" fill="none" stroke="#135d9c" stroke-width="2"/>
+<circle cx="103.98" cy="169.00" r="3" fill="#135d9c"/>
+<circle cx="141.32" cy="169.00" r="3" fill="#135d9c"/>
+<circle cx="152.83" cy="169.00" r="3" fill="#135d9c"/>
+<circle cx="204.32" cy="169.00" r="3" fill="#135d9c"/>
+<circle cx="245.88" cy="169.00" r="3" fill="#135d9c"/>
+<circle cx="313.38" cy="169.00" r="3" fill="#135d9c"/>
+<circle cx="328.70" cy="169.00" r="3" fill="#135d9c"/>
+<circle cx="347.98" cy="169.00" r="3" fill="#135d9c"/>
+<circle cx="379.12" cy="169.00" r="3" fill="#135d9c"/>
+<circle cx="443.50" cy="169.00" r="3" fill="#135d9c"/>
+<circle cx="501.24" cy="169.00" r="3" fill="#135d9c"/>
+<circle cx="532.08" cy="169.00" r="3" fill="#135d9c"/>
+<circle cx="588.51" cy="169.00" r="3" fill="#135d9c"/>
+<circle cx="643.77" cy="169.00" r="3" fill="#135d9c"/>
+<circle cx="707.55" cy="169.00" r="3" fill="#135d9c"/>
+<circle cx="789.24" cy="169.00" r="3" fill="#135d9c"/>
+<circle cx="802.54" cy="169.00" r="3" fill="#135d9c"/>
+<circle cx="820.00" cy="169.00" r="3" fill="#135d9c"/>
+<text x="70" y="254" font-size="11" font-family="sans-serif">0</text>
+<text x="790" y="254" font-size="11" font-family="sans-serif">0.41796</text>
+<text x="34" y="105" font-size="11" font-family="sans-serif">1</text>
+<text x="640" y="107" fill="#666" font-size="12" font-family="sans-serif">B0 referência: 1/1</text>
+<text x="42" y="305" font-size="15" font-family="sans-serif">BP-nao-[3,1]-q2</text>
+<path d="M70,335 V479 H840" stroke="#222" stroke-width="1.1" fill="none"/>
+<text x="375" y="507" font-size="12" font-family="sans-serif">Work Gurobi acumulado</text>
+<text x="20" y="345" font-size="12" font-family="sans-serif">LB</text>
+<path d="M104.41,347.00 H116.34 V347.00 H128.26 V347.00 H140.08 V347.00 H231.80 V347.00 H259.93 V347.00 H404.55 V347.00 H548.66 V347.00 H578.47 V347.00 H646.22 V347.00 H820.00 V347.00" fill="none" stroke="#ba5a1f" stroke-width="2"/>
+<circle cx="104.41" cy="347.00" r="3" fill="#ba5a1f"/>
+<circle cx="116.34" cy="347.00" r="3" fill="#ba5a1f"/>
+<circle cx="128.26" cy="347.00" r="3" fill="#ba5a1f"/>
+<circle cx="140.08" cy="347.00" r="3" fill="#ba5a1f"/>
+<circle cx="231.80" cy="347.00" r="3" fill="#ba5a1f"/>
+<circle cx="259.93" cy="347.00" r="3" fill="#ba5a1f"/>
+<circle cx="404.55" cy="347.00" r="3" fill="#ba5a1f"/>
+<circle cx="548.66" cy="347.00" r="3" fill="#ba5a1f"/>
+<circle cx="578.47" cy="347.00" r="3" fill="#ba5a1f"/>
+<circle cx="646.22" cy="347.00" r="3" fill="#ba5a1f"/>
+<circle cx="820.00" cy="347.00" r="3" fill="#ba5a1f"/>
+<text x="70" y="494" font-size="11" font-family="sans-serif">0</text>
+<text x="790" y="494" font-size="11" font-family="sans-serif">0.083058</text>
+<text x="34" y="345" font-size="11" font-family="sans-serif">1</text>
+<text x="640" y="347" fill="#666" font-size="12" font-family="sans-serif">B0 referência: 6/1</text>
+<text x="42" y="545" font-size="15" font-family="sans-serif">HB-q6-ndir2-p1</text>
+<path d="M70,575 V719 H840" stroke="#222" stroke-width="1.1" fill="none"/>
+<text x="375" y="747" font-size="12" font-family="sans-serif">Work Gurobi acumulado</text>
+<text x="20" y="585" font-size="12" font-family="sans-serif">LB</text>
+<path d="M97.68,649.00 H111.99 V643.83 H149.41 V637.73 H162.79 V637.73 H204.36 V637.73 H208.70 V637.73 H217.46 V628.33 H249.20 V628.33 H284.82 V628.33 H293.10 V628.33 H323.73 V628.33 H354.39 V628.33 H374.59 V628.33 H386.72 V628.33 H400.55 V628.33 H416.69 V628.33 H439.97 V628.33 H445.44 V628.33 H460.30 V628.33 H480.86 V628.33 H498.87 V628.33 H520.98 V628.33 H595.50 V628.33 H648.66 V628.33 H693.37 V628.33 H760.25 V628.33 H781.77 V628.33 H820.00 V628.33" fill="none" stroke="#39723b" stroke-width="2"/>
+<circle cx="97.68" cy="649.00" r="3" fill="#39723b"/>
+<circle cx="111.99" cy="643.83" r="3" fill="#39723b"/>
+<circle cx="149.41" cy="637.73" r="3" fill="#39723b"/>
+<circle cx="162.79" cy="637.73" r="3" fill="#39723b"/>
+<circle cx="204.36" cy="637.73" r="3" fill="#39723b"/>
+<circle cx="208.70" cy="637.73" r="3" fill="#39723b"/>
+<circle cx="217.46" cy="628.33" r="3" fill="#39723b"/>
+<circle cx="249.20" cy="628.33" r="3" fill="#39723b"/>
+<circle cx="284.82" cy="628.33" r="3" fill="#39723b"/>
+<circle cx="293.10" cy="628.33" r="3" fill="#39723b"/>
+<circle cx="323.73" cy="628.33" r="3" fill="#39723b"/>
+<circle cx="354.39" cy="628.33" r="3" fill="#39723b"/>
+<circle cx="374.59" cy="628.33" r="3" fill="#39723b"/>
+<circle cx="386.72" cy="628.33" r="3" fill="#39723b"/>
+<circle cx="400.55" cy="628.33" r="3" fill="#39723b"/>
+<circle cx="416.69" cy="628.33" r="3" fill="#39723b"/>
+<circle cx="439.97" cy="628.33" r="3" fill="#39723b"/>
+<circle cx="445.44" cy="628.33" r="3" fill="#39723b"/>
+<circle cx="460.30" cy="628.33" r="3" fill="#39723b"/>
+<circle cx="480.86" cy="628.33" r="3" fill="#39723b"/>
+<circle cx="498.87" cy="628.33" r="3" fill="#39723b"/>
+<circle cx="520.98" cy="628.33" r="3" fill="#39723b"/>
+<circle cx="595.50" cy="628.33" r="3" fill="#39723b"/>
+<circle cx="648.66" cy="628.33" r="3" fill="#39723b"/>
+<circle cx="693.37" cy="628.33" r="3" fill="#39723b"/>
+<circle cx="760.25" cy="628.33" r="3" fill="#39723b"/>
+<circle cx="781.77" cy="628.33" r="3" fill="#39723b"/>
+<circle cx="820.00" cy="628.33" r="3" fill="#39723b"/>
+<text x="70" y="734" font-size="11" font-family="sans-serif">0</text>
+<text x="790" y="734" font-size="11" font-family="sans-serif">1.3644</text>
+<text x="34" y="585" font-size="11" font-family="sans-serif">1</text>
+<text x="640" y="587" fill="#666" font-size="12" font-family="sans-serif">B0 referência: 11500000000000001/10000000000000000</text>
+<text x="42" y="785" font-size="15" font-family="sans-serif">BP-nao-[2,2,2]-q2</text>
+<path d="M70,815 V959 H840" stroke="#222" stroke-width="1.1" fill="none"/>
+<text x="375" y="987" font-size="12" font-family="sans-serif">Work Gurobi acumulado</text>
+<text x="20" y="825" font-size="12" font-family="sans-serif">LB</text>
+<path d="M94.07,861.44 H96.45 V861.44 H101.87 V861.44 H105.93 V861.44 H111.42 V861.44 H124.99 V861.44 H163.87 V861.44 H206.01 V861.44 H217.68 V861.44 H274.34 V861.44 H293.63 V848.97 H307.89 V848.97 H342.19 V848.97 H403.12 V848.97 H460.48 V848.97 H494.31 V848.97 H554.95 V848.97 H571.15 V827.00 H626.14 V827.00 H646.73 V827.00 H663.28 V827.00 H696.69 V827.00 H745.08 V827.00 H759.65 V827.00 H820.00 V827.00" fill="none" stroke="#75369b" stroke-width="2"/>
+<circle cx="94.07" cy="861.44" r="3" fill="#75369b"/>
+<circle cx="96.45" cy="861.44" r="3" fill="#75369b"/>
+<circle cx="101.87" cy="861.44" r="3" fill="#75369b"/>
+<circle cx="105.93" cy="861.44" r="3" fill="#75369b"/>
+<circle cx="111.42" cy="861.44" r="3" fill="#75369b"/>
+<circle cx="124.99" cy="861.44" r="3" fill="#75369b"/>
+<circle cx="163.87" cy="861.44" r="3" fill="#75369b"/>
+<circle cx="206.01" cy="861.44" r="3" fill="#75369b"/>
+<circle cx="217.68" cy="861.44" r="3" fill="#75369b"/>
+<circle cx="274.34" cy="861.44" r="3" fill="#75369b"/>
+<circle cx="293.63" cy="848.97" r="3" fill="#75369b"/>
+<circle cx="307.89" cy="848.97" r="3" fill="#75369b"/>
+<circle cx="342.19" cy="848.97" r="3" fill="#75369b"/>
+<circle cx="403.12" cy="848.97" r="3" fill="#75369b"/>
+<circle cx="460.48" cy="848.97" r="3" fill="#75369b"/>
+<circle cx="494.31" cy="848.97" r="3" fill="#75369b"/>
+<circle cx="554.95" cy="848.97" r="3" fill="#75369b"/>
+<circle cx="571.15" cy="827.00" r="3" fill="#75369b"/>
+<circle cx="626.14" cy="827.00" r="3" fill="#75369b"/>
+<circle cx="646.73" cy="827.00" r="3" fill="#75369b"/>
+<circle cx="663.28" cy="827.00" r="3" fill="#75369b"/>
+<circle cx="696.69" cy="827.00" r="3" fill="#75369b"/>
+<circle cx="745.08" cy="827.00" r="3" fill="#75369b"/>
+<circle cx="759.65" cy="827.00" r="3" fill="#75369b"/>
+<circle cx="820.00" cy="827.00" r="3" fill="#75369b"/>
+<text x="70" y="974" font-size="11" font-family="sans-serif">0</text>
+<text x="790" y="974" font-size="11" font-family="sans-serif">0.67054</text>
+<text x="34" y="825" font-size="11" font-family="sans-serif">1.3846</text>
+<text x="640" y="827" fill="#666" font-size="12" font-family="sans-serif">B0 referência: 8/1</text>
+</svg>

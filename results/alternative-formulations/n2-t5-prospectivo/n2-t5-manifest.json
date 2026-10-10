@@ -1,0 +1,80 @@
+{
+  "artifacts_sha256": {
+    "n2-t5-custos.md": "0b6700ed47b257e1fb5aa368d5bd1b5ec17bbf832d691b89625c912601258d0a",
+    "n2-t5-lb-versus-work.csv": "c0be65a1fe79f7da59be50bc3b184e0143f6c97a7f0153e66464c26a43563d5d",
+    "n2-t5-lb-versus-work.svg": "520f82c4e0e64dec45c3d4d11ce5c61abfe150aaaedc76c5bd9cecd0f55f9920",
+    "n2-t5-medicoes.csv": "2e1215e135561d4af962318f15eeaa96be0d04aed09a8e801765ae577958bac5"
+  },
+  "freeze_sha256": "b036e9d0fe8f446dfcaca2716df85054c73dbb8702484aacce3c807e6574de71",
+  "instances_in_freeze_order": [
+    "HB-q4-ndir2-p1",
+    "BP-nao-[3,1]-q2",
+    "HB-q6-ndir2-p1",
+    "BP-nao-[2,2,2]-q2"
+  ],
+  "limitations": [
+    "NOT N2 PASS/FAIL",
+    "RMP objective is not LB",
+    "ObjBoundC is diagnostic only",
+    "N2-T3 E4 N2 multipliers initially zero",
+    "B0 numeric/archive reference is not certified independent proof E5",
+    "B0 and full LP for level 2 may be NOT MEASURED"
+  ],
+  "n_physical_certified": 4,
+  "n_rows": 4,
+  "protocol": {
+    "PYTHONHASHSEED": "0",
+    "WorkLimit_total": 164.0,
+    "branching": false,
+    "certification": "CERTIFIED only with full exact pricing dual feasibility or an independently reviewed globally valid derived bound; else B0 if separately certified, otherwise UNCERTIFIED",
+    "change_limit": 1,
+    "family_types": [
+      "hb",
+      "bp-nao"
+    ],
+    "gate": "PASS only with certified controls, gain over B0 in both families and both levels, >=50% of positive known LP increment at level 1 within total budget and viable cost; otherwise FAIL",
+    "integer_round": "ceil(LB - 1e-6), only when LB certified",
+    "min_recovery_fraction": 0.5,
+    "reference": "B0=max(LP COMP, core IP) on the same instance",
+    "seed": 42,
+    "size_levels": [
+      1,
+      2
+    ],
+    "solver_params_source": "Spec A / linha-de-base-pre-registro.md; WorkLimit=164, Threads=4",
+    "stop": [
+      "uncertified bound",
+      "pricing exhausts total budget without gain",
+      "gain disappears at both size levels",
+      "total cost eliminates advantage",
+      "no minimal scaling beyond enumeration cap"
+    ],
+    "threads": 4,
+    "tolerance": 1e-06,
+    "wall_guard_seconds": 1800,
+    "work_accounting": "sum of solver Work for every solve, plus recorded non-solver wall time; never equate work to wall seconds",
+    "work_includes": [
+      "instance preparation",
+      "reachability",
+      "K",
+      "master",
+      "all pricing calls",
+      "separation",
+      "validation",
+      "reference computation"
+    ]
+  },
+  "scope": "prospective, root only",
+  "status": "MEASURED_PENDING_N2_T6",
+  "t4_sha256": {
+    "counts": {
+      "cg": 22,
+      "direct": 1,
+      "excluded": 1
+    },
+    "csv_sha256": "62032d439ce86b62673b50e1cb3936e56fcea8cfef59c5a2376baf4b077c4153",
+    "gate_sha256": "24bd101da8c2c94bdf371a6119677f0200301b38227fe12855c888f0090626cc",
+    "manifest_sha256": "ee91420e67a74934e01c1225025e93fb6b0490c6c054e0457e3088e88520e000"
+  },
+  "task": "N2-T5"
+}
