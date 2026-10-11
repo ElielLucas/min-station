@@ -1,11 +1,11 @@
 # AS05 — Piloto LP de A e gate de promoção — Specification
 
-**Status:** RASCUNHO · não implementada nesta entrega  
+**Status:** IMPLEMENTAÇÃO PREPARADA · Gurobi/campanha e revisão independente PENDENTES  
 **Prioridade:** P4 · obrigatório  
 **Dependências:** AS00,AS01,AS02,AS03,AS04=PASS  
 **Local:** `specs/as-05-piloto-lp-gate/`
 
-> Esta spec traduz os pareceres Astra de 11/10/2026, auditados sobre a branch `novos_testes` no commit `e25b056`. Os pareceres descrevem hipóteses e verificações pontuais; **não são** uma campanha nova, e nenhuma tarefa abaixo foi executada.
+> Esta spec traduz os pareceres Astra de 11/10/2026. Uma implementação local e testes de infraestrutura foram preparados; **nenhum piloto LP com Gurobi foi executado** e revisões independentes continuam pendentes.
 
 ## Problem Statement
 
@@ -95,3 +95,20 @@ O piloto LP é discriminante: ganho apenas em Sec59 não autoriza campanha MIP. 
 | Observabilidade | Métricas/evidências por caso e estágio, conforme os ACs. |
 | Auth e rate limit | N/A: scripts científicos locais sem API autenticada. |
 | Estado / transições | Gates PASS / FAIL / STOP / INVESTIGATE / NOT_AUTHORIZED, quando aplicável. |
+
+## AS05 — Implementação e adendo prospectivo (11/10/2026)
+
+Os caminhos `experiments/astra-study/` da proposta original foram substituídos pelos diretórios **já existentes** do MIN-STATION, sem mover evidências antigas:
+
+- `experiments/formulation-comparison/as05_protocol.py`: verifica AS00 e cria adendo prospectivo; **não edita AS00**.
+- `experiments/formulation-comparison/as05_gate.py`: deltas LP, tratamento de censura, repetição seeds e decisão GO/STOP/INVESTIGATE.
+- `experiments/formulation-comparison/as05_pilot.py`: reutiliza executor AS04, prepara 6×3, reproduz U_K/A2_K em seeds 43 e 44 apenas nos casos candidatos, mantém todos os casos censurados e publica evidências append-only.
+- `experiments/formulation-comparison/run_as05_pilot.py` e `run_as05_smoke.py`: CLI segura e smoke **sintético**.
+- `experiments/formulation-comparison/as04_runner.py`: `grouping_seed` opcional mantém partição fixa entre seeds do solver.
+- `docs/technical/plans/execucao/as05-piloto-lp-decisao.md`: protocolos/limiares e ameaças à validade.
+
+**Adendo com valores propostos ANTES dos solves:** ganho relativo LP ≥ 1%, limite razão de tempo A2/U_K ≤ 3,0, duas fontes distintas de grafos, duas seeds adicionais [43,44] por candidato, tolerância absoluta/relativa 1e-6. São escolhas metodológicas propostas pela AS05 e **não estavam numericamente fixadas no AS00**. O adendo é validado e registrado com hash antes de executar a campanha; alteração após inspeção de LP exige novo plano/desvio.
+
+**Gates de segurança:** a execução real de AS05 não fica autorizada apenas porque 31 testes locais passaram. AS01/AS02/AS04 precisam ser independentemente revisadas; sem isso `--execute` recusa a campanha. A4 padrão OFF; CORE_IP não tem adaptador AS04; F-CC exige enumeração pequena completa comprovada, não RMP restrito. Testes sintéticos não contam como achados científicos.
+
+**Pendências para concluir:** Ruff, verificador independente autor ≠ verificador, auditoria das evidências externas, execução Gurobi em 6 casos, controle F-CC quando aplicável e emissão de `lp_gate.json` real com decisão justificada.

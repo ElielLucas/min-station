@@ -1,6 +1,6 @@
 # AS05 — Piloto LP de A e gate de promoção — Design
 
-**Status:** proposta técnica (sem execução)  
+**Status:** implementação estrutural preparada; campanha LP não executada  
 **Spec:** `specs/as-05-piloto-lp-gate/spec.md`
 
 ## Design Constraints
@@ -30,3 +30,13 @@ O piloto LP é discriminante: ganho apenas em Sec59 não autoriza campanha MIP. 
 ## Exit Gate
 
 A feature somente poderá ser marcada como concluída após execução de testes derivados dos ACs, auditoria da rastreabilidade e verificador independente. As specs são planejamento; nenhum `PASS` de implementação é inferido de arquivos antigos.
+
+## Implementação concreta
+
+- Runtime: `experiments/formulation-comparison/as05_{protocol,gate,pilot}.py`.
+- CLI: `experiments/formulation-comparison/run_as05_pilot.py`.
+- Matrizes: seis instâncias AS00, U/U_K/A2_K com Gurobi via AS04; CORE_IP e FCC pequenos apenas controles condicionais, sem objetivos imputados.
+- Comparabilidade: o AS04 passa a receber `grouping_seed` opcional; fixar 42 enquanto variam seeds do solver 42/43/44 impede confusão entre efeitos da partição e do solver.
+- `GO` condicionado à materialidade prospectiva em ao menos dois grafos e duas fontes, com reprodução e custo; falta de evidência → `INVESTIGATE`.
+- Apêndice prospectivo materialidade fica em `results/benchmark/as05-prospective-plan-v1.json` gerado por CLI **somente no repositório do usuário**; não é fornecido como resultado realizado.
+- Resultados em diretório exclusivo append-only, hashes e evidências AS04 por caso.

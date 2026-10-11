@@ -4,7 +4,7 @@
 
 Executar cada tarefa com a skill `/tlc-spec-driven` existente em `.claude/skills/tlc-spec-driven/`: testes derivados de AC, gates antes de commit, **um commit local atômico por tarefa**, sem push/deploy, e verificador independente após última tarefa (autor ≠ verificador), incluindo sensor de discriminação quando houver código.
 
-**Status:** Draft — todas pendentes; execução NÃO iniciada.  
+**Status:** Código e testes estruturais preparados; tarefas de execução/homologação continuam pendentes.  
 **Spec:** `specs/as-05-piloto-lp-gate/spec.md`  
 **Design:** `specs/as-05-piloto-lp-gate/design.md`  
 **Pré-condição externa:** AS00,AS01,AS02,AS03,AS04=PASS
@@ -25,7 +25,7 @@ Executar cada tarefa com a skill `/tlc-spec-driven` existente em `.claude/skills
 | Spec | `python3 .claude/skills/tlc-spec-driven/scripts/validate_spec.py specs/as-05-piloto-lp-gate/spec.md` |
 | Tasks | `python3 .claude/skills/tlc-spec-driven/scripts/validate_tasks.py specs/as-05-piloto-lp-gate/tasks.md` |
 | Quick | `PYTHONHASHSEED=0 python -m unittest discover -s experiments -p 'test_as_*.py' -v` (focar suíte da feature assim que criada) |
-| Full | `PYTHONHASHSEED=0 python -m unittest discover -s experiments -p 'test_as_*.py' -v` + `python -m ruff check experiments/astra-study` nos arquivos criados; review matemático independente para provas |
+| Full | `PYTHONHASHSEED=0 python -m unittest discover -s experiments -p 'test_as_*.py' -v` + `python3 -m ruff check experiments/formulation-comparison/as05*.py experiments/formulation-comparison/run_as05*.py experiments/formulation-comparison/as04_runner.py`; review matemático independente para provas |
 | Commit | `python3 .claude/skills/tlc-spec-driven/scripts/check_commit.py --message "feat(astra): implementa tarefa atômica"` |
 
 ## Execution Plan
@@ -42,7 +42,7 @@ T1 -> T2 -> T3 -> T4
 
 **What:** Codificar executor LP com seis instâncias; evidenciar requisitos AS05-01,AS05-05.
 
-**Where:** `experiments/astra-study/as_lp_pilot.py` (proposto)
+**Where:** `experiments/formulation-comparison/as05_pilot.py` (implementado localmente)
 
 **Depends on:** None
 
@@ -66,7 +66,7 @@ T1 -> T2 -> T3 -> T4
 
 **What:** Calcular deltas LP separados; evidenciar requisitos AS05-04.
 
-**Where:** `experiments/astra-study/as_lp_metrics.py` (proposto)
+**Where:** `experiments/formulation-comparison/as05_gate.py` (implementado localmente)
 
 **Depends on:** T1
 
@@ -90,7 +90,7 @@ T1 -> T2 -> T3 -> T4
 
 **What:** Implementar gatilho A4 aninhado; evidenciar requisitos AS05-03.
 
-**Where:** `experiments/astra-study/as_lp_refinement_gate.py` (proposto)
+**Where:** `experiments/formulation-comparison/as05_gate.py` (usa AS03 existente)
 
 **Depends on:** T2
 
@@ -114,7 +114,7 @@ T1 -> T2 -> T3 -> T4
 
 **What:** Publicar gate de promoção; evidenciar requisitos AS05-06,AS05-02.
 
-**Where:** `experiments/astra-study/as_lp_gate.py` (proposto)
+**Where:** `experiments/formulation-comparison/as05_gate.py` (implementado localmente)
 
 **Depends on:** T3
 
@@ -147,3 +147,12 @@ T1 -> T2 -> T3 -> T4
 - [ ] Validadores estruturais de spec e tasks aprovados.
 - [ ] Verificador independente produziu `validation.md` apenas após Execute, com PASS/FAIL por requisito, `file:line` e sensor de discriminação quando couber.
 - [ ] Fechamento pelo validador de estado da skill quando o projeto adotar a estrutura `.specs/features/`; a estrutura corrente `specs/` mantém o padrão anterior sem migração silenciosa.
+
+## Evidências da implementação local — pendentes de homologação
+
+- Testes AS05 `test_as05_pilot.py` aprovados localmente; **não substituem revisão independente**.
+- Regressões AS04 e AS03 executadas localmente após alterar `grouping_seed` opcional.
+- `--init-plan`/`--check-plan`: executáveis sem solver; `run_as05_smoke.py` somente cenário artificial.
+- Dependências científicas anteriores **não são automaticamente PASS**: AS01/AS02 requerem revisão matemática, AS04 ainda depende de homologação e validação real Gurobi.
+- T1–T4 têm código preparado, mas suas checklists **continuam abertas** até os gates completos e commits locais atômicos no repositório do usuário.
+- Os controles CORE_IP/FCC não implementados permanecem abstenção transparente; jamais preencher seus resultados com zero.
