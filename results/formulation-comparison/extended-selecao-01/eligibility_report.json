@@ -1,0 +1,31 @@
+{
+  "status": "NOT_ELIGIBLE",
+  "selected": [],
+  "excluded": [
+    {
+      "instance": "hb-q4-ndir2-p1-k1-L2.txt",
+      "reason": "ALL_ARMS_SOLVED_SHORT_SCREENING_NO_LONG_RUN_JUSTIFICATION"
+    },
+    {
+      "instance": "bp-nao-q2-B2-s0.txt",
+      "reason": "ALL_ARMS_SOLVED_SHORT_SCREENING_NO_LONG_RUN_JUSTIFICATION"
+    },
+    {
+      "instance": "hb-q5-ndir2-p1-k1-L2.txt",
+      "reason": "ALL_ARMS_SOLVED_SHORT_SCREENING_NO_LONG_RUN_JUSTIFICATION"
+    },
+    {
+      "instance": "hb-q6-ndir1-p6-k1-L2.txt",
+      "reason": "ALL_ARMS_SOLVED_SHORT_SCREENING_NO_LONG_RUN_JUSTIFICATION"
+    },
+    {
+      "instance": "bp-sim-q2-B2-s0.txt",
+      "reason": "ALL_ARMS_SOLVED_SHORT_SCREENING_NO_LONG_RUN_JUSTIFICATION"
+    },
+    {
+      "instance": "bp-nao-q2-B3-s0.txt",
+      "reason": "ALL_ARMS_SOLVED_SHORT_SCREENING_NO_LONG_RUN_JUSTIFICATION"
+    }
+  ],
+  "note": "Sem candidatos não se inicia a campanha de 3600s."
+}
