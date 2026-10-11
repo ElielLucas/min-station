@@ -6,6 +6,8 @@
 
 `modelo_estendido.py` restringe `y` aos vértices intermediários e zera a saída de destino. Não é esta formulação e não é equivalente à base.
 
+> **Errata AS-01 (2026-10-11):** a afirmação abaixo de que a ativação individual da T18 implica a ativação agregada da U — e consequentemente a dominância do LP — foi refutada por contraexemplo racional. Veja [errata-desagregacao-por-origem-t18.md](errata-desagregacao-por-origem-t18.md). Mantemos o texto e os números históricos para rastreabilidade.
+
 ## Problema
 
 O mesmo MIN-STATION da formulação base: grafo com autonomia `r` em saltos, `|S| = |T| = m`, estações em qualquer vértice de `V`, objetivo `Σ_v y_v`. O fluxo anda no dígrafo de alcance `A_r`.

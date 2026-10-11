@@ -4,7 +4,7 @@
 
 Executar cada tarefa com a skill `/tlc-spec-driven` existente em `.claude/skills/tlc-spec-driven/`: testes derivados de AC, gates antes de commit, **um commit local atômico por tarefa**, sem push/deploy, e verificador independente após última tarefa (autor ≠ verificador), incluindo sensor de discriminação quando houver código.
 
-**Status:** Draft — todas pendentes; execução NÃO iniciada.  
+**Status:** Artefatos T1–T4 preparados e testados localmente; T5 e commits locais pendentes. Esta entrega não cumpre ainda o gate completo.  
 **Spec:** `specs/as-01-formalizacao-matematica-a/spec.md`  
 **Design:** `specs/as-01-formalizacao-matematica-a/design.md`  
 **Pré-condição externa:** AS00 (controle de instâncias pequenas)
@@ -24,8 +24,8 @@ Executar cada tarefa com a skill `/tlc-spec-driven` existente em `.claude/skills
 |---|---|
 | Spec | `python3 .claude/skills/tlc-spec-driven/scripts/validate_spec.py specs/as-01-formalizacao-matematica-a/spec.md` |
 | Tasks | `python3 .claude/skills/tlc-spec-driven/scripts/validate_tasks.py specs/as-01-formalizacao-matematica-a/tasks.md` |
-| Quick | `PYTHONHASHSEED=0 python -m unittest discover -s experiments -p 'test_as_*.py' -v` (focar suíte da feature assim que criada) |
-| Full | `PYTHONHASHSEED=0 python -m unittest discover -s experiments -p 'test_as_*.py' -v` + `python -m ruff check experiments/astra-study` nos arquivos criados; review matemático independente para provas |
+| Quick | `PYTHONHASHSEED=0 python3 -m unittest discover -s experiments/alternative-formulations -p 'test_as01*.py' -v` |
+| Full | `PYTHONHASHSEED=0 python3 -m unittest discover -s experiments/alternative-formulations -p 'test_as01*.py' -v` + `python3 -m ruff check experiments/alternative-formulations/test_as01_rational.py` + revisão matemática independente (autor ≠ revisor) |
 | Commit | `python3 .claude/skills/tlc-spec-driven/scripts/check_commit.py --message "feat(astra): implementa tarefa atômica"` |
 
 ## Execution Plan
@@ -42,7 +42,7 @@ T1 -> T2 -> T3 -> T4 -> T5
 
 **What:** Escrever definição normativa A1–A7; evidenciar requisitos AS01-01.
 
-**Where:** `docs/technical/reference/formulacoes/astra-a-grupos-origens.md` (proposto)
+**Where:** `docs/technical/reference/formulacoes/formulacao-a-grupos-origens.md` (preparado)
 
 **Depends on:** None
 
@@ -66,7 +66,7 @@ T1 -> T2 -> T3 -> T4 -> T5
 
 **What:** Provar a equivalência física inteira; evidenciar requisitos AS01-02.
 
-**Where:** `docs/technical/reference/formulacoes/astra-a-provas.md` (proposto)
+**Where:** `docs/technical/reference/formulacoes/provas-formulacao-a.md` (preparado)
 
 **Depends on:** T1
 
@@ -90,7 +90,7 @@ T1 -> T2 -> T3 -> T4 -> T5
 
 **What:** Revisar hierarquia LP e relações; evidenciar requisitos AS01-03,AS01-04,AS01-05.
 
-**Where:** `docs/technical/reference/formulacoes/astra-a-dominancia.md` (proposto)
+**Where:** `docs/technical/reference/formulacoes/relacoes-lp-formulacao-a.md` (preparado)
 
 **Depends on:** T2
 
@@ -114,7 +114,7 @@ T1 -> T2 -> T3 -> T4 -> T5
 
 **What:** Registrar errata T18 e testemunhas; evidenciar requisitos AS01-06.
 
-**Where:** `docs/technical/reference/formulacoes/astra-t18-errata.md` (proposto)
+**Where:** `docs/technical/reference/analise-estrutural/errata-desagregacao-por-origem-t18.md` (preparado)
 
 **Depends on:** T3
 
@@ -138,7 +138,7 @@ T1 -> T2 -> T3 -> T4 -> T5
 
 **What:** Emitir parecer independente do gate; evidenciar requisitos AS01-07.
 
-**Where:** `docs/technical/reference/formulacoes/astra-a-review.md` (proposto)
+**Where:** `specs/as-01-formalizacao-matematica-a/validation.md` (pendente de parecer independente)
 
 **Depends on:** T4
 

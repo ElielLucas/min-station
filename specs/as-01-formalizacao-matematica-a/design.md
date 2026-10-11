@@ -1,6 +1,6 @@
 # AS01 — Auditoria matemática da formulação A e errata T18 — Design
 
-**Status:** proposta técnica (sem execução)  
+**Status:** documentação matemática preparada; gate independente pendente  
 **Spec:** `specs/as-01-formalizacao-matematica-a/spec.md`
 
 ## Design Constraints
@@ -12,7 +12,7 @@
 
 ## Proposed Architecture and Contracts
 
-1. Documento normativo proposto: `docs/technical/reference/formulacoes/astra-a-grupos-origens.md` (referência congelada, revisão matemática antes da implementação).
+1. Documento normativo proposto: `docs/technical/reference/formulacoes/formulacao-a-grupos-origens.md` (referência congelada, revisão matemática antes da implementação).
 2. Para partição 𝓑 e origem indicadora a_Bv=1[v∈B]: c_Bv=|B|−1[v∈B] e κ_v=m−1 se v∈S∪T, senão m.
 3. Variáveis: y_v∈{0,1}; f^B_uv≥0, g^B_v≥0, 0≤p_Bt≤1, 0≤h^B_v≤1 para v∈B∩T. Fora dos índices: p_Bv=h_Bv=0.
 4. A1: Σ_u f^B_uv+h^B_v=p_Bv+g^B_v. A2: Σ_w f^B_vw+h^B_v=1[v∈B]+g^B_v. A3: Σ_B p_Bt=1 (t∈T).
@@ -21,6 +21,18 @@
 7. Cadeia candidata a provar: LP(U+K) ≤ LP(A(𝓑)+K) ≤ LP(A(unitária)+K)=LP(B+K) ≤ LP(F-CC+K) ≤ OPT.
 8. Casos específicos: Sec59(L=7), Tri, SharedTerminal, estrela T18 (a,b,c,d), a-v-b com S∩T e estações instaladas nos terminais.
 9. Separar revisão de teorema, testemunha racional Sec59 e resultados numéricos do Gurobi; não usar `OPTIMAL` como prova racional independente.
+
+## Localização efetiva dos entregáveis
+
+- `docs/technical/reference/formulacoes/formulacao-a-grupos-origens.md`
+- `docs/technical/reference/formulacoes/provas-formulacao-a.md`
+- `docs/technical/reference/formulacoes/relacoes-lp-formulacao-a.md`
+- `docs/technical/reference/analise-estrutural/errata-desagregacao-por-origem-t18.md`
+- `docs/technical/reference/analise-estrutural/desagregacao-por-origem.md` — somente aviso de errata inserido no topo.
+- `experiments/alternative-formulations/test_as01_rational.py` — aritmética exata e casos adversariais.
+- `specs/as-01-formalizacao-matematica-a/validation.md` — análise local, sem substituir verificador independente.
+
+Não criar `experiments/astra-study/`: a AS-01 não implementa novo solver.
 
 ## Dependencies and Reuse
 

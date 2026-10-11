@@ -1,15 +1,24 @@
 # AS01 — Auditoria matemática da formulação A e errata T18 — Specification
 
-**Status:** RASCUNHO · não implementada nesta entrega  
+**Status:** EM EXECUÇÃO · dossier preparado; revisão matemática independente pendente  
 **Prioridade:** P1 · gate matemático obrigatório  
 **Dependências:** AS00 (controle de instâncias pequenas)  
 **Local:** `specs/as-01-formalizacao-matematica-a/`
 
-> Esta spec traduz os pareceres Astra de 11/10/2026, auditados sobre a branch `novos_testes` no commit `e25b056`. Os pareceres descrevem hipóteses e verificações pontuais; **não são** uma campanha nova, e nenhuma tarefa abaixo foi executada.
+> Esta spec traduz os pareceres Astra de 11/10/2026, auditados sobre a branch `novos_testes` no commit `e25b056`. Os pareceres descrevem hipóteses e verificações pontuais; **não são** uma campanha nova, e a implementação da AS-01 precisa ser auditada no checkout real. As provas, documentos e verificações racionais locais estão preparados; não houve commits nem verificador independente nesta entrega.
 
 ## Problem Statement
 
 A T18 implementada não domina a relaxação U como afirmado na documentação. O Astra propôs A, com fluxos por grupos de origens e ligação global, mas suas provas, relações de dominância e casos S∩T ainda requerem revisão independente.
+
+## Evidências preparadas (ainda não homologadas)
+
+- `docs/technical/reference/formulacoes/formulacao-a-grupos-origens.md` — definição completa A1–A7.
+- `docs/technical/reference/formulacoes/provas-formulacao-a.md` — equivalência e projeções.
+- `docs/technical/reference/formulacoes/relacoes-lp-formulacao-a.md` — matriz de dominância, Sec59 e incertezas.
+- `docs/technical/reference/analise-estrutural/errata-desagregacao-por-origem-t18.md` — contraexemplo e limites racionais.
+- `experiments/alternative-formulations/test_as01_rational.py` — checagens exatas com `fractions.Fraction`; não é um solver LP/MIP.
+- `specs/as-01-formalizacao-matematica-a/validation.md` — evidência local e pendência de revisão independente.
 
 ## Goals
 
