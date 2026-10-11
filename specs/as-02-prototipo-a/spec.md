@@ -1,11 +1,11 @@
 # AS02 — Protótipo da formulação A e validação exaustiva — Specification
 
-**Status:** RASCUNHO · não implementada nesta entrega  
+**Status:** protótipo preparado localmente; gate formal PENDENTE (AS01 revisão independente; Gurobi; verificador AS02)  
 **Prioridade:** P2 · obrigatório  
 **Dependências:** AS01=PASS  
 **Local:** `specs/as-02-prototipo-a/`
 
-> Esta spec traduz os pareceres Astra de 11/10/2026, auditados sobre a branch `novos_testes` no commit `e25b056`. Os pareceres descrevem hipóteses e verificações pontuais; **não são** uma campanha nova, e nenhuma tarefa abaixo foi executada.
+> Esta spec traduz os pareceres Astra de 11/10/2026, auditados sobre a branch `novos_testes` no commit `e25b056`. Os pareceres descrevem hipóteses e verificações pontuais; **não são** uma campanha nova, e a execução integral dos gates/commits no checkout original permanece pendente.
 
 ## Problem Statement
 
@@ -29,7 +29,7 @@ Ainda não existe implementação experimental validada de A. Antes de um piloto
 
 | Decisão / hipótese | Default escolhido | Justificativa | Confirmado? |
 |---|---|---|---|
-| Caminho de código | `experiments/astra-study/` novo; nomes de arquivo propostos | Evita alterar modelos históricos. | Pendente de execução |
+| Caminho de código | `experiments/alternative-formulations/`; prefixo `as02_` | Evita alterar modelos históricos. | Implementado localmente; Gurobi pendente |
 | Tolerância LP | 1e-6 para comparação numérica; testemunha racional separada | Compatível com controles anteriores sem confundir certificação. | Pendente de execução |
 | Núcleo do modelo | Somente y binário; f,g,p,h contínuos | Preserva a formulação A descrita pelo Astra. | Pendente de execução |
 

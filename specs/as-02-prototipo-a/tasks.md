@@ -4,7 +4,7 @@
 
 Executar cada tarefa com a skill `/tlc-spec-driven` existente em `.claude/skills/tlc-spec-driven/`: testes derivados de AC, gates antes de commit, **um commit local atômico por tarefa**, sem push/deploy, e verificador independente após última tarefa (autor ≠ verificador), incluindo sensor de discriminação quando houver código.
 
-**Status:** Draft — todas pendentes; execução NÃO iniciada.  
+**Status:** implementação local preparada e testada; tarefas não concluídas segundo o `/tlc-spec-driven` por falta de commits atômicos e verificação independente.  
 **Spec:** `specs/as-02-prototipo-a/spec.md`  
 **Design:** `specs/as-02-prototipo-a/design.md`  
 **Pré-condição externa:** AS01=PASS
@@ -24,8 +24,8 @@ Executar cada tarefa com a skill `/tlc-spec-driven` existente em `.claude/skills
 |---|---|
 | Spec | `python3 .claude/skills/tlc-spec-driven/scripts/validate_spec.py specs/as-02-prototipo-a/spec.md` |
 | Tasks | `python3 .claude/skills/tlc-spec-driven/scripts/validate_tasks.py specs/as-02-prototipo-a/tasks.md` |
-| Quick | `PYTHONHASHSEED=0 python -m unittest discover -s experiments -p 'test_as_*.py' -v` (focar suíte da feature assim que criada) |
-| Full | `PYTHONHASHSEED=0 python -m unittest discover -s experiments -p 'test_as_*.py' -v` + `python -m ruff check experiments/astra-study` nos arquivos criados; review matemático independente para provas |
+| Quick | `PYTHONHASHSEED=0 python -m unittest discover -s experiments -p 'test_as02*.py' -v` (focar suíte da feature assim que criada) |
+| Full | `PYTHONHASHSEED=0 python -m unittest discover -s experiments -p 'test_as02*.py' -v` + `python -m ruff check experiments/alternative-formulations/as02*.py experiments/alternative-formulations/test_as02*.py experiments/alternative-formulations/run_as02_smoke.py` nos arquivos criados; review matemático independente para provas |
 | Commit | `python3 .claude/skills/tlc-spec-driven/scripts/check_commit.py --message "feat(astra): implementa tarefa atômica"` |
 
 ## Execution Plan
@@ -42,7 +42,7 @@ T1 -> T2 -> T3 -> T4
 
 **What:** Implementar construtor A com validação de partição; evidenciar requisitos AS02-01,AS02-02.
 
-**Where:** `experiments/astra-study/as_model_a.py` (proposto)
+**Where:** `experiments/alternative-formulations/as02_model_a.py` (proposto)
 
 **Depends on:** None
 
@@ -66,7 +66,7 @@ T1 -> T2 -> T3 -> T4
 
 **What:** Construir verificador de instalações pequenas; evidenciar requisitos AS02-03,AS02-04.
 
-**Where:** `experiments/astra-study/test_as_model_a.py` (proposto)
+**Where:** `experiments/alternative-formulations/test_as02_model_a.py` (proposto)
 
 **Depends on:** T1
 
@@ -90,7 +90,7 @@ T1 -> T2 -> T3 -> T4
 
 **What:** Adicionar regressão LP Sec59; evidenciar requisitos AS02-05.
 
-**Where:** `experiments/astra-study/test_as_sec59.py` (proposto)
+**Where:** `experiments/alternative-formulations/test_as02_sec59.py` (proposto)
 
 **Depends on:** T2
 
@@ -114,7 +114,7 @@ T1 -> T2 -> T3 -> T4
 
 **What:** Implementar gate físico/matemático; evidenciar requisitos AS02-06.
 
-**Where:** `experiments/astra-study/as_validation_gate.py` (proposto)
+**Where:** `experiments/alternative-formulations/as02_validation_gate.py` (proposto)
 
 **Depends on:** T3
 
@@ -147,3 +147,7 @@ T1 -> T2 -> T3 -> T4
 - [ ] Validadores estruturais de spec e tasks aprovados.
 - [ ] Verificador independente produziu `validation.md` apenas após Execute, com PASS/FAIL por requisito, `file:line` e sensor de discriminação quando couber.
 - [ ] Fechamento pelo validador de estado da skill quando o projeto adotar a estrutura `.specs/features/`; a estrutura corrente `specs/` mantém o padrão anterior sem migração silenciosa.
+
+## Verificação local e pendências
+
+A suíte AS02 foi executada com HiGHS/SciPy na cópia isolada (ver `validation-local.md`). Os checkboxes não foram marcados: o contrato exige Gurobi no checkout real, aprovação formal AS01, um commit por tarefa e verificador independente autor ≠ verificador. Não declarar AS02=PASS antes desses gates.
