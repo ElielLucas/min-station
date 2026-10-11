@@ -23,6 +23,7 @@ sem sobrescrever rodadas anteriores. Não faz commit.
 from __future__ import annotations
 
 import argparse
+import csv
 import sys
 import time
 import traceback
@@ -182,6 +183,27 @@ def run(tier, cfg, out_dir, modalities, formulations=DEFAULT_FORMULATIONS, *, pl
             results_csv, expected_instances=[i.nome for i in instances],
         )
         rep.write_json(out_dir / 'scalability_summary.json', scalability)
+    # FC-05: a avaliação candidata é publicada ANTES da finalização FC-04,
+    # para que pilot_gate.json e pilot_report.md recebam SHA-256 no manifesto.
+    # Gate autoritativo é recomputado somente DEPOIS de conferir todos os hashes.
+    if tier == 'pilot':
+        from verify_comparison_pilot import publish_candidate
+        with results_csv.open(encoding='utf-8', newline='') as stream:
+            pilot_rows = list(csv.DictReader(stream))
+        candidate_manifest = {
+            'tier': tier,
+            'modalities': list(modalities),
+            'formulations': list(formulations),
+            'config': cfg.as_dict(),
+            'instances': [
+                {'nome': inst.nome, 'instance_sha256': inst.instance_sha256}
+                for inst in instances
+            ],
+            'errors': [{'instance': name, 'stage': stage, 'traceback': detail}
+                       for name, stage, detail in errors],
+        }
+        publish_candidate(out_dir, pilot_rows, candidate_manifest)
+
     commands = [
         f'PYTHONHASHSEED=0 python run_comparison.py --tier {tier} '
         f'--modalities {",".join(modalities)} --time-limit {cfg.time_limit_s} '
@@ -208,6 +230,8 @@ def run(tier, cfg, out_dir, modalities, formulations=DEFAULT_FORMULATIONS, *, pl
         'optimality_proven e time_to_proof_s permanecem vazias no schema FC03-v1.',
         'FC-04: relatório de escalabilidade mede somente as instâncias selecionadas no lote; '
         'nenhuma conclusão é estendida às 75 instâncias principais não sondadas.',
+        'FC-05: o relatório pilot_gate.json é pré-auditoria; somente o verificador independente '
+        'pós-manifesto fornece READY_FOR_EXTENDED. Nenhuma campanha longa é disparada.',
         'Este experimento é independente da N2 (N2-T2B/N2-T3..T6); não usa a geração de colunas '
         'na raiz nem reabre a decisão N2 FAIL.',
     ]
@@ -231,8 +255,18 @@ def run(tier, cfg, out_dir, modalities, formulations=DEFAULT_FORMULATIONS, *, pl
     manifest['scalability_summary'] = scalability
     manifest['errors'] = [{'instance': n, 'stage': s, 'traceback': tb} for n, s, tb in errors]
     rep.finalize_manifest(out_dir / 'manifest.json', manifest)
-    print(f'Concluído. {len(errors)} falha(s). Artefatos em {out_dir}')
-    return len(errors)
+    gate_failed = False
+    if tier == 'pilot':
+        from verify_comparison_pilot import READY, evaluate
+        audit_gate = evaluate(out_dir, root=ROOT)
+        print(f'FC-05/GATE: {audit_gate["status"]} '
+              f'artifact_audit={audit_gate["artifact_audit"]} '
+              f'problems={audit_gate["problems"]}')
+        # Não transforma incompletude em sucesso. Não inicia --tier main.
+        gate_failed = audit_gate['status'] != READY
+    print(f'Concluído. {len(errors)} falha(s) de execução; '
+          f'gate_failed={gate_failed}. Artefatos em {out_dir}')
+    return len(errors) + int(gate_failed)
 
 
 def main(argv=None):
@@ -246,8 +280,8 @@ def main(argv=None):
     parser.add_argument('--time-limit', type=float, default=None,
                         help='segundos globais por braço de MIP, incluindo montagem e validação; default 3600, '
                              'ou 120 com --tier pilot')
-    parser.add_argument('--lp-time-limit', type=float, default=600.0,
-                        help='segundos globais por braço LP, incluindo K, montagem e solver')
+    parser.add_argument('--lp-time-limit', type=float, default=None,
+                        help='segundos globais por braço LP, incluindo K, montagem e solver; default 60 no pilot')
     parser.add_argument('--threads', type=int, default=4)
     parser.add_argument('--seed', type=int, default=42)
     parser.add_argument('--max-w', type=int, default=200000)
@@ -274,8 +308,11 @@ def main(argv=None):
     time_limit = args.time_limit
     if time_limit is None:
         time_limit = 120.0 if args.tier == 'pilot' else 3600.0
+    lp_time_limit = args.lp_time_limit
+    if lp_time_limit is None:
+        lp_time_limit = 60.0 if args.tier == 'pilot' else 600.0
     cfg = fcfg.ExperimentConfig(threads=args.threads, seed=args.seed, time_limit_s=time_limit,
-                                lp_time_limit_s=args.lp_time_limit, max_w=args.max_w,
+                                lp_time_limit_s=lp_time_limit, max_w=args.max_w,
                                 modalities=('A', 'B', 'C'))
 
     out_dir = args.out_dir

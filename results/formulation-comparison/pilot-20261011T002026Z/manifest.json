@@ -1,0 +1,308 @@
+{
+  "artifact_schema": "FC04-v1",
+  "code_files_sha256": {
+    "baseline.py": "f10dcf2e506072f806a5ac5b3af9d7d7292817beeae868bea92c3bf66d20fcb1",
+    "experiments/alternative-formulations/fcc.py": "318d045e0f4ed5462085aac9c3f72ae1854346185bdad8dd5e03b9920730d919",
+    "experiments/alternative-formulations/fcc_k.py": "b52fc23bb0575bc950b09661217b88d4a91370926450b0ebba6cc03d1f63ae01",
+    "experiments/cuts/cuts.py": "4952ac563156bc616105251b414e8c2778a3859be94ff5ed183c2d9cd8ffaebb",
+    "experiments/cuts/harness.py": "9287c03ea978f82a1d69ebd25c2a2d95f40e6895a02bc7a0b575075728fdf73c",
+    "experiments/cuts/independent_validator.py": "fb18fd4a02533120129efc68c0acb6078c29f3af8dbade5f8d4852c7973cd352",
+    "experiments/formulation-comparison/fc_budget.py": "347f1c2da52e567f2728b3afae154e4f7a17a30b1182ff6e27ecb9db2487bf9f",
+    "experiments/formulation-comparison/fc_config.py": "835cd6823b5406fee6d34f44261b6cc04fb6158fdc301b105d5b23f15799baa5",
+    "experiments/formulation-comparison/fc_core.py": "3622489160c8b43be46f626080eb02678ca2ccbed08e3f63267e9628abd2067a",
+    "experiments/formulation-comparison/fc_evidence.py": "11ae83cbf60829fffa8fee88431b1fefbaa625c7c22a996b3acfa4b8cb0c6c51",
+    "experiments/formulation-comparison/fc_instances.py": "ede612a804f8ef3875b4b2dd8c81b81b1ee12e6633ddd91377e006b3f3795261",
+    "experiments/formulation-comparison/fc_integrity.py": "936dce9b322c0e65a31572f7a6186337a7663c37927306940deebadb211fe24f",
+    "experiments/formulation-comparison/fc_pairing.py": "c0107fa87bd7feb83ece70cf80266d4922531542b40c06b3a77f0ef472c76525",
+    "experiments/formulation-comparison/fc_plot_evolution.py": "964acb1da0ec60980b5a9f5aae852d9b30167eb6c41528639689c160b4df24ff",
+    "experiments/formulation-comparison/fc_reporting.py": "13029ce9e43b926edf59c0f2d481bf5c89b1a8cbec225fee1c250b73ce442ad3",
+    "experiments/formulation-comparison/run_comparison.py": "8f912859a061a8fef9c8d01ee0b7cf1233a6f779005d05077a5b34cfe69d0423",
+    "experiments/formulation-comparison/test_comparison.py": "c683d74796bcf8e00d49959bf5d67cfd2575079e4b2d7cb36774130554f76c5e",
+    "experiments/formulation-comparison/test_fc01_budget.py": "8340fd8746c66119fef270a371127ff736707d582417a906899210415bcf4c8a",
+    "experiments/formulation-comparison/test_fc02_pairing.py": "1eb6f03575bef0c162bf9f87dea34c84cb0252cdbbf22c83eb708c36e4c146ff",
+    "experiments/formulation-comparison/test_fc02_reporting_pure.py": "766b754edd9484d0841c4bc77b99b7021197bb364cefcada49a73b3cc03642a5",
+    "experiments/formulation-comparison/test_fc03_evidence_pure.py": "e184375753d5721e51d9a06d279d59f2ccae201ceec620f5fcb80345765e38be",
+    "experiments/formulation-comparison/test_fc04_integrity_pure.py": "3f398b3865e3e4f0e7be8036d0826cc6006a090bcc05ebc3c4cde81ef897b946",
+    "experiments/formulation-comparison/test_fc05_pilot_pure.py": "1c001f1dd5c11faa45faca760589459caf12b14843c011b817b972ed35ad1cfd",
+    "experiments/formulation-comparison/verify_comparison_artifacts.py": "850d9f3020add0cb8c2a6cddeb919cb9afede13c19ea8dd56e91022a7f05f14a",
+    "experiments/formulation-comparison/verify_comparison_pilot.py": "c1e9d1b099d15adc0a860446d2c87f171f6a7c769faa4e22b082a39b6713c1e7",
+    "instances/manifest.csv": "218c490bd3ba3e34740bc23f13b07ba864f0d624755aca9b992a8f23f6afad08",
+    "ms_utils.py": "bc49d8e21bd70a62b5789de5d03bffdb09914a6456752d59ac249ad50179abcc"
+  },
+  "commands": [
+    "PYTHONHASHSEED=0 python run_comparison.py --tier pilot --modalities A,B --time-limit 120.0 --threads 4 --seed 42 --max-w 200000 --lp-time-limit 60.0 --formulations comp_mip,fcc_k,baseline --plots"
+  ],
+  "config": {
+    "checkpoints_s": [
+      1.0,
+      5.0,
+      10.0,
+      30.0,
+      60.0,
+      120.0,
+      300.0,
+      600.0,
+      1800.0,
+      3600.0
+    ],
+    "lp_time_limit_s": 60.0,
+    "max_w": 200000,
+    "memory_metric": "ru_maxrss_kb_worker_process_cumulative",
+    "modalities": [
+      "A",
+      "B",
+      "C"
+    ],
+    "seed": 42,
+    "threads": 4,
+    "time_limit_s": 120.0
+  },
+  "environment": {
+    "gurobi_available": true,
+    "gurobi_version": "12.0.3",
+    "platform": "Linux-6.8.0-146-generic-x86_64-with-glibc2.39",
+    "processor": "x86_64",
+    "python_version": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]"
+  },
+  "errors": [],
+  "evidence_schema": "FC03-v1",
+  "formulations": [
+    "comp_mip",
+    "fcc_k",
+    "baseline"
+  ],
+  "generated_files": [
+    "results/formulation-comparison/pilot-20261011T002026Z/evolution-bp-nao-q2-B2-s0.png",
+    "results/formulation-comparison/pilot-20261011T002026Z/evolution-hb-q4-ndir2-p1-k1-L2.png",
+    "results/formulation-comparison/pilot-20261011T002026Z/evolution.csv",
+    "results/formulation-comparison/pilot-20261011T002026Z/pilot_gate.json",
+    "results/formulation-comparison/pilot-20261011T002026Z/pilot_report.md",
+    "results/formulation-comparison/pilot-20261011T002026Z/results.csv",
+    "results/formulation-comparison/pilot-20261011T002026Z/run.log"
+  ],
+  "generated_files_sha256": {
+    "results/formulation-comparison/pilot-20261011T002026Z/evolution-bp-nao-q2-B2-s0.png": "ee06363bb20caa1bdf210ccd28ee458d05a41375d0e6d8b82b5cfa86d990f50b",
+    "results/formulation-comparison/pilot-20261011T002026Z/evolution-hb-q4-ndir2-p1-k1-L2.png": "41144d4d9db4c78a3526f6c213a455a46f452a8e940fdbd3de6dd0a3663a166e",
+    "results/formulation-comparison/pilot-20261011T002026Z/evolution.csv": "dbea77a0fb6788b835183685e3bffd768cd97bc69f9114ccf3900591e16b5c07",
+    "results/formulation-comparison/pilot-20261011T002026Z/pilot_gate.json": "b3258255ef8e5b702f3b7b3488d203d8e6acbb5dc6bd14b49a54248792662d9e",
+    "results/formulation-comparison/pilot-20261011T002026Z/pilot_report.md": "a73e4c64d9c8d7a16ac2134716354a480c1920474345459dc1f50d611782f1a1",
+    "results/formulation-comparison/pilot-20261011T002026Z/results.csv": "41eb6d4f4fbc51f2a048e8fcdf89f4c3b4eb8deb0a6a20ce47891ebaedc609b8",
+    "results/formulation-comparison/pilot-20261011T002026Z/run.log": "2a38d4ee22d96f4383d614c403d591ee439d0cb89ab29c1a4d2e5fa03463147a"
+  },
+  "git": {
+    "branch": "novos_testes",
+    "commit": "f3166b6bbddc085dfb190fc9f35ca9bcff5a550b",
+    "dirty": true
+  },
+  "input_files_sha256": {
+    "instances/estrutural/bp/bp-nao-q2-B2-s0.txt": "a4383c76f76dad63302b2f8fdbd3ac572c771a094ca9aaa8d19573cf3d0364d9",
+    "instances/estrutural/hb/hb-q4-ndir2-p1-k1-L2.txt": "65336031d2f606ac8029d2ac1714fc9b5cd4711826b93cd80cfc552fa6bd481e"
+  },
+  "instances": [
+    {
+      "caminho": "instances/estrutural/hb/hb-q4-ndir2-p1-k1-L2.txt",
+      "classe": "estrutural",
+      "familia": "hb",
+      "instance_content_sha256": "62d731685b8c0e254065d8d2ae55f7e409c8609aff1743a4f450936869a53e72",
+      "instance_sha256": "65336031d2f606ac8029d2ac1714fc9b5cd4711826b93cd80cfc552fa6bd481e",
+      "m": 6,
+      "metadata_checks": {
+        "arcos_arquivo": {
+          "expected": 48,
+          "observed": 48,
+          "status": "MATCH"
+        },
+        "arestas_nao_dirigidas": {
+          "expected": 24,
+          "observed": 24,
+          "status": "MATCH"
+        },
+        "classes_wl": {
+          "reason": "metrica derivada não recalculada por este loader",
+          "status": "UNSUPPORTED"
+        },
+        "densidade_alcance": {
+          "reason": "metrica derivada não recalculada por este loader",
+          "status": "UNSUPPORTED"
+        },
+        "diametro_exato": {
+          "reason": "metrica derivada não recalculada por este loader",
+          "status": "UNSUPPORTED"
+        },
+        "file_M": {
+          "status": "MATCH"
+        },
+        "file_N": {
+          "status": "MATCH"
+        },
+        "frac_folhas": {
+          "reason": "metrica derivada não recalculada por este loader",
+          "status": "UNSUPPORTED"
+        },
+        "m": {
+          "expected": 6,
+          "observed": 6,
+          "status": "MATCH"
+        },
+        "n": {
+          "expected": 16,
+          "observed": 16,
+          "status": "MATCH"
+        },
+        "planar": {
+          "reason": "metrica derivada não recalculada por este loader",
+          "status": "UNSUPPORTED"
+        },
+        "r": {
+          "expected": 1.0,
+          "observed": 1.0,
+          "status": "MATCH"
+        },
+        "r_arquivo": {
+          "expected": 1.0,
+          "observed": 1.0,
+          "status": "MATCH"
+        },
+        "r_usado": {
+          "expected": 1.0,
+          "observed": 1.0,
+          "status": "MATCH"
+        },
+        "sha256": {
+          "status": "MATCH"
+        },
+        "sha256_conteudo": {
+          "status": "MATCH"
+        },
+        "treewidth_ub": {
+          "reason": "metrica derivada não recalculada por este loader",
+          "status": "UNSUPPORTED"
+        }
+      },
+      "n": 16,
+      "nome": "hb-q4-ndir2-p1-k1-L2.txt",
+      "r": 1.0
+    },
+    {
+      "caminho": "instances/estrutural/bp/bp-nao-q2-B2-s0.txt",
+      "classe": "estrutural",
+      "familia": "bp",
+      "instance_content_sha256": "8ebdfc1e8243f11d14ec8d3f21cb9e84081c80e383d48891799706d9b117b240",
+      "instance_sha256": "a4383c76f76dad63302b2f8fdbd3ac572c771a094ca9aaa8d19573cf3d0364d9",
+      "m": 4,
+      "metadata_checks": {
+        "arcos_arquivo": {
+          "expected": 32,
+          "observed": 32,
+          "status": "MATCH"
+        },
+        "arestas_nao_dirigidas": {
+          "expected": 16,
+          "observed": 16,
+          "status": "MATCH"
+        },
+        "classes_wl": {
+          "reason": "metrica derivada não recalculada por este loader",
+          "status": "UNSUPPORTED"
+        },
+        "densidade_alcance": {
+          "reason": "metrica derivada não recalculada por este loader",
+          "status": "UNSUPPORTED"
+        },
+        "diametro_exato": {
+          "reason": "metrica derivada não recalculada por este loader",
+          "status": "UNSUPPORTED"
+        },
+        "file_M": {
+          "status": "MATCH"
+        },
+        "file_N": {
+          "status": "MATCH"
+        },
+        "frac_folhas": {
+          "reason": "metrica derivada não recalculada por este loader",
+          "status": "UNSUPPORTED"
+        },
+        "m": {
+          "expected": 4,
+          "observed": 4,
+          "status": "MATCH"
+        },
+        "n": {
+          "expected": 16,
+          "observed": 16,
+          "status": "MATCH"
+        },
+        "planar": {
+          "reason": "metrica derivada não recalculada por este loader",
+          "status": "UNSUPPORTED"
+        },
+        "r": {
+          "expected": 1.0,
+          "observed": 1.0,
+          "status": "MATCH"
+        },
+        "r_arquivo": {
+          "expected": 1.0,
+          "observed": 1.0,
+          "status": "MATCH"
+        },
+        "r_usado": {
+          "expected": 1.0,
+          "observed": 1.0,
+          "status": "MATCH"
+        },
+        "sha256": {
+          "status": "MATCH"
+        },
+        "sha256_conteudo": {
+          "status": "MATCH"
+        },
+        "treewidth_ub": {
+          "reason": "metrica derivada não recalculada por este loader",
+          "status": "UNSUPPORTED"
+        }
+      },
+      "n": 16,
+      "nome": "bp-nao-q2-B2-s0.txt",
+      "r": 1.0
+    }
+  ],
+  "limitations": [
+    "F-CC+K (Modalidades A e B) usa enumeração completa de (W,I,J); instâncias acima do cap de enumeração (max_w) são marcadas NOT_MEASURED_CAP_EXCEEDED, nunca aproximadas.",
+    "O lote scalability inclui instâncias deliberadamente acima do cap, para documentar a fronteira de escalabilidade, não para comparar diretamente as duas formulações nelas.",
+    "Memória é resource.ru_maxrss do worker isolado (pico cumulativo do worker); ver fc_config.ExperimentConfig.memory_metric.",
+    "FC-02: par inteiro primário COMP+K (y binário, fluxo contínuo) × F-CC+K; baseline sem K é ablação opcional, nunca controle principal.",
+    "PAIR_VALID confirma somente comparabilidade dos parâmetros e validade física das incumbentes observadas; não constitui prova racional independente de otimalidade.",
+    "FC-03: solver_numeric_* são dados de ponto flutuante do Gurobi. ObjBound de modelo completo é apenas bound numérico; jamais certificado racional sem verifier.",
+    "FC-03: nenhum comprovante racional independente é produzido automaticamente; rational_verification=NOT_CERTIFIED e certified_gap_status=INCONCLUSIVE por padrão.",
+    "FC-03: colunas legadas ambíguas lb_best, ub_best, gap_abs, gap_rel, optimality_proven e time_to_proof_s permanecem vazias no schema FC03-v1.",
+    "FC-04: relatório de escalabilidade mede somente as instâncias selecionadas no lote; nenhuma conclusão é estendida às 75 instâncias principais não sondadas.",
+    "FC-05: o relatório pilot_gate.json é pré-auditoria; somente o verificador independente pós-manifesto fornece READY_FOR_EXTENDED. Nenhuma campanha longa é disparada.",
+    "Este experimento é independente da N2 (N2-T2B/N2-T3..T6); não usa a geração de colunas na raiz nem reabre a decisão N2 FAIL."
+  ],
+  "modalities": [
+    "A",
+    "B"
+  ],
+  "optional_ablation": "baseline",
+  "primary_comparison": [
+    "comp_mip",
+    "fcc_k"
+  ],
+  "rational_proofs_automatically_generated": false,
+  "rational_verifier_executed": false,
+  "reused_files_sha256": {
+    "baseline.py": "f10dcf2e506072f806a5ac5b3af9d7d7292817beeae868bea92c3bf66d20fcb1",
+    "experiments/alternative-formulations/fcc.py": "318d045e0f4ed5462085aac9c3f72ae1854346185bdad8dd5e03b9920730d919",
+    "experiments/alternative-formulations/fcc_k.py": "b52fc23bb0575bc950b09661217b88d4a91370926450b0ebba6cc03d1f63ae01",
+    "experiments/cuts/cuts.py": "4952ac563156bc616105251b414e8c2778a3859be94ff5ed183c2d9cd8ffaebb",
+    "experiments/cuts/harness.py": "9287c03ea978f82a1d69ebd25c2a2d95f40e6895a02bc7a0b575075728fdf73c",
+    "experiments/cuts/independent_validator.py": "fb18fd4a02533120129efc68c0acb6078c29f3af8dbade5f8d4852c7973cd352",
+    "instances/manifest.csv": "218c490bd3ba3e34740bc23f13b07ba864f0d624755aca9b992a8f23f6afad08"
+  },
+  "scalability_summary": null,
+  "shared_instance_loading_wall_s": 0.0035690079675987363,
+  "solver_numeric_bounds_are_rational_proofs": false,
+  "tier": "pilot"
+}

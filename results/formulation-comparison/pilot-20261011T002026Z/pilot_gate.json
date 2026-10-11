@@ -1,0 +1,122 @@
+{
+  "audit_required_for_final_gate": true,
+  "automatic_extended_execution": false,
+  "candidate_gate": "READY_FOR_EXTENDED",
+  "global_reasons": [],
+  "instances": [
+    {
+      "instance": "hb-q4-ndir2-p1-k1-L2.txt",
+      "instance_sha256": "65336031d2f606ac8029d2ac1714fc9b5cd4711826b93cd80cfc552fa6bd481e",
+      "measurements": {
+        "comp_mip": {
+          "physical_feasible_ub": 2,
+          "solver_numeric_lp": null,
+          "solver_numeric_mip_incumbent": 2.0,
+          "solver_work": 0.0005729741333744554,
+          "status": "OPTIMAL",
+          "wall_total_s": 1.0518065380165353
+        },
+        "fcc_k": {
+          "physical_feasible_ub": 2,
+          "solver_numeric_lp": null,
+          "solver_numeric_mip_incumbent": 2.0,
+          "solver_work": 2.3107140035831852,
+          "status": "OPTIMAL",
+          "wall_total_s": 6.3887875829823315
+        },
+        "lp_base": {
+          "physical_feasible_ub": null,
+          "solver_numeric_lp": 0.3333333333333333,
+          "solver_numeric_mip_incumbent": null,
+          "solver_work": 0.00019960000652625125,
+          "status": "OPTIMAL",
+          "wall_total_s": 0.764988498063758
+        },
+        "lp_comp": {
+          "physical_feasible_ub": null,
+          "solver_numeric_lp": 1.0,
+          "solver_numeric_mip_incumbent": null,
+          "solver_work": 0.00020559046949305388,
+          "status": "OPTIMAL",
+          "wall_total_s": 1.0544307919917628
+        },
+        "lp_fcc_k": {
+          "physical_feasible_ub": null,
+          "solver_numeric_lp": 2.0,
+          "solver_numeric_mip_incumbent": null,
+          "solver_work": 0.6762870672539164,
+          "status": "OPTIMAL",
+          "wall_total_s": 5.33225061907433
+        }
+      },
+      "observed_lp_rows": 3,
+      "observed_primary_rows": 2,
+      "reasons": [],
+      "status": "READY_FOR_EXTENDED"
+    },
+    {
+      "instance": "bp-nao-q2-B2-s0.txt",
+      "instance_sha256": "a4383c76f76dad63302b2f8fdbd3ac572c771a094ca9aaa8d19573cf3d0364d9",
+      "measurements": {
+        "comp_mip": {
+          "physical_feasible_ub": 7,
+          "solver_numeric_lp": null,
+          "solver_numeric_mip_incumbent": 7.0,
+          "solver_work": 0.00025227431224489805,
+          "status": "OPTIMAL",
+          "wall_total_s": 1.0503884290810674
+        },
+        "fcc_k": {
+          "physical_feasible_ub": 7,
+          "solver_numeric_lp": null,
+          "solver_numeric_mip_incumbent": 7.0,
+          "solver_work": 2.683184425855764,
+          "status": "OPTIMAL",
+          "wall_total_s": 3.868055089027621
+        },
+        "lp_base": {
+          "physical_feasible_ub": null,
+          "solver_numeric_lp": 3.0,
+          "solver_numeric_mip_incumbent": null,
+          "solver_work": 0.00012863789602040812,
+          "status": "OPTIMAL",
+          "wall_total_s": 0.9250976199982688
+        },
+        "lp_comp": {
+          "physical_feasible_ub": null,
+          "solver_numeric_lp": 6.0,
+          "solver_numeric_mip_incumbent": null,
+          "solver_work": 0.00015080056382086175,
+          "status": "OPTIMAL",
+          "wall_total_s": 0.9766741060884669
+        },
+        "lp_fcc_k": {
+          "physical_feasible_ub": null,
+          "solver_numeric_lp": 7.0,
+          "solver_numeric_mip_incumbent": null,
+          "solver_work": 0.1440766837716315,
+          "status": "OPTIMAL",
+          "wall_total_s": 2.3340058519970626
+        }
+      },
+      "observed_lp_rows": 3,
+      "observed_primary_rows": 2,
+      "reasons": [],
+      "status": "READY_FOR_EXTENDED"
+    }
+  ],
+  "interpretation": "operational_readiness_only_not_superiority_or_rational_optimality",
+  "schema": "FC05-v1",
+  "scope": "preselected_pilot_instances_only",
+  "selected_instances": [
+    "hb-q4-ndir2-p1-k1-L2.txt",
+    "bp-nao-q2-B2-s0.txt"
+  ],
+  "summary": {
+    "censored_or_missing_total": 0,
+    "not_ready_total": 0,
+    "primary_pair_valid_total": 2,
+    "raw_rows_total": 12,
+    "selected_total": 2
+  }
+}

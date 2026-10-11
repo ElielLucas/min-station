@@ -230,3 +230,29 @@ A contagem de escalabilidade é por **instância única**, combinando observaç�
 Essa contagem se refere somente aos dez casos observados e **não** aos 75
 casos principais. Execuções históricas anteriores ao schema FC04-v1 são
 preservadas; o auditor novo não as declara válidas retroativamente.
+
+## FC-05 — Piloto corrigido e Gate operacional
+
+Com FC-01–04 implementadas, o `--tier pilot` publica `pilot_gate.json` e
+`pilot_report.md` no diretório novo, ANTES da geração de `manifest.json`, de
+modo que ambos sejam cobertos por SHA-256. O executor avalia o gate final
+independente após o manifesto; nenhum comando `--tier main` é executado
+implicitamente.
+
+```bash
+PYTHONHASHSEED=0 python experiments/formulation-comparison/run_comparison.py \
+  --tier pilot --modalities A,B --formulations comp_mip,fcc_k,baseline \
+  --lp-time-limit 60 --time-limit 120 --plots
+
+python experiments/formulation-comparison/verify_comparison_pilot.py \
+  results/formulation-comparison/pilot-<TIMESTAMP>Z/
+```
+
+**Atenção:** o caminho deve ser o caminho **real** da execução. O JSON
+`pilot_gate.json` é um *candidato*; a decisão final (`READY_FOR_EXTENDED`
+ou `NOT_READY`) depende da reauditoria FC-04 pós-manifesto. `READY` significa
+somente integridade operacional desta amostra; não atesta superioridade nem
+prova racional e não dispara FC-06. A ablação `baseline` sem K não integra
+o par primário.
+
+Consulte `docs/technical/plans/execucao/formulation-comparison-piloto-corrigido.md`.
