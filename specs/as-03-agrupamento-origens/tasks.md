@@ -4,7 +4,7 @@
 
 Executar cada tarefa com a skill `/tlc-spec-driven` existente em `.claude/skills/tlc-spec-driven/`: testes derivados de AC, gates antes de commit, **um commit local atômico por tarefa**, sem push/deploy, e verificador independente após última tarefa (autor ≠ verificador), incluindo sensor de discriminação quando houver código.
 
-**Status:** Draft — todas pendentes; execução NÃO iniciada.  
+**Status:** código e testes locais preparados; integração, commits atômicos e verificação independente pendentes.  
 **Spec:** `specs/as-03-agrupamento-origens/spec.md`  
 **Design:** `specs/as-03-agrupamento-origens/design.md`  
 **Pré-condição externa:** AS02=PASS; AS00 pré-registro
@@ -24,9 +24,9 @@ Executar cada tarefa com a skill `/tlc-spec-driven` existente em `.claude/skills
 |---|---|
 | Spec | `python3 .claude/skills/tlc-spec-driven/scripts/validate_spec.py specs/as-03-agrupamento-origens/spec.md` |
 | Tasks | `python3 .claude/skills/tlc-spec-driven/scripts/validate_tasks.py specs/as-03-agrupamento-origens/tasks.md` |
-| Quick | `PYTHONHASHSEED=0 python -m unittest discover -s experiments -p 'test_as_*.py' -v` (focar suíte da feature assim que criada) |
-| Full | `PYTHONHASHSEED=0 python -m unittest discover -s experiments -p 'test_as_*.py' -v` + `python -m ruff check experiments/astra-study` nos arquivos criados; review matemático independente para provas |
-| Commit | `python3 .claude/skills/tlc-spec-driven/scripts/check_commit.py --message "feat(astra): implementa tarefa atômica"` |
+| Quick | `PYTHONHASHSEED=0 python3 -m unittest discover -s experiments/alternative-formulations -p 'test_as03*.py' -v` |
+| Full | `PYTHONHASHSEED=0 python3 -m unittest discover -s experiments/alternative-formulations -p 'test_as03*.py' -v` + `PYTHONPATH=. python3 experiments/alternative-formulations/run_as03_smoke.py` + `python3 -m ruff check experiments/alternative-formulations/as03_*.py experiments/alternative-formulations/test_as03*.py experiments/alternative-formulations/run_as03_smoke.py`; revisão independente |
+| Commit | `python3 .claude/skills/tlc-spec-driven/scripts/check_commit.py --message "feat(as03): implementa tarefa atomica"` |
 
 ## Execution Plan
 
@@ -42,7 +42,7 @@ T1 -> T2 -> T3
 
 **What:** Codificar política determinística de dois grupos; evidenciar requisitos AS03-01,AS03-05.
 
-**Where:** `experiments/astra-study/as_grouping.py` (proposto)
+**Where:** `experiments/alternative-formulations/as03_grouping.py` (criado no pacote)
 
 **Depends on:** None
 
@@ -66,7 +66,7 @@ T1 -> T2 -> T3
 
 **What:** Codificar refinamento aninhado de quatro grupos; evidenciar requisitos AS03-02.
 
-**Where:** `experiments/astra-study/as_refinement.py` (proposto)
+**Where:** `experiments/alternative-formulations/as03_grouping.py` (`refine_four`)
 
 **Depends on:** T1
 
@@ -90,7 +90,7 @@ T1 -> T2 -> T3
 
 **What:** Implementar estimativa de tamanho e abstenção; evidenciar requisitos AS03-03,AS03-04.
 
-**Where:** `experiments/astra-study/as_size.py` (proposto)
+**Where:** `experiments/alternative-formulations/as03_size.py` (integração no planner descrita no design)
 
 **Depends on:** T2
 
@@ -117,6 +117,12 @@ T1 -> T2 -> T3
 ```
 
 **Cross-check:** a ordem explícita acima coincide com cada `Depends on`; nenhuma dependência aponta para fase posterior.
+
+## Evidências de pacote (não substituem gates do checkout)
+
+- Testes e smoke executados em cópia isolada com o compilador da AS02.
+- `AS03-01/02/03/04/05` têm testes automáticos; review externo e commits originais pendentes.
+- Nenhuma otimização no benchmark D/A foi autorizada.
 
 ## Closing Verification
 

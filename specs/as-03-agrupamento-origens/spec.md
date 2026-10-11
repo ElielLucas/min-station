@@ -1,11 +1,11 @@
 # AS03 — Políticas reprodutíveis de agrupamento e limites de tamanho — Specification
 
-**Status:** RASCUNHO · não implementada nesta entrega  
+**Status:** implementação de protótipo preparada · homologação independente pendente  
 **Prioridade:** P3 · obrigatório  
 **Dependências:** AS02=PASS; AS00 pré-registro  
 **Local:** `specs/as-03-agrupamento-origens/`
 
-> Esta spec traduz os pareceres Astra de 11/10/2026, auditados sobre a branch `novos_testes` no commit `e25b056`. Os pareceres descrevem hipóteses e verificações pontuais; **não são** uma campanha nova, e nenhuma tarefa abaixo foi executada.
+> Esta spec partiu dos pareceres Astra de 11/10/2026 sobre `novos_testes` (`e25b056`). O protótipo AS03 foi implementado em pacote isolado, **sem campanha LP/MIP**, sem modificação de resultados históricos e ainda sujeito aos gates do repositório e à revisão independente.
 
 ## Problem Statement
 
@@ -31,7 +31,7 @@ A pode tornar-se cara se os grupos crescerem em número ou se A_r for denso. A e
 | Quatro grupos | Somente refinamento dos dois blocos existentes e mediante gatilho AS05 | Preserva a relação LP não-decrescente. | Pendente de execução |
 | Estado de abstenção | `NOT_BUILT_SIZE`, `NOT_BUILT_MEMORY`, `NOT_BUILT_BUDGET` | Não atribuir a falhas um resultado LP. | Pendente de execução |
 
-**Open questions: none** — os defaults são premissas explícitas sujeitas aos gates anteriores; mudar qualquer uma depois de observar a avaliação exige nova versão e registro de desvio.
+**Open questions: none** — defaults da v1: `reachability_degree` com `seed=0` como política primária em desenvolvimento, `balanced` como controle, A4 apenas por refinamento aninhado autorizado pela AS05. Alteração após avaliação exige nova versão, justificativa e registro de desvio.
 
 ## User Stories
 
@@ -67,7 +67,7 @@ Escolhas de agrupamento devem ser fundamentadas estruturalmente; políticas dist
 
 - [ ] Cada critério de aceite possui teste que compara o resultado com o comportamento esperado da spec, e não com a implementação.
 - [ ] Todos os casos negativos, abstenções e limites matemáticos definidos são preservados.
-- [ ] O gate desta spec é evidenciado por artefatos e revisão autor ≠ verificador; na fase de execução há um commit local atômico por tarefa.
+- [ ] O gate desta spec é evidenciado por artefatos e revisão autor ≠ verificador; na fase de execução há um commit local atômico por tarefa. Os gates pendentes de AS01/AS02 também devem ser fechados para liberar campanhas.
 - [ ] Não há edição nem sobrescrita das evidências congeladas N1, N2 e FC.
 
 ## Tests Derived from Acceptance Criteria
