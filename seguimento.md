@@ -1,11 +1,14 @@
-Spec	Objetivo	Prioridade
-FC-01	Corrigir orçamento global de tempo e medição computacional	Alta
-FC-02	Comparar corretamente COMP × F-CC+K	Alta
-FC-03	Separar resultados numéricos de certificados matemáticos	Alta
-FC-04	Corrigir integridade, hashes, manifesto e relatórios	Alta
-CERT-01	Comparar N1, N2-box e ENUM para o mesmo vetor dual	Alta
-CERT-02	Construir testemunha primal racional e verificar G2	Média
-FC-05	Reexecutar o piloto corrigido e validar a comparação	Alta
-FC-06	Executar campanha de até uma hora por formulação, se justificada	Condicional
-Cada diretório contém spec.md, design.md e tasks.md, incluindo requisitos EARS, critérios de aceite, dependências, testes e condições de conclusão.
-
+Spec	Objetivo	Execução
+AS-00	Benchmark difícil e pré-registro experimental	Obrigatória
+AS-01	Formalização matemática de A e correção documental da T18	Obrigatória
+AS-02	Protótipo da formulação A e validação exaustiva	Obrigatória
+AS-03	Políticas de agrupamento de origens	Obrigatória
+AS-04	Comparador entre COMP sem K, COMP+K e candidatas	Obrigatória
+AS-05	Piloto LP e decisão de continuidade	Obrigatória
+AS-06	Piloto MIP de 300/600 segundos	Após aprovação do LP
+AS-07	Cortes por origem e matching compartilhado	Condicional
+AS-08	Formulação B por caminhos e pricing	Condicional
+AS-09	Formulação C cumulativa corrigida	Condicional
+AS-10	Busca primal controlada	Condicional
+AS-11	Campanha final de até 3.600 segundos	Após promoção
+AS-12	Síntese científica e consolidação dos resultados	Obrigatória

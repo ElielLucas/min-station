@@ -24,8 +24,8 @@ Executar cada tarefa com a skill `/tlc-spec-driven` existente em `.claude/skills
 |---|---|
 | Spec | `python3 .claude/skills/tlc-spec-driven/scripts/validate_spec.py specs/as-00-benchmark-e-pre-registro/spec.md` |
 | Tasks | `python3 .claude/skills/tlc-spec-driven/scripts/validate_tasks.py specs/as-00-benchmark-e-pre-registro/tasks.md` |
-| Quick | `PYTHONHASHSEED=0 python -m unittest discover -s experiments -p 'test_as_*.py' -v` (focar suíte da feature assim que criada) |
-| Full | `PYTHONHASHSEED=0 python -m unittest discover -s experiments -p 'test_as_*.py' -v` + `python -m ruff check experiments/astra-study` nos arquivos criados; review matemático independente para provas |
+| Quick | `PYTHONHASHSEED=0 python -m unittest discover -s experiments/benchmark -p 'test_as00*.py' -v` (focar suíte da feature assim que criada) |
+| Full | `PYTHONHASHSEED=0 python -m unittest discover -s experiments/benchmark -p 'test_as00*.py' -v` + `python -m ruff check experiments/benchmark` nos arquivos criados; review matemático independente para provas |
 | Commit | `python3 .claude/skills/tlc-spec-driven/scripts/check_commit.py --message "feat(astra): implementa tarefa atômica"` |
 
 ## Execution Plan
@@ -42,7 +42,7 @@ T1 -> T2 -> T3 -> T4
 
 **What:** Inventariar e normalizar os casos; evidenciar requisitos AS00-01.
 
-**Where:** `experiments/astra-study/as_protocol.py` (proposto)
+**Where:** `experiments/benchmark/as00_protocol.py` (proposto)
 
 **Depends on:** None
 
@@ -66,7 +66,7 @@ T1 -> T2 -> T3 -> T4
 
 **What:** Registrar famílias de origem e independência; evidenciar requisitos AS00-03.
 
-**Where:** `experiments/astra-study/as_families.py` (proposto)
+**Where:** `experiments/benchmark/as00_families.py` (proposto)
 
 **Depends on:** T1
 
@@ -90,7 +90,7 @@ T1 -> T2 -> T3 -> T4
 
 **What:** Congelar pré-registro e parâmetros; evidenciar requisitos AS00-04.
 
-**Where:** `experiments/astra-study/as_preregister.py` (proposto)
+**Where:** `experiments/benchmark/as00_preregister.py` (proposto)
 
 **Depends on:** T2
 
@@ -114,7 +114,7 @@ T1 -> T2 -> T3 -> T4
 
 **What:** Publicar o protocolo de seleção; evidenciar requisitos AS00-02.
 
-**Where:** `docs/technical/plans/astra-benchmark.md` (proposto)
+**Where:** `docs/technical/plans/execucao/as00-benchmark-protocolo.md` (proposto)
 
 **Depends on:** T3
 

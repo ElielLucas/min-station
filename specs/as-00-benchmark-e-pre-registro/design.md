@@ -12,7 +12,7 @@
 
 ## Proposed Architecture and Contracts
 
-1. Arquivo proposto `experiments/astra-study/as_protocol.py`: validação do manifesto, fingerprints, `family_id` e seleção sem dependência de F-CC.
+1. Arquivo proposto `experiments/benchmark/as00_protocol.py`: validação do manifesto, fingerprints, `family_id` e seleção sem dependência de F-CC.
 2. Produzir `protocol.json` e `pre_register.md` em novo diretório versionado de resultados; marcar hipóteses e regras de exclusão antes dos resultados.
 3. Incluir as instâncias grandes que estressam a nova abordagem, mesmo quando A ou F-CC não couberem na memória.
 4. Tratamento de faltas: `NOT_MEASURED_INPUT`, `NOT_MEASURED_CAP`, `NOT_MEASURED_MEMORY`, `NOT_MEASURED_BUDGET`, `ERROR`, nunca imputar zero.
