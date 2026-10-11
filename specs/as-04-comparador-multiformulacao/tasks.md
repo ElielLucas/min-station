@@ -4,7 +4,7 @@
 
 Executar cada tarefa com a skill `/tlc-spec-driven` existente em `.claude/skills/tlc-spec-driven/`: testes derivados de AC, gates antes de commit, **um commit local atômico por tarefa**, sem push/deploy, e verificador independente após última tarefa (autor ≠ verificador), incluindo sensor de discriminação quando houver código.
 
-**Status:** Draft — todas pendentes; execução NÃO iniciada.  
+**Status:** Implementação local preparada sem commits; revisão independente e execução Gurobi pendentes.  
 **Spec:** `specs/as-04-comparador-multiformulacao/spec.md`  
 **Design:** `specs/as-04-comparador-multiformulacao/design.md`  
 **Pré-condição externa:** AS00=PASS; AS02=PASS para A; reusar FC-01–FC-04
@@ -24,9 +24,9 @@ Executar cada tarefa com a skill `/tlc-spec-driven` existente em `.claude/skills
 |---|---|
 | Spec | `python3 .claude/skills/tlc-spec-driven/scripts/validate_spec.py specs/as-04-comparador-multiformulacao/spec.md` |
 | Tasks | `python3 .claude/skills/tlc-spec-driven/scripts/validate_tasks.py specs/as-04-comparador-multiformulacao/tasks.md` |
-| Quick | `PYTHONHASHSEED=0 python -m unittest discover -s experiments -p 'test_as_*.py' -v` (focar suíte da feature assim que criada) |
-| Full | `PYTHONHASHSEED=0 python -m unittest discover -s experiments -p 'test_as_*.py' -v` + `python -m ruff check experiments/astra-study` nos arquivos criados; review matemático independente para provas |
-| Commit | `python3 .claude/skills/tlc-spec-driven/scripts/check_commit.py --message "feat(astra): implementa tarefa atômica"` |
+| Quick | `PYTHONHASHSEED=0 PYTHONPATH=. python3 -m unittest discover -s experiments/formulation-comparison -p 'test_as04*.py' -v` |
+| Full | `PYTHONHASHSEED=0 PYTHONPATH=. python3 -m unittest discover -s experiments/formulation-comparison -p 'test_as04*.py' -v` + `PYTHONPATH=. python3 experiments/formulation-comparison/run_as04_smoke.py` + `python3 -m ruff check experiments/formulation-comparison/as04*.py experiments/formulation-comparison/test_as04*.py experiments/formulation-comparison/run_as04*.py`; Gurobi no checkout real + verificador independente |
+| Commit | `python3 .claude/skills/tlc-spec-driven/scripts/check_commit.py --message "feat(as04): implementa tarefa atomica"` |
 
 ## Execution Plan
 
@@ -42,7 +42,7 @@ T1 -> T2 -> T3 -> T4 -> T5
 
 **What:** Criar registro e estados multiarmas; evidenciar requisitos AS04-04,AS04-08.
 
-**Where:** `experiments/astra-study/as_schema.py` (proposto)
+**Where:** `experiments/formulation-comparison/as04_schema.py` (proposto)
 
 **Depends on:** None
 
@@ -66,7 +66,7 @@ T1 -> T2 -> T3 -> T4 -> T5
 
 **What:** Criar adapters U/U+K/A; evidenciar requisitos AS04-02,AS04-03,AS04-09.
 
-**Where:** `experiments/astra-study/as_arms.py` (proposto)
+**Where:** `experiments/formulation-comparison/as04_arms.py` (proposto)
 
 **Depends on:** T1
 
@@ -90,7 +90,7 @@ T1 -> T2 -> T3 -> T4 -> T5
 
 **What:** Integrar pareamento e hashes; evidenciar requisitos AS04-01,AS04-02.
 
-**Where:** `experiments/astra-study/as_compare.py` (proposto)
+**Where:** `experiments/formulation-comparison/as04_compare.py` (proposto)
 
 **Depends on:** T2
 
@@ -114,7 +114,7 @@ T1 -> T2 -> T3 -> T4 -> T5
 
 **What:** Integrar orçamento e mensuração; evidenciar requisitos AS04-07.
 
-**Where:** `experiments/astra-study/as_budget.py` (proposto)
+**Where:** `experiments/formulation-comparison/as04_runner.py` (proposto)
 
 **Depends on:** T3
 
@@ -138,7 +138,7 @@ T1 -> T2 -> T3 -> T4 -> T5
 
 **What:** Implementar publicação e verificação; evidenciar requisitos AS04-05,AS04-06,AS04-08.
 
-**Where:** `experiments/astra-study/as_reporting.py` (proposto)
+**Where:** `experiments/formulation-comparison/as04_reporting.py` (proposto)
 
 **Depends on:** T4
 

@@ -1,11 +1,11 @@
 # AS04 — Comparador justo U, U+K e formulações candidatas — Specification
 
-**Status:** RASCUNHO · não implementada nesta entrega  
+**Status:** RASCUNHO · código de integração local preparado; gates pendentes  
 **Prioridade:** P3 · infraestrutura obrigatória  
-**Dependências:** AS00=PASS; AS02=PASS para A; reusar FC-01–FC-04  
+**Dependências:** AS00=PASS; AS01/AS02=PASS para executar A; reutilizar FC-01–FC-04  
 **Local:** `specs/as-04-comparador-multiformulacao/`
 
-> Esta spec traduz os pareceres Astra de 11/10/2026, auditados sobre a branch `novos_testes` no commit `e25b056`. Os pareceres descrevem hipóteses e verificações pontuais; **não são** uma campanha nova, e nenhuma tarefa abaixo foi executada.
+> Esta spec traduz os pareceres Astra de 11/10/2026, auditados sobre a branch `novos_testes` no commit `e25b056`. Os pareceres descrevem hipóteses, não uma campanha nova. Os adaptadores e os testes foram preparados localmente; a integração Gurobi e os gates de revisão independente permanecem pendentes.
 
 ## Problem Statement
 
@@ -32,9 +32,9 @@ Comparar modelos em scripts separados sem orçamento, cortes, hashes, estados e 
 | IDs estáveis de braço | U; U_K; A2_K; A4_K; CUTS_K; B_K; C_K; FCC_K; CORE_IP | Elimina ambiguidade atual de COMP como U+K. | Pendente de execução |
 | Comparações primárias | U vs U_K (efeito K); U_K vs A2_K (efeito A); A2_K vs A4_K (refinamento) | Pares interpretáveis com todos fatores restantes fixos. | Pendente de execução |
 | Braços opcionais | F-CC+K apenas onde completa; B/C/cortes após seus próprios gates | Viés por escolha de casos deve ser reportado. | Pendente de execução |
-| Relógio | Orçamento ponta a ponta incluindo preparo compartilhado com atribuição declarada | Evita falsear tempo por preparo antes do supervisor. | Pendente de execução |
+| Relógio | Cada braço repete loading/alcance/K em processo supervisionado por FC-01 | Evita custo compartilhado não atribuído, mantém prazo ponta a ponta. | Implementado localmente; Gurobi pendente |
 
-**Open questions: none** — os defaults são premissas explícitas sujeitas aos gates anteriores; mudar qualquer uma depois de observar a avaliação exige nova versão e registro de desvio.
+**Open questions: none** — defaults sujeitos aos gates; a política automática A2 não pode ser substituída após observar LP (Sec59 distingue partição automática e testemunha). Mudar uma premissa após observar avaliação exige nova versão e registro de desvio.
 
 ## User Stories
 

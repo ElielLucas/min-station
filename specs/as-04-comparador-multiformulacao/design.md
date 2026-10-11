@@ -1,6 +1,6 @@
 # AS04 — Comparador justo U, U+K e formulações candidatas — Design
 
-**Status:** proposta técnica (sem execução)  
+**Status:** infraestrutura local implementada para testes (sem campanha; Gurobi pendente)  
 **Spec:** `specs/as-04-comparador-multiformulacao/spec.md`
 
 ## Design Constraints
@@ -10,20 +10,22 @@
 - Matriz experimental que não confunde U sem K, U+K, F-CC completa, LP numérico, núcleo IP e certificado racional.
 - Caminhos sugeridos são **destinos propostos para criação futura**, não arquivos já implementados.
 
-## Proposed Architecture and Contracts
+## Arquitetura e contratos implementados
 
-1. Reusar `experiments/formulation-comparison/{fc_budget.py,fc_pairing.py,fc_core.py,fc_evidence.py,fc_integrity.py}`; evitar duplicar regras validadas.
-2. Adapter API proposto `as_arms.py`: `build_arm(id,case,config)`; `as_compare.py`: `run_pair`; `as_schema.py`: registro com fingerprints, K hash, budget, status e evidência.
-3. Armas U (contínuo f + y binário sem K), U_K (mesmos domínios com K), A2_K; A4_K se ativada; FCC_K só quando completa; CORE_IP estritamente LB auxiliar.
-4. LP: registrar `lp_opt_value` apenas quando `OPTIMAL` numérico; bounds duais se válidos, identificando origem. MIP: distinguir `ObjBound`, `ObjVal`, UB físico e `certificate_kind`.
-5. Painel comparativo: mesma instância e orçamento; hashes do conteúdo, Gurobi versão/seed/threads/Work, política de warm start e limite de RAM registrados.
-6. Estados: `OPTIMAL_NUMERIC`, `FEASIBLE_PHYSICAL`, `TIME_LIMIT`, `NO_INCUMBENT`, `NOT_BUILT_SIZE`, `NOT_BUILT_CAP`, `MEMORY_LIMIT`, `SOLVER_ERROR`, `VALIDATION_FAIL`, `NOT_MEASURED`.
-7. Arma construída mas não otimizada ≠ prova de que cabe; apenas reportar build e memória observados.
+1. `experiments/formulation-comparison/as04_schema.py`: schema `AS04-COMPARISON-v1`, IDs estáveis, evidência numérica/UB física/racional separada; `SolverPolicy` com SHA da configuração completa.
+2. `as04_arms.py`: adapters que chamam `compile_u`, `compile_a`, `prepare_K`, `partition_two` e `refine_four` existentes, sem cópias do modelo; K ordenado/canonicalizado e hash aplicado.
+3. `as04_runner.py`: `run_bounded` (FC-01) supervisiona cada braço desde carga+alcance+K até Gurobi e validador físico. Loading é repetido por braço e cobrado integralmente. `as02_validation_gate` impede A2 sem AS01/AS02 homologadas; A4 requer gate adicional AS05.
+4. `as04_compare.py`: `K_EFFECT`, `A_EFFECT`, `REFINEMENT_EFFECT` independentes; requer mesma instância, mesmo A_r, mesmo K (exceto `U WITHOUT_K`) e política solver; par incompleto não produz alegações.
+5. `as04_reporting.py`: publicação append-only JSON/CSV/manifesto SHA-256, sem apagar linhas de falha ou convertê-las para zero.
+6. `run_as04_case.py`: execução individual pré-campanha; `run_as04_smoke.py`: HiGHS/SciPy sintético, não é experimento principal.
+7. FCC, CORE_IP, CUTS, B, C ficam `NOT_AUTHORIZED` até adapter completo e gates respectivos. F-CC restrita nunca é tratada como F-CC completa. CORE é LB auxiliar, nunca uma instalação.
+8. Gurobi `ObjBound` MIP numérico é distinto de incumbente e UB físico validado; primal LP só vira `lp_opt_value` em `OPTIMAL` para modelo completo. Nenhum certificado racional é inferido de solver.
+9. `wall_total_s` inclui startup, leitura+alcance, K, build, solver, validação, shutdown. `solver_runtime_s` inclui presolve; `presolve_wall_s` fica nulo até medição própria. `ru_maxrss` é pico acumulado de processo, não RAM incremental.
 
 ## Dependencies and Reuse
 
 - **Pré-condição externa:** AS00=PASS; AS02=PASS para A; reusar FC-01–FC-04.
-- **Código existente útil:** `baseline.py`, `ms_utils.py`, `experiments/cuts/independent_validator.py`, `experiments/cuts/harness.py` e `experiments/formulation-comparison/` quando aplicáveis; confirmar interfaces no momento da implementação.
+- **Código existente útil:** `fc_budget.run_bounded`, `fc_instances.load_instance`, `fc_integrity.dump_json_bytes`, `as02_model_a`, `as03_grouping`, `as02_validation_gate` e `independent_validator.viavel` verificados no snapshot do ZIP.
 - **Não alterar:** snapshots históricos em `results/`, freezes e decisões anteriores.
 
 ## Threats to Validity
