@@ -1,0 +1,13 @@
+{
+  "expected_arms": [
+    "U",
+    "U_K",
+    "A2_K"
+  ],
+  "generated_sha256": {
+    "arms.csv": "31c5861ee24c695364fbe82dd5dde0bd6c26492816ee2bb4ccc2b64ec1ab7a05",
+    "comparison.json": "1417226337165ac9080f5b922b0916f80c47559ff4288456f159303741845c3e",
+    "pairs.csv": "f8b54de58b2dffb8c74599d526d14ce9d657b635aee4c4d75fc3722f382884d3"
+  },
+  "schema": "AS04-COMPARISON-v1"
+}

@@ -1,0 +1,114 @@
+{
+  "a4": {
+    "note": "A4 omitida por padrão; qualquer ativação exige plano novo anterior aos solves",
+    "policy": "OFF",
+    "preselected_case_hypotheses": {}
+  },
+  "auxiliary_controls": {
+    "core_ip": "NOT_IMPLEMENTED_IN_AS04",
+    "fcc_complete_small": "SEPARATE_SMALL_CONTROL_ONLY"
+  },
+  "basis_manifest_sha256": "218c490bd3ba3e34740bc23f13b07ba864f0d624755aca9b992a8f23f6afad08",
+  "basis_protocol_sha256": "ee328a128b05a37907921ee1b269fb6963e28b0d68097034be519340f87953c2",
+  "basis_version": "AS00-2026-10-11-v1",
+  "freeze": {
+    "as00_immutable": true,
+    "no_evaluation_cases": true,
+    "no_posthoc_partition_selection": true
+  },
+  "main_arms": [
+    "U",
+    "U_K",
+    "A2_K"
+  ],
+  "materiality_addendum": {
+    "absolute_tolerance": 1e-06,
+    "interpretation": "proposta prospectiva AS05; não inferir limiares do parecer Astra",
+    "max_wall_ratio_a2_over_uk": 3.0,
+    "minimum_distinct_graph_sources": 2,
+    "minimum_distinct_raw_graphs": 2,
+    "not_in_as00": true,
+    "relative_gain_min": 0.01,
+    "relative_tolerance": 1e-06,
+    "scope": "development_only",
+    "zero_denominator_scale": 1.0
+  },
+  "pilot_cases": [
+    {
+      "family_id": "mapf:map:raw-data/mapf/maps/room-32-32-4.map|scenario:room-32-32-4.map + room-32-32-4-random-1.scen",
+      "graph_source": "mapf",
+      "manifest_name": "mapf-room-32-32-4-m10-f8.txt",
+      "name": "mapf-room-32-32-4-m10-f8",
+      "raw_graph_id": "mapf:map:raw-data/mapf/maps/room-32-32-4.map",
+      "source_file": "instances/benchmark-v1/mapf/mapf-room-32-32-4-m10-f8.txt",
+      "source_sha256": "78be3e1261f31f4e583d0808bdfc9c93d9c9eb335d86d13b059ce428af5f303f",
+      "split": "desenvolvimento"
+    },
+    {
+      "family_id": "puc:bip42p",
+      "graph_source": "puc",
+      "manifest_name": "puc-bip42p-regiao-f2.txt",
+      "name": "puc-bip42p-regiao-f2",
+      "raw_graph_id": "puc:bip42p",
+      "source_file": "instances/benchmark-v1/puc/puc-bip42p-regiao-f2.txt",
+      "source_sha256": "d7c53596522401d4071563d5007d9c8647ee0d37c893426b5ab3b1d65d97743a",
+      "split": "desenvolvimento"
+    },
+    {
+      "family_id": "puc:cc9-2p",
+      "graph_source": "puc",
+      "manifest_name": "puc-cc9-2p-seed-r1.txt",
+      "name": "puc-cc9-2p-seed-r1",
+      "raw_graph_id": "puc:cc9-2p",
+      "source_file": "instances/benchmark-v1/puc/puc-cc9-2p-seed-r1.txt",
+      "source_sha256": "0312f43552cddc102081d9937465429e29797ddb86cf85a6871752d50aeec88c",
+      "split": "desenvolvimento"
+    },
+    {
+      "family_id": "puc:w3c571",
+      "graph_source": "puc",
+      "manifest_name": "puc-w3c571-seed-r1.txt",
+      "name": "puc-w3c571-seed-r1",
+      "raw_graph_id": "puc:w3c571",
+      "source_file": "instances/benchmark-v1/puc/puc-w3c571-seed-r1.txt",
+      "source_sha256": "e85ced7daef779e6e88f302ee9d80a467129f448a7ac5c6ce465d64b963300fd",
+      "split": "desenvolvimento"
+    },
+    {
+      "family_id": "pucn:cc3-10n",
+      "graph_source": "pucn",
+      "manifest_name": "pucn-cc3-10n-seed-r1.txt",
+      "name": "pucn-cc3-10n-seed-r1",
+      "raw_graph_id": "pucn:cc3-10n",
+      "source_file": "instances/benchmark-v1/pucn/pucn-cc3-10n-seed-r1.txt",
+      "source_sha256": "9123c0e46228c22ba586bb7f730757a7fa2c4b0f815b54afba59f54a3bc8b431",
+      "split": "desenvolvimento"
+    },
+    {
+      "family_id": "vienna:I056",
+      "graph_source": "vienna",
+      "manifest_name": "vienna-I056-regiao-f4.txt",
+      "name": "vienna-I056-regiao-f4",
+      "raw_graph_id": "vienna:I056",
+      "source_file": "instances/benchmark-v1/vienna/vienna-I056-regiao-f4.txt",
+      "source_sha256": "645da5115a0eeaa6fba9eeae9f4942aebecfa66c4bcbc7aaec2bd0c994eb0ccc",
+      "split": "desenvolvimento"
+    }
+  ],
+  "policy": {
+    "backend": "gurobi",
+    "grouping_seed": 42,
+    "memory_limit_bytes": 17179869184,
+    "mode": "LP",
+    "reproducibility_seeds": [
+      42,
+      43,
+      44
+    ],
+    "seed": 42,
+    "threads": 4,
+    "wall_budget_s_per_arm": 90,
+    "warm_start": "none"
+  },
+  "schema": "AS05-PILOT-PLAN-v1"
+}

@@ -1,0 +1,16 @@
+{
+  "as04_verdict": "PENDING",
+  "as02_evidence": {
+    "as01_verdict": "PENDING",
+    "as01_independent_reviewer": false,
+    "physical_exhaustion_passed": false,
+    "sec59_lp_passed": false,
+    "math_counterexample": false,
+    "as02_independent_reviewer": false
+  },
+  "reviewers": {
+    "as01": {"author": "", "reviewer": "", "evidence_path": ""},
+    "as02": {"author": "", "reviewer": "", "evidence_path": ""},
+    "as04": {"author": "", "reviewer": "", "evidence_path": ""}
+  }
+}

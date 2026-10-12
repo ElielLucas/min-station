@@ -1,0 +1,15 @@
+{
+  "authorization_type": "OWNER_APPROVED_EXPLORATORY",
+  "authorized_by_owner": true,
+  "basis": "Autorizacao expressa do responsavel na conversa de 2026-10-11 para finalizar a etapa e executar a triagem; nao representa parecer independente, homologacao matematica nem GO cientifico.",
+  "independent_review_claimed": false,
+  "limits": [
+    "Apenas seis instancias de desenvolvimento do AS-00",
+    "Manter U, U_K, A2_K e mesmos limites",
+    "Nao publicar GO cientifico ou promover AS-06 automaticamente",
+    "Manter AS01/AS02/AS04 como PENDING ate parecer externo"
+  ],
+  "plan_sha256": "193a0fb1812c10e502d2e086d9dc2e1f857b724046955bbb0684ad99c038ef3b",
+  "schema": "AS05-OWNER-AUTHORIZATION-v1",
+  "scope": "AS05_DEVELOPMENT_LP_ONLY"
+}

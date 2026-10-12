@@ -1,0 +1,57 @@
+{
+  "case": "vienna-I056-regiao-f4",
+  "index": 0,
+  "job": [
+    "retest-v2",
+    "cuts",
+    null,
+    null,
+    "bitset-v2"
+  ],
+  "result": {
+    "arm_id": null,
+    "case_name": "vienna-I056-regiao-f4.txt",
+    "cut_profile": {
+      "counts": {
+        "c1_raw": 50,
+        "c2_raw": 101,
+        "c4_dm_raw": 50,
+        "unique": 101
+      },
+      "k_sha256": "64d3500a49c52bbf3ea9a3ffd718711c2e6a809585d7f91db311ef44a3606796",
+      "k_validated": true,
+      "phase_wall_s": {
+        "c1_s": 0.00042359496001154184,
+        "c2_s": 0.36317619401961565,
+        "c4_dm_s": 0.0020045069977641106,
+        "canonicalize_s": 0.014454810065217316,
+        "neighborhoods_s": 0.15594660001806915,
+        "validation_bitset_v2_s": 1.9916152659570798,
+        "validator_setup_s": 0.09227211307734251
+      },
+      "validator_method": "bitset-v2"
+    },
+    "grouping_policy": null,
+    "input_load_s": 0.019522185903042555,
+    "instance_sha256": "645da5115a0eeaa6fba9eeae9f4942aebecfa66c4bcbc7aaec2bd0c994eb0ccc",
+    "kind": "cuts",
+    "reachability_s": 0.4458417430287227,
+    "reason": "",
+    "status": "PROFILED",
+    "structural_sha256": "02296e18fe5d18be973b8ba76372fa46b6719017ee057d8880f1e92a58d6dd38",
+    "wall_phases_s": {
+      "k_c1": 0.00048359204083681107,
+      "k_c2": 0.36321013199631125,
+      "k_c4_dm": 0.00207271589897573,
+      "k_canonicalize": 0.014487206004559994,
+      "k_neighborhoods": 0.15597316902130842,
+      "k_preparation": 8.039199747145176e-05,
+      "k_validation_bitset_v2": 2.0293154490645975,
+      "k_validator_setup": 0.09231915802229196,
+      "preparation": 0.8471051410306245,
+      "startup": 0.5709462439408526,
+      "supervisor_shutdown": 0.0114575409097597
+    },
+    "wall_total_s": 4.087458787951618
+  }
+}

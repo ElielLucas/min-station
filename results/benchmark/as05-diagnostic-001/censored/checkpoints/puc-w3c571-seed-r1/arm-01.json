@@ -1,0 +1,32 @@
+{
+  "case": "puc-w3c571-seed-r1",
+  "index": 1,
+  "job": [
+    "censored",
+    "U_K",
+    null
+  ],
+  "result": {
+    "arm_id": "U_K",
+    "case_name": "puc-w3c571-seed-r1.txt",
+    "grouping_policy": null,
+    "kind": "lp",
+    "lp_opt_value": null,
+    "model_complete": false,
+    "reason": "Prazo global 300s esgotado na fase k_validation_cached",
+    "status": "TIMEOUT_PREPARATION",
+    "wall_phases_s": {
+      "k_c1": 0.003170853015035391,
+      "k_c2": 27.404005745076574,
+      "k_c4_dm": 0.034481465932913125,
+      "k_canonicalize": 0.010294398060068488,
+      "k_neighborhoods": 0.010907379910349846,
+      "k_preparation": 6.170000415295362e-05,
+      "k_validation_cached": 271.68551450094674,
+      "preparation": 0.26050052198115736,
+      "startup": 0.5916968950768933,
+      "supervisor_shutdown": 0.006845070049166679
+    },
+    "wall_total_s": 300.0074838490691
+  }
+}

@@ -1,0 +1,4 @@
+effect,left,right,status,reason,lp_delta,wall_delta_s
+K_EFFECT,U,U_K,MATCHED_COMPLETE,LP ótimo numérico em ambos,15.733333333333333,0.5799775950144976
+A_EFFECT,U_K,A2_K,MATCHED_COMPLETE,LP ótimo numérico em ambos,5.3290705182007514e-14,1.2386480839923024
+REFINEMENT_EFFECT,A2_K,A4_K,NOT_MEASURED,Braço ausente; manter no denominador,,

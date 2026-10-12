@@ -23,8 +23,12 @@ def main():
     group.add_argument('--init-plan',type=Path,help='Arquivo NOVO para adendo prospectivo sem solves')
     group.add_argument('--check-plan',type=Path,help='Validar plano sem solves')
     group.add_argument('--execute',action='store_true',help='Rodar 6x3 braços com Gurobi e gates')
+    group.add_argument('--execute-exploratory',action='store_true',
+                       help='Rodar piloto exploratorio com autorizacao expressa do responsavel')
     parser.add_argument('--plan',type=Path)
     parser.add_argument('--gate-file',type=Path)
+    parser.add_argument('--owner-authorization',type=Path,
+                        help='Registro versionado da autorizacao do responsavel (exploratorio)')
     parser.add_argument('--output-dir',type=Path)
     parser.add_argument('--max-variables',type=int,default=1_000_000)
     args = parser.parse_args()
@@ -46,10 +50,19 @@ def main():
         return
     if not (args.plan and args.gate_file and args.output_dir):
         parser.error('--execute requer --plan, --gate-file e --output-dir')
+    if args.execute_exploratory and not args.owner_authorization:
+        parser.error('--execute-exploratory exige --owner-authorization')
+    if args.execute and args.owner_authorization:
+        parser.error('--execute nao aceita --owner-authorization; utilize --execute-exploratory')
     report_path = run_pilot(root=args.root,plan_path=args.plan,evidence_path=args.gate_file,
-                            output_dir=args.output_dir,max_variables=args.max_variables)
+                            output_dir=args.output_dir,max_variables=args.max_variables,
+                            owner_authorization_path=args.owner_authorization)
     report = verify_pilot(args.output_dir)
-    print(f'AS05_GATE {report["decision"]["verdict"]}: {report["decision"]["reason"]}')
+    if args.execute_exploratory:
+        print(f'AS05_EXPLORATORY_SCREENING {report["screening_decision"]["verdict"]}')
+        print('AS05_SCIENTIFIC_GATE PENDING (autorizacao do responsavel nao equivale a revisao independente)')
+    else:
+        print(f'AS05_GATE {report["decision"]["verdict"]}: {report["decision"]["reason"]}')
     print(f'AS05_REPORT_WRITTEN {report_path}')
 
 

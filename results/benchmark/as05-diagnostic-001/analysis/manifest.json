@@ -1,0 +1,8 @@
+{
+  "files": {
+    "diagnostic_analysis.json": "fc16be7a3efda9afab77544258fa9842f709d0c080fdce5519369054b2e0c983",
+    "diagnostic_analysis.md": "3712cef837ce149e2aa04d5085e3afe3bae4033e00b7b65284a5ce884b3c398d",
+    "grouping.csv": "534cd4f7bf928612ba41e6449c59f22db9470d8714d43891e3038f9141764e08"
+  },
+  "schema": "AS05-DIAG-ANALYSIS-INTEGRITY-v1"
+}

@@ -1,0 +1,33 @@
+{
+  "files": {
+    "cases/mapf-room-32-32-4-m10-f8/arms.csv": "e4ffa9702e4fe13a513ffed8901a9984eeea06f0ffd96f75761648f7ba56d0c9",
+    "cases/mapf-room-32-32-4-m10-f8/comparison.json": "02c6cbaa73e562572b73c892b250470ce49c6192f1b530985c8686c1ed277c86",
+    "cases/mapf-room-32-32-4-m10-f8/manifest.json": "1f3ae251e6ae8606053a3303462aa462ce69d8a65ffdb038ae393119b0355098",
+    "cases/mapf-room-32-32-4-m10-f8/pairs.csv": "8ae87717b8b4851ae89af51d0d4972018137172b4f536618e62df1177da72d98",
+    "cases/puc-bip42p-regiao-f2/arms.csv": "db4c06761f66819f65fbdc6a9189ebb7bbc87590a5e7d5b27dbeef1772a8a979",
+    "cases/puc-bip42p-regiao-f2/comparison.json": "3a1871c0f0aeb3dfe421d6094dfa8ef17d940f887c03a710f0eb5dd764872028",
+    "cases/puc-bip42p-regiao-f2/manifest.json": "8a62149eca627c719fde9f157f68a921d6f32f7e5df50cd5e18d1aab14e3f101",
+    "cases/puc-bip42p-regiao-f2/pairs.csv": "49efa1f7b36a2fe8e0cd0f1abb5b067116e1c9e712ad18c165a58dfecb9936a9",
+    "cases/puc-cc9-2p-seed-r1/arms.csv": "80bc96d0d2b2a21f3f8da011379f9896e6fdab224b0aebc0b2d47f2fa1999b43",
+    "cases/puc-cc9-2p-seed-r1/comparison.json": "b648863b838a708746550f65429b9ba390d620e705cebd2fdf5a1805fc602e1f",
+    "cases/puc-cc9-2p-seed-r1/manifest.json": "e07a4212a0e9bfdfd0bfb2c61f5a7e7c152c62d513ee8f97bcc8988b4edefccd",
+    "cases/puc-cc9-2p-seed-r1/pairs.csv": "3139d92c9f3c262009aef45770503bd7bec28529a313e0a9d240fdadb548f17a",
+    "cases/puc-w3c571-seed-r1/arms.csv": "4628d2af649a4b114f1ea2ccb75bc1601493b86fca520f7216469644319dbbd7",
+    "cases/puc-w3c571-seed-r1/comparison.json": "18f0e4e97e621a7842a551b92b5c114304b4304534e86920294c933018257a11",
+    "cases/puc-w3c571-seed-r1/manifest.json": "a204826a21390bd8c853b973780aaa52da2db01ed90917f16b52cca3df135f22",
+    "cases/puc-w3c571-seed-r1/pairs.csv": "eac3322674b32631fc1a2703f5f68f6112c2ac7bfe4ad02a7ae15b13832948c1",
+    "cases/pucn-cc3-10n-seed-r1/arms.csv": "0780b6d71732603caf873afef5821f6366f239a6d11da7ff57db2d4a7a997e91",
+    "cases/pucn-cc3-10n-seed-r1/comparison.json": "53a7c2cf5131c4db086386ebd1a296778b859078c0924b065d905f44c7263ab6",
+    "cases/pucn-cc3-10n-seed-r1/manifest.json": "c5b1e87f2803cf003104299d1754e0cb565b4c292be3423050d256c9e05c808e",
+    "cases/pucn-cc3-10n-seed-r1/pairs.csv": "35170eb0b962f5dea8bf4035109c64238a185dfff677c958b20ed1953f50d83f",
+    "cases/vienna-I056-regiao-f4/arms.csv": "31c5861ee24c695364fbe82dd5dde0bd6c26492816ee2bb4ccc2b64ec1ab7a05",
+    "cases/vienna-I056-regiao-f4/comparison.json": "1417226337165ac9080f5b922b0916f80c47559ff4288456f159303741845c3e",
+    "cases/vienna-I056-regiao-f4/manifest.json": "748664abc888ace83a468c42fa8a7e642b6e5e2f36965ec896cb8c8b932515de",
+    "cases/vienna-I056-regiao-f4/pairs.csv": "f8b54de58b2dffb8c74599d526d14ce9d657b635aee4c4d75fc3722f382884d3",
+    "lp_gate.json": "b2134ba977870fa1ab394eb76ad07d658987cda1faf4d26a01aa026eb3d9ed6f",
+    "lp_summary.csv": "bc929f5fbe94821581b638db9cefdb11f2592ba254e8f6622c765affbd00453b",
+    "owner-authorization.json": "a1e2e0a4d60c86f078792ccac753a582c66ecf44fa74861ea291d342c5de2c28",
+    "plan.json": "339c4559333747fb10fb9132aa90368398ae32bcb7b50955a2bd23cd8e5506cc"
+  },
+  "schema": "AS05-INTEGRITY-v1"
+}

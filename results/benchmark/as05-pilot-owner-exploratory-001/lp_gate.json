@@ -1,0 +1,270 @@
+{
+  "a4_optional": [],
+  "as00_sha256": "ee328a128b05a37907921ee1b269fb6963e28b0d68097034be519340f87953c2",
+  "auxiliary_controls": {
+    "CORE_IP": "NOT_IMPLEMENTED_IN_AS04",
+    "FCC_K_SMALL": "NOT_RUN_SEPARATE_COMPLETE_ONLY"
+  },
+  "cases": [
+    {
+      "a4_not_selected_reason": "NOT_SELECTED_REASON:A4_DISABLED_IN_FROZEN_PLAN",
+      "a4_triggered": false,
+      "arm_statuses": {
+        "A2_K": "OPTIMAL_NUMERIC",
+        "U": "OPTIMAL_NUMERIC",
+        "U_K": "OPTIMAL_NUMERIC"
+      },
+      "contrasts": {
+        "A_EFFECT": {
+          "absolute": 8.881784197001252e-15,
+          "relative": 6.728624391667617e-16,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 1.2551093005993799
+        },
+        "K_EFFECT": {
+          "absolute": 10.799999999999995,
+          "relative": 4.4999999999999964,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 1.0036080449987232
+        }
+      },
+      "family_id": "mapf:map:raw-data/mapf/maps/room-32-32-4.map|scenario:room-32-32-4.map + room-32-32-4-random-1.scen",
+      "graph_source": "mapf",
+      "material_a_gain": false,
+      "name": "mapf-room-32-32-4-m10-f8",
+      "numerical_nondominance_violation": false,
+      "raw_graph_id": "mapf:map:raw-data/mapf/maps/room-32-32-4.map",
+      "reproduction": {
+        "reason": "Sem ganho material/custo aceitável",
+        "status": "NOT_SELECTED"
+      },
+      "wall_acceptable": true
+    },
+    {
+      "a4_not_selected_reason": "NOT_SELECTED_REASON:A4_DISABLED_IN_FROZEN_PLAN",
+      "a4_triggered": false,
+      "arm_statuses": {
+        "A2_K": "OPTIMAL_NUMERIC",
+        "U": "OPTIMAL_NUMERIC",
+        "U_K": "OPTIMAL_NUMERIC"
+      },
+      "contrasts": {
+        "A_EFFECT": {
+          "absolute": 0.0,
+          "relative": 0.0,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 1.0432372873544
+        },
+        "K_EFFECT": {
+          "absolute": 30.706051941200183,
+          "relative": 30.706051941200162,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 0.9841105516407826
+        }
+      },
+      "family_id": "puc:bip42p",
+      "graph_source": "puc",
+      "material_a_gain": false,
+      "name": "puc-bip42p-regiao-f2",
+      "numerical_nondominance_violation": false,
+      "raw_graph_id": "puc:bip42p",
+      "reproduction": {
+        "reason": "Sem ganho material/custo aceitável",
+        "status": "NOT_SELECTED"
+      },
+      "wall_acceptable": true
+    },
+    {
+      "a4_not_selected_reason": "NOT_SELECTED_REASON:A4_DISABLED_IN_FROZEN_PLAN",
+      "a4_triggered": false,
+      "arm_statuses": {
+        "A2_K": "OPTIMAL_NUMERIC",
+        "U": "OPTIMAL_NUMERIC",
+        "U_K": "OPTIMAL_NUMERIC"
+      },
+      "contrasts": {
+        "A_EFFECT": {
+          "absolute": 0.004464285714295357,
+          "relative": 0.0001651800462507698,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 1.070889367274996
+        },
+        "K_EFFECT": {
+          "absolute": 25.776785714285705,
+          "relative": 20.621428571428563,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 1.0660678786208615
+        }
+      },
+      "family_id": "puc:cc9-2p",
+      "graph_source": "puc",
+      "material_a_gain": false,
+      "name": "puc-cc9-2p-seed-r1",
+      "numerical_nondominance_violation": false,
+      "raw_graph_id": "puc:cc9-2p",
+      "reproduction": {
+        "reason": "Sem ganho material/custo aceitável",
+        "status": "NOT_SELECTED"
+      },
+      "wall_acceptable": true
+    },
+    {
+      "a4_not_selected_reason": "NOT_SELECTED_REASON:A4_DISABLED_IN_FROZEN_PLAN",
+      "a4_triggered": false,
+      "arm_statuses": {
+        "A2_K": "TIMEOUT_PREPARATION",
+        "U": "TIMEOUT_PREPARATION",
+        "U_K": "TIMEOUT_PREPARATION"
+      },
+      "contrasts": {
+        "A_EFFECT": {
+          "absolute": null,
+          "relative": null,
+          "status": "NOT_COMPARABLE",
+          "wall_ratio": null
+        },
+        "K_EFFECT": {
+          "absolute": null,
+          "relative": null,
+          "status": "NOT_COMPARABLE",
+          "wall_ratio": null
+        }
+      },
+      "family_id": "puc:w3c571",
+      "graph_source": "puc",
+      "material_a_gain": false,
+      "name": "puc-w3c571-seed-r1",
+      "numerical_nondominance_violation": false,
+      "raw_graph_id": "puc:w3c571",
+      "reproduction": {
+        "reason": "Sem ganho material/custo aceitável",
+        "status": "NOT_SELECTED"
+      },
+      "wall_acceptable": false
+    },
+    {
+      "a4_not_selected_reason": "NOT_SELECTED_REASON:A4_DISABLED_IN_FROZEN_PLAN",
+      "a4_triggered": false,
+      "arm_statuses": {
+        "A2_K": "OPTIMAL_NUMERIC",
+        "U": "OPTIMAL_NUMERIC",
+        "U_K": "OPTIMAL_NUMERIC"
+      },
+      "contrasts": {
+        "A_EFFECT": {
+          "absolute": 5.3290705182007514e-14,
+          "relative": 3.147088888701231e-15,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 1.212091062676057
+        },
+        "K_EFFECT": {
+          "absolute": 15.733333333333333,
+          "relative": 13.111111111111105,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 1.1102578450940983
+        }
+      },
+      "family_id": "pucn:cc3-10n",
+      "graph_source": "pucn",
+      "material_a_gain": false,
+      "name": "pucn-cc3-10n-seed-r1",
+      "numerical_nondominance_violation": false,
+      "raw_graph_id": "pucn:cc3-10n",
+      "reproduction": {
+        "reason": "Sem ganho material/custo aceitável",
+        "status": "NOT_SELECTED"
+      },
+      "wall_acceptable": true
+    },
+    {
+      "a4_not_selected_reason": "NOT_SELECTED_REASON:A4_DISABLED_IN_FROZEN_PLAN",
+      "a4_triggered": false,
+      "arm_statuses": {
+        "A2_K": "TIMEOUT_SOLVER",
+        "U": "OPTIMAL_NUMERIC",
+        "U_K": "OPTIMAL_NUMERIC"
+      },
+      "contrasts": {
+        "A_EFFECT": {
+          "absolute": null,
+          "relative": null,
+          "status": "NOT_COMPARABLE",
+          "wall_ratio": null
+        },
+        "K_EFFECT": {
+          "absolute": 6.059999999999997,
+          "relative": 2.4836065573770463,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 1.0504546043348035
+        }
+      },
+      "family_id": "vienna:I056",
+      "graph_source": "vienna",
+      "material_a_gain": false,
+      "name": "vienna-I056-regiao-f4",
+      "numerical_nondominance_violation": false,
+      "raw_graph_id": "vienna:I056",
+      "reproduction": {
+        "reason": "Sem ganho material/custo aceitável",
+        "status": "NOT_SELECTED"
+      },
+      "wall_acceptable": false
+    }
+  ],
+  "comparison_scope": "DEVELOPMENT_ONLY",
+  "decision": {
+    "arm_status_counts": {
+      "OPTIMAL_NUMERIC": 14,
+      "TIMEOUT_PREPARATION": 3,
+      "TIMEOUT_SOLVER": 1
+    },
+    "censored_cases": [
+      "puc-w3c571-seed-r1",
+      "vienna-I056-regiao-f4"
+    ],
+    "denominator_cases": 6,
+    "n_winning_raw_graphs": 0,
+    "n_winning_sources": 0,
+    "numeric_dominance_violations": [],
+    "pending_reproduction": [],
+    "raw_graphs_with_material_gain": [],
+    "reason": "Piloto exploratorio autorizado pelo responsavel; revisao independente pendente. Nao promove AS-06 cientificamente.",
+    "slowdown_cases": [],
+    "sources_with_material_gain": [],
+    "verdict": "INVESTIGATE"
+  },
+  "execution_class": "OWNER_AUTHORIZED_EXPLORATORY",
+  "limitations": [
+    "LP numerico não é certificado racional",
+    "A4 é condicional e não integra contraste obrigatório",
+    "CORE_IP e F-CC completa exigem adaptador/evidência próprios"
+  ],
+  "manifest_sha256": "218c490bd3ba3e34740bc23f13b07ba864f0d624755aca9b992a8f23f6afad08",
+  "owner_authorization_sha256": "a1e2e0a4d60c86f078792ccac753a582c66ecf44fa74861ea291d342c5de2c28",
+  "plan_file_sha256": "339c4559333747fb10fb9132aa90368398ae32bcb7b50955a2bd23cd8e5506cc",
+  "plan_sha256": "193a0fb1812c10e502d2e086d9dc2e1f857b724046955bbb0684ad99c038ef3b",
+  "precondition_evidence_sha256": "9b667cb9f87f0190910e7fc63cfa7b4a56d52a0e579fae47d41d2784ea4635ef",
+  "schema": "AS05-PILOT-v1",
+  "scientific_homologation": "PENDING",
+  "screening_decision": {
+    "arm_status_counts": {
+      "OPTIMAL_NUMERIC": 14,
+      "TIMEOUT_PREPARATION": 3,
+      "TIMEOUT_SOLVER": 1
+    },
+    "censored_cases": [
+      "puc-w3c571-seed-r1",
+      "vienna-I056-regiao-f4"
+    ],
+    "denominator_cases": 6,
+    "n_winning_raw_graphs": 0,
+    "n_winning_sources": 0,
+    "numeric_dominance_violations": [],
+    "pending_reproduction": [],
+    "raw_graphs_with_material_gain": [],
+    "reason": "Braços censurados impedem decisão conclusiva; permanecer no denominador",
+    "slowdown_cases": [],
+    "sources_with_material_gain": [],
+    "verdict": "INVESTIGATE"
+  }
+}

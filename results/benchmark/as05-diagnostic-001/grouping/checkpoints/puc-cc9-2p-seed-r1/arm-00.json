@@ -1,0 +1,72 @@
+{
+  "case": "puc-cc9-2p-seed-r1",
+  "index": 0,
+  "job": [
+    "grouping",
+    "U_K",
+    null
+  ],
+  "result": {
+    "applied_k_sha256": "e8ad995864897f119b1f207d528ef048ac2f46987591437d807ae5e90d4e33cf",
+    "arm_id": "U_K",
+    "case_name": "puc-cc9-2p-seed-r1.txt",
+    "cut_profile": {
+      "counts": {
+        "c1_raw": 56,
+        "c2_raw": 67,
+        "c4_dm_raw": 56,
+        "unique": 67
+      },
+      "k_sha256": "e8ad995864897f119b1f207d528ef048ac2f46987591437d807ae5e90d4e33cf",
+      "k_validated": true,
+      "phase_wall_s": {
+        "c1_s": 0.00012034398969262838,
+        "c2_s": 0.11300735094118863,
+        "c4_dm_s": 0.000395634095184505,
+        "canonicalize_s": 0.0004993110196664929,
+        "neighborhoods_s": 0.0018988070078194141,
+        "validation_cached_s": 0.533472005976364
+      }
+    },
+    "grouping_policy": null,
+    "input_load_s": 0.009554449003189802,
+    "installed": null,
+    "instance_sha256": "0312f43552cddc102081d9937465429e29797ddb86cf85a6871752d50aeec88c",
+    "k_prepared_for_this_arm": true,
+    "k_validated": true,
+    "kind": "lp",
+    "lp_opt_value": 27.026785714285705,
+    "mip_numeric_bound": null,
+    "mip_numeric_incumbent": null,
+    "model_complete": true,
+    "n_constraints": 1603,
+    "n_nonzeros": 20356,
+    "n_variables": 5120,
+    "nodes": 0.0,
+    "partition_sha256": null,
+    "reachability_s": 0.005570559995248914,
+    "reason": "",
+    "reference_k_sha256": "e8ad995864897f119b1f207d528ef048ac2f46987591437d807ae5e90d4e33cf",
+    "solver_runtime_s": 0.14137911796569824,
+    "solver_version": "12.0.3",
+    "solver_work": 0.12857087012675475,
+    "status": "OPTIMAL_NUMERIC",
+    "structural_sha256": "31a9d5acb7cc42df94eeb4aec61a22c9e5fd54d8ce6ca6cd063775d2ddf28264",
+    "wall_phases_s": {
+      "k_c1": 0.00015051395166665316,
+      "k_c2": 0.11302956007421017,
+      "k_c4_dm": 0.0004530759761109948,
+      "k_canonicalize": 0.0005219189915806055,
+      "k_neighborhoods": 0.00191740901209414,
+      "k_preparation": 4.1174935176968575e-05,
+      "k_validation_cached": 0.5344615830108523,
+      "model_build": 0.15002473897766322,
+      "preparation": 0.018237643060274422,
+      "solve": 0.14156520296819508,
+      "startup": 0.5960989380255342,
+      "supervisor_shutdown": 0.005075814086012542,
+      "validation": 0.0036682860227301717
+    },
+    "wall_total_s": 1.5652496760012582
+  }
+}

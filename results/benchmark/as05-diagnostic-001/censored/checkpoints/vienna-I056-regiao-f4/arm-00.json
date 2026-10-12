@@ -1,0 +1,48 @@
+{
+  "case": "vienna-I056-regiao-f4",
+  "index": 0,
+  "job": [
+    "censored",
+    "U",
+    null
+  ],
+  "result": {
+    "applied_k_sha256": null,
+    "arm_id": "U",
+    "case_name": "vienna-I056-regiao-f4.txt",
+    "cut_profile": null,
+    "grouping_policy": null,
+    "input_load_s": 0.02402791997883469,
+    "installed": null,
+    "instance_sha256": "645da5115a0eeaa6fba9eeae9f4942aebecfa66c4bcbc7aaec2bd0c994eb0ccc",
+    "k_prepared_for_this_arm": false,
+    "k_validated": false,
+    "kind": "lp",
+    "lp_opt_value": 2.4400000000000017,
+    "mip_numeric_bound": null,
+    "mip_numeric_incumbent": null,
+    "model_complete": true,
+    "n_constraints": 5973,
+    "n_nonzeros": 1530382,
+    "n_variables": 383591,
+    "nodes": 0.0,
+    "partition_sha256": null,
+    "reachability_s": 0.45466465898789465,
+    "reason": "",
+    "reference_k_sha256": null,
+    "solver_runtime_s": 7.894150018692017,
+    "solver_version": "12.0.3",
+    "solver_work": 3.240452092830692,
+    "status": "OPTIMAL_NUMERIC",
+    "structural_sha256": "02296e18fe5d18be973b8ba76372fa46b6719017ee057d8880f1e92a58d6dd38",
+    "wall_phases_s": {
+      "model_build": 12.338791406014934,
+      "preparation": 0.8602283359505236,
+      "solve": 7.894416976952925,
+      "startup": 0.5886827380163595,
+      "supervisor_shutdown": 0.015467499033547938,
+      "validation": 0.25060557306278497
+    },
+    "wall_total_s": 21.948199230013415
+  }
+}

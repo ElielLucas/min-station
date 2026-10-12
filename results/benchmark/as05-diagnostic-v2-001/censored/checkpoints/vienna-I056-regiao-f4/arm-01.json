@@ -1,0 +1,77 @@
+{
+  "case": "vienna-I056-regiao-f4",
+  "index": 1,
+  "job": [
+    "retest-v2",
+    "censored",
+    "U_K",
+    null,
+    "bitset-v2"
+  ],
+  "result": {
+    "applied_k_sha256": "64d3500a49c52bbf3ea9a3ffd718711c2e6a809585d7f91db311ef44a3606796",
+    "arm_id": "U_K",
+    "case_name": "vienna-I056-regiao-f4.txt",
+    "cut_profile": {
+      "counts": {
+        "c1_raw": 50,
+        "c2_raw": 101,
+        "c4_dm_raw": 50,
+        "unique": 101
+      },
+      "k_sha256": "64d3500a49c52bbf3ea9a3ffd718711c2e6a809585d7f91db311ef44a3606796",
+      "k_validated": true,
+      "phase_wall_s": {
+        "c1_s": 0.00041503808461129665,
+        "c2_s": 0.38849737599957734,
+        "c4_dm_s": 0.0020087590673938394,
+        "canonicalize_s": 0.014059716952033341,
+        "neighborhoods_s": 0.15670135500840843,
+        "validation_bitset_v2_s": 2.011183339986019,
+        "validator_setup_s": 0.09101631003431976
+      },
+      "validator_method": "bitset-v2"
+    },
+    "grouping_policy": null,
+    "input_load_s": 0.0215863169869408,
+    "installed": null,
+    "instance_sha256": "645da5115a0eeaa6fba9eeae9f4942aebecfa66c4bcbc7aaec2bd0c994eb0ccc",
+    "k_prepared_for_this_arm": true,
+    "k_validated": true,
+    "kind": "lp",
+    "lp_opt_value": 8.499999999999998,
+    "mip_numeric_bound": null,
+    "mip_numeric_incumbent": null,
+    "model_complete": true,
+    "n_constraints": 6074,
+    "n_nonzeros": 1558364,
+    "n_variables": 383591,
+    "nodes": 0.0,
+    "partition_sha256": null,
+    "reachability_s": 0.4491322520188987,
+    "reason": "",
+    "reference_k_sha256": "64d3500a49c52bbf3ea9a3ffd718711c2e6a809585d7f91db311ef44a3606796",
+    "solver_runtime_s": 11.6908278465271,
+    "solver_version": "12.0.3",
+    "solver_work": 4.665316922826881,
+    "status": "OPTIMAL_NUMERIC",
+    "structural_sha256": "02296e18fe5d18be973b8ba76372fa46b6719017ee057d8880f1e92a58d6dd38",
+    "wall_phases_s": {
+      "k_c1": 0.0004774440312758088,
+      "k_c2": 0.3885275019565597,
+      "k_c4_dm": 0.002079901983961463,
+      "k_canonicalize": 0.014090302982367575,
+      "k_neighborhoods": 0.15672672993969172,
+      "k_preparation": 7.456901948899031e-05,
+      "k_validation_bitset_v2": 2.045531583018601,
+      "k_validator_setup": 0.09104944008868188,
+      "model_build": 12.618299103924073,
+      "preparation": 0.8533491450361907,
+      "solve": 11.691045806044713,
+      "startup": 0.5750526359770447,
+      "supervisor_shutdown": 0.018585121957585216,
+      "validation": 0.2899265979649499
+    },
+    "wall_total_s": 28.744821614935063
+  }
+}

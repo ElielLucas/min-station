@@ -1,0 +1,283 @@
+{
+  "basis_plan_sha256": "1309b27fc2096efbd667e8243708383635b51f5411c0611420a66af290915e1a",
+  "censored_after_retry": [
+    "puc-w3c571-seed-r1",
+    "vienna-I056-regiao-f4"
+  ],
+  "censored_retries": [
+    {
+      "A_EFFECT": {
+        "lp_delta": null,
+        "reason": "K de referência ausente",
+        "relative_gain": null,
+        "solver_runtime_ratio": null,
+        "status": "NOT_COMPARABLE",
+        "wall_ratio": null
+      },
+      "K_EFFECT": {
+        "lp_delta": null,
+        "reason": "K de referência ausente",
+        "relative_gain": null,
+        "solver_runtime_ratio": null,
+        "status": "NOT_COMPARABLE",
+        "wall_ratio": null
+      },
+      "a2_k_wall_s": 0.8245240369578823,
+      "case_name": "puc-w3c571-seed-r1",
+      "statuses": {
+        "A2_K": "WORKER_ERROR",
+        "U": "OPTIMAL_NUMERIC",
+        "U_K": "TIMEOUT_PREPARATION"
+      },
+      "u_k_wall_s": 300.0074838490691,
+      "u_without_k_wall_s": 4.756891225930303
+    },
+    {
+      "A_EFFECT": {
+        "lp_delta": null,
+        "reason": "Modelo não completo: U_K=OPTIMAL_NUMERIC; A2_K=WORKER_ERROR",
+        "relative_gain": null,
+        "solver_runtime_ratio": null,
+        "status": "NOT_COMPARABLE",
+        "wall_ratio": null
+      },
+      "K_EFFECT": {
+        "lp_delta": 6.059999999999997,
+        "reason": "LP ótimo numérico em ambos",
+        "relative_gain": 2.4836065573770463,
+        "solver_runtime_ratio": 1.4731006949011438,
+        "status": "MATCHED_COMPLETE",
+        "wall_ratio": 2.3230733324699373
+      },
+      "a2_k_wall_s": 1.4571693560574204,
+      "case_name": "vienna-I056-regiao-f4",
+      "statuses": {
+        "A2_K": "WORKER_ERROR",
+        "U": "OPTIMAL_NUMERIC",
+        "U_K": "OPTIMAL_NUMERIC"
+      },
+      "u_k_wall_s": 50.98727632698137,
+      "u_without_k_wall_s": 21.948199230013415
+    }
+  ],
+  "classification": "EXPLORATORY_POSTHOC_DEVELOPMENT_ONLY",
+  "cuts": [
+    {
+      "case_name": "puc-w3c571-seed-r1",
+      "dominant_s": null,
+      "family_dominant": null,
+      "k_sha256": null,
+      "phase_wall_s": {},
+      "status": "TIMEOUT_PREPARATION",
+      "supervisor_wall_phases_s": {
+        "k_c1": 0.003043582080863416,
+        "k_c2": 25.452618291950785,
+        "k_c4_dm": 0.03224623796995729,
+        "k_canonicalize": 0.009542885003611445,
+        "k_neighborhoods": 0.010850220918655396,
+        "k_preparation": 6.459804717451334e-05,
+        "k_validation_cached": 273.619657156989,
+        "preparation": 0.2608120780205354,
+        "startup": 0.6122524199308828,
+        "supervisor_shutdown": 0.007667436031624675
+      },
+      "unique_cuts": null
+    },
+    {
+      "case_name": "vienna-I056-regiao-f4",
+      "dominant_s": 24.432849606033415,
+      "family_dominant": "validation_cached_s",
+      "k_sha256": "64d3500a49c52bbf3ea9a3ffd718711c2e6a809585d7f91db311ef44a3606796",
+      "phase_wall_s": {
+        "c1_s": 0.0006131139816716313,
+        "c2_s": 0.3825553470524028,
+        "c4_dm_s": 0.0020404059905558825,
+        "canonicalize_s": 0.014421237050555646,
+        "neighborhoods_s": 0.17052503302693367,
+        "validation_cached_s": 24.432849606033415
+      },
+      "status": "PROFILED",
+      "supervisor_wall_phases_s": {
+        "k_c1": 0.0007055159658193588,
+        "k_c2": 0.38259960000868887,
+        "k_c4_dm": 0.002109804074279964,
+        "k_canonicalize": 0.014450357994064689,
+        "k_neighborhoods": 0.17056289094034582,
+        "k_preparation": 7.38000962883234e-05,
+        "k_validation_cached": 24.464703280013055,
+        "preparation": 0.8484578059287742,
+        "startup": 0.5791459940373898,
+        "supervisor_shutdown": 0.009009614936076105
+      },
+      "unique_cuts": 101
+    }
+  ],
+  "explanation": "O diagnóstico ainda contém cortes, braços ou políticas censurados",
+  "grouping": [
+    {
+      "case_name": "mapf-room-32-32-4-m10-f8",
+      "lp_delta_over_u_k": 8.881784197001252e-15,
+      "lp_opt_value": 13.200000000000005,
+      "material_exploratory": false,
+      "partition_sha256": "a71e07c110768b6586951837aa8cb8c241b8cfba1fdedf0e401ebf2eb4257fc9",
+      "policy": "reachability_degree",
+      "relative_gain": 6.728624391667617e-16,
+      "solver_runtime_ratio": 2.33839700217831,
+      "status": "OPTIMAL_NUMERIC",
+      "wall_ratio": 1.360877196418455
+    },
+    {
+      "case_name": "mapf-room-32-32-4-m10-f8",
+      "lp_delta_over_u_k": -5.329070518200751e-15,
+      "lp_opt_value": 13.19999999999999,
+      "material_exploratory": false,
+      "partition_sha256": "cfa8e0be80129fcc27d020f5f866ff979893ec0a789389cc0baf6147c433b4aa",
+      "policy": "balanced",
+      "relative_gain": -4.0371746350005706e-16,
+      "solver_runtime_ratio": 2.3485381240748873,
+      "status": "OPTIMAL_NUMERIC",
+      "wall_ratio": 1.2917021184592024
+    },
+    {
+      "case_name": "mapf-room-32-32-4-m10-f8",
+      "lp_delta_over_u_k": 0.05000000000000249,
+      "lp_opt_value": 13.249999999999998,
+      "material_exploratory": false,
+      "partition_sha256": "48c0479bc775c4a493438366f5d7990c4bf6f5ea84466583b8a888222df1dbf8",
+      "policy": "reachability_overlap",
+      "relative_gain": 0.0037878787878789775,
+      "solver_runtime_ratio": 2.2081861159795038,
+      "status": "OPTIMAL_NUMERIC",
+      "wall_ratio": 1.2515466014907874
+    },
+    {
+      "case_name": "puc-bip42p-regiao-f2",
+      "lp_delta_over_u_k": 0.0,
+      "lp_opt_value": 31.706051941200183,
+      "material_exploratory": false,
+      "partition_sha256": "1150e25c4120b23268f33439a2de82a12300eca1ad8391248b2fc98a026622e3",
+      "policy": "reachability_degree",
+      "relative_gain": 0.0,
+      "solver_runtime_ratio": 1.7826656209282614,
+      "status": "OPTIMAL_NUMERIC",
+      "wall_ratio": 1.039035619544648
+    },
+    {
+      "case_name": "puc-bip42p-regiao-f2",
+      "lp_delta_over_u_k": 0.0,
+      "lp_opt_value": 31.706051941200183,
+      "material_exploratory": false,
+      "partition_sha256": "018acace9a828a007a9adba3c6eac6850623a3521b68886e33dfbf0e3cc9ec72",
+      "policy": "balanced",
+      "relative_gain": 0.0,
+      "solver_runtime_ratio": 1.7787742674398124,
+      "status": "OPTIMAL_NUMERIC",
+      "wall_ratio": 1.0544801970293616
+    },
+    {
+      "case_name": "puc-bip42p-regiao-f2",
+      "lp_delta_over_u_k": 0.0,
+      "lp_opt_value": 31.706051941200183,
+      "material_exploratory": false,
+      "partition_sha256": "88cd1a3a31d7f47634b9ca277e5e819923ea42174e3a6232ed225e0ded5fa486",
+      "policy": "reachability_overlap",
+      "relative_gain": 0.0,
+      "solver_runtime_ratio": 1.3860477607931783,
+      "status": "OPTIMAL_NUMERIC",
+      "wall_ratio": 1.0413808136652207
+    },
+    {
+      "case_name": "puc-cc9-2p-seed-r1",
+      "lp_delta_over_u_k": 0.004464285714295357,
+      "lp_opt_value": 27.03125,
+      "material_exploratory": false,
+      "partition_sha256": "a14e73e9f09c3030dd6b0400a500b9b589113a4252061406c52c996310ee5603",
+      "policy": "reachability_degree",
+      "relative_gain": 0.0001651800462507698,
+      "solver_runtime_ratio": 1.61146871685214,
+      "status": "OPTIMAL_NUMERIC",
+      "wall_ratio": 1.1085531577225556
+    },
+    {
+      "case_name": "puc-cc9-2p-seed-r1",
+      "lp_delta_over_u_k": 0.004464285714295357,
+      "lp_opt_value": 27.03125,
+      "material_exploratory": false,
+      "partition_sha256": "481c567142f9487e416b5187c46b8a4c6a6878d6e678d5b2d4c96021423b36b2",
+      "policy": "balanced",
+      "relative_gain": 0.0001651800462507698,
+      "solver_runtime_ratio": 1.6946998838085827,
+      "status": "OPTIMAL_NUMERIC",
+      "wall_ratio": 1.0880253189594968
+    },
+    {
+      "case_name": "puc-cc9-2p-seed-r1",
+      "lp_delta_over_u_k": 0.01298701298700422,
+      "lp_opt_value": 27.03977272727271,
+      "material_exploratory": false,
+      "partition_sha256": "a5b02eab1ca52c627de94a0eff51ee9bdba4bb7d78322f5dfb022de1bcba1eb2",
+      "policy": "reachability_overlap",
+      "relative_gain": 0.00048052377090996803,
+      "solver_runtime_ratio": 1.3392856841718284,
+      "status": "OPTIMAL_NUMERIC",
+      "wall_ratio": 1.078291701247215
+    },
+    {
+      "case_name": "pucn-cc3-10n-seed-r1",
+      "lp_delta_over_u_k": 5.3290705182007514e-14,
+      "lp_opt_value": 16.933333333333387,
+      "material_exploratory": false,
+      "partition_sha256": "e5d4a25463fda22c7af37daa1c99928fce243cb8c02333d5ec38c3c5766b2919",
+      "policy": "reachability_degree",
+      "relative_gain": 3.147088888701231e-15,
+      "solver_runtime_ratio": 1.562125816806074,
+      "status": "OPTIMAL_NUMERIC",
+      "wall_ratio": 1.25194556875876
+    },
+    {
+      "case_name": "pucn-cc3-10n-seed-r1",
+      "lp_delta_over_u_k": 5.3290705182007514e-14,
+      "lp_opt_value": 16.933333333333387,
+      "material_exploratory": false,
+      "partition_sha256": "818cf3e6ccaeb237fc3014888c5ee6360a6b07034d7bc46a870e9e6d9a9f2f6a",
+      "policy": "balanced",
+      "relative_gain": 3.147088888701231e-15,
+      "solver_runtime_ratio": 1.5449194014795304,
+      "status": "OPTIMAL_NUMERIC",
+      "wall_ratio": 1.242866848719311
+    },
+    {
+      "case_name": "pucn-cc3-10n-seed-r1",
+      "lp_delta_over_u_k": 1.7763568394002505e-14,
+      "lp_opt_value": 16.93333333333335,
+      "material_exploratory": false,
+      "partition_sha256": "5c150a0994142da0f9c9ea16528bd33653e71391c437117673d3e9508a971708",
+      "policy": "reachability_overlap",
+      "relative_gain": 1.049029629567077e-15,
+      "solver_runtime_ratio": 1.5865620217699858,
+      "status": "OPTIMAL_NUMERIC",
+      "wall_ratio": 1.258048708358696
+    }
+  ],
+  "incomplete_policy_cases": [],
+  "limitations": [
+    "Não substitui o gate científico AS05 original",
+    "Políticas novas avaliadas somente no conjunto de desenvolvimento",
+    "Seleção da melhor política após observar resultados é exploratória",
+    "Não reutilizar resultados nos casos de avaliação AS00 sem novo pré-registro",
+    "Retomar reprodutibilidade/independência antes de promoção da AS06"
+  ],
+  "n_material_exploratory": 0,
+  "recommendation": "INVESTIGATE_FURTHER",
+  "schema": "AS05-DIAG-ANALYSIS-v1",
+  "scientific_homologation": "PENDING",
+  "scientific_promotion": "NOT_AUTHORIZED",
+  "stages_sha256": {
+    "censored": "11449e3475ff25095f947e92ac9d79d056c5e845e5f992f0b4f3bac66ee9107e",
+    "cuts": "5180bdedbabbf3fc7eedd670c2b0a4ca8df034f8dba213b7886b012898ce4485",
+    "grouping": "0e58a3bd90fffc443d13e64e895c945b05687458bf0cb95355b0fb52eb4e3763"
+  },
+  "unresolved_cut_cases": [
+    "puc-w3c571-seed-r1"
+  ]
+}

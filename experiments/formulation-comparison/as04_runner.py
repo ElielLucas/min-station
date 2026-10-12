@@ -124,14 +124,15 @@ def validate_physical_ub(loaded, installed):
 
 def _arm_worker(ctx, row: dict, root: str, arm_id: str, mode: str,
                 policy: SolverPolicy, grouping_policy: str, allow_a4: bool,
-                max_variables: int, as02_gate: GateEvidence, grouping_seed: int | None = None):
+                max_variables: int, as02_gate: GateEvidence, grouping_seed: int | None = None,
+                owner_exploratory: bool = False):
     if policy.memory_limit_bytes is not None:
         resource.setrlimit(resource.RLIMIT_AS, (policy.memory_limit_bytes,
                                                policy.memory_limit_bytes))
     if arm_id not in ('U', 'U_K', 'A2_K', 'A4_K'):
         return {'status': 'NOT_AUTHORIZED', 'reason': 'Adapter completo não homologado; não comparar RMP/F-CC parcial',
                 'model_complete': False}
-    if arm_id in ('A2_K', 'A4_K') and assess(as02_gate) != 'PASS':
+    if arm_id in ('A2_K', 'A4_K') and assess(as02_gate) != 'PASS' and not owner_exploratory:
         return {'status': 'NOT_AUTHORIZED', 'reason': f'AS-02 gate: {assess(as02_gate)}',
                 'model_complete': False}
     if arm_id == 'A4_K' and not allow_a4:
@@ -211,14 +212,14 @@ def _arm_worker(ctx, row: dict, root: str, arm_id: str, mode: str,
 def run_arm(row: dict, *, root: Path, arm_id: str, mode: str, policy: SolverPolicy,
             as02_gate: GateEvidence | None = None, grouping_policy='reachability_degree',
             allow_a4=False, max_variables=1_000_000,
-            grouping_seed: int | None = None) -> ArmResult:
+            grouping_seed: int | None = None, owner_exploratory: bool = False) -> ArmResult:
     """FC-01 supervisor aplica tempo à carga, alcance, K, build, solve e validação."""
     if max_variables < 1:
         raise ValueError('max_variables deve ser positivo')
     gate = as02_gate or GateEvidence()
     raw = run_bounded(_arm_worker, row, str(root), arm_id, mode, policy,
                       grouping_policy, allow_a4, max_variables, gate, grouping_seed,
-                      budget_s=policy.budget_s)
+                      owner_exploratory, budget_s=policy.budget_s)
     if raw.status == 'COMPLETED':
         obj = raw.value
         status = obj.pop('status')
@@ -247,13 +248,14 @@ def run_arm(row: dict, *, root: Path, arm_id: str, mode: str, policy: SolverPoli
 def run_case(row: dict, *, root: Path, arm_ids=('U', 'U_K', 'A2_K'), mode='LP',
              policy: SolverPolicy | None = None, as02_gate: GateEvidence | None = None,
              allow_a4=False, max_variables=1_000_000,
-             grouping_seed: int | None = None) -> dict:
+             grouping_seed: int | None = None, owner_exploratory: bool = False) -> dict:
     if len(arm_ids) != len(set(arm_ids)):
         raise ValueError('Braço duplicado')
     policy = policy or SolverPolicy()
     rows = [run_arm(row, root=root, arm_id=arm, mode=mode, policy=policy,
                     as02_gate=as02_gate, allow_a4=allow_a4,
-                    max_variables=max_variables, grouping_seed=grouping_seed) for arm in arm_ids]
+                    max_variables=max_variables, grouping_seed=grouping_seed,
+                    owner_exploratory=owner_exploratory) for arm in arm_ids]
     return {'schema': SCHEMA, 'case_name': row['nome'], 'mode': mode,
             'policy_sha256': policy.sha256, 'arms': [x.to_dict() for x in rows],
             'comparison': compare_case(rows)}

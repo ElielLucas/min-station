@@ -1,0 +1,48 @@
+{
+  "case": "puc-w3c571-seed-r1",
+  "index": 0,
+  "job": [
+    "censored",
+    "U",
+    null
+  ],
+  "result": {
+    "applied_k_sha256": null,
+    "arm_id": "U",
+    "case_name": "puc-w3c571-seed-r1.txt",
+    "cut_profile": null,
+    "grouping_policy": null,
+    "input_load_s": 0.23852350295055658,
+    "installed": null,
+    "instance_sha256": "e85ced7daef779e6e88f302ee9d80a467129f448a7ac5c6ce465d64b963300fd",
+    "k_prepared_for_this_arm": false,
+    "k_validated": false,
+    "kind": "lp",
+    "lp_opt_value": 10.36312049988408,
+    "mip_numeric_bound": null,
+    "mip_numeric_incumbent": null,
+    "model_complete": true,
+    "n_constraints": 11991,
+    "n_nonzeros": 90218,
+    "n_variables": 24553,
+    "nodes": 0.0,
+    "partition_sha256": null,
+    "reachability_s": 0.023754379013553262,
+    "reason": "",
+    "reference_k_sha256": null,
+    "solver_runtime_s": 1.294996976852417,
+    "solver_version": "12.0.3",
+    "solver_work": 0.631535011993218,
+    "status": "OPTIMAL_NUMERIC",
+    "structural_sha256": "6aa7a60d081a788614a09c7f4d868c4c1b5b4709f1315c0dae520378ca6c644f",
+    "wall_phases_s": {
+      "model_build": 1.9796415120363235,
+      "preparation": 0.2794522159965709,
+      "solve": 1.295186921954155,
+      "startup": 1.1582024219678715,
+      "supervisor_shutdown": 0.013671047985553741,
+      "validation": 0.03072719497140497
+    },
+    "wall_total_s": 4.756891225930303
+  }
+}

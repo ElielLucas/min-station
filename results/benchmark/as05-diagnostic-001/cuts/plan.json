@@ -1,0 +1,74 @@
+{
+  "arms": {
+    "censored": [
+      "U",
+      "U_K",
+      "A2_K"
+    ],
+    "grouping": [
+      "U_K",
+      "A2_K@reachability_degree",
+      "A2_K@balanced",
+      "A2_K@reachability_overlap"
+    ]
+  },
+  "budgets_seconds_per_arm": {
+    "censored": 300,
+    "cuts": 300,
+    "grouping": 90
+  },
+  "case_source_sha256": {
+    "mapf-room-32-32-4-m10-f8": "78be3e1261f31f4e583d0808bdfc9c93d9c9eb335d86d13b059ce428af5f303f",
+    "puc-bip42p-regiao-f2": "d7c53596522401d4071563d5007d9c8647ee0d37c893426b5ab3b1d65d97743a",
+    "puc-cc9-2p-seed-r1": "0312f43552cddc102081d9937465429e29797ddb86cf85a6871752d50aeec88c",
+    "puc-w3c571-seed-r1": "e85ced7daef779e6e88f302ee9d80a467129f448a7ac5c6ce465d64b963300fd",
+    "pucn-cc3-10n-seed-r1": "9123c0e46228c22ba586bb7f730757a7fa2c4b0f815b54afba59f54a3bc8b431",
+    "vienna-I056-regiao-f4": "645da5115a0eeaa6fba9eeae9f4942aebecfa66c4bcbc7aaec2bd0c994eb0ccc"
+  },
+  "cases": {
+    "censored": [
+      "puc-w3c571-seed-r1",
+      "vienna-I056-regiao-f4"
+    ],
+    "cuts": [
+      "puc-w3c571-seed-r1",
+      "vienna-I056-regiao-f4"
+    ],
+    "grouping": [
+      "mapf-room-32-32-4-m10-f8",
+      "puc-bip42p-regiao-f2",
+      "puc-cc9-2p-seed-r1",
+      "pucn-cc3-10n-seed-r1"
+    ]
+  },
+  "censored_preserved_in_parent": true,
+  "classification": "POSTHOC_DIAGNOSTIC_DEVELOPMENT_ONLY",
+  "cut_validator_policy": "PRECOMPUTED_NEIGHBORHOODS; SAME_GENERATORS_AS_AS02",
+  "grouping_seed": 42,
+  "hypotheses": [
+    "Reusable N_plus/N_minus may reduce repetitive cut validation costs",
+    "U prep should exclude unused K; compare end-to-end and solver-only separately",
+    "A2 grouping policies may yield different LP bounds on development cases"
+  ],
+  "max_variables": 1000000,
+  "parent_pilot_dir": "results/benchmark/as05-pilot-owner-exploratory-001",
+  "parent_pilot_manifest_sha256": "40401c9f74feab267da0e6ac46c7acf0cf5b46e3ee4b0f475d45e27b203e05ce",
+  "parent_pilot_report_sha256": "b2134ba977870fa1ab394eb76ad07d658987cda1faf4d26a01aa026eb3d9ed6f",
+  "parent_plan_sha256": "339c4559333747fb10fb9132aa90368398ae32bcb7b50955a2bd23cd8e5506cc",
+  "policies": [
+    "reachability_degree",
+    "balanced",
+    "reachability_overlap"
+  ],
+  "preparation_policy": "U_WITHOUT_K; EACH_PLUS_K_PREPARES_AND_VALIDATES_K_IN_OWN_BUDGET",
+  "schema": "AS05-DIAG-PLAN-v1",
+  "scientific_gate": "PENDING",
+  "solver": {
+    "backend": "gurobi",
+    "memory_limit_bytes": 17179869184,
+    "mode": "LP",
+    "seed": 42,
+    "threads": 4,
+    "warm_start": "none"
+  }
+}

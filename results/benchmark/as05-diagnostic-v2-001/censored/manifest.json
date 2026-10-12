@@ -1,0 +1,20 @@
+{
+  "files": {
+    "arms.csv": "9e53a95adc33b7763a0b9f39bd1af5bd45e6dd47078064dd463c496eedd2ffec",
+    "checkpoints/puc-w3c571-seed-r1/arm-00.json": "70b99a21a30b20caedde3e5ab6b77ddbe39ecc0826fa86a2341392741fde1d38",
+    "checkpoints/puc-w3c571-seed-r1/arm-00.sha256": "fa53b2bf41f99a767807da2be16a4dcd71fa5e12262a48f410d8654040564f30",
+    "checkpoints/puc-w3c571-seed-r1/arm-01.json": "0118ce1ec21c9965643bdac2a8c43915939a711d541691a2f2655cda6ff72dde",
+    "checkpoints/puc-w3c571-seed-r1/arm-01.sha256": "45a13882c8cd15a1d3e7f29f985ee268cd7aedcd7efe442d76b4a99b01a105d0",
+    "checkpoints/puc-w3c571-seed-r1/arm-02.json": "f6a4a80458aff54b3cec1f0fc25a92c72d3e15f30d879788ed70edf9e6ebe319",
+    "checkpoints/puc-w3c571-seed-r1/arm-02.sha256": "24868103bc0ec6931b058627b4678813e79197f17ff67377e8ac7fad93c7a97f",
+    "checkpoints/vienna-I056-regiao-f4/arm-00.json": "52eb1370f54fddccf7eb28ff4ab611e82028d9c5743f52549b7fbb06352644e0",
+    "checkpoints/vienna-I056-regiao-f4/arm-00.sha256": "b5bec512bd1cb4f535e4a05e461c205f456eb1bbc929f84057e4d49808c294ef",
+    "checkpoints/vienna-I056-regiao-f4/arm-01.json": "2ca7b84cd3d88023ade5370c5ba887cf2f2fec93a936e05fde86c534e01f9ae7",
+    "checkpoints/vienna-I056-regiao-f4/arm-01.sha256": "2e32c193c1ad241f5289ef48737fcb5d41d7ed69d27bcbd72cb5d899e8a6342f",
+    "checkpoints/vienna-I056-regiao-f4/arm-02.json": "b92fb1324afd5f5a80fd7140a498a14987be2e25ea2dc2d8d770cb8721c208ed",
+    "checkpoints/vienna-I056-regiao-f4/arm-02.sha256": "2e029f8397d3807490f1ddbc01e8672f42b3b8a6eb2db84f1b29f41cebf3ddf7",
+    "plan.json": "bcf64c9da300f38bdb20faf081f1c67329e6de7a34308db39c72ccfe21c1604f",
+    "report.json": "84c0a86bd2f9110e6934f3761388fb576d3e568e3738a5f4aeefa5e311636f96"
+  },
+  "schema": "AS05-DIAG-RETEST-INTEGRITY-v2"
+}

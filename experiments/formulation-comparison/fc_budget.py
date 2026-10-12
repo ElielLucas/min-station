@@ -99,7 +99,7 @@ def _worker_entry(connection, func, args, kwargs, budget_s: float, started_at: f
 
 
 def _timeout_status(phase: str) -> str:
-    if phase in PREPARATION_PHASES or phase == 'cleanup':
+    if phase in PREPARATION_PHASES or phase.startswith('k_') or phase == 'cleanup':
         return 'TIMEOUT_PREPARATION'
     if phase == 'validation':
         return 'TIMEOUT_VALIDATION'

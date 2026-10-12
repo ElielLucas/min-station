@@ -1,0 +1,52 @@
+{
+  "case": "vienna-I056-regiao-f4",
+  "index": 0,
+  "job": [
+    "cuts",
+    null,
+    null
+  ],
+  "result": {
+    "arm_id": null,
+    "case_name": "vienna-I056-regiao-f4.txt",
+    "cut_profile": {
+      "counts": {
+        "c1_raw": 50,
+        "c2_raw": 101,
+        "c4_dm_raw": 50,
+        "unique": 101
+      },
+      "k_sha256": "64d3500a49c52bbf3ea9a3ffd718711c2e6a809585d7f91db311ef44a3606796",
+      "k_validated": true,
+      "phase_wall_s": {
+        "c1_s": 0.0006131139816716313,
+        "c2_s": 0.3825553470524028,
+        "c4_dm_s": 0.0020404059905558825,
+        "canonicalize_s": 0.014421237050555646,
+        "neighborhoods_s": 0.17052503302693367,
+        "validation_cached_s": 24.432849606033415
+      }
+    },
+    "grouping_policy": null,
+    "input_load_s": 0.021038062986917794,
+    "instance_sha256": "645da5115a0eeaa6fba9eeae9f4942aebecfa66c4bcbc7aaec2bd0c994eb0ccc",
+    "kind": "cuts",
+    "reachability_s": 0.4504562260117382,
+    "reason": "",
+    "status": "PROFILED",
+    "structural_sha256": "02296e18fe5d18be973b8ba76372fa46b6719017ee057d8880f1e92a58d6dd38",
+    "wall_phases_s": {
+      "k_c1": 0.0007055159658193588,
+      "k_c2": 0.38259960000868887,
+      "k_c4_dm": 0.002109804074279964,
+      "k_canonicalize": 0.014450357994064689,
+      "k_neighborhoods": 0.17056289094034582,
+      "k_preparation": 7.38000962883234e-05,
+      "k_validation_cached": 24.464703280013055,
+      "preparation": 0.8484578059287742,
+      "startup": 0.5791459940373898,
+      "supervisor_shutdown": 0.009009614936076105
+    },
+    "wall_total_s": 26.471824686974287
+  }
+}

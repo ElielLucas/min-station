@@ -1,0 +1,32 @@
+{
+  "case": "puc-w3c571-seed-r1",
+  "index": 0,
+  "job": [
+    "cuts",
+    null,
+    null
+  ],
+  "result": {
+    "arm_id": null,
+    "case_name": "puc-w3c571-seed-r1.txt",
+    "grouping_policy": null,
+    "kind": "cuts",
+    "lp_opt_value": null,
+    "model_complete": false,
+    "reason": "Prazo global 300s esgotado na fase k_validation_cached",
+    "status": "TIMEOUT_PREPARATION",
+    "wall_phases_s": {
+      "k_c1": 0.003043582080863416,
+      "k_c2": 25.452618291950785,
+      "k_c4_dm": 0.03224623796995729,
+      "k_canonicalize": 0.009542885003611445,
+      "k_neighborhoods": 0.010850220918655396,
+      "k_preparation": 6.459804717451334e-05,
+      "k_validation_cached": 273.619657156989,
+      "preparation": 0.2608120780205354,
+      "startup": 0.6122524199308828,
+      "supervisor_shutdown": 0.007667436031624675
+    },
+    "wall_total_s": 300.0087614390068
+  }
+}

@@ -1,0 +1,4 @@
+effect,left,right,status,reason,lp_delta,wall_delta_s
+K_EFFECT,U,U_K,NOT_COMPARABLE,Modelo não completo: U=TIMEOUT_PREPARATION; U_K=TIMEOUT_PREPARATION,,
+A_EFFECT,U_K,A2_K,NOT_COMPARABLE,Modelo não completo: U_K=TIMEOUT_PREPARATION; A2_K=TIMEOUT_PREPARATION,,
+REFINEMENT_EFFECT,A2_K,A4_K,NOT_MEASURED,Braço ausente; manter no denominador,,

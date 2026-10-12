@@ -1,0 +1,117 @@
+{
+  "basis_plan_sha256": "bcf64c9da300f38bdb20faf081f1c67329e6de7a34308db39c72ccfe21c1604f",
+  "censored_retests": [
+    {
+      "A_effect": {
+        "lp_delta": 0.08573147652083435,
+        "reason": "LP ótimo numérico em ambos",
+        "relative_gain": 0.00019802453394416857,
+        "solver_runtime_ratio": 1.2837931209519902,
+        "status": "MATCHED_COMPLETE",
+        "wall_ratio": 1.0336442441000786
+      },
+      "K_effect": {
+        "lp_delta": 422.5704903677756,
+        "reason": "LP ótimo numérico em ambos",
+        "relative_gain": 40.7763752599907,
+        "solver_runtime_ratio": 1.8871622182698606,
+        "status": "MATCHED_COMPLETE",
+        "wall_ratio": 11.097841152494397
+      },
+      "case": "puc-w3c571-seed-r1",
+      "lp_by_arm": {
+        "A2_K": 433.01934234418053,
+        "U": 10.36312049988408,
+        "U_K": 432.9336108676597
+      },
+      "partition_sha256": "3af0facc70e32b4054317a23bdf5e91fceb03be605925b00cc4f882706860d5b",
+      "status_by_arm": {
+        "A2_K": "OPTIMAL_NUMERIC",
+        "U": "OPTIMAL_NUMERIC",
+        "U_K": "OPTIMAL_NUMERIC"
+      },
+      "wall_s_by_arm": {
+        "A2_K": 37.37295055692084,
+        "U": 3.257975329994224,
+        "U_K": 36.15649269102141
+      }
+    },
+    {
+      "A_effect": {
+        "lp_delta": 0.009615384615393907,
+        "reason": "LP ótimo numérico em ambos",
+        "relative_gain": 0.001131221719458107,
+        "solver_runtime_ratio": 2.499974120465988,
+        "status": "MATCHED_COMPLETE",
+        "wall_ratio": 1.7454537872636653
+      },
+      "K_effect": {
+        "lp_delta": 6.059999999999997,
+        "reason": "LP ótimo numérico em ambos",
+        "relative_gain": 2.4836065573770463,
+        "solver_runtime_ratio": 1.4739600831984543,
+        "status": "MATCHED_COMPLETE",
+        "wall_ratio": 1.2963926491534787
+      },
+      "case": "vienna-I056-regiao-f4",
+      "lp_by_arm": {
+        "A2_K": 8.509615384615392,
+        "U": 2.4400000000000017,
+        "U_K": 8.499999999999998
+      },
+      "partition_sha256": "67fade7e06a37becd984437e3f11aba8110fc613987f04e817de806243895a90",
+      "status_by_arm": {
+        "A2_K": "OPTIMAL_NUMERIC",
+        "U": "OPTIMAL_NUMERIC",
+        "U_K": "OPTIMAL_NUMERIC"
+      },
+      "wall_s_by_arm": {
+        "A2_K": 50.17275775200687,
+        "U": 22.172928575077094,
+        "U_K": 28.744821614935063
+      }
+    }
+  ],
+  "classification": "EXPLORATORY_POSTHOC_RETEST_V2",
+  "cut_profiles": [
+    {
+      "K_sha256": "42b9f6336b56241a1318326d5df68d04ec1f1c8a427b74b7462eea116766e23f",
+      "K_validation_s": 6.63033544505015,
+      "case": "puc-w3c571-seed-r1",
+      "counts": {
+        "c1_raw": 2284,
+        "c2_raw": 2284,
+        "c4_dm_raw": 2284,
+        "unique": 2284
+      },
+      "status": "PROFILED"
+    },
+    {
+      "K_sha256": "64d3500a49c52bbf3ea9a3ffd718711c2e6a809585d7f91db311ef44a3606796",
+      "K_validation_s": 1.9916152659570798,
+      "case": "vienna-I056-regiao-f4",
+      "counts": {
+        "c1_raw": 50,
+        "c2_raw": 101,
+        "c4_dm_raw": 50,
+        "unique": 101
+      },
+      "status": "PROFILED"
+    }
+  ],
+  "grouping_v1_complete_cases": 4,
+  "grouping_v1_manifest_sha256": "0e58a3bd90fffc443d13e64e895c945b05687458bf0cb95355b0fb52eb4e3763",
+  "limitations": [
+    "A2 v2 permanece política pré-escolhida, não selecionada por LP",
+    "Não substituir resultados originais nem promoção científica",
+    "Comparação de agrupamentos v1 não foi reexecutada"
+  ],
+  "recommendation": "RETEST_COMPLETE_EXPLORATORY_NO_AUTOMATIC_PROMOTION",
+  "schema": "AS05-DIAG-RETEST-ANALYSIS-v2",
+  "scientific_gate": "PENDING",
+  "scientific_promotion": "NOT_AUTHORIZED",
+  "stage_manifest_sha256": {
+    "censored": "3b49aa2b90b598856581786e3dd2dd92e0aeca8e2317cace0776557cf7affbf2",
+    "cuts": "c1f14c2e1413a4f98692be3678efcd12aec779dad313a409c9df75d24b4f247e"
+  }
+}

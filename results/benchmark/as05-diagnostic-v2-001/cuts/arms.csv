@@ -1,0 +1,3 @@
+case_name,arm,grouping_policy,status,reason,lp_opt_value,wall_total_s,solver_runtime_s,k_sha256,k_validation_s,partition_sha256
+puc-w3c571-seed-r1,,,PROFILED,,,36.34783186810091,,42b9f6336b56241a1318326d5df68d04ec1f1c8a427b74b7462eea116766e23f,6.63033544505015,
+vienna-I056-regiao-f4,,,PROFILED,,,4.087458787951618,,64d3500a49c52bbf3ea9a3ffd718711c2e6a809585d7f91db311ef44a3606796,1.9916152659570798,

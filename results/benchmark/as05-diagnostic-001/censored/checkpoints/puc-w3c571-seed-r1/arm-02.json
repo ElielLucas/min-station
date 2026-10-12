@@ -1,0 +1,25 @@
+{
+  "case": "puc-w3c571-seed-r1",
+  "index": 2,
+  "job": [
+    "censored",
+    "A2_K",
+    null
+  ],
+  "result": {
+    "arm_id": "A2_K",
+    "case_name": "puc-w3c571-seed-r1.txt",
+    "grouping_policy": null,
+    "kind": "lp",
+    "lp_opt_value": null,
+    "model_complete": false,
+    "reason": "ValueError: DIAG: política não autorizada\nTraceback (most recent call last):\n  File \"/home/eliel/Documentos/eliel/Unicamp/min-station/experiments/formulation-comparison/fc_budget.py\", line 83, in _worker_entry\n    value = func(ctx, *args, **kwargs)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/eliel/Documentos/eliel/Unicamp/min-station/experiments/formulation-comparison/as05_diag_core.py\", line 227, in _diag_worker\n    raise ValueError('DIAG: política não autorizada')\nValueError: DIAG: política não autorizada\n",
+    "status": "WORKER_ERROR",
+    "wall_phases_s": {
+      "preparation": 0.2548556509427726,
+      "startup": 0.5638181479880586,
+      "supervisor_shutdown": 0.005846371059305966
+    },
+    "wall_total_s": 0.8245240369578823
+  }
+}

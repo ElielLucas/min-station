@@ -1,0 +1,12 @@
+{
+  "files": {
+    "arms.csv": "3a22280e88f3a401945c4e303515daf394f91800ce281bdebf2f4c4b3b0e71ea",
+    "checkpoints/puc-w3c571-seed-r1/arm-00.json": "a42fe40c0e55fcac2a378a7dfa7ee09c982e8e6fbca3a5a68562b51b7367c450",
+    "checkpoints/puc-w3c571-seed-r1/arm-00.sha256": "3b79de15afe5cc8b745bafbb6bd44d301093b565f537b691ab8eb9bfd6787c70",
+    "checkpoints/vienna-I056-regiao-f4/arm-00.json": "695fb74486a361f626f87490835b434a102525495ecb7a1f518fa8f64782b2f1",
+    "checkpoints/vienna-I056-regiao-f4/arm-00.sha256": "80665052d43992e696d4d8856404fd1e5ef0718d653dc6dcbdb215ec54f21bad",
+    "plan.json": "1309b27fc2096efbd667e8243708383635b51f5411c0611420a66af290915e1a",
+    "report.json": "fb7d202ce54032fbe162493c9ddd5a3cc859d68e5947d198902055d38ca2b13b"
+  },
+  "schema": "AS05-DIAG-INTEGRITY-v1"
+}

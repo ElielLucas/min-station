@@ -1,0 +1,127 @@
+{
+  "a2_policy": "reachability_degree",
+  "cases": [
+    {
+      "contrasts": {},
+      "name": "puc-w3c571-seed-r1",
+      "runs": [
+        {
+          "arm_id": null,
+          "case_name": "puc-w3c571-seed-r1.txt",
+          "cut_profile": {
+            "counts": {
+              "c1_raw": 2284,
+              "c2_raw": 2284,
+              "c4_dm_raw": 2284,
+              "unique": 2284
+            },
+            "k_sha256": "42b9f6336b56241a1318326d5df68d04ec1f1c8a427b74b7462eea116766e23f",
+            "k_validated": true,
+            "phase_wall_s": {
+              "c1_s": 0.002886214992031455,
+              "c2_s": 28.751293615088798,
+              "c4_dm_s": 0.011301402002573013,
+              "canonicalize_s": 0.009407799923792481,
+              "neighborhoods_s": 0.0103896550135687,
+              "validation_bitset_v2_s": 6.63033544505015,
+              "validator_setup_s": 0.01425322494469583
+            },
+            "validator_method": "bitset-v2"
+          },
+          "grouping_policy": null,
+          "input_load_s": 0.2308949630241841,
+          "instance_sha256": "e85ced7daef779e6e88f302ee9d80a467129f448a7ac5c6ce465d64b963300fd",
+          "kind": "cuts",
+          "reachability_s": 0.021107523934915662,
+          "reason": "",
+          "status": "PROFILED",
+          "structural_sha256": "6aa7a60d081a788614a09c7f4d868c4c1b5b4709f1315c0dae520378ca6c644f",
+          "wall_phases_s": {
+            "k_c1": 0.0029373359866440296,
+            "k_c2": 28.75132922595367,
+            "k_c4_dm": 0.011372722103260458,
+            "k_canonicalize": 0.009458375978283584,
+            "k_neighborhoods": 0.010409852024167776,
+            "k_preparation": 6.325100548565388e-05,
+            "k_validation_bitset_v2": 6.641498634940945,
+            "k_validator_setup": 0.014315266977064312,
+            "preparation": 0.26769076101481915,
+            "startup": 0.6334459700156003,
+            "supervisor_shutdown": 0.005302539095282555
+          },
+          "wall_total_s": 36.34783186810091
+        }
+      ]
+    },
+    {
+      "contrasts": {},
+      "name": "vienna-I056-regiao-f4",
+      "runs": [
+        {
+          "arm_id": null,
+          "case_name": "vienna-I056-regiao-f4.txt",
+          "cut_profile": {
+            "counts": {
+              "c1_raw": 50,
+              "c2_raw": 101,
+              "c4_dm_raw": 50,
+              "unique": 101
+            },
+            "k_sha256": "64d3500a49c52bbf3ea9a3ffd718711c2e6a809585d7f91db311ef44a3606796",
+            "k_validated": true,
+            "phase_wall_s": {
+              "c1_s": 0.00042359496001154184,
+              "c2_s": 0.36317619401961565,
+              "c4_dm_s": 0.0020045069977641106,
+              "canonicalize_s": 0.014454810065217316,
+              "neighborhoods_s": 0.15594660001806915,
+              "validation_bitset_v2_s": 1.9916152659570798,
+              "validator_setup_s": 0.09227211307734251
+            },
+            "validator_method": "bitset-v2"
+          },
+          "grouping_policy": null,
+          "input_load_s": 0.019522185903042555,
+          "instance_sha256": "645da5115a0eeaa6fba9eeae9f4942aebecfa66c4bcbc7aaec2bd0c994eb0ccc",
+          "kind": "cuts",
+          "reachability_s": 0.4458417430287227,
+          "reason": "",
+          "status": "PROFILED",
+          "structural_sha256": "02296e18fe5d18be973b8ba76372fa46b6719017ee057d8880f1e92a58d6dd38",
+          "wall_phases_s": {
+            "k_c1": 0.00048359204083681107,
+            "k_c2": 0.36321013199631125,
+            "k_c4_dm": 0.00207271589897573,
+            "k_canonicalize": 0.014487206004559994,
+            "k_neighborhoods": 0.15597316902130842,
+            "k_preparation": 8.039199747145176e-05,
+            "k_validation_bitset_v2": 2.0293154490645975,
+            "k_validator_setup": 0.09231915802229196,
+            "preparation": 0.8471051410306245,
+            "startup": 0.5709462439408526,
+            "supervisor_shutdown": 0.0114575409097597
+          },
+          "wall_total_s": 4.087458787951618
+        }
+      ]
+    }
+  ],
+  "classification": "EXPLORATORY_POSTHOC_RETEST_V2",
+  "expected_cases": [
+    "puc-w3c571-seed-r1",
+    "vienna-I056-regiao-f4"
+  ],
+  "limitations": [
+    "Reensaio exploratório não substitui gate AS05",
+    "Validação K exata não equivale a homologação independente",
+    "Braços interrompidos permanecem censurados"
+  ],
+  "parent_original_report_sha256": "b2134ba977870fa1ab394eb76ad07d658987cda1faf4d26a01aa026eb3d9ed6f",
+  "parent_plan_sha256": "1309b27fc2096efbd667e8243708383635b51f5411c0611420a66af290915e1a",
+  "plan_sha256": "bcf64c9da300f38bdb20faf081f1c67329e6de7a34308db39c72ccfe21c1604f",
+  "schema": "AS05-DIAG-RETEST-RESULT-v2",
+  "scientific_gate": "PENDING",
+  "scientific_promotion": "NOT_AUTHORIZED",
+  "stage": "cuts",
+  "validator": "bitset-v2"
+}

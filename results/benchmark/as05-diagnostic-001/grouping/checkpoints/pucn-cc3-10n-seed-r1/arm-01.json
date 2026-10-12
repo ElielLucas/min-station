@@ -1,0 +1,72 @@
+{
+  "case": "pucn-cc3-10n-seed-r1",
+  "index": 1,
+  "job": [
+    "grouping",
+    "A2_K",
+    "reachability_degree"
+  ],
+  "result": {
+    "applied_k_sha256": "f5e8958d83ee77e29a7566adecebc31c91beeec8b8ad66addaaabb428a77ba49",
+    "arm_id": "A2_K",
+    "case_name": "pucn-cc3-10n-seed-r1.txt",
+    "cut_profile": {
+      "counts": {
+        "c1_raw": 50,
+        "c2_raw": 50,
+        "c4_dm_raw": 50,
+        "unique": 50
+      },
+      "k_sha256": "f5e8958d83ee77e29a7566adecebc31c91beeec8b8ad66addaaabb428a77ba49",
+      "k_validated": true,
+      "phase_wall_s": {
+        "c1_s": 0.00015572994016110897,
+        "c2_s": 0.4214803200447932,
+        "c4_dm_s": 0.0005914999637752771,
+        "canonicalize_s": 0.0007519660284742713,
+        "neighborhoods_s": 0.009652488981373608,
+        "validation_cached_s": 1.4948467920767143
+      }
+    },
+    "grouping_policy": "reachability_degree",
+    "input_load_s": 0.04427090415265411,
+    "installed": null,
+    "instance_sha256": "9123c0e46228c22ba586bb7f730757a7fa2c4b0f815b54afba59f54a3bc8b431",
+    "k_prepared_for_this_arm": true,
+    "k_validated": true,
+    "kind": "lp",
+    "lp_opt_value": 16.933333333333387,
+    "mip_numeric_bound": null,
+    "mip_numeric_incumbent": null,
+    "model_complete": true,
+    "n_constraints": 7075,
+    "n_nonzeros": 120450,
+    "n_variables": 57050,
+    "nodes": 0.0,
+    "partition_sha256": "e5d4a25463fda22c7af37daa1c99928fce243cb8c02333d5ec38c3c5766b2919",
+    "reachability_s": 0.05294956895522773,
+    "reason": "",
+    "reference_k_sha256": "f5e8958d83ee77e29a7566adecebc31c91beeec8b8ad66addaaabb428a77ba49",
+    "solver_runtime_s": 2.4161899089813232,
+    "solver_version": "12.0.3",
+    "solver_work": 0.8753319347649733,
+    "status": "OPTIMAL_NUMERIC",
+    "structural_sha256": "9c6286194c0ff028c19b00b01fd3cd5ebdfe2da5c03578450be4303565bbd688",
+    "wall_phases_s": {
+      "k_c1": 0.00019927904941141605,
+      "k_c2": 0.42150203394703567,
+      "k_c4_dm": 0.000657492084428668,
+      "k_canonicalize": 0.0007779059233143926,
+      "k_neighborhoods": 0.009673198917880654,
+      "k_preparation": 5.18610468134284e-05,
+      "k_validation_cached": 1.4976471530972049,
+      "model_build": 1.0728373799938709,
+      "preparation": 0.11654275294858962,
+      "solve": 2.4163939439458773,
+      "startup": 0.6199958920478821,
+      "supervisor_shutdown": 0.013561981031671166,
+      "validation": 0.046059429994784296
+    },
+    "wall_total_s": 6.21590562001802
+  }
+}

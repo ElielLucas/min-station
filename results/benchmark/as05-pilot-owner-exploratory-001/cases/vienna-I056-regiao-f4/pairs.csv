@@ -1,0 +1,4 @@
+effect,left,right,status,reason,lp_delta,wall_delta_s
+K_EFFECT,U,U_K,MATCHED_COMPLETE,LP ótimo numérico em ambos,6.059999999999997,3.659684247104451
+A_EFFECT,U_K,A2_K,NOT_COMPARABLE,Modelo não completo: U_K=OPTIMAL_NUMERIC; A2_K=TIMEOUT_SOLVER,,
+REFINEMENT_EFFECT,A2_K,A4_K,NOT_MEASURED,Braço ausente; manter no denominador,,

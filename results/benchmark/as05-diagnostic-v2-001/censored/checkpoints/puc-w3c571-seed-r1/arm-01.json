@@ -1,0 +1,77 @@
+{
+  "case": "puc-w3c571-seed-r1",
+  "index": 1,
+  "job": [
+    "retest-v2",
+    "censored",
+    "U_K",
+    null,
+    "bitset-v2"
+  ],
+  "result": {
+    "applied_k_sha256": "42b9f6336b56241a1318326d5df68d04ec1f1c8a427b74b7462eea116766e23f",
+    "arm_id": "U_K",
+    "case_name": "puc-w3c571-seed-r1.txt",
+    "cut_profile": {
+      "counts": {
+        "c1_raw": 2284,
+        "c2_raw": 2284,
+        "c4_dm_raw": 2284,
+        "unique": 2284
+      },
+      "k_sha256": "42b9f6336b56241a1318326d5df68d04ec1f1c8a427b74b7462eea116766e23f",
+      "k_validated": true,
+      "phase_wall_s": {
+        "c1_s": 0.0027252050349488854,
+        "c2_s": 25.64170555199962,
+        "c4_dm_s": 0.011664708028547466,
+        "canonicalize_s": 0.0092852299567312,
+        "neighborhoods_s": 0.009717177017591894,
+        "validation_bitset_v2_s": 6.200191747047938,
+        "validator_setup_s": 0.009836730896495283
+      },
+      "validator_method": "bitset-v2"
+    },
+    "grouping_policy": null,
+    "input_load_s": 0.2302525689592585,
+    "installed": null,
+    "instance_sha256": "e85ced7daef779e6e88f302ee9d80a467129f448a7ac5c6ce465d64b963300fd",
+    "k_prepared_for_this_arm": true,
+    "k_validated": true,
+    "kind": "lp",
+    "lp_opt_value": 432.9336108676597,
+    "mip_numeric_bound": null,
+    "mip_numeric_incumbent": null,
+    "model_complete": true,
+    "n_constraints": 14275,
+    "n_nonzeros": 100496,
+    "n_variables": 24553,
+    "nodes": 0.0,
+    "partition_sha256": null,
+    "reachability_s": 0.021416186005808413,
+    "reason": "",
+    "reference_k_sha256": "42b9f6336b56241a1318326d5df68d04ec1f1c8a427b74b7462eea116766e23f",
+    "solver_runtime_s": 1.6580078601837158,
+    "solver_version": "12.0.3",
+    "solver_work": 1.1818774816662567,
+    "status": "OPTIMAL_NUMERIC",
+    "structural_sha256": "6aa7a60d081a788614a09c7f4d868c4c1b5b4709f1315c0dae520378ca6c644f",
+    "wall_phases_s": {
+      "k_c1": 0.0027729199500754476,
+      "k_c2": 25.641742286039516,
+      "k_c4_dm": 0.011741283000446856,
+      "k_canonicalize": 0.009335604030638933,
+      "k_neighborhoods": 0.00973436504136771,
+      "k_preparation": 5.269201938062906e-05,
+      "k_validation_bitset_v2": 6.213649212033488,
+      "k_validator_setup": 0.009877319913357496,
+      "model_build": 1.7081990910228342,
+      "preparation": 0.2667564379516989,
+      "solve": 1.6581840140279382,
+      "startup": 0.5795782080385834,
+      "supervisor_shutdown": 0.012786090024746954,
+      "validation": 0.032075639930553734
+    },
+    "wall_total_s": 36.15649269102141
+  }
+}

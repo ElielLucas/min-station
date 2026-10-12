@@ -1,0 +1,73 @@
+{
+  "K_validator": "bitset-v2",
+  "K_validator_legacy_spot_check": 1,
+  "arms": {
+    "censored": [
+      {
+        "arm": "U",
+        "grouping_policy": null
+      },
+      {
+        "arm": "U_K",
+        "grouping_policy": null
+      },
+      {
+        "arm": "A2_K",
+        "grouping_policy": "reachability_degree"
+      }
+    ]
+  },
+  "budgets_seconds_per_arm": {
+    "censored": 300,
+    "cuts": 300
+  },
+  "case_source_sha256": {
+    "puc-w3c571-seed-r1": "e85ced7daef779e6e88f302ee9d80a467129f448a7ac5c6ce465d64b963300fd",
+    "vienna-I056-regiao-f4": "645da5115a0eeaa6fba9eeae9f4942aebecfa66c4bcbc7aaec2bd0c994eb0ccc"
+  },
+  "cases": {
+    "censored": [
+      "puc-w3c571-seed-r1",
+      "vienna-I056-regiao-f4"
+    ],
+    "cuts": [
+      "puc-w3c571-seed-r1",
+      "vienna-I056-regiao-f4"
+    ]
+  },
+  "changes_from_v1": [
+    "A2_K explicit AS03 reachability_degree policy, seed unchanged",
+    "Same generators K, exact dual-reachability and full matching validator",
+    "Independent frozen outputs, original LP and grouping results untouched"
+  ],
+  "classification": "EXPLORATORY_POSTHOC_RETEST_V2",
+  "expected_k_sha256": {
+    "puc-w3c571-seed-r1": "42b9f6336b56241a1318326d5df68d04ec1f1c8a427b74b7462eea116766e23f",
+    "vienna-I056-regiao-f4": "64d3500a49c52bbf3ea9a3ffd718711c2e6a809585d7f91db311ef44a3606796"
+  },
+  "grouping_seed": 42,
+  "k_hash_provenance": {
+    "puc-w3c571-seed-r1": "v2-no-solver-preflight",
+    "vienna-I056-regiao-f4": "v1-completed-profile"
+  },
+  "max_variables": 1000000,
+  "original_pilot_report_sha256": "b2134ba977870fa1ab394eb76ad07d658987cda1faf4d26a01aa026eb3d9ed6f",
+  "parent_plan_path": "results/benchmark/as05-diagnostic-plan-v1.json",
+  "parent_plan_sha256": "1309b27fc2096efbd667e8243708383635b51f5411c0611420a66af290915e1a",
+  "parent_stage_manifest_sha256": {
+    "censored": "11449e3475ff25095f947e92ac9d79d056c5e845e5f992f0b4f3bac66ee9107e",
+    "cuts": "5180bdedbabbf3fc7eedd670c2b0a4ca8df034f8dba213b7886b012898ce4485",
+    "grouping": "0e58a3bd90fffc443d13e64e895c945b05687458bf0cb95355b0fb52eb4e3763"
+  },
+  "schema": "AS05-DIAG-RETEST-PLAN-v2",
+  "scientific_gate": "PENDING",
+  "scientific_promotion": "NOT_AUTHORIZED",
+  "solver": {
+    "backend": "gurobi",
+    "memory_limit_bytes": 17179869184,
+    "mode": "LP",
+    "seed": 42,
+    "threads": 4,
+    "warm_start": "none"
+  }
+}

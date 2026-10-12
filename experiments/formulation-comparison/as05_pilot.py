@@ -81,16 +81,24 @@ def _safe_case_runner(callable_, row: dict, arm_ids: tuple[str, ...], **kw) -> d
 
 
 def run_pilot(*, root: Path, plan_path: Path, evidence_path: Path, output_dir: Path,
-              max_variables: int=1_000_000, run_case_fn=run_case, run_arm_fn=run_arm) -> Path:
+              max_variables: int=1_000_000, run_case_fn=run_case, run_arm_fn=run_arm,
+              owner_authorization_path: Path | None = None) -> Path:
     plan, _ = read_plan(plan_path, root)
     evidence = json.loads(evidence_path.read_text(encoding='utf-8'))
-    verify_preconditions(evidence)
+    exploratory = owner_authorization_path is not None
+    if exploratory:
+        from as05_owner_authorization import verify_owner_authorization
+        authorization = json.loads(owner_authorization_path.read_text(encoding='utf-8'))
+        verify_owner_authorization(authorization, plan)
+    else:
+        verify_preconditions(evidence)
     if output_dir.exists():
         raise FileExistsError('AS05: destino append-only já existe')
     manifest = _manifest_index(root, plan)
     policy = _policy(plan)
     from as02_validation_gate import GateEvidence
     gate = GateEvidence(**evidence['as02_evidence'])
+    exploratory_kwargs = {'owner_exploratory': True} if exploratory else {}
     case_results = []
     metrics = []
     selected_a4 = []
@@ -99,7 +107,8 @@ def run_pilot(*, root: Path, plan_path: Path, evidence_path: Path, output_dir: P
         row = manifest[case['manifest_name']]
         result = _safe_case_runner(run_case_fn, row, arm_ids=MAIN, root=root, mode='LP', policy=policy,
                              as02_gate=gate, max_variables=max_variables,
-                             grouping_seed=plan['policy']['grouping_seed'])
+                             grouping_seed=plan['policy']['grouping_seed'],
+                             **exploratory_kwargs)
         metric = metrics_for_case(case, result, plan['materiality_addendum'])
         take_a4, reason = a4_selection(case, metric, plan)
         if metric['material_a_gain'] and metric['wall_acceptable']:
@@ -108,7 +117,8 @@ def run_pilot(*, root: Path, plan_path: Path, evidence_path: Path, output_dir: P
                 repeat = _safe_case_runner(run_case_fn, row, arm_ids=('U_K','A2_K'), root=root, mode='LP',
                                      policy=_policy(plan, seed), as02_gate=gate,
                                      max_variables=max_variables,
-                                     grouping_seed=plan['policy']['grouping_seed'])
+                                     grouping_seed=plan['policy']['grouping_seed'],
+                                     **exploratory_kwargs)
                 repeated.append(repeat)
                 repeated_results.append((case['name'],seed,repeat))
             metric['reproduction'] = assess_reproduction(
@@ -121,15 +131,27 @@ def run_pilot(*, root: Path, plan_path: Path, evidence_path: Path, output_dir: P
         if take_a4:
             extra = run_arm_fn(row, root=root, arm_id='A4_K', mode='LP', policy=policy,
                                as02_gate=gate, allow_a4=True, max_variables=max_variables,
-                               grouping_seed=plan['policy']['grouping_seed'])
+                               grouping_seed=plan['policy']['grouping_seed'],
+                               **exploratory_kwargs)
             selected_a4.append({'name':case['name'], 'trigger':reason, 'arm':extra.to_dict()})
-    gate_decision = assess_gate(metrics, plan)
+    screening_decision = assess_gate(metrics, plan)
+    if exploratory:
+        gate_decision = dict(screening_decision)
+        gate_decision['verdict'] = 'INVESTIGATE'
+        gate_decision['reason'] = ('Piloto exploratorio autorizado pelo responsavel; '
+                                   'revisao independente pendente. Nao promove AS-06 cientificamente.')
+    else:
+        gate_decision = screening_decision
     report = {'schema':'AS05-PILOT-v1', 'plan_sha256':plan_digest(plan),
               'plan_file_sha256':sha256_file(plan_path),
               'as00_sha256':plan['basis_protocol_sha256'],
               'manifest_sha256':plan['basis_manifest_sha256'],
               'precondition_evidence_sha256':sha256_file(evidence_path),
-              'cases':metrics,'decision':gate_decision,
+               'cases':metrics,'decision':gate_decision,
+              'execution_class': ('OWNER_AUTHORIZED_EXPLORATORY' if exploratory else 'SCIENTIFIC_GATE'),
+              'scientific_homologation': ('PENDING' if exploratory else 'DECLARED_BY_EXTERNAL_EVIDENCE'),
+              'owner_authorization_sha256': (sha256_file(owner_authorization_path) if exploratory else None),
+              'screening_decision': (screening_decision if exploratory else None),
               'a4_optional':selected_a4,
               'auxiliary_controls':{'CORE_IP':'NOT_IMPLEMENTED_IN_AS04',
                                     'FCC_K_SMALL':'NOT_RUN_SEPARATE_COMPLETE_ONLY'},
@@ -174,6 +196,10 @@ def run_pilot(*, root: Path, plan_path: Path, evidence_path: Path, output_dir: P
     report_path = output_dir/'lp_gate.json'
     (output_dir/'plan.json').write_bytes(plan_path.read_bytes())
     paths.append(output_dir/'plan.json')
+    if exploratory:
+        archived_auth = output_dir/'owner-authorization.json'
+        archived_auth.write_bytes(owner_authorization_path.read_bytes())
+        paths.append(archived_auth)
     report_path.write_text(json.dumps(report, ensure_ascii=False, sort_keys=True,
                                       allow_nan=False, indent=2)+'\n',encoding='utf-8')
     paths.append(report_path)
@@ -198,6 +224,11 @@ def verify_pilot(path: Path) -> dict:
         if not file_path.is_file() or sha256_file(file_path) != expected:
             raise ValueError(f'AS05: integridade falhou: {name}')
     report = json.loads((path/'lp_gate.json').read_text(encoding='utf-8'))
+    if report.get('execution_class') == 'OWNER_AUTHORIZED_EXPLORATORY':
+        if report.get('decision', {}).get('verdict') != 'INVESTIGATE' or \
+                report.get('scientific_homologation') != 'PENDING' or \
+                sha256_file(path/'owner-authorization.json') != report.get('owner_authorization_sha256'):
+            raise ValueError('AS05: relatorio exploratorio tenta declarar homologacao ou autorizacao invalida')
     if sha256_file(path/'plan.json') != report['plan_file_sha256']:
         raise ValueError('AS05: plano congelado diverge do relatório')
     if len(report['cases']) != 6 or report['decision']['denominator_cases'] != 6:

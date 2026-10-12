@@ -1,0 +1,25 @@
+{
+  "case": "vienna-I056-regiao-f4",
+  "index": 2,
+  "job": [
+    "censored",
+    "A2_K",
+    null
+  ],
+  "result": {
+    "arm_id": "A2_K",
+    "case_name": "vienna-I056-regiao-f4.txt",
+    "grouping_policy": null,
+    "kind": "lp",
+    "lp_opt_value": null,
+    "model_complete": false,
+    "reason": "ValueError: DIAG: política não autorizada\nTraceback (most recent call last):\n  File \"/home/eliel/Documentos/eliel/Unicamp/min-station/experiments/formulation-comparison/fc_budget.py\", line 83, in _worker_entry\n    value = func(ctx, *args, **kwargs)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/eliel/Documentos/eliel/Unicamp/min-station/experiments/formulation-comparison/as05_diag_core.py\", line 227, in _diag_worker\n    raise ValueError('DIAG: política não autorizada')\nValueError: DIAG: política não autorizada\n",
+    "status": "WORKER_ERROR",
+    "wall_phases_s": {
+      "preparation": 0.8695714480709285,
+      "startup": 0.5787476080004126,
+      "supervisor_shutdown": 0.008845202974043787
+    },
+    "wall_total_s": 1.4571693560574204
+  }
+}

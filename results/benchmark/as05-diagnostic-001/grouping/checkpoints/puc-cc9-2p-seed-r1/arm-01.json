@@ -1,0 +1,72 @@
+{
+  "case": "puc-cc9-2p-seed-r1",
+  "index": 1,
+  "job": [
+    "grouping",
+    "A2_K",
+    "reachability_degree"
+  ],
+  "result": {
+    "applied_k_sha256": "e8ad995864897f119b1f207d528ef048ac2f46987591437d807ae5e90d4e33cf",
+    "arm_id": "A2_K",
+    "case_name": "puc-cc9-2p-seed-r1.txt",
+    "cut_profile": {
+      "counts": {
+        "c1_raw": 56,
+        "c2_raw": 67,
+        "c4_dm_raw": 56,
+        "unique": 67
+      },
+      "k_sha256": "e8ad995864897f119b1f207d528ef048ac2f46987591437d807ae5e90d4e33cf",
+      "k_validated": true,
+      "phase_wall_s": {
+        "c1_s": 9.823497384786606e-05,
+        "c2_s": 0.1051728599704802,
+        "c4_dm_s": 0.00032648700289428234,
+        "canonicalize_s": 0.0004635789664462209,
+        "neighborhoods_s": 0.0018073749961331487,
+        "validation_cached_s": 0.520371713093482
+      }
+    },
+    "grouping_policy": "reachability_degree",
+    "input_load_s": 0.009237982099875808,
+    "installed": null,
+    "instance_sha256": "0312f43552cddc102081d9937465429e29797ddb86cf85a6871752d50aeec88c",
+    "k_prepared_for_this_arm": true,
+    "k_validated": true,
+    "kind": "lp",
+    "lp_opt_value": 27.03125,
+    "mip_numeric_bound": null,
+    "mip_numeric_incumbent": null,
+    "model_complete": true,
+    "n_constraints": 3683,
+    "n_nonzeros": 25092,
+    "n_variables": 10816,
+    "nodes": 0.0,
+    "partition_sha256": "a14e73e9f09c3030dd6b0400a500b9b589113a4252061406c52c996310ee5603",
+    "reachability_s": 0.005398029927164316,
+    "reason": "",
+    "reference_k_sha256": "e8ad995864897f119b1f207d528ef048ac2f46987591437d807ae5e90d4e33cf",
+    "solver_runtime_s": 0.2278280258178711,
+    "solver_version": "12.0.3",
+    "solver_work": 0.22182095123393003,
+    "status": "OPTIMAL_NUMERIC",
+    "structural_sha256": "31a9d5acb7cc42df94eeb4aec61a22c9e5fd54d8ce6ca6cd063775d2ddf28264",
+    "wall_phases_s": {
+      "k_c1": 0.00012401200365275145,
+      "k_c2": 0.10518854903057218,
+      "k_c4_dm": 0.0003642600495368242,
+      "k_canonicalize": 0.00048181391321122646,
+      "k_neighborhoods": 0.0018221319187432528,
+      "k_preparation": 3.579608164727688e-05,
+      "k_validation_cached": 0.5214880820130929,
+      "model_build": 0.2297105420148,
+      "preparation": 0.017672342946752906,
+      "solve": 0.22798551595769823,
+      "startup": 0.6193349260138348,
+      "supervisor_shutdown": 0.0051595940021798015,
+      "validation": 0.005791496019810438
+    },
+    "wall_total_s": 1.7351624709554017
+  }
+}

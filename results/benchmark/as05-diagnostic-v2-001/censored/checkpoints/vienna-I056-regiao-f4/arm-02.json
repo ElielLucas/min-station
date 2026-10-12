@@ -1,0 +1,77 @@
+{
+  "case": "vienna-I056-regiao-f4",
+  "index": 2,
+  "job": [
+    "retest-v2",
+    "censored",
+    "A2_K",
+    "reachability_degree",
+    "bitset-v2"
+  ],
+  "result": {
+    "applied_k_sha256": "64d3500a49c52bbf3ea9a3ffd718711c2e6a809585d7f91db311ef44a3606796",
+    "arm_id": "A2_K",
+    "case_name": "vienna-I056-regiao-f4.txt",
+    "cut_profile": {
+      "counts": {
+        "c1_raw": 50,
+        "c2_raw": 101,
+        "c4_dm_raw": 50,
+        "unique": 101
+      },
+      "k_sha256": "64d3500a49c52bbf3ea9a3ffd718711c2e6a809585d7f91db311ef44a3606796",
+      "k_validated": true,
+      "phase_wall_s": {
+        "c1_s": 0.000505847972817719,
+        "c2_s": 0.38732449791859835,
+        "c4_dm_s": 0.0020473330514505506,
+        "canonicalize_s": 0.014518235926516354,
+        "neighborhoods_s": 0.15700568293686956,
+        "validation_bitset_v2_s": 1.9438419439829886,
+        "validator_setup_s": 0.09092058893293142
+      },
+      "validator_method": "bitset-v2"
+    },
+    "grouping_policy": "reachability_degree",
+    "input_load_s": 0.023219197988510132,
+    "installed": null,
+    "instance_sha256": "645da5115a0eeaa6fba9eeae9f4942aebecfa66c4bcbc7aaec2bd0c994eb0ccc",
+    "k_prepared_for_this_arm": true,
+    "k_validated": true,
+    "kind": "lp",
+    "lp_opt_value": 8.509615384615392,
+    "mip_numeric_bound": null,
+    "mip_numeric_incumbent": null,
+    "model_complete": true,
+    "n_constraints": 14063,
+    "n_nonzeros": 1576383,
+    "n_variables": 769223,
+    "nodes": 0.0,
+    "partition_sha256": "67fade7e06a37becd984437e3f11aba8110fc613987f04e817de806243895a90",
+    "reachability_s": 0.4492379049770534,
+    "reason": "",
+    "reference_k_sha256": "64d3500a49c52bbf3ea9a3ffd718711c2e6a809585d7f91db311ef44a3606796",
+    "solver_runtime_s": 29.22676706314087,
+    "solver_version": "12.0.3",
+    "solver_work": 11.194045030422489,
+    "status": "OPTIMAL_NUMERIC",
+    "structural_sha256": "02296e18fe5d18be973b8ba76372fa46b6719017ee057d8880f1e92a58d6dd38",
+    "wall_phases_s": {
+      "k_c1": 0.0005894140340387821,
+      "k_c2": 0.3873608550056815,
+      "k_c4_dm": 0.0021099860314279795,
+      "k_canonicalize": 0.014551040949299932,
+      "k_neighborhoods": 0.15703169896733016,
+      "k_preparation": 6.673403549939394e-05,
+      "k_validation_bitset_v2": 1.9769276990555227,
+      "k_validator_setup": 0.09096133895218372,
+      "model_build": 16.492923278943636,
+      "preparation": 0.8524959479691461,
+      "solve": 29.226970823016018,
+      "startup": 0.5848662500502542,
+      "supervisor_shutdown": 0.033130332943983376,
+      "validation": 0.3527666920563206
+    },
+    "wall_total_s": 50.17275775200687
+  }
+}

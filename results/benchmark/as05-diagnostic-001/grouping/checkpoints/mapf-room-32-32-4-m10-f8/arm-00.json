@@ -1,0 +1,72 @@
+{
+  "case": "mapf-room-32-32-4-m10-f8",
+  "index": 0,
+  "job": [
+    "grouping",
+    "U_K",
+    null
+  ],
+  "result": {
+    "applied_k_sha256": "8a5cc3c481f138e93f44d598831a8d116a02c016007c4bf5a177bf11f7d4eee8",
+    "arm_id": "U_K",
+    "case_name": "mapf-room-32-32-4-m10-f8.txt",
+    "cut_profile": {
+      "counts": {
+        "c1_raw": 12,
+        "c2_raw": 24,
+        "c4_dm_raw": 12,
+        "unique": 24
+      },
+      "k_sha256": "8a5cc3c481f138e93f44d598831a8d116a02c016007c4bf5a177bf11f7d4eee8",
+      "k_validated": true,
+      "phase_wall_s": {
+        "c1_s": 3.853393718600273e-05,
+        "c2_s": 0.02334331104066223,
+        "c4_dm_s": 0.00014944293070584536,
+        "canonicalize_s": 0.00033991201780736446,
+        "neighborhoods_s": 0.004616942955181003,
+        "validation_cached_s": 0.15580633492209017
+      }
+    },
+    "grouping_policy": null,
+    "input_load_s": 0.0056343869073316455,
+    "installed": null,
+    "instance_sha256": "78be3e1261f31f4e583d0808bdfc9c93d9c9eb335d86d13b059ce428af5f303f",
+    "k_prepared_for_this_arm": true,
+    "k_validated": true,
+    "kind": "lp",
+    "lp_opt_value": 13.199999999999996,
+    "mip_numeric_bound": null,
+    "mip_numeric_incumbent": null,
+    "model_complete": true,
+    "n_constraints": 2070,
+    "n_nonzeros": 48549,
+    "n_variables": 12304,
+    "nodes": 0.0,
+    "partition_sha256": null,
+    "reachability_s": 0.011956009082496166,
+    "reason": "",
+    "reference_k_sha256": "8a5cc3c481f138e93f44d598831a8d116a02c016007c4bf5a177bf11f7d4eee8",
+    "solver_runtime_s": 0.19602704048156738,
+    "solver_version": "12.0.3",
+    "solver_work": 0.10893834132367877,
+    "status": "OPTIMAL_NUMERIC",
+    "structural_sha256": "db08722877320c4910d6cae5e41b7c63386894d4fefa9432fcfe2840d506df84",
+    "wall_phases_s": {
+      "k_c1": 7.085292600095272e-05,
+      "k_c2": 0.023359044105745852,
+      "k_c4_dm": 0.00018233794253319502,
+      "k_canonicalize": 0.00035693205427378416,
+      "k_neighborhoods": 0.0046331670600920916,
+      "k_preparation": 4.3978914618492126e-05,
+      "k_validation_cached": 0.1570104779675603,
+      "model_build": 0.2794644959503785,
+      "preparation": 0.0270635390188545,
+      "solve": 0.1962579470127821,
+      "startup": 0.6114946430316195,
+      "supervisor_shutdown": 0.009855645010247827,
+      "validation": 0.013943279045633972
+    },
+    "wall_total_s": 1.3237453539622948
+  }
+}
