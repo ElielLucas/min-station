@@ -1,0 +1,313 @@
+{
+  "case": "vienna-I056-regiao-f4",
+  "index": 4,
+  "job": [
+    "as06-mip-v1",
+    "replication",
+    "U_K",
+    43,
+    "8b8ddc4e6b2be6d64a6c917538187c5252971522bcb17c9bf8784891362a62f3"
+  ],
+  "result": {
+    "a4_parent_sha256": null,
+    "applied_k_sha256": "64d3500a49c52bbf3ea9a3ffd718711c2e6a809585d7f91db311ef44a3606796",
+    "arm_id": "U_K",
+    "callback_errors": [],
+    "case_name": "vienna-I056-regiao-f4.txt",
+    "cut_profile": {
+      "counts": {
+        "c1_raw": 50,
+        "c2_raw": 101,
+        "c4_dm_raw": 50,
+        "unique": 101
+      },
+      "k_sha256": "64d3500a49c52bbf3ea9a3ffd718711c2e6a809585d7f91db311ef44a3606796",
+      "k_validated": true,
+      "phase_wall_s": {
+        "c1_s": 0.0005900060059502721,
+        "c2_s": 0.38549598190002143,
+        "c4_dm_s": 0.0020241470774635673,
+        "canonicalize_s": 0.014731822069734335,
+        "neighborhoods_s": 0.16596298501826823,
+        "validation_bitset_v2_s": 1.909096059971489,
+        "validator_setup_s": 0.09087048401124775
+      },
+      "validator_method": "bitset-v2"
+    },
+    "input_load_s": 0.022855749004520476,
+    "installed": [
+      "1015",
+      "120",
+      "1328",
+      "1367",
+      "1375",
+      "1685",
+      "1761",
+      "1789",
+      "1792",
+      "1824",
+      "803",
+      "927",
+      "935"
+    ],
+    "instance_sha256": "645da5115a0eeaa6fba9eeae9f4942aebecfa66c4bcbc7aaec2bd0c994eb0ccc",
+    "invalid_incumbents": 0,
+    "k_prepared_for_this_arm": true,
+    "mip_numeric_bound": 9.0,
+    "mip_numeric_incumbent": 13.0,
+    "model_complete": true,
+    "n_constraints": 6074,
+    "n_k_cuts": 101,
+    "n_nonzeros": 1558364,
+    "n_variables": 383591,
+    "nodes": 1.0,
+    "numeric_bound_trace": [
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 163.0,
+        "numeric_lb": 0.0,
+        "solver_s": 3.2232799530029297
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 163.0,
+        "numeric_lb": 9.0,
+        "solver_s": 17.985668897628784
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 163.0,
+        "numeric_lb": 9.0,
+        "solver_s": 40.11748790740967
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 9.0,
+        "solver_s": 70.34155488014221
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 9.0,
+        "solver_s": 105.29472804069519
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 9.0,
+        "solver_s": 120.44753193855286
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 9.0,
+        "solver_s": 128.98754692077637
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 9.0,
+        "solver_s": 163.88579392433167
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 9.0,
+        "solver_s": 177.35853004455566
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 9.0,
+        "solver_s": 187.21574592590332
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 9.0,
+        "solver_s": 219.21510696411133
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 9.0,
+        "solver_s": 240.49392294883728
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 9.0,
+        "solver_s": 264.18631887435913
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 9.0,
+        "solver_s": 295.3928668498993
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 9.0,
+        "solver_s": 306.7864270210266
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 9.0,
+        "solver_s": 318.0188009738922
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 9.0,
+        "solver_s": 331.8992040157318
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 9.0,
+        "solver_s": 346.162987947464
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 9.0,
+        "solver_s": 361.0208718776703
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 9.0,
+        "solver_s": 375.0831928253174
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 9.0,
+        "solver_s": 385.6275019645691
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 9.0,
+        "solver_s": 412.0008418560028
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 9.0,
+        "solver_s": 427.9070098400116
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 9.0,
+        "solver_s": 455.45108795166016
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 9.0,
+        "solver_s": 478.0022039413452
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 9.0,
+        "solver_s": 488.8556339740753
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 9.0,
+        "solver_s": 523.5583319664001
+      }
+    ],
+    "numeric_callback_dropped_incumbents": 0,
+    "partition_sha256": null,
+    "peak_rss_kb": 1276956,
+    "physical_best_observed_ub": 13,
+    "physical_trace": [
+      {
+        "physical_ub": 163,
+        "solver_s": 0.08128499984741211,
+        "validation": "VALIDATED"
+      },
+      {
+        "physical_ub": 20,
+        "solver_s": 40.133203983306885,
+        "validation": "VALIDATED"
+      },
+      {
+        "physical_ub": 19,
+        "solver_s": 40.24590992927551,
+        "validation": "VALIDATED"
+      },
+      {
+        "physical_ub": 18,
+        "solver_s": 40.282618045806885,
+        "validation": "VALIDATED"
+      },
+      {
+        "physical_ub": 17,
+        "solver_s": 41.186755895614624,
+        "validation": "VALIDATED"
+      },
+      {
+        "physical_ub": 16,
+        "solver_s": 41.339025020599365,
+        "validation": "VALIDATED"
+      },
+      {
+        "physical_ub": 13,
+        "solver_s": 42.30646300315857,
+        "validation": "VALIDATED"
+      }
+    ],
+    "physical_validated_ub": 13,
+    "reachability_s": 0.4566016480093822,
+    "reason": "",
+    "reference_k_sha256": "64d3500a49c52bbf3ea9a3ffd718711c2e6a809585d7f91db311ef44a3606796",
+    "seed": 43,
+    "solver_policy": {
+      "MIPGap": 0.0001,
+      "OutputFlag": 0,
+      "backend": "gurobi",
+      "callback_max_incumbents": 24,
+      "callback_sample_s": 5.0,
+      "memory_limit_bytes": 17179869184,
+      "seed": 43,
+      "threads": 4,
+      "validation_reserve_s": 60,
+      "warm_start": "none"
+    },
+    "solver_policy_sha256": "2ba77e4cc45c45fc75109e64b68b053c0d5ab50043faa7cacd3d95a10bd11b41",
+    "solver_runtime_s": 523.593199968338,
+    "solver_version": "12.0.3",
+    "solver_work": 485.3502587453878,
+    "status": "TIME_LIMIT",
+    "structural_sha256": "02296e18fe5d18be973b8ba76372fa46b6719017ee057d8880f1e92a58d6dd38",
+    "time_to_best_validated_ub_solver_s": 42.30646300315857,
+    "time_to_first_validated_ub_solver_s": 0.08128499984741211,
+    "validated_mip_gap": 0.3076923076923077,
+    "wall_phases_s": {
+      "k_c1": 0.0006732810288667679,
+      "k_c2": 0.38553707394748926,
+      "k_c4_dm": 0.0020881150849163532,
+      "k_canonicalize": 0.014763107988983393,
+      "k_neighborhoods": 0.1659877869533375,
+      "k_preparation": 6.848806515336037e-05,
+      "k_validation_bitset_v2": 1.9422645800514147,
+      "k_validator_setup": 0.09091156197246164,
+      "model_build": 12.40179900196381,
+      "preparation": 0.8612596899038181,
+      "solve": 523.5935577889904,
+      "startup": 0.5808887050952762,
+      "supervisor_shutdown": 0.052492414019070566,
+      "validation": 2.1112039929721504
+    },
+    "wall_total_s": 542.2035009590909
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "advance_gate": {
+    "absolute_gap_gain_min": 0.02,
+    "minimum_graph_sources": 2,
+    "minimum_raw_graphs": 2,
+    "relative_gap_reduction_min": 0.25,
+    "replication_requires_screening_go": true,
+    "severe_gap_regression_max": 0.01,
+    "valid_physical_ub_required_in_both": true
+  },
+  "budget_seconds_per_arm": 600,
+  "cases": [
+    {
+      "arms": [
+        "U",
+        "U_K"
+      ],
+      "graph_source": "mapf",
+      "manifest_name": "mapf-room-32-32-4-m10-f8.txt",
+      "name": "mapf-room-32-32-4-m10-f8",
+      "raw_graph_id": "mapf:map:raw-data/mapf/maps/room-32-32-4.map",
+      "source_sha256": "78be3e1261f31f4e583d0808bdfc9c93d9c9eb335d86d13b059ce428af5f303f",
+      "split": "desenvolvimento"
+    },
+    {
+      "arms": [
+        "U",
+        "U_K"
+      ],
+      "graph_source": "puc",
+      "manifest_name": "puc-bip42p-regiao-f2.txt",
+      "name": "puc-bip42p-regiao-f2",
+      "raw_graph_id": "puc:bip42p",
+      "source_sha256": "d7c53596522401d4071563d5007d9c8647ee0d37c893426b5ab3b1d65d97743a",
+      "split": "desenvolvimento"
+    },
+    {
+      "arms": [
+        "U",
+        "U_K"
+      ],
+      "graph_source": "puc",
+      "manifest_name": "puc-cc9-2p-seed-r1.txt",
+      "name": "puc-cc9-2p-seed-r1",
+      "raw_graph_id": "puc:cc9-2p",
+      "source_sha256": "0312f43552cddc102081d9937465429e29797ddb86cf85a6871752d50aeec88c",
+      "split": "desenvolvimento"
+    },
+    {
+      "arms": [
+        "U",
+        "U_K"
+      ],
+      "graph_source": "puc",
+      "manifest_name": "puc-w3c571-seed-r1.txt",
+      "name": "puc-w3c571-seed-r1",
+      "raw_graph_id": "puc:w3c571",
+      "source_sha256": "e85ced7daef779e6e88f302ee9d80a467129f448a7ac5c6ce465d64b963300fd",
+      "split": "desenvolvimento"
+    },
+    {
+      "arms": [
+        "U",
+        "U_K"
+      ],
+      "graph_source": "pucn",
+      "manifest_name": "pucn-cc3-10n-seed-r1.txt",
+      "name": "pucn-cc3-10n-seed-r1",
+      "raw_graph_id": "pucn:cc3-10n",
+      "source_sha256": "9123c0e46228c22ba586bb7f730757a7fa2c4b0f815b54afba59f54a3bc8b431",
+      "split": "desenvolvimento"
+    },
+    {
+      "arms": [
+        "U",
+        "U_K"
+      ],
+      "graph_source": "vienna",
+      "manifest_name": "vienna-I056-regiao-f4.txt",
+      "name": "vienna-I056-regiao-f4",
+      "raw_graph_id": "vienna:I056",
+      "source_sha256": "645da5115a0eeaa6fba9eeae9f4942aebecfa66c4bcbc7aaec2bd0c994eb0ccc",
+      "split": "desenvolvimento"
+    }
+  ],
+  "classification": "EXPLORATORY_DEVELOPMENT_ONLY",
+  "comparison": {
+    "equal_solver_settings": true,
+    "no_shared_preparation_credit": true,
+    "no_warm_start": true,
+    "primary": [
+      "U",
+      "U_K"
+    ],
+    "secondary": "A4_K",
+    "secondary_cases": []
+  },
+  "grouping": {
+    "a4_rule": "refine_four(parent_A2, authorized=True)",
+    "policy": "reachability_degree",
+    "seed": 42
+  },
+  "k_policy": {
+    "charge_only_with_k": true,
+    "expected_previous_hashes": {
+      "puc-w3c571-seed-r1": "42b9f6336b56241a1318326d5df68d04ec1f1c8a427b74b7462eea116766e23f",
+      "vienna-I056-regiao-f4": "64d3500a49c52bbf3ea9a3ffd718711c2e6a809585d7f91db311ef44a3606796"
+    },
+    "generator": "C1+C2+C4-DM",
+    "validator": "bitset-v2"
+  },
+  "limitations": [
+    "Controles AS05 fatorial usados somente para escolher o secundário",
+    "Não testa instâncias de avaliação",
+    "Sem homologação independente da matemática",
+    "Sem inferir UB física a partir de ObjVal",
+    "Tempo de validação física dentro do budget total"
+  ],
+  "limits": {
+    "max_constraints": 2000000,
+    "max_memory_proxy_bytes": 8589934592,
+    "max_variables": 2000000,
+    "min_solve_reserve_s": 1
+  },
+  "parent_sha256": {
+    "instances/manifest.csv": "218c490bd3ba3e34740bc23f13b07ba864f0d624755aca9b992a8f23f6afad08",
+    "results/benchmark/as05-factorial-001/manifest.json": "2416056f6365f472274c7e08983e6f24db26d6c7c0819375a7e3e7e29f1e0b2b",
+    "results/benchmark/as05-factorial-001/report.json": "3137ac8f7cf9dbba774caad0d82ab48c96de3eef3bcc0fcba3bffdc27a5ba9c8",
+    "results/benchmark/as05-factorial-plan-v1.json": "9693f400cdf6561200d3efd3aa1c53b7376bba4ae622d3517ae49334a6a859ce"
+  },
+  "replication_parent_analysis": "results/benchmark/as06-mip-screening-001/analysis",
+  "replication_parent_sha256": "24f2e0cd8998cd4a5e755e26a6079a3db02ab816c4a668d3e95e20d81d699d44",
+  "schema": "AS06-MIP-PLAN-v1",
+  "scientific_gate": "PENDING",
+  "scientific_promotion": "NOT_AUTHORIZED",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "solver": {
+    "MIPGap": 0.0001,
+    "OutputFlag": 0,
+    "backend": "gurobi",
+    "callback_max_incumbents": 24,
+    "callback_sample_s": 5.0,
+    "memory_limit_bytes": 17179869184,
+    "threads": 4,
+    "validation_reserve_s": 60,
+    "warm_start": "none"
+  },
+  "stage": "replication"
+}
