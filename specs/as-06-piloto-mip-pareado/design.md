@@ -1,33 +1,51 @@
-# AS06 — Piloto MIP 300/600 s com seeds e controles — Design
+# AS06 — Piloto MIP pareado — Design implementado
 
-**Status:** proposta técnica (sem execução)  
-**Spec:** `specs/as-06-piloto-mip-pareado/spec.md`
+**Status:** infraestrutura criada; revisão independente e testes reais Gurobi pendentes.  
+**Spec:** `specs/as-06-piloto-mip-pareado/spec.md`.
 
-## Design Constraints
+## Decisões
 
-- Preservar `N2 FAIL`, o código e os resultados históricos de N1/N2/FC.
-- Preservar semântica MIN-STATION: grafo original não direcionado, alcance dirigido A_r, pareamento anônimo, |S|=|T|, S∩T permitido, robôs com autonomia r, estações compartilhadas sem limite de atendimento, somente y binário nas novas formulações recomendadas.
-- Matriz experimental que não confunde U sem K, U+K, F-CC completa, LP numérico, núcleo IP e certificado racional.
-- Caminhos sugeridos são **destinos propostos para criação futura**, não arquivos já implementados.
+1. **Não alterar o comparador AS04/AS05.** `as06_mip.py` compila com `compile_u(..., relax=False)` e `compile_a(..., relax=False)` já existentes. Compilador garante y binária e variáveis contínuas de fluxo.
+2. **Separar base vs +K.** U não invoca geradores de K. U_K e A4_K usam geradores históricos e validador bitset-v2, no worker e no budget individual.
+3. **Mesmos dados, seeds e parâmetros.** Plano derivado de `as05-factorial-plan-v1.json`, validando relatório, manifesto e hashes AS05; recusa split de avaliação. A4 usa refinamento aninhado fixo.
+4. **Deadline real FC01.** `run_bounded` inicia um worker por braço e contabiliza também import/parse, preparação, solve e validação. `Params.TimeLimit` recebe o saldo de wall. Em caso de interrupção do supervisor, descartar bounds parciais não verificáveis.
+5. **Dual numérico ≠ ótimo certificado.** `ObjBound` e `ObjVal` apenas numéricos Gurobi. Oracle independente valida y no grafo físico e matching. Um UB apenas numérico não serve ao gate. Callback registra seus próprios eventos; o tempo para confirmar a viabilidade é pago depois do solve.
+6. **Resultado append-only.** `as06_reporting.py` grava checkpoints/sidecars e relaciona relatório, CSV, análise e manifestos. Retomada não sobrescreve run final.
+7. **Replicação controlada.** `make_plan(stage='replication')` só produz plano se `verify_analysis` comprovar GO. Replicação usa 6 × 3 × 2 = 36 solves, sementes 42,43,44, 600 s totais por braço.
 
-## Proposed Architecture and Contracts
+## Arquitetura
 
-1. `as_mip_pilot.py`: agenda pareada com seeds e braços; nenhuma alteração no executor FC histórico.
-2. Separar custo de preparação compartilhada e custo imputado a cada braço por regra congelada, incluindo preparo de A_r, K e inicialização; reportar tanto wall total global quanto custo atribuído.
-3. `as_mip_gate.py`: versão e hashes das políticas; séries de LB/UB validados, gap relativo e absoluto, falhas de build/memory/timeout como dados de aplicabilidade.
-4. Núcleo inteiro serve para atribuir origem do bound; não considerar instalação física sem validação.
-5. Critérios de materialidade e não inferioridade são numéricos pré-registrados em AS00; gate requer duas famílias e explica riscos ocultados por médias.
+```text
+results/benchmark/as05-factorial-* (somente leitura)
+              |
+       make_plan / validate_plan
+              |
+        run_as06_mip.py
+              |
+           fc_budget.spawn
+              |
+   _load_timed → (_timed_k quando +K) → compile_u/a (MIP)
+              |
+      _solve_mip Gurobi + callbacks
+              |
+   independent_validator.viavel → UB física/gap
+              |
+  checkpoint.sha256 → report/arms.csv/manifest
+              |
+      --verify [--audit-physical] → --analyze → gate
+              |
+        GO? → plano novo 600 s / seeds 42,43,44
+```
 
-## Dependencies and Reuse
+## Validade e riscos
 
-- **Pré-condição externa:** AS05=GO; AS04=PASS.
-- **Código existente útil:** `baseline.py`, `ms_utils.py`, `experiments/cuts/independent_validator.py`, `experiments/cuts/harness.py` e `experiments/formulation-comparison/` quando aplicáveis; confirmar interfaces no momento da implementação.
-- **Não alterar:** snapshots históricos em `results/`, freezes e decisões anteriores.
-
-## Threats to Validity
-
-Não usar apenas média de instâncias resolvidas; contabilizar regressões, timeouts, OOM e custo pré-solver. Candidatos precisam superar controles em pelo menos duas famílias de grafos independentes.
+- Não inferir ganho inteiro de ganhos LP anteriores.
+- Gurobi pode encontrar incumbente cuja instalação é fisicamente inválida: bloquear, nunca reportar como UB física.
+- A4 secundário selecionado após LP: não é evidência confirmatória.
+- Comparar tempo fim-a-fim primeiro. Tempos apenas de `optimize()` não refletem custos de K e build.
+- Medida de `ru_maxrss` em Linux corresponde aproximadamente a KiB; proxy antes do build não substitui RSS medido.
+- Nenhuma chamada Gurobi executada na construção desta entrega; somente teste MIP HiGHS opcional e mocks.
 
 ## Exit Gate
 
-A feature somente poderá ser marcada como concluída após execução de testes derivados dos ACs, auditoria da rastreabilidade e verificador independente. As specs são planejamento; nenhum `PASS` de implementação é inferido de arquivos antigos.
+Código e testes locais podem estar concluídos sem que a **pesquisa** esteja homologada. Exigir relatório Gurobi real e validador/revisor independente antes de atualizar gate científico ou decidir AS11.

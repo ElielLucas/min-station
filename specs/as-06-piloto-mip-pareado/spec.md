@@ -1,100 +1,97 @@
-# AS06 — Piloto MIP 300/600 s com seeds e controles — Specification
+# AS06 — Piloto MIP pareado: COMP versus COMP+K — Specification
 
-**Status:** RASCUNHO · não implementada nesta entrega  
-**Prioridade:** P5 · condicional ao LP  
-**Dependências:** AS05=GO; AS04=PASS  
-**Local:** `specs/as-06-piloto-mip-pareado/`
-
-> Esta spec traduz os pareceres Astra de 11/10/2026, auditados sobre a branch `novos_testes` no commit `e25b056`. Os pareceres descrevem hipóteses e verificações pontuais; **não são** uma campanha nova, e nenhuma tarefa abaixo foi executada.
+**Status:** IMPLEMENTAÇÃO LOCAL CONCLUÍDA · Gurobi real e revisão independente pendentes.  
+**Prioridade:** P5 exploratória após AS-05.  
+**Dependências:** AS-04 implementada; AS-05 LP fatorial íntegra (exploratória, gate científico pendente).  
+**Local:** `specs/as-06-piloto-mip-pareado/`.
 
 ## Problem Statement
 
-LP mais forte pode gerar MIP mais lento. É necessário medir ganho líquido em resolução inteira, com tempo de construção, busca e validação física comparáveis.
+A melhoria LP de COMP+K não prova melhoria de gap MIP/tempo. Executar campanha pareada e auditável de resolução inteira sem prosseguir na busca de A2/A4. Manter COMP+K como referência experimental, não como candidato homologado.
 
 ## Goals
 
-- [ ] Comparar de modo pareado U_K contra A2_K (e A4_K quando aprovada), preservando U como ablação.
-- [ ] Reproduzir resultados com 300 s/seed 42 e, havendo sinal, 600 s/seeds 42,43,44.
-- [ ] Decidir de forma auditável qual candidato pode entrar na campanha final.
+- [x] Infraestrutura de **seis pares** U (COMP) × U_K (COMP+K), seed 42, 300 s de wall total por braço.
+- [x] A4_K apenas secundário em três casos predefinidos pelos resultados exploratórios AS05.
+- [x] Medir gap MIP por UB física validada contra LB numérica do solver; curvas e custos, inclusive censura.
+- [x] Gate que impede replicação automática quando não existe benefício em duas fontes independentes.
+- [x] Implementar preparação condicional de 600 s, seeds 42/43/44 e mesmos seis pares.
+- [ ] Rodar MIP real em ambiente Gurobi e obter evidência do gate.
+- [ ] Verificação independente autor ≠ revisor; nenhuma homologação assumida.
 
 ## Out of Scope
 
-| Item | Motivo |
-|---|---|
-| 3600 s por instância sem gate | AS11. |
-| Ajustar novos parâmetros durante avaliação | Protocolo congelado. |
+- Campanha final 3600 s, instâncias de avaliação, seleção por instância e ajustes pós-hoc.
+- Alterar o solver histórico, K, modelos AS-02/AS-05 ou resultados congelados.
+- Criar heurísticas de warm start, formulações B/C ou certificado racional.
 
 ## Assumptions & Open Questions
 
-| Decisão / hipótese | Default escolhido | Justificativa | Confirmado? |
+| Decisão | Default | Justificativa | Confirmado? |
 |---|---|---|---|
-| Etapa 1 | 300 s totais por braço/instância, seed 42 | Primeiro piloto proposto pelo Astra. | Pendente de execução |
-| Etapa 2 | 600 s totais por braço/instância, seeds 42,43,44 | Somente quando 300 s indicar utilidade. | Pendente de execução |
-| Warm start | Política idêntica aos braços; identidade e tempo cobrados | Não atribuir vantagem de UB a método desigual. | Pendente de execução |
-| Medidas de desempenho | Best LB e UB ao longo do tempo, gap, primeira incumbente, nós, Work, memória e total wall | Distinguir força LP da dinâmica MIP. | Pendente de execução |
+| Piloto principal | 6 casos × (U,U_K), 300 s, seed 42 | Isola ganho inteiro de K | Sim, implementado; execução pendente |
+| Secundário | A4_K em MAPF, PUC w3c571, Vienna | Hipóteses exploratórias LP AS05 | Sim, sem promoção |
+| Solver | Gurobi 4 threads; sem warm start; MIPGap=1e-4 | Mesma configuração por par | Implementado, execução real pendente |
+| K | C1+C2+C4-DM, validador bitset-v2 | Preservar identidade e custo | Implementado |
+| Replicação | 600 s; seeds 42,43,44; U/U_K nos 6 casos | Apenas após gate GO | Implementado, bloqueado até evidência |
+| Benefício | ≥2 p.p. absolutos **ou** ≥25% relativos de redução do gap | Adendo AS06 exploratório | Implementado; não é AS00 |
+| Não inferioridade | Nenhuma regressão de gap >1 p.p.; dois grafos e duas fontes | Evitar melhoria isolada | Implementado |
 
-**Open questions: none** — os defaults são premissas explícitas sujeitas aos gates anteriores; mudar qualquer uma depois de observar a avaliação exige nova versão e registro de desvio.
+**Open questions: none** — não existem parâmetros pendentes para o piloto exploratório; validade científica independente continua pendente.
 
 ## User Stories
 
-### P1: Resultado principal verificável
+**User Story:** Como pesquisador, quero verificar se cortes K melhoram a busca MIP sob o mesmo wall total e com solução física comprovada.
 
-**User Story:** Como pesquisador do MIN-STATION, quero obter os entregáveis descritos nesta spec com entradas, restrições, status e evidências auditáveis para fundamentar uma decisão científica.
+### Acceptance Criteria
 
-**Acceptance Criteria:**
-
-1. **AS06-01 — Pares:** WHEN the MIP pilot runs THEN it SHALL execute U_K and each promoted A arm on the identical preregistered instance and solver configuration.
-2. **AS06-02 — Orçamento:** WHEN an arm starts THEN its supervisor SHALL charge all allocated preparation, build, solver and validation time against the declared 300/600 s budget.
-3. **AS06-03 — Repetição:** IF a 300 s pair meets the preregistered advance rule THEN the pilot SHALL run the matching 600 s pairs with seeds 42,43,44.
-4. **AS06-04 — Evolução:** WHEN a Gurobi trace is available THEN the reporter SHALL record time-to-first validated UB, time-to-best UB, LB time series, nodes and Work without inventing missing events.
-5. **AS06-05 — Validade física:** IF an incumbent fails the independent validator THEN the runner SHALL reject its UB as physical and flag validation failure.
-6. **AS06-06 — Promoção:** WHEN outcomes are complete THEN the decision SHALL require reproducible benefit in at least two independent graph families and no concealed severe regressions before promotion.
-7. **AS06-07 — Negativo:** IF the candidate provides no useful gain over U_K and CORE_IP THEN the pilot SHALL preserve negative evidence and route to the conditional decision branch without opening AS11 automatically.
-
-**Independent Test:** Hash e parâmetros coincidem.; Timeout de construção não vira ausência do caso.; Controle de seeds e saltos.; Curvas monotônicas coerentes.; Perturbar y do incumbente.; Gate baseado em famílias, não linhas.; Gate STOP preservado..
+1. **AS06-01 — Pares:** WHEN o piloto roda THEN SHALL registrar U e U_K no mesmo caso/seed, e A4_K só nos três casos exploratórios predefinidos.
+2. **AS06-02 — Orçamento:** WHEN um worker executa THEN SHALL pagar carregamento, alcance, K, build, solve e validação no único deadline 300/600 s; censura preservada.
+3. **AS06-03 — Repetição:** IF o gate 300 s é GO THEN SHALL permitir plano imutável de 600 s com seeds 42,43,44 e seis pares; caso contrário SHALL recusar criação.
+4. **AS06-04 — Evolução:** WHEN Gurobi oferece callbacks THEN SHALL registrar LB e incumbentes numéricos sem substituí-los por UB física; eventos ausentes permanecem ausentes, junto a nós/Work/tempos.
+5. **AS06-05 — Validade física:** IF uma solução de estações é capturada THEN SHALL verificar no grafo original com oracle independente, rejeitar UB inválida e impedir gap fictício.
+6. **AS06-06 — Promoção:** WHEN a análise é construída THEN SHALL exigir evidência comparável em pelo menos duas fontes e dois grafos independentes, sem regressões severas, preservando PENDING científico.
+7. **AS06-07 — Negativo:** IF houver censura, ausência de UB ou falta de benefício THEN SHALL manter os seis casos, declarar INCONCLUSIVE/STOP e não abrir AS11 automaticamente.
+8. **AS06-08 — Integridade:** WHEN checkpoint/relatório/análise é retomado ou verificado THEN SHALL conferir plano congelado, hashes, slots e vínculos fonte; shall rejeitar alteração/corrupção.
 
 ## Edge Cases
 
-Não usar apenas média de instâncias resolvidas; contabilizar regressões, timeouts, OOM e custo pré-solver. Candidatos precisam superar controles em pelo menos duas famílias de grafos independentes.
+Gurobi indisponível, NO_INCUMBENT, falha física, callback perdido, K interrompido, build de A4 grande, memória, prazo vencido em validação e 1 fonte apenas. Numéricos não são certificados racionais. Eventual cardinalidade de S∩T preservada pelo validador físico existente.
 
 ## Requirement Traceability
 
-| Requirement ID | Teste derivado do AC | Fase | Status |
-|---|---|---|---|
-| AS06-01 | Hash e parâmetros coincidem. | Tasks | Pending |
-| AS06-02 | Timeout de construção não vira ausência do caso. | Tasks | Pending |
-| AS06-03 | Controle de seeds e saltos. | Tasks | Pending |
-| AS06-04 | Curvas monotônicas coerentes. | Tasks | Pending |
-| AS06-05 | Perturbar y do incumbente. | Tasks | Pending |
-| AS06-06 | Gate baseado em famílias, não linhas. | Tasks | Pending |
-| AS06-07 | Gate STOP preservado. | Tasks | Pending |
+| Requisito | Testes/evidência | Implementação |
+|---|---|---|
+| AS06-01 | fixed_slots_and_sources, full_campaign_integrity | `as06_mip.py`, `as06_reporting.py` |
+| AS06-02 | budget_timeout_never_fabricates_bounds | `fc_budget.py` reutilizado |
+| AS06-03 | replication_without_gate_refused; full_campaign_integrity_and_analysis | `make_plan`, `verify_analysis` |
+| AS06-04 | testes de trace, verificador de valores finitos; Gurobi real pendente | `_solve_mip` |
+| AS06-05 | invalid_incumbent_rejected; --audit-physical | `physical_trace`, `validate_physical_ub` |
+| AS06-06 | gap_gate_requires_two_families | `stage_gate` |
+| AS06-07 | gap_no_ub_not_zero, missing_solver_not_marked_optimal | `pair_result`, `validate_run` |
+| AS06-08 | checkpoint_mutation, analysis_tamper | `verify_campaign`, `verify_analysis` |
 
 ## Success Criteria
 
-- [ ] Cada critério de aceite possui teste que compara o resultado com o comportamento esperado da spec, e não com a implementação.
-- [ ] Todos os casos negativos, abstenções e limites matemáticos definidos são preservados.
-- [ ] O gate desta spec é evidenciado por artefatos e revisão autor ≠ verificador; na fase de execução há um commit local atômico por tarefa.
-- [ ] Não há edição nem sobrescrita das evidências congeladas N1, N2 e FC.
+- [x] Código e testes locais derivados de ACs.
+- [x] Checkpoint e relatório append-only, sem reescrever AS-05.
+- [x] Smoke MIP HiGHS pequeno prova integridade de compilação binária.
+- [ ] Execução real com Gurobi e validação física dos incumbentes do piloto.
+- [ ] Parecer matemático/código autor ≠ verificador; gate independente antes de homologação.
 
 ## Tests Derived from Acceptance Criteria
 
-- **AS06-01:** Hash e parâmetros coincidem.
-- **AS06-02:** Timeout de construção não vira ausência do caso.
-- **AS06-03:** Controle de seeds e saltos.
-- **AS06-04:** Curvas monotônicas coerentes.
-- **AS06-05:** Perturbar y do incumbente.
-- **AS06-06:** Gate baseado em famílias, não linhas.
-- **AS06-07:** Gate STOP preservado.
+Os testes estão em `experiments/formulation-comparison/test_as06_mip.py`; a suíte não substitui a execução real nem a revisão independente.
 
 ## Implicit-Requirement Sweep
 
 | Dimensão | Resolução |
 |---|---|
-| Validação de entradas | Critérios EARS cobrem domínios, partições, fingerprints e status conforme escopo. |
-| Falhas externas e parciais | Distinção de erro, orçamento, solver, OOM, falta de dados e abstenção; não inferir resultado. |
-| Retry e idempotência | Artefatos novos, hashes e política de não sobrescrever evidência congelada. |
-| Concorrência / ordenação | Pré-registro de seeds, parâmetros e ordem/família de comparações. |
-| Ciclo dos dados | Resultado append-only e rastro de proveniência. |
-| Observabilidade | Métricas/evidências por caso e estágio, conforme os ACs. |
-| Auth e rate limit | N/A: scripts científicos locais sem API autenticada. |
-| Estado / transições | Gates PASS / FAIL / STOP / INVESTIGATE / NOT_AUTHORIZED, quando aplicável. |
+| Validação de entradas | Hash de AS05, plano, split, política, instance SHA, K SHA |
+| Falhas/parciais | NO_INCUMBENT, timeouts, erro, validação falha permanecem no denominador |
+| Idempotência | Checkpoints com sidecar SHA, resume íntegro, append-only |
+| Concorrência | Worker spawn por braço e budget próprio; sem compartilhamento oculto |
+| Ciclo dos dados | Report/CSV/manifest e análise vinculada ao relatório |
+| Observabilidade | Wall fases, Work, nodes, peak RSS, callback MIP, gaps físicos |
+| Estado / transições | screening 300 → gate GO → replication 600, ou STOP/INCONCLUSIVE |
+| Auth | N/A, scripts locais |

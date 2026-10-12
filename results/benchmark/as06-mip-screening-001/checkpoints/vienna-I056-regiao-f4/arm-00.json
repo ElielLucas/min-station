@@ -1,0 +1,239 @@
+{
+  "case": "vienna-I056-regiao-f4",
+  "index": 0,
+  "job": [
+    "as06-mip-v1",
+    "screening",
+    "U",
+    42,
+    "9c3606d1a166232a441f931912aceee6a1b8fef509998ac647849ee755ac75d2"
+  ],
+  "result": {
+    "a4_parent_sha256": null,
+    "applied_k_sha256": null,
+    "arm_id": "U",
+    "callback_errors": [],
+    "case_name": "vienna-I056-regiao-f4.txt",
+    "cut_profile": null,
+    "input_load_s": 0.020013611996546388,
+    "installed": [
+      "102",
+      "1055",
+      "1099",
+      "111",
+      "1413",
+      "1417",
+      "1452",
+      "1752",
+      "1825",
+      "1832",
+      "1834",
+      "1838",
+      "1881"
+    ],
+    "instance_sha256": "645da5115a0eeaa6fba9eeae9f4942aebecfa66c4bcbc7aaec2bd0c994eb0ccc",
+    "invalid_incumbents": 0,
+    "k_prepared_for_this_arm": false,
+    "mip_numeric_bound": 4.0,
+    "mip_numeric_incumbent": 13.0,
+    "model_complete": true,
+    "n_constraints": 5973,
+    "n_k_cuts": 0,
+    "n_nonzeros": 1530382,
+    "n_variables": 383591,
+    "nodes": 1.0,
+    "numeric_bound_trace": [
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 194.0,
+        "numeric_lb": 0.0,
+        "solver_s": 2.9994819164276123
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 194.0,
+        "numeric_lb": 3.0,
+        "solver_s": 10.954654932022095
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 3.0,
+        "solver_s": 24.839133977890015
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 3.0,
+        "solver_s": 32.14219284057617
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 3.0,
+        "solver_s": 50.28692388534546
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 3.0,
+        "solver_s": 57.37238788604736
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 3.0,
+        "solver_s": 79.25789785385132
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 3.0,
+        "solver_s": 88.26941204071045
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 3.0,
+        "solver_s": 94.51170682907104
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 3.0,
+        "solver_s": 114.71236801147461
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 3.0,
+        "solver_s": 123.19751596450806
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 3.0,
+        "solver_s": 138.6943929195404
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 3.0,
+        "solver_s": 157.78980684280396
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 3.0,
+        "solver_s": 174.46737694740295
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 3.0,
+        "solver_s": 190.92741084098816
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 3.0,
+        "solver_s": 197.48753881454468
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 4.0,
+        "solver_s": 212.32375693321228
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 4.0,
+        "solver_s": 226.52441000938416
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 4.0,
+        "solver_s": 249.60039281845093
+      },
+      {
+        "nodes": 0.0,
+        "numeric_incumbent": 13.0,
+        "numeric_lb": 4.0,
+        "solver_s": 255.96385192871094
+      }
+    ],
+    "numeric_callback_dropped_incumbents": 0,
+    "partition_sha256": null,
+    "peak_rss_kb": 1191888,
+    "physical_best_observed_ub": 13,
+    "physical_trace": [
+      {
+        "physical_ub": 194,
+        "solver_s": 0.08123087882995605,
+        "validation": "VALIDATED"
+      },
+      {
+        "physical_ub": 42,
+        "solver_s": 10.97682785987854,
+        "validation": "VALIDATED"
+      },
+      {
+        "physical_ub": 16,
+        "solver_s": 11.8852219581604,
+        "validation": "VALIDATED"
+      },
+      {
+        "physical_ub": 15,
+        "solver_s": 12.762221813201904,
+        "validation": "VALIDATED"
+      },
+      {
+        "physical_ub": 14,
+        "solver_s": 14.537737846374512,
+        "validation": "VALIDATED"
+      },
+      {
+        "physical_ub": 13,
+        "solver_s": 20.332937002182007,
+        "validation": "VALIDATED"
+      }
+    ],
+    "physical_validated_ub": 13,
+    "reachability_s": 0.45892803801689297,
+    "reason": "",
+    "reference_k_sha256": null,
+    "seed": 42,
+    "solver_policy": {
+      "MIPGap": 0.0001,
+      "OutputFlag": 0,
+      "backend": "gurobi",
+      "callback_max_incumbents": 24,
+      "callback_sample_s": 5.0,
+      "memory_limit_bytes": 17179869184,
+      "seed": 42,
+      "threads": 4,
+      "validation_reserve_s": 30,
+      "warm_start": "none"
+    },
+    "solver_policy_sha256": "f84812c9912dddd8b0062ddb9ce98934e5d352bed3ecf852832f74bf12712879",
+    "solver_runtime_s": 255.99551582336426,
+    "solver_version": "12.0.3",
+    "solver_work": 207.64019102281802,
+    "status": "TIME_LIMIT",
+    "structural_sha256": "02296e18fe5d18be973b8ba76372fa46b6719017ee057d8880f1e92a58d6dd38",
+    "time_to_best_validated_ub_solver_s": 20.332937002182007,
+    "time_to_first_validated_ub_solver_s": 0.08123087882995605,
+    "validated_mip_gap": 0.6923076923076923,
+    "wall_phases_s": {
+      "model_build": 12.55427060101647,
+      "preparation": 0.8708318069111556,
+      "solve": 255.99585665902123,
+      "startup": 0.6171194770140573,
+      "supervisor_shutdown": 0.03863018297124654,
+      "validation": 1.922174587030895
+    },
+    "wall_total_s": 271.9988894619746
+  }
+}
