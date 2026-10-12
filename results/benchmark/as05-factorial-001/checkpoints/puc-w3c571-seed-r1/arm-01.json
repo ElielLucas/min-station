@@ -1,0 +1,84 @@
+{
+  "case": "puc-w3c571-seed-r1",
+  "index": 1,
+  "job": [
+    "factorial-v1",
+    "U_K",
+    "reachability_degree",
+    42,
+    "bitset-v2"
+  ],
+  "result": {
+    "a2_partition_sha256": null,
+    "a4_parent_sha256": null,
+    "a4_partition_sha256": null,
+    "applied_k_sha256": "42b9f6336b56241a1318326d5df68d04ec1f1c8a427b74b7462eea116766e23f",
+    "arm_id": "U_K",
+    "case_name": "puc-w3c571-seed-r1.txt",
+    "cut_profile": {
+      "counts": {
+        "c1_raw": 2284,
+        "c2_raw": 2284,
+        "c4_dm_raw": 2284,
+        "unique": 2284
+      },
+      "k_sha256": "42b9f6336b56241a1318326d5df68d04ec1f1c8a427b74b7462eea116766e23f",
+      "k_validated": true,
+      "phase_wall_s": {
+        "c1_s": 0.005643429001793265,
+        "c2_s": 25.74750266200863,
+        "c4_dm_s": 0.01106507598888129,
+        "canonicalize_s": 0.009137702989391983,
+        "neighborhoods_s": 0.012245593941770494,
+        "validation_bitset_v2_s": 6.243799023912288,
+        "validator_setup_s": 0.009395431028679013
+      },
+      "validator_method": "bitset-v2"
+    },
+    "grouping_policy": null,
+    "input_load_s": 0.21877671498805285,
+    "installed": null,
+    "instance_sha256": "e85ced7daef779e6e88f302ee9d80a467129f448a7ac5c6ce465d64b963300fd",
+    "k_prepared_for_this_arm": true,
+    "k_validated": true,
+    "lp_opt_value": 432.9336108676597,
+    "mip_numeric_bound": null,
+    "mip_numeric_incumbent": null,
+    "model_complete": true,
+    "n_constraints": 14275,
+    "n_nonzeros": 100496,
+    "n_variables": 24553,
+    "nodes": 0.0,
+    "partition_sha256": null,
+    "reachability_s": 0.02287012303713709,
+    "reason": "",
+    "reference_k_sha256": "42b9f6336b56241a1318326d5df68d04ec1f1c8a427b74b7462eea116766e23f",
+    "size_estimate": {
+      "constraints": 11991,
+      "memory_estimator": "U_size_counts_only_proxy_not_certified",
+      "variables": 24553
+    },
+    "solver_runtime_s": 1.7228732109069824,
+    "solver_version": "12.0.3",
+    "solver_work": 1.1818774816662567,
+    "status": "OPTIMAL_NUMERIC",
+    "structural_sha256": "6aa7a60d081a788614a09c7f4d868c4c1b5b4709f1315c0dae520378ca6c644f",
+    "wall_phases_s": {
+      "k_c1": 0.005696419975720346,
+      "k_c2": 25.74755350605119,
+      "k_c4_dm": 0.011139167007058859,
+      "k_canonicalize": 0.00918390799779445,
+      "k_neighborhoods": 0.012267924030311406,
+      "k_preparation": 8.053798228502274e-05,
+      "k_validation_bitset_v2": 6.257376294001006,
+      "k_validator_setup": 0.009437535889446735,
+      "model_build": 1.7053637710632756,
+      "preparation": 0.26164245896507055,
+      "solve": 1.7230537219438702,
+      "startup": 0.5931207670364529,
+      "supervisor_shutdown": 0.012608067016117275,
+      "validation": 0.03131113201379776
+    },
+    "wall_total_s": 36.3798406800488
+  }
+}

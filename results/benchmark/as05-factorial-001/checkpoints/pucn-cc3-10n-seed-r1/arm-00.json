@@ -1,0 +1,57 @@
+{
+  "case": "pucn-cc3-10n-seed-r1",
+  "index": 0,
+  "job": [
+    "factorial-v1",
+    "U",
+    "reachability_degree",
+    42,
+    "bitset-v2"
+  ],
+  "result": {
+    "a2_partition_sha256": null,
+    "a4_parent_sha256": null,
+    "a4_partition_sha256": null,
+    "applied_k_sha256": null,
+    "arm_id": "U",
+    "case_name": "pucn-cc3-10n-seed-r1.txt",
+    "cut_profile": null,
+    "grouping_policy": null,
+    "input_load_s": 0.048651318065822124,
+    "installed": null,
+    "instance_sha256": "9123c0e46228c22ba586bb7f730757a7fa2c4b0f815b54afba59f54a3bc8b431",
+    "k_prepared_for_this_arm": false,
+    "k_validated": false,
+    "lp_opt_value": 1.2000000000000004,
+    "mip_numeric_bound": null,
+    "mip_numeric_incumbent": null,
+    "model_complete": true,
+    "n_constraints": 3000,
+    "n_nonzeros": 110000,
+    "n_variables": 28000,
+    "nodes": 0.0,
+    "partition_sha256": null,
+    "reachability_s": 0.055846769944764674,
+    "reason": "",
+    "reference_k_sha256": null,
+    "size_estimate": {
+      "constraints": 3000,
+      "memory_estimator": "U_size_counts_only_proxy_not_certified",
+      "variables": 28000
+    },
+    "solver_runtime_s": 1.1215460300445557,
+    "solver_version": "12.0.3",
+    "solver_work": 0.6675980087404372,
+    "status": "OPTIMAL_NUMERIC",
+    "structural_sha256": "9c6286194c0ff028c19b00b01fd3cd5ebdfe2da5c03578450be4303565bbd688",
+    "wall_phases_s": {
+      "model_build": 0.7406780029414222,
+      "preparation": 0.12439267407171428,
+      "solve": 1.1217316320398822,
+      "startup": 0.5895199159858748,
+      "supervisor_shutdown": 0.010312767932191491,
+      "validation": 0.024412408005446196
+    },
+    "wall_total_s": 2.6110530210426077
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "case": "puc-bip42p-regiao-f2",
+  "index": 0,
+  "job": [
+    "factorial-v1",
+    "U",
+    "reachability_degree",
+    42,
+    "bitset-v2"
+  ],
+  "result": {
+    "a2_partition_sha256": null,
+    "a4_parent_sha256": null,
+    "a4_partition_sha256": null,
+    "applied_k_sha256": null,
+    "arm_id": "U",
+    "case_name": "puc-bip42p-regiao-f2.txt",
+    "cut_profile": null,
+    "grouping_policy": null,
+    "input_load_s": 0.019072717055678368,
+    "installed": null,
+    "instance_sha256": "d7c53596522401d4071563d5007d9c8647ee0d37c893426b5ab3b1d65d97743a",
+    "k_prepared_for_this_arm": false,
+    "k_validated": false,
+    "lp_opt_value": 1.0000000000000007,
+    "mip_numeric_bound": null,
+    "mip_numeric_incumbent": null,
+    "model_complete": true,
+    "n_constraints": 3600,
+    "n_nonzeros": 34256,
+    "n_variables": 9164,
+    "nodes": 0.0,
+    "partition_sha256": null,
+    "reachability_s": 0.011899242992512882,
+    "reason": "",
+    "reference_k_sha256": null,
+    "size_estimate": {
+      "constraints": 3600,
+      "memory_estimator": "U_size_counts_only_proxy_not_certified",
+      "variables": 9164
+    },
+    "solver_runtime_s": 0.2985069751739502,
+    "solver_version": "12.0.3",
+    "solver_work": 0.09828273238965117,
+    "status": "OPTIMAL_NUMERIC",
+    "structural_sha256": "88975c42f9e41b67ffcd2cfb9234bb761d51072a3c4bc50c6a1279beeb100f33",
+    "wall_phases_s": {
+      "model_build": 0.2416103519499302,
+      "preparation": 0.03687345003709197,
+      "solve": 0.2986917260568589,
+      "startup": 0.5816815249854699,
+      "supervisor_shutdown": 0.01029805198777467,
+      "validation": 0.013049873989075422
+    },
+    "wall_total_s": 1.1822151020169258
+  }
+}

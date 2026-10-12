@@ -1,0 +1,811 @@
+{
+  "cases": [
+    {
+      "effects": {
+        "A2_OVER_U_K": {
+          "lp_delta": 8.881784197001252e-15,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 6.728624391667617e-16,
+          "solver_ratio": 2.2779658855863767,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 1.168626781683539
+        },
+        "A4_OVER_U_K": {
+          "lp_delta": 0.09285714285716296,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 0.00703463203463356,
+          "solver_ratio": 6.70719524173821,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 2.04452880896032
+        },
+        "A4_VS_U_NO_K": {
+          "lp_delta": 2.235938135938136,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 0.931640889974223,
+          "solver_ratio": 7.4581070592302225,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 2.2949991084403263
+        },
+        "GROUP_2_NO_K": {
+          "lp_delta": 0.399999999999999,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 0.1666666666666662,
+          "solver_ratio": 1.890423110287835,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 1.2136542642887922
+        },
+        "GROUP_4_NO_K": {
+          "lp_delta": 1.8359381359381368,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 0.6556921914064775,
+          "solver_ratio": 3.9452051864170525,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 1.8909826100971252
+        },
+        "K_ON_A2": {
+          "lp_delta": 10.400000000000006,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 3.7142857142857166,
+          "solver_ratio": 1.3314586970472753,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 1.0952854557239102
+        },
+        "K_ON_A4": {
+          "lp_delta": 8.656919006919022,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 1.8673499846363226,
+          "solver_ratio": 0.9936920976136701,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 1.0133446647574358
+        },
+        "K_ON_U": {
+          "lp_delta": 10.799999999999995,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 4.4999999999999964,
+          "solver_ratio": 1.1049420481746968,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 1.1374870786700724
+        },
+        "REFINEMENT_WITH_K": {
+          "lp_delta": 0.09285714285715407,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 0.0070346320346328815,
+          "solver_ratio": 2.9443791428912003,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 1.7495139089786609
+        }
+      },
+      "interaction_refinement_k": -1.7430809930809827,
+      "lp_by_arm": {
+        "A2": 2.8,
+        "A2_K": 13.200000000000005,
+        "A4": 4.635938135938137,
+        "A4_K": 13.292857142857159,
+        "U": 2.400000000000001,
+        "U_K": 13.199999999999996
+      },
+      "n_variables_by_arm": {
+        "A2": 25310,
+        "A2_K": 25310,
+        "A4": 49938,
+        "A4_K": 49938,
+        "U": 12304,
+        "U_K": 12304
+      },
+      "name": "mapf-room-32-32-4-m10-f8",
+      "status_by_arm": {
+        "A2": "OPTIMAL_NUMERIC",
+        "A2_K": "OPTIMAL_NUMERIC",
+        "A4": "OPTIMAL_NUMERIC",
+        "A4_K": "OPTIMAL_NUMERIC",
+        "U": "OPTIMAL_NUMERIC",
+        "U_K": "OPTIMAL_NUMERIC"
+      },
+      "wall_s_by_arm": {
+        "A2": 1.5096878949552774,
+        "A2_K": 1.653539194026962,
+        "A4": 2.854793556034565,
+        "A4_K": 2.8928898189915344,
+        "U": 1.2439192440360785,
+        "U_K": 1.4149420670000836
+      }
+    },
+    {
+      "effects": {
+        "A2_OVER_U_K": {
+          "lp_delta": 0.0,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 0.0,
+          "solver_ratio": 1.90743027745138,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 1.2465338056416977
+        },
+        "A4_OVER_U_K": {
+          "lp_delta": 0.0,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 0.0,
+          "solver_ratio": 6.13169698168709,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 2.199372676102603
+        },
+        "A4_VS_U_NO_K": {
+          "lp_delta": 0.35858422780429855,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 0.35858422780429833,
+          "solver_ratio": 8.579809253619525,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 3.3678384442243217
+        },
+        "GROUP_2_NO_K": {
+          "lp_delta": -2.220446049250313e-16,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": -2.2204460492503116e-16,
+          "solver_ratio": 2.0445652616672616,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 1.4563085728400438
+        },
+        "GROUP_4_NO_K": {
+          "lp_delta": 0.35858422780429877,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 0.3585842278042986,
+          "solver_ratio": 4.196397842846568,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 2.312585743869156
+        },
+        "K_ON_A2": {
+          "lp_delta": 30.706051941200183,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 30.70605194120017,
+          "solver_ratio": 1.4914922915555764,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 1.8268571084613066
+        },
+        "K_ON_A4": {
+          "lp_delta": 30.347467713395883,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 22.337568103850654,
+          "solver_ratio": 1.1425530409591358,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 1.3938033361434652
+        },
+        "K_ON_U": {
+          "lp_delta": 30.706051941200183,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 30.706051941200162,
+          "solver_ratio": 1.5987233522546203,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 2.134292432635956
+        },
+        "REFINEMENT_WITH_K": {
+          "lp_delta": 0.0,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 0.0,
+          "solver_ratio": 3.214637543596078,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 1.764390717803596
+        }
+      },
+      "interaction_refinement_k": -0.35858422780429877,
+      "lp_by_arm": {
+        "A2": 1.0000000000000004,
+        "A2_K": 31.706051941200183,
+        "A4": 1.3585842278042992,
+        "A4_K": 31.706051941200183,
+        "U": 1.0000000000000007,
+        "U_K": 31.706051941200183
+      },
+      "n_variables_by_arm": {
+        "A2": 19728,
+        "A2_K": 19728,
+        "A4": 38256,
+        "A4_K": 38256,
+        "U": 9164,
+        "U_K": 9164
+      },
+      "name": "puc-bip42p-regiao-f2",
+      "status_by_arm": {
+        "A2": "OPTIMAL_NUMERIC",
+        "A2_K": "OPTIMAL_NUMERIC",
+        "A4": "OPTIMAL_NUMERIC",
+        "A4_K": "OPTIMAL_NUMERIC",
+        "U": "OPTIMAL_NUMERIC",
+        "U_K": "OPTIMAL_NUMERIC"
+      },
+      "wall_s_by_arm": {
+        "A2": 1.721669988008216,
+        "A2_K": 3.145245056017302,
+        "A4": 3.9815094699151814,
+        "A4_K": 5.549441182054579,
+        "U": 1.1822151020169258,
+        "U_K": 2.5231927459826693
+      }
+    },
+    {
+      "effects": {
+        "A2_OVER_U_K": {
+          "lp_delta": 0.004464285714295357,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 0.0001651800462507698,
+          "solver_ratio": 1.7547200658172306,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 1.1827542825747204
+        },
+        "A4_OVER_U_K": {
+          "lp_delta": 0.025297619047623954,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 0.0009360202620858553,
+          "solver_ratio": 12.53385087053132,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 2.6991741663492497
+        },
+        "A4_VS_U_NO_K": {
+          "lp_delta": 1.5366307084910353,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 1.2293045667928282,
+          "solver_ratio": 28.381432813592568,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 3.1579480590670013
+        },
+        "GROUP_2_NO_K": {
+          "lp_delta": 0.45219697367040745,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 0.361757578936326,
+          "solver_ratio": 9.948932518457305,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 1.7380438352655296
+        },
+        "GROUP_4_NO_K": {
+          "lp_delta": 1.0844337348206279,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 0.6370788760611463,
+          "solver_ratio": 2.852711359830736,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 1.816955358081947
+        },
+        "K_ON_A2": {
+          "lp_delta": 25.329053026329593,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 14.880212700480339,
+          "solver_ratio": 0.45554925237308735,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 0.9078758093637956
+        },
+        "K_ON_A4": {
+          "lp_delta": 24.265452624842293,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 8.707810672904724,
+          "solver_ratio": 1.1406546818181091,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 1.1402985360748918
+        },
+        "K_ON_U": {
+          "lp_delta": 25.776785714285705,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 20.621428571428563,
+          "solver_ratio": 2.5828785223258475,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 1.3341130756394135
+        },
+        "REFINEMENT_WITH_K": {
+          "lp_delta": 0.020833333333328596,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 0.000770712909441058,
+          "solver_ratio": 7.142934713460346,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 2.2821089774229835
+        }
+      },
+      "interaction_refinement_k": -1.0636004014872993,
+      "lp_by_arm": {
+        "A2": 1.7021969736704075,
+        "A2_K": 27.03125,
+        "A4": 2.7866307084910353,
+        "A4_K": 27.05208333333333,
+        "U": 1.25,
+        "U_K": 27.026785714285705
+      },
+      "n_variables_by_arm": {
+        "A2": 10816,
+        "A2_K": 10816,
+        "A4": 21120,
+        "A4_K": 21120,
+        "U": 5120,
+        "U_K": 5120
+      },
+      "name": "puc-cc9-2p-seed-r1",
+      "status_by_arm": {
+        "A2": "OPTIMAL_NUMERIC",
+        "A2_K": "OPTIMAL_NUMERIC",
+        "A4": "OPTIMAL_NUMERIC",
+        "A4_K": "OPTIMAL_NUMERIC",
+        "U": "OPTIMAL_NUMERIC",
+        "U_K": "OPTIMAL_NUMERIC"
+      },
+      "wall_s_by_arm": {
+        "A2": 1.3949174049776047,
+        "A2_K": 1.2664117680396885,
+        "A4": 2.5345026530558243,
+        "A4_K": 2.890089664957486,
+        "U": 0.8025789549574256,
+        "U_K": 1.0707310780417174
+      }
+    },
+    {
+      "effects": {
+        "A2_OVER_U_K": {
+          "lp_delta": 0.08573147652083435,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 0.00019802453394416857,
+          "solver_ratio": 1.2863285735596894,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 1.034847646393712
+        },
+        "A4_OVER_U_K": {
+          "lp_delta": 0.2416652400254975,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 0.0005582039230938122,
+          "solver_ratio": 3.8841947709006632,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 1.1754944811918864
+        },
+        "A4_VS_U_NO_K": {
+          "lp_delta": 1.1816718352156403,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 0.11402664238333023,
+          "solver_ratio": 10.102422155607915,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 4.03556344349134
+        },
+        "GROUP_2_NO_K": {
+          "lp_delta": 0.5400898860562791,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 0.0521165305433166,
+          "solver_ratio": 3.066432550813886,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 1.7976892339268165
+        },
+        "GROUP_4_NO_K": {
+          "lp_delta": 0.6415819491593613,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 0.05884339808637265,
+          "solver_ratio": 3.294519604850448,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 2.244861551891358
+        },
+        "K_ON_A2": {
+          "lp_delta": 422.11613195824015,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 38.7148479224575,
+          "solver_ratio": 0.8338058659950773,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 6.538849644734644
+        },
+        "K_ON_A4": {
+          "lp_delta": 421.6304837725855,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 36.521270503125386,
+          "solver_ratio": 0.7642262171494129,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 3.308689153236787
+        },
+        "K_ON_U": {
+          "lp_delta": 422.5704903677756,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 40.7763752599907,
+          "solver_ratio": 1.9876798985125108,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 11.358985691825684
+        },
+        "REFINEMENT_WITH_K": {
+          "lp_delta": 0.15593376350466315,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 0.00036010807891514687,
+          "solver_ratio": 3.0195976756948135,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 1.1359106679019926
+        }
+      },
+      "interaction_refinement_k": -0.48564818565469814,
+      "lp_by_arm": {
+        "A2": 10.903210385940358,
+        "A2_K": 433.01934234418053,
+        "A4": 11.54479233509972,
+        "A4_K": 433.1752761076852,
+        "U": 10.36312049988408,
+        "U_K": 432.9336108676597
+      },
+      "n_variables_by_arm": {
+        "A2": 55387,
+        "A2_K": 55387,
+        "A4": 106777,
+        "A4_K": 106777,
+        "U": 24553,
+        "U_K": 24553
+      },
+      "name": "puc-w3c571-seed-r1",
+      "status_by_arm": {
+        "A2": "OPTIMAL_NUMERIC",
+        "A2_K": "OPTIMAL_NUMERIC",
+        "A4": "OPTIMAL_NUMERIC",
+        "A4_K": "OPTIMAL_NUMERIC",
+        "U": "OPTIMAL_NUMERIC",
+        "U_K": "OPTIMAL_NUMERIC"
+      },
+      "wall_s_by_arm": {
+        "A2": 5.757525336928666,
+        "A2_K": 37.64759250392672,
+        "A4": 12.924847262911499,
+        "A4_K": 42.76430194603745,
+        "U": 3.2027367290575057,
+        "U_K": 36.3798406800488
+      }
+    },
+    {
+      "effects": {
+        "A2_OVER_U_K": {
+          "lp_delta": 5.3290705182007514e-14,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 3.147088888701231e-15,
+          "solver_ratio": 1.5226023774562811,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 1.3901494227185327
+        },
+        "A4_OVER_U_K": {
+          "lp_delta": 3.907985046680551e-14,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 2.3078651850475693e-15,
+          "solver_ratio": 6.871591408375354,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 3.907339044309333
+        },
+        "A4_VS_U_NO_K": {
+          "lp_delta": 0.9271611854197845,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 0.7726343211831536,
+          "solver_ratio": 10.333614151894993,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 5.4473392663203395
+        },
+        "GROUP_2_NO_K": {
+          "lp_delta": 0.19976190476190303,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 0.16646825396825246,
+          "solver_ratio": 2.0395176128083876,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 1.5999683129278994
+        },
+        "GROUP_4_NO_K": {
+          "lp_delta": 0.7273992806578815,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 0.519659292186274,
+          "solver_ratio": 5.066695225870469,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 3.4046544686574784
+        },
+        "K_ON_A2": {
+          "lp_delta": 15.533571428571484,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 11.097295458411345,
+          "solver_ratio": 1.0456826353265887,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 1.19202240096852
+        },
+        "K_ON_A4": {
+          "lp_delta": 14.806172147913587,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 6.9605313642424615,
+          "solver_ratio": 0.9314208155348466,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 0.9840813187607957
+        },
+        "K_ON_U": {
+          "lp_delta": 15.733333333333333,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 13.111111111111105,
+          "solver_ratio": 1.4006862091726269,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 1.3719374613127633
+        },
+        "REFINEMENT_WITH_K": {
+          "lp_delta": -1.4210854715202004e-14,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": -8.39223703653659e-16,
+          "solver_ratio": 4.513057059490018,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 2.810733134477201
+        }
+      },
+      "interaction_refinement_k": -0.7273992806578957,
+      "lp_by_arm": {
+        "A2": 1.3997619047619034,
+        "A2_K": 16.933333333333387,
+        "A4": 2.127161185419785,
+        "A4_K": 16.933333333333373,
+        "U": 1.2000000000000004,
+        "U_K": 16.933333333333334
+      },
+      "n_variables_by_arm": {
+        "A2": 57050,
+        "A2_K": 57050,
+        "A4": 113100,
+        "A4_K": 113100,
+        "U": 28000,
+        "U_K": 28000
+      },
+      "name": "pucn-cc3-10n-seed-r1",
+      "status_by_arm": {
+        "A2": "OPTIMAL_NUMERIC",
+        "A2_K": "OPTIMAL_NUMERIC",
+        "A4": "OPTIMAL_NUMERIC",
+        "A4_K": "OPTIMAL_NUMERIC",
+        "U": "OPTIMAL_NUMERIC",
+        "U_K": "OPTIMAL_NUMERIC"
+      },
+      "wall_s_by_arm": {
+        "A2": 4.177602097042836,
+        "A2_K": 4.979795282008126,
+        "A4": 14.223291647969745,
+        "A4_K": 13.996875602053478,
+        "U": 2.6110530210426077,
+        "U_K": 3.5822014530422166
+      }
+    },
+    {
+      "effects": {
+        "A2_OVER_U_K": {
+          "lp_delta": 0.009615384615393907,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 0.001131221719458107,
+          "solver_ratio": 2.3548655344877556,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 1.7961090237351638
+        },
+        "A4_OVER_U_K": {
+          "lp_delta": 0.05555555555556069,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 0.006535947712418905,
+          "solver_ratio": 6.0052874493537995,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 3.6086676502827824
+        },
+        "A4_VS_U_NO_K": {
+          "lp_delta": 0.7420833333333312,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 0.3041325136612011,
+          "solver_ratio": 7.19320615705769,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 3.9042454566096847
+        },
+        "GROUP_2_NO_K": {
+          "lp_delta": 0.2212820512820497,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 0.0906893652795285,
+          "solver_ratio": 2.2619692239196936,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 1.732800823964549
+        },
+        "GROUP_4_NO_K": {
+          "lp_delta": 0.5208012820512815,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 0.19569563541767007,
+          "solver_ratio": 3.180063672392861,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 2.25314150513675
+        },
+        "K_ON_A2": {
+          "lp_delta": 5.848333333333341,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 2.1975623855862825,
+          "solver_ratio": 1.5414186044814926,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 1.3387616636810975
+        },
+        "K_ON_A4": {
+          "lp_delta": 5.373472222222226,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 1.6886648334860999,
+          "solver_ratio": 1.2360967585119778,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 1.1937928993591664
+        },
+        "K_ON_U": {
+          "lp_delta": 6.059999999999997,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 2.4836065573770463,
+          "solver_ratio": 1.4806116924518213,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 1.2915737760141734
+        },
+        "REFINEMENT_WITH_K": {
+          "lp_delta": 0.04594017094016678,
+          "reason": "Dois LP ótimos numéricos; não certificados racionais",
+          "relative_gain": 0.005398618957940499,
+          "solver_ratio": 2.550161510882236,
+          "status": "MATCHED_COMPLETE",
+          "wall_ratio": 2.0091584656583077
+        }
+      },
+      "interaction_refinement_k": -0.47486111111111473,
+      "lp_by_arm": {
+        "A2": 2.6612820512820514,
+        "A2_K": 8.509615384615392,
+        "A4": 3.182083333333333,
+        "A4_K": 8.555555555555559,
+        "U": 2.4400000000000017,
+        "U_K": 8.499999999999998
+      },
+      "n_variables_by_arm": {
+        "A2": 769223,
+        "A2_K": 769223,
+        "A4": 1536455,
+        "A4_K": 1536455,
+        "U": 383591,
+        "U_K": 383591
+      },
+      "name": "vienna-I056-regiao-f4",
+      "status_by_arm": {
+        "A2": "OPTIMAL_NUMERIC",
+        "A2_K": "OPTIMAL_NUMERIC",
+        "A4": "OPTIMAL_NUMERIC",
+        "A4_K": "OPTIMAL_NUMERIC",
+        "U": "OPTIMAL_NUMERIC",
+        "U_K": "OPTIMAL_NUMERIC"
+      },
+      "wall_s_by_arm": {
+        "A2": 38.38163083093241,
+        "A2_K": 51.38385594601277,
+        "A4": 86.47924546001013,
+        "A4_K": 103.23830917209852,
+        "U": 22.15005342802033,
+        "U_K": 28.6084281449439
+      }
+    }
+  ],
+  "classification": "POSTHOC_EXPLORATORY_DEVELOPMENT_ONLY",
+  "effects": {
+    "A2_OVER_U_K": {
+      "n_comparable": 6,
+      "n_material_1pct": 0,
+      "n_strict_gain": 3,
+      "n_total": 6,
+      "relative_gain_by_case": {
+        "mapf-room-32-32-4-m10-f8": 6.728624391667617e-16,
+        "puc-bip42p-regiao-f2": 0.0,
+        "puc-cc9-2p-seed-r1": 0.0001651800462507698,
+        "puc-w3c571-seed-r1": 0.00019802453394416857,
+        "pucn-cc3-10n-seed-r1": 3.147088888701231e-15,
+        "vienna-I056-regiao-f4": 0.001131221719458107
+      }
+    },
+    "A4_OVER_U_K": {
+      "n_comparable": 6,
+      "n_material_1pct": 0,
+      "n_strict_gain": 4,
+      "n_total": 6,
+      "relative_gain_by_case": {
+        "mapf-room-32-32-4-m10-f8": 0.00703463203463356,
+        "puc-bip42p-regiao-f2": 0.0,
+        "puc-cc9-2p-seed-r1": 0.0009360202620858553,
+        "puc-w3c571-seed-r1": 0.0005582039230938122,
+        "pucn-cc3-10n-seed-r1": 2.3078651850475693e-15,
+        "vienna-I056-regiao-f4": 0.006535947712418905
+      }
+    },
+    "A4_VS_U_NO_K": {
+      "n_comparable": 6,
+      "n_material_1pct": 6,
+      "n_strict_gain": 6,
+      "n_total": 6,
+      "relative_gain_by_case": {
+        "mapf-room-32-32-4-m10-f8": 0.931640889974223,
+        "puc-bip42p-regiao-f2": 0.35858422780429833,
+        "puc-cc9-2p-seed-r1": 1.2293045667928282,
+        "puc-w3c571-seed-r1": 0.11402664238333023,
+        "pucn-cc3-10n-seed-r1": 0.7726343211831536,
+        "vienna-I056-regiao-f4": 0.3041325136612011
+      }
+    },
+    "GROUP_2_NO_K": {
+      "n_comparable": 6,
+      "n_material_1pct": 5,
+      "n_strict_gain": 5,
+      "n_total": 6,
+      "relative_gain_by_case": {
+        "mapf-room-32-32-4-m10-f8": 0.1666666666666662,
+        "puc-bip42p-regiao-f2": -2.2204460492503116e-16,
+        "puc-cc9-2p-seed-r1": 0.361757578936326,
+        "puc-w3c571-seed-r1": 0.0521165305433166,
+        "pucn-cc3-10n-seed-r1": 0.16646825396825246,
+        "vienna-I056-regiao-f4": 0.0906893652795285
+      }
+    },
+    "GROUP_4_NO_K": {
+      "n_comparable": 6,
+      "n_material_1pct": 6,
+      "n_strict_gain": 6,
+      "n_total": 6,
+      "relative_gain_by_case": {
+        "mapf-room-32-32-4-m10-f8": 0.6556921914064775,
+        "puc-bip42p-regiao-f2": 0.3585842278042986,
+        "puc-cc9-2p-seed-r1": 0.6370788760611463,
+        "puc-w3c571-seed-r1": 0.05884339808637265,
+        "pucn-cc3-10n-seed-r1": 0.519659292186274,
+        "vienna-I056-regiao-f4": 0.19569563541767007
+      }
+    },
+    "K_ON_A2": {
+      "n_comparable": 6,
+      "n_material_1pct": 6,
+      "n_strict_gain": 6,
+      "n_total": 6,
+      "relative_gain_by_case": {
+        "mapf-room-32-32-4-m10-f8": 3.7142857142857166,
+        "puc-bip42p-regiao-f2": 30.70605194120017,
+        "puc-cc9-2p-seed-r1": 14.880212700480339,
+        "puc-w3c571-seed-r1": 38.7148479224575,
+        "pucn-cc3-10n-seed-r1": 11.097295458411345,
+        "vienna-I056-regiao-f4": 2.1975623855862825
+      }
+    },
+    "K_ON_A4": {
+      "n_comparable": 6,
+      "n_material_1pct": 6,
+      "n_strict_gain": 6,
+      "n_total": 6,
+      "relative_gain_by_case": {
+        "mapf-room-32-32-4-m10-f8": 1.8673499846363226,
+        "puc-bip42p-regiao-f2": 22.337568103850654,
+        "puc-cc9-2p-seed-r1": 8.707810672904724,
+        "puc-w3c571-seed-r1": 36.521270503125386,
+        "pucn-cc3-10n-seed-r1": 6.9605313642424615,
+        "vienna-I056-regiao-f4": 1.6886648334860999
+      }
+    },
+    "K_ON_U": {
+      "n_comparable": 6,
+      "n_material_1pct": 6,
+      "n_strict_gain": 6,
+      "n_total": 6,
+      "relative_gain_by_case": {
+        "mapf-room-32-32-4-m10-f8": 4.4999999999999964,
+        "puc-bip42p-regiao-f2": 30.706051941200162,
+        "puc-cc9-2p-seed-r1": 20.621428571428563,
+        "puc-w3c571-seed-r1": 40.7763752599907,
+        "pucn-cc3-10n-seed-r1": 13.111111111111105,
+        "vienna-I056-regiao-f4": 2.4836065573770463
+      }
+    },
+    "REFINEMENT_WITH_K": {
+      "n_comparable": 6,
+      "n_material_1pct": 0,
+      "n_strict_gain": 4,
+      "n_total": 6,
+      "relative_gain_by_case": {
+        "mapf-room-32-32-4-m10-f8": 0.0070346320346328815,
+        "puc-bip42p-regiao-f2": 0.0,
+        "puc-cc9-2p-seed-r1": 0.000770712909441058,
+        "puc-w3c571-seed-r1": 0.00036010807891514687,
+        "pucn-cc3-10n-seed-r1": -8.39223703653659e-16,
+        "vienna-I056-regiao-f4": 0.005398618957940499
+      }
+    }
+  },
+  "expected_cases": [
+    "mapf-room-32-32-4-m10-f8",
+    "puc-bip42p-regiao-f2",
+    "puc-cc9-2p-seed-r1",
+    "puc-w3c571-seed-r1",
+    "pucn-cc3-10n-seed-r1",
+    "vienna-I056-regiao-f4"
+  ],
+  "limitations": [
+    "Sem seleção/ajuste pós-hoc em casos de avaliação",
+    "1% apenas leitura descritiva, não gate científico GO",
+    "Nem todo braço tem solução se censurado; mantém N=6"
+  ],
+  "parent_report_sha256": "3137ac8f7cf9dbba774caad0d82ab48c96de3eef3bcc0fcba3bffdc27a5ba9c8",
+  "recommendation": "PROMISING_EXPLORATORY_REPLICATION_REQUIRED",
+  "schema": "AS05-FACTORIAL-ANALYSIS-v1",
+  "scientific_gate": "PENDING",
+  "scientific_promotion": "NOT_AUTHORIZED"
+}

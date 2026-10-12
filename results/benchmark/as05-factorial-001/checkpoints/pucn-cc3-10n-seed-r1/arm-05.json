@@ -1,0 +1,91 @@
+{
+  "case": "pucn-cc3-10n-seed-r1",
+  "index": 5,
+  "job": [
+    "factorial-v1",
+    "A4_K",
+    "reachability_degree",
+    42,
+    "bitset-v2"
+  ],
+  "result": {
+    "a2_partition_sha256": "e5d4a25463fda22c7af37daa1c99928fce243cb8c02333d5ec38c3c5766b2919",
+    "a4_parent_sha256": "e5d4a25463fda22c7af37daa1c99928fce243cb8c02333d5ec38c3c5766b2919",
+    "a4_partition_sha256": "90cd8b7709def96b59db00eb62583e67129e70f6e034c4cc185b1829061aaff1",
+    "applied_k_sha256": "f5e8958d83ee77e29a7566adecebc31c91beeec8b8ad66addaaabb428a77ba49",
+    "arm_id": "A4_K",
+    "case_name": "pucn-cc3-10n-seed-r1.txt",
+    "cut_profile": {
+      "counts": {
+        "c1_raw": 50,
+        "c2_raw": 50,
+        "c4_dm_raw": 50,
+        "unique": 50
+      },
+      "k_sha256": "f5e8958d83ee77e29a7566adecebc31c91beeec8b8ad66addaaabb428a77ba49",
+      "k_validated": true,
+      "phase_wall_s": {
+        "c1_s": 0.0011021660175174475,
+        "c2_s": 0.43952547502703965,
+        "c4_dm_s": 0.0005928659811615944,
+        "canonicalize_s": 0.0007685130694881082,
+        "neighborhoods_s": 0.009241972933523357,
+        "validation_bitset_v2_s": 0.10666973900515586,
+        "validator_setup_s": 0.006732775014825165
+      },
+      "validator_method": "bitset-v2"
+    },
+    "grouping_policy": "reachability_degree",
+    "input_load_s": 0.04724964196793735,
+    "installed": null,
+    "instance_sha256": "9123c0e46228c22ba586bb7f730757a7fa2c4b0f815b54afba59f54a3bc8b431",
+    "k_prepared_for_this_arm": true,
+    "k_validated": true,
+    "lp_opt_value": 16.933333333333373,
+    "mip_numeric_bound": null,
+    "mip_numeric_incumbent": null,
+    "model_complete": true,
+    "n_constraints": 13075,
+    "n_nonzeros": 238550,
+    "n_variables": 113100,
+    "nodes": 0.0,
+    "partition_sha256": "90cd8b7709def96b59db00eb62583e67129e70f6e034c4cc185b1829061aaff1",
+    "reachability_s": 0.054615129018202424,
+    "reason": "",
+    "reference_k_sha256": "f5e8958d83ee77e29a7566adecebc31c91beeec8b8ad66addaaabb428a77ba49",
+    "size_estimate": {
+      "a": 27000,
+      "constraints": 13075,
+      "h": 0,
+      "k": 4,
+      "m": 25,
+      "memory_estimator": "heuristic_proxy_v1_not_rss_bound",
+      "memory_proxy_bytes": 124089600,
+      "n": 1000,
+      "nonzeros_upper": 238550,
+      "variables": 113100
+    },
+    "solver_runtime_s": 10.794816970825195,
+    "solver_version": "12.0.3",
+    "solver_work": 4.260283326455452,
+    "status": "OPTIMAL_NUMERIC",
+    "structural_sha256": "9c6286194c0ff028c19b00b01fd3cd5ebdfe2da5c03578450be4303565bbd688",
+    "wall_phases_s": {
+      "k_c1": 0.001149396994151175,
+      "k_c2": 0.4395533879287541,
+      "k_c4_dm": 0.000653894036076963,
+      "k_canonicalize": 0.0007942640222609043,
+      "k_neighborhoods": 0.009262442006729543,
+      "k_preparation": 6.159103941172361e-05,
+      "k_validation_bitset_v2": 0.12083497003186494,
+      "k_validator_setup": 0.006756372982636094,
+      "model_build": 1.652602745918557,
+      "preparation": 0.2679141230182722,
+      "solve": 10.795012559043244,
+      "startup": 0.6034374670125544,
+      "supervisor_shutdown": 0.01382498606108129,
+      "validation": 0.08501130295917392
+    },
+    "wall_total_s": 13.996875602053478
+  }
+}

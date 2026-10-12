@@ -1,0 +1,9 @@
+{
+  "files": {
+    "analysis.json": "eaa40908c44e88e112a7e2f6d3e1c4a00f41e166f30736a817509271986d9ae3",
+    "analysis.md": "4e7246c5c878a91378e201b6f0c1b6f6a90b7093efa43db76f4df75b69bdbd63",
+    "arms.csv": "498b031a7ac0356707de776a29aa7f7185c25fd259828525e0f98e893b93b927",
+    "effects.csv": "90dc5b75565703c3de66329ad7c84c9157957fca40d3b0f0113a2508c90b41d3"
+  },
+  "schema": "AS05-FACTORIAL-ANALYSIS-INTEGRITY-v1"
+}

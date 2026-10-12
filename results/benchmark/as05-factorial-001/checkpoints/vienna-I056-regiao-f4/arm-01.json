@@ -1,0 +1,84 @@
+{
+  "case": "vienna-I056-regiao-f4",
+  "index": 1,
+  "job": [
+    "factorial-v1",
+    "U_K",
+    "reachability_degree",
+    42,
+    "bitset-v2"
+  ],
+  "result": {
+    "a2_partition_sha256": null,
+    "a4_parent_sha256": null,
+    "a4_partition_sha256": null,
+    "applied_k_sha256": "64d3500a49c52bbf3ea9a3ffd718711c2e6a809585d7f91db311ef44a3606796",
+    "arm_id": "U_K",
+    "case_name": "vienna-I056-regiao-f4.txt",
+    "cut_profile": {
+      "counts": {
+        "c1_raw": 50,
+        "c2_raw": 101,
+        "c4_dm_raw": 50,
+        "unique": 101
+      },
+      "k_sha256": "64d3500a49c52bbf3ea9a3ffd718711c2e6a809585d7f91db311ef44a3606796",
+      "k_validated": true,
+      "phase_wall_s": {
+        "c1_s": 0.0005385250551626086,
+        "c2_s": 0.3859745729714632,
+        "c4_dm_s": 0.002163741970434785,
+        "canonicalize_s": 0.01456884597428143,
+        "neighborhoods_s": 0.16171395196579397,
+        "validation_bitset_v2_s": 1.9443327899789438,
+        "validator_setup_s": 0.09610097692348063
+      },
+      "validator_method": "bitset-v2"
+    },
+    "grouping_policy": null,
+    "input_load_s": 0.022629542043432593,
+    "installed": null,
+    "instance_sha256": "645da5115a0eeaa6fba9eeae9f4942aebecfa66c4bcbc7aaec2bd0c994eb0ccc",
+    "k_prepared_for_this_arm": true,
+    "k_validated": true,
+    "lp_opt_value": 8.499999999999998,
+    "mip_numeric_bound": null,
+    "mip_numeric_incumbent": null,
+    "model_complete": true,
+    "n_constraints": 6074,
+    "n_nonzeros": 1558364,
+    "n_variables": 383591,
+    "nodes": 0.0,
+    "partition_sha256": null,
+    "reachability_s": 0.4683834610041231,
+    "reason": "",
+    "reference_k_sha256": "64d3500a49c52bbf3ea9a3ffd718711c2e6a809585d7f91db311ef44a3606796",
+    "size_estimate": {
+      "constraints": 5973,
+      "memory_estimator": "U_size_counts_only_proxy_not_certified",
+      "variables": 383591
+    },
+    "solver_runtime_s": 11.80754804611206,
+    "solver_version": "12.0.3",
+    "solver_work": 4.665316922826881,
+    "status": "OPTIMAL_NUMERIC",
+    "structural_sha256": "02296e18fe5d18be973b8ba76372fa46b6719017ee057d8880f1e92a58d6dd38",
+    "wall_phases_s": {
+      "k_c1": 0.000615964992903173,
+      "k_c2": 0.3860154659487307,
+      "k_c4_dm": 0.002228623954579234,
+      "k_canonicalize": 0.014600626076571643,
+      "k_neighborhoods": 0.16173941106535494,
+      "k_preparation": 7.703399751335382e-05,
+      "k_validation_bitset_v2": 1.978821823024191,
+      "k_validator_setup": 0.09613805497065187,
+      "model_build": 12.450660391012207,
+      "preparation": 0.8694325500400737,
+      "solve": 11.807764210971072,
+      "startup": 0.5796507109189406,
+      "supervisor_shutdown": 0.021044928929768503,
+      "validation": 0.2396329720504582
+    },
+    "wall_total_s": 28.6084281449439
+  }
+}

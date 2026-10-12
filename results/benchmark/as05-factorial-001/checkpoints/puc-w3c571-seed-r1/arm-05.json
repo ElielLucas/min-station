@@ -1,0 +1,91 @@
+{
+  "case": "puc-w3c571-seed-r1",
+  "index": 5,
+  "job": [
+    "factorial-v1",
+    "A4_K",
+    "reachability_degree",
+    42,
+    "bitset-v2"
+  ],
+  "result": {
+    "a2_partition_sha256": "3af0facc70e32b4054317a23bdf5e91fceb03be605925b00cc4f882706860d5b",
+    "a4_parent_sha256": "3af0facc70e32b4054317a23bdf5e91fceb03be605925b00cc4f882706860d5b",
+    "a4_partition_sha256": "8f91ae3e044455d923c14dee39cc9c0d799322838e26efedc362b20f2e47a03c",
+    "applied_k_sha256": "42b9f6336b56241a1318326d5df68d04ec1f1c8a427b74b7462eea116766e23f",
+    "arm_id": "A4_K",
+    "case_name": "puc-w3c571-seed-r1.txt",
+    "cut_profile": {
+      "counts": {
+        "c1_raw": 2284,
+        "c2_raw": 2284,
+        "c4_dm_raw": 2284,
+        "unique": 2284
+      },
+      "k_sha256": "42b9f6336b56241a1318326d5df68d04ec1f1c8a427b74b7462eea116766e23f",
+      "k_validated": true,
+      "phase_wall_s": {
+        "c1_s": 0.0221418640576303,
+        "c2_s": 25.552184415981174,
+        "c4_dm_s": 0.01031768403481692,
+        "canonicalize_s": 0.03302134701516479,
+        "neighborhoods_s": 0.010932976962067187,
+        "validation_bitset_v2_s": 6.120581644005142,
+        "validator_setup_s": 0.008435494033619761
+      },
+      "validator_method": "bitset-v2"
+    },
+    "grouping_policy": "reachability_degree",
+    "input_load_s": 0.21989811689127237,
+    "installed": null,
+    "instance_sha256": "e85ced7daef779e6e88f302ee9d80a467129f448a7ac5c6ce465d64b963300fd",
+    "k_prepared_for_this_arm": true,
+    "k_validated": true,
+    "lp_opt_value": 433.1752761076852,
+    "mip_numeric_bound": null,
+    "mip_numeric_incumbent": null,
+    "model_complete": true,
+    "n_constraints": 55387,
+    "n_nonzeros": 267799,
+    "n_variables": 106777,
+    "nodes": 0.0,
+    "partition_sha256": "8f91ae3e044455d923c14dee39cc9c0d799322838e26efedc362b20f2e47a03c",
+    "reachability_s": 0.021005453076213598,
+    "reason": "",
+    "reference_k_sha256": "42b9f6336b56241a1318326d5df68d04ec1f1c8a427b74b7462eea116766e23f",
+    "size_estimate": {
+      "a": 20556,
+      "constraints": 55387,
+      "h": 0,
+      "k": 4,
+      "m": 1142,
+      "memory_estimator": "heuristic_proxy_v1_not_rss_bound",
+      "memory_proxy_bytes": 144641152,
+      "n": 3997,
+      "nonzeros_upper": 267799,
+      "variables": 106777
+    },
+    "solver_runtime_s": 6.691975116729736,
+    "solver_version": "12.0.3",
+    "solver_work": 2.1810273108964076,
+    "status": "OPTIMAL_NUMERIC",
+    "structural_sha256": "6aa7a60d081a788614a09c7f4d868c4c1b5b4709f1315c0dae520378ca6c644f",
+    "wall_phases_s": {
+      "k_c1": 0.022189292940311134,
+      "k_c2": 25.552244386984967,
+      "k_c4_dm": 0.010391945019364357,
+      "k_canonicalize": 0.03306802606675774,
+      "k_neighborhoods": 0.010952526004984975,
+      "k_preparation": 5.473499186336994e-05,
+      "k_validation_bitset_v2": 6.143288739025593,
+      "k_validator_setup": 0.008493693894706666,
+      "model_build": 3.2254825360141695,
+      "preparation": 0.3731796870706603,
+      "solve": 6.692169746966101,
+      "startup": 0.5805987929925323,
+      "supervisor_shutdown": 0.015512943966314197,
+      "validation": 0.09666945703793317
+    },
+    "wall_total_s": 42.76430194603745
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "case": "puc-w3c571-seed-r1",
+  "index": 3,
+  "job": [
+    "factorial-v1",
+    "A2_K",
+    "reachability_degree",
+    42,
+    "bitset-v2"
+  ],
+  "result": {
+    "a2_partition_sha256": "3af0facc70e32b4054317a23bdf5e91fceb03be605925b00cc4f882706860d5b",
+    "a4_parent_sha256": "3af0facc70e32b4054317a23bdf5e91fceb03be605925b00cc4f882706860d5b",
+    "a4_partition_sha256": "8f91ae3e044455d923c14dee39cc9c0d799322838e26efedc362b20f2e47a03c",
+    "applied_k_sha256": "42b9f6336b56241a1318326d5df68d04ec1f1c8a427b74b7462eea116766e23f",
+    "arm_id": "A2_K",
+    "case_name": "puc-w3c571-seed-r1.txt",
+    "cut_profile": {
+      "counts": {
+        "c1_raw": 2284,
+        "c2_raw": 2284,
+        "c4_dm_raw": 2284,
+        "unique": 2284
+      },
+      "k_sha256": "42b9f6336b56241a1318326d5df68d04ec1f1c8a427b74b7462eea116766e23f",
+      "k_validated": true,
+      "phase_wall_s": {
+        "c1_s": 0.02288063708692789,
+        "c2_s": 25.751611541956663,
+        "c4_dm_s": 0.010441881022416055,
+        "canonicalize_s": 0.033706746995449066,
+        "neighborhoods_s": 0.01185831194743514,
+        "validation_bitset_v2_s": 6.176747254910879,
+        "validator_setup_s": 0.00838162493892014
+      },
+      "validator_method": "bitset-v2"
+    },
+    "grouping_policy": "reachability_degree",
+    "input_load_s": 0.22688601107802242,
+    "installed": null,
+    "instance_sha256": "e85ced7daef779e6e88f302ee9d80a467129f448a7ac5c6ce465d64b963300fd",
+    "k_prepared_for_this_arm": true,
+    "k_validated": true,
+    "lp_opt_value": 433.01934234418053,
+    "mip_numeric_bound": null,
+    "mip_numeric_incumbent": null,
+    "model_complete": true,
+    "n_constraints": 31405,
+    "n_nonzeros": 141037,
+    "n_variables": 55387,
+    "nodes": 0.0,
+    "partition_sha256": "3af0facc70e32b4054317a23bdf5e91fceb03be605925b00cc4f882706860d5b",
+    "reachability_s": 0.024214851902797818,
+    "reason": "",
+    "reference_k_sha256": "42b9f6336b56241a1318326d5df68d04ec1f1c8a427b74b7462eea116766e23f",
+    "size_estimate": {
+      "a": 20556,
+      "constraints": 31405,
+      "h": 0,
+      "k": 2,
+      "m": 1142,
+      "memory_estimator": "heuristic_proxy_v1_not_rss_bound",
+      "memory_proxy_bytes": 76669312,
+      "n": 3997,
+      "nonzeros_upper": 141037,
+      "variables": 55387
+    },
+    "solver_runtime_s": 2.2161810398101807,
+    "solver_version": "12.0.3",
+    "solver_work": 0.6831078891281859,
+    "status": "OPTIMAL_NUMERIC",
+    "structural_sha256": "6aa7a60d081a788614a09c7f4d868c4c1b5b4709f1315c0dae520378ca6c644f",
+    "wall_phases_s": {
+      "k_c1": 0.022932401043362916,
+      "k_c2": 25.75167191005312,
+      "k_c4_dm": 0.010511759901419282,
+      "k_canonicalize": 0.03375566902104765,
+      "k_neighborhoods": 0.0118782949866727,
+      "k_preparation": 6.410095375031233e-05,
+      "k_validation_bitset_v2": 6.200269912020303,
+      "k_validator_setup": 0.008444698993116617,
+      "model_build": 2.348751968005672,
+      "preparation": 0.39271894097328186,
+      "solve": 2.2163804579759017,
+      "startup": 0.578911849996075,
+      "supervisor_shutdown": 0.014677347033284605,
+      "validation": 0.0566180880414322
+    },
+    "wall_total_s": 37.64759250392672
+  }
+}
