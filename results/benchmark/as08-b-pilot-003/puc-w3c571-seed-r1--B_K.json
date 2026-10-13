@@ -1,0 +1,53 @@
+{
+  "arm": "B_K",
+  "case": {
+    "graph_source": "puc",
+    "manifest_name": "puc-w3c571-seed-r1.txt",
+    "name": "puc-w3c571-seed-r1",
+    "raw_graph_id": "puc:w3c571",
+    "source_sha256": "e85ced7daef779e6e88f302ee9d80a467129f448a7ac5c6ce465d64b963300fd",
+    "split": "desenvolvimento"
+  },
+  "cg_progress_checkpoint": {
+    "events": 57,
+    "file": "puc-w3c571-seed-r1--B_K.cg-progress.json",
+    "last_event": {
+      "certified_global_lb": null,
+      "columns": 1400,
+      "completed_iterations": 7,
+      "elapsed_seconds": 250.1001003870042,
+      "event": "PRICING_FINISHED",
+      "iteration": 8,
+      "negative_candidates": 1265732,
+      "negative_duplicate_columns": 0,
+      "origins_processed": 1142,
+      "origins_with_candidates": 1127,
+      "pricing_seconds": 18.358527745935135,
+      "pricing_slowest_origin_seconds": 0.33695200900547206,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    "sha256": "22af893e58d3a5f5f9756b4918297d50b0310e8f2046b38f73495028380ae348"
+  },
+  "global_lower_bound": null,
+  "lp_numeric_value": null,
+  "plan_sha256": "f439b6a89d7c01681e38ccaa15e68dd2db9800cd29a6d969b5959cd42ae9ce5a",
+  "reason": "Prazo global 300s esgotado na fase solve",
+  "schema": "AS08-B-PILOT-RESULT-v1",
+  "status": "TIMEOUT_SOLVER",
+  "wall_phases_s": {
+    "k_c1": 0.0029406269313767552,
+    "k_c2": 27.899912178050727,
+    "k_c4_dm": 0.01246393600013107,
+    "k_canonicalize": 0.010117087047547102,
+    "k_neighborhoods": 0.0108044269727543,
+    "k_preparation": 5.2649062126874924e-05,
+    "k_validation_bitset_v2": 6.541557347052731,
+    "k_validator_setup": 0.010727037908509374,
+    "model_build": 3.515498246997595e-05,
+    "preparation": 0.2506116930162534,
+    "solve": 264.60407867701724,
+    "startup": 0.6578735599759966,
+    "supervisor_shutdown": 0.095960887032561
+  },
+  "wall_total_s": 300.0971415590029
+}

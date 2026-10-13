@@ -1,0 +1,33 @@
+{
+  "arm": "B_K",
+  "case": {
+    "graph_source": "mapf",
+    "manifest_name": "mapf-room-32-32-4-m10-f8.txt",
+    "name": "mapf-room-32-32-4-m10-f8",
+    "raw_graph_id": "mapf:map:raw-data/mapf/maps/room-32-32-4.map",
+    "source_sha256": "78be3e1261f31f4e583d0808bdfc9c93d9c9eb335d86d13b059ce428af5f303f",
+    "split": "desenvolvimento"
+  },
+  "global_lower_bound": null,
+  "lp_numeric_value": null,
+  "plan_sha256": "6ecc0dfea455e4d9858d96a563d0dd28017928b096f8538c4657236714ee78eb",
+  "reason": "GurobiError: Name too long (maximum name length is 255 characters)\nTraceback (most recent call last):\n  File \"/home/eliel/Documentos/eliel/Unicamp/min-station/experiments/formulation-comparison/fc_budget.py\", line 83, in _worker_entry\n    value = func(ctx, *args, **kwargs)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/eliel/Documentos/eliel/Unicamp/min-station/experiments/alternative-formulations/run_as08_b_pilot.py\", line 136, in _worker\n    answer=run_column_generation(ins,cuts,config=cfg)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/eliel/Documentos/eliel/Unicamp/min-station/experiments/alternative-formulations/as08_column_generation.py\", line 276, in run_column_generation\n    last = _solve(compiled,instance,K,config,seconds=max(.001,deadline-time.monotonic()))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/eliel/Documentos/eliel/Unicamp/min-station/experiments/alternative-formulations/as08_column_generation.py\", line 160, in _solve\n    var = [model.addVar(lb=v.lb, ub=v.ub if math.isfinite(v.ub) else gp.GRB.INFINITY,\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"src/gurobipy/_model.pyx\", line 3078, in gurobipy._model.Model.addVar\ngurobipy._exception.GurobiError: Name too long (maximum name length is 255 characters)\n",
+  "schema": "AS08-B-PILOT-RESULT-v1",
+  "status": "WORKER_ERROR",
+  "wall_phases_s": {
+    "k_c1": 0.00012473203241825104,
+    "k_c2": 0.02472007996402681,
+    "k_c4_dm": 0.0002631599782034755,
+    "k_canonicalize": 0.00042303605005145073,
+    "k_neighborhoods": 0.005566181964240968,
+    "k_preparation": 5.622301250696182e-05,
+    "k_validation_bitset_v2": 0.02784479793626815,
+    "k_validator_setup": 0.003378344001248479,
+    "model_build": 6.315403152257204e-05,
+    "preparation": 0.018697871011681855,
+    "solve": 1.2804124630056322,
+    "startup": 0.7484030240448192,
+    "supervisor_shutdown": 0.005631987005472183
+  },
+  "wall_total_s": 2.1155917340656742
+}

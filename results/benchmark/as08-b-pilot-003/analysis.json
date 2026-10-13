@@ -1,0 +1,149 @@
+{
+  "classification": "EXPLORATORY_ONLY",
+  "decision": "INVESTIGATE_CENSORED",
+  "pairs": [
+    {
+      "b_cert_lb": null,
+      "b_lp": null,
+      "b_progress_columns": 5000,
+      "b_progress_events": 464,
+      "b_progress_iteration": null,
+      "b_progress_last_event": "CG_FINISHED",
+      "b_status": "CAP_EXCEEDED",
+      "b_stop_detail": {
+        "configured": 5000,
+        "limit": "max_columns",
+        "negative_candidates": 66,
+        "observed": 5000,
+        "reason": "CAP_EXCEEDED",
+        "stage": "SELECTING"
+      },
+      "b_wall_s": 75.24109566502739,
+      "case": "mapf-room-32-32-4-m10-f8",
+      "decision": "CENSORED",
+      "lp_gain": null,
+      "u_lp": 13.199999999999996,
+      "u_status": "OPTIMAL_NUMERIC",
+      "u_wall_s": 1.200451610959135
+    },
+    {
+      "b_cert_lb": null,
+      "b_lp": null,
+      "b_progress_columns": 5000,
+      "b_progress_events": 158,
+      "b_progress_iteration": null,
+      "b_progress_last_event": "CG_FINISHED",
+      "b_status": "CAP_EXCEEDED",
+      "b_stop_detail": {
+        "configured": 5000,
+        "limit": "max_columns",
+        "negative_candidates": 9894,
+        "observed": 5000,
+        "reason": "CAP_EXCEEDED",
+        "stage": "SELECTING"
+      },
+      "b_wall_s": 102.96453524497338,
+      "case": "puc-bip42p-regiao-f2",
+      "decision": "CENSORED",
+      "lp_gain": null,
+      "u_lp": 31.706051941200183,
+      "u_status": "OPTIMAL_NUMERIC",
+      "u_wall_s": 2.9967660629190505
+    },
+    {
+      "b_cert_lb": null,
+      "b_lp": null,
+      "b_progress_columns": 5000,
+      "b_progress_events": 158,
+      "b_progress_iteration": null,
+      "b_progress_last_event": "CG_FINISHED",
+      "b_status": "CAP_EXCEEDED",
+      "b_stop_detail": {
+        "configured": 5000,
+        "limit": "max_columns",
+        "negative_candidates": 791,
+        "observed": 5000,
+        "reason": "CAP_EXCEEDED",
+        "stage": "SELECTING"
+      },
+      "b_wall_s": 35.81812498893123,
+      "case": "puc-cc9-2p-seed-r1",
+      "decision": "CENSORED",
+      "lp_gain": null,
+      "u_lp": 27.026785714285705,
+      "u_status": "OPTIMAL_NUMERIC",
+      "u_wall_s": 1.151837341953069
+    },
+    {
+      "b_cert_lb": null,
+      "b_lp": null,
+      "b_progress_columns": 1400,
+      "b_progress_events": 57,
+      "b_progress_iteration": 8,
+      "b_progress_last_event": "PRICING_FINISHED",
+      "b_status": "TIMEOUT_SOLVER",
+      "b_stop_detail": null,
+      "b_wall_s": 300.0971415590029,
+      "case": "puc-w3c571-seed-r1",
+      "decision": "CENSORED",
+      "lp_gain": null,
+      "u_lp": 432.9336108676597,
+      "u_status": "OPTIMAL_NUMERIC",
+      "u_wall_s": 37.95235022006091
+    },
+    {
+      "b_cert_lb": null,
+      "b_lp": null,
+      "b_progress_columns": 5000,
+      "b_progress_events": 158,
+      "b_progress_iteration": null,
+      "b_progress_last_event": "CG_FINISHED",
+      "b_status": "CAP_EXCEEDED",
+      "b_stop_detail": {
+        "configured": 5000,
+        "limit": "max_columns",
+        "negative_candidates": 625,
+        "observed": 5000,
+        "reason": "CAP_EXCEEDED",
+        "stage": "SELECTING"
+      },
+      "b_wall_s": 30.14547634299379,
+      "case": "pucn-cc3-10n-seed-r1",
+      "decision": "CENSORED",
+      "lp_gain": null,
+      "u_lp": 16.933333333333334,
+      "u_status": "OPTIMAL_NUMERIC",
+      "u_wall_s": 3.831946733989753
+    },
+    {
+      "b_cert_lb": null,
+      "b_lp": null,
+      "b_progress_columns": 5000,
+      "b_progress_events": 158,
+      "b_progress_iteration": null,
+      "b_progress_last_event": "CG_FINISHED",
+      "b_status": "CAP_EXCEEDED",
+      "b_stop_detail": {
+        "configured": 5000,
+        "limit": "max_columns",
+        "negative_candidates": 601,
+        "observed": 5000,
+        "reason": "CAP_EXCEEDED",
+        "stage": "SELECTING"
+      },
+      "b_wall_s": 39.11421926994808,
+      "case": "vienna-I056-regiao-f4",
+      "decision": "CENSORED",
+      "lp_gain": null,
+      "u_lp": 8.499999999999998,
+      "u_status": "OPTIMAL_NUMERIC",
+      "u_wall_s": 22.90917804010678
+    }
+  ],
+  "schema": "AS08-B-PILOT-ANALYSIS-v1",
+  "scientific_gate": "PENDING",
+  "thresholds": {
+    "lp_material_relative_min": 0.01,
+    "max_wall_ratio": 3.0
+  }
+}

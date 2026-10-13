@@ -1,0 +1,86 @@
+{
+  "arm": "B_K",
+  "case": {
+    "graph_source": "puc",
+    "manifest_name": "puc-w3c571-seed-r1.txt",
+    "name": "puc-w3c571-seed-r1",
+    "raw_graph_id": "puc:w3c571",
+    "source_sha256": "e85ced7daef779e6e88f302ee9d80a467129f448a7ac5c6ce465d64b963300fd",
+    "split": "desenvolvimento"
+  },
+  "classification": "DIAGNOSTIC_ONLY",
+  "events": [
+    {
+      "K_count": 2284,
+      "K_sha256": "42b9f6336b56241a1318326d5df68d04ec1f1c8a427b74b7462eea116766e23f",
+      "elapsed_seconds": 35.8145909110317,
+      "event": "INPUT_READY",
+      "instance_sha256": "e85ced7daef779e6e88f302ee9d80a467129f448a7ac5c6ce465d64b963300fd",
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "budget_seconds": 263.18533752893563,
+      "certified_global_lb": null,
+      "columns": 0,
+      "completed_iterations": 0,
+      "elapsed_seconds": 8.434057235717773e-06,
+      "event": "CG_STARTED",
+      "planned_iterations": 100,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "certified_global_lb": null,
+      "columns": 0,
+      "completed_iterations": 0,
+      "elapsed_seconds": 8.1464066170156e-05,
+      "event": "BUILD_RMP",
+      "iteration": 1,
+      "row_estimate": 5710,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "certified_global_lb": null,
+      "columns": 0,
+      "completed_iterations": 0,
+      "elapsed_seconds": 1.345083742053248,
+      "event": "SOLVING_RMP",
+      "iteration": 1,
+      "rmp_nnz": 13704,
+      "rmp_rows": 5710,
+      "rmp_variables": 6281,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "artificial_sum": 2284.0,
+      "certified_global_lb": null,
+      "columns": 0,
+      "completed_iterations": 0,
+      "elapsed_seconds": 1.5241111239884049,
+      "event": "RMP_SOLVED",
+      "feasible_lp_upper_bound": null,
+      "iteration": 1,
+      "rmp_nnz": 13704,
+      "rmp_objective_with_artificials": 91314748.25,
+      "rmp_rows": 5710,
+      "rmp_status": "OPTIMAL",
+      "schema": "AS08-CG-PROGRESS-v1",
+      "solve_seconds": 0.17617151699960232
+    },
+    {
+      "certified_global_lb": null,
+      "columns": 0,
+      "completed_iterations": 0,
+      "elapsed_seconds": 1.5241782970260829,
+      "event": "PRICING",
+      "iteration": 1,
+      "schema": "AS08-CG-PROGRESS-v1"
+    }
+  ],
+  "outcome": {
+    "arm_status": "TIMEOUT_SOLVER",
+    "supervisor_status": "TIMEOUT_SOLVER",
+    "wall_total_s": 300.0694586420432
+  },
+  "plan_sha256": "6ecc0dfea455e4d9858d96a563d0dd28017928b096f8538c4657236714ee78eb",
+  "schema": "AS08-B-PILOT-PROGRESS-v1"
+}

@@ -73,6 +73,13 @@ class WorkerContext:
     def elapsed(self) -> float:
         return self._budget.elapsed()
 
+    def progress(self, payload: dict) -> None:
+        """Emite somente diagnóstico, sem transformar progresso em resultado científico.
+
+        O supervisor recebe e pode persistir antes do prazo de encerramento.
+        """
+        self._connection.send(('progress', payload))
+
 
 def _worker_entry(connection, func, args, kwargs, budget_s: float, started_at: float) -> None:
     """Alvo importável para multiprocessing spawn; dados retornam pelo pipe."""
@@ -106,7 +113,8 @@ def _timeout_status(phase: str) -> str:
     return 'TIMEOUT_SOLVER'
 
 
-def run_bounded(func, *args, budget_s: float, start_method: str = 'spawn', **kwargs) -> BoundedOutcome:
+def run_bounded(func, *args, budget_s: float, start_method: str = 'spawn',
+                on_progress: Callable[[dict], None] | None = None, **kwargs) -> BoundedOutcome:
     """Executa um braço com prazo global, inclusive spawn, setup e teardown.
 
     Um resultado só pode ser publicado após o worker reportar conclusão.
@@ -152,6 +160,9 @@ def run_bounded(func, *args, budget_s: float, start_method: str = 'spawn', **kwa
                     # monotonic é compartilhado pelo SO entre os processos.
                     close_phase(max(budget.started_at, min(msg[2], time.monotonic())))
                     last_phase = msg[1]
+                elif msg[0] == 'progress':
+                    if on_progress is not None:
+                        on_progress(msg[1])
                 elif msg[0] == 'result':
                     final_status = 'COMPLETED'
                     final_value = msg[1]

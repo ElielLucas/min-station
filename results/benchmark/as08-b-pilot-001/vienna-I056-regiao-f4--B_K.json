@@ -1,0 +1,33 @@
+{
+  "arm": "B_K",
+  "case": {
+    "graph_source": "vienna",
+    "manifest_name": "vienna-I056-regiao-f4.txt",
+    "name": "vienna-I056-regiao-f4",
+    "raw_graph_id": "vienna:I056",
+    "source_sha256": "645da5115a0eeaa6fba9eeae9f4942aebecfa66c4bcbc7aaec2bd0c994eb0ccc",
+    "split": "desenvolvimento"
+  },
+  "global_lower_bound": null,
+  "lp_numeric_value": null,
+  "plan_sha256": "6ecc0dfea455e4d9858d96a563d0dd28017928b096f8538c4657236714ee78eb",
+  "reason": "Prazo global 300s esgotado na fase solve",
+  "schema": "AS08-B-PILOT-RESULT-v1",
+  "status": "TIMEOUT_SOLVER",
+  "wall_phases_s": {
+    "k_c1": 0.0005078440299257636,
+    "k_c2": 0.39428823394700885,
+    "k_c4_dm": 0.0023638689890503883,
+    "k_canonicalize": 0.015872313058935106,
+    "k_neighborhoods": 0.17825766105670482,
+    "k_preparation": 8.40689754113555e-05,
+    "k_validation_bitset_v2": 2.070433908025734,
+    "k_validator_setup": 0.1031370279379189,
+    "model_build": 7.563293911516666e-05,
+    "preparation": 0.748536595958285,
+    "solve": 295.4598148720106,
+    "startup": 1.0278003830462694,
+    "supervisor_shutdown": 0.014977522077970207
+  },
+  "wall_total_s": 300.0161557859974
+}

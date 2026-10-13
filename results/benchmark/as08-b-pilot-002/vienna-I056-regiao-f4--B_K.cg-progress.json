@@ -1,0 +1,157 @@
+{
+  "arm": "B_K",
+  "case": {
+    "graph_source": "vienna",
+    "manifest_name": "vienna-I056-regiao-f4.txt",
+    "name": "vienna-I056-regiao-f4",
+    "raw_graph_id": "vienna:I056",
+    "source_sha256": "645da5115a0eeaa6fba9eeae9f4942aebecfa66c4bcbc7aaec2bd0c994eb0ccc",
+    "split": "desenvolvimento"
+  },
+  "classification": "DIAGNOSTIC_ONLY",
+  "events": [
+    {
+      "K_count": 101,
+      "K_sha256": "64d3500a49c52bbf3ea9a3ffd718711c2e6a809585d7f91db311ef44a3606796",
+      "elapsed_seconds": 4.057421542936936,
+      "event": "INPUT_READY",
+      "instance_sha256": "645da5115a0eeaa6fba9eeae9f4942aebecfa66c4bcbc7aaec2bd0c994eb0ccc",
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "budget_seconds": 294.94250314403325,
+      "certified_global_lb": null,
+      "columns": 0,
+      "completed_iterations": 0,
+      "elapsed_seconds": 9.155948646366596e-06,
+      "event": "CG_STARTED",
+      "planned_iterations": 100,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "certified_global_lb": null,
+      "columns": 0,
+      "completed_iterations": 0,
+      "elapsed_seconds": 8.892302867025137e-05,
+      "event": "BUILD_RMP",
+      "iteration": 1,
+      "row_estimate": 176,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "certified_global_lb": null,
+      "columns": 0,
+      "completed_iterations": 0,
+      "elapsed_seconds": 8.001610729959793,
+      "event": "SOLVING_RMP",
+      "iteration": 1,
+      "rmp_nnz": 28057,
+      "rmp_rows": 176,
+      "rmp_variables": 2041,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "artificial_sum": 50.0,
+      "certified_global_lb": null,
+      "columns": 0,
+      "completed_iterations": 0,
+      "elapsed_seconds": 8.092501007020473,
+      "event": "RMP_SOLVED",
+      "feasible_lp_upper_bound": null,
+      "iteration": 1,
+      "rmp_nnz": 28057,
+      "rmp_objective_with_artificials": 996008.5,
+      "rmp_rows": 176,
+      "rmp_status": "OPTIMAL",
+      "schema": "AS08-CG-PROGRESS-v1",
+      "solve_seconds": 0.09018160600680858
+    },
+    {
+      "certified_global_lb": null,
+      "columns": 0,
+      "completed_iterations": 0,
+      "elapsed_seconds": 8.092576791997999,
+      "event": "PRICING",
+      "iteration": 1,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "certified_global_lb": null,
+      "columns": 0,
+      "completed_iterations": 0,
+      "elapsed_seconds": 199.8148556239903,
+      "event": "PRICING_FINISHED",
+      "iteration": 1,
+      "negative_candidates": 625,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "added_columns": 200,
+      "artificial_sum": 50.0,
+      "certified_global_lb": null,
+      "columns": 200,
+      "completed_iterations": 1,
+      "elapsed_seconds": 199.81494430697057,
+      "event": "ITERATION_COMPLETE",
+      "feasible_lp_upper_bound": null,
+      "iteration": 1,
+      "negative_candidates": 625,
+      "rmp_objective_with_artificials": 996008.5,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "certified_global_lb": null,
+      "columns": 200,
+      "completed_iterations": 1,
+      "elapsed_seconds": 199.81498854304664,
+      "event": "BUILD_RMP",
+      "iteration": 2,
+      "row_estimate": 2979,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "certified_global_lb": null,
+      "columns": 200,
+      "completed_iterations": 1,
+      "elapsed_seconds": 207.67990392295178,
+      "event": "SOLVING_RMP",
+      "iteration": 2,
+      "rmp_nnz": 31463,
+      "rmp_rows": 379,
+      "rmp_variables": 2241,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "artificial_sum": 34.0,
+      "certified_global_lb": null,
+      "columns": 200,
+      "completed_iterations": 1,
+      "elapsed_seconds": 207.7472074140096,
+      "event": "RMP_SOLVED",
+      "feasible_lp_upper_bound": null,
+      "iteration": 2,
+      "rmp_nnz": 31463,
+      "rmp_objective_with_artificials": 677304.7916666666,
+      "rmp_rows": 379,
+      "rmp_status": "OPTIMAL",
+      "schema": "AS08-CG-PROGRESS-v1",
+      "solve_seconds": 0.06639407807961106
+    },
+    {
+      "certified_global_lb": null,
+      "columns": 200,
+      "completed_iterations": 1,
+      "elapsed_seconds": 207.74728151899762,
+      "event": "PRICING",
+      "iteration": 2,
+      "schema": "AS08-CG-PROGRESS-v1"
+    }
+  ],
+  "outcome": {
+    "arm_status": "TIMEOUT_SOLVER",
+    "supervisor_status": "TIMEOUT_SOLVER",
+    "wall_total_s": 300.0121434519533
+  },
+  "plan_sha256": "6ecc0dfea455e4d9858d96a563d0dd28017928b096f8538c4657236714ee78eb",
+  "schema": "AS08-B-PILOT-PROGRESS-v1"
+}

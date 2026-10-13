@@ -1,0 +1,48 @@
+{
+ "instance": "vienna-I056-regiao-f4",
+ "variant": "legacy",
+ "budget_s": 240.0,
+ "wall_s": 262.11810398392845,
+ "result": {
+  "schema": "AS08-CG-v1",
+  "status": "TIME_LIMIT",
+  "rmp_status": "OPTIMAL",
+  "solver_backend": "gurobi",
+  "iterations": [
+   {
+    "iter": 1,
+    "rmp_objective_with_artificials": 996008.5,
+    "artificial_sum": 50.0,
+    "columns": 0,
+    "rows": 176,
+    "nnz": 28057,
+    "solve_s": 0.11954605299979448,
+    "physical_lp_ub": null,
+    "global_lower_bound": null,
+    "negative_candidate_count": 625,
+    "added_columns": 200
+   }
+  ],
+  "n_iterations": 1,
+  "columns": 200,
+  "rmp_objective": 996008.5,
+  "rmp_artificial_sum": 50.0,
+  "global_lower_bound": null,
+  "feasible_lp_upper_bound": null,
+  "elapsed_seconds": 247.94314245099667,
+  "classification": "EXPLORATORY_NOT_SCIENTIFICALLY_HOMOLOGATED"
+ },
+ "last_event": {
+  "schema": "AS08-CG-PROGRESS-v1",
+  "event": "CG_FINISHED",
+  "elapsed_seconds": 247.9431462319335,
+  "columns": 200,
+  "completed_iterations": 1,
+  "certified_global_lb": null,
+  "status": "TIME_LIMIT",
+  "n_iterations": 1,
+  "rmp_objective_with_artificials": 996008.5,
+  "feasible_lp_upper_bound": null
+ },
+ "n_events": 8
+}

@@ -1,0 +1,62 @@
+{
+  "audited_certificates": [
+    "mapf-room-32-32-4-m10-f8",
+    "puc-cc9-2p-seed-r1",
+    "vienna-I056-regiao-f4"
+  ],
+  "cases": [
+    {
+      "audited": true,
+      "b_global_lb_numeric_for_display": 0.5999999999999949,
+      "b_global_lb_rational": "59999999999999491/100000000000000000",
+      "b_lp_optimal": null,
+      "b_primal_upper_bound": 15.04719357524596,
+      "b_status": "CAP_EXCEEDED",
+      "b_wall_s": 73.70002200000454,
+      "case": "mapf-room-32-32-4-m10-f8",
+      "certified_gain_absolute": -12.600000000000001,
+      "certified_gain_fraction": -0.9545454545454549,
+      "graph_source": "mapf",
+      "material_gain_gt_1pct": false,
+      "u_lp_numeric": 13.199999999999996,
+      "u_wall_s": 1.3354872660711408
+    },
+    {
+      "audited": true,
+      "b_global_lb_numeric_for_display": 19.26804509445587,
+      "b_global_lb_rational": "96340225472279353089/5000000000000000000",
+      "b_lp_optimal": null,
+      "b_primal_upper_bound": 30.520409398739883,
+      "b_status": "CAP_EXCEEDED",
+      "b_wall_s": 34.11867990507744,
+      "case": "puc-cc9-2p-seed-r1",
+      "certified_gain_absolute": -7.758740619829833,
+      "certified_gain_fraction": -0.2870759661119728,
+      "graph_source": "puc",
+      "material_gain_gt_1pct": false,
+      "u_lp_numeric": 27.026785714285705,
+      "u_wall_s": 1.192699859966524
+    },
+    {
+      "audited": true,
+      "b_global_lb_numeric_for_display": 2.465351575778363,
+      "b_global_lb_rational": "246535157577836291818441352740321/100000000000000000000000000000000",
+      "b_lp_optimal": null,
+      "b_primal_upper_bound": 13.994269129858392,
+      "b_status": "CAP_EXCEEDED",
+      "b_wall_s": 41.33272735995706,
+      "case": "vienna-I056-regiao-f4",
+      "certified_gain_absolute": -6.034648424221635,
+      "certified_gain_fraction": -0.709958638143722,
+      "graph_source": "vienna",
+      "material_gain_gt_1pct": false,
+      "u_lp_numeric": 8.499999999999998,
+      "u_wall_s": 22.246825829031877
+    }
+  ],
+  "classification": "EXPLORATORY_NOT_SCIENTIFICALLY_HOMOLOGATED",
+  "decision": "INCONCLUSIVE_NO_MATERIAL_CERTIFIED_GAIN",
+  "gain_threshold_fraction": 0.01,
+  "schema": "AS08-LB-PROBE-ANALYSIS-v1",
+  "scientific_gate": "PENDING"
+}

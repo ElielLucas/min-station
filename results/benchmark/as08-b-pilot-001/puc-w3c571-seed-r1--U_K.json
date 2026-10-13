@@ -1,0 +1,43 @@
+{
+  "K_count": 2284,
+  "K_sha256": "42b9f6336b56241a1318326d5df68d04ec1f1c8a427b74b7462eea116766e23f",
+  "arm": "U_K",
+  "case": {
+    "graph_source": "puc",
+    "manifest_name": "puc-w3c571-seed-r1.txt",
+    "name": "puc-w3c571-seed-r1",
+    "raw_graph_id": "puc:w3c571",
+    "source_sha256": "e85ced7daef779e6e88f302ee9d80a467129f448a7ac5c6ce465d64b963300fd",
+    "split": "desenvolvimento"
+  },
+  "case_name": "puc-w3c571-seed-r1.txt",
+  "global_lower_bound": null,
+  "input_load_s": 0.249570501036942,
+  "instance_sha256": "e85ced7daef779e6e88f302ee9d80a467129f448a7ac5c6ce465d64b963300fd",
+  "k_validated": true,
+  "lp_numeric_value": 432.9336108676597,
+  "n_constraints": 14275,
+  "n_variables": 24553,
+  "plan_sha256": "6ecc0dfea455e4d9858d96a563d0dd28017928b096f8538c4657236714ee78eb",
+  "reachability_s": 0.022738558938726783,
+  "schema": "AS08-B-PILOT-RESULT-v1",
+  "solver_seconds": 1.777296781539917,
+  "status": "OPTIMAL_NUMERIC",
+  "wall_phases_s": {
+    "k_c1": 0.003321924014016986,
+    "k_c2": 29.726814490975812,
+    "k_c4_dm": 0.011874570976942778,
+    "k_canonicalize": 0.009608455002307892,
+    "k_neighborhoods": 0.011701226001605392,
+    "k_preparation": 5.555606912821531e-05,
+    "k_validation_bitset_v2": 6.4565353450598195,
+    "k_validator_setup": 0.010431903996504843,
+    "model_build": 1.4264274690067396,
+    "preparation": 0.2723490019561723,
+    "solve": 2.1207491809036583,
+    "startup": 0.694492332986556,
+    "supervisor_shutdown": 0.014985207933932543,
+    "validation": 0.03443097707349807
+  },
+  "wall_total_s": 40.79378350393381
+}

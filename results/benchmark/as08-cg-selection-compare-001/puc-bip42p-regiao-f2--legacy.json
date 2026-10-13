@@ -1,0 +1,100 @@
+{
+ "instance": "puc-bip42p-regiao-f2",
+ "variant": "legacy",
+ "budget_s": 240.0,
+ "wall_s": 94.5981448169332,
+ "result": {
+  "schema": "AS08-CG-v1",
+  "status": "CAP_EXCEEDED",
+  "rmp_status": "OPTIMAL",
+  "solver_backend": "gurobi",
+  "iterations": [
+   {
+    "iter": 1,
+    "rmp_objective_with_artificials": 2402031.706051941,
+    "artificial_sum": 200.0,
+    "columns": 0,
+    "rows": 500,
+    "nnz": 4282,
+    "solve_s": 0.12706854101270437,
+    "physical_lp_ub": null,
+    "global_lower_bound": null,
+    "negative_candidate_count": 10000,
+    "added_columns": 200
+   },
+   {
+    "iter": 2,
+    "rmp_objective_with_artificials": 2353993.326564747,
+    "artificial_sum": 196.0,
+    "columns": 200,
+    "rows": 870,
+    "nnz": 23722,
+    "solve_s": 0.19549119705334306,
+    "physical_lp_ub": null,
+    "global_lower_bound": null,
+    "negative_candidate_count": 10000,
+    "added_columns": 200
+   },
+   {
+    "iter": 3,
+    "rmp_objective_with_artificials": 2305954.2698598546,
+    "artificial_sum": 192.0,
+    "columns": 400,
+    "rows": 1211,
+    "nnz": 40335,
+    "solve_s": 0.32355908292811364,
+    "physical_lp_ub": null,
+    "global_lower_bound": null,
+    "negative_candidate_count": 10000,
+    "added_columns": 200
+   },
+   {
+    "iter": 4,
+    "rmp_objective_with_artificials": 2257915.757411529,
+    "artificial_sum": 188.0,
+    "columns": 600,
+    "rows": 1563,
+    "nnz": 57916,
+    "solve_s": 0.3838509490014985,
+    "physical_lp_ub": null,
+    "global_lower_bound": null,
+    "negative_candidate_count": 10000,
+    "added_columns": 200
+   },
+   {
+    "iter": 5,
+    "rmp_objective_with_artificials": 2209876.724992232,
+    "artificial_sum": 184.0,
+    "columns": 800,
+    "rows": 1914,
+    "nnz": 76172,
+    "solve_s": 0.5581714279251173,
+    "physical_lp_ub": null,
+    "global_lower_bound": null,
+    "negative_candidate_count": 10000,
+    "added_columns": 200
+   }
+  ],
+  "n_iterations": 5,
+  "columns": 1000,
+  "rmp_objective": 2209876.724992232,
+  "rmp_artificial_sum": 184.0,
+  "global_lower_bound": null,
+  "feasible_lp_upper_bound": null,
+  "elapsed_seconds": 94.43188129097689,
+  "classification": "EXPLORATORY_NOT_SCIENTIFICALLY_HOMOLOGATED"
+ },
+ "last_event": {
+  "schema": "AS08-CG-PROGRESS-v1",
+  "event": "CG_FINISHED",
+  "elapsed_seconds": 94.43188746308442,
+  "columns": 1000,
+  "completed_iterations": 5,
+  "certified_global_lb": null,
+  "status": "CAP_EXCEEDED",
+  "n_iterations": 5,
+  "rmp_objective_with_artificials": 2209876.724992232,
+  "feasible_lp_upper_bound": null
+ },
+ "n_events": 32
+}

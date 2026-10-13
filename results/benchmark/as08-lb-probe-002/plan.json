@@ -1,0 +1,69 @@
+{
+  "arms": [
+    "U_K",
+    "B_K"
+  ],
+  "budget_seconds_per_arm": 300,
+  "cases": [
+    {
+      "graph_source": "mapf",
+      "manifest_name": "mapf-room-32-32-4-m10-f8.txt",
+      "name": "mapf-room-32-32-4-m10-f8",
+      "raw_graph_id": "mapf:map:raw-data/mapf/maps/room-32-32-4.map",
+      "source_sha256": "78be3e1261f31f4e583d0808bdfc9c93d9c9eb335d86d13b059ce428af5f303f",
+      "split": "desenvolvimento"
+    },
+    {
+      "graph_source": "puc",
+      "manifest_name": "puc-cc9-2p-seed-r1.txt",
+      "name": "puc-cc9-2p-seed-r1",
+      "raw_graph_id": "puc:cc9-2p",
+      "source_sha256": "0312f43552cddc102081d9937465429e29797ddb86cf85a6871752d50aeec88c",
+      "split": "desenvolvimento"
+    },
+    {
+      "graph_source": "vienna",
+      "manifest_name": "vienna-I056-regiao-f4.txt",
+      "name": "vienna-I056-regiao-f4",
+      "raw_graph_id": "vienna:I056",
+      "source_sha256": "645da5115a0eeaa6fba9eeae9f4942aebecfa66c4bcbc7aaec2bd0c994eb0ccc",
+      "split": "desenvolvimento"
+    }
+  ],
+  "cg": {
+    "intermediate_cert_budget_s": 15.0,
+    "intermediate_cert_every": 5,
+    "intermediate_cert_max_attempts": 20,
+    "intermediate_cert_min_remaining_s": 20.0,
+    "iterations": 100,
+    "max_columns": 5000,
+    "max_rows": 60000,
+    "per_round": 200,
+    "rational_certificate": true,
+    "selection": "matching",
+    "tolerance": 1e-07
+  },
+  "cg_implementation": "AS08-CG-v2: linhas RMP contadas exatamente (pares B3 distintos), pricing exato em todas as origens a cada iteração",
+  "classification": "EXPLORATORY_BOUND_STRENGTH_ONLY",
+  "instance_manifest_sha256": "218c490bd3ba3e34740bc23f13b07ba864f0d624755aca9b992a8f23f6afad08",
+  "parent_file": "results/benchmark/as05-prospective-plan-v1.json",
+  "parent_sha256": "339c4559333747fb10fb9132aa90368398ae32bcb7b50955a2bd23cd8e5506cc",
+  "protocol": [
+    "Three AS05 development cases, frozen order, six independently bounded arms",
+    "COMP+K LP numeric baseline; B+K dual rational certified global LB",
+    "Never compare restricted master objective to complete LP",
+    "No certificate without exact pricing of all sources and independent audit",
+    "Timeout can preserve last complete certificate in immutable sidecar",
+    "A global LB strictly exceeding COMP+K establishes LP strengthening",
+    "No convergence implies no B LP objective and no MIP conclusion",
+    "Development evidence is exploratory: no scientific promotion"
+  ],
+  "schema": "AS08-LB-PROBE-PLAN-v1",
+  "scientific_gate": "NO_AUTOMATIC_PROMOTION",
+  "solver": {
+    "backend": "gurobi",
+    "mode": "LP",
+    "seed": 42,
+    "threads": 4
+  }
+}

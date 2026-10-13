@@ -98,7 +98,10 @@ def _validated_instance(instance: Instance):
     if not isinstance(instance.r, int) or instance.r < 1:
         raise ValueError("Autonomia r deve ser inteiro positivo")
     arcs = instance.A_r
-    if len(arcs) != len(set(arcs)) or any(u == v or u not in V or v not in V for u, v in arcs):
+    # Pertinência em conjunto: com V em tupla a checagem era O(|A_r|·|V|).
+    vertices = set(V)
+    if len(arcs) != len(set(arcs)) or any(u == v or u not in vertices or v not in vertices
+                                          for u, v in arcs):
         raise ValueError("A_r tem duplicação, laço ou vértice desconhecido")
     incoming = {v: [] for v in V}
     outgoing = {v: [] for v in V}
@@ -125,7 +128,8 @@ def _partition(S, groups):
 
 def _cuts(V, K):
     cuts = tuple(frozenset(c) for c in K)
-    if any(not c <= set(V) for c in cuts):
+    vertices = set(V)
+    if any(not c <= vertices for c in cuts):
         raise ValueError("Corte K com vértice desconhecido")
     return tuple(sorted(set(cuts), key=lambda c: tuple(sorted(c))))
 

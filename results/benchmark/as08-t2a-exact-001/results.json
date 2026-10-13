@@ -1,0 +1,1585 @@
+{
+  "backend": "gurobi",
+  "cases": [
+    {
+      "K_count": 1,
+      "K_sha256": "14cb5a69e9c3cb9592950817a04906f91dc40f8378d1195990ddd051308ed073",
+      "case_sha256": "3bce6aa0b118c24298969295aca06770d852bd7befea97f4daafda023e770353",
+      "checks": {
+        "no_k": {
+          "LP": {
+            "A": {
+              "backend": "gurobi",
+              "objective": 1.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            },
+            "B": {
+              "backend": "gurobi",
+              "objective": 1.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            },
+            "U": {
+              "backend": "gurobi",
+              "objective": 1.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            }
+          },
+          "fixed_y_binary": 16,
+          "fixed_y_fractional": 12,
+          "mip_optimum": {
+            "backend": "gurobi",
+            "objective": 1.0,
+            "provenance": "MIP-numérico",
+            "status": "OPTIMAL"
+          },
+          "physical_optimum": 1,
+          "physical_oracle": 16
+        },
+        "with_k": {
+          "LP": {
+            "A": {
+              "backend": "gurobi",
+              "objective": 1.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            },
+            "B": {
+              "backend": "gurobi",
+              "objective": 1.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            },
+            "U": {
+              "backend": "gurobi",
+              "objective": 1.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            }
+          },
+          "fixed_y_binary": 16,
+          "fixed_y_fractional": 12,
+          "mip_optimum": {
+            "backend": "gurobi",
+            "objective": 1.0,
+            "provenance": "MIP-numérico",
+            "status": "OPTIMAL"
+          },
+          "physical_optimum": 1,
+          "physical_oracle": 16
+        }
+      },
+      "counterexamples": [],
+      "instance": {
+        "A_r": [
+          [
+            "a",
+            "c"
+          ],
+          [
+            "b",
+            "c"
+          ],
+          [
+            "c",
+            "a"
+          ],
+          [
+            "c",
+            "b"
+          ],
+          [
+            "c",
+            "d"
+          ],
+          [
+            "d",
+            "c"
+          ]
+        ],
+        "S": [
+          "a",
+          "b"
+        ],
+        "T": [
+          "c",
+          "d"
+        ],
+        "V": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "r": 1
+      },
+      "model_sizes": {
+        "no_k": {
+          "A": {
+            "nnz": 74,
+            "rows": 30,
+            "variables": 28
+          },
+          "B": {
+            "nnz": 20,
+            "rows": 12,
+            "variables": 8
+          },
+          "U": {
+            "nnz": 32,
+            "rows": 12,
+            "variables": 10
+          }
+        },
+        "with_k": {
+          "A": {
+            "nnz": 75,
+            "rows": 31,
+            "variables": 28
+          },
+          "B": {
+            "nnz": 21,
+            "rows": 13,
+            "variables": 8
+          },
+          "U": {
+            "nnz": 33,
+            "rows": 13,
+            "variables": 10
+          }
+        }
+      },
+      "name": "e1-b4-star",
+      "path_count": 4,
+      "per_source_paths": {
+        "a": 2,
+        "b": 2
+      },
+      "status": "PASS"
+    },
+    {
+      "K_count": 1,
+      "K_sha256": "5bec012315ca3a38ecaa0a3590cd998633dfc994f664f505398d7f11590eefa3",
+      "case_sha256": "30ecd77b0ea13a6b340802994fe2bf71ea0ad3dd0c30d85f6bd8301106407691",
+      "checks": {
+        "no_k": {
+          "LP": {
+            "A": {
+              "backend": "gurobi",
+              "objective": 1.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            },
+            "B": {
+              "backend": "gurobi",
+              "objective": 1.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            },
+            "U": {
+              "backend": "gurobi",
+              "objective": 0.5,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            }
+          },
+          "fixed_y_binary": 32,
+          "fixed_y_fractional": 12,
+          "mip_optimum": {
+            "backend": "gurobi",
+            "objective": 1.0,
+            "provenance": "MIP-numérico",
+            "status": "OPTIMAL"
+          },
+          "physical_optimum": 1,
+          "physical_oracle": 32
+        },
+        "with_k": {
+          "LP": {
+            "A": {
+              "backend": "gurobi",
+              "objective": 1.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            },
+            "B": {
+              "backend": "gurobi",
+              "objective": 1.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            },
+            "U": {
+              "backend": "gurobi",
+              "objective": 1.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            }
+          },
+          "fixed_y_binary": 32,
+          "fixed_y_fractional": 12,
+          "mip_optimum": {
+            "backend": "gurobi",
+            "objective": 1.0,
+            "provenance": "MIP-numérico",
+            "status": "OPTIMAL"
+          },
+          "physical_optimum": 1,
+          "physical_oracle": 32
+        }
+      },
+      "counterexamples": [],
+      "instance": {
+        "A_r": [
+          [
+            "h",
+            "s1"
+          ],
+          [
+            "h",
+            "s2"
+          ],
+          [
+            "h",
+            "t1"
+          ],
+          [
+            "h",
+            "t2"
+          ],
+          [
+            "s1",
+            "h"
+          ],
+          [
+            "s1",
+            "t2"
+          ],
+          [
+            "s2",
+            "h"
+          ],
+          [
+            "t1",
+            "h"
+          ],
+          [
+            "t2",
+            "h"
+          ],
+          [
+            "t2",
+            "s1"
+          ]
+        ],
+        "S": [
+          "s1",
+          "s2"
+        ],
+        "T": [
+          "t1",
+          "t2"
+        ],
+        "V": [
+          "h",
+          "s1",
+          "s2",
+          "t1",
+          "t2"
+        ],
+        "r": 1
+      },
+      "model_sizes": {
+        "no_k": {
+          "A": {
+            "nnz": 101,
+            "rows": 37,
+            "variables": 39
+          },
+          "B": {
+            "nnz": 33,
+            "rows": 14,
+            "variables": 12
+          },
+          "U": {
+            "nnz": 50,
+            "rows": 15,
+            "variables": 15
+          }
+        },
+        "with_k": {
+          "A": {
+            "nnz": 102,
+            "rows": 38,
+            "variables": 39
+          },
+          "B": {
+            "nnz": 34,
+            "rows": 15,
+            "variables": 12
+          },
+          "U": {
+            "nnz": 51,
+            "rows": 16,
+            "variables": 15
+          }
+        }
+      },
+      "name": "e2-disaggregated-hub",
+      "path_count": 7,
+      "per_source_paths": {
+        "s1": 4,
+        "s2": 3
+      },
+      "status": "PASS"
+    },
+    {
+      "K_count": 2,
+      "K_sha256": "3272a4f9b6bedf89ce6b40f58fc183bf94446290bed27e1a933e2c8e2589f9de",
+      "case_sha256": "18ef8aad4fd660a08df8419c745bb75f2d580784f48c283b5406fb4df5da629d",
+      "checks": {
+        "no_k": {
+          "LP": {
+            "A": {
+              "backend": "gurobi",
+              "objective": 0.5,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            },
+            "B": {
+              "backend": "gurobi",
+              "objective": 0.5,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            },
+            "U": {
+              "backend": "gurobi",
+              "objective": 0.5,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            }
+          },
+          "fixed_y_binary": 32,
+          "fixed_y_fractional": 12,
+          "mip_optimum": {
+            "backend": "gurobi",
+            "objective": 1.0,
+            "provenance": "MIP-numérico",
+            "status": "OPTIMAL"
+          },
+          "physical_optimum": 1,
+          "physical_oracle": 32
+        },
+        "with_k": {
+          "LP": {
+            "A": {
+              "backend": "gurobi",
+              "objective": 1.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            },
+            "B": {
+              "backend": "gurobi",
+              "objective": 1.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            },
+            "U": {
+              "backend": "gurobi",
+              "objective": 1.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            }
+          },
+          "fixed_y_binary": 32,
+          "fixed_y_fractional": 12,
+          "mip_optimum": {
+            "backend": "gurobi",
+            "objective": 1.0,
+            "provenance": "MIP-numérico",
+            "status": "OPTIMAL"
+          },
+          "physical_optimum": 1,
+          "physical_oracle": 32
+        }
+      },
+      "counterexamples": [],
+      "instance": {
+        "A_r": [
+          [
+            "a",
+            "c"
+          ],
+          [
+            "a",
+            "x"
+          ],
+          [
+            "b",
+            "c"
+          ],
+          [
+            "b",
+            "x"
+          ],
+          [
+            "c",
+            "a"
+          ],
+          [
+            "c",
+            "b"
+          ],
+          [
+            "d",
+            "x"
+          ],
+          [
+            "x",
+            "a"
+          ],
+          [
+            "x",
+            "b"
+          ],
+          [
+            "x",
+            "d"
+          ]
+        ],
+        "S": [
+          "a",
+          "b"
+        ],
+        "T": [
+          "c",
+          "d"
+        ],
+        "V": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "x"
+        ],
+        "r": 1
+      },
+      "model_sizes": {
+        "no_k": {
+          "A": {
+            "nnz": 101,
+            "rows": 37,
+            "variables": 39
+          },
+          "B": {
+            "nnz": 40,
+            "rows": 14,
+            "variables": 13
+          },
+          "U": {
+            "nnz": 50,
+            "rows": 15,
+            "variables": 15
+          }
+        },
+        "with_k": {
+          "A": {
+            "nnz": 104,
+            "rows": 39,
+            "variables": 39
+          },
+          "B": {
+            "nnz": 43,
+            "rows": 16,
+            "variables": 13
+          },
+          "U": {
+            "nnz": 53,
+            "rows": 17,
+            "variables": 15
+          }
+        }
+      },
+      "name": "e3-lp-gap",
+      "path_count": 8,
+      "per_source_paths": {
+        "a": 4,
+        "b": 4
+      },
+      "status": "PASS"
+    },
+    {
+      "K_count": 0,
+      "K_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "case_sha256": "d7504756ff209c5c0bb65432410f12decb2be6eafb0178cf5e9eaf5b2709e283",
+      "checks": {
+        "no_k": {
+          "LP": {
+            "A": {
+              "backend": "gurobi",
+              "objective": 0.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            },
+            "B": {
+              "backend": "gurobi",
+              "objective": 0.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            },
+            "U": {
+              "backend": "gurobi",
+              "objective": 0.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            }
+          },
+          "fixed_y_binary": 4,
+          "fixed_y_fractional": 5,
+          "mip_optimum": {
+            "backend": "gurobi",
+            "objective": 0.0,
+            "provenance": "MIP-numérico",
+            "status": "OPTIMAL"
+          },
+          "physical_optimum": 0,
+          "physical_oracle": 4
+        },
+        "with_k": {
+          "LP": {
+            "A": {
+              "backend": "gurobi",
+              "objective": 0.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            },
+            "B": {
+              "backend": "gurobi",
+              "objective": 0.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            },
+            "U": {
+              "backend": "gurobi",
+              "objective": 0.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            }
+          },
+          "fixed_y_binary": 4,
+          "fixed_y_fractional": 5,
+          "mip_optimum": {
+            "backend": "gurobi",
+            "objective": 0.0,
+            "provenance": "MIP-numérico",
+            "status": "OPTIMAL"
+          },
+          "physical_optimum": 0,
+          "physical_oracle": 4
+        }
+      },
+      "counterexamples": [],
+      "instance": {
+        "A_r": [
+          [
+            "s",
+            "u"
+          ],
+          [
+            "u",
+            "s"
+          ]
+        ],
+        "S": [
+          "s"
+        ],
+        "T": [
+          "s"
+        ],
+        "V": [
+          "s",
+          "u"
+        ],
+        "r": 1
+      },
+      "model_sizes": {
+        "no_k": {
+          "A": {
+            "nnz": 18,
+            "rows": 9,
+            "variables": 8
+          },
+          "B": {
+            "nnz": 3,
+            "rows": 3,
+            "variables": 3
+          },
+          "U": {
+            "nnz": 10,
+            "rows": 6,
+            "variables": 4
+          }
+        },
+        "with_k": {
+          "A": {
+            "nnz": 18,
+            "rows": 9,
+            "variables": 8
+          },
+          "B": {
+            "nnz": 3,
+            "rows": 3,
+            "variables": 3
+          },
+          "U": {
+            "nnz": 10,
+            "rows": 6,
+            "variables": 4
+          }
+        }
+      },
+      "name": "e4-stay-only",
+      "path_count": 1,
+      "per_source_paths": {
+        "s": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "K_count": 0,
+      "K_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "case_sha256": "52cd04cc4fd1f5d4ddc1dcd171a958ddae06dd6be816d06d4d8e3530fae781e4",
+      "checks": {
+        "no_k": {
+          "LP": {
+            "A": {
+              "backend": "gurobi",
+              "objective": 0.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            },
+            "B": {
+              "backend": "gurobi",
+              "objective": 0.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            },
+            "U": {
+              "backend": "gurobi",
+              "objective": 0.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            }
+          },
+          "fixed_y_binary": 8,
+          "fixed_y_fractional": 12,
+          "mip_optimum": {
+            "backend": "gurobi",
+            "objective": 0.0,
+            "provenance": "MIP-numérico",
+            "status": "OPTIMAL"
+          },
+          "physical_optimum": 0,
+          "physical_oracle": 8
+        },
+        "with_k": {
+          "LP": {
+            "A": {
+              "backend": "gurobi",
+              "objective": 0.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            },
+            "B": {
+              "backend": "gurobi",
+              "objective": 0.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            },
+            "U": {
+              "backend": "gurobi",
+              "objective": 0.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            }
+          },
+          "fixed_y_binary": 8,
+          "fixed_y_fractional": 12,
+          "mip_optimum": {
+            "backend": "gurobi",
+            "objective": 0.0,
+            "provenance": "MIP-numérico",
+            "status": "OPTIMAL"
+          },
+          "physical_optimum": 0,
+          "physical_oracle": 8
+        }
+      },
+      "counterexamples": [],
+      "instance": {
+        "A_r": [
+          [
+            "a",
+            "v"
+          ],
+          [
+            "b",
+            "v"
+          ],
+          [
+            "v",
+            "a"
+          ],
+          [
+            "v",
+            "b"
+          ]
+        ],
+        "S": [
+          "a",
+          "v"
+        ],
+        "T": [
+          "v",
+          "b"
+        ],
+        "V": [
+          "a",
+          "b",
+          "v"
+        ],
+        "r": 1
+      },
+      "model_sizes": {
+        "no_k": {
+          "A": {
+            "nnz": 57,
+            "rows": 23,
+            "variables": 22
+          },
+          "B": {
+            "nnz": 14,
+            "rows": 9,
+            "variables": 7
+          },
+          "U": {
+            "nnz": 22,
+            "rows": 9,
+            "variables": 7
+          }
+        },
+        "with_k": {
+          "A": {
+            "nnz": 57,
+            "rows": 23,
+            "variables": 22
+          },
+          "B": {
+            "nnz": 14,
+            "rows": 9,
+            "variables": 7
+          },
+          "U": {
+            "nnz": 22,
+            "rows": 9,
+            "variables": 7
+          }
+        }
+      },
+      "name": "e5-origin-destination-swap",
+      "path_count": 4,
+      "per_source_paths": {
+        "a": 2,
+        "v": 2
+      },
+      "status": "PASS"
+    },
+    {
+      "K_count": 0,
+      "K_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "case_sha256": "2f6fa44d3bd4407e5d85d61300e663eed281374fe6f8cb4155136a7db2dab7a7",
+      "checks": {
+        "no_k": {
+          "LP": {
+            "A": {
+              "backend": "gurobi",
+              "objective": 0.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            },
+            "B": {
+              "backend": "gurobi",
+              "objective": 0.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            },
+            "U": {
+              "backend": "gurobi",
+              "objective": 0.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            }
+          },
+          "fixed_y_binary": 4,
+          "fixed_y_fractional": 5,
+          "mip_optimum": {
+            "backend": "gurobi",
+            "objective": 0.0,
+            "provenance": "MIP-numérico",
+            "status": "OPTIMAL"
+          },
+          "physical_optimum": 0,
+          "physical_oracle": 4
+        },
+        "with_k": {
+          "LP": {
+            "A": {
+              "backend": "gurobi",
+              "objective": 0.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            },
+            "B": {
+              "backend": "gurobi",
+              "objective": 0.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            },
+            "U": {
+              "backend": "gurobi",
+              "objective": 0.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            }
+          },
+          "fixed_y_binary": 4,
+          "fixed_y_fractional": 5,
+          "mip_optimum": {
+            "backend": "gurobi",
+            "objective": 0.0,
+            "provenance": "MIP-numérico",
+            "status": "OPTIMAL"
+          },
+          "physical_optimum": 0,
+          "physical_oracle": 4
+        }
+      },
+      "counterexamples": [],
+      "instance": {
+        "A_r": [
+          [
+            "s",
+            "t"
+          ],
+          [
+            "t",
+            "s"
+          ]
+        ],
+        "S": [
+          "s"
+        ],
+        "T": [
+          "t"
+        ],
+        "V": [
+          "s",
+          "t"
+        ],
+        "r": 1
+      },
+      "model_sizes": {
+        "no_k": {
+          "A": {
+            "nnz": 15,
+            "rows": 9,
+            "variables": 7
+          },
+          "B": {
+            "nnz": 3,
+            "rows": 4,
+            "variables": 3
+          },
+          "U": {
+            "nnz": 10,
+            "rows": 6,
+            "variables": 4
+          }
+        },
+        "with_k": {
+          "A": {
+            "nnz": 15,
+            "rows": 9,
+            "variables": 7
+          },
+          "B": {
+            "nnz": 3,
+            "rows": 4,
+            "variables": 3
+          },
+          "U": {
+            "nnz": 10,
+            "rows": 6,
+            "variables": 4
+          }
+        }
+      },
+      "name": "one-arc-direct",
+      "path_count": 1,
+      "per_source_paths": {
+        "s": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "K_count": 2,
+      "K_sha256": "ff1464ff6a7a4ded3fb671eb5a9c1919b8519c360fb8f15b9fc3f11e04e2ad34",
+      "case_sha256": "60e6922a1f973040e959d08ddc56c04ca2fdc08d24dbda07c7c9fbeca7350e96",
+      "checks": {
+        "no_k": {
+          "LP": {
+            "A": {
+              "backend": "gurobi",
+              "objective": 2.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            },
+            "B": {
+              "backend": "gurobi",
+              "objective": 2.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            },
+            "U": {
+              "backend": "gurobi",
+              "objective": 2.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            }
+          },
+          "fixed_y_binary": 16,
+          "fixed_y_fractional": 12,
+          "mip_optimum": {
+            "backend": "gurobi",
+            "objective": 2.0,
+            "provenance": "MIP-numérico",
+            "status": "OPTIMAL"
+          },
+          "physical_optimum": 2,
+          "physical_oracle": 16
+        },
+        "with_k": {
+          "LP": {
+            "A": {
+              "backend": "gurobi",
+              "objective": 2.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            },
+            "B": {
+              "backend": "gurobi",
+              "objective": 2.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            },
+            "U": {
+              "backend": "gurobi",
+              "objective": 2.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            }
+          },
+          "fixed_y_binary": 16,
+          "fixed_y_fractional": 12,
+          "mip_optimum": {
+            "backend": "gurobi",
+            "objective": 2.0,
+            "provenance": "MIP-numérico",
+            "status": "OPTIMAL"
+          },
+          "physical_optimum": 2,
+          "physical_oracle": 16
+        }
+      },
+      "counterexamples": [],
+      "instance": {
+        "A_r": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            "b",
+            "a"
+          ],
+          [
+            "b",
+            "c"
+          ],
+          [
+            "c",
+            "b"
+          ],
+          [
+            "c",
+            "d"
+          ],
+          [
+            "d",
+            "c"
+          ]
+        ],
+        "S": [
+          "a",
+          "b"
+        ],
+        "T": [
+          "c",
+          "d"
+        ],
+        "V": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "r": 1
+      },
+      "model_sizes": {
+        "no_k": {
+          "A": {
+            "nnz": 74,
+            "rows": 30,
+            "variables": 28
+          },
+          "B": {
+            "nnz": 22,
+            "rows": 12,
+            "variables": 8
+          },
+          "U": {
+            "nnz": 32,
+            "rows": 12,
+            "variables": 10
+          }
+        },
+        "with_k": {
+          "A": {
+            "nnz": 76,
+            "rows": 32,
+            "variables": 28
+          },
+          "B": {
+            "nnz": 24,
+            "rows": 14,
+            "variables": 8
+          },
+          "U": {
+            "nnz": 34,
+            "rows": 14,
+            "variables": 10
+          }
+        }
+      },
+      "name": "relay-line",
+      "path_count": 4,
+      "per_source_paths": {
+        "a": 2,
+        "b": 2
+      },
+      "status": "PASS"
+    },
+    {
+      "K_count": 0,
+      "K_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "case_sha256": "d6887a25f231a597f1744a67703a45f96a221867921b5b5af559e5ef914e9297",
+      "checks": {
+        "no_k": {
+          "LP": {
+            "A": {
+              "backend": "gurobi",
+              "objective": 0.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            },
+            "B": {
+              "backend": "gurobi",
+              "objective": 0.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            },
+            "U": {
+              "backend": "gurobi",
+              "objective": 0.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            }
+          },
+          "fixed_y_binary": 16,
+          "fixed_y_fractional": 12,
+          "mip_optimum": {
+            "backend": "gurobi",
+            "objective": 0.0,
+            "provenance": "MIP-numérico",
+            "status": "OPTIMAL"
+          },
+          "physical_optimum": 0,
+          "physical_oracle": 16
+        },
+        "with_k": {
+          "LP": {
+            "A": {
+              "backend": "gurobi",
+              "objective": 0.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            },
+            "B": {
+              "backend": "gurobi",
+              "objective": 0.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            },
+            "U": {
+              "backend": "gurobi",
+              "objective": 0.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            }
+          },
+          "fixed_y_binary": 16,
+          "fixed_y_fractional": 12,
+          "mip_optimum": {
+            "backend": "gurobi",
+            "objective": 0.0,
+            "provenance": "MIP-numérico",
+            "status": "OPTIMAL"
+          },
+          "physical_optimum": 0,
+          "physical_oracle": 16
+        }
+      },
+      "counterexamples": [],
+      "instance": {
+        "A_r": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            "a",
+            "c"
+          ],
+          [
+            "b",
+            "a"
+          ],
+          [
+            "b",
+            "c"
+          ],
+          [
+            "b",
+            "d"
+          ],
+          [
+            "c",
+            "a"
+          ],
+          [
+            "c",
+            "b"
+          ],
+          [
+            "c",
+            "d"
+          ],
+          [
+            "d",
+            "b"
+          ],
+          [
+            "d",
+            "c"
+          ]
+        ],
+        "S": [
+          "a",
+          "d"
+        ],
+        "T": [
+          "b",
+          "c"
+        ],
+        "V": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "r": 2
+      },
+      "model_sizes": {
+        "no_k": {
+          "A": {
+            "nnz": 90,
+            "rows": 30,
+            "variables": 36
+          },
+          "B": {
+            "nnz": 52,
+            "rows": 12,
+            "variables": 16
+          },
+          "U": {
+            "nnz": 48,
+            "rows": 12,
+            "variables": 14
+          }
+        },
+        "with_k": {
+          "A": {
+            "nnz": 90,
+            "rows": 30,
+            "variables": 36
+          },
+          "B": {
+            "nnz": 52,
+            "rows": 12,
+            "variables": 16
+          },
+          "U": {
+            "nnz": 48,
+            "rows": 12,
+            "variables": 14
+          }
+        }
+      },
+      "name": "autonomy-two",
+      "path_count": 12,
+      "per_source_paths": {
+        "a": 6,
+        "d": 6
+      },
+      "status": "PASS"
+    },
+    {
+      "K_count": 4,
+      "K_sha256": "f593535b9f78807cbecba75dc08eb3b9bbd0d4a7cb8bd8839e57f1f024c5eb04",
+      "case_sha256": "18da46a2c4ebbbcbb4a63cedbfcf210506e17ee2fd1a25ee8b1523017c95e991",
+      "checks": {
+        "no_k": {
+          "LP": {
+            "A": {
+              "backend": "gurobi",
+              "objective": null,
+              "provenance": "solver",
+              "status": "INFEASIBLE"
+            },
+            "B": {
+              "backend": "gurobi",
+              "objective": null,
+              "provenance": "solver",
+              "status": "INFEASIBLE"
+            },
+            "U": {
+              "backend": "gurobi",
+              "objective": null,
+              "provenance": "solver",
+              "status": "INFEASIBLE"
+            }
+          },
+          "fixed_y_binary": 16,
+          "fixed_y_fractional": 12,
+          "mip_optimum": {
+            "backend": "gurobi",
+            "objective": null,
+            "provenance": "solver",
+            "status": "INFEASIBLE"
+          },
+          "physical_optimum": null,
+          "physical_oracle": 16
+        },
+        "with_k": {
+          "LP": {
+            "A": {
+              "backend": "gurobi",
+              "objective": null,
+              "provenance": "solver",
+              "status": "INFEASIBLE"
+            },
+            "B": {
+              "backend": "gurobi",
+              "objective": null,
+              "provenance": "solver",
+              "status": "INFEASIBLE"
+            },
+            "U": {
+              "backend": "gurobi",
+              "objective": null,
+              "provenance": "solver",
+              "status": "INFEASIBLE"
+            }
+          },
+          "fixed_y_binary": 16,
+          "fixed_y_fractional": 12,
+          "mip_optimum": {
+            "backend": "gurobi",
+            "objective": null,
+            "provenance": "solver",
+            "status": "INFEASIBLE"
+          },
+          "physical_optimum": null,
+          "physical_oracle": 16
+        }
+      },
+      "counterexamples": [],
+      "instance": {
+        "A_r": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            "b",
+            "a"
+          ],
+          [
+            "c",
+            "d"
+          ],
+          [
+            "d",
+            "c"
+          ]
+        ],
+        "S": [
+          "a",
+          "b"
+        ],
+        "T": [
+          "c",
+          "d"
+        ],
+        "V": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "r": 1
+      },
+      "model_sizes": {
+        "no_k": {
+          "A": {
+            "nnz": 66,
+            "rows": 30,
+            "variables": 24
+          },
+          "B": {
+            "nnz": 8,
+            "rows": 12,
+            "variables": 4
+          },
+          "U": {
+            "nnz": 24,
+            "rows": 12,
+            "variables": 8
+          }
+        },
+        "with_k": {
+          "A": {
+            "nnz": 70,
+            "rows": 34,
+            "variables": 24
+          },
+          "B": {
+            "nnz": 12,
+            "rows": 16,
+            "variables": 4
+          },
+          "U": {
+            "nnz": 28,
+            "rows": 16,
+            "variables": 8
+          }
+        }
+      },
+      "name": "infeasible-components",
+      "path_count": 0,
+      "per_source_paths": {
+        "a": 0,
+        "b": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "K_count": 0,
+      "K_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "case_sha256": "f1d2576508d9db145b4fc15dad838afd9e91cd156b3043f87e1c0a3d0110df02",
+      "checks": {
+        "no_k": {
+          "LP": {
+            "A": {
+              "backend": "gurobi",
+              "objective": 0.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            },
+            "B": {
+              "backend": "gurobi",
+              "objective": 0.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            },
+            "U": {
+              "backend": "gurobi",
+              "objective": 0.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            }
+          },
+          "fixed_y_binary": 8,
+          "fixed_y_fractional": 12,
+          "mip_optimum": {
+            "backend": "gurobi",
+            "objective": 0.0,
+            "provenance": "MIP-numérico",
+            "status": "OPTIMAL"
+          },
+          "physical_optimum": 0,
+          "physical_oracle": 8
+        },
+        "with_k": {
+          "LP": {
+            "A": {
+              "backend": "gurobi",
+              "objective": 0.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            },
+            "B": {
+              "backend": "gurobi",
+              "objective": 0.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            },
+            "U": {
+              "backend": "gurobi",
+              "objective": 0.0,
+              "provenance": "LP-numérico",
+              "status": "OPTIMAL"
+            }
+          },
+          "fixed_y_binary": 8,
+          "fixed_y_fractional": 12,
+          "mip_optimum": {
+            "backend": "gurobi",
+            "objective": 0.0,
+            "provenance": "MIP-numérico",
+            "status": "OPTIMAL"
+          },
+          "physical_optimum": 0,
+          "physical_oracle": 8
+        }
+      },
+      "counterexamples": [],
+      "instance": {
+        "A_r": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            "a",
+            "c"
+          ],
+          [
+            "b",
+            "a"
+          ],
+          [
+            "b",
+            "c"
+          ],
+          [
+            "c",
+            "a"
+          ],
+          [
+            "c",
+            "b"
+          ]
+        ],
+        "S": [
+          "a",
+          "b"
+        ],
+        "T": [
+          "b",
+          "c"
+        ],
+        "V": [
+          "a",
+          "b",
+          "c"
+        ],
+        "r": 1
+      },
+      "model_sizes": {
+        "no_k": {
+          "A": {
+            "nnz": 65,
+            "rows": 23,
+            "variables": 26
+          },
+          "B": {
+            "nnz": 23,
+            "rows": 9,
+            "variables": 10
+          },
+          "U": {
+            "nnz": 30,
+            "rows": 9,
+            "variables": 9
+          }
+        },
+        "with_k": {
+          "A": {
+            "nnz": 65,
+            "rows": 23,
+            "variables": 26
+          },
+          "B": {
+            "nnz": 23,
+            "rows": 9,
+            "variables": 10
+          },
+          "U": {
+            "nnz": 30,
+            "rows": 9,
+            "variables": 9
+          }
+        }
+      },
+      "name": "overlap-triangle",
+      "path_count": 7,
+      "per_source_paths": {
+        "a": 4,
+        "b": 3
+      },
+      "status": "PASS"
+    }
+  ],
+  "decision": "PASS_EXPLORATORY",
+  "parameters": {
+    "fractional_samples": 12,
+    "max_paths": 20000,
+    "max_vertices": 9,
+    "seed": 42,
+    "time_limit": 30
+  },
+  "schema": "as08-t2a-v1",
+  "scientific_gate": "PENDING_INDEPENDENT_REVIEW"
+}

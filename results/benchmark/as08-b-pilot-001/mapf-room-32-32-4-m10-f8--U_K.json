@@ -1,0 +1,43 @@
+{
+  "K_count": 24,
+  "K_sha256": "8a5cc3c481f138e93f44d598831a8d116a02c016007c4bf5a177bf11f7d4eee8",
+  "arm": "U_K",
+  "case": {
+    "graph_source": "mapf",
+    "manifest_name": "mapf-room-32-32-4-m10-f8.txt",
+    "name": "mapf-room-32-32-4-m10-f8",
+    "raw_graph_id": "mapf:map:raw-data/mapf/maps/room-32-32-4.map",
+    "source_sha256": "78be3e1261f31f4e583d0808bdfc9c93d9c9eb335d86d13b059ce428af5f303f",
+    "split": "desenvolvimento"
+  },
+  "case_name": "mapf-room-32-32-4-m10-f8.txt",
+  "global_lower_bound": null,
+  "input_load_s": 0.00463656394276768,
+  "instance_sha256": "78be3e1261f31f4e583d0808bdfc9c93d9c9eb335d86d13b059ce428af5f303f",
+  "k_validated": true,
+  "lp_numeric_value": 13.199999999999996,
+  "n_constraints": 2070,
+  "n_variables": 12304,
+  "plan_sha256": "6ecc0dfea455e4d9858d96a563d0dd28017928b096f8538c4657236714ee78eb",
+  "reachability_s": 0.012499241041950881,
+  "schema": "AS08-B-PILOT-RESULT-v1",
+  "solver_seconds": 0.1967630386352539,
+  "status": "OPTIMAL_NUMERIC",
+  "wall_phases_s": {
+    "k_c1": 7.985299453139305e-05,
+    "k_c2": 0.024110211990773678,
+    "k_c4_dm": 0.0002492580097168684,
+    "k_canonicalize": 0.0003978060558438301,
+    "k_neighborhoods": 0.00527278904337436,
+    "k_preparation": 3.7393998354673386e-05,
+    "k_validation_bitset_v2": 0.029841987998224795,
+    "k_validator_setup": 0.003292206907644868,
+    "model_build": 0.1702704830095172,
+    "preparation": 0.017169971950352192,
+    "solve": 0.3319634150248021,
+    "startup": 0.6592110999627039,
+    "supervisor_shutdown": 0.012507375911809504,
+    "validation": 0.013477678061462939
+  },
+  "wall_total_s": 1.2678906719665974
+}

@@ -1,0 +1,43 @@
+{
+  "K_count": 101,
+  "K_sha256": "64d3500a49c52bbf3ea9a3ffd718711c2e6a809585d7f91db311ef44a3606796",
+  "arm": "U_K",
+  "case": {
+    "graph_source": "vienna",
+    "manifest_name": "vienna-I056-regiao-f4.txt",
+    "name": "vienna-I056-regiao-f4",
+    "raw_graph_id": "vienna:I056",
+    "source_sha256": "645da5115a0eeaa6fba9eeae9f4942aebecfa66c4bcbc7aaec2bd0c994eb0ccc",
+    "split": "desenvolvimento"
+  },
+  "case_name": "vienna-I056-regiao-f4.txt",
+  "global_lower_bound": null,
+  "input_load_s": 0.021209994913078845,
+  "instance_sha256": "645da5115a0eeaa6fba9eeae9f4942aebecfa66c4bcbc7aaec2bd0c994eb0ccc",
+  "k_validated": true,
+  "lp_numeric_value": 8.499999999999998,
+  "n_constraints": 6074,
+  "n_variables": 383591,
+  "plan_sha256": "15fa90c1f87be727444aa7981632b14998b7e97f0dd8271db9faacc4af1a7745",
+  "reachability_s": 0.4956330950371921,
+  "schema": "AS08-LB-PROBE-RESULT-v1",
+  "solver_seconds": 12.261145114898682,
+  "status": "OPTIMAL_NUMERIC",
+  "wall_phases_s": {
+    "k_c1": 0.0004970540758222342,
+    "k_c2": 0.3742798719322309,
+    "k_c4_dm": 0.0022745170863345265,
+    "k_canonicalize": 0.015316220000386238,
+    "k_neighborhoods": 0.17424321197904646,
+    "k_preparation": 6.316695362329483e-05,
+    "k_validation_bitset_v2": 2.0868293640669435,
+    "k_validator_setup": 0.09711584693286568,
+    "model_build": 2.9525710399029776,
+    "preparation": 0.5168834839714691,
+    "solve": 15.23292624799069,
+    "startup": 0.7149227031040937,
+    "supervisor_shutdown": 0.018419052008539438,
+    "validation": 0.2555277430219576
+  },
+  "wall_total_s": 22.44187509303447
+}

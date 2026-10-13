@@ -1,0 +1,43 @@
+{
+  "K_count": 24,
+  "K_sha256": "8a5cc3c481f138e93f44d598831a8d116a02c016007c4bf5a177bf11f7d4eee8",
+  "arm": "U_K",
+  "case": {
+    "graph_source": "mapf",
+    "manifest_name": "mapf-room-32-32-4-m10-f8.txt",
+    "name": "mapf-room-32-32-4-m10-f8",
+    "raw_graph_id": "mapf:map:raw-data/mapf/maps/room-32-32-4.map",
+    "source_sha256": "78be3e1261f31f4e583d0808bdfc9c93d9c9eb335d86d13b059ce428af5f303f",
+    "split": "desenvolvimento"
+  },
+  "case_name": "mapf-room-32-32-4-m10-f8.txt",
+  "global_lower_bound": null,
+  "input_load_s": 0.006322531029582024,
+  "instance_sha256": "78be3e1261f31f4e583d0808bdfc9c93d9c9eb335d86d13b059ce428af5f303f",
+  "k_validated": true,
+  "lp_numeric_value": 13.199999999999996,
+  "n_constraints": 2070,
+  "n_variables": 12304,
+  "plan_sha256": "ee2a247e90b3b913f6e809d6158a9d598ae4d4ed365a28aebd810033e5c40ddd",
+  "reachability_s": 0.014751567970961332,
+  "schema": "AS08-LB-PROBE-RESULT-v1",
+  "solver_seconds": 0.19937396049499512,
+  "status": "OPTIMAL_NUMERIC",
+  "wall_phases_s": {
+    "k_c1": 8.539005648344755e-05,
+    "k_c2": 0.025341569911688566,
+    "k_c4_dm": 0.00019906507804989815,
+    "k_canonicalize": 0.0003932289546355605,
+    "k_neighborhoods": 0.005388600984588265,
+    "k_preparation": 4.5550987124443054e-05,
+    "k_validation_bitset_v2": 0.027494531008414924,
+    "k_validator_setup": 0.0029714179690927267,
+    "model_build": 0.08638855104800314,
+    "preparation": 0.021122634992934763,
+    "solve": 0.3335203949827701,
+    "startup": 0.8044076290680096,
+    "supervisor_shutdown": 0.01382504403591156,
+    "validation": 0.014291213941760361
+  },
+  "wall_total_s": 1.3354872660711408
+}

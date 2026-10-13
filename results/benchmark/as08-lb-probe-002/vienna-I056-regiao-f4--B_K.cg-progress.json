@@ -1,0 +1,8692 @@
+{
+  "arm": "B_K",
+  "case": {
+    "graph_source": "vienna",
+    "manifest_name": "vienna-I056-regiao-f4.txt",
+    "name": "vienna-I056-regiao-f4",
+    "raw_graph_id": "vienna:I056",
+    "source_sha256": "645da5115a0eeaa6fba9eeae9f4942aebecfa66c4bcbc7aaec2bd0c994eb0ccc",
+    "split": "desenvolvimento"
+  },
+  "classification": "DIAGNOSTIC_ONLY",
+  "events": [
+    {
+      "K_count": 101,
+      "K_sha256": "64d3500a49c52bbf3ea9a3ffd718711c2e6a809585d7f91db311ef44a3606796",
+      "elapsed_seconds": 4.018083114060573,
+      "event": "INPUT_READY",
+      "instance_sha256": "645da5115a0eeaa6fba9eeae9f4942aebecfa66c4bcbc7aaec2bd0c994eb0ccc",
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "budget_seconds": 294.98184958996717,
+      "certified_global_lb": null,
+      "columns": 0,
+      "completed_iterations": 0,
+      "elapsed_seconds": 0.2263263170607388,
+      "event": "CG_STARTED",
+      "max_columns": 5000,
+      "max_rows": 60000,
+      "per_round": 200,
+      "planned_iterations": 100,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "selection": "matching",
+      "setup_seconds": 0.22632133308798075
+    },
+    {
+      "certified_global_lb": null,
+      "columns": 0,
+      "completed_iterations": 0,
+      "elapsed_seconds": 0.22640542208682746,
+      "event": "BUILD_RMP",
+      "iteration": 1,
+      "rmp_rows_predicted": 176,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "build_seconds": 0.03077545901760459,
+      "certified_global_lb": null,
+      "columns": 0,
+      "completed_iterations": 0,
+      "elapsed_seconds": 0.25722137407865375,
+      "event": "SOLVING_RMP",
+      "iteration": 1,
+      "rmp_nnz": 28057,
+      "rmp_row_families": {
+        "B1": 25,
+        "B2": 25,
+        "B3": 0,
+        "B4": 25,
+        "BK": 101,
+        "total": 176
+      },
+      "rmp_rows": 176,
+      "rmp_variables": 2041,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "artificial_sum": 50.0,
+      "certified_global_lb": null,
+      "columns": 0,
+      "completed_iterations": 0,
+      "elapsed_seconds": 0.3373880870640278,
+      "event": "RMP_SOLVED",
+      "feasible_lp_upper_bound": null,
+      "iteration": 1,
+      "rmp_nnz": 28057,
+      "rmp_objective_with_artificials": 996008.5,
+      "rmp_rows": 176,
+      "rmp_status": "OPTIMAL",
+      "rmp_total_seconds": 0.08010392694268376,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "solve_seconds": 0.0794895050348714
+    },
+    {
+      "certified_global_lb": null,
+      "columns": 0,
+      "completed_iterations": 0,
+      "elapsed_seconds": 0.3374547800049186,
+      "event": "PRICING",
+      "iteration": 1,
+      "origins_total": 25,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "certified_global_lb": null,
+      "columns": 0,
+      "completed_iterations": 0,
+      "elapsed_seconds": 1.1620472760405391,
+      "event": "PRICING_FINISHED",
+      "iteration": 1,
+      "negative_candidates": 625,
+      "negative_duplicate_columns": 0,
+      "origins_processed": 25,
+      "origins_with_candidates": 25,
+      "pricing_seconds": 0.8245682769920677,
+      "pricing_slowest_origin_seconds": 0.05746198201086372,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "added_columns": 200,
+      "added_rows": 313,
+      "artificial_sum": 50.0,
+      "certified_global_lb": null,
+      "columns": 200,
+      "completed_iterations": 1,
+      "elapsed_seconds": 1.1632451930781826,
+      "event": "ITERATION_COMPLETE",
+      "feasible_lp_upper_bound": null,
+      "iteration": 1,
+      "iteration_seconds": 0.9365345449186862,
+      "negative_candidates": 625,
+      "rmp_objective_with_artificials": 996008.5,
+      "row_blocked_candidates": 0,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "selected_origins": 25,
+      "selected_targets": 25
+    },
+    {
+      "certified_global_lb": null,
+      "columns": 200,
+      "completed_iterations": 1,
+      "elapsed_seconds": 1.163295143051073,
+      "event": "BUILD_RMP",
+      "iteration": 2,
+      "rmp_rows_predicted": 489,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "build_seconds": 0.0338745879707858,
+      "certified_global_lb": null,
+      "columns": 200,
+      "completed_iterations": 1,
+      "elapsed_seconds": 1.1972238240996376,
+      "event": "SOLVING_RMP",
+      "iteration": 2,
+      "rmp_nnz": 30290,
+      "rmp_row_families": {
+        "B1": 25,
+        "B2": 25,
+        "B3": 313,
+        "B4": 25,
+        "BK": 101,
+        "total": 489
+      },
+      "rmp_rows": 489,
+      "rmp_variables": 2241,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "artificial_sum": 0.0,
+      "certified_global_lb": null,
+      "columns": 200,
+      "completed_iterations": 1,
+      "elapsed_seconds": 1.261334291077219,
+      "event": "RMP_SOLVED",
+      "feasible_lp_upper_bound": 21.101190476190474,
+      "iteration": 2,
+      "rmp_nnz": 30290,
+      "rmp_objective_with_artificials": 21.101190476190474,
+      "rmp_rows": 489,
+      "rmp_status": "OPTIMAL",
+      "rmp_total_seconds": 0.06401404296047986,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "solve_seconds": 0.06318719906266779
+    },
+    {
+      "certified_global_lb": null,
+      "columns": 200,
+      "completed_iterations": 1,
+      "elapsed_seconds": 1.2614061400527135,
+      "event": "PRICING",
+      "iteration": 2,
+      "origins_total": 25,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "certified_global_lb": null,
+      "columns": 200,
+      "completed_iterations": 1,
+      "elapsed_seconds": 2.1032469210913405,
+      "event": "PRICING_FINISHED",
+      "iteration": 2,
+      "negative_candidates": 383,
+      "negative_duplicate_columns": 0,
+      "origins_processed": 25,
+      "origins_with_candidates": 25,
+      "pricing_seconds": 0.8418166299816221,
+      "pricing_slowest_origin_seconds": 0.05692306300625205,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "attempted": 1,
+      "cert_budget_seconds": 15.0,
+      "certified_global_lb": null,
+      "columns": 200,
+      "completed_iterations": 1,
+      "elapsed_seconds": 2.1033219820819795,
+      "event": "INTERMEDIATE_CERT_STARTED",
+      "iteration": 2,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "certified_global_lb": 0.0,
+      "certified_global_lb_rational": "0/1",
+      "columns": 200,
+      "complete_certificate_archived": true,
+      "completed_iterations": 1,
+      "dual_correction": -517923.88095238095,
+      "elapsed_seconds": 2.938512815046124,
+      "event": "INTERMEDIATE_CERT_IMPROVED",
+      "iteration": 2,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "cert_seconds": 0.8351657320745289,
+      "certified_global_lb": 0.0,
+      "columns": 200,
+      "completed_iterations": 1,
+      "elapsed_seconds": 2.9388039980549365,
+      "event": "INTERMEDIATE_CERT_FINISHED",
+      "improved": true,
+      "iteration": 2,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "status": "CERTIFIED_RATIONAL_DUAL"
+    },
+    {
+      "added_columns": 200,
+      "added_rows": 83,
+      "artificial_sum": 0.0,
+      "certified_global_lb": 0.0,
+      "columns": 400,
+      "completed_iterations": 2,
+      "elapsed_seconds": 2.9406203400576487,
+      "event": "ITERATION_COMPLETE",
+      "feasible_lp_upper_bound": 21.101190476190474,
+      "iteration": 2,
+      "iteration_seconds": 0.9413893478922546,
+      "negative_candidates": 383,
+      "rmp_objective_with_artificials": 21.101190476190474,
+      "row_blocked_candidates": 0,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "selected_origins": 16,
+      "selected_targets": 16
+    },
+    {
+      "certified_global_lb": 0.0,
+      "columns": 400,
+      "completed_iterations": 2,
+      "elapsed_seconds": 2.940691599040292,
+      "event": "BUILD_RMP",
+      "iteration": 3,
+      "rmp_rows_predicted": 572,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "build_seconds": 0.04109416902065277,
+      "certified_global_lb": 0.0,
+      "columns": 400,
+      "completed_iterations": 2,
+      "elapsed_seconds": 2.981857407023199,
+      "event": "SOLVING_RMP",
+      "iteration": 3,
+      "rmp_nnz": 32024,
+      "rmp_row_families": {
+        "B1": 25,
+        "B2": 25,
+        "B3": 396,
+        "B4": 25,
+        "BK": 101,
+        "total": 572
+      },
+      "rmp_rows": 572,
+      "rmp_variables": 2441,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "artificial_sum": 0.0,
+      "certified_global_lb": 0.0,
+      "columns": 400,
+      "completed_iterations": 2,
+      "elapsed_seconds": 3.050735170021653,
+      "event": "RMP_SOLVED",
+      "feasible_lp_upper_bound": 20.75,
+      "iteration": 3,
+      "rmp_nnz": 32024,
+      "rmp_objective_with_artificials": 20.75,
+      "rmp_rows": 572,
+      "rmp_status": "OPTIMAL",
+      "rmp_total_seconds": 0.06877453904598951,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "solve_seconds": 0.06780106702353805
+    },
+    {
+      "certified_global_lb": 0.0,
+      "columns": 400,
+      "completed_iterations": 2,
+      "elapsed_seconds": 3.0508104120381176,
+      "event": "PRICING",
+      "iteration": 3,
+      "origins_total": 25,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "certified_global_lb": 0.0,
+      "columns": 400,
+      "completed_iterations": 2,
+      "elapsed_seconds": 3.872005218989216,
+      "event": "PRICING_FINISHED",
+      "iteration": 3,
+      "negative_candidates": 380,
+      "negative_duplicate_columns": 0,
+      "origins_processed": 25,
+      "origins_with_candidates": 25,
+      "pricing_seconds": 0.8211684279376641,
+      "pricing_slowest_origin_seconds": 0.06217947602272034,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "added_columns": 200,
+      "added_rows": 103,
+      "artificial_sum": 0.0,
+      "certified_global_lb": 0.0,
+      "columns": 600,
+      "completed_iterations": 3,
+      "elapsed_seconds": 3.873134198016487,
+      "event": "ITERATION_COMPLETE",
+      "feasible_lp_upper_bound": 20.75,
+      "iteration": 3,
+      "iteration_seconds": 0.9320258090738207,
+      "negative_candidates": 380,
+      "rmp_objective_with_artificials": 20.75,
+      "row_blocked_candidates": 0,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "selected_origins": 16,
+      "selected_targets": 16
+    },
+    {
+      "certified_global_lb": 0.0,
+      "columns": 600,
+      "completed_iterations": 3,
+      "elapsed_seconds": 3.873199265100993,
+      "event": "BUILD_RMP",
+      "iteration": 4,
+      "rmp_rows_predicted": 675,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "build_seconds": 0.03987247706390917,
+      "certified_global_lb": 0.0,
+      "columns": 600,
+      "completed_iterations": 3,
+      "elapsed_seconds": 3.91313398105558,
+      "event": "SOLVING_RMP",
+      "iteration": 4,
+      "rmp_nnz": 33810,
+      "rmp_row_families": {
+        "B1": 25,
+        "B2": 25,
+        "B3": 499,
+        "B4": 25,
+        "BK": 101,
+        "total": 675
+      },
+      "rmp_rows": 675,
+      "rmp_variables": 2641,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "artificial_sum": 0.0,
+      "certified_global_lb": 0.0,
+      "columns": 600,
+      "completed_iterations": 3,
+      "elapsed_seconds": 3.9992592060007155,
+      "event": "RMP_SOLVED",
+      "feasible_lp_upper_bound": 19.72100122100122,
+      "iteration": 4,
+      "rmp_nnz": 33810,
+      "rmp_objective_with_artificials": 19.72100122100122,
+      "rmp_rows": 675,
+      "rmp_status": "OPTIMAL",
+      "rmp_total_seconds": 0.08601108996663243,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "solve_seconds": 0.08499114098958671
+    },
+    {
+      "certified_global_lb": 0.0,
+      "columns": 600,
+      "completed_iterations": 3,
+      "elapsed_seconds": 3.9993336490588263,
+      "event": "PRICING",
+      "iteration": 4,
+      "origins_total": 25,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "certified_global_lb": 0.0,
+      "columns": 600,
+      "completed_iterations": 3,
+      "elapsed_seconds": 4.831011173082516,
+      "event": "PRICING_FINISHED",
+      "iteration": 4,
+      "negative_candidates": 378,
+      "negative_duplicate_columns": 0,
+      "origins_processed": 25,
+      "origins_with_candidates": 25,
+      "pricing_seconds": 0.8316530240699649,
+      "pricing_slowest_origin_seconds": 0.06133078399579972,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "added_columns": 200,
+      "added_rows": 59,
+      "artificial_sum": 0.0,
+      "certified_global_lb": 0.0,
+      "columns": 800,
+      "completed_iterations": 4,
+      "elapsed_seconds": 4.832139734062366,
+      "event": "ITERATION_COMPLETE",
+      "feasible_lp_upper_bound": 19.72100122100122,
+      "iteration": 4,
+      "iteration_seconds": 0.9585359591292217,
+      "negative_candidates": 378,
+      "rmp_objective_with_artificials": 19.72100122100122,
+      "row_blocked_candidates": 0,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "selected_origins": 16,
+      "selected_targets": 16
+    },
+    {
+      "certified_global_lb": 0.0,
+      "columns": 800,
+      "completed_iterations": 4,
+      "elapsed_seconds": 4.832194593036547,
+      "event": "BUILD_RMP",
+      "iteration": 5,
+      "rmp_rows_predicted": 734,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "build_seconds": 0.0434180130250752,
+      "certified_global_lb": 0.0,
+      "columns": 800,
+      "completed_iterations": 4,
+      "elapsed_seconds": 4.875683853053488,
+      "event": "SOLVING_RMP",
+      "iteration": 5,
+      "rmp_nnz": 35600,
+      "rmp_row_families": {
+        "B1": 25,
+        "B2": 25,
+        "B3": 558,
+        "B4": 25,
+        "BK": 101,
+        "total": 734
+      },
+      "rmp_rows": 734,
+      "rmp_variables": 2841,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "artificial_sum": 0.0,
+      "certified_global_lb": 0.0,
+      "columns": 800,
+      "completed_iterations": 4,
+      "elapsed_seconds": 4.979857820086181,
+      "event": "RMP_SOLVED",
+      "feasible_lp_upper_bound": 18.27242835380738,
+      "iteration": 5,
+      "rmp_nnz": 35600,
+      "rmp_objective_with_artificials": 18.27242835380738,
+      "rmp_rows": 734,
+      "rmp_status": "OPTIMAL",
+      "rmp_total_seconds": 0.10407736292108893,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "solve_seconds": 0.10285527701489627
+    },
+    {
+      "certified_global_lb": 0.0,
+      "columns": 800,
+      "completed_iterations": 4,
+      "elapsed_seconds": 4.979939750046469,
+      "event": "PRICING",
+      "iteration": 5,
+      "origins_total": 25,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "certified_global_lb": 0.0,
+      "columns": 800,
+      "completed_iterations": 4,
+      "elapsed_seconds": 5.880042861099355,
+      "event": "PRICING_FINISHED",
+      "iteration": 5,
+      "negative_candidates": 591,
+      "negative_duplicate_columns": 0,
+      "origins_processed": 25,
+      "origins_with_candidates": 25,
+      "pricing_seconds": 0.9000781029462814,
+      "pricing_slowest_origin_seconds": 0.07047720195259899,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "attempted": 2,
+      "cert_budget_seconds": 15.0,
+      "certified_global_lb": 0.0,
+      "columns": 800,
+      "completed_iterations": 4,
+      "elapsed_seconds": 5.880112189101055,
+      "event": "INTERMEDIATE_CERT_STARTED",
+      "iteration": 5,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "certified_global_lb": 0.6160497295651959,
+      "certified_global_lb_rational": "61604972956519587695276524023193/100000000000000000000000000000000",
+      "columns": 800,
+      "complete_certificate_archived": true,
+      "completed_iterations": 4,
+      "dual_correction": -17.65637862424217,
+      "elapsed_seconds": 6.678693082998507,
+      "event": "INTERMEDIATE_CERT_IMPROVED",
+      "iteration": 5,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "cert_seconds": 0.798487794934772,
+      "certified_global_lb": 0.6160497295651959,
+      "columns": 800,
+      "completed_iterations": 4,
+      "elapsed_seconds": 6.67897243599873,
+      "event": "INTERMEDIATE_CERT_FINISHED",
+      "improved": true,
+      "iteration": 5,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "status": "CERTIFIED_RATIONAL_DUAL"
+    },
+    {
+      "added_columns": 200,
+      "added_rows": 89,
+      "artificial_sum": 0.0,
+      "certified_global_lb": 0.6160497295651959,
+      "columns": 1000,
+      "completed_iterations": 5,
+      "elapsed_seconds": 6.680060236016288,
+      "event": "ITERATION_COMPLETE",
+      "feasible_lp_upper_bound": 18.27242835380738,
+      "iteration": 5,
+      "iteration_seconds": 1.0485815248684958,
+      "negative_candidates": 591,
+      "rmp_objective_with_artificials": 18.27242835380738,
+      "row_blocked_candidates": 0,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "selected_origins": 23,
+      "selected_targets": 24
+    },
+    {
+      "certified_global_lb": 0.6160497295651959,
+      "columns": 1000,
+      "completed_iterations": 5,
+      "elapsed_seconds": 6.680097389034927,
+      "event": "BUILD_RMP",
+      "iteration": 6,
+      "rmp_rows_predicted": 823,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "build_seconds": 0.08483712992165238,
+      "certified_global_lb": 0.6160497295651959,
+      "columns": 1000,
+      "completed_iterations": 5,
+      "elapsed_seconds": 6.765038792043924,
+      "event": "SOLVING_RMP",
+      "iteration": 6,
+      "rmp_nnz": 37422,
+      "rmp_row_families": {
+        "B1": 25,
+        "B2": 25,
+        "B3": 647,
+        "B4": 25,
+        "BK": 101,
+        "total": 823
+      },
+      "rmp_rows": 823,
+      "rmp_variables": 3041,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "artificial_sum": 0.0,
+      "certified_global_lb": 0.6160497295651959,
+      "columns": 1000,
+      "completed_iterations": 5,
+      "elapsed_seconds": 6.904922547051683,
+      "event": "RMP_SOLVED",
+      "feasible_lp_upper_bound": 17.358068885448915,
+      "iteration": 6,
+      "rmp_nnz": 37422,
+      "rmp_objective_with_artificials": 17.358068885448915,
+      "rmp_rows": 823,
+      "rmp_status": "OPTIMAL",
+      "rmp_total_seconds": 0.13974637095816433,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "solve_seconds": 0.1383218839764595
+    },
+    {
+      "certified_global_lb": 0.6160497295651959,
+      "columns": 1000,
+      "completed_iterations": 5,
+      "elapsed_seconds": 6.905007518013008,
+      "event": "PRICING",
+      "iteration": 6,
+      "origins_total": 25,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "certified_global_lb": 0.6160497295651959,
+      "columns": 1000,
+      "completed_iterations": 5,
+      "elapsed_seconds": 7.745037625078112,
+      "event": "PRICING_FINISHED",
+      "iteration": 6,
+      "negative_candidates": 498,
+      "negative_duplicate_columns": 0,
+      "origins_processed": 25,
+      "origins_with_candidates": 25,
+      "pricing_seconds": 0.8400055910460651,
+      "pricing_slowest_origin_seconds": 0.06231514399405569,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "added_columns": 200,
+      "added_rows": 83,
+      "artificial_sum": 0.0,
+      "certified_global_lb": 0.6160497295651959,
+      "columns": 1200,
+      "completed_iterations": 6,
+      "elapsed_seconds": 7.746290690032765,
+      "event": "ITERATION_COMPLETE",
+      "feasible_lp_upper_bound": 17.358068885448915,
+      "iteration": 6,
+      "iteration_seconds": 1.0657266929047182,
+      "negative_candidates": 498,
+      "rmp_objective_with_artificials": 17.358068885448915,
+      "row_blocked_candidates": 0,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "selected_origins": 18,
+      "selected_targets": 16
+    },
+    {
+      "certified_global_lb": 0.6160497295651959,
+      "columns": 1200,
+      "completed_iterations": 6,
+      "elapsed_seconds": 7.746336164069362,
+      "event": "BUILD_RMP",
+      "iteration": 7,
+      "rmp_rows_predicted": 906,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "build_seconds": 0.050470593967475,
+      "certified_global_lb": 0.6160497295651959,
+      "columns": 1200,
+      "completed_iterations": 6,
+      "elapsed_seconds": 7.79689231805969,
+      "event": "SOLVING_RMP",
+      "iteration": 7,
+      "rmp_nnz": 39393,
+      "rmp_row_families": {
+        "B1": 25,
+        "B2": 25,
+        "B3": 730,
+        "B4": 25,
+        "BK": 101,
+        "total": 906
+      },
+      "rmp_rows": 906,
+      "rmp_variables": 3241,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "artificial_sum": 0.0,
+      "certified_global_lb": 0.6160497295651959,
+      "columns": 1200,
+      "completed_iterations": 6,
+      "elapsed_seconds": 7.931164707057178,
+      "event": "RMP_SOLVED",
+      "feasible_lp_upper_bound": 17.16291615080905,
+      "iteration": 7,
+      "rmp_nnz": 39393,
+      "rmp_objective_with_artificials": 17.16291615080905,
+      "rmp_rows": 906,
+      "rmp_status": "OPTIMAL",
+      "rmp_total_seconds": 0.13416994700673968,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "solve_seconds": 0.132738753920421
+    },
+    {
+      "certified_global_lb": 0.6160497295651959,
+      "columns": 1200,
+      "completed_iterations": 6,
+      "elapsed_seconds": 7.9312536109937355,
+      "event": "PRICING",
+      "iteration": 7,
+      "origins_total": 25,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "certified_global_lb": 0.6160497295651959,
+      "columns": 1200,
+      "completed_iterations": 6,
+      "elapsed_seconds": 8.758004814037122,
+      "event": "PRICING_FINISHED",
+      "iteration": 7,
+      "negative_candidates": 591,
+      "negative_duplicate_columns": 0,
+      "origins_processed": 25,
+      "origins_with_candidates": 25,
+      "pricing_seconds": 0.826726246974431,
+      "pricing_slowest_origin_seconds": 0.05227454798296094,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "added_columns": 200,
+      "added_rows": 94,
+      "artificial_sum": 0.0,
+      "certified_global_lb": 0.6160497295651959,
+      "columns": 1400,
+      "completed_iterations": 7,
+      "elapsed_seconds": 8.75951060000807,
+      "event": "ITERATION_COMPLETE",
+      "feasible_lp_upper_bound": 17.16291615080905,
+      "iteration": 7,
+      "iteration_seconds": 1.0127158419927582,
+      "negative_candidates": 591,
+      "rmp_objective_with_artificials": 17.16291615080905,
+      "row_blocked_candidates": 0,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "selected_origins": 23,
+      "selected_targets": 24
+    },
+    {
+      "certified_global_lb": 0.6160497295651959,
+      "columns": 1400,
+      "completed_iterations": 7,
+      "elapsed_seconds": 8.759566166088916,
+      "event": "BUILD_RMP",
+      "iteration": 8,
+      "rmp_rows_predicted": 1000,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "build_seconds": 0.05518057500012219,
+      "certified_global_lb": 0.6160497295651959,
+      "columns": 1400,
+      "completed_iterations": 7,
+      "elapsed_seconds": 8.814833976095542,
+      "event": "SOLVING_RMP",
+      "iteration": 8,
+      "rmp_nnz": 41382,
+      "rmp_row_families": {
+        "B1": 25,
+        "B2": 25,
+        "B3": 824,
+        "B4": 25,
+        "BK": 101,
+        "total": 1000
+      },
+      "rmp_rows": 1000,
+      "rmp_variables": 3441,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "artificial_sum": 0.0,
+      "certified_global_lb": 0.6160497295651959,
+      "columns": 1400,
+      "completed_iterations": 7,
+      "elapsed_seconds": 9.00853191909846,
+      "event": "RMP_SOLVED",
+      "feasible_lp_upper_bound": 16.823011484591998,
+      "iteration": 8,
+      "rmp_nnz": 41382,
+      "rmp_objective_with_artificials": 16.823011484591998,
+      "rmp_rows": 1000,
+      "rmp_status": "OPTIMAL",
+      "rmp_total_seconds": 0.1935947589809075,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "solve_seconds": 0.1919584950665012
+    },
+    {
+      "certified_global_lb": 0.6160497295651959,
+      "columns": 1400,
+      "completed_iterations": 7,
+      "elapsed_seconds": 9.00861881999299,
+      "event": "PRICING",
+      "iteration": 8,
+      "origins_total": 25,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "certified_global_lb": 0.6160497295651959,
+      "columns": 1400,
+      "completed_iterations": 7,
+      "elapsed_seconds": 9.841452617081814,
+      "event": "PRICING_FINISHED",
+      "iteration": 8,
+      "negative_candidates": 569,
+      "negative_duplicate_columns": 0,
+      "origins_processed": 25,
+      "origins_with_candidates": 25,
+      "pricing_seconds": 0.832810312975198,
+      "pricing_slowest_origin_seconds": 0.0622178060002625,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "added_columns": 200,
+      "added_rows": 65,
+      "artificial_sum": 0.0,
+      "certified_global_lb": 0.6160497295651959,
+      "columns": 1600,
+      "completed_iterations": 8,
+      "elapsed_seconds": 9.842700514011085,
+      "event": "ITERATION_COMPLETE",
+      "feasible_lp_upper_bound": 16.823011484591998,
+      "iteration": 8,
+      "iteration_seconds": 1.082705462933518,
+      "negative_candidates": 569,
+      "rmp_objective_with_artificials": 16.823011484591998,
+      "row_blocked_candidates": 0,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "selected_origins": 21,
+      "selected_targets": 24
+    },
+    {
+      "certified_global_lb": 0.6160497295651959,
+      "columns": 1600,
+      "completed_iterations": 8,
+      "elapsed_seconds": 9.842743059038185,
+      "event": "BUILD_RMP",
+      "iteration": 9,
+      "rmp_rows_predicted": 1065,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "build_seconds": 0.07963661593385041,
+      "certified_global_lb": 0.6160497295651959,
+      "columns": 1600,
+      "completed_iterations": 8,
+      "elapsed_seconds": 9.922481380053796,
+      "event": "SOLVING_RMP",
+      "iteration": 9,
+      "rmp_nnz": 43516,
+      "rmp_row_families": {
+        "B1": 25,
+        "B2": 25,
+        "B3": 889,
+        "B4": 25,
+        "BK": 101,
+        "total": 1065
+      },
+      "rmp_rows": 1065,
+      "rmp_variables": 3641,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "artificial_sum": 0.0,
+      "certified_global_lb": 0.6160497295651959,
+      "columns": 1600,
+      "completed_iterations": 8,
+      "elapsed_seconds": 10.217254361021332,
+      "event": "RMP_SOLVED",
+      "feasible_lp_upper_bound": 16.269833013313285,
+      "iteration": 9,
+      "rmp_nnz": 43516,
+      "rmp_objective_with_artificials": 16.269833013313285,
+      "rmp_rows": 1065,
+      "rmp_status": "OPTIMAL",
+      "rmp_total_seconds": 0.29465166095178574,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "solve_seconds": 0.29293951799627393
+    },
+    {
+      "certified_global_lb": 0.6160497295651959,
+      "columns": 1600,
+      "completed_iterations": 8,
+      "elapsed_seconds": 10.217336438014172,
+      "event": "PRICING",
+      "iteration": 9,
+      "origins_total": 25,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "certified_global_lb": 0.6160497295651959,
+      "columns": 1600,
+      "completed_iterations": 8,
+      "elapsed_seconds": 11.03990513808094,
+      "event": "PRICING_FINISHED",
+      "iteration": 9,
+      "negative_candidates": 584,
+      "negative_duplicate_columns": 0,
+      "origins_processed": 25,
+      "origins_with_candidates": 25,
+      "pricing_seconds": 0.82254348997958,
+      "pricing_slowest_origin_seconds": 0.06636151403654367,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "added_columns": 200,
+      "added_rows": 47,
+      "artificial_sum": 0.0,
+      "certified_global_lb": 0.6160497295651959,
+      "columns": 1800,
+      "completed_iterations": 9,
+      "elapsed_seconds": 11.041122829075903,
+      "event": "ITERATION_COMPLETE",
+      "feasible_lp_upper_bound": 16.269833013313285,
+      "iteration": 9,
+      "iteration_seconds": 1.1979241728549823,
+      "negative_candidates": 584,
+      "rmp_objective_with_artificials": 16.269833013313285,
+      "row_blocked_candidates": 0,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "selected_origins": 22,
+      "selected_targets": 24
+    },
+    {
+      "certified_global_lb": 0.6160497295651959,
+      "columns": 1800,
+      "completed_iterations": 9,
+      "elapsed_seconds": 11.041165875038132,
+      "event": "BUILD_RMP",
+      "iteration": 10,
+      "rmp_rows_predicted": 1112,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "build_seconds": 0.05912292399443686,
+      "certified_global_lb": 0.6160497295651959,
+      "columns": 1800,
+      "completed_iterations": 9,
+      "elapsed_seconds": 11.100390096078627,
+      "event": "SOLVING_RMP",
+      "iteration": 10,
+      "rmp_nnz": 45531,
+      "rmp_row_families": {
+        "B1": 25,
+        "B2": 25,
+        "B3": 936,
+        "B4": 25,
+        "BK": 101,
+        "total": 1112
+      },
+      "rmp_rows": 1112,
+      "rmp_variables": 3841,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "artificial_sum": 0.0,
+      "certified_global_lb": 0.6160497295651959,
+      "columns": 1800,
+      "completed_iterations": 9,
+      "elapsed_seconds": 11.376666104071774,
+      "event": "RMP_SOLVED",
+      "feasible_lp_upper_bound": 16.076993892260113,
+      "iteration": 10,
+      "rmp_nnz": 45531,
+      "rmp_objective_with_artificials": 16.076993892260113,
+      "rmp_rows": 1112,
+      "rmp_status": "OPTIMAL",
+      "rmp_total_seconds": 0.27616468199994415,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "solve_seconds": 0.2742995119187981
+    },
+    {
+      "certified_global_lb": 0.6160497295651959,
+      "columns": 1800,
+      "completed_iterations": 9,
+      "elapsed_seconds": 11.37675603700336,
+      "event": "PRICING",
+      "iteration": 10,
+      "origins_total": 25,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "certified_global_lb": 0.6160497295651959,
+      "columns": 1800,
+      "completed_iterations": 9,
+      "elapsed_seconds": 12.208775280043483,
+      "event": "PRICING_FINISHED",
+      "iteration": 10,
+      "negative_candidates": 604,
+      "negative_duplicate_columns": 0,
+      "origins_processed": 25,
+      "origins_with_candidates": 25,
+      "pricing_seconds": 0.831991090090014,
+      "pricing_slowest_origin_seconds": 0.060253530042245984,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "attempted": 3,
+      "cert_budget_seconds": 15.0,
+      "certified_global_lb": 0.6160497295651959,
+      "columns": 1800,
+      "completed_iterations": 9,
+      "elapsed_seconds": 12.208881054073572,
+      "event": "INTERMEDIATE_CERT_STARTED",
+      "iteration": 10,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "certified_global_lb": 2.465351575778363,
+      "certified_global_lb_rational": "246535157577836291818441352740321/100000000000000000000000000000000",
+      "columns": 1800,
+      "complete_certificate_archived": true,
+      "completed_iterations": 9,
+      "dual_correction": -13.61164231648173,
+      "elapsed_seconds": 13.034698644070886,
+      "event": "INTERMEDIATE_CERT_IMPROVED",
+      "iteration": 10,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "cert_seconds": 0.8257238400401548,
+      "certified_global_lb": 2.465351575778363,
+      "columns": 1800,
+      "completed_iterations": 9,
+      "elapsed_seconds": 13.03508772701025,
+      "event": "INTERMEDIATE_CERT_FINISHED",
+      "improved": true,
+      "iteration": 10,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "status": "CERTIFIED_RATIONAL_DUAL"
+    },
+    {
+      "added_columns": 200,
+      "added_rows": 64,
+      "artificial_sum": 0.0,
+      "certified_global_lb": 2.465351575778363,
+      "columns": 2000,
+      "completed_iterations": 10,
+      "elapsed_seconds": 13.036218670080416,
+      "event": "ITERATION_COMPLETE",
+      "feasible_lp_upper_bound": 16.076993892260113,
+      "iteration": 10,
+      "iteration_seconds": 1.168327444116585,
+      "negative_candidates": 604,
+      "rmp_objective_with_artificials": 16.076993892260113,
+      "row_blocked_candidates": 0,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "selected_origins": 24,
+      "selected_targets": 24
+    },
+    {
+      "certified_global_lb": 2.465351575778363,
+      "columns": 2000,
+      "completed_iterations": 10,
+      "elapsed_seconds": 13.036256483988836,
+      "event": "BUILD_RMP",
+      "iteration": 11,
+      "rmp_rows_predicted": 1176,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "build_seconds": 0.09203029703348875,
+      "certified_global_lb": 2.465351575778363,
+      "columns": 2000,
+      "completed_iterations": 10,
+      "elapsed_seconds": 13.12838879704941,
+      "event": "SOLVING_RMP",
+      "iteration": 11,
+      "rmp_nnz": 47551,
+      "rmp_row_families": {
+        "B1": 25,
+        "B2": 25,
+        "B3": 1000,
+        "B4": 25,
+        "BK": 101,
+        "total": 1176
+      },
+      "rmp_rows": 1176,
+      "rmp_variables": 4041,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "artificial_sum": 0.0,
+      "certified_global_lb": 2.465351575778363,
+      "columns": 2000,
+      "completed_iterations": 10,
+      "elapsed_seconds": 13.444537188042887,
+      "event": "RMP_SOLVED",
+      "feasible_lp_upper_bound": 15.954070140900345,
+      "iteration": 11,
+      "rmp_nnz": 47551,
+      "rmp_objective_with_artificials": 15.954070140900345,
+      "rmp_rows": 1176,
+      "rmp_status": "OPTIMAL",
+      "rmp_total_seconds": 0.3160294940462336,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "solve_seconds": 0.3140911270165816
+    },
+    {
+      "certified_global_lb": 2.465351575778363,
+      "columns": 2000,
+      "completed_iterations": 10,
+      "elapsed_seconds": 13.444632305996493,
+      "event": "PRICING",
+      "iteration": 11,
+      "origins_total": 25,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "certified_global_lb": 2.465351575778363,
+      "columns": 2000,
+      "completed_iterations": 10,
+      "elapsed_seconds": 14.28504911006894,
+      "event": "PRICING_FINISHED",
+      "iteration": 11,
+      "negative_candidates": 602,
+      "negative_duplicate_columns": 0,
+      "origins_processed": 25,
+      "origins_with_candidates": 25,
+      "pricing_seconds": 0.8403894749935716,
+      "pricing_slowest_origin_seconds": 0.05958786699920893,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "added_columns": 200,
+      "added_rows": 46,
+      "artificial_sum": 0.0,
+      "certified_global_lb": 2.465351575778363,
+      "columns": 2200,
+      "completed_iterations": 11,
+      "elapsed_seconds": 14.286241060006432,
+      "event": "ITERATION_COMPLETE",
+      "feasible_lp_upper_bound": 15.954070140900345,
+      "iteration": 11,
+      "iteration_seconds": 1.2495105750858784,
+      "negative_candidates": 602,
+      "rmp_objective_with_artificials": 15.954070140900345,
+      "row_blocked_candidates": 0,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "selected_origins": 24,
+      "selected_targets": 24
+    },
+    {
+      "certified_global_lb": 2.465351575778363,
+      "columns": 2200,
+      "completed_iterations": 11,
+      "elapsed_seconds": 14.286281628999859,
+      "event": "BUILD_RMP",
+      "iteration": 12,
+      "rmp_rows_predicted": 1222,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "build_seconds": 0.06690023199189454,
+      "certified_global_lb": 2.465351575778363,
+      "columns": 2200,
+      "completed_iterations": 11,
+      "elapsed_seconds": 14.353271180996671,
+      "event": "SOLVING_RMP",
+      "iteration": 12,
+      "rmp_nnz": 49581,
+      "rmp_row_families": {
+        "B1": 25,
+        "B2": 25,
+        "B3": 1046,
+        "B4": 25,
+        "BK": 101,
+        "total": 1222
+      },
+      "rmp_rows": 1222,
+      "rmp_variables": 4241,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "artificial_sum": 0.0,
+      "certified_global_lb": 2.465351575778363,
+      "columns": 2200,
+      "completed_iterations": 11,
+      "elapsed_seconds": 14.685434178099968,
+      "event": "RMP_SOLVED",
+      "feasible_lp_upper_bound": 15.783192130277715,
+      "iteration": 12,
+      "rmp_nnz": 49581,
+      "rmp_objective_with_artificials": 15.783192130277715,
+      "rmp_rows": 1222,
+      "rmp_status": "OPTIMAL",
+      "rmp_total_seconds": 0.3320523470174521,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "solve_seconds": 0.32986710499972105
+    },
+    {
+      "certified_global_lb": 2.465351575778363,
+      "columns": 2200,
+      "completed_iterations": 11,
+      "elapsed_seconds": 14.685523640015163,
+      "event": "PRICING",
+      "iteration": 12,
+      "origins_total": 25,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "certified_global_lb": 2.465351575778363,
+      "columns": 2200,
+      "completed_iterations": 11,
+      "elapsed_seconds": 15.517834843019955,
+      "event": "PRICING_FINISHED",
+      "iteration": 12,
+      "negative_candidates": 600,
+      "negative_duplicate_columns": 0,
+      "origins_processed": 25,
+      "origins_with_candidates": 25,
+      "pricing_seconds": 0.8322838069871068,
+      "pricing_slowest_origin_seconds": 0.06528650200925767,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "added_columns": 200,
+      "added_rows": 41,
+      "artificial_sum": 0.0,
+      "certified_global_lb": 2.465351575778363,
+      "columns": 2400,
+      "completed_iterations": 12,
+      "elapsed_seconds": 15.519149077008478,
+      "event": "ITERATION_COMPLETE",
+      "feasible_lp_upper_bound": 15.783192130277715,
+      "iteration": 12,
+      "iteration_seconds": 1.232409378979355,
+      "negative_candidates": 600,
+      "rmp_objective_with_artificials": 15.783192130277715,
+      "row_blocked_candidates": 0,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "selected_origins": 25,
+      "selected_targets": 23
+    },
+    {
+      "certified_global_lb": 2.465351575778363,
+      "columns": 2400,
+      "completed_iterations": 12,
+      "elapsed_seconds": 15.519199933041818,
+      "event": "BUILD_RMP",
+      "iteration": 13,
+      "rmp_rows_predicted": 1263,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "build_seconds": 0.07182366901542991,
+      "certified_global_lb": 2.465351575778363,
+      "columns": 2400,
+      "completed_iterations": 12,
+      "elapsed_seconds": 15.5911156689981,
+      "event": "SOLVING_RMP",
+      "iteration": 13,
+      "rmp_nnz": 51663,
+      "rmp_row_families": {
+        "B1": 25,
+        "B2": 25,
+        "B3": 1087,
+        "B4": 25,
+        "BK": 101,
+        "total": 1263
+      },
+      "rmp_rows": 1263,
+      "rmp_variables": 4441,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "artificial_sum": 0.0,
+      "certified_global_lb": 2.465351575778363,
+      "columns": 2400,
+      "completed_iterations": 12,
+      "elapsed_seconds": 16.067568799015135,
+      "event": "RMP_SOLVED",
+      "feasible_lp_upper_bound": 15.78142312390211,
+      "iteration": 13,
+      "rmp_nnz": 51663,
+      "rmp_objective_with_artificials": 15.78142312390211,
+      "rmp_rows": 1263,
+      "rmp_status": "OPTIMAL",
+      "rmp_total_seconds": 0.47634204500354826,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "solve_seconds": 0.474309619050473
+    },
+    {
+      "certified_global_lb": 2.465351575778363,
+      "columns": 2400,
+      "completed_iterations": 12,
+      "elapsed_seconds": 16.06765434402041,
+      "event": "PRICING",
+      "iteration": 13,
+      "origins_total": 25,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "certified_global_lb": 2.465351575778363,
+      "columns": 2400,
+      "completed_iterations": 12,
+      "elapsed_seconds": 16.954102489049546,
+      "event": "PRICING_FINISHED",
+      "iteration": 13,
+      "negative_candidates": 591,
+      "negative_duplicate_columns": 0,
+      "origins_processed": 25,
+      "origins_with_candidates": 25,
+      "pricing_seconds": 0.8864226029254496,
+      "pricing_slowest_origin_seconds": 0.0648580000270158,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "added_columns": 200,
+      "added_rows": 41,
+      "artificial_sum": 0.0,
+      "certified_global_lb": 2.465351575778363,
+      "columns": 2600,
+      "completed_iterations": 13,
+      "elapsed_seconds": 16.955421990016475,
+      "event": "ITERATION_COMPLETE",
+      "feasible_lp_upper_bound": 15.78142312390211,
+      "iteration": 13,
+      "iteration_seconds": 1.4357413599500433,
+      "negative_candidates": 591,
+      "rmp_objective_with_artificials": 15.78142312390211,
+      "row_blocked_candidates": 0,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "selected_origins": 24,
+      "selected_targets": 23
+    },
+    {
+      "certified_global_lb": 2.465351575778363,
+      "columns": 2600,
+      "completed_iterations": 13,
+      "elapsed_seconds": 16.955466640065424,
+      "event": "BUILD_RMP",
+      "iteration": 14,
+      "rmp_rows_predicted": 1304,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "build_seconds": 0.07249407505150884,
+      "certified_global_lb": 2.465351575778363,
+      "columns": 2600,
+      "completed_iterations": 13,
+      "elapsed_seconds": 17.028058829018846,
+      "event": "SOLVING_RMP",
+      "iteration": 14,
+      "rmp_nnz": 53795,
+      "rmp_row_families": {
+        "B1": 25,
+        "B2": 25,
+        "B3": 1128,
+        "B4": 25,
+        "BK": 101,
+        "total": 1304
+      },
+      "rmp_rows": 1304,
+      "rmp_variables": 4641,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "artificial_sum": 0.0,
+      "certified_global_lb": 2.465351575778363,
+      "columns": 2600,
+      "completed_iterations": 13,
+      "elapsed_seconds": 17.503603675053455,
+      "event": "RMP_SOLVED",
+      "feasible_lp_upper_bound": 15.780792647829001,
+      "iteration": 14,
+      "rmp_nnz": 53795,
+      "rmp_objective_with_artificials": 15.780792647829001,
+      "rmp_rows": 1304,
+      "rmp_status": "OPTIMAL",
+      "rmp_total_seconds": 0.4754183330805972,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "solve_seconds": 0.4731592829339206
+    },
+    {
+      "certified_global_lb": 2.465351575778363,
+      "columns": 2600,
+      "completed_iterations": 13,
+      "elapsed_seconds": 17.503702477086335,
+      "event": "PRICING",
+      "iteration": 14,
+      "origins_total": 25,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "certified_global_lb": 2.465351575778363,
+      "columns": 2600,
+      "completed_iterations": 13,
+      "elapsed_seconds": 18.431746466085315,
+      "event": "PRICING_FINISHED",
+      "iteration": 14,
+      "negative_candidates": 593,
+      "negative_duplicate_columns": 0,
+      "origins_processed": 25,
+      "origins_with_candidates": 25,
+      "pricing_seconds": 0.9280193109298125,
+      "pricing_slowest_origin_seconds": 0.054816815070807934,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "added_columns": 200,
+      "added_rows": 41,
+      "artificial_sum": 0.0,
+      "certified_global_lb": 2.465351575778363,
+      "columns": 2800,
+      "completed_iterations": 14,
+      "elapsed_seconds": 18.43293095205445,
+      "event": "ITERATION_COMPLETE",
+      "feasible_lp_upper_bound": 15.780792647829001,
+      "iteration": 14,
+      "iteration_seconds": 1.4770059189759195,
+      "negative_candidates": 593,
+      "rmp_objective_with_artificials": 15.780792647829001,
+      "row_blocked_candidates": 0,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "selected_origins": 24,
+      "selected_targets": 23
+    },
+    {
+      "certified_global_lb": 2.465351575778363,
+      "columns": 2800,
+      "completed_iterations": 14,
+      "elapsed_seconds": 18.43296992802061,
+      "event": "BUILD_RMP",
+      "iteration": 15,
+      "rmp_rows_predicted": 1345,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "build_seconds": 0.07488599501084536,
+      "certified_global_lb": 2.465351575778363,
+      "columns": 2800,
+      "completed_iterations": 14,
+      "elapsed_seconds": 18.50794892408885,
+      "event": "SOLVING_RMP",
+      "iteration": 15,
+      "rmp_nnz": 55914,
+      "rmp_row_families": {
+        "B1": 25,
+        "B2": 25,
+        "B3": 1169,
+        "B4": 25,
+        "BK": 101,
+        "total": 1345
+      },
+      "rmp_rows": 1345,
+      "rmp_variables": 4841,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "artificial_sum": 0.0,
+      "certified_global_lb": 2.465351575778363,
+      "columns": 2800,
+      "completed_iterations": 14,
+      "elapsed_seconds": 19.119172876002267,
+      "event": "RMP_SOLVED",
+      "feasible_lp_upper_bound": 15.704098203511778,
+      "iteration": 15,
+      "rmp_nnz": 55914,
+      "rmp_objective_with_artificials": 15.704098203511778,
+      "rmp_rows": 1345,
+      "rmp_status": "OPTIMAL",
+      "rmp_total_seconds": 0.6111116879619658,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "solve_seconds": 0.6084842619020492
+    },
+    {
+      "certified_global_lb": 2.465351575778363,
+      "columns": 2800,
+      "completed_iterations": 14,
+      "elapsed_seconds": 19.11926908500027,
+      "event": "PRICING",
+      "iteration": 15,
+      "origins_total": 25,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "certified_global_lb": 2.465351575778363,
+      "columns": 2800,
+      "completed_iterations": 14,
+      "elapsed_seconds": 19.983512042090297,
+      "event": "PRICING_FINISHED",
+      "iteration": 15,
+      "negative_candidates": 556,
+      "negative_duplicate_columns": 0,
+      "origins_processed": 25,
+      "origins_with_candidates": 25,
+      "pricing_seconds": 0.8642149069346488,
+      "pricing_slowest_origin_seconds": 0.058978128945454955,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "attempted": 4,
+      "cert_budget_seconds": 15.0,
+      "certified_global_lb": 2.465351575778363,
+      "columns": 2800,
+      "completed_iterations": 14,
+      "elapsed_seconds": 19.98361257906072,
+      "event": "INTERMEDIATE_CERT_STARTED",
+      "iteration": 15,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "certified_global_lb": 3.404648540141865,
+      "certified_global_lb_rational": "170232427007093249421097069059761/50000000000000000000000000000000",
+      "columns": 2800,
+      "complete_certificate_archived": true,
+      "completed_iterations": 14,
+      "dual_correction": -12.29944966336991,
+      "elapsed_seconds": 20.822306398069486,
+      "event": "INTERMEDIATE_CERT_IMPROVED",
+      "iteration": 15,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "cert_seconds": 0.8385643739020452,
+      "certified_global_lb": 3.404648540141865,
+      "columns": 2800,
+      "completed_iterations": 14,
+      "elapsed_seconds": 20.822762046009302,
+      "event": "INTERMEDIATE_CERT_FINISHED",
+      "improved": true,
+      "iteration": 15,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "status": "CERTIFIED_RATIONAL_DUAL"
+    },
+    {
+      "added_columns": 200,
+      "added_rows": 34,
+      "artificial_sum": 0.0,
+      "certified_global_lb": 3.404648540141865,
+      "columns": 3000,
+      "completed_iterations": 15,
+      "elapsed_seconds": 20.823902678093873,
+      "event": "ITERATION_COMPLETE",
+      "feasible_lp_upper_bound": 15.704098203511778,
+      "iteration": 15,
+      "iteration_seconds": 1.5512669808231294,
+      "negative_candidates": 556,
+      "rmp_objective_with_artificials": 15.704098203511778,
+      "row_blocked_candidates": 0,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "selected_origins": 20,
+      "selected_targets": 23
+    },
+    {
+      "certified_global_lb": 3.404648540141865,
+      "columns": 3000,
+      "completed_iterations": 15,
+      "elapsed_seconds": 20.823950941092335,
+      "event": "BUILD_RMP",
+      "iteration": 16,
+      "rmp_rows_predicted": 1379,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "build_seconds": 0.08179005596321076,
+      "certified_global_lb": 3.404648540141865,
+      "columns": 3000,
+      "completed_iterations": 15,
+      "elapsed_seconds": 20.905857020057738,
+      "event": "SOLVING_RMP",
+      "iteration": 16,
+      "rmp_nnz": 58128,
+      "rmp_row_families": {
+        "B1": 25,
+        "B2": 25,
+        "B3": 1203,
+        "B4": 25,
+        "BK": 101,
+        "total": 1379
+      },
+      "rmp_rows": 1379,
+      "rmp_variables": 5041,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "artificial_sum": 0.0,
+      "certified_global_lb": 3.404648540141865,
+      "columns": 3000,
+      "completed_iterations": 15,
+      "elapsed_seconds": 21.548395753023215,
+      "event": "RMP_SOLVED",
+      "feasible_lp_upper_bound": 15.617404108381638,
+      "iteration": 16,
+      "rmp_nnz": 58128,
+      "rmp_objective_with_artificials": 15.617404108381638,
+      "rmp_rows": 1379,
+      "rmp_status": "OPTIMAL",
+      "rmp_total_seconds": 0.6424017569515854,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "solve_seconds": 0.6397544740466401
+    },
+    {
+      "certified_global_lb": 3.404648540141865,
+      "columns": 3000,
+      "completed_iterations": 15,
+      "elapsed_seconds": 21.548501125071198,
+      "event": "PRICING",
+      "iteration": 16,
+      "origins_total": 25,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "certified_global_lb": 3.404648540141865,
+      "columns": 3000,
+      "completed_iterations": 15,
+      "elapsed_seconds": 22.739811344072223,
+      "event": "PRICING_FINISHED",
+      "iteration": 16,
+      "negative_candidates": 577,
+      "negative_duplicate_columns": 0,
+      "origins_processed": 25,
+      "origins_with_candidates": 25,
+      "pricing_seconds": 1.1912822959711775,
+      "pricing_slowest_origin_seconds": 0.1049158729147166,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "added_columns": 200,
+      "added_rows": 24,
+      "artificial_sum": 0.0,
+      "certified_global_lb": 3.404648540141865,
+      "columns": 3200,
+      "completed_iterations": 16,
+      "elapsed_seconds": 22.741110391099937,
+      "event": "ITERATION_COMPLETE",
+      "feasible_lp_upper_bound": 15.617404108381638,
+      "iteration": 16,
+      "iteration_seconds": 1.9166441549314186,
+      "negative_candidates": 577,
+      "rmp_objective_with_artificials": 15.617404108381638,
+      "row_blocked_candidates": 0,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "selected_origins": 23,
+      "selected_targets": 22
+    },
+    {
+      "certified_global_lb": 3.404648540141865,
+      "columns": 3200,
+      "completed_iterations": 16,
+      "elapsed_seconds": 22.741157406009734,
+      "event": "BUILD_RMP",
+      "iteration": 17,
+      "rmp_rows_predicted": 1403,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "build_seconds": 0.11639470397494733,
+      "certified_global_lb": 3.404648540141865,
+      "columns": 3200,
+      "completed_iterations": 16,
+      "elapsed_seconds": 22.857664613053203,
+      "event": "SOLVING_RMP",
+      "iteration": 17,
+      "rmp_nnz": 60225,
+      "rmp_row_families": {
+        "B1": 25,
+        "B2": 25,
+        "B3": 1227,
+        "B4": 25,
+        "BK": 101,
+        "total": 1403
+      },
+      "rmp_rows": 1403,
+      "rmp_variables": 5241,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "artificial_sum": 0.0,
+      "certified_global_lb": 3.404648540141865,
+      "columns": 3200,
+      "completed_iterations": 16,
+      "elapsed_seconds": 23.509158938075416,
+      "event": "RMP_SOLVED",
+      "feasible_lp_upper_bound": 15.500222537331277,
+      "iteration": 17,
+      "rmp_nnz": 60225,
+      "rmp_objective_with_artificials": 15.500222537331277,
+      "rmp_rows": 1403,
+      "rmp_status": "OPTIMAL",
+      "rmp_total_seconds": 0.6513553460827097,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "solve_seconds": 0.6483150519197807
+    },
+    {
+      "certified_global_lb": 3.404648540141865,
+      "columns": 3200,
+      "completed_iterations": 16,
+      "elapsed_seconds": 23.50929543399252,
+      "event": "PRICING",
+      "iteration": 17,
+      "origins_total": 25,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "certified_global_lb": 3.404648540141865,
+      "columns": 3200,
+      "completed_iterations": 16,
+      "elapsed_seconds": 24.358510771999136,
+      "event": "PRICING_FINISHED",
+      "iteration": 17,
+      "negative_candidates": 586,
+      "negative_duplicate_columns": 0,
+      "origins_processed": 25,
+      "origins_with_candidates": 25,
+      "pricing_seconds": 0.8491827880498022,
+      "pricing_slowest_origin_seconds": 0.06501762405969203,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "added_columns": 200,
+      "added_rows": 41,
+      "artificial_sum": 0.0,
+      "certified_global_lb": 3.404648540141865,
+      "columns": 3400,
+      "completed_iterations": 17,
+      "elapsed_seconds": 24.35993578005582,
+      "event": "ITERATION_COMPLETE",
+      "feasible_lp_upper_bound": 15.500222537331277,
+      "iteration": 17,
+      "iteration_seconds": 1.6181989421602339,
+      "negative_candidates": 586,
+      "rmp_objective_with_artificials": 15.500222537331277,
+      "row_blocked_candidates": 0,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "selected_origins": 23,
+      "selected_targets": 23
+    },
+    {
+      "certified_global_lb": 3.404648540141865,
+      "columns": 3400,
+      "completed_iterations": 17,
+      "elapsed_seconds": 24.359992017038167,
+      "event": "BUILD_RMP",
+      "iteration": 18,
+      "rmp_rows_predicted": 1444,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "build_seconds": 0.08901400200556964,
+      "certified_global_lb": 3.404648540141865,
+      "columns": 3400,
+      "completed_iterations": 17,
+      "elapsed_seconds": 24.44912942009978,
+      "event": "SOLVING_RMP",
+      "iteration": 18,
+      "rmp_nnz": 62364,
+      "rmp_row_families": {
+        "B1": 25,
+        "B2": 25,
+        "B3": 1268,
+        "B4": 25,
+        "BK": 101,
+        "total": 1444
+      },
+      "rmp_rows": 1444,
+      "rmp_variables": 5441,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "artificial_sum": 0.0,
+      "certified_global_lb": 3.404648540141865,
+      "columns": 3400,
+      "completed_iterations": 17,
+      "elapsed_seconds": 25.22054457908962,
+      "event": "RMP_SOLVED",
+      "feasible_lp_upper_bound": 15.406198722133686,
+      "iteration": 18,
+      "rmp_nnz": 62364,
+      "rmp_objective_with_artificials": 15.406198722133686,
+      "rmp_rows": 1444,
+      "rmp_status": "OPTIMAL",
+      "rmp_total_seconds": 0.771288505056873,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "solve_seconds": 0.7687120869522914
+    },
+    {
+      "certified_global_lb": 3.404648540141865,
+      "columns": 3400,
+      "completed_iterations": 17,
+      "elapsed_seconds": 25.220632251002826,
+      "event": "PRICING",
+      "iteration": 18,
+      "origins_total": 25,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "certified_global_lb": 3.404648540141865,
+      "columns": 3400,
+      "completed_iterations": 17,
+      "elapsed_seconds": 26.05342622799799,
+      "event": "PRICING_FINISHED",
+      "iteration": 18,
+      "negative_candidates": 601,
+      "negative_duplicate_columns": 0,
+      "origins_processed": 25,
+      "origins_with_candidates": 25,
+      "pricing_seconds": 0.8327672929735854,
+      "pricing_slowest_origin_seconds": 0.06175692903343588,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "added_columns": 200,
+      "added_rows": 39,
+      "artificial_sum": 0.0,
+      "certified_global_lb": 3.404648540141865,
+      "columns": 3600,
+      "completed_iterations": 18,
+      "elapsed_seconds": 26.054747793008573,
+      "event": "ITERATION_COMPLETE",
+      "feasible_lp_upper_bound": 15.406198722133686,
+      "iteration": 18,
+      "iteration_seconds": 1.694268604973331,
+      "negative_candidates": 601,
+      "rmp_objective_with_artificials": 15.406198722133686,
+      "row_blocked_candidates": 0,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "selected_origins": 25,
+      "selected_targets": 25
+    },
+    {
+      "certified_global_lb": 3.404648540141865,
+      "columns": 3600,
+      "completed_iterations": 18,
+      "elapsed_seconds": 26.054796866024844,
+      "event": "BUILD_RMP",
+      "iteration": 19,
+      "rmp_rows_predicted": 1483,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "build_seconds": 0.1183238549856469,
+      "certified_global_lb": 3.404648540141865,
+      "columns": 3600,
+      "completed_iterations": 18,
+      "elapsed_seconds": 26.17325138708111,
+      "event": "SOLVING_RMP",
+      "iteration": 19,
+      "rmp_nnz": 64446,
+      "rmp_row_families": {
+        "B1": 25,
+        "B2": 25,
+        "B3": 1307,
+        "B4": 25,
+        "BK": 101,
+        "total": 1483
+      },
+      "rmp_rows": 1483,
+      "rmp_variables": 5641,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "artificial_sum": 0.0,
+      "certified_global_lb": 3.404648540141865,
+      "columns": 3600,
+      "completed_iterations": 18,
+      "elapsed_seconds": 26.993993088020943,
+      "event": "RMP_SOLVED",
+      "feasible_lp_upper_bound": 15.279529200110492,
+      "iteration": 19,
+      "rmp_nnz": 64446,
+      "rmp_objective_with_artificials": 15.279529200110492,
+      "rmp_rows": 1483,
+      "rmp_status": "OPTIMAL",
+      "rmp_total_seconds": 0.820615595090203,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "solve_seconds": 0.8180226639378816
+    },
+    {
+      "certified_global_lb": 3.404648540141865,
+      "columns": 3600,
+      "completed_iterations": 18,
+      "elapsed_seconds": 26.994082718039863,
+      "event": "PRICING",
+      "iteration": 19,
+      "origins_total": 25,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "certified_global_lb": 3.404648540141865,
+      "columns": 3600,
+      "completed_iterations": 18,
+      "elapsed_seconds": 27.839632519055158,
+      "event": "PRICING_FINISHED",
+      "iteration": 19,
+      "negative_candidates": 600,
+      "negative_duplicate_columns": 0,
+      "origins_processed": 25,
+      "origins_with_candidates": 25,
+      "pricing_seconds": 0.8455196539871395,
+      "pricing_slowest_origin_seconds": 0.060997973079793155,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "added_columns": 200,
+      "added_rows": 34,
+      "artificial_sum": 0.0,
+      "certified_global_lb": 3.404648540141865,
+      "columns": 3800,
+      "completed_iterations": 19,
+      "elapsed_seconds": 27.8410428740317,
+      "event": "ITERATION_COMPLETE",
+      "feasible_lp_upper_bound": 15.279529200110492,
+      "iteration": 19,
+      "iteration_seconds": 1.7857028901344165,
+      "negative_candidates": 600,
+      "rmp_objective_with_artificials": 15.279529200110492,
+      "row_blocked_candidates": 0,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "selected_origins": 25,
+      "selected_targets": 24
+    },
+    {
+      "certified_global_lb": 3.404648540141865,
+      "columns": 3800,
+      "completed_iterations": 19,
+      "elapsed_seconds": 27.84109085809905,
+      "event": "BUILD_RMP",
+      "iteration": 20,
+      "rmp_rows_predicted": 1517,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "build_seconds": 0.12300664489157498,
+      "certified_global_lb": 3.404648540141865,
+      "columns": 3800,
+      "completed_iterations": 19,
+      "elapsed_seconds": 27.964223108021542,
+      "event": "SOLVING_RMP",
+      "iteration": 20,
+      "rmp_nnz": 66415,
+      "rmp_row_families": {
+        "B1": 25,
+        "B2": 25,
+        "B3": 1341,
+        "B4": 25,
+        "BK": 101,
+        "total": 1517
+      },
+      "rmp_rows": 1517,
+      "rmp_variables": 5841,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "artificial_sum": 0.0,
+      "certified_global_lb": 3.404648540141865,
+      "columns": 3800,
+      "completed_iterations": 19,
+      "elapsed_seconds": 28.80881367099937,
+      "event": "RMP_SOLVED",
+      "feasible_lp_upper_bound": 15.238628651060864,
+      "iteration": 20,
+      "rmp_nnz": 66415,
+      "rmp_objective_with_artificials": 15.238628651060864,
+      "rmp_rows": 1517,
+      "rmp_status": "OPTIMAL",
+      "rmp_total_seconds": 0.844461259082891,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "solve_seconds": 0.8417968909488991
+    },
+    {
+      "certified_global_lb": 3.404648540141865,
+      "columns": 3800,
+      "completed_iterations": 19,
+      "elapsed_seconds": 28.808903102064505,
+      "event": "PRICING",
+      "iteration": 20,
+      "origins_total": 25,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "certified_global_lb": 3.404648540141865,
+      "columns": 3800,
+      "completed_iterations": 19,
+      "elapsed_seconds": 29.63897991203703,
+      "event": "PRICING_FINISHED",
+      "iteration": 20,
+      "negative_candidates": 595,
+      "negative_duplicate_columns": 0,
+      "origins_processed": 25,
+      "origins_with_candidates": 25,
+      "pricing_seconds": 0.8300524390069768,
+      "pricing_slowest_origin_seconds": 0.06530304404441267,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "attempted": 5,
+      "cert_budget_seconds": 15.0,
+      "certified_global_lb": 3.404648540141865,
+      "columns": 3800,
+      "completed_iterations": 19,
+      "elapsed_seconds": 29.639036047039554,
+      "event": "INTERMEDIATE_CERT_STARTED",
+      "iteration": 20,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "cert_seconds": 0.8343945320229977,
+      "certified_global_lb": 3.404648540141865,
+      "columns": 3800,
+      "completed_iterations": 19,
+      "elapsed_seconds": 30.4734789110953,
+      "event": "INTERMEDIATE_CERT_FINISHED",
+      "improved": false,
+      "iteration": 20,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "status": "CERTIFIED_RATIONAL_DUAL"
+    },
+    {
+      "added_columns": 200,
+      "added_rows": 42,
+      "artificial_sum": 0.0,
+      "certified_global_lb": 3.404648540141865,
+      "columns": 4000,
+      "completed_iterations": 20,
+      "elapsed_seconds": 30.474728928063996,
+      "event": "ITERATION_COMPLETE",
+      "feasible_lp_upper_bound": 15.238628651060864,
+      "iteration": 20,
+      "iteration_seconds": 1.7986452829791233,
+      "negative_candidates": 595,
+      "rmp_objective_with_artificials": 15.238628651060864,
+      "row_blocked_candidates": 0,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "selected_origins": 23,
+      "selected_targets": 25
+    },
+    {
+      "certified_global_lb": 3.404648540141865,
+      "columns": 4000,
+      "completed_iterations": 20,
+      "elapsed_seconds": 30.47478458902333,
+      "event": "BUILD_RMP",
+      "iteration": 21,
+      "rmp_rows_predicted": 1559,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "build_seconds": 0.12313082895707339,
+      "certified_global_lb": 3.404648540141865,
+      "columns": 4000,
+      "completed_iterations": 20,
+      "elapsed_seconds": 30.59804799500853,
+      "event": "SOLVING_RMP",
+      "iteration": 21,
+      "rmp_nnz": 68470,
+      "rmp_row_families": {
+        "B1": 25,
+        "B2": 25,
+        "B3": 1383,
+        "B4": 25,
+        "BK": 101,
+        "total": 1559
+      },
+      "rmp_rows": 1559,
+      "rmp_variables": 6041,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "artificial_sum": 0.0,
+      "certified_global_lb": 3.404648540141865,
+      "columns": 4000,
+      "completed_iterations": 20,
+      "elapsed_seconds": 31.415168725070544,
+      "event": "RMP_SOLVED",
+      "feasible_lp_upper_bound": 15.003572996553105,
+      "iteration": 21,
+      "rmp_nnz": 68470,
+      "rmp_objective_with_artificials": 15.003572996553105,
+      "rmp_rows": 1559,
+      "rmp_status": "OPTIMAL",
+      "rmp_total_seconds": 0.8169818359892815,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "solve_seconds": 0.814247109927237
+    },
+    {
+      "certified_global_lb": 3.404648540141865,
+      "columns": 4000,
+      "completed_iterations": 20,
+      "elapsed_seconds": 31.415280934073962,
+      "event": "PRICING",
+      "iteration": 21,
+      "origins_total": 25,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "certified_global_lb": 3.404648540141865,
+      "columns": 4000,
+      "completed_iterations": 20,
+      "elapsed_seconds": 32.28113090607803,
+      "event": "PRICING_FINISHED",
+      "iteration": 21,
+      "negative_candidates": 591,
+      "negative_duplicate_columns": 0,
+      "origins_processed": 25,
+      "origins_with_candidates": 25,
+      "pricing_seconds": 0.865820701001212,
+      "pricing_slowest_origin_seconds": 0.060174852958880365,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "added_columns": 200,
+      "added_rows": 31,
+      "artificial_sum": 0.0,
+      "certified_global_lb": 3.404648540141865,
+      "columns": 4200,
+      "completed_iterations": 21,
+      "elapsed_seconds": 32.28246022108942,
+      "event": "ITERATION_COMPLETE",
+      "feasible_lp_upper_bound": 15.003572996553105,
+      "iteration": 21,
+      "iteration_seconds": 1.807109831017442,
+      "negative_candidates": 591,
+      "rmp_objective_with_artificials": 15.003572996553105,
+      "row_blocked_candidates": 0,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "selected_origins": 24,
+      "selected_targets": 22
+    },
+    {
+      "certified_global_lb": 3.404648540141865,
+      "columns": 4200,
+      "completed_iterations": 21,
+      "elapsed_seconds": 32.28250888700131,
+      "event": "BUILD_RMP",
+      "iteration": 22,
+      "rmp_rows_predicted": 1590,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "build_seconds": 0.0995312889572233,
+      "certified_global_lb": 3.404648540141865,
+      "columns": 4200,
+      "completed_iterations": 21,
+      "elapsed_seconds": 32.3821569950087,
+      "event": "SOLVING_RMP",
+      "iteration": 22,
+      "rmp_nnz": 70482,
+      "rmp_row_families": {
+        "B1": 25,
+        "B2": 25,
+        "B3": 1414,
+        "B4": 25,
+        "BK": 101,
+        "total": 1590
+      },
+      "rmp_rows": 1590,
+      "rmp_variables": 6241,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "artificial_sum": 0.0,
+      "certified_global_lb": 3.404648540141865,
+      "columns": 4200,
+      "completed_iterations": 21,
+      "elapsed_seconds": 33.23414939304348,
+      "event": "RMP_SOLVED",
+      "feasible_lp_upper_bound": 14.919656064825405,
+      "iteration": 22,
+      "rmp_nnz": 70482,
+      "rmp_objective_with_artificials": 14.919656064825405,
+      "rmp_rows": 1590,
+      "rmp_status": "OPTIMAL",
+      "rmp_total_seconds": 0.8518564250553027,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "solve_seconds": 0.8488908930448815
+    },
+    {
+      "certified_global_lb": 3.404648540141865,
+      "columns": 4200,
+      "completed_iterations": 21,
+      "elapsed_seconds": 33.23425895301625,
+      "event": "PRICING",
+      "iteration": 22,
+      "origins_total": 25,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "certified_global_lb": 3.404648540141865,
+      "columns": 4200,
+      "completed_iterations": 21,
+      "elapsed_seconds": 34.056437024031766,
+      "event": "PRICING_FINISHED",
+      "iteration": 22,
+      "negative_candidates": 589,
+      "negative_duplicate_columns": 0,
+      "origins_processed": 25,
+      "origins_with_candidates": 25,
+      "pricing_seconds": 0.8221520909573883,
+      "pricing_slowest_origin_seconds": 0.06346125202253461,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "added_columns": 200,
+      "added_rows": 56,
+      "artificial_sum": 0.0,
+      "certified_global_lb": 3.404648540141865,
+      "columns": 4400,
+      "completed_iterations": 22,
+      "elapsed_seconds": 34.05768014199566,
+      "event": "ITERATION_COMPLETE",
+      "feasible_lp_upper_bound": 14.919656064825405,
+      "iteration": 22,
+      "iteration_seconds": 1.7746604209532961,
+      "negative_candidates": 589,
+      "rmp_objective_with_artificials": 14.919656064825405,
+      "row_blocked_candidates": 0,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "selected_origins": 23,
+      "selected_targets": 25
+    },
+    {
+      "certified_global_lb": 3.404648540141865,
+      "columns": 4400,
+      "completed_iterations": 22,
+      "elapsed_seconds": 34.057731669046916,
+      "event": "BUILD_RMP",
+      "iteration": 23,
+      "rmp_rows_predicted": 1646,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "build_seconds": 0.13166172697674483,
+      "certified_global_lb": 3.404648540141865,
+      "columns": 4400,
+      "completed_iterations": 22,
+      "elapsed_seconds": 34.18952638108749,
+      "event": "SOLVING_RMP",
+      "iteration": 23,
+      "rmp_nnz": 72592,
+      "rmp_row_families": {
+        "B1": 25,
+        "B2": 25,
+        "B3": 1470,
+        "B4": 25,
+        "BK": 101,
+        "total": 1646
+      },
+      "rmp_rows": 1646,
+      "rmp_variables": 6441,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "artificial_sum": 0.0,
+      "certified_global_lb": 3.404648540141865,
+      "columns": 4400,
+      "completed_iterations": 22,
+      "elapsed_seconds": 35.03275683301035,
+      "event": "RMP_SOLVED",
+      "feasible_lp_upper_bound": 14.638995723090726,
+      "iteration": 23,
+      "rmp_nnz": 72592,
+      "rmp_objective_with_artificials": 14.638995723090726,
+      "rmp_rows": 1646,
+      "rmp_status": "OPTIMAL",
+      "rmp_total_seconds": 0.8431067640194669,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "solve_seconds": 0.8402585529256612
+    },
+    {
+      "certified_global_lb": 3.404648540141865,
+      "columns": 4400,
+      "completed_iterations": 22,
+      "elapsed_seconds": 35.032842449028976,
+      "event": "PRICING",
+      "iteration": 23,
+      "origins_total": 25,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "certified_global_lb": 3.404648540141865,
+      "columns": 4400,
+      "completed_iterations": 22,
+      "elapsed_seconds": 35.8725940460572,
+      "event": "PRICING_FINISHED",
+      "iteration": 23,
+      "negative_candidates": 569,
+      "negative_duplicate_columns": 0,
+      "origins_processed": 25,
+      "origins_with_candidates": 25,
+      "pricing_seconds": 0.8397269599372521,
+      "pricing_slowest_origin_seconds": 0.05969165696296841,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "added_columns": 200,
+      "added_rows": 55,
+      "artificial_sum": 0.0,
+      "certified_global_lb": 3.404648540141865,
+      "columns": 4600,
+      "completed_iterations": 23,
+      "elapsed_seconds": 35.87389050901402,
+      "event": "ITERATION_COMPLETE",
+      "feasible_lp_upper_bound": 14.638995723090726,
+      "iteration": 23,
+      "iteration_seconds": 1.8156676479848102,
+      "negative_candidates": 569,
+      "rmp_objective_with_artificials": 14.638995723090726,
+      "row_blocked_candidates": 0,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "selected_origins": 21,
+      "selected_targets": 23
+    },
+    {
+      "certified_global_lb": 3.404648540141865,
+      "columns": 4600,
+      "completed_iterations": 23,
+      "elapsed_seconds": 35.873936897027306,
+      "event": "BUILD_RMP",
+      "iteration": 24,
+      "rmp_rows_predicted": 1701,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "build_seconds": 0.1346037220209837,
+      "certified_global_lb": 3.404648540141865,
+      "columns": 4600,
+      "completed_iterations": 23,
+      "elapsed_seconds": 36.00866836705245,
+      "event": "SOLVING_RMP",
+      "iteration": 24,
+      "rmp_nnz": 74751,
+      "rmp_row_families": {
+        "B1": 25,
+        "B2": 25,
+        "B3": 1525,
+        "B4": 25,
+        "BK": 101,
+        "total": 1701
+      },
+      "rmp_rows": 1701,
+      "rmp_variables": 6641,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "artificial_sum": 0.0,
+      "certified_global_lb": 3.404648540141865,
+      "columns": 4600,
+      "completed_iterations": 23,
+      "elapsed_seconds": 37.01124928507488,
+      "event": "RMP_SOLVED",
+      "feasible_lp_upper_bound": 14.511785928142588,
+      "iteration": 24,
+      "rmp_nnz": 74751,
+      "rmp_objective_with_artificials": 14.511785928142588,
+      "rmp_rows": 1701,
+      "rmp_status": "OPTIMAL",
+      "rmp_total_seconds": 1.0024526260094717,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "solve_seconds": 0.9996383419493213
+    },
+    {
+      "certified_global_lb": 3.404648540141865,
+      "columns": 4600,
+      "completed_iterations": 23,
+      "elapsed_seconds": 37.01133650203701,
+      "event": "PRICING",
+      "iteration": 24,
+      "origins_total": 25,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "certified_global_lb": 3.404648540141865,
+      "columns": 4600,
+      "completed_iterations": 23,
+      "elapsed_seconds": 37.979030484100804,
+      "event": "PRICING_FINISHED",
+      "iteration": 24,
+      "negative_candidates": 543,
+      "negative_duplicate_columns": 0,
+      "origins_processed": 25,
+      "origins_with_candidates": 25,
+      "pricing_seconds": 0.9676654729992151,
+      "pricing_slowest_origin_seconds": 0.1122870339313522,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "added_columns": 200,
+      "added_rows": 47,
+      "artificial_sum": 0.0,
+      "certified_global_lb": 3.404648540141865,
+      "columns": 4800,
+      "completed_iterations": 24,
+      "elapsed_seconds": 37.9806595700793,
+      "event": "ITERATION_COMPLETE",
+      "feasible_lp_upper_bound": 14.511785928142588,
+      "iteration": 24,
+      "iteration_seconds": 2.1061823170166463,
+      "negative_candidates": 543,
+      "rmp_objective_with_artificials": 14.511785928142588,
+      "row_blocked_candidates": 0,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "selected_origins": 18,
+      "selected_targets": 22
+    },
+    {
+      "certified_global_lb": 3.404648540141865,
+      "columns": 4800,
+      "completed_iterations": 24,
+      "elapsed_seconds": 37.98072133609094,
+      "event": "BUILD_RMP",
+      "iteration": 25,
+      "rmp_rows_predicted": 1748,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "build_seconds": 0.11456184997223318,
+      "certified_global_lb": 3.404648540141865,
+      "columns": 4800,
+      "completed_iterations": 24,
+      "elapsed_seconds": 38.09541763702873,
+      "event": "SOLVING_RMP",
+      "iteration": 25,
+      "rmp_nnz": 76730,
+      "rmp_row_families": {
+        "B1": 25,
+        "B2": 25,
+        "B3": 1572,
+        "B4": 25,
+        "BK": 101,
+        "total": 1748
+      },
+      "rmp_rows": 1748,
+      "rmp_variables": 6841,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "artificial_sum": 0.0,
+      "certified_global_lb": 3.404648540141865,
+      "columns": 4800,
+      "completed_iterations": 24,
+      "elapsed_seconds": 39.203852763050236,
+      "event": "RMP_SOLVED",
+      "feasible_lp_upper_bound": 14.069668834162163,
+      "iteration": 25,
+      "rmp_nnz": 76730,
+      "rmp_objective_with_artificials": 14.069668834162163,
+      "rmp_rows": 1748,
+      "rmp_status": "OPTIMAL",
+      "rmp_total_seconds": 1.1083164740120992,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "solve_seconds": 1.1052071519661695
+    },
+    {
+      "certified_global_lb": 3.404648540141865,
+      "columns": 4800,
+      "completed_iterations": 24,
+      "elapsed_seconds": 39.20394760707859,
+      "event": "PRICING",
+      "iteration": 25,
+      "origins_total": 25,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "certified_global_lb": 3.404648540141865,
+      "columns": 4800,
+      "completed_iterations": 24,
+      "elapsed_seconds": 40.07278834306635,
+      "event": "PRICING_FINISHED",
+      "iteration": 25,
+      "negative_candidates": 577,
+      "negative_duplicate_columns": 0,
+      "origins_processed": 25,
+      "origins_with_candidates": 25,
+      "pricing_seconds": 0.8688151630340144,
+      "pricing_slowest_origin_seconds": 0.06009450403507799,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "attempted": 6,
+      "cert_budget_seconds": 15.0,
+      "certified_global_lb": 3.404648540141865,
+      "columns": 4800,
+      "completed_iterations": 24,
+      "elapsed_seconds": 40.07285389502067,
+      "event": "INTERMEDIATE_CERT_STARTED",
+      "iteration": 25,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "cert_seconds": 0.8346032990375534,
+      "certified_global_lb": 3.404648540141865,
+      "columns": 4800,
+      "completed_iterations": 24,
+      "elapsed_seconds": 40.907512704026885,
+      "event": "INTERMEDIATE_CERT_FINISHED",
+      "improved": false,
+      "iteration": 25,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "status": "CERTIFIED_RATIONAL_DUAL"
+    },
+    {
+      "added_columns": 200,
+      "added_rows": 50,
+      "artificial_sum": 0.0,
+      "certified_global_lb": 3.404648540141865,
+      "columns": 5000,
+      "completed_iterations": 25,
+      "elapsed_seconds": 40.90898166608531,
+      "event": "ITERATION_COMPLETE",
+      "feasible_lp_upper_bound": 14.069668834162163,
+      "iteration": 25,
+      "iteration_seconds": 2.092909347033128,
+      "negative_candidates": 577,
+      "rmp_objective_with_artificials": 14.069668834162163,
+      "row_blocked_candidates": 0,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "selected_origins": 22,
+      "selected_targets": 24
+    },
+    {
+      "certified_global_lb": 3.404648540141865,
+      "columns": 5000,
+      "completed_iterations": 25,
+      "elapsed_seconds": 40.9090363860596,
+      "event": "BUILD_RMP",
+      "iteration": 26,
+      "rmp_rows_predicted": 1798,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "build_seconds": 0.11356607510242611,
+      "certified_global_lb": 3.404648540141865,
+      "columns": 5000,
+      "completed_iterations": 25,
+      "elapsed_seconds": 41.02275974606164,
+      "event": "SOLVING_RMP",
+      "iteration": 26,
+      "rmp_nnz": 78743,
+      "rmp_row_families": {
+        "B1": 25,
+        "B2": 25,
+        "B3": 1622,
+        "B4": 25,
+        "BK": 101,
+        "total": 1798
+      },
+      "rmp_rows": 1798,
+      "rmp_variables": 7041,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "artificial_sum": 0.0,
+      "certified_global_lb": 3.404648540141865,
+      "columns": 5000,
+      "completed_iterations": 25,
+      "elapsed_seconds": 42.24893860507291,
+      "event": "RMP_SOLVED",
+      "feasible_lp_upper_bound": 13.994269129858392,
+      "iteration": 26,
+      "rmp_nnz": 78743,
+      "rmp_objective_with_artificials": 13.994269129858392,
+      "rmp_rows": 1798,
+      "rmp_status": "OPTIMAL",
+      "rmp_total_seconds": 1.2260492510395125,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "solve_seconds": 1.2230769268935546
+    },
+    {
+      "certified_global_lb": 3.404648540141865,
+      "columns": 5000,
+      "completed_iterations": 25,
+      "elapsed_seconds": 42.24904452706687,
+      "event": "PRICING",
+      "iteration": 26,
+      "origins_total": 25,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "certified_global_lb": 3.404648540141865,
+      "columns": 5000,
+      "completed_iterations": 25,
+      "elapsed_seconds": 43.10413625603542,
+      "event": "PRICING_FINISHED",
+      "iteration": 26,
+      "negative_candidates": 601,
+      "negative_duplicate_columns": 0,
+      "origins_processed": 25,
+      "origins_with_candidates": 25,
+      "pricing_seconds": 0.8550638400483876,
+      "pricing_slowest_origin_seconds": 0.06596112402621657,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    {
+      "certified_global_lb": 3.404648540141865,
+      "columns": 5000,
+      "completed_iterations": 26,
+      "elapsed_seconds": 43.104279680061154,
+      "event": "CG_FINISHED",
+      "feasible_lp_upper_bound": 13.994269129858392,
+      "n_iterations": 26,
+      "rmp_objective_with_artificials": 13.994269129858392,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "status": "CAP_EXCEEDED",
+      "stop_detail": {
+        "configured": 5000,
+        "limit": "max_columns",
+        "negative_candidates": 601,
+        "observed": 5000,
+        "reason": "CAP_EXCEEDED",
+        "stage": "SELECTING"
+      }
+    }
+  ],
+  "latest_certificate": {
+    "dual_correction": -12.29944966336991,
+    "duals": {
+      "gamma": [
+        [
+          "1446",
+          "1",
+          "0"
+        ],
+        [
+          "1446",
+          "100",
+          "0"
+        ],
+        [
+          "1446",
+          "1000",
+          "0"
+        ],
+        [
+          "1446",
+          "1002",
+          "0"
+        ],
+        [
+          "1446",
+          "1003",
+          "0"
+        ],
+        [
+          "1446",
+          "1007",
+          "0"
+        ],
+        [
+          "1446",
+          "1013",
+          "0"
+        ],
+        [
+          "1446",
+          "1014",
+          "0"
+        ],
+        [
+          "1446",
+          "1022",
+          "2013098688439549/25000000000000000"
+        ],
+        [
+          "1446",
+          "1023",
+          "0"
+        ],
+        [
+          "1446",
+          "1025",
+          "0"
+        ],
+        [
+          "1446",
+          "1027",
+          "0"
+        ],
+        [
+          "1446",
+          "1029",
+          "0"
+        ],
+        [
+          "1446",
+          "1043",
+          "0"
+        ],
+        [
+          "1446",
+          "1050",
+          "0"
+        ],
+        [
+          "1446",
+          "1051",
+          "4026197376879099/50000000000000000"
+        ],
+        [
+          "1446",
+          "1055",
+          "0"
+        ],
+        [
+          "1446",
+          "1056",
+          "0"
+        ],
+        [
+          "1446",
+          "1057",
+          "1892627970182581/10000000000000000"
+        ],
+        [
+          "1446",
+          "1058",
+          "1892627970182581/10000000000000000"
+        ],
+        [
+          "1446",
+          "1059",
+          "0"
+        ],
+        [
+          "1446",
+          "1063",
+          "0"
+        ],
+        [
+          "1446",
+          "1064",
+          "0"
+        ],
+        [
+          "1446",
+          "1065",
+          "5436942474033807/50000000000000000"
+        ],
+        [
+          "1446",
+          "1076",
+          "107372029817419/2000000000000000"
+        ],
+        [
+          "1446",
+          "1077",
+          "107372029817419/2000000000000000"
+        ],
+        [
+          "1446",
+          "1080",
+          "0"
+        ],
+        [
+          "1446",
+          "1084",
+          "0"
+        ],
+        [
+          "1446",
+          "1085",
+          "0"
+        ],
+        [
+          "1446",
+          "1086",
+          "0"
+        ],
+        [
+          "1446",
+          "1087",
+          "0"
+        ],
+        [
+          "1446",
+          "1088",
+          "7852559403651617/10000000000000000"
+        ],
+        [
+          "1446",
+          "1089",
+          "607372029817419/2500000000000000"
+        ],
+        [
+          "1446",
+          "1090",
+          "0"
+        ],
+        [
+          "1446",
+          "1096",
+          "0"
+        ],
+        [
+          "1446",
+          "1097",
+          "2718471237016903/25000000000000000"
+        ],
+        [
+          "1446",
+          "1099",
+          "0"
+        ],
+        [
+          "1446",
+          "11",
+          "0"
+        ],
+        [
+          "1446",
+          "1101",
+          "0"
+        ],
+        [
+          "1446",
+          "1104",
+          "0"
+        ],
+        [
+          "1446",
+          "1115",
+          "2718471237016903/25000000000000000"
+        ],
+        [
+          "1446",
+          "1124",
+          "107372029817419/2000000000000000"
+        ],
+        [
+          "1446",
+          "1137",
+          "607372029817419/2500000000000000"
+        ],
+        [
+          "1446",
+          "1139",
+          "1892627970182581/10000000000000000"
+        ],
+        [
+          "1626",
+          "1",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "1626",
+          "10",
+          "0"
+        ],
+        [
+          "1626",
+          "100",
+          "0"
+        ],
+        [
+          "1626",
+          "1000",
+          "0"
+        ],
+        [
+          "1626",
+          "1001",
+          "0"
+        ],
+        [
+          "1626",
+          "1002",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "1626",
+          "1003",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "1626",
+          "1005",
+          "0"
+        ],
+        [
+          "1626",
+          "1007",
+          "0"
+        ],
+        [
+          "1626",
+          "101",
+          "0"
+        ],
+        [
+          "1626",
+          "1012",
+          "5436942474033807/50000000000000000"
+        ],
+        [
+          "1626",
+          "1013",
+          "2924227216852919/125000000000000000"
+        ],
+        [
+          "1626",
+          "1014",
+          "0"
+        ],
+        [
+          "1626",
+          "1015",
+          "0"
+        ],
+        [
+          "1626",
+          "1023",
+          "605843943477723/20000000000000000"
+        ],
+        [
+          "1626",
+          "1024",
+          "0"
+        ],
+        [
+          "1626",
+          "1025",
+          "0"
+        ],
+        [
+          "1626",
+          "1026",
+          "0"
+        ],
+        [
+          "1626",
+          "1027",
+          "0"
+        ],
+        [
+          "1626",
+          "1028",
+          "0"
+        ],
+        [
+          "1626",
+          "1029",
+          "0"
+        ],
+        [
+          "1626",
+          "1030",
+          "0"
+        ],
+        [
+          "1626",
+          "1031",
+          "0"
+        ],
+        [
+          "1626",
+          "1032",
+          "0"
+        ],
+        [
+          "1626",
+          "1033",
+          "0"
+        ],
+        [
+          "1626",
+          "1034",
+          "0"
+        ],
+        [
+          "1626",
+          "1039",
+          "2924227216852919/125000000000000000"
+        ],
+        [
+          "1626",
+          "1042",
+          "3475776166364057/25000000000000000"
+        ],
+        [
+          "1626",
+          "1043",
+          "0"
+        ],
+        [
+          "1626",
+          "1050",
+          "0"
+        ],
+        [
+          "1626",
+          "1051",
+          "5436942474033807/50000000000000000"
+        ],
+        [
+          "1626",
+          "1057",
+          "0"
+        ],
+        [
+          "1626",
+          "1058",
+          "0"
+        ],
+        [
+          "1626",
+          "1063",
+          "0"
+        ],
+        [
+          "1626",
+          "1064",
+          "0"
+        ],
+        [
+          "1626",
+          "1065",
+          "0"
+        ],
+        [
+          "1626",
+          "1068",
+          "0"
+        ],
+        [
+          "1626",
+          "1069",
+          "107372029817419/2000000000000000"
+        ],
+        [
+          "1626",
+          "1075",
+          "0"
+        ],
+        [
+          "1626",
+          "1076",
+          "3475776166364057/25000000000000000"
+        ],
+        [
+          "1626",
+          "1077",
+          "107372029817419/2000000000000000"
+        ],
+        [
+          "1626",
+          "1084",
+          "0"
+        ],
+        [
+          "1626",
+          "1086",
+          "10737202981741867/100000000000000000"
+        ],
+        [
+          "1626",
+          "1087",
+          "0"
+        ],
+        [
+          "1626",
+          "1099",
+          "0"
+        ],
+        [
+          "1626",
+          "1101",
+          "0"
+        ],
+        [
+          "1626",
+          "1124",
+          "19271706156327179/100000000000000000"
+        ],
+        [
+          "768",
+          "1",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "768",
+          "100",
+          "0"
+        ],
+        [
+          "768",
+          "1000",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "768",
+          "1001",
+          "0"
+        ],
+        [
+          "768",
+          "1002",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "768",
+          "1003",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "768",
+          "1005",
+          "0"
+        ],
+        [
+          "768",
+          "1007",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "768",
+          "101",
+          "2924227216852919/125000000000000000"
+        ],
+        [
+          "768",
+          "1012",
+          "2924227216852919/125000000000000000"
+        ],
+        [
+          "768",
+          "1013",
+          "0"
+        ],
+        [
+          "768",
+          "1014",
+          "2924227216852919/125000000000000000"
+        ],
+        [
+          "768",
+          "1015",
+          "0"
+        ],
+        [
+          "768",
+          "1019",
+          "0"
+        ],
+        [
+          "768",
+          "1023",
+          "0"
+        ],
+        [
+          "768",
+          "1025",
+          "0"
+        ],
+        [
+          "768",
+          "1027",
+          "0"
+        ],
+        [
+          "768",
+          "1028",
+          "0"
+        ],
+        [
+          "768",
+          "1029",
+          "0"
+        ],
+        [
+          "768",
+          "1030",
+          "0"
+        ],
+        [
+          "768",
+          "1031",
+          "0"
+        ],
+        [
+          "768",
+          "1032",
+          "0"
+        ],
+        [
+          "768",
+          "1033",
+          "0"
+        ],
+        [
+          "768",
+          "1039",
+          "0"
+        ],
+        [
+          "768",
+          "1040",
+          "5436942474033807/50000000000000000"
+        ],
+        [
+          "768",
+          "1042",
+          "0"
+        ],
+        [
+          "768",
+          "1043",
+          "0"
+        ],
+        [
+          "768",
+          "1050",
+          "0"
+        ],
+        [
+          "768",
+          "1051",
+          "0"
+        ],
+        [
+          "768",
+          "1052",
+          "0"
+        ],
+        [
+          "768",
+          "1057",
+          "0"
+        ],
+        [
+          "768",
+          "1058",
+          "0"
+        ],
+        [
+          "768",
+          "1063",
+          "0"
+        ],
+        [
+          "768",
+          "1064",
+          "5436942474033807/50000000000000000"
+        ],
+        [
+          "768",
+          "1065",
+          "5436942474033807/50000000000000000"
+        ],
+        [
+          "768",
+          "1068",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "768",
+          "1069",
+          "0"
+        ],
+        [
+          "768",
+          "1075",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "768",
+          "1076",
+          "107372029817419/2000000000000000"
+        ],
+        [
+          "768",
+          "1077",
+          "3475776166364057/25000000000000000"
+        ],
+        [
+          "768",
+          "1084",
+          "0"
+        ],
+        [
+          "768",
+          "1086",
+          "0"
+        ],
+        [
+          "768",
+          "1099",
+          "0"
+        ],
+        [
+          "768",
+          "1101",
+          "0"
+        ],
+        [
+          "768",
+          "1102",
+          "0"
+        ],
+        [
+          "774",
+          "1",
+          "4726354132600141/1000000000000000000"
+        ],
+        [
+          "774",
+          "10",
+          "0"
+        ],
+        [
+          "774",
+          "100",
+          "0"
+        ],
+        [
+          "774",
+          "1000",
+          "4726354132600141/1000000000000000000"
+        ],
+        [
+          "774",
+          "1002",
+          "4726354132600141/1000000000000000000"
+        ],
+        [
+          "774",
+          "1003",
+          "26843007454354917/500000000000000000"
+        ],
+        [
+          "774",
+          "1007",
+          "4726354132600141/1000000000000000000"
+        ],
+        [
+          "774",
+          "1013",
+          "0"
+        ],
+        [
+          "774",
+          "1014",
+          "0"
+        ],
+        [
+          "774",
+          "1022",
+          "5263721764236007/500000000000000000"
+        ],
+        [
+          "774",
+          "1023",
+          "0"
+        ],
+        [
+          "774",
+          "1025",
+          "0"
+        ],
+        [
+          "774",
+          "1027",
+          "0"
+        ],
+        [
+          "774",
+          "1029",
+          "0"
+        ],
+        [
+          "774",
+          "1043",
+          "0"
+        ],
+        [
+          "774",
+          "1050",
+          "12527770572779151/250000000000000000"
+        ],
+        [
+          "774",
+          "1051",
+          "2534762554554393/10000000000000000"
+        ],
+        [
+          "774",
+          "1055",
+          "0"
+        ],
+        [
+          "774",
+          "1057",
+          "13557678210954827/100000000000000000"
+        ],
+        [
+          "774",
+          "1058",
+          "1892627970182581/10000000000000000"
+        ],
+        [
+          "774",
+          "1059",
+          "4463139850912903/10000000000000000"
+        ],
+        [
+          "774",
+          "1063",
+          "0"
+        ],
+        [
+          "774",
+          "1064",
+          "0"
+        ],
+        [
+          "774",
+          "1065",
+          "2688507211890827/20000000000000000"
+        ],
+        [
+          "774",
+          "1068",
+          "4726354132600141/1000000000000000000"
+        ],
+        [
+          "774",
+          "1076",
+          "10737202981741933/100000000000000000"
+        ],
+        [
+          "774",
+          "1077",
+          "107372029817419/2000000000000000"
+        ],
+        [
+          "774",
+          "1078",
+          "4090274096963/15625000000000"
+        ],
+        [
+          "774",
+          "1079",
+          "22219390344298717/100000000000000000"
+        ],
+        [
+          "774",
+          "1080",
+          "0"
+        ],
+        [
+          "774",
+          "1084",
+          "1723495314244533/25000000000000000"
+        ],
+        [
+          "774",
+          "1085",
+          "0"
+        ],
+        [
+          "774",
+          "1086",
+          "0"
+        ],
+        [
+          "774",
+          "1087",
+          "0"
+        ],
+        [
+          "774",
+          "1088",
+          "26843007454354917/500000000000000000"
+        ],
+        [
+          "774",
+          "1089",
+          "1291013047940197/5000000000000000"
+        ],
+        [
+          "774",
+          "1090",
+          "5084129329108067/25000000000000000"
+        ],
+        [
+          "774",
+          "1096",
+          "0"
+        ],
+        [
+          "774",
+          "1097",
+          "0"
+        ],
+        [
+          "774",
+          "1099",
+          "0"
+        ],
+        [
+          "774",
+          "11",
+          "107372029817419/2000000000000000"
+        ],
+        [
+          "774",
+          "1101",
+          "0"
+        ],
+        [
+          "774",
+          "1104",
+          "0"
+        ],
+        [
+          "774",
+          "1105",
+          "1460309226032741/25000000000000000"
+        ],
+        [
+          "774",
+          "1108",
+          "0"
+        ],
+        [
+          "774",
+          "1119",
+          "1460309226032741/25000000000000000"
+        ],
+        [
+          "774",
+          "1124",
+          "0"
+        ],
+        [
+          "774",
+          "1129",
+          "0"
+        ],
+        [
+          "774",
+          "1130",
+          "0"
+        ],
+        [
+          "774",
+          "1139",
+          "11421035715494049/25000000000000000"
+        ],
+        [
+          "774",
+          "1147",
+          "0"
+        ],
+        [
+          "774",
+          "1153",
+          "0"
+        ],
+        [
+          "777",
+          "1",
+          "5084129329108067/25000000000000000"
+        ],
+        [
+          "777",
+          "100",
+          "0"
+        ],
+        [
+          "777",
+          "1000",
+          "0"
+        ],
+        [
+          "777",
+          "1002",
+          "0"
+        ],
+        [
+          "777",
+          "1003",
+          "0"
+        ],
+        [
+          "777",
+          "1007",
+          "5084129329108067/25000000000000000"
+        ],
+        [
+          "777",
+          "1013",
+          "0"
+        ],
+        [
+          "777",
+          "1014",
+          "0"
+        ],
+        [
+          "777",
+          "1022",
+          "25705118807303207/100000000000000000"
+        ],
+        [
+          "777",
+          "1023",
+          "0"
+        ],
+        [
+          "777",
+          "1025",
+          "0"
+        ],
+        [
+          "777",
+          "1027",
+          "0"
+        ],
+        [
+          "777",
+          "1029",
+          "0"
+        ],
+        [
+          "777",
+          "1030",
+          "0"
+        ],
+        [
+          "777",
+          "1032",
+          "0"
+        ],
+        [
+          "777",
+          "1043",
+          "0"
+        ],
+        [
+          "777",
+          "1050",
+          "0"
+        ],
+        [
+          "777",
+          "1051",
+          "0"
+        ],
+        [
+          "777",
+          "1057",
+          "12147440596348391/50000000000000000"
+        ],
+        [
+          "777",
+          "1058",
+          "2365784962728229/12500000000000000"
+        ],
+        [
+          "777",
+          "1059",
+          "1285255940365161/5000000000000000"
+        ],
+        [
+          "777",
+          "1063",
+          "0"
+        ],
+        [
+          "777",
+          "1064",
+          "0"
+        ],
+        [
+          "777",
+          "1065",
+          "0"
+        ],
+        [
+          "777",
+          "1076",
+          "0"
+        ],
+        [
+          "777",
+          "1077",
+          "0"
+        ],
+        [
+          "777",
+          "1078",
+          "1580004623729889/2500000000000000"
+        ],
+        [
+          "777",
+          "1079",
+          "6178994733458911/10000000000000000"
+        ],
+        [
+          "777",
+          "1084",
+          "108728699829711/1000000000000000"
+        ],
+        [
+          "777",
+          "1085",
+          "4731316184182327/50000000000000000"
+        ],
+        [
+          "777",
+          "1086",
+          "0"
+        ],
+        [
+          "777",
+          "1087",
+          "0"
+        ],
+        [
+          "777",
+          "1088",
+          "107372029817419/2000000000000000"
+        ],
+        [
+          "777",
+          "1090",
+          "1264003698983911/2000000000000000"
+        ],
+        [
+          "777",
+          "1097",
+          "3516775117566787/10000000000000000"
+        ],
+        [
+          "777",
+          "1098",
+          "0"
+        ],
+        [
+          "777",
+          "1099",
+          "0"
+        ],
+        [
+          "777",
+          "11",
+          "0"
+        ],
+        [
+          "777",
+          "1104",
+          "4176835113281391/5000000000000000"
+        ],
+        [
+          "777",
+          "1115",
+          "3633140865878011/5000000000000000"
+        ],
+        [
+          "780",
+          "1",
+          "0"
+        ],
+        [
+          "780",
+          "100",
+          "0"
+        ],
+        [
+          "780",
+          "1000",
+          "0"
+        ],
+        [
+          "780",
+          "1002",
+          "0"
+        ],
+        [
+          "780",
+          "1003",
+          "0"
+        ],
+        [
+          "780",
+          "1013",
+          "0"
+        ],
+        [
+          "780",
+          "1014",
+          "0"
+        ],
+        [
+          "780",
+          "1022",
+          "0"
+        ],
+        [
+          "780",
+          "1023",
+          "0"
+        ],
+        [
+          "780",
+          "1025",
+          "0"
+        ],
+        [
+          "780",
+          "1027",
+          "0"
+        ],
+        [
+          "780",
+          "1029",
+          "0"
+        ],
+        [
+          "780",
+          "1030",
+          "0"
+        ],
+        [
+          "780",
+          "1043",
+          "0"
+        ],
+        [
+          "780",
+          "1050",
+          "0"
+        ],
+        [
+          "780",
+          "1051",
+          "531103041512061/5000000000000000"
+        ],
+        [
+          "780",
+          "1052",
+          "946313985091291/5000000000000000"
+        ],
+        [
+          "780",
+          "1057",
+          "1892627970182581/10000000000000000"
+        ],
+        [
+          "780",
+          "1058",
+          "946313985091291/5000000000000000"
+        ],
+        [
+          "780",
+          "1059",
+          "0"
+        ],
+        [
+          "780",
+          "1063",
+          "0"
+        ],
+        [
+          "780",
+          "1064",
+          "0"
+        ],
+        [
+          "780",
+          "1065",
+          "0"
+        ],
+        [
+          "780",
+          "1076",
+          "5368601490870961/100000000000000000"
+        ],
+        [
+          "780",
+          "1077",
+          "5368601490870961/100000000000000000"
+        ],
+        [
+          "780",
+          "1078",
+          "5311030415120621/50000000000000000"
+        ],
+        [
+          "780",
+          "1079",
+          "1599066232111217/10000000000000000"
+        ],
+        [
+          "780",
+          "1084",
+          "2055828719001269/2500000000000000"
+        ],
+        [
+          "780",
+          "1085",
+          "1810747352632707/2000000000000000"
+        ],
+        [
+          "780",
+          "1086",
+          "0"
+        ],
+        [
+          "780",
+          "1087",
+          "107372029817419/2000000000000000"
+        ],
+        [
+          "780",
+          "1088",
+          "0"
+        ],
+        [
+          "780",
+          "1089",
+          "946313985091291/5000000000000000"
+        ],
+        [
+          "780",
+          "1090",
+          "0"
+        ],
+        [
+          "780",
+          "1092",
+          "5256966607648301/10000000000000000"
+        ],
+        [
+          "780",
+          "1097",
+          "5395836387626451/10000000000000000"
+        ],
+        [
+          "780",
+          "1098",
+          "9053736763163533/10000000000000000"
+        ],
+        [
+          "780",
+          "1099",
+          "0"
+        ],
+        [
+          "780",
+          "11",
+          "0"
+        ],
+        [
+          "780",
+          "1124",
+          "5551115123125783/100000000000000000000000000000000"
+        ],
+        [
+          "780",
+          "1125",
+          "0"
+        ],
+        [
+          "785",
+          "1",
+          "0"
+        ],
+        [
+          "785",
+          "100",
+          "0"
+        ],
+        [
+          "785",
+          "1000",
+          "0"
+        ],
+        [
+          "785",
+          "1002",
+          "0"
+        ],
+        [
+          "785",
+          "1003",
+          "0"
+        ],
+        [
+          "785",
+          "1013",
+          "0"
+        ],
+        [
+          "785",
+          "1014",
+          "0"
+        ],
+        [
+          "785",
+          "1022",
+          "0"
+        ],
+        [
+          "785",
+          "1023",
+          "0"
+        ],
+        [
+          "785",
+          "1025",
+          "0"
+        ],
+        [
+          "785",
+          "1027",
+          "0"
+        ],
+        [
+          "785",
+          "1029",
+          "0"
+        ],
+        [
+          "785",
+          "1043",
+          "0"
+        ],
+        [
+          "785",
+          "1050",
+          "0"
+        ],
+        [
+          "785",
+          "1051",
+          "2228468643217231/12500000000000000"
+        ],
+        [
+          "785",
+          "1055",
+          "0"
+        ],
+        [
+          "785",
+          "1056",
+          "0"
+        ],
+        [
+          "785",
+          "1057",
+          "1892627970182581/10000000000000000"
+        ],
+        [
+          "785",
+          "1058",
+          "1892627970182581/10000000000000000"
+        ],
+        [
+          "785",
+          "1059",
+          "607372029817419/2500000000000000"
+        ],
+        [
+          "785",
+          "1063",
+          "0"
+        ],
+        [
+          "785",
+          "1064",
+          "10985305560879621/1000000000000000000"
+        ],
+        [
+          "785",
+          "1065",
+          "1892627970182581/10000000000000000"
+        ],
+        [
+          "785",
+          "1068",
+          "0"
+        ],
+        [
+          "785",
+          "1076",
+          "107372029817419/2000000000000000"
+        ],
+        [
+          "785",
+          "1077",
+          "107372029817419/2000000000000000"
+        ],
+        [
+          "785",
+          "1080",
+          "0"
+        ],
+        [
+          "785",
+          "1084",
+          "0"
+        ],
+        [
+          "785",
+          "1085",
+          "0"
+        ],
+        [
+          "785",
+          "1086",
+          "0"
+        ],
+        [
+          "785",
+          "1087",
+          "107372029817419/2000000000000000"
+        ],
+        [
+          "785",
+          "1088",
+          "4163336342344337/25000000000000000000000000000000"
+        ],
+        [
+          "785",
+          "1089",
+          "0"
+        ],
+        [
+          "785",
+          "1090",
+          "823164886718609/5000000000000000"
+        ],
+        [
+          "785",
+          "1096",
+          "0"
+        ],
+        [
+          "785",
+          "1099",
+          "0"
+        ],
+        [
+          "785",
+          "11",
+          "0"
+        ],
+        [
+          "785",
+          "1101",
+          "0"
+        ],
+        [
+          "785",
+          "1104",
+          "823164886718609/5000000000000000"
+        ],
+        [
+          "785",
+          "1115",
+          "8231648867186081/50000000000000000"
+        ],
+        [
+          "785",
+          "1137",
+          "823164886718609/5000000000000000"
+        ],
+        [
+          "785",
+          "1138",
+          "823164886718609/5000000000000000"
+        ],
+        [
+          "785",
+          "1139",
+          "3538957743619799/10000000000000000"
+        ],
+        [
+          "785",
+          "1157",
+          "0"
+        ],
+        [
+          "790",
+          "1",
+          "0"
+        ],
+        [
+          "790",
+          "100",
+          "0"
+        ],
+        [
+          "790",
+          "1000",
+          "0"
+        ],
+        [
+          "790",
+          "1002",
+          "0"
+        ],
+        [
+          "790",
+          "1003",
+          "0"
+        ],
+        [
+          "790",
+          "1005",
+          "0"
+        ],
+        [
+          "790",
+          "1007",
+          "0"
+        ],
+        [
+          "790",
+          "1013",
+          "2924227216852919/125000000000000000"
+        ],
+        [
+          "790",
+          "1014",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "790",
+          "1015",
+          "0"
+        ],
+        [
+          "790",
+          "1023",
+          "0"
+        ],
+        [
+          "790",
+          "1025",
+          "0"
+        ],
+        [
+          "790",
+          "1027",
+          "6467132046958929/100000000000000000"
+        ],
+        [
+          "790",
+          "1029",
+          "0"
+        ],
+        [
+          "790",
+          "1030",
+          "0"
+        ],
+        [
+          "790",
+          "1032",
+          "0"
+        ],
+        [
+          "790",
+          "1043",
+          "0"
+        ],
+        [
+          "790",
+          "1050",
+          "3313184396603047/50000000000000000"
+        ],
+        [
+          "790",
+          "1051",
+          "0"
+        ],
+        [
+          "790",
+          "1055",
+          "8670508497513263/50000000000000000"
+        ],
+        [
+          "790",
+          "1056",
+          "8670508497513271/50000000000000000"
+        ],
+        [
+          "790",
+          "1057",
+          "0"
+        ],
+        [
+          "790",
+          "1058",
+          "0"
+        ],
+        [
+          "790",
+          "1059",
+          "10737202981741989/200000000000000000"
+        ],
+        [
+          "790",
+          "1063",
+          "0"
+        ],
+        [
+          "790",
+          "1064",
+          "0"
+        ],
+        [
+          "790",
+          "1065",
+          "334832756306889/3125000000000000"
+        ],
+        [
+          "790",
+          "1068",
+          "3475776166364057/25000000000000000"
+        ],
+        [
+          "790",
+          "1069",
+          "0"
+        ],
+        [
+          "790",
+          "1072",
+          "8670508497513271/50000000000000000"
+        ],
+        [
+          "790",
+          "1073",
+          "11972415504155581/100000000000000000"
+        ],
+        [
+          "790",
+          "1076",
+          "5368601490870967/100000000000000000"
+        ],
+        [
+          "790",
+          "1077",
+          "2667215499644749/12500000000000000"
+        ],
+        [
+          "790",
+          "1080",
+          "0"
+        ],
+        [
+          "790",
+          "1084",
+          "0"
+        ],
+        [
+          "790",
+          "1085",
+          "0"
+        ],
+        [
+          "790",
+          "1086",
+          "0"
+        ],
+        [
+          "790",
+          "1087",
+          "5368601490870917/100000000000000000"
+        ],
+        [
+          "790",
+          "1088",
+          "0"
+        ],
+        [
+          "790",
+          "1089",
+          "0"
+        ],
+        [
+          "790",
+          "1090",
+          "0"
+        ],
+        [
+          "790",
+          "1096",
+          "0"
+        ],
+        [
+          "790",
+          "1099",
+          "0"
+        ],
+        [
+          "790",
+          "11",
+          "107372029817419/2000000000000000"
+        ],
+        [
+          "790",
+          "1101",
+          "0"
+        ],
+        [
+          "790",
+          "1104",
+          "0"
+        ],
+        [
+          "790",
+          "1126",
+          "0"
+        ],
+        [
+          "792",
+          "1",
+          "0"
+        ],
+        [
+          "792",
+          "100",
+          "0"
+        ],
+        [
+          "792",
+          "1000",
+          "0"
+        ],
+        [
+          "792",
+          "1001",
+          "7145280976170887/10000000000000000"
+        ],
+        [
+          "792",
+          "1002",
+          "0"
+        ],
+        [
+          "792",
+          "1003",
+          "0"
+        ],
+        [
+          "792",
+          "1004",
+          "2133625793646321/25000000000000000"
+        ],
+        [
+          "792",
+          "1005",
+          "0"
+        ],
+        [
+          "792",
+          "1007",
+          "2133625793646321/25000000000000000"
+        ],
+        [
+          "792",
+          "1008",
+          "0"
+        ],
+        [
+          "792",
+          "101",
+          "0"
+        ],
+        [
+          "792",
+          "1013",
+          "3974654066062957/5000000000000000"
+        ],
+        [
+          "792",
+          "1014",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "792",
+          "1015",
+          "0"
+        ],
+        [
+          "792",
+          "1023",
+          "0"
+        ],
+        [
+          "792",
+          "1025",
+          "0"
+        ],
+        [
+          "792",
+          "1027",
+          "0"
+        ],
+        [
+          "792",
+          "1029",
+          "0"
+        ],
+        [
+          "792",
+          "1043",
+          "0"
+        ],
+        [
+          "792",
+          "1050",
+          "5368601490871021/50000000000000000"
+        ],
+        [
+          "792",
+          "1051",
+          "0"
+        ],
+        [
+          "792",
+          "1055",
+          "8265898300497347/10000000000000000"
+        ],
+        [
+          "792",
+          "1056",
+          "1653179660099469/2000000000000000"
+        ],
+        [
+          "792",
+          "1057",
+          "107372029817419/2000000000000000"
+        ],
+        [
+          "792",
+          "1058",
+          "107372029817419/2000000000000000"
+        ],
+        [
+          "792",
+          "1059",
+          "0"
+        ],
+        [
+          "792",
+          "1063",
+          "0"
+        ],
+        [
+          "792",
+          "1064",
+          "4401379224792221/5000000000000000"
+        ],
+        [
+          "792",
+          "1065",
+          "0"
+        ],
+        [
+          "792",
+          "1068",
+          "0"
+        ],
+        [
+          "792",
+          "1069",
+          "3864519075705119/5000000000000000"
+        ],
+        [
+          "792",
+          "1070",
+          "0"
+        ],
+        [
+          "792",
+          "1072",
+          "8265898300497347/10000000000000000"
+        ],
+        [
+          "792",
+          "1073",
+          "4401379224792221/5000000000000000"
+        ],
+        [
+          "792",
+          "1075",
+          "4143693683533889/25000000000000000"
+        ],
+        [
+          "792",
+          "1076",
+          "107372029817419/2000000000000000"
+        ],
+        [
+          "792",
+          "1077",
+          "0"
+        ],
+        [
+          "792",
+          "1080",
+          "0"
+        ],
+        [
+          "792",
+          "1084",
+          "0"
+        ],
+        [
+          "792",
+          "1085",
+          "0"
+        ],
+        [
+          "792",
+          "1086",
+          "2220446049250313/10000000000000000000000000000000"
+        ],
+        [
+          "792",
+          "1087",
+          "0"
+        ],
+        [
+          "792",
+          "1090",
+          "0"
+        ],
+        [
+          "792",
+          "1096",
+          "0"
+        ],
+        [
+          "792",
+          "1097",
+          "0"
+        ],
+        [
+          "792",
+          "1099",
+          "0"
+        ],
+        [
+          "792",
+          "1101",
+          "0"
+        ],
+        [
+          "792",
+          "1104",
+          "0"
+        ],
+        [
+          "792",
+          "1126",
+          "0"
+        ],
+        [
+          "793",
+          "1",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "793",
+          "100",
+          "0"
+        ],
+        [
+          "793",
+          "1000",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "793",
+          "1001",
+          "0"
+        ],
+        [
+          "793",
+          "1002",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "793",
+          "1003",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "793",
+          "1005",
+          "0"
+        ],
+        [
+          "793",
+          "1007",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "793",
+          "101",
+          "0"
+        ],
+        [
+          "793",
+          "1012",
+          "5436942474033807/50000000000000000"
+        ],
+        [
+          "793",
+          "1013",
+          "2924227216852919/125000000000000000"
+        ],
+        [
+          "793",
+          "1014",
+          "0"
+        ],
+        [
+          "793",
+          "1015",
+          "0"
+        ],
+        [
+          "793",
+          "1019",
+          "2924227216852919/125000000000000000"
+        ],
+        [
+          "793",
+          "1022",
+          "0"
+        ],
+        [
+          "793",
+          "1023",
+          "0"
+        ],
+        [
+          "793",
+          "1024",
+          "17341016995026667/100000000000000000"
+        ],
+        [
+          "793",
+          "1025",
+          "0"
+        ],
+        [
+          "793",
+          "1026",
+          "0"
+        ],
+        [
+          "793",
+          "1027",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "793",
+          "1028",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "793",
+          "1029",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "793",
+          "1030",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "793",
+          "1032",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "793",
+          "1033",
+          "0"
+        ],
+        [
+          "793",
+          "1043",
+          "0"
+        ],
+        [
+          "793",
+          "1050",
+          "17341016995026667/100000000000000000"
+        ],
+        [
+          "793",
+          "1051",
+          "0"
+        ],
+        [
+          "793",
+          "1052",
+          "0"
+        ],
+        [
+          "793",
+          "1057",
+          "0"
+        ],
+        [
+          "793",
+          "1058",
+          "0"
+        ],
+        [
+          "793",
+          "1063",
+          "0"
+        ],
+        [
+          "793",
+          "1064",
+          "0"
+        ],
+        [
+          "793",
+          "1065",
+          "0"
+        ],
+        [
+          "793",
+          "1068",
+          "0"
+        ],
+        [
+          "793",
+          "1069",
+          "17341016995026667/100000000000000000"
+        ],
+        [
+          "793",
+          "1075",
+          "0"
+        ],
+        [
+          "793",
+          "1076",
+          "107372029817419/2000000000000000"
+        ],
+        [
+          "793",
+          "1077",
+          "3475776166364057/25000000000000000"
+        ],
+        [
+          "793",
+          "1084",
+          "0"
+        ],
+        [
+          "793",
+          "1086",
+          "0"
+        ],
+        [
+          "793",
+          "1087",
+          "0"
+        ],
+        [
+          "793",
+          "1094",
+          "0"
+        ],
+        [
+          "793",
+          "1096",
+          "0"
+        ],
+        [
+          "793",
+          "1099",
+          "0"
+        ],
+        [
+          "793",
+          "1101",
+          "0"
+        ],
+        [
+          "793",
+          "1102",
+          "0"
+        ],
+        [
+          "793",
+          "1108",
+          "0"
+        ],
+        [
+          "793",
+          "1109",
+          "0"
+        ],
+        [
+          "793",
+          "1110",
+          "0"
+        ],
+        [
+          "793",
+          "1122",
+          "14750121231942087/50000000000000000"
+        ],
+        [
+          "798",
+          "1",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "798",
+          "100",
+          "0"
+        ],
+        [
+          "798",
+          "1000",
+          "3475776166364057/25000000000000000"
+        ],
+        [
+          "798",
+          "1001",
+          "0"
+        ],
+        [
+          "798",
+          "1002",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "798",
+          "1003",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "798",
+          "1004",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "798",
+          "1005",
+          "0"
+        ],
+        [
+          "798",
+          "1007",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "798",
+          "101",
+          "0"
+        ],
+        [
+          "798",
+          "1012",
+          "107372029817419/2000000000000000"
+        ],
+        [
+          "798",
+          "1013",
+          "2924227216852919/125000000000000000"
+        ],
+        [
+          "798",
+          "1014",
+          "0"
+        ],
+        [
+          "798",
+          "1015",
+          "0"
+        ],
+        [
+          "798",
+          "1019",
+          "0"
+        ],
+        [
+          "798",
+          "1022",
+          "0"
+        ],
+        [
+          "798",
+          "1023",
+          "0"
+        ],
+        [
+          "798",
+          "1024",
+          "22709618485897617/100000000000000000"
+        ],
+        [
+          "798",
+          "1025",
+          "0"
+        ],
+        [
+          "798",
+          "1027",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "798",
+          "1028",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "798",
+          "1029",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "798",
+          "103",
+          "0"
+        ],
+        [
+          "798",
+          "1030",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "798",
+          "1032",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "798",
+          "1033",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "798",
+          "1035",
+          "6180201414184701/10000000000000000"
+        ],
+        [
+          "798",
+          "1039",
+          "0"
+        ],
+        [
+          "798",
+          "1043",
+          "0"
+        ],
+        [
+          "798",
+          "1050",
+          "17341016995026667/100000000000000000"
+        ],
+        [
+          "798",
+          "1051",
+          "0"
+        ],
+        [
+          "798",
+          "1057",
+          "0"
+        ],
+        [
+          "798",
+          "1058",
+          "0"
+        ],
+        [
+          "798",
+          "1063",
+          "0"
+        ],
+        [
+          "798",
+          "1064",
+          "0"
+        ],
+        [
+          "798",
+          "1065",
+          "0"
+        ],
+        [
+          "798",
+          "1068",
+          "3475776166364057/25000000000000000"
+        ],
+        [
+          "798",
+          "1069",
+          "0"
+        ],
+        [
+          "798",
+          "1075",
+          "2924227216852919/125000000000000000"
+        ],
+        [
+          "798",
+          "1076",
+          "0"
+        ],
+        [
+          "798",
+          "1077",
+          "0"
+        ],
+        [
+          "798",
+          "1080",
+          "0"
+        ],
+        [
+          "798",
+          "1081",
+          "0"
+        ],
+        [
+          "798",
+          "1084",
+          "0"
+        ],
+        [
+          "798",
+          "1086",
+          "107372029817419/2000000000000000"
+        ],
+        [
+          "798",
+          "1087",
+          "0"
+        ],
+        [
+          "798",
+          "1088",
+          "107372029817419/2000000000000000"
+        ],
+        [
+          "798",
+          "1096",
+          "0"
+        ],
+        [
+          "798",
+          "1099",
+          "0"
+        ],
+        [
+          "798",
+          "1101",
+          "0"
+        ],
+        [
+          "798",
+          "1102",
+          "0"
+        ],
+        [
+          "798",
+          "1107",
+          "0"
+        ],
+        [
+          "798",
+          "1126",
+          "0"
+        ],
+        [
+          "798",
+          "1148",
+          "0"
+        ],
+        [
+          "798",
+          "1344",
+          "0"
+        ],
+        [
+          "798",
+          "1345",
+          "0"
+        ],
+        [
+          "799",
+          "1",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "799",
+          "100",
+          "0"
+        ],
+        [
+          "799",
+          "1000",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "799",
+          "1001",
+          "2924227216852919/125000000000000000"
+        ],
+        [
+          "799",
+          "1002",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "799",
+          "1003",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "799",
+          "1004",
+          "290389972144839/5000000000000000"
+        ],
+        [
+          "799",
+          "1005",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "799",
+          "1007",
+          "1117640093376773/10000000000000000"
+        ],
+        [
+          "799",
+          "101",
+          "0"
+        ],
+        [
+          "799",
+          "1012",
+          "5017401012709621/10000000000000000"
+        ],
+        [
+          "799",
+          "1013",
+          "2924227216852919/125000000000000000"
+        ],
+        [
+          "799",
+          "1014",
+          "0"
+        ],
+        [
+          "799",
+          "1015",
+          "0"
+        ],
+        [
+          "799",
+          "1022",
+          "0"
+        ],
+        [
+          "799",
+          "1023",
+          "0"
+        ],
+        [
+          "799",
+          "1024",
+          "0"
+        ],
+        [
+          "799",
+          "1025",
+          "0"
+        ],
+        [
+          "799",
+          "1027",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "799",
+          "1028",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "799",
+          "1029",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "799",
+          "1030",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "799",
+          "1043",
+          "0"
+        ],
+        [
+          "799",
+          "1050",
+          "8806513820441389/100000000000000000"
+        ],
+        [
+          "799",
+          "1051",
+          "0"
+        ],
+        [
+          "799",
+          "1052",
+          "0"
+        ],
+        [
+          "799",
+          "1057",
+          "0"
+        ],
+        [
+          "799",
+          "1058",
+          "0"
+        ],
+        [
+          "799",
+          "1063",
+          "0"
+        ],
+        [
+          "799",
+          "1064",
+          "0"
+        ],
+        [
+          "799",
+          "1065",
+          "0"
+        ],
+        [
+          "799",
+          "1068",
+          "1033685563813111/50000000000000000"
+        ],
+        [
+          "799",
+          "1069",
+          "0"
+        ],
+        [
+          "799",
+          "1070",
+          "0"
+        ],
+        [
+          "799",
+          "1074",
+          "6467132046959057/100000000000000000"
+        ],
+        [
+          "799",
+          "1075",
+          "0"
+        ],
+        [
+          "799",
+          "1076",
+          "0"
+        ],
+        [
+          "799",
+          "1080",
+          "0"
+        ],
+        [
+          "799",
+          "1081",
+          "107372029817419/2000000000000000"
+        ],
+        [
+          "799",
+          "1082",
+          "11563722891973893/100000000000000000"
+        ],
+        [
+          "799",
+          "1083",
+          "3408379664610623/125000000000000000"
+        ],
+        [
+          "799",
+          "1084",
+          "0"
+        ],
+        [
+          "799",
+          "1086",
+          "0"
+        ],
+        [
+          "799",
+          "1094",
+          "3475776166364057/25000000000000000"
+        ],
+        [
+          "799",
+          "1096",
+          "0"
+        ],
+        [
+          "799",
+          "1099",
+          "0"
+        ],
+        [
+          "799",
+          "1101",
+          "0"
+        ],
+        [
+          "799",
+          "1102",
+          "0"
+        ],
+        [
+          "799",
+          "1107",
+          "0"
+        ],
+        [
+          "804",
+          "1",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "804",
+          "100",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "804",
+          "1000",
+          "3475776166364057/25000000000000000"
+        ],
+        [
+          "804",
+          "1001",
+          "8806513820441389/100000000000000000"
+        ],
+        [
+          "804",
+          "1002",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "804",
+          "1003",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "804",
+          "1004",
+          "0"
+        ],
+        [
+          "804",
+          "1005",
+          "0"
+        ],
+        [
+          "804",
+          "1007",
+          "0"
+        ],
+        [
+          "804",
+          "101",
+          "0"
+        ],
+        [
+          "804",
+          "1012",
+          "17341016995026667/100000000000000000"
+        ],
+        [
+          "804",
+          "1013",
+          "2924227216852919/125000000000000000"
+        ],
+        [
+          "804",
+          "1014",
+          "0"
+        ],
+        [
+          "804",
+          "1015",
+          "0"
+        ],
+        [
+          "804",
+          "1022",
+          "0"
+        ],
+        [
+          "804",
+          "1023",
+          "0"
+        ],
+        [
+          "804",
+          "1024",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "804",
+          "1027",
+          "0"
+        ],
+        [
+          "804",
+          "1028",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "804",
+          "1029",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "804",
+          "1030",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "804",
+          "1043",
+          "0"
+        ],
+        [
+          "804",
+          "1050",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "804",
+          "1051",
+          "0"
+        ],
+        [
+          "804",
+          "1052",
+          "0"
+        ],
+        [
+          "804",
+          "1057",
+          "0"
+        ],
+        [
+          "804",
+          "1058",
+          "0"
+        ],
+        [
+          "804",
+          "1063",
+          "0"
+        ],
+        [
+          "804",
+          "1064",
+          "0"
+        ],
+        [
+          "804",
+          "1065",
+          "5436942474033807/50000000000000000"
+        ],
+        [
+          "804",
+          "1068",
+          "0"
+        ],
+        [
+          "804",
+          "1069",
+          "0"
+        ],
+        [
+          "804",
+          "1075",
+          "0"
+        ],
+        [
+          "804",
+          "1076",
+          "0"
+        ],
+        [
+          "804",
+          "1080",
+          "0"
+        ],
+        [
+          "804",
+          "1081",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "804",
+          "1082",
+          "22709618485897617/100000000000000000"
+        ],
+        [
+          "804",
+          "1084",
+          "0"
+        ],
+        [
+          "804",
+          "1086",
+          "0"
+        ],
+        [
+          "804",
+          "1087",
+          "0"
+        ],
+        [
+          "804",
+          "1094",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "804",
+          "1096",
+          "0"
+        ],
+        [
+          "804",
+          "1099",
+          "0"
+        ],
+        [
+          "804",
+          "1101",
+          "0"
+        ],
+        [
+          "804",
+          "1102",
+          "0"
+        ],
+        [
+          "804",
+          "1107",
+          "22709618485897617/100000000000000000"
+        ],
+        [
+          "809",
+          "1",
+          "107372029817419/4000000000000000"
+        ],
+        [
+          "809",
+          "100",
+          "0"
+        ],
+        [
+          "809",
+          "1000",
+          "107372029817419/4000000000000000"
+        ],
+        [
+          "809",
+          "1002",
+          "107372029817419/4000000000000000"
+        ],
+        [
+          "809",
+          "1003",
+          "107372029817419/4000000000000000"
+        ],
+        [
+          "809",
+          "1004",
+          "2133625793646321/25000000000000000"
+        ],
+        [
+          "809",
+          "1007",
+          "0"
+        ],
+        [
+          "809",
+          "101",
+          "0"
+        ],
+        [
+          "809",
+          "1013",
+          "0"
+        ],
+        [
+          "809",
+          "1014",
+          "8189584202632139/100000000000000000"
+        ],
+        [
+          "809",
+          "1015",
+          "0"
+        ],
+        [
+          "809",
+          "1022",
+          "0"
+        ],
+        [
+          "809",
+          "1023",
+          "0"
+        ],
+        [
+          "809",
+          "1024",
+          "107372029817419/2000000000000000"
+        ],
+        [
+          "809",
+          "1025",
+          "0"
+        ],
+        [
+          "809",
+          "1027",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "809",
+          "1028",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "809",
+          "1029",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "809",
+          "103",
+          "6467132046959057/100000000000000000"
+        ],
+        [
+          "809",
+          "1030",
+          "433525424875667/2500000000000000"
+        ],
+        [
+          "809",
+          "1032",
+          "8806513820441389/100000000000000000"
+        ],
+        [
+          "809",
+          "1033",
+          "1832089531198899/12500000000000000"
+        ],
+        [
+          "809",
+          "1035",
+          "0"
+        ],
+        [
+          "809",
+          "1039",
+          "433525424875667/2500000000000000"
+        ],
+        [
+          "809",
+          "1040",
+          "0"
+        ],
+        [
+          "809",
+          "1041",
+          "0"
+        ],
+        [
+          "809",
+          "1042",
+          "6467132046959057/100000000000000000"
+        ],
+        [
+          "809",
+          "1043",
+          "0"
+        ],
+        [
+          "809",
+          "1050",
+          "1482215556031729/25000000000000000"
+        ],
+        [
+          "809",
+          "1051",
+          "0"
+        ],
+        [
+          "809",
+          "1057",
+          "0"
+        ],
+        [
+          "809",
+          "1058",
+          "0"
+        ],
+        [
+          "809",
+          "1063",
+          "0"
+        ],
+        [
+          "809",
+          "1064",
+          "0"
+        ],
+        [
+          "809",
+          "1065",
+          "0"
+        ],
+        [
+          "809",
+          "1068",
+          "2133625793646321/25000000000000000"
+        ],
+        [
+          "809",
+          "1069",
+          "0"
+        ],
+        [
+          "809",
+          "1070",
+          "0"
+        ],
+        [
+          "809",
+          "1076",
+          "0"
+        ],
+        [
+          "809",
+          "1080",
+          "0"
+        ],
+        [
+          "809",
+          "1081",
+          "1426519346362469/12500000000000000"
+        ],
+        [
+          "809",
+          "1082",
+          "3197585510809371/10000000000000000"
+        ],
+        [
+          "809",
+          "1084",
+          "0"
+        ],
+        [
+          "809",
+          "1086",
+          "0"
+        ],
+        [
+          "809",
+          "1087",
+          "0"
+        ],
+        [
+          "809",
+          "1096",
+          "0"
+        ],
+        [
+          "809",
+          "1099",
+          "0"
+        ],
+        [
+          "809",
+          "1101",
+          "1"
+        ],
+        [
+          "809",
+          "1107",
+          "1224545521184577/2500000000000000"
+        ],
+        [
+          "814",
+          "1",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "814",
+          "100",
+          "0"
+        ],
+        [
+          "814",
+          "1000",
+          "3475776166364057/25000000000000000"
+        ],
+        [
+          "814",
+          "1001",
+          "395737710464291/12500000000000000"
+        ],
+        [
+          "814",
+          "1002",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "814",
+          "1003",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "814",
+          "1004",
+          "0"
+        ],
+        [
+          "814",
+          "1005",
+          "0"
+        ],
+        [
+          "814",
+          "1007",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "814",
+          "1008",
+          "0"
+        ],
+        [
+          "814",
+          "101",
+          "0"
+        ],
+        [
+          "814",
+          "1012",
+          "0"
+        ],
+        [
+          "814",
+          "1013",
+          "2924227216852919/125000000000000000"
+        ],
+        [
+          "814",
+          "1014",
+          "0"
+        ],
+        [
+          "814",
+          "1015",
+          "0"
+        ],
+        [
+          "814",
+          "1022",
+          "0"
+        ],
+        [
+          "814",
+          "1023",
+          "0"
+        ],
+        [
+          "814",
+          "1024",
+          "0"
+        ],
+        [
+          "814",
+          "1025",
+          "0"
+        ],
+        [
+          "814",
+          "1027",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "814",
+          "1028",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "814",
+          "1029",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "814",
+          "1030",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "814",
+          "1032",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "814",
+          "1033",
+          "0"
+        ],
+        [
+          "814",
+          "1039",
+          "2843323221273669/10000000000000000"
+        ],
+        [
+          "814",
+          "1043",
+          "0"
+        ],
+        [
+          "814",
+          "1050",
+          "8806513820441389/100000000000000000"
+        ],
+        [
+          "814",
+          "1051",
+          "0"
+        ],
+        [
+          "814",
+          "1052",
+          "0"
+        ],
+        [
+          "814",
+          "1057",
+          "0"
+        ],
+        [
+          "814",
+          "1058",
+          "0"
+        ],
+        [
+          "814",
+          "1063",
+          "0"
+        ],
+        [
+          "814",
+          "1064",
+          "0"
+        ],
+        [
+          "814",
+          "1065",
+          "0"
+        ],
+        [
+          "814",
+          "1068",
+          "164327430559471/312500000000000"
+        ],
+        [
+          "814",
+          "1069",
+          "0"
+        ],
+        [
+          "814",
+          "1070",
+          "0"
+        ],
+        [
+          "814",
+          "1075",
+          "28203060683635303/500000000000000000"
+        ],
+        [
+          "814",
+          "1076",
+          "0"
+        ],
+        [
+          "814",
+          "1077",
+          "107372029817419/2000000000000000"
+        ],
+        [
+          "814",
+          "1080",
+          "0"
+        ],
+        [
+          "814",
+          "1081",
+          "22709618485897617/100000000000000000"
+        ],
+        [
+          "814",
+          "1082",
+          "22709618485897617/100000000000000000"
+        ],
+        [
+          "814",
+          "1084",
+          "0"
+        ],
+        [
+          "814",
+          "1086",
+          "0"
+        ],
+        [
+          "814",
+          "1087",
+          "0"
+        ],
+        [
+          "814",
+          "1096",
+          "0"
+        ],
+        [
+          "814",
+          "1099",
+          "0"
+        ],
+        [
+          "814",
+          "1101",
+          "0"
+        ],
+        [
+          "814",
+          "1102",
+          "0"
+        ],
+        [
+          "814",
+          "1107",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "819",
+          "1",
+          "30292197173886093/1000000000000000000"
+        ],
+        [
+          "819",
+          "100",
+          "0"
+        ],
+        [
+          "819",
+          "1000",
+          "605843943477723/20000000000000000"
+        ],
+        [
+          "819",
+          "1001",
+          "10737202981741889/200000000000000000"
+        ],
+        [
+          "819",
+          "1002",
+          "286235945552761/2000000000000000"
+        ],
+        [
+          "819",
+          "1003",
+          "605843943477723/20000000000000000"
+        ],
+        [
+          "819",
+          "1005",
+          "4267251587292631/50000000000000000"
+        ],
+        [
+          "819",
+          "1007",
+          "4267251587292631/50000000000000000"
+        ],
+        [
+          "819",
+          "101",
+          "5848454433705831/250000000000000000"
+        ],
+        [
+          "819",
+          "1012",
+          "30292197173886093/1000000000000000000"
+        ],
+        [
+          "819",
+          "1013",
+          "0"
+        ],
+        [
+          "819",
+          "1014",
+          "7844665230678999/100000000000000000"
+        ],
+        [
+          "819",
+          "1015",
+          "0"
+        ],
+        [
+          "819",
+          "1019",
+          "4127750273476721/100000000000000000"
+        ],
+        [
+          "819",
+          "102",
+          "6467132046959057/100000000000000000"
+        ],
+        [
+          "819",
+          "1022",
+          "4846937624756131/10000000000000000"
+        ],
+        [
+          "819",
+          "1023",
+          "198157838349893/12500000000000000"
+        ],
+        [
+          "819",
+          "1024",
+          "0"
+        ],
+        [
+          "819",
+          "1025",
+          "6467132046959057/100000000000000000"
+        ],
+        [
+          "819",
+          "1027",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "819",
+          "1028",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "819",
+          "1029",
+          "3233566023479517/50000000000000000"
+        ],
+        [
+          "819",
+          "1030",
+          "3096275078095923/20000000000000000"
+        ],
+        [
+          "819",
+          "1032",
+          "1561986173919903/10000000000000000"
+        ],
+        [
+          "819",
+          "1033",
+          "297373777812863/500000000000000"
+        ],
+        [
+          "819",
+          "1043",
+          "0"
+        ],
+        [
+          "819",
+          "1050",
+          "0"
+        ],
+        [
+          "819",
+          "1051",
+          "0"
+        ],
+        [
+          "819",
+          "1057",
+          "0"
+        ],
+        [
+          "819",
+          "1058",
+          "0"
+        ],
+        [
+          "819",
+          "1063",
+          "0"
+        ],
+        [
+          "819",
+          "1064",
+          "0"
+        ],
+        [
+          "819",
+          "1065",
+          "0"
+        ],
+        [
+          "819",
+          "1069",
+          "0"
+        ],
+        [
+          "819",
+          "1075",
+          "494807048263/976562500000"
+        ],
+        [
+          "819",
+          "1076",
+          "605843943477723/20000000000000000"
+        ],
+        [
+          "819",
+          "1077",
+          "0"
+        ],
+        [
+          "819",
+          "1080",
+          "1"
+        ],
+        [
+          "819",
+          "1081",
+          "5070929144158873/10000000000000000"
+        ],
+        [
+          "819",
+          "1084",
+          "0"
+        ],
+        [
+          "819",
+          "1086",
+          "0"
+        ],
+        [
+          "819",
+          "1087",
+          "0"
+        ],
+        [
+          "819",
+          "1096",
+          "0"
+        ],
+        [
+          "819",
+          "1099",
+          "0"
+        ],
+        [
+          "819",
+          "1101",
+          "0"
+        ],
+        [
+          "819",
+          "1102",
+          "148676598288091/4000000000000000"
+        ],
+        [
+          "820",
+          "1",
+          "0"
+        ],
+        [
+          "820",
+          "100",
+          "0"
+        ],
+        [
+          "820",
+          "1000",
+          "0"
+        ],
+        [
+          "820",
+          "1001",
+          "0"
+        ],
+        [
+          "820",
+          "1002",
+          "4487273465429267/100000000000000000"
+        ],
+        [
+          "820",
+          "1003",
+          "0"
+        ],
+        [
+          "820",
+          "1007",
+          "4487273465429267/100000000000000000"
+        ],
+        [
+          "820",
+          "101",
+          "0"
+        ],
+        [
+          "820",
+          "1013",
+          "0"
+        ],
+        [
+          "820",
+          "1014",
+          "5436942474033807/50000000000000000"
+        ],
+        [
+          "820",
+          "1015",
+          "0"
+        ],
+        [
+          "820",
+          "1022",
+          "0"
+        ],
+        [
+          "820",
+          "1023",
+          "0"
+        ],
+        [
+          "820",
+          "1024",
+          "5436942474033807/50000000000000000"
+        ],
+        [
+          "820",
+          "1025",
+          "0"
+        ],
+        [
+          "820",
+          "1027",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "820",
+          "1028",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "820",
+          "1029",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "820",
+          "103",
+          "0"
+        ],
+        [
+          "820",
+          "1030",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "820",
+          "1031",
+          "22709618485897617/100000000000000000"
+        ],
+        [
+          "820",
+          "1032",
+          "64268717647987/500000000000000"
+        ],
+        [
+          "820",
+          "1033",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "820",
+          "1034",
+          "1"
+        ],
+        [
+          "820",
+          "1035",
+          "0"
+        ],
+        [
+          "820",
+          "1039",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "820",
+          "1040",
+          "5436942474033807/50000000000000000"
+        ],
+        [
+          "820",
+          "1041",
+          "0"
+        ],
+        [
+          "820",
+          "1042",
+          "0"
+        ],
+        [
+          "820",
+          "1043",
+          "0"
+        ],
+        [
+          "820",
+          "1050",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "820",
+          "1051",
+          "0"
+        ],
+        [
+          "820",
+          "1057",
+          "0"
+        ],
+        [
+          "820",
+          "1058",
+          "0"
+        ],
+        [
+          "820",
+          "1063",
+          "0"
+        ],
+        [
+          "820",
+          "1064",
+          "0"
+        ],
+        [
+          "820",
+          "1065",
+          "0"
+        ],
+        [
+          "820",
+          "1076",
+          "107372029817419/2000000000000000"
+        ],
+        [
+          "820",
+          "1086",
+          "0"
+        ],
+        [
+          "820",
+          "1087",
+          "0"
+        ],
+        [
+          "820",
+          "1096",
+          "0"
+        ],
+        [
+          "820",
+          "1099",
+          "0"
+        ],
+        [
+          "820",
+          "1101",
+          "0"
+        ],
+        [
+          "820",
+          "1102",
+          "0"
+        ],
+        [
+          "820",
+          "1107",
+          "4487273465429267/100000000000000000"
+        ],
+        [
+          "821",
+          "1",
+          "26006507054007033/500000000000000000"
+        ],
+        [
+          "821",
+          "100",
+          "0"
+        ],
+        [
+          "821",
+          "1000",
+          "10569902901672357/100000000000000000"
+        ],
+        [
+          "821",
+          "1001",
+          "0"
+        ],
+        [
+          "821",
+          "1002",
+          "26006507054007033/500000000000000000"
+        ],
+        [
+          "821",
+          "1003",
+          "26006507054007033/500000000000000000"
+        ],
+        [
+          "821",
+          "101",
+          "5475172826001573/1000000000000000000"
+        ],
+        [
+          "821",
+          "1013",
+          "895932245441089/50000000000000000"
+        ],
+        [
+          "821",
+          "1014",
+          "3880719046384029/100000000000000000"
+        ],
+        [
+          "821",
+          "1015",
+          "0"
+        ],
+        [
+          "821",
+          "1023",
+          "0"
+        ],
+        [
+          "821",
+          "1024",
+          "0"
+        ],
+        [
+          "821",
+          "1025",
+          "0"
+        ],
+        [
+          "821",
+          "1027",
+          "0"
+        ],
+        [
+          "821",
+          "1028",
+          "0"
+        ],
+        [
+          "821",
+          "1029",
+          "0"
+        ],
+        [
+          "821",
+          "1030",
+          "0"
+        ],
+        [
+          "821",
+          "1031",
+          "0"
+        ],
+        [
+          "821",
+          "1032",
+          "0"
+        ],
+        [
+          "821",
+          "1033",
+          "0"
+        ],
+        [
+          "821",
+          "1039",
+          "0"
+        ],
+        [
+          "821",
+          "1040",
+          "0"
+        ],
+        [
+          "821",
+          "1041",
+          "0"
+        ],
+        [
+          "821",
+          "1042",
+          "0"
+        ],
+        [
+          "821",
+          "1043",
+          "0"
+        ],
+        [
+          "821",
+          "1050",
+          "0"
+        ],
+        [
+          "821",
+          "1051",
+          "0"
+        ],
+        [
+          "821",
+          "1057",
+          "0"
+        ],
+        [
+          "821",
+          "1058",
+          "0"
+        ],
+        [
+          "821",
+          "1063",
+          "0"
+        ],
+        [
+          "821",
+          "1064",
+          "0"
+        ],
+        [
+          "821",
+          "1065",
+          "0"
+        ],
+        [
+          "821",
+          "1069",
+          "0"
+        ],
+        [
+          "821",
+          "1076",
+          "0"
+        ],
+        [
+          "821",
+          "1077",
+          "0"
+        ],
+        [
+          "821",
+          "1080",
+          "0"
+        ],
+        [
+          "821",
+          "1081",
+          "52081277559123/1562500000000000"
+        ],
+        [
+          "821",
+          "1082",
+          "11041185028137157/100000000000000000"
+        ],
+        [
+          "821",
+          "1086",
+          "0"
+        ],
+        [
+          "821",
+          "1087",
+          "0"
+        ],
+        [
+          "821",
+          "1096",
+          "1"
+        ],
+        [
+          "821",
+          "1099",
+          "0"
+        ],
+        [
+          "821",
+          "1101",
+          "0"
+        ],
+        [
+          "821",
+          "1102",
+          "0"
+        ],
+        [
+          "822",
+          "1",
+          "0"
+        ],
+        [
+          "822",
+          "100",
+          "0"
+        ],
+        [
+          "822",
+          "1000",
+          "4967633890812337/50000000000000000"
+        ],
+        [
+          "822",
+          "1001",
+          "0"
+        ],
+        [
+          "822",
+          "1002",
+          "1141666572688431/25000000000000000"
+        ],
+        [
+          "822",
+          "1003",
+          "1141666572688431/25000000000000000"
+        ],
+        [
+          "822",
+          "101",
+          "0"
+        ],
+        [
+          "822",
+          "1013",
+          "2924227216852919/125000000000000000"
+        ],
+        [
+          "822",
+          "1014",
+          "793567376766311/20000000000000000"
+        ],
+        [
+          "822",
+          "1015",
+          "0"
+        ],
+        [
+          "822",
+          "1022",
+          "793567376766311/20000000000000000"
+        ],
+        [
+          "822",
+          "1023",
+          "0"
+        ],
+        [
+          "822",
+          "1024",
+          "0"
+        ],
+        [
+          "822",
+          "1025",
+          "0"
+        ],
+        [
+          "822",
+          "1027",
+          "0"
+        ],
+        [
+          "822",
+          "1028",
+          "0"
+        ],
+        [
+          "822",
+          "1029",
+          "0"
+        ],
+        [
+          "822",
+          "1030",
+          "0"
+        ],
+        [
+          "822",
+          "1031",
+          "0"
+        ],
+        [
+          "822",
+          "1032",
+          "0"
+        ],
+        [
+          "822",
+          "1033",
+          "0"
+        ],
+        [
+          "822",
+          "1039",
+          "4060621609734641/25000000000000000"
+        ],
+        [
+          "822",
+          "1040",
+          "0"
+        ],
+        [
+          "822",
+          "1041",
+          "0"
+        ],
+        [
+          "822",
+          "1042",
+          "0"
+        ],
+        [
+          "822",
+          "1043",
+          "0"
+        ],
+        [
+          "822",
+          "1050",
+          "0"
+        ],
+        [
+          "822",
+          "1051",
+          "0"
+        ],
+        [
+          "822",
+          "1054",
+          "0"
+        ],
+        [
+          "822",
+          "1057",
+          "0"
+        ],
+        [
+          "822",
+          "1058",
+          "0"
+        ],
+        [
+          "822",
+          "1063",
+          "0"
+        ],
+        [
+          "822",
+          "1064",
+          "0"
+        ],
+        [
+          "822",
+          "1065",
+          "0"
+        ],
+        [
+          "822",
+          "1069",
+          "0"
+        ],
+        [
+          "822",
+          "1075",
+          "0"
+        ],
+        [
+          "822",
+          "1076",
+          "0"
+        ],
+        [
+          "822",
+          "1077",
+          "0"
+        ],
+        [
+          "822",
+          "1086",
+          "0"
+        ],
+        [
+          "822",
+          "1087",
+          "0"
+        ],
+        [
+          "822",
+          "1088",
+          "107372029817419/2000000000000000"
+        ],
+        [
+          "822",
+          "1096",
+          "0"
+        ],
+        [
+          "822",
+          "1099",
+          "0"
+        ],
+        [
+          "822",
+          "1101",
+          "0"
+        ],
+        [
+          "822",
+          "1102",
+          "0"
+        ],
+        [
+          "822",
+          "1107",
+          "0"
+        ],
+        [
+          "823",
+          "1",
+          "0"
+        ],
+        [
+          "823",
+          "100",
+          "0"
+        ],
+        [
+          "823",
+          "1000",
+          "0"
+        ],
+        [
+          "823",
+          "1001",
+          "0"
+        ],
+        [
+          "823",
+          "1002",
+          "0"
+        ],
+        [
+          "823",
+          "1003",
+          "0"
+        ],
+        [
+          "823",
+          "1007",
+          "107372029817419/2000000000000000"
+        ],
+        [
+          "823",
+          "101",
+          "0"
+        ],
+        [
+          "823",
+          "1013",
+          "0"
+        ],
+        [
+          "823",
+          "1014",
+          "5436942474033807/50000000000000000"
+        ],
+        [
+          "823",
+          "1015",
+          "0"
+        ],
+        [
+          "823",
+          "1022",
+          "0"
+        ],
+        [
+          "823",
+          "1023",
+          "0"
+        ],
+        [
+          "823",
+          "1024",
+          "0"
+        ],
+        [
+          "823",
+          "1025",
+          "0"
+        ],
+        [
+          "823",
+          "1026",
+          "5436942474033807/50000000000000000"
+        ],
+        [
+          "823",
+          "1027",
+          "0"
+        ],
+        [
+          "823",
+          "1028",
+          "0"
+        ],
+        [
+          "823",
+          "1029",
+          "0"
+        ],
+        [
+          "823",
+          "1030",
+          "0"
+        ],
+        [
+          "823",
+          "1031",
+          "0"
+        ],
+        [
+          "823",
+          "1032",
+          "0"
+        ],
+        [
+          "823",
+          "1033",
+          "0"
+        ],
+        [
+          "823",
+          "1039",
+          "0"
+        ],
+        [
+          "823",
+          "1040",
+          "0"
+        ],
+        [
+          "823",
+          "1041",
+          "0"
+        ],
+        [
+          "823",
+          "1042",
+          "0"
+        ],
+        [
+          "823",
+          "1043",
+          "0"
+        ],
+        [
+          "823",
+          "1050",
+          "0"
+        ],
+        [
+          "823",
+          "1051",
+          "0"
+        ],
+        [
+          "823",
+          "1057",
+          "0"
+        ],
+        [
+          "823",
+          "1058",
+          "0"
+        ],
+        [
+          "823",
+          "1063",
+          "0"
+        ],
+        [
+          "823",
+          "1064",
+          "0"
+        ],
+        [
+          "823",
+          "1065",
+          "0"
+        ],
+        [
+          "823",
+          "1076",
+          "107372029817419/2000000000000000"
+        ],
+        [
+          "823",
+          "1077",
+          "107372029817419/2000000000000000"
+        ],
+        [
+          "823",
+          "1086",
+          "0"
+        ],
+        [
+          "823",
+          "1087",
+          "0"
+        ],
+        [
+          "823",
+          "1088",
+          "0"
+        ],
+        [
+          "823",
+          "1096",
+          "0"
+        ],
+        [
+          "823",
+          "1099",
+          "0"
+        ],
+        [
+          "823",
+          "1101",
+          "0"
+        ],
+        [
+          "823",
+          "1102",
+          "0"
+        ],
+        [
+          "824",
+          "1",
+          "0"
+        ],
+        [
+          "824",
+          "100",
+          "0"
+        ],
+        [
+          "824",
+          "1000",
+          "882579815727429/20000000000000000"
+        ],
+        [
+          "824",
+          "1001",
+          "0"
+        ],
+        [
+          "824",
+          "1002",
+          "0"
+        ],
+        [
+          "824",
+          "1003",
+          "0"
+        ],
+        [
+          "824",
+          "1004",
+          "0"
+        ],
+        [
+          "824",
+          "1005",
+          "0"
+        ],
+        [
+          "824",
+          "1007",
+          "0"
+        ],
+        [
+          "824",
+          "101",
+          "0"
+        ],
+        [
+          "824",
+          "1013",
+          "0"
+        ],
+        [
+          "824",
+          "1014",
+          "5436942474033807/50000000000000000"
+        ],
+        [
+          "824",
+          "1015",
+          "0"
+        ],
+        [
+          "824",
+          "1022",
+          "398516529834329/3125000000000000"
+        ],
+        [
+          "824",
+          "1023",
+          "3475268683815817/5000000000000000"
+        ],
+        [
+          "824",
+          "1024",
+          "3723974603317809/10000000000000000"
+        ],
+        [
+          "824",
+          "1025",
+          "0"
+        ],
+        [
+          "824",
+          "1027",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "824",
+          "1028",
+          "6467132046959051/100000000000000000"
+        ],
+        [
+          "824",
+          "1029",
+          "1293426409391809/20000000000000000"
+        ],
+        [
+          "824",
+          "103",
+          "0"
+        ],
+        [
+          "824",
+          "1030",
+          "1293426409391809/20000000000000000"
+        ],
+        [
+          "824",
+          "1031",
+          "0"
+        ],
+        [
+          "824",
+          "1032",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "824",
+          "1033",
+          "1293426409391809/20000000000000000"
+        ],
+        [
+          "824",
+          "1035",
+          "0"
+        ],
+        [
+          "824",
+          "1036",
+          "649699457557543/4000000000000000"
+        ],
+        [
+          "824",
+          "1039",
+          "6467132046959051/100000000000000000"
+        ],
+        [
+          "824",
+          "1040",
+          "7597250572327539/10000000000000000"
+        ],
+        [
+          "824",
+          "1042",
+          "1293426409391809/20000000000000000"
+        ],
+        [
+          "824",
+          "1043",
+          "0"
+        ],
+        [
+          "824",
+          "1050",
+          "0"
+        ],
+        [
+          "824",
+          "1051",
+          "0"
+        ],
+        [
+          "824",
+          "1057",
+          "0"
+        ],
+        [
+          "824",
+          "1058",
+          "0"
+        ],
+        [
+          "824",
+          "1063",
+          "0"
+        ],
+        [
+          "824",
+          "1064",
+          "0"
+        ],
+        [
+          "824",
+          "1076",
+          "4778512061168999/500000000000000000"
+        ],
+        [
+          "824",
+          "1077",
+          "1911404824467633/200000000000000000"
+        ],
+        [
+          "824",
+          "1086",
+          "0"
+        ],
+        [
+          "824",
+          "1087",
+          "0"
+        ],
+        [
+          "824",
+          "1096",
+          "0"
+        ],
+        [
+          "824",
+          "1099",
+          "0"
+        ],
+        [
+          "824",
+          "1101",
+          "0"
+        ],
+        [
+          "824",
+          "1102",
+          "1739994135757223/5000000000000000"
+        ],
+        [
+          "824",
+          "1107",
+          "7643392013352379/50000000000000000"
+        ],
+        [
+          "826",
+          "1",
+          "0"
+        ],
+        [
+          "826",
+          "100",
+          "0"
+        ],
+        [
+          "826",
+          "1000",
+          "0"
+        ],
+        [
+          "826",
+          "1001",
+          "0"
+        ],
+        [
+          "826",
+          "1002",
+          "0"
+        ],
+        [
+          "826",
+          "1003",
+          "0"
+        ],
+        [
+          "826",
+          "101",
+          "0"
+        ],
+        [
+          "826",
+          "1013",
+          "0"
+        ],
+        [
+          "826",
+          "1014",
+          "5436942474033807/50000000000000000"
+        ],
+        [
+          "826",
+          "1015",
+          "0"
+        ],
+        [
+          "826",
+          "1023",
+          "0"
+        ],
+        [
+          "826",
+          "1025",
+          "0"
+        ],
+        [
+          "826",
+          "1026",
+          "0"
+        ],
+        [
+          "826",
+          "1027",
+          "0"
+        ],
+        [
+          "826",
+          "1028",
+          "0"
+        ],
+        [
+          "826",
+          "1029",
+          "0"
+        ],
+        [
+          "826",
+          "1030",
+          "0"
+        ],
+        [
+          "826",
+          "1031",
+          "0"
+        ],
+        [
+          "826",
+          "1032",
+          "0"
+        ],
+        [
+          "826",
+          "1033",
+          "0"
+        ],
+        [
+          "826",
+          "1039",
+          "0"
+        ],
+        [
+          "826",
+          "1040",
+          "11398621902946937/500000000000000000"
+        ],
+        [
+          "826",
+          "1041",
+          "0"
+        ],
+        [
+          "826",
+          "1042",
+          "0"
+        ],
+        [
+          "826",
+          "1043",
+          "0"
+        ],
+        [
+          "826",
+          "1050",
+          "0"
+        ],
+        [
+          "826",
+          "1051",
+          "0"
+        ],
+        [
+          "826",
+          "1054",
+          "0"
+        ],
+        [
+          "826",
+          "1057",
+          "0"
+        ],
+        [
+          "826",
+          "1058",
+          "0"
+        ],
+        [
+          "826",
+          "1063",
+          "0"
+        ],
+        [
+          "826",
+          "1064",
+          "0"
+        ],
+        [
+          "826",
+          "1065",
+          "0"
+        ],
+        [
+          "826",
+          "1069",
+          "0"
+        ],
+        [
+          "826",
+          "1076",
+          "107372029817419/2000000000000000"
+        ],
+        [
+          "826",
+          "108",
+          "0"
+        ],
+        [
+          "826",
+          "1086",
+          "0"
+        ],
+        [
+          "826",
+          "1087",
+          "0"
+        ],
+        [
+          "826",
+          "1096",
+          "0"
+        ],
+        [
+          "826",
+          "1099",
+          "0"
+        ],
+        [
+          "826",
+          "1101",
+          "0"
+        ],
+        [
+          "826",
+          "1102",
+          "5436942474033807/50000000000000000"
+        ],
+        [
+          "827",
+          "1",
+          "0"
+        ],
+        [
+          "827",
+          "100",
+          "0"
+        ],
+        [
+          "827",
+          "1000",
+          "0"
+        ],
+        [
+          "827",
+          "1001",
+          "0"
+        ],
+        [
+          "827",
+          "1002",
+          "0"
+        ],
+        [
+          "827",
+          "1003",
+          "0"
+        ],
+        [
+          "827",
+          "1007",
+          "0"
+        ],
+        [
+          "827",
+          "101",
+          "0"
+        ],
+        [
+          "827",
+          "1013",
+          "0"
+        ],
+        [
+          "827",
+          "1014",
+          "5436942474033807/50000000000000000"
+        ],
+        [
+          "827",
+          "1015",
+          "0"
+        ],
+        [
+          "827",
+          "1022",
+          "0"
+        ],
+        [
+          "827",
+          "1023",
+          "0"
+        ],
+        [
+          "827",
+          "1024",
+          "0"
+        ],
+        [
+          "827",
+          "1025",
+          "0"
+        ],
+        [
+          "827",
+          "1027",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "827",
+          "1028",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "827",
+          "1029",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "827",
+          "1030",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "827",
+          "1031",
+          "0"
+        ],
+        [
+          "827",
+          "1032",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "827",
+          "1033",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "827",
+          "1039",
+          "22709618485897617/100000000000000000"
+        ],
+        [
+          "827",
+          "1040",
+          "0"
+        ],
+        [
+          "827",
+          "1041",
+          "0"
+        ],
+        [
+          "827",
+          "1042",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "827",
+          "1043",
+          "0"
+        ],
+        [
+          "827",
+          "1050",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "827",
+          "1051",
+          "0"
+        ],
+        [
+          "827",
+          "1054",
+          "3233566023479527/50000000000000000"
+        ],
+        [
+          "827",
+          "1057",
+          "0"
+        ],
+        [
+          "827",
+          "1058",
+          "0"
+        ],
+        [
+          "827",
+          "1063",
+          "0"
+        ],
+        [
+          "827",
+          "1064",
+          "0"
+        ],
+        [
+          "827",
+          "1065",
+          "0"
+        ],
+        [
+          "827",
+          "1076",
+          "107372029817419/2000000000000000"
+        ],
+        [
+          "827",
+          "1077",
+          "107372029817419/2000000000000000"
+        ],
+        [
+          "827",
+          "1086",
+          "0"
+        ],
+        [
+          "827",
+          "1087",
+          "0"
+        ],
+        [
+          "827",
+          "1088",
+          "0"
+        ],
+        [
+          "827",
+          "1096",
+          "0"
+        ],
+        [
+          "827",
+          "1099",
+          "0"
+        ],
+        [
+          "827",
+          "1101",
+          "0"
+        ],
+        [
+          "827",
+          "1102",
+          "5436942474033807/50000000000000000"
+        ],
+        [
+          "827",
+          "1107",
+          "0"
+        ],
+        [
+          "828",
+          "1",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "828",
+          "100",
+          "0"
+        ],
+        [
+          "828",
+          "1000",
+          "1582950841857167/100000000000000000"
+        ],
+        [
+          "828",
+          "1001",
+          "4433395734891063/50000000000000000"
+        ],
+        [
+          "828",
+          "1002",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "828",
+          "1003",
+          "4267251587292639/50000000000000000"
+        ],
+        [
+          "828",
+          "1004",
+          "6951552332728111/100000000000000000"
+        ],
+        [
+          "828",
+          "1005",
+          "1658619873016589/2000000000000000"
+        ],
+        [
+          "828",
+          "1006",
+          "0"
+        ],
+        [
+          "828",
+          "1007",
+          "6951552332728117/100000000000000000"
+        ],
+        [
+          "828",
+          "101",
+          "2481702434788463/200000000000000000"
+        ],
+        [
+          "828",
+          "1012",
+          "0"
+        ],
+        [
+          "828",
+          "1013",
+          "0"
+        ],
+        [
+          "828",
+          "1014",
+          "2924227216852919/125000000000000000"
+        ],
+        [
+          "828",
+          "1015",
+          "6467132046959057/100000000000000000"
+        ],
+        [
+          "828",
+          "1023",
+          "5176028779899181/20000000000000000"
+        ],
+        [
+          "828",
+          "1024",
+          "0"
+        ],
+        [
+          "828",
+          "1025",
+          "0"
+        ],
+        [
+          "828",
+          "1026",
+          "12148596528819369/50000000000000000"
+        ],
+        [
+          "828",
+          "1027",
+          "3532867953040947/10000000000000000"
+        ],
+        [
+          "828",
+          "1028",
+          "1766433976520473/5000000000000000"
+        ],
+        [
+          "828",
+          "1029",
+          "3532867953040947/10000000000000000"
+        ],
+        [
+          "828",
+          "103",
+          "0"
+        ],
+        [
+          "828",
+          "1030",
+          "13373180111195043/100000000000000000"
+        ],
+        [
+          "828",
+          "1032",
+          "7596055168991711/25000000000000000"
+        ],
+        [
+          "828",
+          "1033",
+          "0"
+        ],
+        [
+          "828",
+          "1035",
+          "3819798585815299/10000000000000000"
+        ],
+        [
+          "828",
+          "1036",
+          "5157116596934803/10000000000000000"
+        ],
+        [
+          "828",
+          "1039",
+          "0"
+        ],
+        [
+          "828",
+          "1043",
+          "0"
+        ],
+        [
+          "828",
+          "1050",
+          "0"
+        ],
+        [
+          "828",
+          "1051",
+          "2727628477665127/10000000000000000"
+        ],
+        [
+          "828",
+          "1052",
+          "0"
+        ],
+        [
+          "828",
+          "1054",
+          "2657821433807359/5000000000000000"
+        ],
+        [
+          "828",
+          "1057",
+          "0"
+        ],
+        [
+          "828",
+          "1058",
+          "0"
+        ],
+        [
+          "828",
+          "1063",
+          "0"
+        ],
+        [
+          "828",
+          "1064",
+          "0"
+        ],
+        [
+          "828",
+          "1065",
+          "607372029817419/2500000000000000"
+        ],
+        [
+          "828",
+          "1068",
+          "0"
+        ],
+        [
+          "828",
+          "1069",
+          "0"
+        ],
+        [
+          "828",
+          "1075",
+          "0"
+        ],
+        [
+          "828",
+          "1076",
+          "6160076911799531/50000000000000000"
+        ],
+        [
+          "828",
+          "1077",
+          "6951552332728117/100000000000000000"
+        ],
+        [
+          "828",
+          "1084",
+          "0"
+        ],
+        [
+          "828",
+          "1086",
+          "0"
+        ],
+        [
+          "828",
+          "1087",
+          "0"
+        ],
+        [
+          "828",
+          "1088",
+          "0"
+        ],
+        [
+          "828",
+          "1094",
+          "9333943252173739/25000000000000000"
+        ],
+        [
+          "828",
+          "1095",
+          "0"
+        ],
+        [
+          "828",
+          "1096",
+          "0"
+        ],
+        [
+          "828",
+          "1099",
+          "0"
+        ],
+        [
+          "828",
+          "1101",
+          "0"
+        ],
+        [
+          "828",
+          "1102",
+          "2886154748345041/10000000000000000"
+        ],
+        [
+          "828",
+          "1122",
+          "7049975753611583/10000000000000000"
+        ],
+        [
+          "829",
+          "1",
+          "0"
+        ],
+        [
+          "829",
+          "100",
+          "0"
+        ],
+        [
+          "829",
+          "1000",
+          "0"
+        ],
+        [
+          "829",
+          "1001",
+          "0"
+        ],
+        [
+          "829",
+          "1002",
+          "0"
+        ],
+        [
+          "829",
+          "1003",
+          "5436942474033807/50000000000000000"
+        ],
+        [
+          "829",
+          "1007",
+          "0"
+        ],
+        [
+          "829",
+          "101",
+          "0"
+        ],
+        [
+          "829",
+          "1013",
+          "0"
+        ],
+        [
+          "829",
+          "1014",
+          "0"
+        ],
+        [
+          "829",
+          "1022",
+          "0"
+        ],
+        [
+          "829",
+          "1023",
+          "0"
+        ],
+        [
+          "829",
+          "1024",
+          "0"
+        ],
+        [
+          "829",
+          "1025",
+          "0"
+        ],
+        [
+          "829",
+          "1026",
+          "0"
+        ],
+        [
+          "829",
+          "1027",
+          "0"
+        ],
+        [
+          "829",
+          "1028",
+          "0"
+        ],
+        [
+          "829",
+          "1029",
+          "0"
+        ],
+        [
+          "829",
+          "1030",
+          "0"
+        ],
+        [
+          "829",
+          "1031",
+          "0"
+        ],
+        [
+          "829",
+          "1032",
+          "0"
+        ],
+        [
+          "829",
+          "1033",
+          "0"
+        ],
+        [
+          "829",
+          "1039",
+          "0"
+        ],
+        [
+          "829",
+          "1040",
+          "0"
+        ],
+        [
+          "829",
+          "1041",
+          "0"
+        ],
+        [
+          "829",
+          "1042",
+          "0"
+        ],
+        [
+          "829",
+          "1043",
+          "0"
+        ],
+        [
+          "829",
+          "1050",
+          "0"
+        ],
+        [
+          "829",
+          "1051",
+          "0"
+        ],
+        [
+          "829",
+          "1052",
+          "0"
+        ],
+        [
+          "829",
+          "1054",
+          "0"
+        ],
+        [
+          "829",
+          "1057",
+          "0"
+        ],
+        [
+          "829",
+          "1058",
+          "0"
+        ],
+        [
+          "829",
+          "1063",
+          "0"
+        ],
+        [
+          "829",
+          "1065",
+          "0"
+        ],
+        [
+          "829",
+          "1069",
+          "0"
+        ],
+        [
+          "829",
+          "1075",
+          "4060621609734641/25000000000000000"
+        ],
+        [
+          "829",
+          "1076",
+          "0"
+        ],
+        [
+          "829",
+          "108",
+          "1"
+        ],
+        [
+          "829",
+          "1086",
+          "0"
+        ],
+        [
+          "829",
+          "1099",
+          "0"
+        ],
+        [
+          "829",
+          "1100",
+          "0"
+        ],
+        [
+          "829",
+          "1101",
+          "0"
+        ],
+        [
+          "829",
+          "1102",
+          "5436942474033807/50000000000000000"
+        ]
+      ],
+      "mu": {
+        "695": "0",
+        "696": "0",
+        "697": "0",
+        "702": "0",
+        "703": "0",
+        "704": "0",
+        "709": "0",
+        "711": "0",
+        "714": "0",
+        "718": "0",
+        "719": "0",
+        "724": "0",
+        "729": "0",
+        "731": "0",
+        "733": "0",
+        "734": "0",
+        "735": "0",
+        "736": "0",
+        "739": "0",
+        "744": "0",
+        "748": "0",
+        "752": "0",
+        "757": "0",
+        "762": "0",
+        "767": "0"
+      },
+      "pi": {
+        "1446": "5023175036369583/100000000000000000",
+        "1626": "0",
+        "768": "-605843943477723/20000000000000000",
+        "774": "1612683680488999/5000000000000000",
+        "777": "63276983974829/80000000000000",
+        "780": "4362816189821017/5000000000000000",
+        "785": "8393153426071/39062500000000",
+        "790": "1718956164785157/50000000000000000",
+        "792": "7412447983038819/10000000000000000",
+        "793": "3437912329570439/100000000000000000",
+        "798": "3437912329570439/100000000000000000",
+        "799": "3437912329570439/100000000000000000",
+        "804": "3437912329570439/100000000000000000",
+        "809": "2068758246591409/2000000000000000",
+        "814": "3437912329570439/100000000000000000",
+        "819": "5251158751818479/5000000000000000",
+        "820": "3437912329570439/100000000000000000",
+        "821": "9697078028261139/10000000000000000",
+        "822": "-605843943477723/20000000000000000",
+        "823": "-605843943477723/20000000000000000",
+        "824": "3647164300294339/5000000000000000",
+        "826": "-605843943477723/20000000000000000",
+        "827": "3437912329570439/100000000000000000",
+        "828": "1454490092812919/2500000000000000",
+        "829": "-605843943477723/20000000000000000"
+      },
+      "tau": {
+        "695": "605843943477723/20000000000000000",
+        "696": "605843943477723/20000000000000000",
+        "697": "605843943477723/20000000000000000",
+        "702": "-3437912329570439/100000000000000000",
+        "703": "605843943477723/20000000000000000",
+        "704": "605843943477723/20000000000000000",
+        "709": "605843943477723/20000000000000000",
+        "711": "605843943477723/20000000000000000",
+        "714": "605843943477723/20000000000000000",
+        "718": "107372029817419/2000000000000000",
+        "719": "3475776166364057/25000000000000000",
+        "724": "3475776166364057/25000000000000000",
+        "729": "107372029817419/2000000000000000",
+        "731": "3475776166364057/25000000000000000",
+        "733": "3475776166364057/25000000000000000",
+        "734": "3475776166364057/25000000000000000",
+        "735": "3475776166364057/25000000000000000",
+        "736": "3475776166364057/25000000000000000",
+        "739": "3475776166364057/25000000000000000",
+        "744": "19271706156327179/100000000000000000",
+        "748": "19271706156327179/100000000000000000",
+        "752": "19271706156327179/100000000000000000",
+        "757": "19271706156327179/100000000000000000",
+        "762": "-5023175036369583/100000000000000000",
+        "767": "3475776166364057/25000000000000000"
+      },
+      "theta": {
+        "0": "0",
+        "1": "0",
+        "10": "0",
+        "100": "1",
+        "11": "0",
+        "12": "0",
+        "13": "0",
+        "14": "0",
+        "15": "0",
+        "16": "0",
+        "17": "0",
+        "18": "0",
+        "19": "0",
+        "2": "0",
+        "20": "0",
+        "21": "0",
+        "22": "0",
+        "23": "0",
+        "24": "0",
+        "25": "0",
+        "26": "0",
+        "27": "0",
+        "28": "0",
+        "29": "0",
+        "3": "0",
+        "30": "0",
+        "31": "0",
+        "32": "0",
+        "33": "0",
+        "34": "0",
+        "35": "4676643397652047/5000000000000000",
+        "36": "0",
+        "37": "1",
+        "38": "0",
+        "39": "0",
+        "4": "0",
+        "40": "0",
+        "41": "0",
+        "42": "0",
+        "43": "0",
+        "44": "0",
+        "45": "0",
+        "46": "0",
+        "47": "0",
+        "48": "0",
+        "49": "1",
+        "5": "0",
+        "50": "0",
+        "51": "0",
+        "52": "0",
+        "53": "0",
+        "54": "0",
+        "55": "0",
+        "56": "0",
+        "57": "0",
+        "58": "0",
+        "59": "0",
+        "6": "0",
+        "60": "0",
+        "61": "0",
+        "62": "0",
+        "63": "0",
+        "64": "0",
+        "65": "0",
+        "66": "0",
+        "67": "0",
+        "68": "0",
+        "69": "0",
+        "7": "0",
+        "70": "0",
+        "71": "0",
+        "72": "0",
+        "73": "0",
+        "74": "0",
+        "75": "0",
+        "76": "0",
+        "77": "0",
+        "78": "0",
+        "79": "0",
+        "8": "0",
+        "80": "0",
+        "81": "0",
+        "82": "0",
+        "83": "0",
+        "84": "0",
+        "85": "0",
+        "86": "0",
+        "87": "0",
+        "88": "0",
+        "89": "0",
+        "9": "0",
+        "90": "0",
+        "91": "4194709776369359/5000000000000000",
+        "92": "0",
+        "93": "0",
+        "94": "0",
+        "95": "0",
+        "96": "16105804472612817/100000000000000000",
+        "97": "0",
+        "98": "0",
+        "99": "1"
+      }
+    },
+    "lower_bound": 3.404648540141865,
+    "minimum_reduced_costs": {
+      "1446": -0.24294881192696763,
+      "1626": -0.19271706156327179,
+      "768": -0.16242486438938564,
+      "774": -0.5152537976610716,
+      "777": -0.9836793612486343,
+      "780": -1.0652802995274753,
+      "785": -0.4075817892706894,
+      "790": -0.22709618485897493,
+      "792": -0.9339618598671537,
+      "793": -0.22709618485897617,
+      "798": -0.22709618485897617,
+      "799": -0.22709618485897617,
+      "804": -0.22709618485897617,
+      "809": -1.2270961848589763,
+      "814": -0.22709618485897617,
+      "819": -1.2429488119269676,
+      "820": -0.22709618485897617,
+      "821": -1.1624248643893857,
+      "822": -0.16242486438938564,
+      "823": -0.16242486438938564,
+      "824": -0.9221499216221396,
+      "826": -0.16242486438938564,
+      "827": -0.22709618485897617,
+      "828": -0.7745130986884394,
+      "829": -0.16242486438938564
+    },
+    "negative_count": 25,
+    "rational": "170232427007093249421097069059761/50000000000000000000000000000000",
+    "scope": "LP(B+K) completo; K presumido válido e idêntico ao comparador",
+    "status": "CERTIFIED_RATIONAL_DUAL"
+  },
+  "latest_certificate_iteration": 15,
+  "outcome": {
+    "arm_status": "CAP_EXCEEDED",
+    "supervisor_status": "COMPLETED",
+    "wall_total_s": 47.159571610041894
+  },
+  "plan_sha256": "15fa90c1f87be727444aa7981632b14998b7e97f0dd8271db9faacc4af1a7745",
+  "schema": "AS08-B-PILOT-PROGRESS-v1"
+}

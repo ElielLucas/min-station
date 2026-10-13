@@ -1,0 +1,26 @@
+{
+  "files": {
+    "mapf-room-32-32-4-m10-f8--B_K.json": "0e6f8bbe8a733be1ce5f8eab877c6680556387605211d89e2a56fdc4cacd3c36",
+    "mapf-room-32-32-4-m10-f8--U_K.json": "025788b171c14379b843f2b76fd9ae2efcae1b44df70df30667ee392b01f018f",
+    "puc-bip42p-regiao-f2--B_K.json": "2747752b4956355affe72c5d74477688915e994f8540bbcac7613a71c2082602",
+    "puc-bip42p-regiao-f2--U_K.json": "987d8f273dbdf77ba54d0841931e7e0f7cd5a3ddd41129086722a770db26809f",
+    "puc-cc9-2p-seed-r1--B_K.json": "da73445b5eeca2fa2e0827b63403b6a857624d272d83b53a62c948b3939fbb85",
+    "puc-cc9-2p-seed-r1--U_K.json": "6fa3860ba315a537995ba8a61f858881290d055235331b60a7466392caba0613",
+    "puc-w3c571-seed-r1--B_K.json": "2cc91516feac3aa64fe46128f712d2f1cb0c04334f2c3d21a38ba00b86991518",
+    "puc-w3c571-seed-r1--U_K.json": "3e51a3afea4fbf225e1fff307c26aa070abf1c0c6aa495ccff0a8b7739135bb6",
+    "pucn-cc3-10n-seed-r1--B_K.json": "e44b89e7cec0142e95250471f1eb794be17de7ea0d307ec23fefaca0a247d980",
+    "pucn-cc3-10n-seed-r1--U_K.json": "5eceae19b9183978cf01a26600bf1a7c0ec23c51f87ada0448624025726b1965",
+    "vienna-I056-regiao-f4--B_K.json": "d8f91aca74b34f317eec7684add169a9502efeb9e2e211418f75b7166e0df080",
+    "vienna-I056-regiao-f4--U_K.json": "7727e1f7771282522a9147c7580f184a1c54dba930068899b2ea5f271a1d2135"
+  },
+  "plan_sha256": "6ecc0dfea455e4d9858d96a563d0dd28017928b096f8538c4657236714ee78eb",
+  "progress_files": {
+    "mapf-room-32-32-4-m10-f8--B_K.cg-progress.json": "d3d5c47831a9bf605fe89ada3c163e7c5965670bea8dc817733d2704bf576e43",
+    "puc-bip42p-regiao-f2--B_K.cg-progress.json": "282076d9c9a013ddecdaa05d741cb2143c00139955a543a831785a33ce5cc07a",
+    "puc-cc9-2p-seed-r1--B_K.cg-progress.json": "928fe4e654ee2eca136b1442b342e41bc3496cc68863ceeac7ee77a3fac23b3c",
+    "puc-w3c571-seed-r1--B_K.cg-progress.json": "e46650fc17668c3c7d1e4e154d8b071aa288046cabafe456ba30bcdc438e0fab",
+    "pucn-cc3-10n-seed-r1--B_K.cg-progress.json": "f4b0d782bec7fb6c936a0594e95151b429a6b637e2bddd3201195a7eaa289f1b",
+    "vienna-I056-regiao-f4--B_K.cg-progress.json": "53db9ee889edbaa329457c3a5688a8efd7888280a0e4d728458d9ef5563689b7"
+  },
+  "schema": "AS08-B-PILOT-MANIFEST-v1"
+}

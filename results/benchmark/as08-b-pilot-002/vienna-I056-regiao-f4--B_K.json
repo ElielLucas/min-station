@@ -1,0 +1,47 @@
+{
+  "arm": "B_K",
+  "case": {
+    "graph_source": "vienna",
+    "manifest_name": "vienna-I056-regiao-f4.txt",
+    "name": "vienna-I056-regiao-f4",
+    "raw_graph_id": "vienna:I056",
+    "source_sha256": "645da5115a0eeaa6fba9eeae9f4942aebecfa66c4bcbc7aaec2bd0c994eb0ccc",
+    "split": "desenvolvimento"
+  },
+  "cg_progress_checkpoint": {
+    "events": 12,
+    "file": "vienna-I056-regiao-f4--B_K.cg-progress.json",
+    "last_event": {
+      "certified_global_lb": null,
+      "columns": 200,
+      "completed_iterations": 1,
+      "elapsed_seconds": 207.74728151899762,
+      "event": "PRICING",
+      "iteration": 2,
+      "schema": "AS08-CG-PROGRESS-v1"
+    },
+    "sha256": "53db9ee889edbaa329457c3a5688a8efd7888280a0e4d728458d9ef5563689b7"
+  },
+  "global_lower_bound": null,
+  "lp_numeric_value": null,
+  "plan_sha256": "6ecc0dfea455e4d9858d96a563d0dd28017928b096f8538c4657236714ee78eb",
+  "reason": "Prazo global 300s esgotado na fase solve",
+  "schema": "AS08-B-PILOT-RESULT-v1",
+  "status": "TIMEOUT_SOLVER",
+  "wall_phases_s": {
+    "k_c1": 0.0005451639881357551,
+    "k_c2": 0.4078306700102985,
+    "k_c4_dm": 0.0021729209693148732,
+    "k_canonicalize": 0.015266361995600164,
+    "k_neighborhoods": 0.18055264104623348,
+    "k_preparation": 6.093003321439028e-05,
+    "k_validation_bitset_v2": 2.1315323060844094,
+    "k_validator_setup": 0.10032301594037563,
+    "model_build": 3.3325981348752975e-05,
+    "preparation": 0.5110027439659461,
+    "solve": 295.94298451801296,
+    "startup": 0.7081928489496931,
+    "supervisor_shutdown": 0.011639703996479511
+  },
+  "wall_total_s": 300.0121434519533
+}

@@ -1,0 +1,113 @@
+{
+ "instance": "pucn-cc3-10n-seed-r1",
+ "variant": "legacy",
+ "budget_s": 240.0,
+ "wall_s": 92.5239727840526,
+ "result": {
+  "schema": "AS08-CG-v1",
+  "status": "CAP_EXCEEDED",
+  "rmp_status": "OPTIMAL",
+  "solver_backend": "gurobi",
+  "iterations": [
+   {
+    "iter": 1,
+    "rmp_objective_with_artificials": 500516.6666666667,
+    "artificial_sum": 50.0,
+    "columns": 0,
+    "rows": 125,
+    "nnz": 1425,
+    "solve_s": 0.05455683602485806,
+    "physical_lp_ub": null,
+    "global_lower_bound": null,
+    "negative_candidate_count": 625,
+    "added_columns": 200
+   },
+   {
+    "iter": 2,
+    "rmp_objective_with_artificials": 340368.8333333333,
+    "artificial_sum": 34.0,
+    "columns": 200,
+    "rows": 1006,
+    "nnz": 11334,
+    "solve_s": 0.06686859403271228,
+    "physical_lp_ub": null,
+    "global_lower_bound": null,
+    "negative_candidate_count": 625,
+    "added_columns": 200
+   },
+   {
+    "iter": 3,
+    "rmp_objective_with_artificials": 140207.22222222222,
+    "artificial_sum": 14.0,
+    "columns": 400,
+    "rows": 2097,
+    "nnz": 23796,
+    "solve_s": 0.1835109619423747,
+    "physical_lp_ub": null,
+    "global_lower_bound": null,
+    "negative_candidate_count": 605,
+    "added_columns": 200
+   },
+   {
+    "iter": 4,
+    "rmp_objective_with_artificials": 108.46075085324232,
+    "artificial_sum": 0.0,
+    "columns": 600,
+    "rows": 3082,
+    "nnz": 35033,
+    "solve_s": 0.8527387069771066,
+    "physical_lp_ub": 108.46075085324232,
+    "global_lower_bound": null,
+    "negative_candidate_count": 569,
+    "added_columns": 200
+   },
+   {
+    "iter": 5,
+    "rmp_objective_with_artificials": 96.00447635990223,
+    "artificial_sum": 0.0,
+    "columns": 800,
+    "rows": 4855,
+    "nnz": 49478,
+    "solve_s": 1.340769512928091,
+    "physical_lp_ub": 96.00447635990223,
+    "global_lower_bound": null,
+    "negative_candidate_count": 589,
+    "added_columns": 200
+   },
+   {
+    "iter": 6,
+    "rmp_objective_with_artificials": 84.84118900596455,
+    "artificial_sum": 0.0,
+    "columns": 1000,
+    "rows": 6211,
+    "nnz": 64684,
+    "solve_s": 1.8228935659863055,
+    "physical_lp_ub": 84.84118900596455,
+    "global_lower_bound": null,
+    "negative_candidate_count": 598,
+    "added_columns": 200
+   }
+  ],
+  "n_iterations": 6,
+  "columns": 1200,
+  "rmp_objective": 84.84118900596455,
+  "rmp_artificial_sum": 0.0,
+  "global_lower_bound": null,
+  "feasible_lp_upper_bound": 84.84118900596455,
+  "elapsed_seconds": 91.87716587004252,
+  "classification": "EXPLORATORY_NOT_SCIENTIFICALLY_HOMOLOGATED"
+ },
+ "last_event": {
+  "schema": "AS08-CG-PROGRESS-v1",
+  "event": "CG_FINISHED",
+  "elapsed_seconds": 91.877170199994,
+  "columns": 1200,
+  "completed_iterations": 6,
+  "certified_global_lb": null,
+  "status": "CAP_EXCEEDED",
+  "n_iterations": 6,
+  "rmp_objective_with_artificials": 84.84118900596455,
+  "feasible_lp_upper_bound": 84.84118900596455
+ },
+ "n_events": 38
+}

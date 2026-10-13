@@ -1,0 +1,113 @@
+{
+ "instance": "puc-cc9-2p-seed-r1",
+ "variant": "legacy",
+ "budget_s": 240.0,
+ "wall_s": 24.02348025806714,
+ "result": {
+  "schema": "AS08-CG-v1",
+  "status": "CAP_EXCEEDED",
+  "rmp_status": "OPTIMAL",
+  "solver_backend": "gurobi",
+  "iterations": [
+   {
+    "iter": 1,
+    "rmp_objective_with_artificials": 328347.0,
+    "artificial_sum": 64.0,
+    "columns": 0,
+    "rows": 163,
+    "nnz": 996,
+    "solve_s": 0.03904252906795591,
+    "physical_lp_ub": null,
+    "global_lower_bound": null,
+    "negative_candidate_count": 1024,
+    "added_columns": 200
+   },
+   {
+    "iter": 2,
+    "rmp_objective_with_artificials": 256539.56666666668,
+    "artificial_sum": 50.0,
+    "columns": 200,
+    "rows": 969,
+    "nnz": 13202,
+    "solve_s": 0.055838656960986555,
+    "physical_lp_ub": null,
+    "global_lower_bound": null,
+    "negative_candidate_count": 1022,
+    "added_columns": 200
+   },
+   {
+    "iter": 3,
+    "rmp_objective_with_artificials": 174481.4,
+    "artificial_sum": 34.0,
+    "columns": 400,
+    "rows": 1894,
+    "nnz": 26270,
+    "solve_s": 0.11897433002013713,
+    "physical_lp_ub": null,
+    "global_lower_bound": null,
+    "negative_candidate_count": 1015,
+    "added_columns": 200
+   },
+   {
+    "iter": 4,
+    "rmp_objective_with_artificials": 71937.5,
+    "artificial_sum": 14.0,
+    "columns": 600,
+    "rows": 3060,
+    "nnz": 42312,
+    "solve_s": 0.45169629505835474,
+    "physical_lp_ub": null,
+    "global_lower_bound": null,
+    "negative_candidate_count": 957,
+    "added_columns": 200
+   },
+   {
+    "iter": 5,
+    "rmp_objective_with_artificials": 147.75,
+    "artificial_sum": 0.0,
+    "columns": 800,
+    "rows": 3967,
+    "nnz": 55137,
+    "solve_s": 0.5611766569782048,
+    "physical_lp_ub": 147.75,
+    "global_lower_bound": null,
+    "negative_candidate_count": 822,
+    "added_columns": 200
+   },
+   {
+    "iter": 6,
+    "rmp_objective_with_artificials": 112.99810606060606,
+    "artificial_sum": 0.0,
+    "columns": 1000,
+    "rows": 5752,
+    "nnz": 70702,
+    "solve_s": 2.42853858997114,
+    "physical_lp_ub": 112.99810606060606,
+    "global_lower_bound": null,
+    "negative_candidate_count": 920,
+    "added_columns": 200
+   }
+  ],
+  "n_iterations": 6,
+  "columns": 1200,
+  "rmp_objective": 112.99810606060606,
+  "rmp_artificial_sum": 0.0,
+  "global_lower_bound": null,
+  "feasible_lp_upper_bound": 112.99810606060606,
+  "elapsed_seconds": 23.90523466398008,
+  "classification": "EXPLORATORY_NOT_SCIENTIFICALLY_HOMOLOGATED"
+ },
+ "last_event": {
+  "schema": "AS08-CG-PROGRESS-v1",
+  "event": "CG_FINISHED",
+  "elapsed_seconds": 23.905243971035816,
+  "columns": 1200,
+  "completed_iterations": 6,
+  "certified_global_lb": null,
+  "status": "CAP_EXCEEDED",
+  "n_iterations": 6,
+  "rmp_objective_with_artificials": 112.99810606060606,
+  "feasible_lp_upper_bound": 112.99810606060606
+ },
+ "n_events": 38
+}

@@ -1,0 +1,133 @@
+{
+  "K_count": 200,
+  "K_sha256": "216d44253fcd7de6ded464eda6738d6b57f3b98cb9003dd00011542521bd6daa",
+  "arm": "B_K",
+  "case": {
+    "graph_source": "puc",
+    "manifest_name": "puc-bip42p-regiao-f2.txt",
+    "name": "puc-bip42p-regiao-f2",
+    "raw_graph_id": "puc:bip42p",
+    "source_sha256": "d7c53596522401d4071563d5007d9c8647ee0d37c893426b5ab3b1d65d97743a",
+    "split": "desenvolvimento"
+  },
+  "case_name": "puc-bip42p-regiao-f2.txt",
+  "cg_diagnostics": {
+    "columns": 1000,
+    "elapsed_seconds": 50.88426811492536,
+    "feasible_lp_upper_bound": null,
+    "n_iterations": 5,
+    "numeric_primal_dual_gap": null,
+    "rmp_artificial_sum": 184.0,
+    "rmp_objective": 2209876.724992232
+  },
+  "cg_progress_checkpoint": {
+    "events": 33,
+    "file": "puc-bip42p-regiao-f2--B_K.cg-progress.json",
+    "last_event": {
+      "certified_global_lb": null,
+      "columns": 1000,
+      "completed_iterations": 5,
+      "elapsed_seconds": 50.884272300987504,
+      "event": "CG_FINISHED",
+      "feasible_lp_upper_bound": null,
+      "n_iterations": 5,
+      "rmp_objective_with_artificials": 2209876.724992232,
+      "schema": "AS08-CG-PROGRESS-v1",
+      "status": "CAP_EXCEEDED"
+    },
+    "sha256": "282076d9c9a013ddecdaa05d741cb2143c00139955a543a831785a33ce5cc07a"
+  },
+  "global_lb_certificate": null,
+  "global_lower_bound": null,
+  "input_load_s": 0.051700708107091486,
+  "instance_sha256": "d7c53596522401d4071563d5007d9c8647ee0d37c893426b5ab3b1d65d97743a",
+  "iteration_history": [
+    {
+      "added_columns": 200,
+      "artificial_sum": 200.0,
+      "columns": 0,
+      "global_lower_bound": null,
+      "iter": 1,
+      "negative_candidate_count": 10000,
+      "nnz": 4282,
+      "physical_lp_ub": null,
+      "rmp_objective_with_artificials": 2402031.706051941,
+      "rows": 500,
+      "solve_s": 0.1028886130079627
+    },
+    {
+      "added_columns": 200,
+      "artificial_sum": 196.0,
+      "columns": 200,
+      "global_lower_bound": null,
+      "iter": 2,
+      "negative_candidate_count": 10000,
+      "nnz": 23722,
+      "physical_lp_ub": null,
+      "rmp_objective_with_artificials": 2353993.326564747,
+      "rows": 870,
+      "solve_s": 0.09101256902795285
+    },
+    {
+      "added_columns": 200,
+      "artificial_sum": 192.0,
+      "columns": 400,
+      "global_lower_bound": null,
+      "iter": 3,
+      "negative_candidate_count": 10000,
+      "nnz": 40335,
+      "physical_lp_ub": null,
+      "rmp_objective_with_artificials": 2305954.2698598546,
+      "rows": 1211,
+      "solve_s": 0.1356493519851938
+    },
+    {
+      "added_columns": 200,
+      "artificial_sum": 188.0,
+      "columns": 600,
+      "global_lower_bound": null,
+      "iter": 4,
+      "negative_candidate_count": 10000,
+      "nnz": 57916,
+      "physical_lp_ub": null,
+      "rmp_objective_with_artificials": 2257915.757411529,
+      "rows": 1563,
+      "solve_s": 0.22570059006102383
+    },
+    {
+      "added_columns": 200,
+      "artificial_sum": 184.0,
+      "columns": 800,
+      "global_lower_bound": null,
+      "iter": 5,
+      "negative_candidate_count": 10000,
+      "nnz": 76172,
+      "physical_lp_ub": null,
+      "rmp_objective_with_artificials": 2209876.724992232,
+      "rows": 1914,
+      "solve_s": 0.294104163069278
+    }
+  ],
+  "k_validated": true,
+  "lp_numeric_value": null,
+  "plan_sha256": "6ecc0dfea455e4d9858d96a563d0dd28017928b096f8538c4657236714ee78eb",
+  "reachability_s": 0.02441061893478036,
+  "schema": "AS08-B-PILOT-RESULT-v1",
+  "status": "CAP_EXCEEDED",
+  "wall_phases_s": {
+    "k_c1": 0.0011120650451630354,
+    "k_c2": 0.958688803948462,
+    "k_c4_dm": 0.0020770319970324636,
+    "k_canonicalize": 0.0027558860601857305,
+    "k_neighborhoods": 0.005456913961097598,
+    "k_preparation": 7.851701229810715e-05,
+    "k_validation_bitset_v2": 0.21300702798180282,
+    "k_validator_setup": 0.0032385699450969696,
+    "model_build": 2.9521062970161438e-05,
+    "preparation": 0.07620795094408095,
+    "solve": 50.97653716895729,
+    "startup": 0.721256903023459,
+    "supervisor_shutdown": 0.00969992100726813
+  },
+  "wall_total_s": 52.970151599962264
+}
