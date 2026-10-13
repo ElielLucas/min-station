@@ -1,0 +1,39 @@
+{
+  "K_count": 0,
+  "K_sha256": null,
+  "K_validated": false,
+  "arm": "U",
+  "case": {
+    "case": "vienna-I056-regiao-f4",
+    "manifest_name": "vienna-I056-regiao-f4.txt",
+    "source": "DIMACS 11 (Vienna, I simples)",
+    "source_sha256": "645da5115a0eeaa6fba9eeae9f4942aebecfa66c4bcbc7aaec2bd0c994eb0ccc"
+  },
+  "estimated_size": {
+    "n_constraints": 5973,
+    "n_variables": 383591
+  },
+  "input_load_s": 0.02198475191835314,
+  "instance_sha256": "645da5115a0eeaa6fba9eeae9f4942aebecfa66c4bcbc7aaec2bd0c994eb0ccc",
+  "lp_numeric_value": 2.4400000000000017,
+  "model_complete": true,
+  "n_constraints": 5973,
+  "n_nonzeros": 1530382,
+  "n_variables": 383591,
+  "peak_rss_kb": 986936,
+  "plan_sha256": "23f450386a42839d669bf922aa25474a17fd500ea6a54b1d3c1deaa9736a319c",
+  "reachability_s": 0.487406924017705,
+  "schema": "AS09-C-LP-RESULT-v1",
+  "solver_runtime_s": 8.679719924926758,
+  "solver_version": "12.0.3",
+  "status": "OPTIMAL_NUMERIC",
+  "wall_phases_s": {
+    "model_build": 6.821421114960685,
+    "preparation": 0.5094440729590133,
+    "solve": 8.67994920106139,
+    "startup": 0.6411271260585636,
+    "supervisor_shutdown": 0.01625666592735797,
+    "validation": 0.27294801198877394
+  },
+  "wall_total_s": 16.941156393033452
+}

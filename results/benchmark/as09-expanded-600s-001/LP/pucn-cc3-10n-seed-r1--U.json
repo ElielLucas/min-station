@@ -1,0 +1,52 @@
+{
+  "K_count": 0,
+  "K_sha256": null,
+  "K_validated": false,
+  "arm": "U",
+  "case": {
+    "case": "pucn-cc3-10n-seed-r1",
+    "m": 25,
+    "manifest_name": "pucn-cc3-10n-seed-r1.txt",
+    "n": 1000,
+    "physical_edges": 13500,
+    "r": 1,
+    "raw_graph_id": "",
+    "reachability_arcs": 27000,
+    "source_family": "DIMACS 11 (SPG-PUCN)",
+    "source_sha256": "9123c0e46228c22ba586bb7f730757a7fa2c4b0f815b54afba59f54a3bc8b431",
+    "split": "desenvolvimento"
+  },
+  "estimated_size": {
+    "n_constraints": 3000,
+    "n_variables": 28000
+  },
+  "input_load_s": 0.04914141201879829,
+  "instance_sha256": "9123c0e46228c22ba586bb7f730757a7fa2c4b0f815b54afba59f54a3bc8b431",
+  "lp_numeric_value": 1.2000000000000004,
+  "mip_numeric_bound": null,
+  "mip_numeric_incumbent": null,
+  "mode": "LP",
+  "model_complete": true,
+  "n_constraints": 3000,
+  "n_nonzeros": 110000,
+  "n_variables": 28000,
+  "peak_rss_kb": 169576,
+  "physical_best_observed_ub": null,
+  "physical_validated_ub": null,
+  "plan_sha256": "5e037ab54fb391cd4e9f78eab07918773176fc59563af2703b5d55c4c5d374c8",
+  "reachability_s": 0.059392228024080396,
+  "schema": "AS09-C-EXTENDED-RESULT-v1",
+  "solver_runtime_s": 1.1768829822540283,
+  "solver_version": "12.0.3",
+  "status": "OPTIMAL_NUMERIC",
+  "validated_mip_gap": null,
+  "wall_phases_s": {
+    "model_build": 0.4297776640160009,
+    "preparation": 0.10858796397224069,
+    "solve": 1.1771035239798948,
+    "startup": 0.6467571200337261,
+    "supervisor_shutdown": 0.010657230042852461,
+    "validation": 0.027224438963457942
+  },
+  "wall_total_s": 2.400119930971414
+}

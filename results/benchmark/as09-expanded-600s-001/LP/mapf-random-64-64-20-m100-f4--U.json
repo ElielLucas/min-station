@@ -1,0 +1,52 @@
+{
+  "K_count": 0,
+  "K_sha256": null,
+  "K_validated": false,
+  "arm": "U",
+  "case": {
+    "case": "mapf-random-64-64-20-m100-f4",
+    "m": 100,
+    "manifest_name": "mapf-random-64-64-20-m100-f4.txt",
+    "n": 3270,
+    "physical_edges": 5149,
+    "r": 5,
+    "raw_graph_id": "",
+    "reachability_arcs": 121632,
+    "source_family": "MovingAI MAPF",
+    "source_sha256": "91b64046f1177762af8fea8fb5af168ad1f978ca6fa7f52fd397cb01d7468909",
+    "split": "avaliacao"
+  },
+  "estimated_size": {
+    "n_constraints": 9810,
+    "n_variables": 124902
+  },
+  "input_load_s": 0.03779921599198133,
+  "instance_sha256": "91b64046f1177762af8fea8fb5af168ad1f978ca6fa7f52fd397cb01d7468909",
+  "lp_numeric_value": 1.0300000000000007,
+  "mip_numeric_bound": null,
+  "mip_numeric_incumbent": null,
+  "mode": "LP",
+  "model_complete": true,
+  "n_constraints": 9810,
+  "n_nonzeros": 493068,
+  "n_variables": 124902,
+  "peak_rss_kb": 384440,
+  "physical_best_observed_ub": null,
+  "physical_validated_ub": null,
+  "plan_sha256": "5e037ab54fb391cd4e9f78eab07918773176fc59563af2703b5d55c4c5d374c8",
+  "reachability_s": 0.135079856030643,
+  "schema": "AS09-C-EXTENDED-RESULT-v1",
+  "solver_runtime_s": 3.1969709396362305,
+  "solver_version": "12.0.3",
+  "status": "OPTIMAL_NUMERIC",
+  "validated_mip_gap": null,
+  "wall_phases_s": {
+    "model_build": 1.7770433500409126,
+    "preparation": 0.17293977097142488,
+    "solve": 3.197191654937342,
+    "startup": 0.6421291590668261,
+    "supervisor_shutdown": 0.01352015696465969,
+    "validation": 0.09770430403295904
+  },
+  "wall_total_s": 5.900534390006214
+}

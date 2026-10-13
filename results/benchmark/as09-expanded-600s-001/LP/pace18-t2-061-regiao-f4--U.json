@@ -1,0 +1,52 @@
+{
+  "K_count": 0,
+  "K_sha256": null,
+  "K_validated": false,
+  "arm": "U",
+  "case": {
+    "case": "pace18-t2-061-regiao-f4",
+    "m": 42,
+    "manifest_name": "pace18-t2-061-regiao-f4.txt",
+    "n": 528,
+    "physical_edges": 1017,
+    "r": 8,
+    "raw_graph_id": "",
+    "reachability_arcs": 57138,
+    "source_family": "PACE 2018 Steiner Tree, trilha 2",
+    "source_sha256": "37cf3679a3c42c6f9c6689eca9c78f45af34430d16189f2d0f800a173ec22a41",
+    "split": "desenvolvimento"
+  },
+  "estimated_size": {
+    "n_constraints": 1584,
+    "n_variables": 57666
+  },
+  "input_load_s": 0.008245279896073043,
+  "instance_sha256": "37cf3679a3c42c6f9c6689eca9c78f45af34430d16189f2d0f800a173ec22a41",
+  "lp_numeric_value": 2.785714285714283,
+  "mip_numeric_bound": null,
+  "mip_numeric_incumbent": null,
+  "mode": "LP",
+  "model_complete": true,
+  "n_constraints": 1584,
+  "n_nonzeros": 229608,
+  "n_variables": 57666,
+  "peak_rss_kb": 201084,
+  "physical_best_observed_ub": null,
+  "physical_validated_ub": null,
+  "plan_sha256": "5e037ab54fb391cd4e9f78eab07918773176fc59563af2703b5d55c4c5d374c8",
+  "reachability_s": 0.07840566907543689,
+  "schema": "AS09-C-EXTENDED-RESULT-v1",
+  "solver_runtime_s": 0.8975448608398438,
+  "solver_version": "12.0.3",
+  "status": "OPTIMAL_NUMERIC",
+  "validated_mip_gap": null,
+  "wall_phases_s": {
+    "model_build": 0.7983876559883356,
+    "preparation": 0.08670404902659357,
+    "solve": 0.8977907509543002,
+    "startup": 0.6487863620277494,
+    "supervisor_shutdown": 0.008960632956586778,
+    "validation": 0.047998659079894423
+  },
+  "wall_total_s": 2.4886337110074237
+}

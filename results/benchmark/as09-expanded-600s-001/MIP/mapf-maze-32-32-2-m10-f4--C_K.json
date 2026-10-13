@@ -1,0 +1,138 @@
+{
+  "K_count": 10,
+  "K_sha256": "af329975d8a761cdcd040776848b0ed43be08f8f57ae67a983b6bc87b5f5fac6",
+  "K_validated": true,
+  "arm": "C_K",
+  "callback_errors": [],
+  "case": {
+    "case": "mapf-maze-32-32-2-m10-f4",
+    "m": 10,
+    "manifest_name": "mapf-maze-32-32-2-m10-f4.txt",
+    "n": 666,
+    "physical_edges": 975,
+    "r": 17,
+    "raw_graph_id": "",
+    "reachability_arcs": 59900,
+    "source_family": "MovingAI MAPF",
+    "source_sha256": "143ef55912374b7d6430e80464c99129f65acbf7edbaf6ed87f8bcb6bb44b343",
+    "split": "avaliacao"
+  },
+  "estimated_size": {
+    "n_absorption_variables": 180,
+    "n_constraints": 12674,
+    "n_movement_variables": 33150,
+    "n_recharge_variables": 11322,
+    "n_station_variables": 666,
+    "n_variables": 45318
+  },
+  "input_load_s": 0.006549653015099466,
+  "installed": [
+    "10_8",
+    "13_26",
+    "13_9",
+    "20_2",
+    "28_17",
+    "28_24",
+    "8_18"
+  ],
+  "instance_sha256": "143ef55912374b7d6430e80464c99129f65acbf7edbaf6ed87f8bcb6bb44b343",
+  "invalid_incumbents": 0,
+  "k_phase_wall_s": {
+    "c1_s": 4.47939382866025e-05,
+    "c2_s": 0.024330429965630174,
+    "c4_dm_s": 0.00041778304148465395,
+    "canonicalize_s": 0.00045959395356476307,
+    "neighborhoods_s": 0.021346283028833568,
+    "validation_bitset_v2_s": 0.05194292194209993,
+    "validator_setup_s": 0.01129066594876349
+  },
+  "lp_numeric_value": null,
+  "mip_numeric_bound": 7.0,
+  "mip_numeric_incumbent": 7.0,
+  "mode": "MIP",
+  "model_complete": true,
+  "n_constraints": 12674,
+  "n_nonzeros": 102207,
+  "n_variables": 45318,
+  "nodes": 1.0,
+  "numeric_bound_trace": [
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": null,
+      "numeric_lb": 0.0,
+      "solver_s": 0.3332250118255615
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 7.0,
+      "numeric_lb": 6.0,
+      "solver_s": 5.806852102279663
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 7.0,
+      "numeric_lb": 6.0,
+      "solver_s": 12.793246984481812
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 7.0,
+      "numeric_lb": 6.0,
+      "solver_s": 30.784296989440918
+    }
+  ],
+  "numeric_callback_dropped_incumbents": 0,
+  "peak_rss_kb": 473468,
+  "physical_best_observed_ub": 7,
+  "physical_trace": [
+    {
+      "physical_ub": 9,
+      "solver_s": 1.506230115890503,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 8,
+      "solver_s": 1.7838521003723145,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 7,
+      "solver_s": 3.671884059906006,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 7,
+      "solver_s": 30.77885603904724,
+      "validation": "VALIDATED"
+    }
+  ],
+  "physical_validated_ub": 7,
+  "plan_sha256": "5e037ab54fb391cd4e9f78eab07918773176fc59563af2703b5d55c4c5d374c8",
+  "reachability_s": 0.0617338540032506,
+  "schema": "AS09-C-EXTENDED-RESULT-v1",
+  "solver_runtime_s": 36.55465602874756,
+  "solver_version": "12.0.3",
+  "solver_work": 16.499868501474076,
+  "status": "OPTIMAL_NUMERIC",
+  "time_to_best_validated_ub_solver_s": 3.671884059906006,
+  "time_to_first_validated_ub_solver_s": 1.506230115890503,
+  "validated_mip_gap": 0.0,
+  "wall_phases_s": {
+    "k_c1": 8.797296322882175e-05,
+    "k_c2": 0.024345883983187377,
+    "k_c4_dm": 0.00046553206630051136,
+    "k_canonicalize": 0.0004805430071428418,
+    "k_neighborhoods": 0.021370318019762635,
+    "k_preparation": 5.0378963351249695e-05,
+    "k_validation_bitset_v2": 0.05558244697749615,
+    "k_validator_setup": 0.011311084032058716,
+    "model_build": 0.625824152957648,
+    "physical_validation": 0.01960811100434512,
+    "preparation": 0.06832619302440435,
+    "solve": 36.554982624948025,
+    "startup": 0.5950996619649231,
+    "supervisor_shutdown": 0.02741948200855404,
+    "validation": 0.09329160605557263
+  },
+  "wall_total_s": 38.0982518219389
+}

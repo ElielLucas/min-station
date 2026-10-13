@@ -1,0 +1,56 @@
+{
+  "K_count": 67,
+  "K_sha256": "e8ad995864897f119b1f207d528ef048ac2f46987591437d807ae5e90d4e33cf",
+  "K_validated": true,
+  "arm": "U_K",
+  "case": {
+    "case": "puc-cc9-2p-seed-r1",
+    "manifest_name": "puc-cc9-2p-seed-r1.txt",
+    "source": "SteinLib",
+    "source_sha256": "0312f43552cddc102081d9937465429e29797ddb86cf85a6871752d50aeec88c"
+  },
+  "estimated_size": {
+    "n_constraints": 1603,
+    "n_variables": 5120
+  },
+  "input_load_s": 0.023836275096982718,
+  "instance_sha256": "0312f43552cddc102081d9937465429e29797ddb86cf85a6871752d50aeec88c",
+  "k_phase_wall_s": {
+    "c1_s": 0.00027860200498253107,
+    "c2_s": 0.30491440603509545,
+    "c4_dm_s": 0.0009487229399383068,
+    "canonicalize_s": 0.0013698979746550322,
+    "neighborhoods_s": 0.005138459033332765,
+    "validation_bitset_v2_s": 0.12981624389067292,
+    "validator_setup_s": 0.00355489703360945
+  },
+  "lp_numeric_value": 27.026785714285705,
+  "model_complete": true,
+  "n_constraints": 1603,
+  "n_nonzeros": 20356,
+  "n_variables": 5120,
+  "peak_rss_kb": 85628,
+  "plan_sha256": "6a3d38d43d93b5867219f28de6d76db3839fd75386ba0479c2b88f2beff9a15a",
+  "reachability_s": 0.015415319940075278,
+  "schema": "AS09-C-LP-RESULT-v1",
+  "solver_runtime_s": 0.1819920539855957,
+  "solver_version": "12.0.3",
+  "status": "OPTIMAL_NUMERIC",
+  "wall_phases_s": {
+    "k_c1": 0.0003853419329971075,
+    "k_c2": 0.304980973014608,
+    "k_c4_dm": 0.0010838400339707732,
+    "k_canonicalize": 0.0014341759961098433,
+    "k_neighborhoods": 0.0051874719792976975,
+    "k_preparation": 0.0001388790551573038,
+    "k_validation_bitset_v2": 0.13214593392331153,
+    "k_validator_setup": 0.0036066840402781963,
+    "model_build": 0.18924720399081707,
+    "preparation": 0.039355136919766665,
+    "solve": 0.18238022201694548,
+    "startup": 0.7943442430114374,
+    "supervisor_shutdown": 0.005116477957926691,
+    "validation": 0.0035725630586966872
+  },
+  "wall_total_s": 1.6629831480095163
+}

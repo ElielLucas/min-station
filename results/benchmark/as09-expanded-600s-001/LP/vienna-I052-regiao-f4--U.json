@@ -1,0 +1,52 @@
+{
+  "K_count": 0,
+  "K_sha256": null,
+  "K_validated": false,
+  "arm": "U",
+  "case": {
+    "case": "vienna-I052-regiao-f4",
+    "m": 20,
+    "manifest_name": "vienna-I052-regiao-f4.txt",
+    "n": 2363,
+    "physical_edges": 3761,
+    "r": 13,
+    "raw_graph_id": "",
+    "reachability_arcs": 483196,
+    "source_family": "DIMACS 11 (Vienna, I simples)",
+    "source_sha256": "092003450701029f612f7d998a90ff8433f41f7cac25a1e36a3d0ee90001fa33",
+    "split": "avaliacao"
+  },
+  "estimated_size": {
+    "n_constraints": 7089,
+    "n_variables": 485559
+  },
+  "input_load_s": 0.027548659942112863,
+  "instance_sha256": "092003450701029f612f7d998a90ff8433f41f7cac25a1e36a3d0ee90001fa33",
+  "lp_numeric_value": 1.6500000000000008,
+  "mip_numeric_bound": null,
+  "mip_numeric_incumbent": null,
+  "mode": "LP",
+  "model_complete": true,
+  "n_constraints": 7089,
+  "n_nonzeros": 1937510,
+  "n_variables": 485559,
+  "peak_rss_kb": 1172892,
+  "physical_best_observed_ub": null,
+  "physical_validated_ub": null,
+  "plan_sha256": "5e037ab54fb391cd4e9f78eab07918773176fc59563af2703b5d55c4c5d374c8",
+  "reachability_s": 0.6166200540028512,
+  "schema": "AS09-C-EXTENDED-RESULT-v1",
+  "solver_runtime_s": 12.994822978973389,
+  "solver_version": "12.0.3",
+  "status": "OPTIMAL_NUMERIC",
+  "validated_mip_gap": null,
+  "wall_phases_s": {
+    "model_build": 7.317880523973145,
+    "preparation": 0.6442265970399603,
+    "solve": 12.995044106035493,
+    "startup": 0.6452620319323614,
+    "supervisor_shutdown": 0.01836057798936963,
+    "validation": 0.31538313801866025
+  },
+  "wall_total_s": 21.93616232194472
+}

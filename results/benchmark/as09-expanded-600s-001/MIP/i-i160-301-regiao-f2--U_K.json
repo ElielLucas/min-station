@@ -1,0 +1,112 @@
+{
+  "K_count": 18,
+  "K_sha256": "545d67645dd6b9f38302fd08506a7746617539a3ea8c828f17609b4a8ffde1ca",
+  "K_validated": true,
+  "arm": "U_K",
+  "callback_errors": [],
+  "case": {
+    "case": "i-i160-301-regiao-f2",
+    "m": 20,
+    "manifest_name": "i-i160-301-regiao-f2.txt",
+    "n": 160,
+    "physical_edges": 240,
+    "r": 3,
+    "raw_graph_id": "",
+    "reachability_arcs": 5262,
+    "source_family": "SteinLib",
+    "source_sha256": "6a302c8a32908a37224b0e4db92bbf02b6ce7cc00c5d2d6636213eb0a87465f4",
+    "split": "avaliacao"
+  },
+  "estimated_size": {
+    "n_constraints": 498,
+    "n_variables": 5422
+  },
+  "input_load_s": 0.0033223730279132724,
+  "installed": [
+    "1",
+    "11",
+    "133",
+    "58"
+  ],
+  "instance_sha256": "6a302c8a32908a37224b0e4db92bbf02b6ce7cc00c5d2d6636213eb0a87465f4",
+  "invalid_incumbents": 0,
+  "k_phase_wall_s": {
+    "c1_s": 7.484003435820341e-05,
+    "c2_s": 0.011685461038723588,
+    "c4_dm_s": 0.0005507980240508914,
+    "canonicalize_s": 0.00032254995312541723,
+    "neighborhoods_s": 0.002120121964253485,
+    "validation_bitset_v2_s": 0.008339707041159272,
+    "validator_setup_s": 0.001129999989643693
+  },
+  "lp_numeric_value": null,
+  "mip_numeric_bound": 4.0,
+  "mip_numeric_incumbent": 4.0,
+  "mode": "MIP",
+  "model_complete": true,
+  "n_constraints": 498,
+  "n_nonzeros": 22007,
+  "n_variables": 5422,
+  "nodes": 1.0,
+  "numeric_bound_trace": [
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 21.0,
+      "numeric_lb": 0.0,
+      "solver_s": 0.033941030502319336
+    }
+  ],
+  "numeric_callback_dropped_incumbents": 0,
+  "peak_rss_kb": 104064,
+  "physical_best_observed_ub": 4,
+  "physical_trace": [
+    {
+      "physical_ub": 21,
+      "solver_s": 0.0011739730834960938,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 6,
+      "solver_s": 0.06884908676147461,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 5,
+      "solver_s": 0.07041692733764648,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 4,
+      "solver_s": 0.07589197158813477,
+      "validation": "VALIDATED"
+    }
+  ],
+  "physical_validated_ub": 4,
+  "plan_sha256": "5e037ab54fb391cd4e9f78eab07918773176fc59563af2703b5d55c4c5d374c8",
+  "reachability_s": 0.00682155299000442,
+  "schema": "AS09-C-EXTENDED-RESULT-v1",
+  "solver_runtime_s": 0.08124399185180664,
+  "solver_version": "12.0.3",
+  "solver_work": 0.05048078167134523,
+  "status": "OPTIMAL_NUMERIC",
+  "time_to_best_validated_ub_solver_s": 0.07589197158813477,
+  "time_to_first_validated_ub_solver_s": 0.0011739730834960938,
+  "validated_mip_gap": 0.0,
+  "wall_phases_s": {
+    "k_c1": 0.00010528904385864735,
+    "k_c2": 0.011699320049956441,
+    "k_c4_dm": 0.0005766620161011815,
+    "k_canonicalize": 0.00034242693800479174,
+    "k_neighborhoods": 0.0021371759939938784,
+    "k_preparation": 4.079192876815796e-05,
+    "k_validation_bitset_v2": 0.009095206973142922,
+    "k_validator_setup": 0.0011453330516815186,
+    "model_build": 0.07293164299335331,
+    "preparation": 0.010186876985244453,
+    "solve": 0.0815064610214904,
+    "startup": 0.5862377890152857,
+    "supervisor_shutdown": 0.0061330730095505714,
+    "validation": 0.01753950398415327
+  },
+  "wall_total_s": 0.7996815129881725
+}

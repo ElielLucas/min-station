@@ -1,0 +1,44 @@
+{
+  "K_count": 0,
+  "K_sha256": null,
+  "K_validated": false,
+  "arm": "C",
+  "case": {
+    "case": "mapf-den312d-m50-f2-rho",
+    "manifest_name": "mapf-den312d-m50-f2-rho.txt",
+    "source": "MovingAI MAPF",
+    "source_sha256": "54c491c8043d8b5350603aa12cdc77f53e2cd289bd71bc45f93030951dbfb4ea"
+  },
+  "estimated_size": {
+    "n_absorption_variables": 850,
+    "n_constraints": 44060,
+    "n_movement_variables": 140512,
+    "n_recharge_variables": 39120,
+    "n_station_variables": 2445,
+    "n_variables": 182927
+  },
+  "input_load_s": 0.053893741918727756,
+  "instance_sha256": "54c491c8043d8b5350603aa12cdc77f53e2cd289bd71bc45f93030951dbfb4ea",
+  "lp_numeric_value": 0.27999999999999997,
+  "model_complete": true,
+  "n_constraints": 44060,
+  "n_nonzeros": 402529,
+  "n_variables": 182927,
+  "peak_rss_kb": 538872,
+  "plan_sha256": "6a3d38d43d93b5867219f28de6d76db3839fd75386ba0479c2b88f2beff9a15a",
+  "reachability_s": 0.9078889850061387,
+  "schema": "AS09-C-LP-RESULT-v1",
+  "solver_runtime_s": 7.1205971240997314,
+  "solver_version": "12.0.3",
+  "status": "OPTIMAL_NUMERIC",
+  "wall_phases_s": {
+    "model_build": 3.005513597978279,
+    "physical_validation": 0.23512028297409415,
+    "preparation": 0.9618755730334669,
+    "solve": 7.120826813974418,
+    "startup": 0.8994522510329261,
+    "supervisor_shutdown": 0.01813971600495279,
+    "validation": 0.15002619905862957
+  },
+  "wall_total_s": 12.390960666001774
+}

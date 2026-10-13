@@ -1,0 +1,327 @@
+{
+  "K_count": 101,
+  "K_sha256": "64d3500a49c52bbf3ea9a3ffd718711c2e6a809585d7f91db311ef44a3606796",
+  "K_validated": true,
+  "arm": "U_K",
+  "callback_errors": [],
+  "case": {
+    "case": "vienna-I056-regiao-f4",
+    "m": 25,
+    "manifest_name": "vienna-I056-regiao-f4.txt",
+    "n": 1991,
+    "physical_edges": 3176,
+    "r": 12,
+    "raw_graph_id": "",
+    "reachability_arcs": 381600,
+    "source_family": "DIMACS 11 (Vienna, I simples)",
+    "source_sha256": "645da5115a0eeaa6fba9eeae9f4942aebecfa66c4bcbc7aaec2bd0c994eb0ccc",
+    "split": "desenvolvimento"
+  },
+  "estimated_size": {
+    "n_constraints": 6074,
+    "n_variables": 383591
+  },
+  "input_load_s": 0.022703322116285563,
+  "installed": [
+    "1155",
+    "1163",
+    "1178",
+    "1328",
+    "1375",
+    "1683",
+    "1752",
+    "1770",
+    "1789",
+    "1804",
+    "1860",
+    "250",
+    "915"
+  ],
+  "instance_sha256": "645da5115a0eeaa6fba9eeae9f4942aebecfa66c4bcbc7aaec2bd0c994eb0ccc",
+  "invalid_incumbents": 0,
+  "k_phase_wall_s": {
+    "c1_s": 0.00043639400973916054,
+    "c2_s": 0.3699364650528878,
+    "c4_dm_s": 0.0021506788907572627,
+    "canonicalize_s": 0.014553998014889657,
+    "neighborhoods_s": 0.17021126195322722,
+    "validation_bitset_v2_s": 1.915291621000506,
+    "validator_setup_s": 0.093209107988514
+  },
+  "lp_numeric_value": null,
+  "mip_numeric_bound": 9.0,
+  "mip_numeric_incumbent": 13.0,
+  "mode": "MIP",
+  "model_complete": true,
+  "n_constraints": 6074,
+  "n_nonzeros": 1558364,
+  "n_variables": 383591,
+  "nodes": 1.0,
+  "numeric_bound_trace": [
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 194.0,
+      "numeric_lb": 0.0,
+      "solver_s": 3.2839670181274414
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 194.0,
+      "numeric_lb": 9.0,
+      "solver_s": 20.19177007675171
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 194.0,
+      "numeric_lb": 9.0,
+      "solver_s": 42.91564106941223
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 9.0,
+      "solver_s": 62.872803926467896
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 9.0,
+      "solver_s": 95.04117798805237
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 9.0,
+      "solver_s": 105.71243405342102
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 9.0,
+      "solver_s": 145.52697491645813
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 9.0,
+      "solver_s": 178.14162802696228
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 9.0,
+      "solver_s": 193.07675409317017
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 9.0,
+      "solver_s": 201.9570620059967
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 9.0,
+      "solver_s": 242.30448293685913
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 9.0,
+      "solver_s": 264.21843004226685
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 9.0,
+      "solver_s": 273.688560962677
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 9.0,
+      "solver_s": 289.6788420677185
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 9.0,
+      "solver_s": 311.542995929718
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 9.0,
+      "solver_s": 327.1536440849304
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 9.0,
+      "solver_s": 336.42077708244324
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 9.0,
+      "solver_s": 353.1276550292969
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 9.0,
+      "solver_s": 361.9406580924988
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 9.0,
+      "solver_s": 376.4105200767517
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 9.0,
+      "solver_s": 391.34859800338745
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 9.0,
+      "solver_s": 413.1630630493164
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 9.0,
+      "solver_s": 425.1461069583893
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 9.0,
+      "solver_s": 436.33512902259827
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 9.0,
+      "solver_s": 456.14689898490906
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 9.0,
+      "solver_s": 465.76764607429504
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 9.0,
+      "solver_s": 483.07804894447327
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 9.0,
+      "solver_s": 498.7750470638275
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 9.0,
+      "solver_s": 512.9954690933228
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 9.0,
+      "solver_s": 523.7641611099243
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 9.0,
+      "solver_s": 537.0838251113892
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 9.0,
+      "solver_s": 545.943687915802
+    }
+  ],
+  "numeric_callback_dropped_incumbents": 0,
+  "peak_rss_kb": 1278480,
+  "physical_best_observed_ub": 13,
+  "physical_trace": [
+    {
+      "physical_ub": 194,
+      "solver_s": 0.08212113380432129,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 22,
+      "solver_s": 42.93181800842285,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 21,
+      "solver_s": 43.07003712654114,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 18,
+      "solver_s": 43.80223512649536,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 16,
+      "solver_s": 43.85606908798218,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 15,
+      "solver_s": 44.346709966659546,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 14,
+      "solver_s": 47.62817192077637,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 13,
+      "solver_s": 48.844473123550415,
+      "validation": "VALIDATED"
+    }
+  ],
+  "physical_validated_ub": 13,
+  "plan_sha256": "5e037ab54fb391cd4e9f78eab07918773176fc59563af2703b5d55c4c5d374c8",
+  "reachability_s": 0.46333103394135833,
+  "schema": "AS09-C-EXTENDED-RESULT-v1",
+  "solver_runtime_s": 545.9755709171295,
+  "solver_version": "12.0.3",
+  "solver_work": 502.27851240838453,
+  "status": "TIME_LIMIT",
+  "time_to_best_validated_ub_solver_s": 48.844473123550415,
+  "time_to_first_validated_ub_solver_s": 0.08212113380432129,
+  "validated_mip_gap": 0.3076923076923077,
+  "wall_phases_s": {
+    "k_c1": 0.0004984530387446284,
+    "k_c2": 0.36996646190527827,
+    "k_c4_dm": 0.002217858098447323,
+    "k_canonicalize": 0.014584925957024097,
+    "k_neighborhoods": 0.17023618298117071,
+    "k_preparation": 8.048198651522398e-05,
+    "k_validation_bitset_v2": 1.942910974030383,
+    "k_validator_setup": 0.09324890095740557,
+    "model_build": 5.387030416051857,
+    "preparation": 0.4860853400314227,
+    "solve": 545.9759246809408,
+    "startup": 0.5958686240483075,
+    "supervisor_shutdown": 0.05639205197803676,
+    "validation": 2.2846910540247336
+  },
+  "wall_total_s": 557.3797420629999
+}

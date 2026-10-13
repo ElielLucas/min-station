@@ -1,0 +1,53 @@
+{
+  "K_count": 11,
+  "K_sha256": "170ab23ce5a949b81e63536e2ff7b0578e10a53dd04b3ee48e270dfa9ade87aa",
+  "K_validated": true,
+  "arm": "U_K",
+  "case": {
+    "case": "mapf-den312d-m50-f2-rho",
+    "manifest_name": "mapf-den312d-m50-f2-rho.txt",
+    "source": "MovingAI MAPF",
+    "source_sha256": "54c491c8043d8b5350603aa12cdc77f53e2cd289bd71bc45f93030951dbfb4ea"
+  },
+  "estimated_size": {
+    "n_constraints": 7346,
+    "n_variables": 552141
+  },
+  "input_load_s": 0.06165330100338906,
+  "instance_sha256": "54c491c8043d8b5350603aa12cdc77f53e2cd289bd71bc45f93030951dbfb4ea",
+  "k_phase_wall_s": {
+    "c1_s": 0.0003644750686362386,
+    "c2_s": 0.7024769010022283,
+    "c4_dm_s": 0.003553263028152287,
+    "canonicalize_s": 0.002423543017357588,
+    "neighborhoods_s": 0.23704959801398218,
+    "validation_bitset_v2_s": 0.7881936740595847,
+    "validator_setup_s": 0.12594512302894145
+  },
+  "lp_numeric_value": null,
+  "peak_rss_kb": null,
+  "plan_sha256": "6a3d38d43d93b5867219f28de6d76db3839fd75386ba0479c2b88f2beff9a15a",
+  "reachability_s": 0.8956169229932129,
+  "reason": "cap de tamanho antes da montagem",
+  "schema": "AS09-C-LP-RESULT-v1",
+  "size_cap": {
+    "max_constraints": 250000,
+    "max_variables": 500000
+  },
+  "solver_runtime_s": null,
+  "status": "NOT_BUILT_SIZE",
+  "wall_phases_s": {
+    "k_c1": 0.0004308579955250025,
+    "k_c2": 0.7025071390671656,
+    "k_c4_dm": 0.003612426924519241,
+    "k_canonicalize": 0.0024575270945206285,
+    "k_neighborhoods": 0.23707527795340866,
+    "k_preparation": 7.80599657446146e-05,
+    "k_validation_bitset_v2": 0.8334722160361707,
+    "k_validator_setup": 0.1259743239497766,
+    "preparation": 0.9573663650080562,
+    "startup": 0.9137005470693111,
+    "supervisor_shutdown": 0.012289721984416246
+  },
+  "wall_total_s": 3.7889708960428834
+}

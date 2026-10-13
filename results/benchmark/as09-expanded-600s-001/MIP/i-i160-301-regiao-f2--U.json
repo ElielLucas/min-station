@@ -1,0 +1,95 @@
+{
+  "K_count": 0,
+  "K_sha256": null,
+  "K_validated": false,
+  "arm": "U",
+  "callback_errors": [],
+  "case": {
+    "case": "i-i160-301-regiao-f2",
+    "m": 20,
+    "manifest_name": "i-i160-301-regiao-f2.txt",
+    "n": 160,
+    "physical_edges": 240,
+    "r": 3,
+    "raw_graph_id": "",
+    "reachability_arcs": 5262,
+    "source_family": "SteinLib",
+    "source_sha256": "6a302c8a32908a37224b0e4db92bbf02b6ce7cc00c5d2d6636213eb0a87465f4",
+    "split": "avaliacao"
+  },
+  "estimated_size": {
+    "n_constraints": 480,
+    "n_variables": 5422
+  },
+  "input_load_s": 0.0031883700285106897,
+  "installed": [
+    "1",
+    "145",
+    "58",
+    "86"
+  ],
+  "instance_sha256": "6a302c8a32908a37224b0e4db92bbf02b6ce7cc00c5d2d6636213eb0a87465f4",
+  "invalid_incumbents": 0,
+  "lp_numeric_value": null,
+  "mip_numeric_bound": 4.0,
+  "mip_numeric_incumbent": 4.0,
+  "mode": "MIP",
+  "model_complete": true,
+  "n_constraints": 480,
+  "n_nonzeros": 21368,
+  "n_variables": 5422,
+  "nodes": 1.0,
+  "numeric_bound_trace": [
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 21.0,
+      "numeric_lb": 0.0,
+      "solver_s": 0.02896904945373535
+    }
+  ],
+  "numeric_callback_dropped_incumbents": 0,
+  "peak_rss_kb": 119196,
+  "physical_best_observed_ub": 4,
+  "physical_trace": [
+    {
+      "physical_ub": 21,
+      "solver_s": 0.0010190010070800781,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 6,
+      "solver_s": 0.07793998718261719,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 5,
+      "solver_s": 0.1022179126739502,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 4,
+      "solver_s": 0.20542597770690918,
+      "validation": "VALIDATED"
+    }
+  ],
+  "physical_validated_ub": 4,
+  "plan_sha256": "5e037ab54fb391cd4e9f78eab07918773176fc59563af2703b5d55c4c5d374c8",
+  "reachability_s": 0.006924915011040866,
+  "schema": "AS09-C-EXTENDED-RESULT-v1",
+  "solver_runtime_s": 0.3666229248046875,
+  "solver_version": "12.0.3",
+  "solver_work": 0.1862251549944136,
+  "status": "OPTIMAL_NUMERIC",
+  "time_to_best_validated_ub_solver_s": 0.20542597770690918,
+  "time_to_first_validated_ub_solver_s": 0.0010190010070800781,
+  "validated_mip_gap": 0.0,
+  "wall_phases_s": {
+    "model_build": 0.07264263706747442,
+    "preparation": 0.010155891999602318,
+    "solve": 0.36691551993135363,
+    "startup": 0.5874449779512361,
+    "supervisor_shutdown": 0.008866754011251032,
+    "validation": 0.018896113033406436
+  },
+  "wall_total_s": 1.0649280989309773
+}

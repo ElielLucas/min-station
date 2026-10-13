@@ -1,0 +1,336 @@
+{
+  "K_count": 11,
+  "K_sha256": "170ab23ce5a949b81e63536e2ff7b0578e10a53dd04b3ee48e270dfa9ade87aa",
+  "K_validated": true,
+  "arm": "C_K",
+  "callback_errors": [],
+  "case": {
+    "case": "mapf-den312d-m50-f2-rho",
+    "m": 50,
+    "manifest_name": "mapf-den312d-m50-f2-rho.txt",
+    "n": 2445,
+    "physical_edges": 4391,
+    "r": 16,
+    "raw_graph_id": "",
+    "reachability_arcs": 549696,
+    "source_family": "MovingAI MAPF",
+    "source_sha256": "54c491c8043d8b5350603aa12cdc77f53e2cd289bd71bc45f93030951dbfb4ea",
+    "split": "avaliacao"
+  },
+  "estimated_size": {
+    "n_absorption_variables": 850,
+    "n_constraints": 44071,
+    "n_movement_variables": 140512,
+    "n_recharge_variables": 39120,
+    "n_station_variables": 2445,
+    "n_variables": 182927
+  },
+  "input_load_s": 0.03020381892565638,
+  "installed": [
+    "20_11",
+    "21_11",
+    "27_44",
+    "29_31",
+    "30_22",
+    "41_45",
+    "49_28",
+    "50_30",
+    "52_8",
+    "56_20",
+    "66_28"
+  ],
+  "instance_sha256": "54c491c8043d8b5350603aa12cdc77f53e2cd289bd71bc45f93030951dbfb4ea",
+  "invalid_incumbents": 0,
+  "k_phase_wall_s": {
+    "c1_s": 0.0002883749548345804,
+    "c2_s": 0.6636046839412302,
+    "c4_dm_s": 0.003447687951847911,
+    "canonicalize_s": 0.0024411629419773817,
+    "neighborhoods_s": 0.2258642609231174,
+    "validation_bitset_v2_s": 0.7858539340086281,
+    "validator_setup_s": 0.13212900492362678
+  },
+  "lp_numeric_value": null,
+  "mip_numeric_bound": 4.0,
+  "mip_numeric_incumbent": 11.0,
+  "mode": "MIP",
+  "model_complete": true,
+  "n_constraints": 44071,
+  "n_nonzeros": 406840,
+  "n_variables": 182927,
+  "nodes": 1446.0,
+  "numeric_bound_trace": [
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": null,
+      "numeric_lb": 0.0,
+      "solver_s": 1.2554199695587158
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": null,
+      "numeric_lb": 4.0,
+      "solver_s": 27.84142303466797
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 46.868956089019775
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 57.8529748916626
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 67.35770201683044
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 74.3365170955658
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 81.46561288833618
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 92.71983408927917
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 99.07597494125366
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 108.53243803977966
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 115.01097798347473
+    },
+    {
+      "nodes": 7.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 125.17447996139526
+    },
+    {
+      "nodes": 28.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 135.56228709220886
+    },
+    {
+      "nodes": 36.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 145.69598197937012
+    },
+    {
+      "nodes": 48.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 155.220449924469
+    },
+    {
+      "nodes": 56.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 160.3032341003418
+    },
+    {
+      "nodes": 67.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 168.1546869277954
+    },
+    {
+      "nodes": 78.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 174.38446497917175
+    },
+    {
+      "nodes": 96.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 185.34530401229858
+    },
+    {
+      "nodes": 120.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 198.12426090240479
+    },
+    {
+      "nodes": 144.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 209.49292707443237
+    },
+    {
+      "nodes": 172.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 224.86556696891785
+    },
+    {
+      "nodes": 193.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 236.8918628692627
+    },
+    {
+      "nodes": 295.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 252.53309106826782
+    },
+    {
+      "nodes": 327.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 271.47059988975525
+    },
+    {
+      "nodes": 401.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 289.81590700149536
+    },
+    {
+      "nodes": 494.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 307.90290808677673
+    },
+    {
+      "nodes": 603.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 328.28681087493896
+    },
+    {
+      "nodes": 701.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 350.6305830478668
+    },
+    {
+      "nodes": 786.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 421.5210828781128
+    },
+    {
+      "nodes": 798.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 438.37983298301697
+    },
+    {
+      "nodes": 942.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 455.2219638824463
+    },
+    {
+      "nodes": 1016.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 474.3339149951935
+    },
+    {
+      "nodes": 1091.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 490.73010206222534
+    },
+    {
+      "nodes": 1151.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 507.74350094795227
+    },
+    {
+      "nodes": 1226.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 523.1244249343872
+    },
+    {
+      "nodes": 1333.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 538.9748950004578
+    },
+    {
+      "nodes": 1438.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 549.3148040771484
+    }
+  ],
+  "numeric_callback_dropped_incumbents": 0,
+  "peak_rss_kb": 2537964,
+  "physical_best_observed_ub": 11,
+  "physical_trace": [
+    {
+      "physical_ub": 12,
+      "solver_s": 32.825865030288696,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 11,
+      "solver_s": 37.099404096603394,
+      "validation": "VALIDATED"
+    }
+  ],
+  "physical_validated_ub": 11,
+  "plan_sha256": "5e037ab54fb391cd4e9f78eab07918773176fc59563af2703b5d55c4c5d374c8",
+  "reachability_s": 0.6795289180008695,
+  "schema": "AS09-C-EXTENDED-RESULT-v1",
+  "solver_runtime_s": 549.3765978813171,
+  "solver_version": "12.0.3",
+  "solver_work": 425.7282753392525,
+  "status": "TIME_LIMIT",
+  "time_to_best_validated_ub_solver_s": 37.099404096603394,
+  "time_to_first_validated_ub_solver_s": 32.825865030288696,
+  "validated_mip_gap": 0.6363636363636364,
+  "wall_phases_s": {
+    "k_c1": 0.0003461620071902871,
+    "k_c2": 0.663630562950857,
+    "k_c4_dm": 0.003512545023113489,
+    "k_canonicalize": 0.002473243046551943,
+    "k_neighborhoods": 0.22588974598329514,
+    "k_preparation": 7.665494922548532e-05,
+    "k_validation_bitset_v2": 0.813893917016685,
+    "k_validator_setup": 0.1321562259690836,
+    "model_build": 2.3211756439413875,
+    "physical_validation": 0.2216035450110212,
+    "preparation": 0.7097833680454642,
+    "solve": 549.3769563590176,
+    "startup": 0.635989170987159,
+    "supervisor_shutdown": 0.10585560696199536,
+    "validation": 0.43315302405972034
+  },
+  "wall_total_s": 555.6465007700026
+}

@@ -1,0 +1,61 @@
+{
+  "K_count": 67,
+  "K_sha256": "e8ad995864897f119b1f207d528ef048ac2f46987591437d807ae5e90d4e33cf",
+  "K_validated": true,
+  "arm": "C_K",
+  "case": {
+    "case": "puc-cc9-2p-seed-r1",
+    "manifest_name": "puc-cc9-2p-seed-r1.txt",
+    "source": "SteinLib",
+    "source_sha256": "0312f43552cddc102081d9937465429e29797ddb86cf85a6871752d50aeec88c"
+  },
+  "estimated_size": {
+    "n_absorption_variables": 64,
+    "n_constraints": 1635,
+    "n_movement_variables": 4608,
+    "n_recharge_variables": 512,
+    "n_station_variables": 512,
+    "n_variables": 5696
+  },
+  "input_load_s": 0.02468192996457219,
+  "instance_sha256": "0312f43552cddc102081d9937465429e29797ddb86cf85a6871752d50aeec88c",
+  "k_phase_wall_s": {
+    "c1_s": 0.00028323300648480654,
+    "c2_s": 0.3147750929929316,
+    "c4_dm_s": 0.0010226769372820854,
+    "canonicalize_s": 0.0014220530865713954,
+    "neighborhoods_s": 0.005208882968872786,
+    "validation_bitset_v2_s": 0.12873502098955214,
+    "validator_setup_s": 0.0036824399139732122
+  },
+  "lp_numeric_value": 27.02678571428571,
+  "model_complete": true,
+  "n_constraints": 1635,
+  "n_nonzeros": 12292,
+  "n_variables": 5696,
+  "peak_rss_kb": 85844,
+  "plan_sha256": "6a3d38d43d93b5867219f28de6d76db3839fd75386ba0479c2b88f2beff9a15a",
+  "reachability_s": 0.015828393981792033,
+  "schema": "AS09-C-LP-RESULT-v1",
+  "solver_runtime_s": 0.11112284660339355,
+  "solver_version": "12.0.3",
+  "status": "OPTIMAL_NUMERIC",
+  "wall_phases_s": {
+    "k_c1": 0.0003842100268229842,
+    "k_c2": 0.3148316170554608,
+    "k_c4_dm": 0.001159935025498271,
+    "k_canonicalize": 0.0014994369121268392,
+    "k_neighborhoods": 0.005256043979898095,
+    "k_preparation": 0.00012454797979444265,
+    "k_validation_bitset_v2": 0.1301248639356345,
+    "k_validator_setup": 0.0037421120796352625,
+    "model_build": 0.12205920193810016,
+    "physical_validation": 0.012275377055630088,
+    "preparation": 0.04061334393918514,
+    "solve": 0.1113956100307405,
+    "startup": 0.8430604330496863,
+    "supervisor_shutdown": 0.006615923019126058,
+    "validation": 0.0036326670087873936
+  },
+  "wall_total_s": 1.5967805050313473
+}

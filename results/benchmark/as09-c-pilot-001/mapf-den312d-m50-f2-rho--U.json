@@ -1,0 +1,36 @@
+{
+  "K_count": 0,
+  "K_sha256": null,
+  "K_validated": false,
+  "arm": "U",
+  "case": {
+    "case": "mapf-den312d-m50-f2-rho",
+    "manifest_name": "mapf-den312d-m50-f2-rho.txt",
+    "source": "MovingAI MAPF",
+    "source_sha256": "54c491c8043d8b5350603aa12cdc77f53e2cd289bd71bc45f93030951dbfb4ea"
+  },
+  "estimated_size": {
+    "n_constraints": 7335,
+    "n_variables": 552141
+  },
+  "input_load_s": 0.06321613409090787,
+  "instance_sha256": "54c491c8043d8b5350603aa12cdc77f53e2cd289bd71bc45f93030951dbfb4ea",
+  "lp_numeric_value": null,
+  "peak_rss_kb": null,
+  "plan_sha256": "6a3d38d43d93b5867219f28de6d76db3839fd75386ba0479c2b88f2beff9a15a",
+  "reachability_s": 0.8364779528928921,
+  "reason": "cap de tamanho antes da montagem",
+  "schema": "AS09-C-LP-RESULT-v1",
+  "size_cap": {
+    "max_constraints": 250000,
+    "max_variables": 500000
+  },
+  "solver_runtime_s": null,
+  "status": "NOT_BUILT_SIZE",
+  "wall_phases_s": {
+    "preparation": 0.9171014659805223,
+    "startup": 1.01091966801323,
+    "supervisor_shutdown": 0.004587428993545473
+  },
+  "wall_total_s": 1.9326122179627419
+}

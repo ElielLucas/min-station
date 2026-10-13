@@ -1,0 +1,93 @@
+{
+  "K_count": 0,
+  "K_sha256": null,
+  "K_validated": false,
+  "arm": "U",
+  "callback_errors": [],
+  "case": {
+    "case": "b-b18-regiao-f2",
+    "m": 25,
+    "manifest_name": "b-b18-regiao-f2.txt",
+    "n": 100,
+    "physical_edges": 200,
+    "r": 3,
+    "raw_graph_id": "",
+    "reachability_arcs": 4996,
+    "source_family": "SteinLib",
+    "source_sha256": "ae469341762e376b773cc5d08571848a81ba772d8df6aa433a9cc8feea2a510e",
+    "split": "desenvolvimento"
+  },
+  "estimated_size": {
+    "n_constraints": 300,
+    "n_variables": 5096
+  },
+  "input_load_s": 0.002530307974666357,
+  "installed": [
+    "29",
+    "39"
+  ],
+  "instance_sha256": "ae469341762e376b773cc5d08571848a81ba772d8df6aa433a9cc8feea2a510e",
+  "invalid_incumbents": 0,
+  "lp_numeric_value": null,
+  "mip_numeric_bound": 2.0,
+  "mip_numeric_incumbent": 2.0,
+  "mode": "MIP",
+  "model_complete": true,
+  "n_constraints": 300,
+  "n_nonzeros": 20184,
+  "n_variables": 5096,
+  "nodes": 1.0,
+  "numeric_bound_trace": [
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 24.0,
+      "numeric_lb": 0.0,
+      "solver_s": 0.04123187065124512
+    }
+  ],
+  "numeric_callback_dropped_incumbents": 0,
+  "peak_rss_kb": 111200,
+  "physical_best_observed_ub": 2,
+  "physical_trace": [
+    {
+      "physical_ub": 24,
+      "solver_s": 0.0010068416595458984,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 3,
+      "solver_s": 0.05724000930786133,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 2,
+      "solver_s": 0.0742349624633789,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 2,
+      "solver_s": 0.1523590087890625,
+      "validation": "VALIDATED"
+    }
+  ],
+  "physical_validated_ub": 2,
+  "plan_sha256": "5e037ab54fb391cd4e9f78eab07918773176fc59563af2703b5d55c4c5d374c8",
+  "reachability_s": 0.007096393033862114,
+  "schema": "AS09-C-EXTENDED-RESULT-v1",
+  "solver_runtime_s": 0.1847209930419922,
+  "solver_version": "12.0.3",
+  "solver_work": 0.08992264246337256,
+  "status": "OPTIMAL_NUMERIC",
+  "time_to_best_validated_ub_solver_s": 0.0742349624633789,
+  "time_to_first_validated_ub_solver_s": 0.0010068416595458984,
+  "validated_mip_gap": 0.0,
+  "wall_phases_s": {
+    "model_build": 0.06737045396585017,
+    "preparation": 0.009668362094089389,
+    "solve": 0.1850349180167541,
+    "startup": 0.583169751917012,
+    "supervisor_shutdown": 0.007893190952017903,
+    "validation": 0.022773575969040394
+  },
+  "wall_total_s": 0.8759163309587166
+}

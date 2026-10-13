@@ -1,0 +1,61 @@
+{
+  "K_count": 11,
+  "K_sha256": "170ab23ce5a949b81e63536e2ff7b0578e10a53dd04b3ee48e270dfa9ade87aa",
+  "K_validated": true,
+  "arm": "C_K",
+  "case": {
+    "case": "mapf-den312d-m50-f2-rho",
+    "manifest_name": "mapf-den312d-m50-f2-rho.txt",
+    "source": "MovingAI MAPF",
+    "source_sha256": "54c491c8043d8b5350603aa12cdc77f53e2cd289bd71bc45f93030951dbfb4ea"
+  },
+  "estimated_size": {
+    "n_absorption_variables": 850,
+    "n_constraints": 44071,
+    "n_movement_variables": 140512,
+    "n_recharge_variables": 39120,
+    "n_station_variables": 2445,
+    "n_variables": 182927
+  },
+  "input_load_s": 0.029879120993427932,
+  "instance_sha256": "54c491c8043d8b5350603aa12cdc77f53e2cd289bd71bc45f93030951dbfb4ea",
+  "k_phase_wall_s": {
+    "c1_s": 0.0004241860006004572,
+    "c2_s": 0.7091157679678872,
+    "c4_dm_s": 0.003561771009117365,
+    "canonicalize_s": 0.002462792908772826,
+    "neighborhoods_s": 0.2591913420474157,
+    "validation_bitset_v2_s": 0.8222029550233856,
+    "validator_setup_s": 0.148224284988828
+  },
+  "lp_numeric_value": 3.2,
+  "model_complete": true,
+  "n_constraints": 44071,
+  "n_nonzeros": 406840,
+  "n_variables": 182927,
+  "peak_rss_kb": 541184,
+  "plan_sha256": "23f450386a42839d669bf922aa25474a17fd500ea6a54b1d3c1deaa9736a319c",
+  "reachability_s": 0.6941384839592502,
+  "schema": "AS09-C-LP-RESULT-v1",
+  "solver_runtime_s": 10.429121017456055,
+  "solver_version": "12.0.3",
+  "status": "OPTIMAL_NUMERIC",
+  "wall_phases_s": {
+    "k_c1": 0.0005104260053485632,
+    "k_c2": 0.7091568390605971,
+    "k_c4_dm": 0.0036273779114708304,
+    "k_canonicalize": 0.0024983090115711093,
+    "k_neighborhoods": 0.25922256300691515,
+    "k_preparation": 6.614800076931715e-05,
+    "k_validation_bitset_v2": 0.8505993350408971,
+    "k_validator_setup": 0.14825697103515267,
+    "model_build": 2.50246309209615,
+    "physical_validation": 0.24692873191088438,
+    "preparation": 0.7240679359529167,
+    "solve": 10.429368175915442,
+    "startup": 0.6487273570382968,
+    "supervisor_shutdown": 0.02587518107611686,
+    "validation": 0.13229993300046772
+  },
+  "wall_total_s": 16.683674143976532
+}

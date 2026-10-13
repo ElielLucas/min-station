@@ -1,0 +1,18 @@
+{
+  "files": {
+    "mapf-den312d-m50-f2-rho--C.json": "7fd7bf78af1606554c2d91eb91539a2932a69dcfe0a4429e5b949a1e39a5fc27",
+    "mapf-den312d-m50-f2-rho--C_K.json": "9c0bc8103c46378c3142d8b3f61f7bbe47d0b2305022d08de5995c29b7d003fc",
+    "mapf-den312d-m50-f2-rho--U.json": "06c3cad773d0e0e5aa3c76cb24280a14df8c1a5f21c18f3a2534c8240dab4478",
+    "mapf-den312d-m50-f2-rho--U_K.json": "c4e2e7bce25d95c08efde284a81e88aa6e74b9f49a3e26619126289f46944fe2",
+    "puc-cc9-2p-seed-r1--C.json": "272f5e95a3f4e80becf70c2fb250cf1b2215e7397d0f099f2e73722090e114d1",
+    "puc-cc9-2p-seed-r1--C_K.json": "e1d225b2d8db23f3e241df86f16b02d050538befa022501e2f2b33a1ad1a7954",
+    "puc-cc9-2p-seed-r1--U.json": "ba18889fb1ff83ad8394f26a1ddbcca0f487002ee65d82378585926a4ac4059c",
+    "puc-cc9-2p-seed-r1--U_K.json": "ab53cb7bb9e1d7bf3fa630b8dfb0188a4ac4af8e98b3ee36804ca75465071fb2",
+    "vienna-I056-regiao-f4--C.json": "c694fc9312ecadfb8d4b73240942ed58c08580cbb2b5923b5a328891c281ffcc",
+    "vienna-I056-regiao-f4--C_K.json": "530d0192d3588852e20e370862ca2bdbb06589a7cbdceccda6d25a26a5f5cd91",
+    "vienna-I056-regiao-f4--U.json": "d8abedd41e3aaf3c77f12ab24cfa5001ac68e7ecda7f66ff9ad023a8f9784493",
+    "vienna-I056-regiao-f4--U_K.json": "46a2f4c0d2935d02e65ebf8ed46d8aee2d357fe7020014473a79b6d6195619c2"
+  },
+  "plan_sha256": "23f450386a42839d669bf922aa25474a17fd500ea6a54b1d3c1deaa9736a319c",
+  "schema": "AS09-C-LP-MANIFEST-v1"
+}

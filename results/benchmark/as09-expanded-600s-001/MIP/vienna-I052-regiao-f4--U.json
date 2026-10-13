@@ -1,0 +1,326 @@
+{
+  "K_count": 0,
+  "K_sha256": null,
+  "K_validated": false,
+  "arm": "U",
+  "callback_errors": [],
+  "case": {
+    "case": "vienna-I052-regiao-f4",
+    "m": 20,
+    "manifest_name": "vienna-I052-regiao-f4.txt",
+    "n": 2363,
+    "physical_edges": 3761,
+    "r": 13,
+    "raw_graph_id": "",
+    "reachability_arcs": 483196,
+    "source_family": "DIMACS 11 (Vienna, I simples)",
+    "source_sha256": "092003450701029f612f7d998a90ff8433f41f7cac25a1e36a3d0ee90001fa33",
+    "split": "avaliacao"
+  },
+  "estimated_size": {
+    "n_constraints": 7089,
+    "n_variables": 485559
+  },
+  "input_load_s": 0.02586549788247794,
+  "installed": [
+    "101",
+    "1178",
+    "1202",
+    "1447",
+    "1749",
+    "1787",
+    "1821",
+    "1860",
+    "466"
+  ],
+  "instance_sha256": "092003450701029f612f7d998a90ff8433f41f7cac25a1e36a3d0ee90001fa33",
+  "invalid_incumbents": 0,
+  "lp_numeric_value": null,
+  "mip_numeric_bound": 3.0,
+  "mip_numeric_incumbent": 9.0,
+  "mode": "MIP",
+  "model_complete": true,
+  "n_constraints": 7089,
+  "n_nonzeros": 1937510,
+  "n_variables": 485559,
+  "nodes": 1.0,
+  "numeric_bound_trace": [
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 109.0,
+      "numeric_lb": 0.0,
+      "solver_s": 3.698064088821411
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 109.0,
+      "numeric_lb": 2.0,
+      "solver_s": 10.122267961502075
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 109.0,
+      "numeric_lb": 2.0,
+      "solver_s": 17.24257516860962
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 2.0,
+      "solver_s": 32.93932604789734
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 2.0,
+      "solver_s": 41.14566206932068
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 2.0,
+      "solver_s": 52.37951111793518
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 2.0,
+      "solver_s": 61.348992109298706
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 2.0,
+      "solver_s": 72.03356218338013
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 2.0,
+      "solver_s": 78.94362306594849
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 2.0,
+      "solver_s": 102.92963194847107
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 2.0,
+      "solver_s": 123.94894099235535
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 2.0,
+      "solver_s": 130.08512902259827
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 2.0,
+      "solver_s": 140.06375813484192
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 2.0,
+      "solver_s": 154.02493596076965
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 2.0,
+      "solver_s": 163.1289610862732
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 2.0,
+      "solver_s": 182.83873915672302
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 2.0,
+      "solver_s": 194.62079310417175
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 2.0,
+      "solver_s": 216.75796699523926
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 2.0,
+      "solver_s": 226.5919029712677
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 2.0,
+      "solver_s": 248.45414805412292
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 2.0,
+      "solver_s": 266.52176904678345
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 2.0,
+      "solver_s": 275.1922130584717
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 3.0,
+      "solver_s": 295.15654706954956
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 3.0,
+      "solver_s": 314.1369321346283
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 3.0,
+      "solver_s": 325.0728461742401
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 3.0,
+      "solver_s": 342.00237011909485
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 3.0,
+      "solver_s": 348.76819014549255
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 3.0,
+      "solver_s": 375.1028661727905
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 3.0,
+      "solver_s": 392.7220461368561
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 3.0,
+      "solver_s": 419.28801107406616
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 3.0,
+      "solver_s": 440.5841920375824
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 3.0,
+      "solver_s": 472.96774196624756
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 3.0,
+      "solver_s": 494.7340581417084
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 3.0,
+      "solver_s": 510.85807514190674
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 3.0,
+      "solver_s": 520.4744341373444
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 3.0,
+      "solver_s": 539.1454100608826
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 3.0,
+      "solver_s": 546.7116601467133
+    }
+  ],
+  "numeric_callback_dropped_incumbents": 0,
+  "peak_rss_kb": 1558056,
+  "physical_best_observed_ub": 9,
+  "physical_trace": [
+    {
+      "physical_ub": 109,
+      "solver_s": 0.09525609016418457,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 21,
+      "solver_s": 17.2673180103302,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 20,
+      "solver_s": 17.39941096305847,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 12,
+      "solver_s": 18.565396070480347,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 11,
+      "solver_s": 19.357002019882202,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 9,
+      "solver_s": 23.7183780670166,
+      "validation": "VALIDATED"
+    }
+  ],
+  "physical_validated_ub": 9,
+  "plan_sha256": "5e037ab54fb391cd4e9f78eab07918773176fc59563af2703b5d55c4c5d374c8",
+  "reachability_s": 0.5916708040749654,
+  "schema": "AS09-C-EXTENDED-RESULT-v1",
+  "solver_runtime_s": 546.9526109695435,
+  "solver_version": "12.0.3",
+  "solver_work": 461.8664270005169,
+  "status": "TIME_LIMIT",
+  "time_to_best_validated_ub_solver_s": 23.7183780670166,
+  "time_to_first_validated_ub_solver_s": 0.09525609016418457,
+  "validated_mip_gap": 0.6666666666666666,
+  "wall_phases_s": {
+    "model_build": 6.990745033021085,
+    "preparation": 0.6175869239959866,
+    "solve": 546.9529779040022,
+    "startup": 0.5970918390667066,
+    "supervisor_shutdown": 0.0721974769840017,
+    "validation": 1.74513241101522
+  },
+  "wall_total_s": 556.9758113190765
+}

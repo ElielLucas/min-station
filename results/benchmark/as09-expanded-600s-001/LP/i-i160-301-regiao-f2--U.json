@@ -1,0 +1,52 @@
+{
+  "K_count": 0,
+  "K_sha256": null,
+  "K_validated": false,
+  "arm": "U",
+  "case": {
+    "case": "i-i160-301-regiao-f2",
+    "m": 20,
+    "manifest_name": "i-i160-301-regiao-f2.txt",
+    "n": 160,
+    "physical_edges": 240,
+    "r": 3,
+    "raw_graph_id": "",
+    "reachability_arcs": 5262,
+    "source_family": "SteinLib",
+    "source_sha256": "6a302c8a32908a37224b0e4db92bbf02b6ce7cc00c5d2d6636213eb0a87465f4",
+    "split": "avaliacao"
+  },
+  "estimated_size": {
+    "n_constraints": 480,
+    "n_variables": 5422
+  },
+  "input_load_s": 0.0026440989458933473,
+  "instance_sha256": "6a302c8a32908a37224b0e4db92bbf02b6ce7cc00c5d2d6636213eb0a87465f4",
+  "lp_numeric_value": 0.49999999999999994,
+  "mip_numeric_bound": null,
+  "mip_numeric_incumbent": null,
+  "mode": "LP",
+  "model_complete": true,
+  "n_constraints": 480,
+  "n_nonzeros": 21368,
+  "n_variables": 5422,
+  "peak_rss_kb": 84864,
+  "physical_best_observed_ub": null,
+  "physical_validated_ub": null,
+  "plan_sha256": "5e037ab54fb391cd4e9f78eab07918773176fc59563af2703b5d55c4c5d374c8",
+  "reachability_s": 0.0062133100582286716,
+  "schema": "AS09-C-EXTENDED-RESULT-v1",
+  "solver_runtime_s": 0.03819608688354492,
+  "solver_version": "12.0.3",
+  "status": "OPTIMAL_NUMERIC",
+  "validated_mip_gap": null,
+  "wall_phases_s": {
+    "model_build": 0.08619561605155468,
+    "preparation": 0.008896950981579721,
+    "solve": 0.03836351400241256,
+    "startup": 0.6829246140550822,
+    "supervisor_shutdown": 0.004730671993456781,
+    "validation": 0.003292952897027135
+  },
+  "wall_total_s": 0.8244093119865283
+}

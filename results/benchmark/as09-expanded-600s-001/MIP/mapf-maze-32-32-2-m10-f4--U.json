@@ -1,0 +1,192 @@
+{
+  "K_count": 0,
+  "K_sha256": null,
+  "K_validated": false,
+  "arm": "U",
+  "callback_errors": [],
+  "case": {
+    "case": "mapf-maze-32-32-2-m10-f4",
+    "m": 10,
+    "manifest_name": "mapf-maze-32-32-2-m10-f4.txt",
+    "n": 666,
+    "physical_edges": 975,
+    "r": 17,
+    "raw_graph_id": "",
+    "reachability_arcs": 59900,
+    "source_family": "MovingAI MAPF",
+    "source_sha256": "143ef55912374b7d6430e80464c99129f65acbf7edbaf6ed87f8bcb6bb44b343",
+    "split": "avaliacao"
+  },
+  "estimated_size": {
+    "n_constraints": 1998,
+    "n_variables": 60566
+  },
+  "input_load_s": 0.007701067021116614,
+  "installed": [
+    "10_10",
+    "14_7",
+    "17_22",
+    "20_2",
+    "30_22",
+    "31_18",
+    "7_17"
+  ],
+  "instance_sha256": "143ef55912374b7d6430e80464c99129f65acbf7edbaf6ed87f8bcb6bb44b343",
+  "invalid_incumbents": 0,
+  "lp_numeric_value": null,
+  "mip_numeric_bound": 7.0,
+  "mip_numeric_incumbent": 7.0,
+  "mode": "MIP",
+  "model_complete": true,
+  "n_constraints": 1998,
+  "n_nonzeros": 240932,
+  "n_variables": 60566,
+  "nodes": 1311.0,
+  "numeric_bound_trace": [
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 45.0,
+      "numeric_lb": 0.0,
+      "solver_s": 0.3026301860809326
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 7.0,
+      "numeric_lb": 2.0,
+      "solver_s": 5.530131101608276
+    },
+    {
+      "nodes": 1.0,
+      "numeric_incumbent": 7.0,
+      "numeric_lb": 2.0,
+      "solver_s": 10.749464988708496
+    },
+    {
+      "nodes": 383.0,
+      "numeric_incumbent": 7.0,
+      "numeric_lb": 2.0,
+      "solver_s": 15.776377201080322
+    },
+    {
+      "nodes": 1063.0,
+      "numeric_incumbent": 7.0,
+      "numeric_lb": 2.0,
+      "solver_s": 20.780428171157837
+    },
+    {
+      "nodes": 1117.0,
+      "numeric_incumbent": 7.0,
+      "numeric_lb": 3.0,
+      "solver_s": 28.38920307159424
+    },
+    {
+      "nodes": 1118.0,
+      "numeric_incumbent": 7.0,
+      "numeric_lb": 3.0,
+      "solver_s": 33.89224100112915
+    },
+    {
+      "nodes": 1122.0,
+      "numeric_incumbent": 7.0,
+      "numeric_lb": 5.0,
+      "solver_s": 39.17460918426514
+    },
+    {
+      "nodes": 1125.0,
+      "numeric_incumbent": 7.0,
+      "numeric_lb": 5.0,
+      "solver_s": 44.22331500053406
+    },
+    {
+      "nodes": 1128.0,
+      "numeric_incumbent": 7.0,
+      "numeric_lb": 5.0,
+      "solver_s": 49.51610207557678
+    },
+    {
+      "nodes": 1131.0,
+      "numeric_incumbent": 7.0,
+      "numeric_lb": 5.0,
+      "solver_s": 54.96725797653198
+    },
+    {
+      "nodes": 1133.0,
+      "numeric_incumbent": 7.0,
+      "numeric_lb": 5.0,
+      "solver_s": 63.88438606262207
+    },
+    {
+      "nodes": 1174.0,
+      "numeric_incumbent": 7.0,
+      "numeric_lb": 6.0,
+      "solver_s": 69.21758103370667
+    },
+    {
+      "nodes": 1221.0,
+      "numeric_incumbent": 7.0,
+      "numeric_lb": 6.0,
+      "solver_s": 74.70479202270508
+    },
+    {
+      "nodes": 1305.0,
+      "numeric_incumbent": 7.0,
+      "numeric_lb": 6.0,
+      "solver_s": 79.94757509231567
+    }
+  ],
+  "numeric_callback_dropped_incumbents": 0,
+  "peak_rss_kb": 711168,
+  "physical_best_observed_ub": 7,
+  "physical_trace": [
+    {
+      "physical_ub": 45,
+      "solver_s": 0.011353015899658203,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 11,
+      "solver_s": 0.6411571502685547,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 10,
+      "solver_s": 1.0762829780578613,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 9,
+      "solver_s": 1.0840680599212646,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 8,
+      "solver_s": 2.1416661739349365,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 7,
+      "solver_s": 2.151553153991699,
+      "validation": "VALIDATED"
+    }
+  ],
+  "physical_validated_ub": 7,
+  "plan_sha256": "5e037ab54fb391cd4e9f78eab07918773176fc59563af2703b5d55c4c5d374c8",
+  "reachability_s": 0.0626752550015226,
+  "schema": "AS09-C-EXTENDED-RESULT-v1",
+  "solver_runtime_s": 80.24586915969849,
+  "solver_version": "12.0.3",
+  "solver_work": 47.55149869027579,
+  "status": "OPTIMAL_NUMERIC",
+  "time_to_best_validated_ub_solver_s": 2.151553153991699,
+  "time_to_first_validated_ub_solver_s": 0.011353015899658203,
+  "validated_mip_gap": 0.0,
+  "wall_phases_s": {
+    "model_build": 0.7952868900028989,
+    "preparation": 0.07042193505913019,
+    "solve": 80.24621777597349,
+    "startup": 0.5921954459045082,
+    "supervisor_shutdown": 0.04579566896427423,
+    "validation": 0.18176073604263365
+  },
+  "wall_total_s": 81.93168536399025
+}

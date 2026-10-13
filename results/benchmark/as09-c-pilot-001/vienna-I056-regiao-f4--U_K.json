@@ -1,0 +1,56 @@
+{
+  "K_count": 101,
+  "K_sha256": "64d3500a49c52bbf3ea9a3ffd718711c2e6a809585d7f91db311ef44a3606796",
+  "K_validated": true,
+  "arm": "U_K",
+  "case": {
+    "case": "vienna-I056-regiao-f4",
+    "manifest_name": "vienna-I056-regiao-f4.txt",
+    "source": "DIMACS 11 (Vienna, I simples)",
+    "source_sha256": "645da5115a0eeaa6fba9eeae9f4942aebecfa66c4bcbc7aaec2bd0c994eb0ccc"
+  },
+  "estimated_size": {
+    "n_constraints": 6074,
+    "n_variables": 383591
+  },
+  "input_load_s": 0.044671489973552525,
+  "instance_sha256": "645da5115a0eeaa6fba9eeae9f4942aebecfa66c4bcbc7aaec2bd0c994eb0ccc",
+  "k_phase_wall_s": {
+    "c1_s": 0.000448905979283154,
+    "c2_s": 0.3740964370081201,
+    "c4_dm_s": 0.002208055928349495,
+    "canonicalize_s": 0.01499126199632883,
+    "neighborhoods_s": 0.18228563491720706,
+    "validation_bitset_v2_s": 2.023162923986092,
+    "validator_setup_s": 0.09882433398161083
+  },
+  "lp_numeric_value": 8.499999999999998,
+  "model_complete": true,
+  "n_constraints": 6074,
+  "n_nonzeros": 1558364,
+  "n_variables": 383591,
+  "peak_rss_kb": 1004260,
+  "plan_sha256": "6a3d38d43d93b5867219f28de6d76db3839fd75386ba0479c2b88f2beff9a15a",
+  "reachability_s": 0.727940023993142,
+  "schema": "AS09-C-LP-RESULT-v1",
+  "solver_runtime_s": 12.095854997634888,
+  "solver_version": "12.0.3",
+  "status": "OPTIMAL_NUMERIC",
+  "wall_phases_s": {
+    "k_c1": 0.0005180069711059332,
+    "k_c2": 0.37412940501235425,
+    "k_c4_dm": 0.002270760014653206,
+    "k_canonicalize": 0.015024909982457757,
+    "k_neighborhoods": 0.18231007305439562,
+    "k_preparation": 6.612902507185936e-05,
+    "k_validation_bitset_v2": 2.0510320600587875,
+    "k_validator_setup": 0.09886102995369583,
+    "model_build": 6.300713018979877,
+    "preparation": 0.772698279004544,
+    "solve": 12.096075939014554,
+    "startup": 0.9070178680121899,
+    "supervisor_shutdown": 0.018591830972582102,
+    "validation": 0.2604377899551764
+  },
+  "wall_total_s": 23.079752281075343
+}

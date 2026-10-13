@@ -1,0 +1,184 @@
+{
+  "K_count": 45,
+  "K_sha256": "2fe31f2c16ad6f8479e324e6b25404431f859e447c207152800fc87004c82893",
+  "K_validated": true,
+  "arm": "U_K",
+  "callback_errors": [],
+  "case": {
+    "case": "vienna-I052-regiao-f4",
+    "m": 20,
+    "manifest_name": "vienna-I052-regiao-f4.txt",
+    "n": 2363,
+    "physical_edges": 3761,
+    "r": 13,
+    "raw_graph_id": "",
+    "reachability_arcs": 483196,
+    "source_family": "DIMACS 11 (Vienna, I simples)",
+    "source_sha256": "092003450701029f612f7d998a90ff8433f41f7cac25a1e36a3d0ee90001fa33",
+    "split": "avaliacao"
+  },
+  "estimated_size": {
+    "n_constraints": 7134,
+    "n_variables": 485559
+  },
+  "input_load_s": 0.02414163399953395,
+  "installed": [
+    "1027",
+    "1143",
+    "1447",
+    "1570",
+    "1845",
+    "1986",
+    "523"
+  ],
+  "instance_sha256": "092003450701029f612f7d998a90ff8433f41f7cac25a1e36a3d0ee90001fa33",
+  "invalid_incumbents": 0,
+  "k_phase_wall_s": {
+    "c1_s": 0.0002567330375313759,
+    "c2_s": 0.3177980789914727,
+    "c4_dm_s": 0.0018067429773509502,
+    "canonicalize_s": 0.00723320699762553,
+    "neighborhoods_s": 0.2314767959760502,
+    "validation_bitset_v2_s": 1.635260625043884,
+    "validator_setup_s": 0.15130357700400054
+  },
+  "lp_numeric_value": null,
+  "mip_numeric_bound": 7.0,
+  "mip_numeric_incumbent": 7.0,
+  "mode": "MIP",
+  "model_complete": true,
+  "n_constraints": 7134,
+  "n_nonzeros": 1950974,
+  "n_variables": 485559,
+  "nodes": 1.0,
+  "numeric_bound_trace": [
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 109.0,
+      "numeric_lb": 0.0,
+      "solver_s": 3.956946849822998
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 109.0,
+      "numeric_lb": 7.0,
+      "solver_s": 22.847431898117065
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 109.0,
+      "numeric_lb": 7.0,
+      "solver_s": 61.16285586357117
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 7.0,
+      "solver_s": 70.23620390892029
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 7.0,
+      "solver_s": 85.95412802696228
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 7.0,
+      "solver_s": 99.814621925354
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 7.0,
+      "solver_s": 136.32316184043884
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 9.0,
+      "numeric_lb": 7.0,
+      "solver_s": 143.9889349937439
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 8.0,
+      "numeric_lb": 7.0,
+      "solver_s": 159.25620484352112
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 8.0,
+      "numeric_lb": 7.0,
+      "solver_s": 174.0007040500641
+    }
+  ],
+  "numeric_callback_dropped_incumbents": 0,
+  "peak_rss_kb": 1538144,
+  "physical_best_observed_ub": 7,
+  "physical_trace": [
+    {
+      "physical_ub": 109,
+      "solver_s": 0.09880995750427246,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 12,
+      "solver_s": 61.182989835739136,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 11,
+      "solver_s": 61.586129903793335,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 10,
+      "solver_s": 63.058197021484375,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 9,
+      "solver_s": 65.14042592048645,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 8,
+      "solver_s": 150.6105899810791,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 7,
+      "solver_s": 176.72089791297913,
+      "validation": "VALIDATED"
+    }
+  ],
+  "physical_validated_ub": 7,
+  "plan_sha256": "5e037ab54fb391cd4e9f78eab07918773176fc59563af2703b5d55c4c5d374c8",
+  "reachability_s": 0.633689003996551,
+  "schema": "AS09-C-EXTENDED-RESULT-v1",
+  "solver_runtime_s": 176.90713596343994,
+  "solver_version": "12.0.3",
+  "solver_work": 142.58422265846167,
+  "status": "OPTIMAL_NUMERIC",
+  "time_to_best_validated_ub_solver_s": 176.72089791297913,
+  "time_to_first_validated_ub_solver_s": 0.09880995750427246,
+  "validated_mip_gap": 0.0,
+  "wall_phases_s": {
+    "k_c1": 0.0003168350085616112,
+    "k_c2": 0.317825470934622,
+    "k_c4_dm": 0.0018642509821802378,
+    "k_canonicalize": 0.007263136096298695,
+    "k_neighborhoods": 0.231500213034451,
+    "k_preparation": 6.24839449301362e-05,
+    "k_validation_bitset_v2": 1.6653024379629642,
+    "k_validator_setup": 0.15133588400203735,
+    "model_build": 6.880939282011241,
+    "preparation": 0.6578743749996647,
+    "solve": 176.9075419770088,
+    "startup": 0.7353925330098718,
+    "supervisor_shutdown": 0.059072720003314316,
+    "validation": 1.6000437809852883
+  },
+  "wall_total_s": 189.2163407820044
+}

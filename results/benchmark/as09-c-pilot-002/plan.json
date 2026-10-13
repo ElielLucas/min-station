@@ -1,0 +1,62 @@
+{
+  "arms": [
+    "U",
+    "C",
+    "U_K",
+    "C_K"
+  ],
+  "budget_seconds_per_arm": 300,
+  "caps": {
+    "max_constraints": 250000,
+    "max_variables": 650000
+  },
+  "cases": [
+    {
+      "case": "vienna-I056-regiao-f4",
+      "manifest_name": "vienna-I056-regiao-f4.txt",
+      "source": "DIMACS 11 (Vienna, I simples)",
+      "source_sha256": "645da5115a0eeaa6fba9eeae9f4942aebecfa66c4bcbc7aaec2bd0c994eb0ccc"
+    },
+    {
+      "case": "mapf-den312d-m50-f2-rho",
+      "manifest_name": "mapf-den312d-m50-f2-rho.txt",
+      "source": "MovingAI MAPF",
+      "source_sha256": "54c491c8043d8b5350603aa12cdc77f53e2cd289bd71bc45f93030951dbfb4ea"
+    },
+    {
+      "case": "puc-cc9-2p-seed-r1",
+      "manifest_name": "puc-cc9-2p-seed-r1.txt",
+      "source": "SteinLib",
+      "source_sha256": "0312f43552cddc102081d9937465429e29797ddb86cf85a6871752d50aeec88c"
+    }
+  ],
+  "classification": "EXPLORATORY_NOT_HOMOLOGATED",
+  "gate_rule": {
+    "lp_abs_tolerance": 1e-05,
+    "minimum_c_speedup_pct": 20.0,
+    "two_dense_graph_sources_required": true
+  },
+  "implementation_sha256": {
+    "experiments/alternative-formulations/as02_model_a.py": "d9f973ab680a9bfaf06dc6808a8c0e4cb938254696d098d9950973c24c8df8fc",
+    "experiments/alternative-formulations/as09_model_c.py": "6c945c54a0e59069065cd93dd9613cb8c03eed47b0f234e2597e2caceccf24d1",
+    "experiments/formulation-comparison/as04_runner.py": "83d81c953b1ac7ff4ddcb60c199ae62e74588fc4e811575a27bf3fd7fd6db1b6",
+    "experiments/formulation-comparison/as05_diag_core.py": "5b172a630d2fe6061ad015ae58588943dd0b7da7cd5db62c19396d9a414fb967"
+  },
+  "manifest_sha256": "218c490bd3ba3e34740bc23f13b07ba864f0d624755aca9b992a8f23f6afad08",
+  "math_gate": "PROOF_REVIEW_REQUIRED",
+  "protocol": [
+    "Same G, r, A_r, S, T and source bytes per pair",
+    "Both with-K arms regenerate and independently validate identical K",
+    "Time includes source read, A_r generation, K, model build and solution",
+    "U and C without K have no K construction",
+    "No MIP comparison and no implied LP proof without independent review",
+    "Censored LP objectives remain null and results append-only"
+  ],
+  "schema": "AS09-C-LP-PILOT-v1",
+  "solver": {
+    "backend": "gurobi",
+    "mode": "LP",
+    "seed": 42,
+    "threads": 4
+  }
+}

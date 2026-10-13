@@ -1,0 +1,611 @@
+{
+  "K_count": 67,
+  "K_sha256": "e8ad995864897f119b1f207d528ef048ac2f46987591437d807ae5e90d4e33cf",
+  "K_validated": true,
+  "arm": "C_K",
+  "callback_errors": [],
+  "case": {
+    "case": "puc-cc9-2p-seed-r1",
+    "m": 32,
+    "manifest_name": "puc-cc9-2p-seed-r1.txt",
+    "n": 512,
+    "physical_edges": 2304,
+    "r": 1,
+    "raw_graph_id": "",
+    "reachability_arcs": 4608,
+    "source_family": "SteinLib",
+    "source_sha256": "0312f43552cddc102081d9937465429e29797ddb86cf85a6871752d50aeec88c",
+    "split": "desenvolvimento"
+  },
+  "estimated_size": {
+    "n_absorption_variables": 64,
+    "n_constraints": 1635,
+    "n_movement_variables": 4608,
+    "n_recharge_variables": 512,
+    "n_station_variables": 512,
+    "n_variables": 5696
+  },
+  "input_load_s": 0.009651791886426508,
+  "installed": [
+    "104",
+    "11",
+    "123",
+    "134",
+    "152",
+    "163",
+    "172",
+    "174",
+    "176",
+    "216",
+    "279",
+    "284",
+    "293",
+    "306",
+    "350",
+    "355",
+    "356",
+    "390",
+    "409",
+    "421",
+    "436",
+    "444",
+    "454",
+    "478",
+    "481",
+    "495",
+    "497",
+    "56",
+    "59",
+    "69",
+    "9"
+  ],
+  "instance_sha256": "0312f43552cddc102081d9937465429e29797ddb86cf85a6871752d50aeec88c",
+  "invalid_incumbents": 0,
+  "k_phase_wall_s": {
+    "c1_s": 0.00010011298581957817,
+    "c2_s": 0.10843022807966918,
+    "c4_dm_s": 0.00034506095107644796,
+    "canonicalize_s": 0.00048671604599803686,
+    "neighborhoods_s": 0.0019315120298415422,
+    "validation_bitset_v2_s": 0.04681457707192749,
+    "validator_setup_s": 0.0012841069838032126
+  },
+  "lp_numeric_value": null,
+  "mip_numeric_bound": 30.0,
+  "mip_numeric_incumbent": 31.0,
+  "mode": "MIP",
+  "model_complete": true,
+  "n_constraints": 1635,
+  "n_nonzeros": 12292,
+  "n_variables": 5696,
+  "nodes": 12193.0,
+  "numeric_bound_trace": [
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": null,
+      "numeric_lb": 0.0,
+      "solver_s": 0.023939847946166992
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 32.0,
+      "numeric_lb": 28.0,
+      "solver_s": 5.23137903213501
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 32.0,
+      "numeric_lb": 28.0,
+      "solver_s": 12.167732000350952
+    },
+    {
+      "nodes": 31.0,
+      "numeric_incumbent": 32.0,
+      "numeric_lb": 29.0,
+      "solver_s": 17.248188018798828
+    },
+    {
+      "nodes": 72.0,
+      "numeric_incumbent": 32.0,
+      "numeric_lb": 29.0,
+      "solver_s": 23.063977003097534
+    },
+    {
+      "nodes": 170.0,
+      "numeric_incumbent": 32.0,
+      "numeric_lb": 29.0,
+      "solver_s": 28.40912890434265
+    },
+    {
+      "nodes": 439.0,
+      "numeric_incumbent": 32.0,
+      "numeric_lb": 29.0,
+      "solver_s": 33.73750281333923
+    },
+    {
+      "nodes": 640.0,
+      "numeric_incumbent": 32.0,
+      "numeric_lb": 29.0,
+      "solver_s": 38.876235008239746
+    },
+    {
+      "nodes": 877.0,
+      "numeric_incumbent": 32.0,
+      "numeric_lb": 29.0,
+      "solver_s": 45.8266019821167
+    },
+    {
+      "nodes": 1001.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 51.32142996788025
+    },
+    {
+      "nodes": 1099.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 61.17615485191345
+    },
+    {
+      "nodes": 1111.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 66.50254082679749
+    },
+    {
+      "nodes": 1121.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 71.5414810180664
+    },
+    {
+      "nodes": 1136.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 76.62259602546692
+    },
+    {
+      "nodes": 1151.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 82.4822609424591
+    },
+    {
+      "nodes": 1162.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 87.56557893753052
+    },
+    {
+      "nodes": 1175.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 95.76770186424255
+    },
+    {
+      "nodes": 1187.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 101.12382984161377
+    },
+    {
+      "nodes": 1213.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 106.51427102088928
+    },
+    {
+      "nodes": 1253.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 112.32625198364258
+    },
+    {
+      "nodes": 1290.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 117.55233001708984
+    },
+    {
+      "nodes": 1324.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 123.36455202102661
+    },
+    {
+      "nodes": 1372.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 130.24140191078186
+    },
+    {
+      "nodes": 1420.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 135.3008439540863
+    },
+    {
+      "nodes": 1478.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 140.6780879497528
+    },
+    {
+      "nodes": 1553.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 145.8177399635315
+    },
+    {
+      "nodes": 1628.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 151.70901894569397
+    },
+    {
+      "nodes": 1716.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 158.2047770023346
+    },
+    {
+      "nodes": 1833.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 164.1535120010376
+    },
+    {
+      "nodes": 1953.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 169.5762858390808
+    },
+    {
+      "nodes": 2092.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 174.58020281791687
+    },
+    {
+      "nodes": 2403.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 181.481547832489
+    },
+    {
+      "nodes": 2521.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 187.41400790214539
+    },
+    {
+      "nodes": 2696.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 193.643296957016
+    },
+    {
+      "nodes": 2828.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 200.77340388298035
+    },
+    {
+      "nodes": 2978.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 207.40620589256287
+    },
+    {
+      "nodes": 3160.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 214.44998598098755
+    },
+    {
+      "nodes": 3309.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 221.79465699195862
+    },
+    {
+      "nodes": 3532.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 230.3750958442688
+    },
+    {
+      "nodes": 3747.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 238.52689480781555
+    },
+    {
+      "nodes": 3902.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 248.47544598579407
+    },
+    {
+      "nodes": 4002.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 253.52472496032715
+    },
+    {
+      "nodes": 4104.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 259.20478796958923
+    },
+    {
+      "nodes": 4227.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 264.93883991241455
+    },
+    {
+      "nodes": 4407.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 271.0665009021759
+    },
+    {
+      "nodes": 4554.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 276.7828378677368
+    },
+    {
+      "nodes": 4717.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 283.39390897750854
+    },
+    {
+      "nodes": 4869.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 289.5680718421936
+    },
+    {
+      "nodes": 5019.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.0,
+      "solver_s": 296.5741708278656
+    },
+    {
+      "nodes": 5216.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.000000000000004,
+      "solver_s": 303.43413186073303
+    },
+    {
+      "nodes": 5376.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.000000000000007,
+      "solver_s": 310.50152492523193
+    },
+    {
+      "nodes": 5531.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.000000000000018,
+      "solver_s": 317.5273959636688
+    },
+    {
+      "nodes": 5670.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 29.00000000000016,
+      "solver_s": 326.7326228618622
+    },
+    {
+      "nodes": 5916.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 30.0,
+      "solver_s": 334.25710797309875
+    },
+    {
+      "nodes": 6132.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 30.0,
+      "solver_s": 342.8072979450226
+    },
+    {
+      "nodes": 6377.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 30.0,
+      "solver_s": 351.386039018631
+    },
+    {
+      "nodes": 6626.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 30.0,
+      "solver_s": 360.27407693862915
+    },
+    {
+      "nodes": 6796.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 30.0,
+      "solver_s": 369.1794469356537
+    },
+    {
+      "nodes": 7104.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 30.0,
+      "solver_s": 378.99347281455994
+    },
+    {
+      "nodes": 7307.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 30.0,
+      "solver_s": 389.3997139930725
+    },
+    {
+      "nodes": 7499.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 30.0,
+      "solver_s": 400.458132982254
+    },
+    {
+      "nodes": 7717.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 30.0,
+      "solver_s": 411.6970000267029
+    },
+    {
+      "nodes": 7981.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 30.0,
+      "solver_s": 422.12837290763855
+    },
+    {
+      "nodes": 8329.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 30.0,
+      "solver_s": 433.76241993904114
+    },
+    {
+      "nodes": 8654.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 30.0,
+      "solver_s": 446.22834300994873
+    },
+    {
+      "nodes": 8940.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 30.0,
+      "solver_s": 459.0655448436737
+    },
+    {
+      "nodes": 9270.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 30.0,
+      "solver_s": 471.65279603004456
+    },
+    {
+      "nodes": 9673.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 30.0,
+      "solver_s": 484.0775170326233
+    },
+    {
+      "nodes": 10125.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 30.0,
+      "solver_s": 497.663076877594
+    },
+    {
+      "nodes": 10618.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 30.0,
+      "solver_s": 512.2367739677429
+    },
+    {
+      "nodes": 11088.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 30.0,
+      "solver_s": 525.5793888568878
+    },
+    {
+      "nodes": 11445.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 30.0,
+      "solver_s": 539.7868809700012
+    },
+    {
+      "nodes": 11832.0,
+      "numeric_incumbent": 31.0,
+      "numeric_lb": 30.0,
+      "solver_s": 553.320070028305
+    }
+  ],
+  "numeric_callback_dropped_incumbents": 0,
+  "peak_rss_kb": 246060,
+  "physical_best_observed_ub": 31,
+  "physical_trace": [
+    {
+      "physical_ub": 512,
+      "solver_s": 0.04169797897338867,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 511,
+      "solver_s": 0.06141781806945801,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 510,
+      "solver_s": 0.08014988899230957,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 79,
+      "solver_s": 0.27962183952331543,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 60,
+      "solver_s": 0.2826998233795166,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 36,
+      "solver_s": 0.2850790023803711,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 35,
+      "solver_s": 0.2969019412994385,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 34,
+      "solver_s": 0.8795828819274902,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 33,
+      "solver_s": 0.880687952041626,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 32,
+      "solver_s": 1.2050700187683105,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 31,
+      "solver_s": 50.4016318321228,
+      "validation": "VALIDATED"
+    }
+  ],
+  "physical_validated_ub": 31,
+  "plan_sha256": "5e037ab54fb391cd4e9f78eab07918773176fc59563af2703b5d55c4c5d374c8",
+  "reachability_s": 0.005602671066299081,
+  "schema": "AS09-C-EXTENDED-RESULT-v1",
+  "solver_runtime_s": 554.0969128608704,
+  "solver_version": "12.0.3",
+  "solver_work": 535.8876593046552,
+  "status": "TIME_LIMIT",
+  "time_to_best_validated_ub_solver_s": 50.4016318321228,
+  "time_to_first_validated_ub_solver_s": 0.04169797897338867,
+  "validated_mip_gap": 0.03225806451612903,
+  "wall_phases_s": {
+    "k_c1": 0.0001251420471817255,
+    "k_c2": 0.10844482097309083,
+    "k_c4_dm": 0.0003830270143225789,
+    "k_canonicalize": 0.0005066980374976993,
+    "k_neighborhoods": 0.0019474209984764457,
+    "k_preparation": 3.827991895377636e-05,
+    "k_validation_bitset_v2": 0.04763299401383847,
+    "k_validator_setup": 0.001300122938118875,
+    "model_build": 0.0945052970200777,
+    "physical_validation": 0.009641646058298647,
+    "preparation": 0.015295755001716316,
+    "solve": 554.0972136949422,
+    "startup": 0.6260912130819634,
+    "supervisor_shutdown": 0.015410996042191982,
+    "validation": 0.11814427701756358
+  },
+  "wall_total_s": 555.1366871451028
+}

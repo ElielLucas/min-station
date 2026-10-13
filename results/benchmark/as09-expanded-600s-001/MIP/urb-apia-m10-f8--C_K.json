@@ -1,0 +1,112 @@
+{
+  "K_count": 111,
+  "K_sha256": "4c0416f6695c4ff539fca127dee3b3f399c564c9c47f687291088f302ff3c1d6",
+  "K_validated": true,
+  "arm": "C_K",
+  "callback_errors": [],
+  "case": {
+    "case": "urb-apia-m10-f8",
+    "m": 10,
+    "manifest_name": "urb-apia-m10-f8.txt",
+    "n": 1618,
+    "physical_edges": 1798,
+    "r": 19,
+    "raw_graph_id": "",
+    "reachability_arcs": 363730,
+    "source_family": "Global Urban Street Networks (Boeing), v3.1",
+    "source_sha256": "cf8c5b37524454be7c327dbd3d107336f1030d64e27d12b84c523dee8c03f610",
+    "split": "avaliacao"
+  },
+  "estimated_size": {
+    "n_absorption_variables": 200,
+    "n_constraints": 34099,
+    "n_movement_variables": 68324,
+    "n_recharge_variables": 30742,
+    "n_station_variables": 1618,
+    "n_variables": 100884
+  },
+  "input_load_s": 0.01660256099421531,
+  "installed": [
+    "1531522300",
+    "1531522357~1543881242~7",
+    "1531522389~1543881190~2",
+    "1543881279",
+    "2009302845",
+    "3785437413~3785437417~2",
+    "687785089",
+    "691223579~712813421~2"
+  ],
+  "instance_sha256": "cf8c5b37524454be7c327dbd3d107336f1030d64e27d12b84c523dee8c03f610",
+  "invalid_incumbents": 0,
+  "k_phase_wall_s": {
+    "c1_s": 0.00011378189083188772,
+    "c2_s": 0.12313085398636758,
+    "c4_dm_s": 0.0007825139909982681,
+    "canonicalize_s": 0.009864114923402667,
+    "neighborhoods_s": 0.16494736506137997,
+    "validation_bitset_v2_s": 0.6480178399942815,
+    "validator_setup_s": 0.08426701498683542
+  },
+  "lp_numeric_value": null,
+  "mip_numeric_bound": 8.0,
+  "mip_numeric_incumbent": 8.0,
+  "mode": "MIP",
+  "model_complete": true,
+  "n_constraints": 34099,
+  "n_nonzeros": 255026,
+  "n_variables": 100884,
+  "nodes": 1.0,
+  "numeric_bound_trace": [
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": null,
+      "numeric_lb": 0.0,
+      "solver_s": 0.8329179286956787
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 8.0,
+      "numeric_lb": 8.0,
+      "solver_s": 20.512948036193848
+    }
+  ],
+  "numeric_callback_dropped_incumbents": 0,
+  "peak_rss_kb": 506048,
+  "physical_best_observed_ub": 8,
+  "physical_trace": [
+    {
+      "physical_ub": 8,
+      "solver_s": 20.49897313117981,
+      "validation": "VALIDATED"
+    }
+  ],
+  "physical_validated_ub": 8,
+  "plan_sha256": "5e037ab54fb391cd4e9f78eab07918773176fc59563af2703b5d55c4c5d374c8",
+  "reachability_s": 0.40273741900455207,
+  "schema": "AS09-C-EXTENDED-RESULT-v1",
+  "solver_runtime_s": 20.593470096588135,
+  "solver_version": "12.0.3",
+  "solver_work": 11.476779890295717,
+  "status": "OPTIMAL_NUMERIC",
+  "time_to_best_validated_ub_solver_s": 20.49897313117981,
+  "time_to_first_validated_ub_solver_s": 20.49897313117981,
+  "validated_mip_gap": 0.0,
+  "wall_phases_s": {
+    "k_c1": 0.00017060397658497095,
+    "k_c2": 0.1231510229408741,
+    "k_c4_dm": 0.0008332640863955021,
+    "k_canonicalize": 0.009889335022307932,
+    "k_neighborhoods": 0.1649707310134545,
+    "k_preparation": 7.505505345761776e-05,
+    "k_validation_bitset_v2": 0.6784991279710084,
+    "k_validator_setup": 0.08429512695875019,
+    "model_build": 1.4547462610062212,
+    "physical_validation": 0.16450945800170302,
+    "preparation": 0.419392641982995,
+    "solve": 20.59384642203804,
+    "startup": 0.5970484369900078,
+    "supervisor_shutdown": 0.020958699053153396,
+    "validation": 0.21040206996258348
+  },
+  "wall_total_s": 24.52279332606122
+}

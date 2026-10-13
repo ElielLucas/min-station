@@ -1,0 +1,52 @@
+{
+  "K_count": 0,
+  "K_sha256": null,
+  "K_validated": false,
+  "arm": "U",
+  "case": {
+    "case": "mapf-maze-32-32-2-m10-f4",
+    "m": 10,
+    "manifest_name": "mapf-maze-32-32-2-m10-f4.txt",
+    "n": 666,
+    "physical_edges": 975,
+    "r": 17,
+    "raw_graph_id": "",
+    "reachability_arcs": 59900,
+    "source_family": "MovingAI MAPF",
+    "source_sha256": "143ef55912374b7d6430e80464c99129f65acbf7edbaf6ed87f8bcb6bb44b343",
+    "split": "avaliacao"
+  },
+  "estimated_size": {
+    "n_constraints": 1998,
+    "n_variables": 60566
+  },
+  "input_load_s": 0.007162963156588376,
+  "instance_sha256": "143ef55912374b7d6430e80464c99129f65acbf7edbaf6ed87f8bcb6bb44b343",
+  "lp_numeric_value": 1.0999999999999999,
+  "mip_numeric_bound": null,
+  "mip_numeric_incumbent": null,
+  "mode": "LP",
+  "model_complete": true,
+  "n_constraints": 1998,
+  "n_nonzeros": 240932,
+  "n_variables": 60566,
+  "peak_rss_kb": 193956,
+  "physical_best_observed_ub": null,
+  "physical_validated_ub": null,
+  "plan_sha256": "5e037ab54fb391cd4e9f78eab07918773176fc59563af2703b5d55c4c5d374c8",
+  "reachability_s": 0.06612996594049037,
+  "schema": "AS09-C-EXTENDED-RESULT-v1",
+  "solver_runtime_s": 0.6356709003448486,
+  "solver_version": "12.0.3",
+  "status": "OPTIMAL_NUMERIC",
+  "validated_mip_gap": null,
+  "wall_phases_s": {
+    "model_build": 0.8261614670045674,
+    "preparation": 0.0733434510184452,
+    "solve": 0.6358656770316884,
+    "startup": 0.6498147799866274,
+    "supervisor_shutdown": 0.008473548921756446,
+    "validation": 0.05554170801769942
+  },
+  "wall_total_s": 2.2492067699786276
+}

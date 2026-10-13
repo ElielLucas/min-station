@@ -1,0 +1,105 @@
+{
+  "K_count": 4,
+  "K_sha256": "52b5f586e061c1a370e67696b7bf9b90a986259ef324c000c754448cd0685a56",
+  "K_validated": true,
+  "arm": "U_K",
+  "callback_errors": [],
+  "case": {
+    "case": "b-b18-regiao-f2",
+    "m": 25,
+    "manifest_name": "b-b18-regiao-f2.txt",
+    "n": 100,
+    "physical_edges": 200,
+    "r": 3,
+    "raw_graph_id": "",
+    "reachability_arcs": 4996,
+    "source_family": "SteinLib",
+    "source_sha256": "ae469341762e376b773cc5d08571848a81ba772d8df6aa433a9cc8feea2a510e",
+    "split": "desenvolvimento"
+  },
+  "estimated_size": {
+    "n_constraints": 304,
+    "n_variables": 5096
+  },
+  "input_load_s": 0.002079222002066672,
+  "installed": [
+    "34",
+    "79"
+  ],
+  "instance_sha256": "ae469341762e376b773cc5d08571848a81ba772d8df6aa433a9cc8feea2a510e",
+  "invalid_incumbents": 0,
+  "k_phase_wall_s": {
+    "c1_s": 9.05339838936925e-05,
+    "c2_s": 0.00897006201557815,
+    "c4_dm_s": 0.0005642459727823734,
+    "canonicalize_s": 7.784506306052208e-05,
+    "neighborhoods_s": 0.00153709901496768,
+    "validation_bitset_v2_s": 0.0016083919908851385,
+    "validator_setup_s": 0.0010110449511557817
+  },
+  "lp_numeric_value": null,
+  "mip_numeric_bound": 2.0,
+  "mip_numeric_incumbent": 2.0,
+  "mode": "MIP",
+  "model_complete": true,
+  "n_constraints": 304,
+  "n_nonzeros": 20315,
+  "n_variables": 5096,
+  "nodes": 1.0,
+  "numeric_bound_trace": [
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 24.0,
+      "numeric_lb": 0.0,
+      "solver_s": 0.0422518253326416
+    }
+  ],
+  "numeric_callback_dropped_incumbents": 0,
+  "peak_rss_kb": 103036,
+  "physical_best_observed_ub": 2,
+  "physical_trace": [
+    {
+      "physical_ub": 24,
+      "solver_s": 0.0010077953338623047,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 3,
+      "solver_s": 0.05776095390319824,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 2,
+      "solver_s": 0.06280779838562012,
+      "validation": "VALIDATED"
+    }
+  ],
+  "physical_validated_ub": 2,
+  "plan_sha256": "5e037ab54fb391cd4e9f78eab07918773176fc59563af2703b5d55c4c5d374c8",
+  "reachability_s": 0.00578033400233835,
+  "schema": "AS09-C-EXTENDED-RESULT-v1",
+  "solver_runtime_s": 0.06647491455078125,
+  "solver_version": "12.0.3",
+  "solver_work": 0.05063149714685103,
+  "status": "OPTIMAL_NUMERIC",
+  "time_to_best_validated_ub_solver_s": 0.06280779838562012,
+  "time_to_first_validated_ub_solver_s": 0.0010077953338623047,
+  "validated_mip_gap": 0.0,
+  "wall_phases_s": {
+    "k_c1": 0.00011550902854651213,
+    "k_c2": 0.008982233004644513,
+    "k_c4_dm": 0.0005898489616811275,
+    "k_canonicalize": 0.00010825903154909611,
+    "k_neighborhoods": 0.001552819972857833,
+    "k_preparation": 3.190501593053341e-05,
+    "k_validation_bitset_v2": 0.002038210048340261,
+    "k_validator_setup": 0.0010245529701933265,
+    "model_build": 0.06556839297991246,
+    "preparation": 0.007892488967627287,
+    "solve": 0.06676782795693725,
+    "startup": 0.6250243149697781,
+    "supervisor_shutdown": 0.006469646003097296,
+    "validation": 0.01571633608546108
+  },
+  "wall_total_s": 0.8018866520142183
+}

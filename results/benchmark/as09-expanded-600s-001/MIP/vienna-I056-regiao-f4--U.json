@@ -1,0 +1,368 @@
+{
+  "K_count": 0,
+  "K_sha256": null,
+  "K_validated": false,
+  "arm": "U",
+  "callback_errors": [],
+  "case": {
+    "case": "vienna-I056-regiao-f4",
+    "m": 25,
+    "manifest_name": "vienna-I056-regiao-f4.txt",
+    "n": 1991,
+    "physical_edges": 3176,
+    "r": 12,
+    "raw_graph_id": "",
+    "reachability_arcs": 381600,
+    "source_family": "DIMACS 11 (Vienna, I simples)",
+    "source_sha256": "645da5115a0eeaa6fba9eeae9f4942aebecfa66c4bcbc7aaec2bd0c994eb0ccc",
+    "split": "desenvolvimento"
+  },
+  "estimated_size": {
+    "n_constraints": 5973,
+    "n_variables": 383591
+  },
+  "input_load_s": 0.02127430308610201,
+  "installed": [
+    "1292",
+    "1683",
+    "1696",
+    "1770",
+    "1944",
+    "1964",
+    "225",
+    "233",
+    "478",
+    "932",
+    "984"
+  ],
+  "instance_sha256": "645da5115a0eeaa6fba9eeae9f4942aebecfa66c4bcbc7aaec2bd0c994eb0ccc",
+  "invalid_incumbents": 0,
+  "lp_numeric_value": null,
+  "mip_numeric_bound": 4.0,
+  "mip_numeric_incumbent": 11.0,
+  "mode": "MIP",
+  "model_complete": true,
+  "n_constraints": 5973,
+  "n_nonzeros": 1530382,
+  "n_variables": 383591,
+  "nodes": 1.0,
+  "numeric_bound_trace": [
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 194.0,
+      "numeric_lb": 0.0,
+      "solver_s": 2.9694631099700928
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 194.0,
+      "numeric_lb": 3.0,
+      "solver_s": 10.840673923492432
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 3.0,
+      "solver_s": 24.50599694252014
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 3.0,
+      "solver_s": 31.931938886642456
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 3.0,
+      "solver_s": 49.807862997055054
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 3.0,
+      "solver_s": 56.978580951690674
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 3.0,
+      "solver_s": 76.560781955719
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 3.0,
+      "solver_s": 84.6104838848114
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 3.0,
+      "solver_s": 89.8088219165802
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 3.0,
+      "solver_s": 107.87598395347595
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 3.0,
+      "solver_s": 116.18575692176819
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 3.0,
+      "solver_s": 128.86775708198547
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 3.0,
+      "solver_s": 145.09295392036438
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 3.0,
+      "solver_s": 161.51502299308777
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 3.0,
+      "solver_s": 177.68587708473206
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 3.0,
+      "solver_s": 183.97234892845154
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 4.0,
+      "solver_s": 198.79444003105164
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 4.0,
+      "solver_s": 212.84344291687012
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 4.0,
+      "solver_s": 236.78571200370789
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 4.0,
+      "solver_s": 260.26234102249146
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 4.0,
+      "solver_s": 271.32372188568115
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 4.0,
+      "solver_s": 281.2815320491791
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 4.0,
+      "solver_s": 286.6154000759125
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 4.0,
+      "solver_s": 292.99008893966675
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 13.0,
+      "numeric_lb": 4.0,
+      "solver_s": 318.1328089237213
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 333.6005198955536
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 345.72834396362305
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 353.44272804260254
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 374.73203206062317
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 385.36830401420593
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 390.709979057312
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 397.3336250782013
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 413.4119110107422
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 420.48127603530884
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 431.8133120536804
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 463.54289293289185
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 481.9577748775482
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 492.78901505470276
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 506.825865983963
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 516.4707329273224
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 540.8941879272461
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 11.0,
+      "numeric_lb": 4.0,
+      "solver_s": 548.404011964798
+    }
+  ],
+  "numeric_callback_dropped_incumbents": 0,
+  "peak_rss_kb": 1226024,
+  "physical_best_observed_ub": 11,
+  "physical_trace": [
+    {
+      "physical_ub": 194,
+      "solver_s": 0.0830678939819336,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 42,
+      "solver_s": 10.862080097198486,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 16,
+      "solver_s": 11.76899003982544,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 15,
+      "solver_s": 12.628205060958862,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 14,
+      "solver_s": 14.39524793624878,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 13,
+      "solver_s": 20.131838083267212,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 12,
+      "solver_s": 324.95587706565857,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 11,
+      "solver_s": 329.2087469100952,
+      "validation": "VALIDATED"
+    }
+  ],
+  "physical_validated_ub": 11,
+  "plan_sha256": "5e037ab54fb391cd4e9f78eab07918773176fc59563af2703b5d55c4c5d374c8",
+  "reachability_s": 0.49465085298288614,
+  "schema": "AS09-C-EXTENDED-RESULT-v1",
+  "solver_runtime_s": 548.4312360286713,
+  "solver_version": "12.0.3",
+  "solver_work": 480.0983966122541,
+  "status": "TIME_LIMIT",
+  "time_to_best_validated_ub_solver_s": 329.2087469100952,
+  "time_to_first_validated_ub_solver_s": 0.0830678939819336,
+  "validated_mip_gap": 0.6363636363636364,
+  "wall_phases_s": {
+    "model_build": 5.470349831972271,
+    "preparation": 0.5159901870647445,
+    "solve": 548.4315649759956,
+    "startup": 0.6171193739864975,
+    "supervisor_shutdown": 0.0619311680784449,
+    "validation": 2.2889228459680453
+  },
+  "wall_total_s": 557.3858841339825
+}

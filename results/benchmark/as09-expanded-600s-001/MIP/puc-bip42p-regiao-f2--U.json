@@ -1,0 +1,569 @@
+{
+  "K_count": 0,
+  "K_sha256": null,
+  "K_validated": false,
+  "arm": "U",
+  "callback_errors": [],
+  "case": {
+    "case": "puc-bip42p-regiao-f2",
+    "m": 100,
+    "manifest_name": "puc-bip42p-regiao-f2.txt",
+    "n": 1200,
+    "physical_edges": 3982,
+    "r": 1,
+    "raw_graph_id": "",
+    "reachability_arcs": 7964,
+    "source_family": "SteinLib",
+    "source_sha256": "d7c53596522401d4071563d5007d9c8647ee0d37c893426b5ab3b1d65d97743a",
+    "split": "desenvolvimento"
+  },
+  "estimated_size": {
+    "n_constraints": 3600,
+    "n_variables": 9164
+  },
+  "input_load_s": 0.019641953986138105,
+  "installed": [
+    "101",
+    "136",
+    "163",
+    "176",
+    "18",
+    "218",
+    "219",
+    "234",
+    "236",
+    "250",
+    "294",
+    "306",
+    "317",
+    "320",
+    "343",
+    "362",
+    "376",
+    "377",
+    "423",
+    "437",
+    "451",
+    "484",
+    "528",
+    "529",
+    "544",
+    "579",
+    "60",
+    "605",
+    "616",
+    "629",
+    "665",
+    "672",
+    "68",
+    "683",
+    "743",
+    "774",
+    "852",
+    "86",
+    "864",
+    "876",
+    "961",
+    "969",
+    "975",
+    "977",
+    "982",
+    "993"
+  ],
+  "instance_sha256": "d7c53596522401d4071563d5007d9c8647ee0d37c893426b5ab3b1d65d97743a",
+  "invalid_incumbents": 0,
+  "lp_numeric_value": null,
+  "mip_numeric_bound": 33.0,
+  "mip_numeric_incumbent": 46.0,
+  "mode": "MIP",
+  "model_complete": true,
+  "n_constraints": 3600,
+  "n_nonzeros": 34256,
+  "n_variables": 9164,
+  "nodes": 956.0,
+  "numeric_bound_trace": [
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": null,
+      "numeric_lb": 0.0,
+      "solver_s": 0.05868196487426758
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 55.0,
+      "numeric_lb": 27.0,
+      "solver_s": 6.824501991271973
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 55.0,
+      "numeric_lb": 31.0,
+      "solver_s": 13.58936882019043
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 54.0,
+      "numeric_lb": 31.0,
+      "solver_s": 19.381748914718628
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 48.0,
+      "numeric_lb": 32.0,
+      "solver_s": 28.145771026611328
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 48.0,
+      "numeric_lb": 32.0,
+      "solver_s": 34.642905950546265
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 48.0,
+      "numeric_lb": 32.0,
+      "solver_s": 40.958295822143555
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 48.0,
+      "numeric_lb": 33.0,
+      "solver_s": 47.69887900352478
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 48.0,
+      "numeric_lb": 33.0,
+      "solver_s": 52.86885690689087
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 48.0,
+      "numeric_lb": 33.0,
+      "solver_s": 58.034565925598145
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 48.0,
+      "numeric_lb": 33.0,
+      "solver_s": 64.41873383522034
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 47.0,
+      "numeric_lb": 33.0,
+      "solver_s": 71.82729291915894
+    },
+    {
+      "nodes": 0.0,
+      "numeric_incumbent": 47.0,
+      "numeric_lb": 33.0,
+      "solver_s": 87.4268729686737
+    },
+    {
+      "nodes": 1.0,
+      "numeric_incumbent": 47.0,
+      "numeric_lb": 33.0,
+      "solver_s": 95.30249500274658
+    },
+    {
+      "nodes": 3.0,
+      "numeric_incumbent": 47.0,
+      "numeric_lb": 33.0,
+      "solver_s": 106.4443519115448
+    },
+    {
+      "nodes": 7.0,
+      "numeric_incumbent": 47.0,
+      "numeric_lb": 33.0,
+      "solver_s": 111.88071203231812
+    },
+    {
+      "nodes": 11.0,
+      "numeric_incumbent": 47.0,
+      "numeric_lb": 33.0,
+      "solver_s": 132.89161086082458
+    },
+    {
+      "nodes": 18.0,
+      "numeric_incumbent": 47.0,
+      "numeric_lb": 33.0,
+      "solver_s": 143.5366849899292
+    },
+    {
+      "nodes": 28.0,
+      "numeric_incumbent": 47.0,
+      "numeric_lb": 33.0,
+      "solver_s": 150.7734968662262
+    },
+    {
+      "nodes": 44.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 166.98538494110107
+    },
+    {
+      "nodes": 51.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 175.27095890045166
+    },
+    {
+      "nodes": 64.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 188.09136199951172
+    },
+    {
+      "nodes": 69.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 194.00445199012756
+    },
+    {
+      "nodes": 74.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 205.02287483215332
+    },
+    {
+      "nodes": 79.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 213.82529592514038
+    },
+    {
+      "nodes": 87.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 222.39795994758606
+    },
+    {
+      "nodes": 95.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 233.34266591072083
+    },
+    {
+      "nodes": 110.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 248.71390795707703
+    },
+    {
+      "nodes": 119.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 256.9598948955536
+    },
+    {
+      "nodes": 127.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 264.36372089385986
+    },
+    {
+      "nodes": 135.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 271.21704292297363
+    },
+    {
+      "nodes": 150.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 279.59409284591675
+    },
+    {
+      "nodes": 157.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 288.6704559326172
+    },
+    {
+      "nodes": 167.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 297.02338886260986
+    },
+    {
+      "nodes": 183.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 303.66098403930664
+    },
+    {
+      "nodes": 198.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 312.81351804733276
+    },
+    {
+      "nodes": 215.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 320.15817499160767
+    },
+    {
+      "nodes": 226.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 327.35494899749756
+    },
+    {
+      "nodes": 240.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 334.868674993515
+    },
+    {
+      "nodes": 256.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 344.2609210014343
+    },
+    {
+      "nodes": 272.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 353.41249990463257
+    },
+    {
+      "nodes": 295.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 362.67717003822327
+    },
+    {
+      "nodes": 314.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 371.3180959224701
+    },
+    {
+      "nodes": 338.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 380.78704595565796
+    },
+    {
+      "nodes": 361.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 389.5676078796387
+    },
+    {
+      "nodes": 384.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 398.47237396240234
+    },
+    {
+      "nodes": 422.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 410.1567599773407
+    },
+    {
+      "nodes": 443.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 420.2393798828125
+    },
+    {
+      "nodes": 470.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 446.0550010204315
+    },
+    {
+      "nodes": 474.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 456.33772683143616
+    },
+    {
+      "nodes": 512.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 465.51336789131165
+    },
+    {
+      "nodes": 546.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 479.5229158401489
+    },
+    {
+      "nodes": 591.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 490.1178388595581
+    },
+    {
+      "nodes": 633.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 501.44296002388
+    },
+    {
+      "nodes": 671.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 513.7456538677216
+    },
+    {
+      "nodes": 717.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 526.6890649795532
+    },
+    {
+      "nodes": 788.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 539.1309878826141
+    },
+    {
+      "nodes": 876.0,
+      "numeric_incumbent": 46.0,
+      "numeric_lb": 33.0,
+      "solver_s": 552.3905420303345
+    }
+  ],
+  "numeric_callback_dropped_incumbents": 0,
+  "peak_rss_kb": 285124,
+  "physical_best_observed_ub": 46,
+  "physical_trace": [
+    {
+      "physical_ub": 1152,
+      "solver_s": 0.06992793083190918,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 1151,
+      "solver_s": 0.08057999610900879,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 1150,
+      "solver_s": 0.0911860466003418,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 74,
+      "solver_s": 0.6632578372955322,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 69,
+      "solver_s": 0.7088949680328369,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 68,
+      "solver_s": 0.7137808799743652,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 67,
+      "solver_s": 0.7153408527374268,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 65,
+      "solver_s": 0.773939847946167,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 63,
+      "solver_s": 1.1207749843597412,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 62,
+      "solver_s": 2.340826988220215,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 61,
+      "solver_s": 2.342944860458374,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 58,
+      "solver_s": 2.3446600437164307,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 56,
+      "solver_s": 2.34631085395813,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 55,
+      "solver_s": 2.3479788303375244,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 54,
+      "solver_s": 15.109022855758667,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 53,
+      "solver_s": 23.32052183151245,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 52,
+      "solver_s": 24.031221866607666,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 50,
+      "solver_s": 24.038559913635254,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 49,
+      "solver_s": 24.174091815948486,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 48,
+      "solver_s": 24.298523902893066,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 47,
+      "solver_s": 67.36737084388733,
+      "validation": "VALIDATED"
+    },
+    {
+      "physical_ub": 46,
+      "solver_s": 150.77405881881714,
+      "validation": "VALIDATED"
+    }
+  ],
+  "physical_validated_ub": 46,
+  "plan_sha256": "5e037ab54fb391cd4e9f78eab07918773176fc59563af2703b5d55c4c5d374c8",
+  "reachability_s": 0.011982777039520442,
+  "schema": "AS09-C-EXTENDED-RESULT-v1",
+  "solver_runtime_s": 554.1952078342438,
+  "solver_version": "12.0.3",
+  "solver_work": 516.0109865514943,
+  "status": "TIME_LIMIT",
+  "time_to_best_validated_ub_solver_s": 150.77405881881714,
+  "time_to_first_validated_ub_solver_s": 0.06992793083190918,
+  "validated_mip_gap": 0.2826086956521739,
+  "wall_phases_s": {
+    "model_build": 0.16254043206572533,
+    "preparation": 0.03167542489245534,
+    "solve": 554.1955718409736,
+    "startup": 0.6139257911127061,
+    "supervisor_shutdown": 0.01710788090713322,
+    "validation": 0.5593687420478091
+  },
+  "wall_total_s": 555.5801978741074
+}
