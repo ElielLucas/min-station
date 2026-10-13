@@ -176,3 +176,14 @@ Esse smoke não substitui a campanha maior, não produz prova LP e não contém 
 3. O script reutiliza `_solve_mip` da AS-06 para validar incumbentes; não modifica o Gurobi, não cria cortes dinâmicos e não implementa warm start.
 4. O ambiente usado na preparação do patch **não tem Gurobi**. Foram executados testes unitários, integridade e validação do carregamento das 15 instâncias, mas a campanha real de 600 segundos deve ser executada no computador com licença Gurobi.
 5. Experimentos em uma única seed são exploratórios. Se houver ganhos promissores, planeje replicações pré-registradas com múltiplas seeds, na mesma máquina, antes de discutir significância ou ganhos estatisticamente estáveis.
+
+## Interpretação pós-execução — aplicação da Formulação C em LP
+
+A campanha executada em 15 instâncias produziu **60 braços LP e 60 braços MIP**, com verificação do manifesto em ambos os modos. Os resultados consolidados estão em [analysis-all.md](../../../../results/benchmark/as09-expanded-600s-001/analysis-all.md); esta seção documenta seu uso, **sem alterar o plano congelado, parâmetros ou resultados originais**.
+
+- **Relaxações LP:** os objetivos COMP/C e COMP+K/C+K coincidiram numericamente em todos os 30 pares; C foi mais rápida em 13/15 instâncias sem K, e C+K em 14/15 instâncias com K, considerando o tempo total de cada braço.
+- **Aplicação prática:** C pode reduzir o custo de experimentos com limites inferiores e testes repetidos de desigualdades válidas, especialmente em grafos para os quais sua matriz é mais econômica. Usar COMP como controle e medir o **custo completo**, incluindo o grafo de alcance e a geração dos cortes K.
+- **Não extrapolar ao MIP:** COMP+K atingiu `OPTIMAL_NUMERIC` em 7/15 casos e C+K em 6/15, com resultados censurados pelo tempo e uma falha `VALIDATION_FAIL` em C+K na instância `puc-w3c571-seed-r1`.
+- **Ressalvas científicas:** a equivalência geral de projeções LP ainda exige revisão matemática independente (`PROOF_REVIEW_REQUIRED`); uma execução por braço não estabelece ganhos estatisticamente estáveis. Os casos de avaliação permanecem exploratórios e não devem orientar ajustes retroativos dos parâmetros.
+
+A formulação e as hipóteses estão descritas em [as09-c-cumulativa-projecao.md](../../reference/formulacoes/as09-c-cumulativa-projecao.md). **Posicionamento atual:** C é candidata para pesquisa computacional baseada em LP; COMP+K continua referência para os experimentos MIP.

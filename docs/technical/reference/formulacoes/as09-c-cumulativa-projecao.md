@@ -68,6 +68,28 @@ Escreva `f_{uv}` para o fluxo de U em `A_r`, `in_f(v)`/`out_f(v)` para seus grau
 - Se `H` for uma aproximação com arcos ausentes ou extras, a prova não se aplica.
 - O conjunto K deve ser produzido pelo mesmo pipeline auditado de U. Mesmo que C use arestas de G, o custo de construir H para K deve constar na comparação.
 
+## Aplicabilidade computacional em experimentos LP
+
+A Formulação C deve ser considerada uma **alternativa promissora para experimentos com relaxações lineares**, não uma substituição automática de COMP+K na otimização inteira. O objetivo dessa aplicação é reduzir o custo de calcular limites inferiores e de realizar avaliações repetidas de modelos e cortes, **sem alegar fortalecimento do limite LP** em relação a COMP sob as hipóteses de equivalência propostas.
+
+### Evidências do benchmark ampliado AS-09
+
+O [benchmark ampliado de 600 segundos](../../plans/execucao/as09-benchmark-ampliado-600s.md) avaliou **15 instâncias**, **COMP, COMP+K, C e C+K**, nos modos LP e MIP (120 braços; uma execução por braço). O relatório produzido pela campanha está em `results/benchmark/as09-expanded-600s-001/analysis-all.md`.
+
+- **LP:** os 60 braços terminaram com status `OPTIMAL_NUMERIC`. Nas 15 comparações COMP × C e nas 15 comparações COMP+K × C+K, os valores ótimos LP coincidiram **dentro da tolerância numérica observada**.
+- **Tempo total LP (wall-clock):** C foi mais rápida que COMP em **13/15** instâncias; C+K foi mais rápida que COMP+K em **14/15**. Esse tempo inclui preparação, construção e resolução, não apenas o solver.
+- **Exemplos com K:** em `vienna-I056-regiao-f4`, COMP+K levou **22,30 s** e C+K, **10,25 s**; em `vienna-I052-regiao-f4`, **28,35 s** versus **13,90 s**; em `urb-apia-m10-f8`, **16,07 s** versus **6,88 s**.
+- **Contraexemplo:** em `mapf-maze-32-32-2-m10-f4`, C+K foi **mais lenta** no LP (**3,12 s** versus **2,38 s** de COMP+K).
+- **MIP:** COMP+K atingiu `OPTIMAL_NUMERIC` em **7/15** instâncias e C+K em **6/15**. Houve resultados censurados por limite de tempo e `VALIDATION_FAIL` no braço C+K de `puc-w3c571-seed-r1`; portanto, **não há superioridade MIP geral demonstrada para C**.
+
+### Usos recomendados e pré-condições
+
+1. **Calcular limites inferiores LP** em conjuntos amplos de instâncias, sobretudo quando C tem menor custo de matriz/tempo. Usar o valor apenas para uma instância compatível com o escopo de C e com cortes comprovadamente válidos.
+2. **Comparar novas famílias de cortes sobre `y`** e suas combinações, com uma rotina de benchmarking que meça objetivo LP, tempo total, tempo de solver, variáveis, restrições, coeficientes não nulos e memória. Manter COMP como controle para validar os resultados.
+3. **Explorar métodos de decomposição ou esquemas híbridos** nos quais múltiplos LPs precisem ser resolvidos. Essa é uma **hipótese de aplicação futura**, não um algoritmo validado nem uma melhoria MIP estabelecida.
+
+**Limites de interpretação:** o estudo é exploratório (uma seed/execução por braço); pequenas diferenças de tempo não demonstram ganhos estáveis. A equivalência geral de projeções LP permanece `PROOF_REVIEW_REQUIRED`, e a falha de validação MIP exige investigação separada. Antes de empregar C como substituta matemática garantida de COMP, concluir a revisão formal e conferir implementações e cortes. Para resolução MIP convencional, **COMP+K permanece o referencial do benchmark**.
+
 ## Evidências iniciais e critérios de avanço
 
 - Testes automatizados: ver `test_as09_model_c.py`. Cobrem instâncias pequenas, instalação binária confrontada com o oráculo físico, `S∩T`, trânsito por destino, a-v-b, ativação cumulativa e comparação numérica C/U de ótimo LP e fibras fracionárias.
