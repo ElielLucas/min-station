@@ -1,7 +1,7 @@
 # AS13 — Fundamentação matemática e validação independente H2/HL — Design
 
 **Spec:** `specs/as-13-fundamentacao-h2-hl/spec.md`  
-**Status:** Draft — decisões pendentes de aprovação e verificação local na execução.
+**Status:** Implementado e testado tecnicamente em 13/10/2026; revisão autor≠verificador pendente.
 
 ## Architecture Overview
 

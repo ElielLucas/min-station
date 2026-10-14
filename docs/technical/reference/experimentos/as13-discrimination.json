@@ -1,0 +1,11 @@
+{
+  "fault_names": [
+    "H2_RHS_2_CHANGED_TO_3",
+    "ZERO_LENGTH_STAY_SUPPRESSED"
+  ],
+  "faults_injected": 2,
+  "killed": 2,
+  "schema": "AS13-DISCRIMINATION-v1",
+  "survived": 0,
+  "workspace_modified": false
+}

@@ -1,0 +1,18 @@
+{
+  "fault_names": [
+    "H2_RHS_2_TO_3",
+    "ZERO_LENGTH_STAY_SUPPRESSED",
+    "IP_OPTIMUM_HARDCODED_2",
+    "K4_ENUMERATION_SKIPPED_WITH_LITERAL_COUNTER",
+    "N2_EXHAUSTIVE_H2_HL_LOOP_SKIPPED",
+    "N3_HB_K4_ORACLE_LOOP_SKIPPED",
+    "N4_CONTROL_ORACLE_LOOP_SKIPPED",
+    "N5_K4_H2_SUPPORTS_REPLACED_BY_LITERALS",
+    "N7_HL_BETA_FORCED_TO_ZERO"
+  ],
+  "faults_injected": 9,
+  "killed": 9,
+  "schema": "AS13-DISCRIMINATION-v3",
+  "survived": 0,
+  "workspace_modified": false
+}

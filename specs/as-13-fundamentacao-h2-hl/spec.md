@@ -1,10 +1,10 @@
 # AS13 — Fundamentação matemática e validação independente H2/HL — Specification
 
-**Status:** RASCUNHO / NÃO EXECUTADA  
-**Branch de referência:** `novos_testes` (verificar HEAD antes de Execute)  
+**Status:** **PASS — GO PARA AS14** após parecer independente Opus R3; quatro mutantes residuais serão resolvidos antes da AS15
+**Branch de referência:** `novos_testes`, HEAD consultado `ed1a04740e59f2c8ae4f13e9a62b69624032fa62`  
 **Dependências externas:** Nenhuma; início da linha H2/HL  
 **Local:** `specs/as-13-fundamentacao-h2-hl/`  
-**Fonte da hipótese:** parecer Astra recebido em 13/10/2026; **não é resultado executado**.
+**Fonte da hipótese:** parecer Astra de 13/10/2026; os resultados de auditoria executados estão em `docs/technical/reference/experimentos/as13-testemunhas-e-gate.md` e JSON associado.
 
 ## Problem Statement
 
@@ -12,9 +12,9 @@ Antes de desenvolver novos cortes, é necessário fechar as hipóteses sobre a v
 
 ## Goals
 
-- [ ] Formalizar os contratos matemáticos de H2 e HL sem alterar COMP+K.
-- [ ] Revisar independentemente as provas, com tratamento de S∩T e estações em V.
-- [ ] Produzir testemunhas reproduzíveis de fortalecimento e controles negativos.
+- [x] Formalizar os contratos matemáticos de H2 e HL sem alterar COMP+K.
+- [x] Parecer externo autor≠verificador (Opus R3): AS13-01 a AS13-07 aprovados, incluindo S∩T e estações em V; pendência de quatro mutantes residuais documentada para antes da AS15.
+- [x] Produzir testemunhas reproduzíveis de fortalecimento e controles negativos.
 
 ## Out of Scope
 
@@ -28,9 +28,9 @@ Antes de desenvolver novos cortes, é necessário fechar as hipóteses sobre a v
 
 | Decisão / hipótese | Default escolhido | Justificativa | Confirmado? |
 |---|---|---|---|
-| Base de viabilidade | ν(C)=m no bipartido entre cópias de S e T, construído com arcos de alcance por estações em C | Fundamenta os dois cortes; validar contra o verificador físico independente | Não — premissa de planejamento |
-| Prova do ganho | Exemplos HB e quatro relés são testemunhas analíticas a auditar, não resultados computacionais | Evita converter dedução do parecer em medição | Não — premissa de planejamento |
-| Originalidade | Nenhuma alegação de novidade poliédrica geral para coeficientes 0,1,2 ou cascos locais | Literatura antecedente reconhecida | Não — premissa de planejamento |
+| Base de viabilidade | ν(C)=m no bipartido entre cópias de S e T, construído com arcos de alcance por estações em C | Fundamenta os dois cortes; validar contra o verificador físico independente | Sim — prova, testes e revisão independente R3 `PASS` |
+| Prova do ganho | Exemplos HB e quatro relés são testemunhas analíticas a auditar, não resultados computacionais | Evita converter dedução do parecer em medição | Sim — HB e K4 reproduzidos numericamente e conferidos na revisão R3 |
+| Originalidade | Nenhuma alegação de novidade poliédrica geral para coeficientes 0,1,2 ou cascos locais | Literatura antecedente reconhecida | Sim — ausência de reivindicação de novidade preservada |
 
 **Open questions:** none — nenhuma sem default. As premissas operacionais devem ser aceitas antes da execução; alterar threshold, fonte ou orçamento após resultados requer plano versionado.
 
@@ -68,22 +68,24 @@ Antes de desenvolver novos cortes, é necessário fechar as hipóteses sobre a v
 
 | Requirement ID | Story | Phase | Status |
 |---|---|---|---|
-| AS13-01 | P1: Fundamentação | Tarefas | Pending |
-| AS13-02 | P1: Fundamentação | Tarefas | Pending |
-| AS13-03 | P1: Fundamentação | Tarefas | Pending |
-| AS13-04 | P1: Fundamentação | Tarefas | Pending |
-| AS13-05 | P1: Fundamentação | Tarefas | Pending |
-| AS13-06 | P1: Fundamentação | Tarefas | Pending |
-| AS13-07 | P1: Fundamentação | Tarefas | Pending |
+| AS13-01 | P1: Fundamentação | Verificação | Verified — R3 PASS |
+| AS13-02 | P1: Fundamentação | Verificação | Verified — R3 PASS |
+| AS13-03 | P1: Fundamentação | Verificação | Verified — R3 PASS |
+| AS13-04 | P1: Fundamentação | Verificação | Verified — R3 PASS |
+| AS13-05 | P1: Fundamentação | Verificação | Verified — R3 PASS |
+| AS13-06 | P1: Fundamentação | Verificação | Verified — R3 PASS |
+| AS13-07 | P1: Fundamentação | Verificação | Verified — R3 PASS |
 
-**Coverage:** 7 requisitos; 7 com critérios explícitos; todos pendentes de execução e evidência.
+**Coverage:** 7/7 requisitos com provas, testes e parecer independente R3 `PASS`. Quatro mutantes residuais ficam no backlog de qualidade obrigatório antes da AS15.
 
 ## Success Criteria
 
-- [ ] Todas as exigências dos ACs são verificadas com testes derivados da spec, não espelhados do código.
-- [ ] Gate: GO apenas se validade de H2 e HL estiver documentada sem lacunas bloqueantes e todas as testemunhas reproduzidas; caso contrário STOP/UNPROVEN com evidência.
-- [ ] Parecer independente (autor ≠ verificador) reporta evidência por requisito e falhas/abstenções.
-- [ ] Nenhuma campanha ou mudança no baseline é declarada concluída somente porque a documentação foi produzida.
+- [x] Todos os ACs têm evidência matemática ou testes independentes de representação derivados da spec.
+- [x] Gate científico `PASS` registrado após revisão independente R3; AS14 liberada.
+- [x] Parecer independente R3 (autor ≠ verificador) aprovou AS13-01 a AS13-07 e registrou 4 mutantes residuais não bloqueantes para AS14.
+- [x] Nenhuma campanha LP/MIP em instâncias reais ou alteração de baseline foi realizada.
+
+**Gate de progressão:** `AS13=PASS`, `AS14=GO`; **não iniciar AS15 antes de tratar os quatro mutantes residuais** (checagens H2, H2-parcial e projeção HL) e concluir a AS14. Evidência do `PASS`: seção R3 de `validation.md`, mantida inalterada neste patch.
 
 ## Tests Derived from Acceptance Criteria
 

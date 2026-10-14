@@ -1,0 +1,101 @@
+{
+  "python_version": "3.13.5",
+  "results": {
+    "HB": {
+      "K": [
+        [
+          "c0_0",
+          "c0_1",
+          "x0_0",
+          "x0_1",
+          "x0_2"
+        ],
+        [
+          "c0_0",
+          "c0_1",
+          "x0_0",
+          "x0_1",
+          "x0_3"
+        ],
+        [
+          "e0_0",
+          "x0_0",
+          "x0_1",
+          "x0_2",
+          "x0_3"
+        ],
+        [
+          "e0_1",
+          "x0_0",
+          "x0_1",
+          "x0_2",
+          "x0_3"
+        ]
+      ],
+      "K_count": 4,
+      "graph_sha256": "7f18b7d6f531a33618597dc59968a6e263a5b02f42650c5ac7c9c27da2397ef9",
+      "ip_phys_opt": 2,
+      "ip_phys_search_subsets_checked": 93,
+      "ip_phys_witness_computed": [
+        "x0_0",
+        "x0_1"
+      ],
+      "lp_COMP_K": 1.0,
+      "lp_COMP_K_H2": 2.0,
+      "m": 6,
+      "n": 16,
+      "r": 1,
+      "witness_K_feasible_phys_infeasible": [
+        "x0_0"
+      ],
+      "witness_phys_feasible": [
+        "x0_0",
+        "x0_1"
+      ]
+    },
+    "K4": {
+      "CG_triples_exactly_H2_triples_on_K4": true,
+      "H2_supports_nontrivial_checked": 45056,
+      "H2_supports_tight_at_fractional_point": 16384,
+      "K_count": 6,
+      "battery_station_subsets_checked": 65536,
+      "graph_sha256": "36838a00cb39d9ababc24e495c7ba70aaaa00df97eca4088b6e01f1a0201f49a",
+      "ip_phys_opt": 3,
+      "ip_phys_witness_computed": [
+        "w1",
+        "w2",
+        "w3"
+      ],
+      "lp_COMP_K": 2.0,
+      "lp_COMP_K_H2": 2.6666666666666665,
+      "lp_COMP_K_H2_HL": 3.0,
+      "lp_COMP_K_plus_CG_triples": 2.6666666666666665,
+      "m": 6,
+      "n": 16,
+      "r": 1
+    },
+    "controls": {
+      "battery_vs_reach_cases": 64,
+      "cases": 4
+    },
+    "exhaustive_small_cuts": {
+      "H2_nontrivial_supports": 32,
+      "HL_nontrivial_supports": 32
+    },
+    "oracle_agreement_HB_K4": {
+      "station_subsets_compared": 674
+    }
+  },
+  "schema": "AS13-FOUNDATIONS-MATH-VALIDATION-v2",
+  "scipy_version": "1.17.0",
+  "solver": "SciPy linprog HiGHS for LP; brute battery BFS for physical feasibility",
+  "source_blob_sha": {
+    "experiments/alternative-formulations/as02_model_a.py": "b1d9b5a6387e89966665c40026156068bc6c3dbb",
+    "experiments/cuts/cuts.py": "d305457f3b60a7f263106e624e3a0b821d99f935",
+    "experiments/cuts/independent_validator.py": "73c99798b2afcfbdfa57b53d1d368446f573c0bc",
+    "experiments/structural/hb.py": "855d93c6b1b306cc27c51cbd90702a58a8132f95"
+  },
+  "source_commit": "ed1a04740e59f2c8ae4f13e9a62b69624032fa62",
+  "source_snapshot": "min-station(20261013-124730).zip (4 reused code blobs equal to branch HEAD)",
+  "status": "CHECKS_PASS_PENDING_INDEPENDENT_REVIEW"
+}

@@ -1,0 +1,40 @@
+{
+  "gate": "PENDING_INDEPENDENT_REVIEW_AS14_BLOCKED",
+  "injected": 5,
+  "killed": 5,
+  "mutants": [
+    {
+      "failure_signature": "AssertionError: Incomplete small-cut enumeration: H2=0, HL=0, beta>0=0, global_infeasible=0",
+      "killed": true,
+      "mutant": "N2",
+      "test": "test_as13_r2_exhaustive_cuts_rejects_one_false_classification"
+    },
+    {
+      "failure_signature": "AssertionError: HB/K4 oracle audit coverage is 0, expected 674",
+      "killed": true,
+      "mutant": "N3",
+      "test": "test_as13_r2_oracle_hb_k4_rejects_one_false_classification"
+    },
+    {
+      "failure_signature": "AssertionError: Control oracle audit: 0/68 subsets",
+      "killed": true,
+      "mutant": "N4",
+      "test": "test_as13_r2_control_oracle_rejects_one_false_classification"
+    },
+    {
+      "failure_signature": "AssertionError: K4 H2 support coverage changed: 0, 0",
+      "killed": true,
+      "mutant": "N5",
+      "test": "test_as13_r2_k4_all_h2_supports_reject_one_false_classification"
+    },
+    {
+      "failure_signature": "AssertionError: HL beta differs from global physical projection: 0 vs 2 for R={'b'}",
+      "killed": true,
+      "mutant": "N7",
+      "test": "test_as13_r2_hl_beta_is_positive_and_checked_independently"
+    }
+  ],
+  "schema": "AS13-SOURCE-MUTATION-v3",
+  "survived": 0,
+  "workspace_modified": false
+}

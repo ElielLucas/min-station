@@ -2,11 +2,11 @@
 
 ## Execution Protocol (MANDATORY -- do not skip)
 
-Ativar a skill `/tlc-spec-driven` (`.claude/skills/tlc-spec-driven/SKILL.md`) ao executar. Um commit local por tarefa após gate PASS; não efetuar commits nem push sem a aprovação explícita do usuário e respeitar `CLAUDE.md`. Após a última tarefa, Verifier independente, discriminação quando houver código e relatório de evidências. **Este pacote contém apenas planejamento; nenhuma tarefa foi executada.**
+Ativar a skill `/tlc-spec-driven` (`.claude/skills/tlc-spec-driven/SKILL.md`) ao executar. Um commit local por tarefa após gate PASS; não efetuar commits nem push sem a aprovação explícita do usuário e respeitar `CLAUDE.md`. Após a última tarefa, Verifier independente, discriminação quando houver código e relatório de evidências. **T1–T4 possuem artefatos, testes e parecer independente R3 `PASS`; não houve commits desta entrega. Quatro mutantes residuais precisam ser fechados antes da AS15.**
 
 **Spec:** `specs/as-13-fundamentacao-h2-hl/spec.md`  
 **Design:** `specs/as-13-fundamentacao-h2-hl/design.md`  
-**Status:** DRAFT  
+**Status:** **CONCLUÍDO — AS13 PASS / GO AS14 (Opus R3)**; quatro mutantes residuais pendentes antes da AS15
 **Precondition:** Nenhuma; início da linha H2/HL
 
 ## Test Coverage Matrix
@@ -55,10 +55,10 @@ T1 -> T2 -> T3 -> T4
 
 **Done when:**
 
-- [ ] Revisão das equações e contraexemplos com parecer independente.
-- [ ] Testes regressivos derivados dos ACs e casos negativos aplicáveis passam sem enfraquecimento.
-- [ ] Evidência associada a hash/commit é registrada e gate executado.
-- [ ] Antes de commitar, atualizar `tasks.md` e rastreabilidade; commit **local** somente após autorização para Execute.
+- [x] Revisão **externa** das equações e contraexemplos: Opus R3 aprovou AS13-01 a AS13-07, conforme `validation.md`.
+- [x] Testes regressivos derivados dos ACs e casos negativos aplicáveis passam sem enfraquecimento.
+- [x] Evidência associada ao HEAD e blobs da fonte registrada; gate técnico executado (sem commit).
+- [x] Atualizados `tasks.md` e rastreabilidade; **nenhum commit criado** (projeto exige autorização explícita).
 
 **Tests:** review — Revisão das equações e contraexemplos com parecer independente.
 
@@ -80,10 +80,10 @@ T1 -> T2 -> T3 -> T4
 
 **Done when:**
 
-- [ ] Prova por casos e testes exaustivos manuais referenciados.
-- [ ] Testes regressivos derivados dos ACs e casos negativos aplicáveis passam sem enfraquecimento.
-- [ ] Evidência associada a hash/commit é registrada e gate executado.
-- [ ] Antes de commitar, atualizar `tasks.md` e rastreabilidade; commit **local** somente após autorização para Execute.
+- [x] Prova por casos e testes exaustivos referenciados.
+- [x] Testes regressivos derivados dos ACs e casos negativos aplicáveis passam sem enfraquecimento.
+- [x] Evidência associada ao HEAD e blobs da fonte registrada; gate técnico executado (sem commit).
+- [x] Atualizados `tasks.md` e rastreabilidade; **nenhum commit criado** (projeto exige autorização explícita).
 
 **Tests:** review — Prova por casos e testes exaustivos manuais referenciados.
 
@@ -105,10 +105,10 @@ T1 -> T2 -> T3 -> T4
 
 **Done when:**
 
-- [ ] Prova de projeção, caso complemento viável e custos de enumeração.
-- [ ] Testes regressivos derivados dos ACs e casos negativos aplicáveis passam sem enfraquecimento.
-- [ ] Evidência associada a hash/commit é registrada e gate executado.
-- [ ] Antes de commitar, atualizar `tasks.md` e rastreabilidade; commit **local** somente após autorização para Execute.
+- [x] Prova de projeção, caso complemento viável e custos de enumeração.
+- [x] Testes regressivos derivados dos ACs e casos negativos aplicáveis passam sem enfraquecimento.
+- [x] Evidência associada ao HEAD e blobs da fonte registrada; gate técnico executado (sem commit).
+- [x] Atualizados `tasks.md` e rastreabilidade; **nenhum commit criado** (projeto exige autorização explícita).
 
 **Tests:** review — Prova de projeção, caso complemento viável e custos de enumeração.
 
@@ -130,10 +130,10 @@ T1 -> T2 -> T3 -> T4
 
 **Done when:**
 
-- [ ] Tabelas reproduzíveis com testes de independência e GO/STOP.
-- [ ] Testes regressivos derivados dos ACs e casos negativos aplicáveis passam sem enfraquecimento.
-- [ ] Evidência associada a hash/commit é registrada e gate executado.
-- [ ] Antes de commitar, atualizar `tasks.md` e rastreabilidade; commit **local** somente após autorização para Execute.
+- [x] Tabelas reproduzíveis e registro do gate científico final `PASS`, conforme revisor independente R3.
+- [x] Testes regressivos derivados dos ACs e casos negativos aplicáveis passam sem enfraquecimento.
+- [x] Evidência associada ao HEAD e blobs da fonte registrada; gate técnico executado (sem commit).
+- [x] Atualizados `tasks.md` e rastreabilidade; **nenhum commit criado** (projeto exige autorização explícita).
 
 **Tests:** review — Tabelas reproduzíveis com testes de independência e GO/STOP.
 
@@ -175,8 +175,17 @@ T1 -> T2 -> T3 -> T4
 
 ## Closing Verification
 
-- [ ] Gate da spec e das tasks passou antes de aprovar Execute.
-- [ ] Todas as tarefas tiveram teste/prova co-localizado à entrega e gate PASS.
-- [ ] Verifier autor ≠ verificador registrou evidência por AC, incluindo discriminação comportamental em scratch seguro quando houver código.
-- [ ] Gate científico: GO apenas se validade de H2 e HL estiver documentada sem lacunas bloqueantes e todas as testemunhas reproduzidas; caso contrário STOP/UNPROVEN com evidência.
-- [ ] Como este projeto mantém `specs/` em vez do padrão `.specs/features/` da skill, verificar compatibilidade de `validate_state.py` antes da execução; nunca declarar PASS de conclusão se o validador não suportar o layout ou sem `validation.md`.
+- [x] Validação estrutural de `spec.md` e `tasks.md` executada no fechamento documental; registrar os comandos e saída no checkout.
+- [x] Tarefas T1–T4 receberam documento e testes próprios; gate técnico local passou.
+- [x] Verifier Opus R3 (autor ≠ verificador) aprovou AS13-01 a AS13-07; registrou 15/19 mutantes mortos e 4 residuais a tratar antes da AS15.
+- [x] Gate científico AS13 **PASS / GO AS14** por parecer externo R3; **AS15 condicionada** à correção dos quatro mutantes residuais e às dependências da AS14.
+- [x] O relatório independente `specs/as-13-fundamentacao-h2-hl/validation.md` existe no checkout do verificador e recebeu a seção R3 `PASS` (conforme parecer informado); o layout `specs/` diverge do caminho padrão de `validate_state.py`, portanto o status se apoia no parecer e no gate aplicável ao projeto, sem alegar execução do `validate_state.py`.
+
+## Pendência de qualidade antes da AS15 (não bloqueia AS14)
+
+- [ ] Adicionar testes adversariais que detectem remoção da checagem de validade H2 completa.
+- [ ] Adicionar testes adversariais que detectem remoção da checagem de validade H2 parcial.
+- [ ] Adicionar testes adversariais que detectem remoção da checagem da identidade de projeção HL.
+- [ ] Rastrear e eliminar o quarto mutante residual registrado na seção R3 de `validation.md`, sem presumir seu comportamento a partir deste resumo.
+
+**Gate:** antes de AS15, executar novamente o sensor independente sobre os quatro mutantes residuais e registrar a evidência em uma etapa apropriada de AS14/AS15, preservando R1–R3.

@@ -1,0 +1,18 @@
+test_as13_01_one_relay_services_two_robots (test_as13_foundations.AS13Foundations.test_as13_01_one_relay_services_two_robots) ... ok
+test_as13_01_shared_terminal_can_stay_without_station (test_as13_foundations.AS13Foundations.test_as13_01_shared_terminal_can_stay_without_station) ... ok
+test_as13_01_terminal_relay_must_be_installed_if_needed (test_as13_foundations.AS13Foundations.test_as13_01_terminal_relay_must_be_installed_if_needed) ... ok
+test_as13_01_two_consecutive_stations_needed (test_as13_foundations.AS13Foundations.test_as13_01_two_consecutive_stations_needed) ... ok
+test_as13_02_empty_support_is_not_certified (test_as13_foundations.AS13Foundations.test_as13_02_empty_support_is_not_certified) ... ok
+test_as13_02_h2_requires_invalid_complement (test_as13_foundations.AS13Foundations.test_as13_02_h2_requires_invalid_complement) ... ok
+test_as13_03_full_and_partial_classification (test_as13_foundations.AS13Foundations.test_as13_03_full_and_partial_classification) ... ok
+test_as13_04_hl_projection_k4 (test_as13_foundations.AS13Foundations.test_as13_04_hl_projection_k4) ... ok
+test_as13_04_hl_with_viable_complement_is_full_cube (test_as13_foundations.AS13Foundations.test_as13_04_hl_with_viable_complement_is_full_cube) ... ok
+test_as13_05_every_k4_installation_checked (test_as13_foundations.AS13Foundations.test_as13_05_every_k4_installation_checked) ... ok
+test_as13_05_hb_exact_expected_LP_and_IP (test_as13_foundations.AS13Foundations.test_as13_05_hb_exact_expected_LP_and_IP) ... ok
+test_as13_05_k4_hierarchy_exact_expected_values (test_as13_foundations.AS13Foundations.test_as13_05_k4_hierarchy_exact_expected_values) ... ok
+test_as13_06_07_hb_integer_K_not_physical (test_as13_foundations.AS13Foundations.test_as13_06_07_hb_integer_K_not_physical) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 2.716s
+
+OK

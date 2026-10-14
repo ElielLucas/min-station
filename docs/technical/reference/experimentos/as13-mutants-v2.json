@@ -1,0 +1,13 @@
+{
+  "fault_names": [
+    "H2_RHS_2_TO_3",
+    "ZERO_LENGTH_STAY_SUPPRESSED",
+    "IP_OPTIMUM_HARDCODED_2",
+    "K4_ENUMERATION_SKIPPED_WITH_LITERAL_COUNTER"
+  ],
+  "faults_injected": 4,
+  "killed": 4,
+  "schema": "AS13-DISCRIMINATION-v2",
+  "survived": 0,
+  "workspace_modified": false
+}
