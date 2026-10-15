@@ -1,0 +1,52 @@
+{
+  "schema_version": "AS15-SOURCE-MUTATIONS-v1",
+  "injected": 7,
+  "killed": 7,
+  "survived": 0,
+  "mutants": [
+    {
+      "mutant": "H2_COMPLEMENT_VIABLE_GATE_REMOVED",
+      "killed": true,
+      "targeted_test": "test_as15_01_viable_complement_never_emits_h2",
+      "failure_signature": "FAIL"
+    },
+    {
+      "mutant": "H2_BHAT_INVERSION",
+      "killed": true,
+      "targeted_test": "test_as15_02_03_exact_bhat_coefficients_rhs_and_physical_validity",
+      "failure_signature": "FAIL"
+    },
+    {
+      "mutant": "H2_COEFFICIENTS_SWAP",
+      "killed": true,
+      "targeted_test": "test_as15_02_03_exact_bhat_coefficients_rhs_and_physical_validity",
+      "failure_signature": "ERROR"
+    },
+    {
+      "mutant": "H2_MASS_GATE_GT",
+      "killed": true,
+      "targeted_test": "test_as15_05_mass_boundary_two",
+      "failure_signature": "FAIL"
+    },
+    {
+      "mutant": "H2_DEGENERATION_GATE_REMOVED",
+      "killed": true,
+      "targeted_test": "test_as15_08_minimal_cover_degenerates_without_novelty",
+      "failure_signature": "FAIL"
+    },
+    {
+      "mutant": "H2_PARTIAL_UNKNOWN_COEFF1",
+      "killed": true,
+      "targeted_test": "test_as15_06_unknown_candidate_never_enters_bhat",
+      "failure_signature": "ERROR"
+    },
+    {
+      "mutant": "H2_VIOLATION_TOLERANCE_INCLUSIVE",
+      "killed": true,
+      "targeted_test": "test_as15_04_exact_violation_tolerance_boundary",
+      "failure_signature": "FAIL"
+    }
+  ],
+  "workspace_modified": false,
+  "scientific_gate": "PENDING_INDEPENDENT_REVIEW"
+}

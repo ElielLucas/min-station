@@ -1,0 +1,31 @@
+{
+  "HB": {
+    "after_H2_LP": 2.0,
+    "base_COMP_K_LP": 1.0,
+    "certificate_sha256": "0515f6aa47f71e2e6c7b512d0ccd48593ba5cb5df30d273f7ff39a9022164863",
+    "h2_rhs": 2,
+    "h2_violation": 1.0,
+    "instance_sha256": "ecaf25e10eae1567184cd4657603c6042dbbeab3412ee816fb54779793aee4b4",
+    "nonredundant_H2_cut_hash": "f0bd877464f445caffd52d40bf235187c50e9175439f6d0bf050ed8f8b799793",
+    "vertices": 16
+  },
+  "controls": 3,
+  "emitted_rows_physically_checked": 91,
+  "exhaustive_violated_nondegenerate_H2": 83,
+  "fractional_vectors_per_control": 3,
+  "heuristic_recall": 0.0963855421686747,
+  "heuristic_violated_H2_hits": 8,
+  "oracle_calls_audit": 456,
+  "physically_feasible_installations_checked": 72,
+  "precision": 1.0,
+  "schema_version": "AS15-LOCAL-AUDIT-v1",
+  "seed": 1515,
+  "source_sha256": {
+    "h2_cut.py": "c15d5b744b7c720ec0bd7b505ddcce6a7879ae6f63b7294717d0632ab32a19d0",
+    "h2_separator.py": "542fc9230be07371f7d73ec164e7147c3253ca4c11a52169c942cdbf3556e20c",
+    "h2_supports.py": "53c45e4718d79d0ba0161c7fdea98df7b2e6c0f36c4843d996c461d2b37020cd",
+    "test_h2_separator.py": "cc2a93ed77c169d584dd8424dc77143c0f7c8a5bc4cf65ca41fd6ebebd160f64"
+  },
+  "stage": "AS15",
+  "status": "LOCAL_PASS_EXTERNAL_REVIEW_PENDING"
+}

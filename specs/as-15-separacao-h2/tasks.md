@@ -2,11 +2,11 @@
 
 ## Execution Protocol (MANDATORY -- do not skip)
 
-Ativar a skill `/tlc-spec-driven` (`.claude/skills/tlc-spec-driven/SKILL.md`) ao executar. Um commit local por tarefa após gate PASS; não efetuar commits nem push sem a aprovação explícita do usuário e respeitar `CLAUDE.md`. Após a última tarefa, Verifier independente, discriminação quando houver código e relatório de evidências. **Este pacote contém apenas planejamento; nenhuma tarefa foi executada.**
+Ativar a skill `/tlc-spec-driven` (`.claude/skills/tlc-spec-driven/SKILL.md`) ao executar. Um commit local por tarefa após gate PASS; não efetuar commits nem push sem a aprovação explícita do usuário e respeitar `CLAUDE.md`. Após a última tarefa, Verifier independente, discriminação quando houver código e relatório de evidências. **As quatro tarefas foram implementadas e testadas localmente; pendem lint no checkout, commit do usuário e revisão independente.**
 
 **Spec:** `specs/as-15-separacao-h2/spec.md`  
 **Design:** `specs/as-15-separacao-h2/design.md`  
-**Status:** DRAFT  
+**Status:** IMPLEMENTADA LOCALMENTE — VERIFICAÇÃO EXTERNA PENDENTE
 **Precondition:** AS13 GO e AS14 GO
 
 ## Test Coverage Matrix
@@ -55,8 +55,8 @@ T1 -> T2 -> T3 -> T4
 
 **Done when:**
 
-- [ ] Coefficients/rhs de H2 e validade por enumeração independente.
-- [ ] Testes regressivos derivados dos ACs e casos negativos aplicáveis passam sem enfraquecimento.
+- [x] Coefficients/rhs de H2 e validade por enumeração independente.
+- [x] Testes regressivos derivados dos ACs e casos negativos aplicáveis passam sem enfraquecimento.
 - [ ] Evidência associada a hash/commit é registrada e gate executado.
 - [ ] Antes de commitar, atualizar `tasks.md` e rastreabilidade; commit **local** somente após autorização para Execute.
 
@@ -80,8 +80,8 @@ T1 -> T2 -> T3 -> T4
 
 **Done when:**
 
-- [ ] Suportes relevantes com deduplicação, tamanho/calls limitados.
-- [ ] Testes regressivos derivados dos ACs e casos negativos aplicáveis passam sem enfraquecimento.
+- [x] Suportes relevantes com deduplicação, tamanho/calls limitados.
+- [x] Testes regressivos derivados dos ACs e casos negativos aplicáveis passam sem enfraquecimento.
 - [ ] Evidência associada a hash/commit é registrada e gate executado.
 - [ ] Antes de commitar, atualizar `tasks.md` e rastreabilidade; commit **local** somente após autorização para Execute.
 
@@ -105,8 +105,8 @@ T1 -> T2 -> T3 -> T4
 
 **Done when:**
 
-- [ ] Certificações, violação, UNKNOWN e sem emissão indevida.
-- [ ] Testes regressivos derivados dos ACs e casos negativos aplicáveis passam sem enfraquecimento.
+- [x] Certificações, violação, UNKNOWN e sem emissão indevida.
+- [x] Testes regressivos derivados dos ACs e casos negativos aplicáveis passam sem enfraquecimento.
 - [ ] Evidência associada a hash/commit é registrada e gate executado.
 - [ ] Antes de commitar, atualizar `tasks.md` e rastreabilidade; commit **local** somente após autorização para Execute.
 
@@ -130,8 +130,8 @@ T1 -> T2 -> T3 -> T4
 
 **Done when:**
 
-- [ ] Validar precisão e medir recall em grafos pequenos.
-- [ ] Testes regressivos derivados dos ACs e casos negativos aplicáveis passam sem enfraquecimento.
+- [x] Validar precisão e medir recall em grafos pequenos.
+- [x] Testes regressivos derivados dos ACs e casos negativos aplicáveis passam sem enfraquecimento.
 - [ ] Evidência associada a hash/commit é registrada e gate executado.
 - [ ] Antes de commitar, atualizar `tasks.md` e rastreabilidade; commit **local** somente após autorização para Execute.
 
@@ -175,8 +175,19 @@ T1 -> T2 -> T3 -> T4
 
 ## Closing Verification
 
-- [ ] Gate da spec e das tasks passou antes de aprovar Execute.
-- [ ] Todas as tarefas tiveram teste/prova co-localizado à entrega e gate PASS.
+- [x] Gate estrutural de spec e tasks executado: 0 errors, 0 warnings.
+- [x] Todas as quatro entregas foram testadas localmente; 91 testes regressivos passaram.
 - [ ] Verifier autor ≠ verificador registrou evidência por AC, incluindo discriminação comportamental em scratch seguro quando houver código.
-- [ ] Gate científico: GO se HB e casos negativos passarem, todo corte emitido for comprovadamente válido nas microinstâncias e ao menos um corte não redundante for encontrado com custo registrado; não exigir ganho de benchmark ainda.
+- [x] Condições científicas numéricas verificadas **localmente**: HB fecha LP 1→2, 91 cortes válidos nos controles e auditoria de 7 mutações; o GO final depende de revisor distinto e Ruff.
 - [ ] Como este projeto mantém `specs/` em vez do padrão `.specs/features/` da skill, verificar compatibilidade de `validate_state.py` antes da execução; nunca declarar PASS de conclusão se o validador não suportar o layout ou sem `validation.md`.
+
+## Registro de execução local (15/10/2026)
+
+| Tarefa | Entregável | Teste | Resultado local |
+|---|---|---|---|
+| T1 | `h2_cut.py` | `test_h2_separator.py` (AS15-02/03 e validade física) | PASS local |
+| T2 | `h2_supports.py` | determinismo, limites e microcontrole exaustivo | PASS local |
+| T3 | `h2_separator.py` | AS15-01..08, UNKNOWN, budget, mutações | PASS local |
+| T4 | `test_h2_separator.py`, `verify_as15_separation.py` | enumeração física; HB 1→2 | PASS local |
+
+**Pendente:** `poetry run ruff check` nos módulos AS15, `source_commit` verificável e revisão por autor distinto, sem afirmar `PASS / GO` da AS15.

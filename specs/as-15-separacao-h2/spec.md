@@ -1,7 +1,7 @@
 # AS15 — Geração, seleção e certificação de cortes H2 — Specification
 
-**Status:** RASCUNHO / NÃO EXECUTADA  
-**Branch de referência:** `novos_testes` (verificar HEAD antes de Execute)  
+**Status:** IMPLEMENTAÇÃO LOCAL CONCLUÍDA / VERIFICAÇÃO INDEPENDENTE PENDENTE
+**Branch de referência:** `novos_testes` (confirmar HEAD após aplicar o patch)
 **Dependências externas:** AS13 GO e AS14 GO  
 **Local:** `specs/as-15-separacao-h2/`  
 **Fonte da hipótese:** parecer Astra recebido em 13/10/2026; **não é resultado executado**.
@@ -12,9 +12,9 @@ A validade de H2 não fornece, por si só, um mecanismo para encontrar suportes 
 
 ## Goals
 
-- [ ] Construir H2 certificados em y com suporte e coeficientes reproduzíveis.
-- [ ] Experimentar seleção heurística de suportes usando massa fracionária, K e obstruções de Hall.
-- [ ] Registrar cobertura de separação, custo, redundância e casos de degeneração.
+- [x] Construir H2 certificados em y com suporte e coeficientes reproduzíveis (verificação local).
+- [x] Experimentar seleção heurística de suportes usando massa fracionária, K e obstruções de Hall (verificação local).
+- [x] Registrar cobertura de separação, custo, redundância e casos de degeneração (verificação local).
 
 ## Out of Scope
 
@@ -71,16 +71,16 @@ A validade de H2 não fornece, por si só, um mecanismo para encontrar suportes 
 
 | Requirement ID | Story | Phase | Status |
 |---|---|---|---|
-| AS15-01 | P1: Separador H2 | Tarefas | Pending |
-| AS15-02 | P1: Separador H2 | Tarefas | Pending |
-| AS15-03 | P1: Separador H2 | Tarefas | Pending |
-| AS15-04 | P1: Separador H2 | Tarefas | Pending |
-| AS15-05 | P1: Separador H2 | Tarefas | Pending |
-| AS15-06 | P1: Separador H2 | Tarefas | Pending |
-| AS15-07 | P1: Separador H2 | Tarefas | Pending |
-| AS15-08 | P1: Separador H2 | Tarefas | Pending |
+| AS15-01 | P1: Separador H2 | Tarefas | Local PASS / independent pending |
+| AS15-02 | P1: Separador H2 | Tarefas | Local PASS / independent pending |
+| AS15-03 | P1: Separador H2 | Tarefas | Local PASS / independent pending |
+| AS15-04 | P1: Separador H2 | Tarefas | Local PASS / independent pending |
+| AS15-05 | P1: Separador H2 | Tarefas | Local PASS / independent pending |
+| AS15-06 | P1: Separador H2 | Tarefas | Local PASS / independent pending |
+| AS15-07 | P1: Separador H2 | Tarefas | Local PASS / independent pending |
+| AS15-08 | P1: Separador H2 | Tarefas | Local PASS / independent pending |
 
-**Coverage:** 8 requisitos; 8 com critérios explícitos; todos pendentes de execução e evidência.
+**Coverage:** 8 requisitos; 8 com critérios explícitos; todos cobertos por testes locais, sujeitos à revisão independente e ao Ruff no checkout do usuário.
 
 ## Success Criteria
 
@@ -120,3 +120,18 @@ COMP (U) e COMP+K (U_K) com variáveis binárias de instalação em V, fluxo con
 - A desigualdade só é considerada válida com prova matemática e/ou certificado conservador; testes numéricos não substituem demonstração.
 - Preservar distinção entre prova, witness analítico, ótimo LP, bound MIP e UB validada.
 - Nenhuma afirmação de contribuição inédita sem revisão bibliográfica específica.
+
+## Execução local (15/10/2026)
+
+Os módulos `h2_cut.py`, `h2_supports.py`, `h2_separator.py`, testes e verificadores foram implementados sem alterar COMP+K, K ou callbacks. A auditoria local reportou 91 linhas fisicamente checadas, precisão 100% nos controles examinados, recall heurístico 8/83 (9,64%) e HB: LP COMP+K = 1, LP COMP+K+H2 = 2. A ausência de revisão independente e de lint neste ambiente impede concluir o gate científico. Consulte `implementation-evidence.md` e `validation.md`; `source_commit` não é atribuído antes de um commit real.
+
+## Configuração versionada do piloto AS15
+
+- `min_violation=1e-7` (aceitação estritamente maior que a tolerância).
+- `total_budget_s=10.0`, `per_support_budget_s=2.0`.
+- `max_supports=32`, `max_support_size=None`, `max_pairs=32`.
+- `max_oracle_calls=500`, `max_candidates_per_support=None`, `max_cuts=16`.
+- `FULL_V`, obstruções de Hall fornecidas, uniões limitadas de K/Hall, suporte fracionário, sementes K. Sem enumeração global de suportes em instâncias grandes.
+- Para **auditoria exaustiva somente em microinstâncias**, remover limites temporais (`None`) e ampliar caps explicitamente; distinguir estes parâmetros dos defaults do piloto.
+
+Mudar orçamento/threshold após a coleta requer registro versionado novo, não reutilizar evidência antiga. A AS15 não realiza callbacks MIP nem executa benchmark amplo.

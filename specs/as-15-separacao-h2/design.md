@@ -1,7 +1,7 @@
 # AS15 — Geração, seleção e certificação de cortes H2 — Design
 
 **Spec:** `specs/as-15-separacao-h2/spec.md`  
-**Status:** Draft — decisões pendentes de aprovação e verificação local na execução.
+**Status:** Implementado localmente — validação independente e Ruff pendentes.
 
 ## Architecture Overview
 
@@ -70,3 +70,13 @@ Todo registro experimental/certificado desta etapa terá: `schema_version`, `ins
 ## Acceptance Gate
 
 GO se HB e casos negativos passarem, todo corte emitido for comprovadamente válido nas microinstâncias e ao menos um corte não redundante for encontrado com custo registrado; não exigir ganho de benchmark ainda.
+
+## Implementação efetiva
+
+- `h2_cut.py`: estrutura imutável, coeficientes 1/2, hash tipado, representação `to_dict`.
+- `h2_supports.py`: FULL_V, candidatos Hall/K, pares limitados e suporte fracionário, sem enumeração global.
+- `h2_separator.py`: pré-filtro `y*(R) >= 2`, oráculo AS14, budget global/por suporte/calls, classificação parcial conservadora, violação estrita, deduplicação, exportação append-only.
+- `verify_as15_separation.py`: enumeração independente física de microinstâncias e testemunha HB COMP+K versus COMP+K+H2; não é o parecer independente de um revisor externo.
+- `verify_as15_mutations.py`: 7 mutantes de código em cópias temporárias; não modifica o workspace.
+
+**Desvio operacional explícito:** não foram criados commits locais, pois o usuário receberá um patch incremental para aplicar no seu próprio checkout; o commit/provenance e o parecer de revisor distinto continuam pendentes.
