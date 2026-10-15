@@ -1,10 +1,10 @@
 # AS14 — Oráculo certificado de viabilidade para suportes H2/HL — Specification
 
-**Status:** RASCUNHO / NÃO EXECUTADA  
+**Status:** R1 STOP — 6 correções executadas localmente; nova revisão independente e Ruff pendentes  
 **Branch de referência:** `novos_testes` (verificar HEAD antes de Execute)  
-**Dependências externas:** AS13 GO matemático  
+**Dependências externas:** AS13 GO matemático (R3 PASS, informado pelo autor)  
 **Local:** `specs/as-14-oraculo-viabilidade-matching/`  
-**Fonte da hipótese:** parecer Astra recebido em 13/10/2026; **não é resultado executado**.
+**Fonte da hipótese:** parecer Astra recebido em 13/10/2026; implementação e verificações locais AS14 registradas em `implementation-evidence.md`.
 
 ## Problem Statement
 
@@ -12,9 +12,9 @@ Os novos cortes dependem de testes de viabilidade com todas as estações fora d
 
 ## Goals
 
-- [ ] Reutilizar a verificação física existente e expor contrato de matching exato com resultado triestado.
-- [ ] Validar monotonicidade, classificação de suportes e certificados sob orçamento finito.
-- [ ] Medir custo de oráculo e manter cache/proveniência de entradas canônicas.
+- [x] Reutilizar a verificação física existente e expor contrato de matching exato com resultado triestado.
+- [x] Validar monotonicidade, classificação de suportes e certificados sob orçamento finito.
+- [x] Medir custo de oráculo e manter cache/proveniência de entradas canônicas.
 
 ## Out of Scope
 
@@ -28,9 +28,9 @@ Os novos cortes dependem de testes de viabilidade com todas as estações fora d
 
 | Decisão / hipótese | Default escolhido | Justificativa | Confirmado? |
 |---|---|---|---|
-| Oráculo primário | Reaproveitar o ExactCutValidator (ou equivalente localizado no código atual), após verificar contrato e semântica | Evita implementação independente desnecessária | Não — premissa de planejamento |
-| Resultados | VIABLE / INFEASIBLE / UNKNOWN, com UNKNOWN por timeout, erro ou limite | Nunca tratar ausência de prova como inviabilidade | Não — premissa de planejamento |
-| Cache | Chave com hash de instância física e conjunto canônico de estações | Impede reutilização cruzada de casos | Não — premissa de planejamento |
+| Oráculo primário | `independent_validator.destinos_alcancaveis` (bateria) + matching bipartido com certificado de Hall em `h2_oracle.py` | Reutiliza a verificação física real existente | Sim — verificado localmente |
+| Resultados | VIABLE / INFEASIBLE / UNKNOWN; budget cooperativo verificado entre chamadas de alcance e operações de matching; timeout/erro => UNKNOWN | Nunca tratar ausência de prova como inviabilidade | Sim — testes unitários e mutantes locais |
+| Cache | SHA-256 de V/E/S/T/r + conjunto canônico; só resultados certificados | Impede reutilização cruzada de casos | Sim — testes de isolamento e monotonicidade |
 
 **Open questions:** none — nenhuma sem default. As premissas operacionais devem ser aceitas antes da execução; alterar threshold, fonte ou orçamento após resultados requer plano versionado.
 
@@ -68,21 +68,21 @@ Os novos cortes dependem de testes de viabilidade com todas as estações fora d
 
 | Requirement ID | Story | Phase | Status |
 |---|---|---|---|
-| AS14-01 | P1: Infraestrutura de certificação | Tarefas | Pending |
-| AS14-02 | P1: Infraestrutura de certificação | Tarefas | Pending |
-| AS14-03 | P1: Infraestrutura de certificação | Tarefas | Pending |
-| AS14-04 | P1: Infraestrutura de certificação | Tarefas | Pending |
-| AS14-05 | P1: Infraestrutura de certificação | Tarefas | Pending |
-| AS14-06 | P1: Infraestrutura de certificação | Tarefas | Pending |
-| AS14-07 | P1: Infraestrutura de certificação | Tarefas | Pending |
+| AS14-01 | P1: Infraestrutura de certificação | Tarefas | Implemented; local tests PASS; independent review pending |
+| AS14-02 | P1: Infraestrutura de certificação | Tarefas | Implemented; local tests PASS; independent review pending |
+| AS14-03 | P1: Infraestrutura de certificação | Tarefas | Implemented; local tests PASS; independent review pending |
+| AS14-04 | P1: Infraestrutura de certificação | Tarefas | Implemented; local tests PASS; independent review pending |
+| AS14-05 | P1: Infraestrutura de certificação | Tarefas | Implemented; local tests PASS; independent review pending |
+| AS14-06 | P1: Infraestrutura de certificação | Tarefas | Implemented; local tests PASS; independent review pending |
+| AS14-07 | P1: Infraestrutura de certificação | Tarefas | Implemented; local tests PASS; independent review pending |
 
-**Coverage:** 7 requisitos; 7 com critérios explícitos; todos pendentes de execução e evidência.
+**Coverage:** 7 requisitos; 7 implementados e cobertos por testes locais; todos aguardam parecer independente de encerramento.
 
 ## Success Criteria
 
-- [ ] Todas as exigências dos ACs são verificadas com testes derivados da spec, não espelhados do código.
-- [ ] Gate: GO se não houver divergência com verificador físico independente e nenhum UNKNOWN tiver sido promovido a INFEASIBLE; caso contrário STOP.
-- [ ] Parecer independente (autor ≠ verificador) reporta evidência por requisito e falhas/abstenções.
+- [x] Testes derivados dos critérios, inclusive casos negativos independentes para terminais, budget com cache, identidade tipada e ambos os sentidos da monotonicidade; 41 testes locais e R09/R10/R23/R29/R30 detectados. As contagens isoladas não substituem cobertura qualitativa.
+- [x] Pré-gate local: nenhuma divergência nas 742 máscaras auditadas; nenhum UNKNOWN promovido a INFEASIBLE. **Não constitui GO final sem parecer independente.**
+- [ ] Revisor independente confirma as seis correções do parecer R1 (`validation.md §7`) e autoriza a conclusão — **R1 STOP / R2 PENDENTE**.
 - [ ] Nenhuma campanha ou mudança no baseline é declarada concluída somente porque a documentação foi produzida.
 
 ## Tests Derived from Acceptance Criteria

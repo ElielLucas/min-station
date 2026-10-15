@@ -1,0 +1,81 @@
+[
+ {
+  "mutant": "N01_CACHE_HIT_RETURN_PROBE_REMOVED",
+  "author_suite_killed": true,
+  "author_failing_tests": [
+   "test_as14_03_budget_crossings_include_final_probe_and_cache_hit",
+   "test_as14_03_final_probe_rejects_certificate_when_clock_crosses"
+  ],
+  "r2_adversarial_killed": true,
+  "r2_first_failure": "('CERT_OVER_BUDGET', ('cache', ('a', 'b', 'c'), ('b',), 1e-09, 1.0010000000000002e-09, 4), 1.0010126061388291e-09, 1e-09)"
+ },
+ {
+  "mutant": "N02_DEADLINE_STRICT_GT",
+  "author_suite_killed": false,
+  "author_failing_tests": [],
+  "r2_adversarial_killed": true,
+  "r2_first_failure": "('CERT_OVER_BUDGET', ('fresh', ('a', 'b', 'c'), ('b',), 0.0, 0.0, 1), 0.0, 0.0)"
+ },
+ {
+  "mutant": "N03_CACHE_HIT_BOTH_PROBES_REMOVED",
+  "author_suite_killed": true,
+  "author_failing_tests": [
+   "test_as14_03_budget_crossings_include_final_probe_and_cache_hit",
+   "test_as14_03_final_probe_rejects_certificate_when_clock_crosses"
+  ],
+  "r2_adversarial_killed": true,
+  "r2_first_failure": "('CERT_OVER_BUDGET', ('cache', ('a', 'b', 'c'), ('b',), 1e-09, 1.0010000000000002e-09, 3), 1.0010126061388291e-09, 1e-09)"
+ },
+ {
+  "mutant": "N04_CACHE_GET_IGNORES_INSTANCE",
+  "author_suite_killed": true,
+  "author_failing_tests": [
+   "test_as14_05_graphs_same_size_do_not_collide",
+   "test_as14_05_int_and_str_vertices_never_share_fingerprint_or_cache"
+  ],
+  "r2_adversarial_killed": true,
+  "r2_first_failure": "('SHARED_CACHE', ('0', 1), ('0',), ('0',), [('0', 1)], 0, (), <Status.UNKNOWN: 'UNKNOWN'>, False)"
+ },
+ {
+  "mutant": "N05_MONO_ACROSS_INSTANCES",
+  "author_suite_killed": true,
+  "author_failing_tests": [
+   "test_as14_05_graphs_same_size_do_not_collide",
+   "test_as14_05_int_and_str_vertices_never_share_fingerprint_or_cache"
+  ],
+  "r2_adversarial_killed": true,
+  "r2_first_failure": "('SHARED_CACHE', (0, 1, '2'), (0, '2'), (1, '2'), [(0, 1), (0, '2')], 0, (), <Status.UNKNOWN: 'UNKNOWN'>, False)"
+ },
+ {
+  "mutant": "N06_CACHE_HIT_STATUS_FLIPPED_TO_INFEASIBLE_ONLY_IF_VIABLE",
+  "author_suite_killed": true,
+  "author_failing_tests": [
+   "test_as14_03_budget_crossings_include_final_probe_and_cache_hit",
+   "test_as14_03_final_probe_rejects_certificate_when_clock_crosses",
+   "test_as14_05_same_graph_reordered_has_same_hash_and_key"
+  ],
+  "r2_adversarial_killed": true,
+  "r2_first_failure": "('SHARED_CACHE', ('0', 1), ('0',), ('0',), [], 2, (), <Status.UNKNOWN: 'UNKNOWN'>, False)"
+ },
+ {
+  "mutant": "N07_ELAPSED_FROM_ZERO_NOT_BEGIN",
+  "author_suite_killed": false,
+  "author_failing_tests": [],
+  "r2_adversarial_killed": false,
+  "r2_first_failure": ""
+ },
+ {
+  "mutant": "N08_FINGERPRINT_TERMINALS_MERGED",
+  "author_suite_killed": false,
+  "author_failing_tests": [],
+  "r2_adversarial_killed": true,
+  "r2_first_failure": "('SHARED_CACHE', (0, 1), (0,), (1,), [], 0, (), <Status.VIABLE: 'VIABLE'>, True)"
+ },
+ {
+  "mutant": "N09_FRESH_FINAL_PROBE_MOVED_AFTER_PUT",
+  "author_suite_killed": false,
+  "author_failing_tests": [],
+  "r2_adversarial_killed": false,
+  "r2_first_failure": ""
+ }
+]

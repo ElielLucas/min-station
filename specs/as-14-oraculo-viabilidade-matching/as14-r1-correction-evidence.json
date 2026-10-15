@@ -1,0 +1,83 @@
+{
+  "as15": "BLOCKED",
+  "git": {
+    "committed_here": false,
+    "provenance": "byte-exact SHA256; run audit after committing"
+  },
+  "historical_validation_preserved": true,
+  "independent_gate": "R1_STOP_PENDING_R2",
+  "reviewer_mutants_full": {
+    "completed_here": false,
+    "reason": "33-mutant suite exceeded container execution timeout; five blocking survivors reproduced individually"
+  },
+  "ruff": {
+    "executed_here": false,
+    "reason": "ruff executable not available in sandbox",
+    "required_command": "poetry run ruff check experiments/cuts/h2_oracle.py experiments/cuts/h2_oracle_schema.py experiments/cuts/h2_oracle_cache.py experiments/cuts/test_h2_oracle.py experiments/cuts/verify_as14_oracle.py experiments/cuts/verify_as14_discrimination.py experiments/cuts/verify_as14_r1_mutants.py",
+    "source_fixes": "F401 removidos em dois arquivos; E402 anotados nos imports após sys.path"
+  },
+  "schema": "AS14-R1-CORRECTIONS-LOCAL-EVIDENCE-v1",
+  "source_budget_limitation": "Budget cooperativo; fingerprint ainda fora da medição, D2 registrado como não bloqueante no parecer R1",
+  "source_commit": null,
+  "source_files_sha256": {
+    "experiments/cuts/h2_oracle.py": "5e6dd2b8225e8a2216f72fedcceae4b9f0c243be6a6f6383e9c14767aaa16d4d",
+    "experiments/cuts/h2_oracle_cache.py": "d6b70360af91bb84bdde4807d91ce5d8d011cb67eb0c32be531a41f00794f8ce",
+    "experiments/cuts/h2_oracle_schema.py": "e2375cd89db47415ef79b3aa5a74c80c1a32b53cbb0115d6cd11dec2e3792592",
+    "experiments/cuts/independent_validator.py": "fb18fd4a02533120129efc68c0acb6078c29f3af8dbade5f8d4852c7973cd352",
+    "experiments/cuts/test_h2_oracle.py": "93ee7d76f66e579eec17821b859e6716d293464516a019097f0996476a46b654",
+    "experiments/cuts/verify_as14_discrimination.py": "06268b6ca70c394b98755189e9cf77d3a305b6cd924d96403a6a907163f2157b",
+    "experiments/cuts/verify_as14_oracle.py": "f5ea208457086f6447ac7c4e3304730f4be7ef5cd6cb64b2d228dd8dbb839502",
+    "experiments/cuts/verify_as14_r1_mutants.py": "3abb025a8b2d1c26e0251852d7c211f79902b0f5e7690becec6fd91df45da511"
+  },
+  "tests": {
+    "as13": {
+      "passed": 27,
+      "total": 27
+    },
+    "as14": {
+      "passed": 41,
+      "total": 41
+    },
+    "author_audit": {
+      "H2_supports_certified": 36,
+      "HB_K4_masks": 674,
+      "control_masks": 68,
+      "physical_masks_checked": 742,
+      "unknown_promoted_to_infeasible": 0
+    },
+    "original_mutants": {
+      "injected": 7,
+      "killed": 7,
+      "survived": 0
+    },
+    "r1_target_mutants": {
+      "injected": 5,
+      "killed": 5,
+      "mutants": [
+        "R09",
+        "R10",
+        "R23",
+        "R29",
+        "R30"
+      ],
+      "survived": 0
+    },
+    "review_audit": {
+      "cases": 350,
+      "h2_invalid": 0,
+      "h2_supports": 816,
+      "hall_errors": 0,
+      "masks": 17360,
+      "matching_disagreements": 0,
+      "status_disagreements": 0
+    },
+    "review_budget": {
+      "passed": 7,
+      "total": 7
+    },
+    "review_micro": {
+      "passed": 11,
+      "total": 11
+    }
+  }
+}

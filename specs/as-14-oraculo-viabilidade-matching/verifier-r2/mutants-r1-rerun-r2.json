@@ -1,0 +1,411 @@
+[
+ {
+  "mutant": "R01_KUHN_NO_AUGMENT",
+  "author_suite_killed": true,
+  "author_failing_tests": [
+   "test_as14_independent_battery_oracle_exhaustive_controls"
+  ],
+  "author_verify_killed": true,
+  "review_micro_killed": true,
+  "review_budget_killed": false,
+  "review_audit_killed": true
+ },
+ {
+  "mutant": "R02_KUHN_SHARED_SEEN",
+  "author_suite_killed": true,
+  "author_failing_tests": [
+   "test_as14_independent_battery_oracle_exhaustive_controls"
+  ],
+  "author_verify_killed": true,
+  "review_micro_killed": true,
+  "review_budget_killed": false,
+  "review_audit_killed": true
+ },
+ {
+  "mutant": "R03_NU_OFF_BY_ONE_INFEASIBLE",
+  "author_suite_killed": true,
+  "author_failing_tests": [
+   "test_as14_01_destination_terminal_without_station_does_not_recharge",
+   "test_as14_01_origin_terminal_without_station_does_not_recharge",
+   "test_as14_02_infeasible_has_replayable_hall_witness"
+  ],
+  "author_verify_killed": false,
+  "review_micro_killed": true,
+  "review_budget_killed": false,
+  "review_audit_killed": true
+ },
+ {
+  "mutant": "R04_VIABLE_THRESHOLD_M_MINUS_1",
+  "author_suite_killed": true,
+  "author_failing_tests": [
+   "test_as14_01_destination_terminal_without_station_does_not_recharge",
+   "test_as14_01_nonterminal_relay_requires_installed_station",
+   "test_as14_01_origin_terminal_without_station_does_not_recharge",
+   "test_as14_02_infeasible_has_replayable_hall_witness",
+   "test_as14_02_unreachable_is_infeasible",
+   "test_as14_04_complement_on_actual_physical_V"
+  ],
+  "author_verify_killed": true,
+  "review_micro_killed": true,
+  "review_budget_killed": false,
+  "review_audit_killed": true
+ },
+ {
+  "mutant": "R05_HALL_NO_ALTERNATING_EXPANSION",
+  "author_suite_killed": true,
+  "author_failing_tests": [
+   "test_as14_01_destination_terminal_without_station_does_not_recharge",
+   "test_as14_02_infeasible_has_replayable_hall_witness",
+   "test_as14_independent_oracle_random_small_graphs"
+  ],
+  "author_verify_killed": true,
+  "review_micro_killed": true,
+  "review_budget_killed": false,
+  "review_audit_killed": true
+ },
+ {
+  "mutant": "R06_HALL_REPORTS_UNMATCHED_ONLY",
+  "author_suite_killed": true,
+  "author_failing_tests": [
+   "test_as14_01_destination_terminal_without_station_does_not_recharge",
+   "test_as14_02_infeasible_has_replayable_hall_witness",
+   "test_as14_independent_oracle_random_small_graphs"
+  ],
+  "author_verify_killed": true,
+  "review_micro_killed": true,
+  "review_budget_killed": false,
+  "review_audit_killed": true
+ },
+ {
+  "mutant": "R07_HALL_EMPTY_NEIGHBORS_NO_CHECKS",
+  "author_suite_killed": true,
+  "author_failing_tests": [
+   "test_as14_01_destination_terminal_without_station_does_not_recharge",
+   "test_as14_02_infeasible_has_replayable_hall_witness",
+   "test_as14_independent_oracle_random_small_graphs"
+  ],
+  "author_verify_killed": true,
+  "review_micro_killed": true,
+  "review_budget_killed": false,
+  "review_audit_killed": true
+ },
+ {
+  "mutant": "R08_REACH_SKIPS_LAST_ORIGIN",
+  "author_suite_killed": true,
+  "author_failing_tests": [
+   "test_as14_01_anonymous_matching_not_fixed_pairing",
+   "test_as14_01_destination_terminal_without_station_does_not_recharge",
+   "test_as14_01_no_station_needed_if_autonomy_sufficient",
+   "test_as14_01_nonterminal_relay_requires_installed_station",
+   "test_as14_01_origin_terminal_without_station_does_not_recharge",
+   "test_as14_01_share_station_without_capacity"
+  ],
+  "author_verify_killed": true,
+  "review_micro_killed": true,
+  "review_budget_killed": true,
+  "review_audit_killed": true
+ },
+ {
+  "mutant": "R09_TERMINALS_AS_STATIONS_IN_ORACLE",
+  "author_suite_killed": true,
+  "author_failing_tests": [
+   "test_as14_01_origin_terminal_without_station_does_not_recharge"
+  ],
+  "author_verify_killed": true,
+  "review_micro_killed": true,
+  "review_budget_killed": false,
+  "review_audit_killed": true
+ },
+ {
+  "mutant": "R10_SHARED_REACH_TERMINALS_RECHARGE",
+  "author_suite_killed": true,
+  "author_failing_tests": [
+   "test_as14_01_destination_terminal_without_station_does_not_recharge"
+  ],
+  "author_verify_killed": true,
+  "review_micro_killed": true,
+  "review_budget_killed": false,
+  "review_audit_killed": true
+ },
+ {
+  "mutant": "R11_SHARED_REACH_NO_STAY",
+  "author_suite_killed": false,
+  "author_failing_tests": [],
+  "author_verify_killed": false,
+  "review_micro_killed": false,
+  "review_budget_killed": false,
+  "review_audit_killed": false
+ },
+ {
+  "mutant": "R12_SHARED_REACH_OFF_BY_ONE_BATTERY",
+  "author_suite_killed": true,
+  "author_failing_tests": [
+   "test_as14_01_anonymous_matching_not_fixed_pairing",
+   "test_as14_01_destination_terminal_without_station_does_not_recharge",
+   "test_as14_01_no_station_needed_if_autonomy_sufficient",
+   "test_as14_01_nonterminal_relay_requires_installed_station",
+   "test_as14_01_origin_terminal_without_station_does_not_recharge",
+   "test_as14_01_share_station_without_capacity"
+  ],
+  "author_verify_killed": true,
+  "review_micro_killed": true,
+  "review_budget_killed": true,
+  "review_audit_killed": true
+ },
+ {
+  "mutant": "R13_STATION_CAPACITY_ONE",
+  "author_suite_killed": true,
+  "author_failing_tests": [
+   "test_as14_01_share_station_without_capacity",
+   "test_as14_03_budget_crossings_include_final_probe_and_cache_hit",
+   "test_as14_05_deterministic_json_and_station_order",
+   "test_as14_05_same_graph_reordered_has_same_hash_and_key",
+   "test_as14_independent_battery_oracle_exhaustive_controls",
+   "test_as14_metrics_record_calls_and_cache_hits"
+  ],
+  "author_verify_killed": true,
+  "review_micro_killed": true,
+  "review_budget_killed": false,
+  "review_audit_killed": true
+ },
+ {
+  "mutant": "R14_F_OVER_TERMINALS_ONLY",
+  "author_suite_killed": true,
+  "author_failing_tests": [
+   "test_as14_04_complement_viable_is_not_cut",
+   "test_as14_04_full_complement_viable_is_no_cut",
+   "test_as14_h2_cuts_valid_on_every_physical_installation"
+  ],
+  "author_verify_killed": true,
+  "review_micro_killed": true,
+  "review_budget_killed": false,
+  "review_audit_killed": false
+ },
+ {
+  "mutant": "R15_F_IGNORES_R",
+  "author_suite_killed": true,
+  "author_failing_tests": [
+   "test_as14_04_complement_on_actual_physical_V",
+   "test_as14_06_candidate_exception_does_not_enter_bhat",
+   "test_as14_06_only_certified_infeasible_additions_enter_bhat",
+   "test_as14_06_partial_candidates_unknown_get_coef_two"
+  ],
+  "author_verify_killed": true,
+  "review_micro_killed": true,
+  "review_budget_killed": true,
+  "review_audit_killed": false
+ },
+ {
+  "mutant": "R16_BHAT_WITHOUT_ADDING_V",
+  "author_suite_killed": true,
+  "author_failing_tests": [
+   "test_as14_04_complement_on_actual_physical_V",
+   "test_as14_06_candidate_exception_does_not_enter_bhat",
+   "test_as14_h2_cuts_valid_on_every_physical_installation"
+  ],
+  "author_verify_killed": true,
+  "review_micro_killed": true,
+  "review_budget_killed": false,
+  "review_audit_killed": false
+ },
+ {
+  "mutant": "R17_COEF_ONE_FOR_EXAMINED",
+  "author_suite_killed": true,
+  "author_failing_tests": [
+   "test_as14_04_complement_on_actual_physical_V",
+   "test_as14_06_candidate_exception_does_not_enter_bhat",
+   "test_as14_h2_cuts_valid_on_every_physical_installation"
+  ],
+  "author_verify_killed": true,
+  "review_micro_killed": true,
+  "review_budget_killed": false,
+  "review_audit_killed": false
+ },
+ {
+  "mutant": "R18_COEF_ONE_FOR_NON_CANDIDATES",
+  "author_suite_killed": true,
+  "author_failing_tests": [
+   "test_as14_06_partial_candidates_unknown_get_coef_two"
+  ],
+  "author_verify_killed": false,
+  "review_micro_killed": false,
+  "review_budget_killed": false,
+  "review_audit_killed": false
+ },
+ {
+  "mutant": "R19_UNKNOWN_COMPLEMENT_PROCEEDS",
+  "author_suite_killed": true,
+  "author_failing_tests": [
+   "test_as14_06_unknown_complement_does_not_emit_cut"
+  ],
+  "author_verify_killed": false,
+  "review_micro_killed": false,
+  "review_budget_killed": false,
+  "review_audit_killed": false
+ },
+ {
+  "mutant": "R20_REMAINING_DROPS_BUDGET",
+  "author_suite_killed": true,
+  "author_failing_tests": [
+   "test_as14_06_unknown_complement_does_not_emit_cut"
+  ],
+  "author_verify_killed": false,
+  "review_micro_killed": false,
+  "review_budget_killed": false,
+  "review_audit_killed": false
+ },
+ {
+  "mutant": "R21_TIMEOUT_PROMOTED_TO_INFEASIBLE",
+  "author_suite_killed": true,
+  "author_failing_tests": [
+   "test_as14_03_budget_crossings_include_final_probe_and_cache_hit",
+   "test_as14_03_final_probe_rejects_certificate_when_clock_crosses",
+   "test_as14_03_final_probe_rejects_certificate_when_clock_crosses",
+   "test_as14_03_timeout_after_reachability_yields_unknown",
+   "test_as14_03_unknown_rejected_as_false_certificate",
+   "test_as14_03_zero_budget_always_unknown"
+  ],
+  "author_verify_killed": false,
+  "review_micro_killed": false,
+  "review_budget_killed": true,
+  "review_audit_killed": false
+ },
+ {
+  "mutant": "R22_ERROR_PROMOTED_TO_INFEASIBLE",
+  "author_suite_killed": true,
+  "author_failing_tests": [
+   "test_as14_03_matching_exception_is_unknown",
+   "test_as14_03_reach_exception_is_unknown_not_infeasible",
+   "test_as14_03_unknown_not_cached_even_if_retried",
+   "test_as14_06_candidate_exception_does_not_enter_bhat"
+  ],
+  "author_verify_killed": false,
+  "review_micro_killed": false,
+  "review_budget_killed": false,
+  "review_audit_killed": false
+ },
+ {
+  "mutant": "R23_FINAL_PROBE_REMOVED",
+  "author_suite_killed": true,
+  "author_failing_tests": [
+   "test_as14_03_budget_crossings_include_final_probe_and_cache_hit",
+   "test_as14_03_final_probe_rejects_certificate_when_clock_crosses"
+  ],
+  "author_verify_killed": false,
+  "review_micro_killed": false,
+  "review_budget_killed": true,
+  "review_audit_killed": false
+ },
+ {
+  "mutant": "R24_UNKNOWN_CACHED",
+  "author_suite_killed": false,
+  "author_failing_tests": [],
+  "author_verify_killed": false,
+  "review_micro_killed": false,
+  "review_budget_killed": false,
+  "review_audit_killed": false
+ },
+ {
+  "mutant": "R25_KEY_DROPS_STATIONS",
+  "author_suite_killed": true,
+  "author_failing_tests": [
+   "test_as14_04_complement_on_actual_physical_V",
+   "test_as14_06_candidate_exception_does_not_enter_bhat",
+   "test_as14_07_cached_infeasible_superset_rejects_viable_subset",
+   "test_as14_independent_battery_oracle_exhaustive_controls"
+  ],
+  "author_verify_killed": true,
+  "review_micro_killed": true,
+  "review_budget_killed": false,
+  "review_audit_killed": true
+ },
+ {
+  "mutant": "R26_FINGERPRINT_DROPS_R",
+  "author_suite_killed": true,
+  "author_failing_tests": [
+   "test_as14_05_same_graph_different_r_and_terminals"
+  ],
+  "author_verify_killed": false,
+  "review_micro_killed": false,
+  "review_budget_killed": false,
+  "review_audit_killed": false
+ },
+ {
+  "mutant": "R27_FINGERPRINT_DROPS_EDGES",
+  "author_suite_killed": true,
+  "author_failing_tests": [
+   "test_as14_05_graphs_same_size_do_not_collide",
+   "test_as14_05_int_and_str_vertices_never_share_fingerprint_or_cache"
+  ],
+  "author_verify_killed": false,
+  "review_micro_killed": false,
+  "review_budget_killed": false,
+  "review_audit_killed": false
+ },
+ {
+  "mutant": "R28_FINGERPRINT_DROPS_S",
+  "author_suite_killed": true,
+  "author_failing_tests": [
+   "test_as14_05_same_graph_different_r_and_terminals"
+  ],
+  "author_verify_killed": false,
+  "review_micro_killed": false,
+  "review_budget_killed": false,
+  "review_audit_killed": false
+ },
+ {
+  "mutant": "R29_FINGERPRINT_DROPS_TYPES",
+  "author_suite_killed": true,
+  "author_failing_tests": [
+   "test_as14_05_int_and_str_vertices_never_share_fingerprint_or_cache"
+  ],
+  "author_verify_killed": false,
+  "review_micro_killed": false,
+  "review_budget_killed": false,
+  "review_audit_killed": false
+ },
+ {
+  "mutant": "R30_MONO_BRANCH_VIABLE_DISABLED",
+  "author_suite_killed": true,
+  "author_failing_tests": [
+   "test_as14_07_cached_infeasible_superset_rejects_viable_subset"
+  ],
+  "author_verify_killed": false,
+  "review_micro_killed": false,
+  "review_budget_killed": false,
+  "review_audit_killed": false
+ },
+ {
+  "mutant": "R31_MONO_BRANCH_INFEASIBLE_FLIPPED",
+  "author_suite_killed": true,
+  "author_failing_tests": [
+   "test_as14_07_cached_monotonic_conflicts_fail_closed"
+  ],
+  "author_verify_killed": true,
+  "review_micro_killed": false,
+  "review_budget_killed": false,
+  "review_audit_killed": false
+ },
+ {
+  "mutant": "R32_SAME_KEY_CONFLICT_IGNORED",
+  "author_suite_killed": false,
+  "author_failing_tests": [],
+  "author_verify_killed": false,
+  "review_micro_killed": false,
+  "review_budget_killed": false,
+  "review_audit_killed": false
+ },
+ {
+  "mutant": "R33_SCHEMA_INFEASIBLE_GUARD_REMOVED_PLUS_SHARED_SEEN",
+  "author_suite_killed": true,
+  "author_failing_tests": [
+   "test_as14_03_unknown_rejected_as_false_certificate",
+   "test_as14_h2_cuts_valid_on_every_physical_installation",
+   "test_as14_independent_battery_oracle_exhaustive_controls"
+  ],
+  "author_verify_killed": true,
+  "review_micro_killed": true,
+  "review_budget_killed": false,
+  "review_audit_killed": true
+ }
+]

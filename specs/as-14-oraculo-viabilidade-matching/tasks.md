@@ -2,12 +2,12 @@
 
 ## Execution Protocol (MANDATORY -- do not skip)
 
-Ativar a skill `/tlc-spec-driven` (`.claude/skills/tlc-spec-driven/SKILL.md`) ao executar. Um commit local por tarefa após gate PASS; não efetuar commits nem push sem a aprovação explícita do usuário e respeitar `CLAUDE.md`. Após a última tarefa, Verifier independente, discriminação quando houver código e relatório de evidências. **Este pacote contém apenas planejamento; nenhuma tarefa foi executada.**
+Ativar a skill `/tlc-spec-driven` (`.claude/skills/tlc-spec-driven/SKILL.md`) ao executar. Um commit local por tarefa após gate PASS; não efetuar commits nem push sem a aprovação explícita do usuário e respeitar `CLAUDE.md`. Após a última tarefa, Verifier independente, discriminação quando houver código e relatório de evidências. **T1–T4 implementadas e testadas localmente; nenhum commit efetuado; parecer independente ainda pendente.**
 
 **Spec:** `specs/as-14-oraculo-viabilidade-matching/spec.md`  
 **Design:** `specs/as-14-oraculo-viabilidade-matching/design.md`  
-**Status:** DRAFT  
-**Precondition:** AS13 GO matemático
+**Status:** R1 STOP — CORREÇÕES LOCAIS APLICADAS; LINT E REVERIFICAÇÃO INDEPENDENTE PENDENTES  
+**Precondition:** AS13 GO matemático (R3 PASS, informado pelo autor)
 
 ## Test Coverage Matrix
 
@@ -55,10 +55,10 @@ T1 -> T2 -> T3 -> T4
 
 **Done when:**
 
-- [ ] Serialização determinística e contrato VIABLE/INFEASIBLE/UNKNOWN.
-- [ ] Testes regressivos derivados dos ACs e casos negativos aplicáveis passam sem enfraquecimento.
-- [ ] Evidência associada a hash/commit é registrada e gate executado.
-- [ ] Antes de commitar, atualizar `tasks.md` e rastreabilidade; commit **local** somente após autorização para Execute.
+- [x] Serialização determinística e contrato VIABLE/INFEASIBLE/UNKNOWN.
+- [x] Testes regressivos derivados dos ACs e casos negativos aplicáveis passam sem enfraquecimento.
+- [x] Evidência de execução local, SHA de instância e gate técnico documentados em `implementation-evidence.md`; `source_commit` é `null` quando executado de ZIP (sem `.git`).
+- [x] Rastreabilidade e `tasks.md` atualizadas; **sem commit**, conforme `CLAUDE.md`.
 
 **Tests:** unit — Serialização determinística e contrato VIABLE/INFEASIBLE/UNKNOWN.
 
@@ -80,10 +80,10 @@ T1 -> T2 -> T3 -> T4
 
 **Done when:**
 
-- [ ] Correspondência 1:1 com validador independente em microinstâncias.
-- [ ] Testes regressivos derivados dos ACs e casos negativos aplicáveis passam sem enfraquecimento.
-- [ ] Evidência associada a hash/commit é registrada e gate executado.
-- [ ] Antes de commitar, atualizar `tasks.md` e rastreabilidade; commit **local** somente após autorização para Execute.
+- [x] Correspondência 1:1 com validador independente em microinstâncias.
+- [x] Testes regressivos derivados dos ACs e casos negativos aplicáveis passam sem enfraquecimento.
+- [x] Evidência de execução local, SHA de instância e gate técnico documentados em `implementation-evidence.md`; `source_commit` é `null` quando executado de ZIP (sem `.git`).
+- [x] Rastreabilidade e `tasks.md` atualizadas; **sem commit**, conforme `CLAUDE.md`.
 
 **Tests:** unit — Correspondência 1:1 com validador independente em microinstâncias.
 
@@ -105,10 +105,10 @@ T1 -> T2 -> T3 -> T4
 
 **Done when:**
 
-- [ ] Teste de colisão entre instâncias e injeção de timeout.
-- [ ] Testes regressivos derivados dos ACs e casos negativos aplicáveis passam sem enfraquecimento.
-- [ ] Evidência associada a hash/commit é registrada e gate executado.
-- [ ] Antes de commitar, atualizar `tasks.md` e rastreabilidade; commit **local** somente após autorização para Execute.
+- [x] Teste de colisão entre instâncias e injeção de timeout.
+- [x] Testes regressivos derivados dos ACs e casos negativos aplicáveis passam sem enfraquecimento.
+- [x] Evidência de execução local, SHA de instância e gate técnico documentados em `implementation-evidence.md`; `source_commit` é `null` quando executado de ZIP (sem `.git`).
+- [x] Rastreabilidade e `tasks.md` atualizadas; **sem commit**, conforme `CLAUDE.md`.
 
 **Tests:** unit — Teste de colisão entre instâncias e injeção de timeout.
 
@@ -130,10 +130,10 @@ T1 -> T2 -> T3 -> T4
 
 **Done when:**
 
-- [ ] Casos físicos, S∩T, falsos negativos e custos por ν.
-- [ ] Testes regressivos derivados dos ACs e casos negativos aplicáveis passam sem enfraquecimento.
-- [ ] Evidência associada a hash/commit é registrada e gate executado.
-- [ ] Antes de commitar, atualizar `tasks.md` e rastreabilidade; commit **local** somente após autorização para Execute.
+- [x] Casos físicos, S∩T, falsos negativos e custos por ν.
+- [x] Testes regressivos derivados dos ACs e casos negativos aplicáveis passam sem enfraquecimento.
+- [x] Evidência de execução local, SHA de instância e gate técnico documentados em `implementation-evidence.md`; `source_commit` é `null` quando executado de ZIP (sem `.git`).
+- [x] Rastreabilidade e `tasks.md` atualizadas; **sem commit**, conforme `CLAUDE.md`.
 
 **Tests:** unit — Casos físicos, S∩T, falsos negativos e custos por ν.
 
@@ -175,8 +175,8 @@ T1 -> T2 -> T3 -> T4
 
 ## Closing Verification
 
-- [ ] Gate da spec e das tasks passou antes de aprovar Execute.
-- [ ] Todas as tarefas tiveram teste/prova co-localizado à entrega e gate PASS.
-- [ ] Verifier autor ≠ verificador registrou evidência por AC, incluindo discriminação comportamental em scratch seguro quando houver código.
-- [ ] Gate científico: GO se não houver divergência com verificador físico independente e nenhum UNKNOWN tiver sido promovido a INFEASIBLE; caso contrário STOP.
+- [x] Gate estrutural de spec e tasks: 0 erros, 0 avisos.
+- [ ] T1–T4: 41 testes AS14, 27 testes AS13, cinco mutantes R1 detectados e auditoria independente local passam; gate técnico Full depende de Ruff no checkout do usuário, seguido do parecer R2.
+- [ ] Verifier autor ≠ verificador registrou evidência por AC — **aguardando revisão independente; sensor próprio 7/7 não substitui essa revisão**.
+- [ ] Gate científico final: **R1 STOP / R2 PENDING**; manter AS15 bloqueada; além desta etapa restam quatro mutantes residuais da AS13 antes da AS15.
 - [ ] Como este projeto mantém `specs/` em vez do padrão `.specs/features/` da skill, verificar compatibilidade de `validate_state.py` antes da execução; nunca declarar PASS de conclusão se o validador não suportar o layout ou sem `validation.md`.

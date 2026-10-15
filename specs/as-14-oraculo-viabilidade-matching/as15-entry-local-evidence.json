@@ -1,0 +1,45 @@
+{
+  "schema": "AS15-PRE-GATE-LOCAL-EVIDENCE-v1",
+  "review_base": "AS13-R3 PASS / AS14-R2 PASS",
+  "gate": "STOP_PENDING_INDEPENDENT_PRE_GATE_RECHECK",
+  "baseline_archive": "min-station(20261015-030610).zip",
+  "tests": {
+    "as13_foundations": {
+      "passed": 27,
+      "total": 27
+    },
+    "as13_as15_guards": {
+      "passed": 3,
+      "total": 3
+    },
+    "as14_oracle": {
+      "passed": 42,
+      "total": 42
+    }
+  },
+  "source_mutations": {
+    "injected": 5,
+    "killed": 5,
+    "survived": 0
+  },
+  "as14_existing_mutants": {
+    "r1": {
+      "killed": 5,
+      "survived": 0
+    },
+    "original": {
+      "killed": 7,
+      "survived": 0
+    }
+  },
+  "ruff": "not_run_tool_unavailable_in_patch_environment",
+  "source_commit": null,
+  "source_files_sha256": {
+    "experiments/cuts/test_as13_as15_guards.py": "bda51accd8c5bddc14d7c5ba6c7ee119bbce2b1a3f66fe8a1b00d25331579174",
+    "experiments/cuts/test_h2_oracle.py": "9cc4242ce6750913833403a3ad1d25fa71a7d0113a81c91910bfaeba434b4cc9",
+    "experiments/cuts/verify_as15_entry_mutations.py": "2985d86f7f28e3ae4cbfa68f6fb986c6475bc3cd1fcb801e97ba8d5737642ced",
+    "experiments/cuts/verify_as13_foundations.py": "5b229e024c13fa71af0d778fe714371ebebcbaa3675e2fda1d60ea920c4f1773",
+    "experiments/cuts/h2_oracle.py": "5e6dd2b8225e8a2216f72fedcceae4b9f0c243be6a6f6383e9c14767aaa16d4d"
+  },
+  "validation_md_overwritten": false
+}
