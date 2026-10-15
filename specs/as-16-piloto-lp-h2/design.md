@@ -1,7 +1,7 @@
 # AS16 — Piloto LP pareado COMP, K e H2 — Design
 
 **Spec:** `specs/as-16-piloto-lp-h2/spec.md`  
-**Status:** Draft — decisões pendentes de aprovação e verificação local na execução.
+**Status:** Implementado e avaliado no piloto LP; decisão de pesquisa STOP; revisão independente não comprovada.
 
 ## Architecture Overview
 

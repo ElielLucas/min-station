@@ -2,12 +2,12 @@
 
 ## Execution Protocol (MANDATORY -- do not skip)
 
-Ativar a skill `/tlc-spec-driven` (`.claude/skills/tlc-spec-driven/SKILL.md`) ao executar. Um commit local por tarefa após gate PASS; não efetuar commits nem push sem a aprovação explícita do usuário e respeitar `CLAUDE.md`. Após a última tarefa, Verifier independente, discriminação quando houver código e relatório de evidências. **Este pacote contém apenas planejamento; nenhuma tarefa foi executada.**
+Ativar a skill `/tlc-spec-driven` (`.claude/skills/tlc-spec-driven/SKILL.md`) ao executar. Um commit local por tarefa após gate PASS; não efetuar commits nem push sem a aprovação explícita do usuário e respeitar `CLAUDE.md`. Após a última tarefa, Verifier independente, discriminação quando houver código e relatório de evidências. **Implementação e campanha Gurobi registradas em `validation.md`; parecer humano independente não comprovado.**
 
 **Spec:** `specs/as-16-piloto-lp-h2/spec.md`  
 **Design:** `specs/as-16-piloto-lp-h2/design.md`  
-**Status:** DRAFT  
-**Precondition:** AS13–AS15 GO
+**Status:** T1–T4 executadas; gate `INVESTIGATE`, decisão de pesquisa `STOP`; revisão independente não comprovada  
+**Precondition:** AS13–AS15 GO (adotado como premissa da continuidade solicitada)
 
 ## Test Coverage Matrix
 
@@ -55,7 +55,7 @@ T1 -> T2 -> T3 -> T4
 
 **Done when:**
 
-- [ ] Manifesto, thresholds, seeds e orçamento definidos antes de qualquer solve.
+- [x] Manifesto, thresholds, seeds e orçamento definidos antes de qualquer solve.
 - [ ] Testes regressivos derivados dos ACs e casos negativos aplicáveis passam sem enfraquecimento.
 - [ ] Evidência associada a hash/commit é registrada e gate executado.
 - [ ] Antes de commitar, atualizar `tasks.md` e rastreabilidade; commit **local** somente após autorização para Execute.
@@ -80,7 +80,7 @@ T1 -> T2 -> T3 -> T4
 
 **Done when:**
 
-- [ ] Quatro braços e relógio de parede absoluto por braço.
+- [x] Quatro braços e relógio de parede absoluto por braço.
 - [ ] Testes regressivos derivados dos ACs e casos negativos aplicáveis passam sem enfraquecimento.
 - [ ] Evidência associada a hash/commit é registrada e gate executado.
 - [ ] Antes de commitar, atualizar `tasks.md` e rastreabilidade; commit **local** somente após autorização para Execute.
@@ -105,7 +105,7 @@ T1 -> T2 -> T3 -> T4
 
 **Done when:**
 
-- [ ] Dados censurados preservados; decomposição e atribuição corretas.
+- [x] Dados censurados preservados; decomposição e atribuição corretas.
 - [ ] Testes regressivos derivados dos ACs e casos negativos aplicáveis passam sem enfraquecimento.
 - [ ] Evidência associada a hash/commit é registrada e gate executado.
 - [ ] Antes de commitar, atualizar `tasks.md` e rastreabilidade; commit **local** somente após autorização para Execute.
@@ -130,7 +130,7 @@ T1 -> T2 -> T3 -> T4
 
 **Done when:**
 
-- [ ] GO/STOP/INVESTIGATE baseado em artefatos e thresholds pré-registrados.
+- [x] GO/STOP/INVESTIGATE baseado em artefatos e thresholds pré-registrados (retorno `INVESTIGATE`; decisão humana STOP distinta).
 - [ ] Testes regressivos derivados dos ACs e casos negativos aplicáveis passam sem enfraquecimento.
 - [ ] Evidência associada a hash/commit é registrada e gate executado.
 - [ ] Antes de commitar, atualizar `tasks.md` e rastreabilidade; commit **local** somente após autorização para Execute.
@@ -180,3 +180,12 @@ T1 -> T2 -> T3 -> T4
 - [ ] Verifier autor ≠ verificador registrou evidência por AC, incluindo discriminação comportamental em scratch seguro quando houver código.
 - [ ] Gate científico: GO somente com ≥1% de melhoria de LB em ≥2 grafos brutos independentes e evidência de custo líquido aceitável em ≥1; senão STOP; INVESTIGATE por erros/censura inconclusiva.
 - [ ] Como este projeto mantém `specs/` em vez do padrão `.specs/features/` da skill, verificar compatibilidade de `validate_state.py` antes da execução; nunca declarar PASS de conclusão se o validador não suportar o layout ou sem `validation.md`.
+
+## Registro de execução e fechamento
+
+- T1: pré-registro e hashes preservados (`manifest.json` com SHA do plano).
+- T2: 4 braços principais × 6 grafos; foram gerados resultados reais com Gurobi.
+- T3: 2 controles same-pool × 6, sendo 2 `NOT_RUN`; 5 braços principais com `TIME_LIMIT`; `analysis.json` preserva `INVESTIGATE`.
+- T4: relatório numérico e decisão explícita de não priorizar H2 sobre COMP+K. **STOP de pesquisa ≠ resultado emitido pelo gate automático**.
+- Testes relatados pelo executor: 106, OK. Parecer por pessoa independente continua não evidenciado; as demais caixas de revisão/verificação não devem ser marcadas sem execução comprovada.
+- Não iniciar automaticamente AS17 ou teste MIP a partir deste fechamento.

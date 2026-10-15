@@ -1,6 +1,6 @@
 # AS16 — Piloto LP pareado COMP, K e H2 — Specification
 
-**Status:** RASCUNHO / NÃO EXECUTADA  
+**Status:** EXPERIMENTO EXECUTADO / DOCUMENTAÇÃO DE ENCERRAMENTO (gate automático `INVESTIGATE`; decisão de pesquisa `STOP`)  
 **Branch de referência:** `novos_testes` (verificar HEAD antes de Execute)  
 **Dependências externas:** AS13–AS15 GO  
 **Local:** `specs/as-16-piloto-lp-h2/`  
@@ -12,9 +12,9 @@ H2 pode fortalecer formalmente o relaxamento em casos sintéticos, mas não sabe
 
 ## Goals
 
-- [ ] Pré-registrar seis instâncias de desenvolvimento do AS-00 e quatro braços comparáveis.
-- [ ] Medir ganho líquido de LP com separação e custos totais explicitados.
-- [ ] Emitir decisão GO/STOP com evidências de complementaridade a K e independência por grafo bruto.
+- [x] Pré-registrar seis instâncias de desenvolvimento do AS-00 e quatro braços comparáveis.
+- [x] Medir ganho líquido de LP com separação e custos totais explicitados (com censuras preservadas).
+- [x] Registrar gate automático `INVESTIGATE` e decisão de pesquisa `STOP`, com evidência por grafo bruto e ressalvas.
 
 ## Out of Scope
 
@@ -70,16 +70,16 @@ H2 pode fortalecer formalmente o relaxamento em casos sintéticos, mas não sabe
 
 | Requirement ID | Story | Phase | Status |
 |---|---|---|---|
-| AS16-01 | P1: Avaliação LP | Tarefas | Pending |
-| AS16-02 | P1: Avaliação LP | Tarefas | Pending |
-| AS16-03 | P1: Avaliação LP | Tarefas | Pending |
-| AS16-04 | P1: Avaliação LP | Tarefas | Pending |
-| AS16-05 | P1: Avaliação LP | Tarefas | Pending |
-| AS16-06 | P1: Avaliação LP | Tarefas | Pending |
-| AS16-07 | P1: Avaliação LP | Tarefas | Pending |
-| AS16-08 | P1: Avaliação LP | Tarefas | Pending |
+| AS16-01 | P1: Avaliação LP | Tarefas | Evidence recorded |
+| AS16-02 | P1: Avaliação LP | Tarefas | Evidence recorded |
+| AS16-03 | P1: Avaliação LP | Tarefas | Evidence recorded |
+| AS16-04 | P1: Avaliação LP | Tarefas | Evidence recorded |
+| AS16-05 | P1: Avaliação LP | Tarefas | Evidence recorded |
+| AS16-06 | P1: Avaliação LP | Tarefas | Evidence recorded |
+| AS16-07 | P1: Avaliação LP | Tarefas | Evidence recorded |
+| AS16-08 | P1: Avaliação LP | Tarefas | Evidence recorded |
 
-**Coverage:** 8 requisitos; 8 com critérios explícitos; todos pendentes de execução e evidência.
+**Coverage:** 8 requisitos; 8 com critérios explícitos; execução e evidências registradas em `validation.md`. Revisão humana independente continua sem comprovação.
 
 ## Success Criteria
 
@@ -119,3 +119,7 @@ COMP (U) e COMP+K (U_K) com variáveis binárias de instalação em V, fluxo con
 - A desigualdade só é considerada válida com prova matemática e/ou certificado conservador; testes numéricos não substituem demonstração.
 - Preservar distinção entre prova, witness analítico, ótimo LP, bound MIP e UB validada.
 - Nenhuma afirmação de contribuição inédita sem revisão bibliográfica específica.
+
+## Fechamento experimental (15/10/2026)
+
+A campanha real produziu 36 linhas. O gate automatizado foi `INVESTIGATE` devido a TIME_LIMIT/NOT_RUN. A comparação U+K → U+K+H2 teve ganho zero nos cinco grafos com ambos ótimos; é impossível atingir o mínimo de dois grafos com ganho na amostra fixa restante. Decisão de pesquisa: `STOP` para novas rodadas/priorização de H2 neste protocolo, **sem adulterar o gate**, sem promover H2 e sem alegar revisão independente concluída. Detalhes e tempos em `docs/technical/reference/experimentos/as16-resultado-lp-h2.md`.

@@ -1,0 +1,125 @@
+{
+  "arm_ids": [
+    "U",
+    "U_K",
+    "U_H2",
+    "U_K_H2"
+  ],
+  "as00_protocol": "AS00-2026-10-11-v1",
+  "budget": {
+    "memory_gib_per_arm": 16,
+    "threads": 4,
+    "wall_seconds_per_arm": 90
+  },
+  "cases": [
+    {
+      "family": "puc",
+      "family_id": "puc:cc9-2p",
+      "name": "puc-cc9-2p-seed-r1",
+      "path": "instances/benchmark-v1/puc/puc-cc9-2p-seed-r1.txt",
+      "raw_graph_id": "puc:cc9-2p",
+      "source_sha256": "0312f43552cddc102081d9937465429e29797ddb86cf85a6871752d50aeec88c",
+      "split": "desenvolvimento"
+    },
+    {
+      "family": "puc",
+      "family_id": "puc:bip42p",
+      "name": "puc-bip42p-regiao-f2",
+      "path": "instances/benchmark-v1/puc/puc-bip42p-regiao-f2.txt",
+      "raw_graph_id": "puc:bip42p",
+      "source_sha256": "d7c53596522401d4071563d5007d9c8647ee0d37c893426b5ab3b1d65d97743a",
+      "split": "desenvolvimento"
+    },
+    {
+      "family": "pucn",
+      "family_id": "pucn:cc3-10n",
+      "name": "pucn-cc3-10n-seed-r1",
+      "path": "instances/benchmark-v1/pucn/pucn-cc3-10n-seed-r1.txt",
+      "raw_graph_id": "pucn:cc3-10n",
+      "source_sha256": "9123c0e46228c22ba586bb7f730757a7fa2c4b0f815b54afba59f54a3bc8b431",
+      "split": "desenvolvimento"
+    },
+    {
+      "family": "mapf",
+      "family_id": "mapf:map:raw-data/mapf/maps/room-32-32-4.map|scenario:room-32-32-4.map + room-32-32-4-random-1.scen",
+      "name": "mapf-room-32-32-4-m10-f8",
+      "path": "instances/benchmark-v1/mapf/mapf-room-32-32-4-m10-f8.txt",
+      "raw_graph_id": "mapf:map:raw-data/mapf/maps/room-32-32-4.map",
+      "source_sha256": "78be3e1261f31f4e583d0808bdfc9c93d9c9eb335d86d13b059ce428af5f303f",
+      "split": "desenvolvimento"
+    },
+    {
+      "family": "vienna",
+      "family_id": "vienna:I056",
+      "name": "vienna-I056-regiao-f4",
+      "path": "instances/benchmark-v1/vienna/vienna-I056-regiao-f4.txt",
+      "raw_graph_id": "vienna:I056",
+      "source_sha256": "645da5115a0eeaa6fba9eeae9f4942aebecfa66c4bcbc7aaec2bd0c994eb0ccc",
+      "split": "desenvolvimento"
+    },
+    {
+      "family": "puc",
+      "family_id": "puc:w3c571",
+      "name": "puc-w3c571-seed-r1",
+      "path": "instances/benchmark-v1/puc/puc-w3c571-seed-r1.txt",
+      "raw_graph_id": "puc:w3c571",
+      "source_sha256": "e85ced7daef779e6e88f302ee9d80a467129f448a7ac5c6ce465d64b963300fd",
+      "split": "desenvolvimento"
+    }
+  ],
+  "constraints": [
+    "no-MIP",
+    "no-evaluation",
+    "no-formulation-C",
+    "no-change-to-K",
+    "append-only"
+  ],
+  "frozen_before_solves": true,
+  "gate": {
+    "maximum_h2_wall_vs_k_multiple": 2.0,
+    "minimum_independent_raw_graphs": 2,
+    "minimum_relative_gain": 0.01,
+    "require_full_six_cases": true,
+    "require_same_pool_controls": true
+  },
+  "manifest_sha256": "218c490bd3ba3e34740bc23f13b07ba864f0d624755aca9b992a8f23f6afad08",
+  "same_pool_controls": [
+    "U_FIXED_H2",
+    "U_K_FIXED_H2"
+  ],
+  "schema_version": "AS16-PLAN-v1",
+  "seeds": [
+    42
+  ],
+  "separation": {
+    "max_candidates_per_support": 120,
+    "max_cuts": 8,
+    "max_oracle_calls": 120,
+    "max_pairs": 24,
+    "max_supports": 12,
+    "max_variables": 1000000,
+    "min_violation": 1e-07,
+    "per_support_budget_s": 4.0,
+    "separator_budget_s": 18.0
+  },
+  "solver_parameters": {
+    "FeasibilityTol": 1e-06,
+    "MemLimitGiB": 16,
+    "Method": 1,
+    "NumericFocus": 1,
+    "OptimalityTol": 1e-06,
+    "Presolve": -1,
+    "Seed": 42,
+    "Threads": 4
+  },
+  "source_versions": {
+    "experiments/alternative-formulations/as02_model_a.py": "d9f973ab680a9bfaf06dc6808a8c0e4cb938254696d098d9950973c24c8df8fc",
+    "experiments/benchmark/as00_protocol.py": "671ece39860ad257891dfd8f05cd34ae3596d6f3a115ecbeecf32475eedab787",
+    "experiments/cuts/h2_cut.py": "c15d5b744b7c720ec0bd7b505ddcce6a7879ae6f63b7294717d0632ab32a19d0",
+    "experiments/cuts/h2_oracle.py": "5e6dd2b8225e8a2216f72fedcceae4b9f0c243be6a6f6383e9c14767aaa16d4d",
+    "experiments/cuts/h2_separator.py": "542fc9230be07371f7d73ec164e7147c3253ca4c11a52169c942cdbf3556e20c",
+    "experiments/cuts/h2_supports.py": "53c45e4718d79d0ba0161c7fdea98df7b2e6c0f36c4843d996c461d2b37020cd"
+  },
+  "spec_sha256": "c3d94922f9874860dffc0005887ff3a7d9b6d795235e85b3be27e8be2f7b41db",
+  "stage": "AS16"
+}
