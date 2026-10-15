@@ -6,8 +6,8 @@ Ativar a skill `/tlc-spec-driven` (`.claude/skills/tlc-spec-driven/SKILL.md`) ao
 
 **Spec:** `specs/as-17-piloto-mip-h2/spec.md`  
 **Design:** `specs/as-17-piloto-mip-h2/design.md`  
-**Status:** DRAFT  
-**Precondition:** AS16 GO explícito
+**Status:** NOT_AUTHORIZED — nenhuma tarefa de implementação executada  
+**Precondition:** AS16 GO explícito — **não atendida**, conforme `validation.md`
 
 ## Test Coverage Matrix
 
@@ -180,3 +180,7 @@ T1 -> T2 -> T3 -> T4
 - [ ] Verifier autor ≠ verificador registrou evidência por AC, incluindo discriminação comportamental em scratch seguro quando houver código.
 - [ ] Gate científico: GO condicionado a benefício MIP replicável sem invalidar incumbentes; se H2 só melhora LP, registrar conclusão parcial e STOP para expansão da busca. Sem passagem automática para 3600s.
 - [ ] Como este projeto mantém `specs/` em vez do padrão `.specs/features/` da skill, verificar compatibilidade de `validate_state.py` antes da execução; nunca declarar PASS de conclusão se o validador não suportar o layout ou sem `validation.md`.
+
+## Bloqueio após AS16 (15/10/2026)
+
+Nenhum check de tarefa deve ser marcado concluído: AS16 não produziu GO e a decisão de pesquisa foi STOP. Não executar T1–T4, não criar MIP nem produzir métrica de MIP fictícia. Ver `validation.md` e a síntese AS18.

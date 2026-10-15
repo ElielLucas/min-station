@@ -2,12 +2,12 @@
 
 ## Execution Protocol (MANDATORY -- do not skip)
 
-Ativar a skill `/tlc-spec-driven` (`.claude/skills/tlc-spec-driven/SKILL.md`) ao executar. Um commit local por tarefa após gate PASS; não efetuar commits nem push sem a aprovação explícita do usuário e respeitar `CLAUDE.md`. Após a última tarefa, Verifier independente, discriminação quando houver código e relatório de evidências. **Este pacote contém apenas planejamento; nenhuma tarefa foi executada.**
+Ativar a skill `/tlc-spec-driven` (`.claude/skills/tlc-spec-driven/SKILL.md`) ao executar. Um commit local por tarefa após gate PASS; não efetuar commits nem push sem a aprovação explícita do usuário e respeitar `CLAUDE.md`. Após a última tarefa, Verifier independente, discriminação quando houver código e relatório de evidências. **A síntese condicional foi elaborada: T1 e T4 documentadas, T2 e T3 não autorizadas; revisor externo independente pendente.**
 
 **Spec:** `specs/as-18-hl-condicional-e-sintese/spec.md`  
 **Design:** `specs/as-18-hl-condicional-e-sintese/design.md`  
-**Status:** DRAFT  
-**Precondition:** AS13–AS17 concluídas; HL requer sinal estrutural adicional documentado em AS16/AS17
+**Status:** FECHAMENTO CONDICIONAL DOCUMENTADO — HL NOT_AUTHORIZED  
+**Precondition:** AS13–AS16 avaliadas; AS17 bloqueada sem AS16 GO; HL exige testemunha estrutural adicional (ausente). A síntese pode ocorrer mesmo com HL não autorizada.
 
 ## Test Coverage Matrix
 
@@ -34,7 +34,8 @@ Ativar a skill `/tlc-spec-driven` (`.claude/skills/tlc-spec-driven/SKILL.md`) ao
 ### Phase 1: Extensão condicional e fechamento
 
 ```text
-T1 -> T2 -> T3 -> T4
+T1 -> T2 -> T3
+T1 -> T4
 ```
 
 ## Task Breakdown
@@ -55,7 +56,7 @@ T1 -> T2 -> T3 -> T4
 
 **Done when:**
 
-- [ ] Decisão documentada antes de enumerar padrões.
+- [x] Decisão documentada antes de enumerar padrões (nenhuma enumeração autorizada).
 - [ ] Testes regressivos derivados dos ACs e casos negativos aplicáveis passam sem enfraquecimento.
 - [ ] Evidência associada a hash/commit é registrada e gate executado.
 - [ ] Antes de commitar, atualizar `tasks.md` e rastreabilidade; commit **local** somente após autorização para Execute.
@@ -120,7 +121,7 @@ T1 -> T2 -> T3 -> T4
 
 **Where:** `docs/technical/reference/experimentos/as18-sintese-h2-hl.md`
 
-**Depends on:** T3
+**Depends on:** T1
 
 **Reuses:** recursos existentes indicados em `design.md`, após verificar contratos reais.
 
@@ -130,7 +131,7 @@ T1 -> T2 -> T3 -> T4
 
 **Done when:**
 
-- [ ] Resultados próprios, limites e literatura diferenciados, incluindo STOP.
+- [x] Resultados próprios, limites e literatura diferenciados, incluindo STOP.
 - [ ] Testes regressivos derivados dos ACs e casos negativos aplicáveis passam sem enfraquecimento.
 - [ ] Evidência associada a hash/commit é registrada e gate executado.
 - [ ] Antes de commitar, atualizar `tasks.md` e rastreabilidade; commit **local** somente após autorização para Execute.
@@ -143,7 +144,8 @@ T1 -> T2 -> T3 -> T4
 ## Phase Execution Map
 
 ```text
-T1 -> T2 -> T3 -> T4
+T1 -> T2 -> T3
+T1 -> T4
 ```
 
 ## Task Granularity Check
@@ -162,7 +164,7 @@ T1 -> T2 -> T3 -> T4
 | T1 | None | None | OK — consistente |
 | T2 | T1 | T1 | OK — consistente |
 | T3 | T2 | T2 | OK — consistente |
-| T4 | T3 | T3 | OK — consistente |
+| T4 | T1 | T1 | OK — consistente (síntese também quando HL bloqueada) |
 
 ## Test Co-location Validation
 
@@ -180,3 +182,14 @@ T1 -> T2 -> T3 -> T4
 - [ ] Verifier autor ≠ verificador registrou evidência por AC, incluindo discriminação comportamental em scratch seguro quando houver código.
 - [ ] Gate científico: GO de HL apenas com melhoria marginal certificada e custo justificado; caso negativo registrar STOP. Síntese final obrigatória mesmo se HL não autorizado.
 - [ ] Como este projeto mantém `specs/` em vez do padrão `.specs/features/` da skill, verificar compatibilidade de `validate_state.py` antes da execução; nunca declarar PASS de conclusão se o validador não suportar o layout ou sem `validation.md`.
+
+## Registro de execução condicional (15/10/2026)
+
+| Tarefa | Estado real | Evidência |
+|---|---|---|
+| T1 | **Documentada** — gate NOT_AUTHORIZED | `docs/technical/plans/execucao/as18-gate-hl.md`, `as18-gate-evidence.json`, `test_as18_gate.py` |
+| T2 | **NOT_AUTHORIZED / NOT_EXECUTED** | Sem `hl_local.py`, sem suporte R, sem β |
+| T3 | **NOT_AUTHORIZED / NOT_EXECUTED** | Sem `test_hl_local.py`, sem microteste ou triagem LP HL |
+| T4 | **Documentada** — síntese condicional | `docs/technical/reference/experimentos/as18-sintese-h2-hl.md` |
+
+A dependência direta T1 → T4 permite publicar a síntese quando T2/T3 não são autorizadas, sem afirmar que foram executadas. **Se HL vier a ser autorizada em novo plano, só atualizar a síntese experimental após executar e verificar T2/T3.** Gate documental/código local é distinto da revisão independente exigida pela skill, que não está comprovada. Não há commit nesta entrega.

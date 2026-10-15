@@ -1,7 +1,7 @@
 # AS17 — Piloto MIP de H2 na raiz sobre COMP+K — Design
 
 **Spec:** `specs/as-17-piloto-mip-h2/spec.md`  
-**Status:** Draft — decisões pendentes de aprovação e verificação local na execução.
+**Status:** NOT_AUTHORIZED — desenho preservado apenas para possível reabertura com novo gate.
 
 ## Architecture Overview
 

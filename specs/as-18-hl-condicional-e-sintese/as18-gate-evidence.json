@@ -1,0 +1,60 @@
+{
+  "schema_version": "AS18-GATE-v1",
+  "stage": "AS18",
+  "source_dir": "results/benchmark/as16-lp-h2-001",
+  "as16_source_commit": "03431cf8cceafa20de354a160008c8fb84d4b54e",
+  "as16_plan_sha256": "4056fd08244a15085367a60a0c71fbfc3f44fc2d2f0a7686fdd31063b1de2dfe",
+  "as16_automatic_gate": "INVESTIGATE",
+  "as16_research_decision": "STOP",
+  "as17_mip_gate": "NOT_AUTHORIZED",
+  "as18_hl_gate": "NOT_AUTHORIZED",
+  "independent_structural_witness": "NOT_PROVIDED",
+  "requirement": {
+    "min_independent_graphs_with_gain": 2,
+    "min_relative_gain": 0.01
+  },
+  "comparison": {
+    "total_graphs": 6,
+    "comparable_graphs": 5,
+    "observed_graphs_with_gain": 0,
+    "censored_graphs": 1,
+    "maximum_possible_graphs_with_gain": 1
+  },
+  "cases": [
+    {
+      "name": "puc-cc9-2p-seed-r1",
+      "status": "COMPARABLE",
+      "relative_gain": 0.0
+    },
+    {
+      "name": "puc-bip42p-regiao-f2",
+      "status": "COMPARABLE",
+      "relative_gain": 0.0
+    },
+    {
+      "name": "pucn-cc3-10n-seed-r1",
+      "status": "COMPARABLE",
+      "relative_gain": 0.0
+    },
+    {
+      "name": "mapf-room-32-32-4-m10-f8",
+      "status": "COMPARABLE",
+      "relative_gain": 0.0
+    },
+    {
+      "name": "vienna-I056-regiao-f4",
+      "status": "COMPARABLE",
+      "relative_gain": 0.0
+    },
+    {
+      "name": "puc-w3c571-seed-r1",
+      "status": "NOT_COMPARABLE",
+      "relative_gain": null,
+      "arm_statuses": {
+        "U_K": "TIME_LIMIT",
+        "U_K_H2": "TIME_LIMIT"
+      }
+    }
+  ],
+  "interpretation": "Gate automático preservado; STOP é priorização científica, não prova de dominância ou MIP."
+}

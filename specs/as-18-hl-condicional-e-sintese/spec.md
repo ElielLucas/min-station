@@ -1,8 +1,8 @@
 # AS18 — HL condicional e síntese científica dos novos cortes — Specification
 
-**Status:** RASCUNHO / NÃO EXECUTADA  
+**Status:** FECHAMENTO CONDICIONAL DOCUMENTADO — HL `NOT_AUTHORIZED`; verificação independente pendente  
 **Branch de referência:** `novos_testes` (verificar HEAD antes de Execute)  
-**Dependências externas:** AS13–AS17 concluídas; HL requer sinal estrutural adicional documentado em AS16/AS17  
+**Dependências externas:** AS13–AS16 avaliadas; AS17 bloqueada por falta de AS16 GO; síntese de encerramento permitida mesmo sem HL  
 **Local:** `specs/as-18-hl-condicional-e-sintese/`  
 **Fonte da hipótese:** parecer Astra recebido em 13/10/2026; **não é resultado executado**.
 
@@ -12,9 +12,9 @@ Mesmo quando H2 é válida, pode deixar combinações incompatíveis de dois ou 
 
 ## Goals
 
-- [ ] Autorizar HL apenas quando houver evidência de obstrução adicional não capturada por H2.
+- [x] Aplicar gate HL apenas quando houver evidência de obstrução adicional não capturada por H2 (resultado: NOT_AUTHORIZED).
 - [ ] Explorar primeiro cardinalidade três e suportes localizados pequenos, com certificação exata.
-- [ ] Consolidar decisão científica H2/HL, inclusive resultados negativos, sem alegar melhoria não medida.
+- [x] Consolidar decisão científica H2/HL, inclusive resultados negativos, sem alegar melhoria não medida.
 
 ## Out of Scope
 
@@ -73,17 +73,17 @@ Mesmo quando H2 é válida, pode deixar combinações incompatíveis de dois ou 
 
 | Requirement ID | Story | Phase | Status |
 |---|---|---|---|
-| AS18-01 | P1: Extensão condicional e fechamento | Tarefas | Pending |
-| AS18-02 | P1: Extensão condicional e fechamento | Tarefas | Pending |
-| AS18-03 | P1: Extensão condicional e fechamento | Tarefas | Pending |
-| AS18-04 | P1: Extensão condicional e fechamento | Tarefas | Pending |
-| AS18-05 | P1: Extensão condicional e fechamento | Tarefas | Pending |
-| AS18-06 | P1: Extensão condicional e fechamento | Tarefas | Pending |
-| AS18-07 | P1: Extensão condicional e fechamento | Tarefas | Pending |
-| AS18-08 | P1: Extensão condicional e fechamento | Tarefas | Pending |
-| AS18-09 | P1: Extensão condicional e fechamento | Tarefas | Pending |
+| AS18-01 | P1: Extensão condicional e fechamento | Tarefas | Applied — NOT_AUTHORIZED |
+| AS18-02 | P1: Extensão condicional e fechamento | Tarefas | Not executed — conditional HL gate closed |
+| AS18-03 | P1: Extensão condicional e fechamento | Tarefas | Not executed — conditional HL gate closed |
+| AS18-04 | P1: Extensão condicional e fechamento | Tarefas | Not executed — conditional HL gate closed |
+| AS18-05 | P1: Extensão condicional e fechamento | Tarefas | Not executed — conditional HL gate closed |
+| AS18-06 | P1: Extensão condicional e fechamento | Tarefas | Not executed — conditional HL gate closed |
+| AS18-07 | P1: Extensão condicional e fechamento | Tarefas | Not executed — conditional HL gate closed |
+| AS18-08 | P1: Extensão condicional e fechamento | Tarefas | Not executed — conditional HL gate closed |
+| AS18-09 | P1: Extensão condicional e fechamento | Tarefas | Documented — synthesis; independent review pending |
 
-**Coverage:** 9 requisitos; 9 com critérios explícitos; todos pendentes de execução e evidência.
+**Coverage:** 9 requisitos com critérios; AS18-01 e AS18-09 documentados, AS18-02 a AS18-08 não executados porque o gate HL não foi autorizado. Ver `validation.md`.
 
 ## Success Criteria
 
@@ -124,3 +124,9 @@ COMP (U) e COMP+K (U_K) com variáveis binárias de instalação em V, fluxo con
 - A desigualdade só é considerada válida com prova matemática e/ou certificado conservador; testes numéricos não substituem demonstração.
 - Preservar distinção entre prova, witness analítico, ótimo LP, bound MIP e UB validada.
 - Nenhuma afirmação de contribuição inédita sem revisão bibliográfica específica.
+
+## Execução condicional e encerramento (15/10/2026)
+
+O gate de AS18 é `NOT_AUTHORIZED`: AS16 possui decisão de pesquisa STOP e não há testemunha estrutural adicional independente documentada neste protocolo. **A síntese final é obrigatória mesmo sem executar HL**. Foram produzidos `docs/technical/plans/execucao/as18-gate-hl.md` e `docs/technical/reference/experimentos/as18-sintese-h2-hl.md`, e um verificador de consistência da decisão com testes de regressão (`experiments/cuts/verify_as18_gate.py`, `test_as18_gate.py`). Não foram selecionados suportes R, implementada enumeração HL, medidos LPs HL nem rodado MIP AS17.
+
+A etapa está encerrada **documentalmente** com escopo condicional; revisão científica independente continua pendente. Sem alegações de satisfação experimental dos critérios AS18-02–AS18-08. Reabertura requer nova evidência, gate e pré-registro.

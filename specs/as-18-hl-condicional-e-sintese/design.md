@@ -1,7 +1,7 @@
 # AS18 — HL condicional e síntese científica dos novos cortes — Design
 
 **Spec:** `specs/as-18-hl-condicional-e-sintese/spec.md`  
-**Status:** Draft — decisões pendentes de aprovação e verificação local na execução.
+**Status:** Gate HL NOT_AUTHORIZED; síntese condicional produzida; pesquisa HL suspensa.
 
 ## Architecture Overview
 
@@ -70,3 +70,7 @@ Todo registro experimental/certificado desta etapa terá: `schema_version`, `ins
 ## Acceptance Gate
 
 GO de HL apenas com melhoria marginal certificada e custo justificado; caso negativo registrar STOP. Síntese final obrigatória mesmo se HL não autorizado.
+
+## Implementação de fechamento condicional (15/10/2026)
+
+O verificador de transição `experiments/cuts/verify_as18_gate.py` confere a coerência da campanha AS16 com suas comparações e censuras; não substitui oráculo ou certificador de HL. Ele gera `specs/as-18-hl-condicional-e-sintese/as18-gate-evidence.json`, sem alterar artefatos AS16. Há regressões em `test_as18_gate.py`. Fluxo aplicado: T1 (gate) → T4 (síntese); T2 e T3 ficam bloqueadas. Condicionalmente a um futuro GO, T2/T3 exigiriam novo plano e sua execução antes de nova síntese experimental. Nenhum código de cortes HL foi criado.

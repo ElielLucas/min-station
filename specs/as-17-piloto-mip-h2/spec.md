@@ -1,6 +1,6 @@
 # AS17 — Piloto MIP de H2 na raiz sobre COMP+K — Specification
 
-**Status:** RASCUNHO / NÃO EXECUTADA  
+**Status:** NOT_AUTHORIZED — bloqueada pelo gate AS16; NÃO EXECUTADA  
 **Branch de referência:** `novos_testes` (verificar HEAD antes de Execute)  
 **Dependências externas:** AS16 GO explícito  
 **Local:** `specs/as-17-piloto-mip-h2/`  
@@ -120,3 +120,7 @@ COMP (U) e COMP+K (U_K) com variáveis binárias de instalação em V, fluxo con
 - A desigualdade só é considerada válida com prova matemática e/ou certificado conservador; testes numéricos não substituem demonstração.
 - Preservar distinção entre prova, witness analítico, ótimo LP, bound MIP e UB validada.
 - Nenhuma afirmação de contribuição inédita sem revisão bibliográfica específica.
+
+## Encaminhamento após AS16 (15/10/2026)
+
+A AS16 foi encerrada por decisão científica `STOP`, com gate automático `INVESTIGATE` preservado. Como esta spec requer **GO explícito**, o piloto MIP H2 **não está autorizado** e permanece sem implementação/experimentos. Todos os critérios AS17-01 a AS17-08 estão **não verificados**, não concluídos. Evidência em `validation.md` e na síntese `docs/technical/reference/experimentos/as18-sintese-h2-hl.md`. Reabertura exige novo protocolo, não reaproveitamento retroativo de AS16.
