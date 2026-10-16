@@ -4704,8 +4704,8 @@
     "viable_singletons": []
   },
   "schema_version": 2,
-  "source_commit": "56b8957485c673fb08460ef836257773fb67933f",
-  "source_commit_note": "HEAD is not the exact source snapshot: relevant files have uncommitted changes; inspect source_sha256 and rerun after commit",
+  "source_commit": "0b8f1288ccbb48d13a2cb46c104ad5915342180b",
+  "source_commit_note": "Git HEAD for source files; verify source_sha256 for exact content",
   "source_sha256": {
     "experiments/alternative-formulations/as02_model_a.py": "d9f973ab680a9bfaf06dc6808a8c0e4cb938254696d098d9950973c24c8df8fc",
     "experiments/cuts/cuts.py": "4952ac563156bc616105251b414e8c2778a3859be94ff5ed183c2d9cd8ffaebb",
