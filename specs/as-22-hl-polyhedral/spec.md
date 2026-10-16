@@ -1,12 +1,12 @@
 # AS22 — Separação poliédrica HL de coeficientes gerais — Specification
 
-**Status:** implementação concluída, validações sintéticas concluídas, **campanha LP Gurobi real pendente**.  
+**Status:** implementação, validações sintéticas e campanha Gurobi real concluídas; gate `INVESTIGATE`; **estratégia HL local não promovida**. Resultado em `docs/technical/reference/experimentos/as22-resultado-lp-hl.md`.  
 **Branch de referência:** `novos_testes`.  
 **Dependências:** COMP+K, oráculo físico AS14, AS19–AS21, pré-registro AS16. **Não depende de GO de H2 nem autoriza MIP.**
 
 ## Objetivo
 
-Verificar se desigualdades HL não restritas à cardinalidade podem eliminar pontos LP fracionários de COMP+K. A AS21 identificou 16 suportes avaliados em quatro casos ótimos, todos com contraexemplos às cardinalidades candidatas, sem cortes e com dois casos censurados. Isso não testa a família HL geral.
+Verificar se desigualdades HL não restritas à cardinalidade podem eliminar pontos LP fracionários de COMP+K. A AS21 identificou 16 suportes avaliados em quatro casos ótimos, sem cortes e com dois casos censurados. A AS22 foi executada posteriormente e encontrou 16 projeções triviais, registradas no relatório AS22 atualizado. Isso não testa a família HL geral.
 
 ## Modelo matemático e prova
 
@@ -68,3 +68,7 @@ O LP auxiliar **apenas propõe** α. Os coeficientes são racionalizados com den
 ## Fora de escopo
 
 Cortes com coeficientes negativos, suporte grande arbitrário, separação global exata, cortes fracionários gerais além da projeção monotônica local, avaliação reservada, MIP, alteração de resultados anteriores. **O limite de tamanho é computacional, não uma limitação teórica da definição HL.**
+
+## Fechamento experimental posterior
+
+Os arquivos `results/benchmark/as22-hl-lp-001/{manifest,rows,analysis}.json` contêm 12 braços de seis casos, com quatro pares ótimos e dois censurados, sem corte HL certificado/adicionado e sem ganho LP observado. Em 16 suportes, `VIABLE(V\R)` comprovou projeções cúbicas completas pela monotonicidade. O gate automático `INVESTIGATE` permanece, mas a interpretação científica é **interromper a linha de HL local AS20–AS22** e estudar FC-R somente após prova independente AS23. Ver [parecer Astra](../../docs/technical/reference/tecnico/parecer-astra-fcr-pos-as22.md).

@@ -1,28 +1,32 @@
-# AS22 — HL poliédrica: evidência inicial e campanha real
+# AS22 — HL poliédrica: campanha real e conclusão
 
-**Status:** implementação/suíte de testes concluídas. **Campanha Gurobi pendente** no ambiente de pesquisa. **Nenhum ganho LP real pode ser atribuído à AS22 neste momento.**
+**Status da execução:** campanha Gurobi executada no ambiente do pesquisador; 6 casos de desenvolvimento, 12 registros; gate do analisador **`INVESTIGATE`**. **Decisão científica:** encerrar a estratégia local AS20–AS22 para estes suportes, sem alegar redundância universal de HL; nenhum MIP autorizado.
 
-## Motivação científica
+## Proveniência e escopo
 
-A AS21 executou os seis casos do desenvolvimento e registrou gate `INVESTIGATE`: quatro pares ótimos, nenhum corte de cardinalidade; dois casos censurados. Suportes foram selecionados/certificados, mas a metodologia limitava `α_v = 1` e não cobria facetas gerais de `conv(Φ_R)`. Isso motiva uma triagem de coeficientes não uniformes, sem revisar resultados anteriores.
+- Dados arquivados em `results/benchmark/as22-hl-lp-001/{manifest,rows,analysis}.json`, incluídos no snapshot recebido em 2026-10-16; esta atualização documental não reexecutou Gurobi.
+- Braços `U_K` e `U_K_HL`; teto nominal 90 s totais por braço. O gate avalia ganho/custo somente quando os pares são comparáveis.
+- O `source_commit` do manifesto pode representar um commit anterior à inclusão dos arquivos AS22; o SHA sozinho **não demonstra a identidade integral do código executado**. A origem dos resultados deve ser reconciliada antes de publicação.
 
-## Evidências sintéticas certificadas
+## Pares da execução
 
-**Testemunha não uniforme:** rede alternativa com caminhos `s-a-t` ou `s-b-c-t`, autonomia 1 e suporte `{a,b,c}`. A projeção viável é `a ∨ (b ∧ c)`. O ponto `(0.1,0.5,0.5)` soma 1.1 e não viola cardinalidade ≥1, mas viola a desigualdade racional válida `1/2 y_a + 1/2 y_c ≥ 1/2` por 0.2. O oráculo físico confirma todos os padrões (diretos ou por monotonicidade).
+| Instância | LP K | LP K+HL | Cortes adicionados | Parede K / K+HL (s) | Leitura |
+|---|---:|---:|---:|---:|---|
+| `puc-cc9-2p-seed-r1` | 27.026786 | 27.026786 | 0 | 1.803945 / 2.512203 | par ótimo |
+| `puc-bip42p-regiao-f2` | 31.706052 | 31.706052 | 0 | 14.807924 / 16.950329 | par ótimo |
+| `pucn-cc3-10n-seed-r1` | 16.933333 | 16.933333 | 0 | 5.826092 / 7.599916 | par ótimo |
+| `mapf-room-32-32-4-m10-f8` | 13.200000 | 13.200000 | 0 | 1.289200 / 1.815300 | par ótimo |
+| `vienna-I056-regiao-f4` | — | — | 0 | 87.977172 / 90.045223 | censurado / inconclusivo |
+| `puc-w3c571-seed-r1` | — | — | 0 | 90.099362 / 90.099699 | censurado / inconclusivo |
 
-**K4:** sobre a implementação existente COMP+K, a triagem certifica HL e reproduz limite LP `2 → 3` no exemplo de quatro relés. Não é evidência de ganho real de benchmarks nem prova de superioridade global a K.
+## Diagnóstico dos suportes
 
-Arquivo de evidência: `results/benchmark/as22-hl-poly-micro-001.json` (gerado localmente, append-only).
+Conforme os 12 registros, as quatro instâncias com separação concluída examinaram **16 suportes de tamanho 8**: 11 `K_PAIR_PROJECTION` e 5 `LARGE_K_PROJECTION`. Em cada suporte, o oráculo classificou como fisicamente viável o conjunto de estações externo `V\R` (padrão vazio dentro de `R`); as demais 255 configurações foram inferidas por monotonicidade. São **16 consultas físicas e 4.080 inferências**, não verificações independentes.
 
-## Campanha pendente
+Sob monotonicidade de viabilidade por adição de estações, `VIABLE(V\R)` implica `conv(Φ_R)=[0,1]^R`. Portanto **nenhuma desigualdade válida escrita exclusivamente nas variáveis `y_R` separa pontos do cubo nesses 16 suportes** — independentemente de pesos. Isso **não demonstra** que todo suporte ou toda extensão de HL seja redundante.
 
-Executar no projeto com Gurobi:
+## Decisão após revisão externa
 
-```bash
-poetry run python experiments/cuts/run_hl_lp_as22.py \
-  --output-dir results/benchmark/as22-hl-lp-001
-```
+O [parecer Astra de FC-R](../tecnico/parecer-astra-fcr-pos-as22.md) recomenda encerrar o mecanismo local “suporte pequeno/complemento inteiro disponível” e investigar cortes de cobertura de fluxo por regiões (FC-R), preservando COMP+K como baseline. A proposta será submetida a validação independente AS23 antes de ser tratada como contribuição.
 
-Depois registrar os 12 braços em `results/benchmark/as22-hl-lp-001/{manifest,rows,analysis}.json`, comparando limites LP, tempo parede total, tempo de certificação, padrões inferidos/consultados, tipos de suporte, cortes e razões de censura. O gate permanece **PENDENTE**, não `GO` ou `STOP`.
-
-**Decisão:** continuar somente investigação LP de HL geral, sem habilitar MIP e sem inferir redundância universal de HL contra K.
+**Não modificar** os JSON históricos; este documento atualiza somente a interpretação e a indicação de continuação.

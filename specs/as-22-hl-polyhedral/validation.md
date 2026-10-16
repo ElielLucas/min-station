@@ -11,11 +11,15 @@
 - [x] `--dry-run` das seis instâncias de desenvolvimento: 12 registros; **não constitui campanha LP**.
 - [x] Suíte de cortes do snapshot: **160 testes OK** no ambiente de preparação.
 
-## Pendências obrigatórias
+## Validação posterior à campanha real (evidência externa)
 
-- [ ] Executar `run_hl_lp_as22.py` com Gurobi no ambiente do pesquisador.
-- [ ] Publicar `results/benchmark/as22-hl-lp-001/{manifest,rows,analysis}.json` e preencher relatório experimental.
-- [ ] Verificar ganho marginal real e custo físico de certificação, observando limites/censuras.
-- [ ] Revisão científica independente antes de qualquer decisão de promoção ou experimento MIP.
+- [x] O pesquisador executou `run_hl_lp_as22.py` com Gurobi: 6 casos e 12 registros, conforme JSON versionado.
+- [x] Os arquivos `results/benchmark/as22-hl-lp-001/{manifest,rows,analysis}.json` foram examinados; gate `INVESTIGATE`.
+- [x] Quatro pares ótimos apresentaram zero cortes e zero ganho LP; dois permanecem censurados.
+- [x] Revisão externa Astra: 16 suportes de cardinalidade 8, 11 projeções de pares K, 5 projeções K grandes, 16 consultas físicas para padrão vazio viável, 4.080 inferências por monotonicidade. A linha local não foi promovida.
+
+**Limitação documental:** `source_commit` no manifesto pode preceder código AS22 efetivamente executado; é preciso estabelecer proveniência integral antes de publicar como reprodução estrita.
+
+**Não concluído:** autorização MIP (não concedida); generalização para HL global (não demonstrada).
 
 Os ensaios sintéticos não são evidência de ganho sobre COMP+K em instâncias reais.
