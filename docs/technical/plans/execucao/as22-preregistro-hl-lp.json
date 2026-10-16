@@ -1,0 +1,112 @@
+{
+  "arms": [
+    "U_K",
+    "U_K_HL"
+  ],
+  "as16_plan_sha256": "4056fd08244a15085367a60a0c71fbfc3f44fc2d2f0a7686fdd31063b1de2dfe",
+  "as21_reference_dir": "results/benchmark/as21-hl-lp-001",
+  "budget": {
+    "wall_seconds_per_arm": 90
+  },
+  "cases": [
+    {
+      "family": "puc",
+      "family_id": "puc:cc9-2p",
+      "name": "puc-cc9-2p-seed-r1",
+      "path": "instances/benchmark-v1/puc/puc-cc9-2p-seed-r1.txt",
+      "raw_graph_id": "puc:cc9-2p",
+      "source_sha256": "0312f43552cddc102081d9937465429e29797ddb86cf85a6871752d50aeec88c",
+      "split": "desenvolvimento"
+    },
+    {
+      "family": "puc",
+      "family_id": "puc:bip42p",
+      "name": "puc-bip42p-regiao-f2",
+      "path": "instances/benchmark-v1/puc/puc-bip42p-regiao-f2.txt",
+      "raw_graph_id": "puc:bip42p",
+      "source_sha256": "d7c53596522401d4071563d5007d9c8647ee0d37c893426b5ab3b1d65d97743a",
+      "split": "desenvolvimento"
+    },
+    {
+      "family": "pucn",
+      "family_id": "pucn:cc3-10n",
+      "name": "pucn-cc3-10n-seed-r1",
+      "path": "instances/benchmark-v1/pucn/pucn-cc3-10n-seed-r1.txt",
+      "raw_graph_id": "pucn:cc3-10n",
+      "source_sha256": "9123c0e46228c22ba586bb7f730757a7fa2c4b0f815b54afba59f54a3bc8b431",
+      "split": "desenvolvimento"
+    },
+    {
+      "family": "mapf",
+      "family_id": "mapf:map:raw-data/mapf/maps/room-32-32-4.map|scenario:room-32-32-4.map + room-32-32-4-random-1.scen",
+      "name": "mapf-room-32-32-4-m10-f8",
+      "path": "instances/benchmark-v1/mapf/mapf-room-32-32-4-m10-f8.txt",
+      "raw_graph_id": "mapf:map:raw-data/mapf/maps/room-32-32-4.map",
+      "source_sha256": "78be3e1261f31f4e583d0808bdfc9c93d9c9eb335d86d13b059ce428af5f303f",
+      "split": "desenvolvimento"
+    },
+    {
+      "family": "vienna",
+      "family_id": "vienna:I056",
+      "name": "vienna-I056-regiao-f4",
+      "path": "instances/benchmark-v1/vienna/vienna-I056-regiao-f4.txt",
+      "raw_graph_id": "vienna:I056",
+      "source_sha256": "645da5115a0eeaa6fba9eeae9f4942aebecfa66c4bcbc7aaec2bd0c994eb0ccc",
+      "split": "desenvolvimento"
+    },
+    {
+      "family": "puc",
+      "family_id": "puc:w3c571",
+      "name": "puc-w3c571-seed-r1",
+      "path": "instances/benchmark-v1/puc/puc-w3c571-seed-r1.txt",
+      "raw_graph_id": "puc:w3c571",
+      "source_sha256": "e85ced7daef779e6e88f302ee9d80a467129f448a7ac5c6ce465d64b963300fd",
+      "split": "desenvolvimento"
+    }
+  ],
+  "constraints": [
+    "only development",
+    "no MIP",
+    "no evaluation",
+    "no change COMP K or H2",
+    "append only"
+  ],
+  "gate": {
+    "maximum_cost_multiple": 2.0,
+    "minimum_independent_raw_graphs": 2,
+    "minimum_relative_gain": 0.01,
+    "no_mip_authorization": true,
+    "require_full_six_cases": true
+  },
+  "hl": {
+    "max_cuts": 3,
+    "max_denominator": 128,
+    "max_k_seeds": 48,
+    "max_oracle_calls": 480,
+    "max_pairs": 64,
+    "max_patterns_per_support": 256,
+    "max_support_size": 8,
+    "max_supports": 4,
+    "max_variables": 1000000,
+    "min_interaction_slots": 2,
+    "min_violation": 1e-06,
+    "per_support_budget_s": 8,
+    "total_budget_s": 24
+  },
+  "method": "general_nonnegative_alpha_complete_projection",
+  "parent_as21_plan_sha256": "60dea5c95242c90765ccbf5a602120fb16db6f813a0141872191a00d06100507",
+  "preregistered_before_real_lp": true,
+  "schema_version": "AS22-HL-PLAN-v1",
+  "scientific_scope": "development LP only; exact certificate over finite upward-closed physical projection for rational general coefficients, no MIP or evaluation",
+  "solver_parameters": {
+    "FeasibilityTol": 1e-06,
+    "MemLimitGiB": 16,
+    "Method": 1,
+    "NumericFocus": 1,
+    "OptimalityTol": 1e-06,
+    "Presolve": -1,
+    "Seed": 42,
+    "Threads": 4
+  },
+  "stage": "AS22"
+}

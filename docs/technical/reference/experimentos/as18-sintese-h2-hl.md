@@ -70,3 +70,9 @@ Não se cria automaticamente uma AS19 nem se atribui novidade/resultado à próx
 - A evidência de gate derivada confere consistência de JSON e contagens, **não é segundo solver nem verificador matemático independente**.
 - Parecer científico de pessoa distinta do autor não está comprovado; não marcar revisão humana externa como concluída.
 - Não sobrescrever `results/benchmark/as16-lp-h2-001` nem alterar `manifest.json`, `rows.json`, `analysis.json` ou os pools para obter outro gate.
+
+---
+
+## Adendo posterior — novo protocolo independente AS19 (15/10/2026)
+
+O encerramento da **linha conjunta/condicional** H2/HL descrito acima é histórico e permanece válido **para AS18**. Em decisão subsequente, o pesquisador manteve HL como hipótese independente e autorizou somente uma microtriagem K4, documentada em `specs/as-19-hl-independente/` e `docs/technical/reference/experimentos/as19-hl-independente-microtriagem.md`. O novo resultado K4 não foi obtido em AS18; não substitui os dados AS16, não reabre H2 e não constitui melhoria validada em benchmark real.

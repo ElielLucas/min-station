@@ -66,3 +66,7 @@ Todos os arquivos executáveis como instruções estão em `specs/as-13-*` até 
 - `docs/technical/plans/execucao/as00-benchmark-protocolo.md`.
 - `docs/technical/reference/baseline-e-metodo/protocolo-comparacao-pareada.md`.
 - `experiments/alternative-formulations/as02_model_a.py` e `experiments/cuts/cuts.py`.
+
+---
+
+**Adendo de pesquisa (15/10/2026):** A sequência condicional AS13–AS18 encerrou H2 e não autorizou HL **nesse protocolo**. Uma nova decisão do pesquisador autorizou microinvestigação de HL **independente** de H2, formalizada em `specs/as-19-hl-independente/`. Não reinterpretar esta exceção como GO retroativo da AS16, AS17 ou AS18; nenhum piloto LP/MIP real de HL está autorizado automaticamente.

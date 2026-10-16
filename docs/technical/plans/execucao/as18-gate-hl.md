@@ -42,3 +42,9 @@ O verificador confere pareamento e identidades dos grafos, ótimos versus censur
 | AS18-09 | Síntese elaborada em `docs/technical/reference/experimentos/as18-sintese-h2-hl.md` |
 
 **Limitação de validação:** análise de dados e testes automatizados não constituem parecer de revisor científico externo distinto do autor. Sem tal parecer, não alegar homologação independente de AS18.
+
+---
+
+## Adendo posterior — investigação independente AS19 (15/10/2026)
+
+Após esta decisão histórica, o pesquisador autorizou **manter HL como hipótese independente de H2**, em nova etapa AS19. Isso **não muda** o gate original AS18 (`NOT_AUTHORIZED` no protocolo condicional) nem reabre AS17/H2. Ver `specs/as-19-hl-independente/` e `docs/technical/reference/experimentos/as19-hl-independente-microtriagem.md`. O microteste K4 de AS19 é evidência **posterior e sintética**, não um novo resultado da campanha AS18 nem autorização automática para benchmark MIP.

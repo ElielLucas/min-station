@@ -1,0 +1,97 @@
+{
+  "schema_version": "AS21-K4-SYNTHETIC-v1",
+  "scope": "SYNTHETIC_ONLY_NOT_REAL_BENCHMARK",
+  "baseline_lp": 2.0,
+  "strengthened_lp": 3.0,
+  "selection": {
+    "policy": "AS21_K_INTERACTIONS_AND_PROJECTIONS_V1",
+    "projection_requires_independent_oracle_certification": true,
+    "k_count": 6,
+    "k_eligible_count": 6,
+    "k_excluded_by_size": 0,
+    "k_seeds_examined": 6,
+    "pairs_considered": 15,
+    "pair_candidates_prequota": 15,
+    "pair_candidates_retained": 15,
+    "large_k_projections_added": 0,
+    "candidate_count": 11,
+    "selected_count": 1,
+    "selected_support_sizes": [
+      4
+    ],
+    "selected_kinds": [
+      "K_UNION"
+    ],
+    "no_eligible_support": false
+  },
+  "physical_report": {
+    "schema_version": "AS21-HL-LAYERED-v1",
+    "stage": "AS21",
+    "certificate_semantics": "infeasible_all_layers_strictly_below_rhs",
+    "instance_sha256": "4250028583204b4a4a65d04d7e1acd4c5cebc76a293b6d651c8e6b8bfaabfeeb",
+    "status": "CUTS_FOUND",
+    "oracle_calls": 11,
+    "elapsed_wall_s": 0.0028993099999752303,
+    "cuts_emitted": 1,
+    "cuts": [
+      {
+        "support": [
+          "w1",
+          "w2",
+          "w3",
+          "w4"
+        ],
+        "coefficients": [
+          {
+            "vertex": "w1",
+            "value": "1"
+          },
+          {
+            "vertex": "w2",
+            "value": "1"
+          },
+          {
+            "vertex": "w3",
+            "value": "1"
+          },
+          {
+            "vertex": "w4",
+            "value": "1"
+          }
+        ],
+        "rhs": "3",
+        "violation": 1.0,
+        "certificate_sha256": "12a29a7ee9835bd2cdd9cc75f2f4269b57acfea7fc65a88ede2cccfa983c63cf",
+        "cut_hash": "990597c407e73ad1af41aa31a32fcf0033ef95265843b20127d6520f1353713f",
+        "oracle_calls": 11,
+        "elapsed_wall_s": 0.0027920620000259078
+      }
+    ],
+    "records": [
+      {
+        "support": [
+          "w1",
+          "w2",
+          "w3",
+          "w4"
+        ],
+        "support_size": 4,
+        "lp_mass": 2.0,
+        "target_rhs": 3,
+        "full_patterns": 16,
+        "method": "LOWER_LAYERS_INFEASIBLE",
+        "patterns_required": 11,
+        "status": "CUT",
+        "reason": "LOWER_LAYERS_CERTIFIED",
+        "oracle_calls": 11,
+        "elapsed_wall_s": 0.0028018059999794787,
+        "rhs": "3",
+        "violation": 1.0,
+        "patterns_examined": 11,
+        "patterns_proven_infeasible": 11,
+        "certificate_sha256": "12a29a7ee9835bd2cdd9cc75f2f4269b57acfea7fc65a88ede2cccfa983c63cf"
+      }
+    ]
+  },
+  "full_patterns_as19": 16
+}
