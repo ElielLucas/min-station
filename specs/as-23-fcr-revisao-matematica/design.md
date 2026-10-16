@@ -1,6 +1,6 @@
 # AS23 — Design técnico: Revisão matemática independente de FC-R
 
-**Spec:** `spec.md`; **Status:** Proposed — depende de gate anterior.
+**Spec:** `spec.md`; **Status:** Implemented for AS23; exact rational audit passed; formal technical gate VALIDATED after independent review and test corrections; final local commit/provenance pending.
 
 ## Architecture Overview
 
@@ -57,4 +57,4 @@ Apenas verificações locais. Se houver falha de geração C6/C8, não ajustar a
 
 Gate `VALIDATED` somente se duas provas, testemunha física e racional independente, relação C6/C8 e verificação bibliográfica forem documentadas sem divergência bloqueante. `BLOCKED` em caso contrário.
 
-**Proveniência:** decisões ainda propostas; nenhuma implementação realizada como parte desta entrega documental.
+**Proveniência:** este design antecede a execução. A implementação AS23 e seu fechamento pós-revisão estão rastreados em `validation.md`; fonte de código rastreada por `source_commit`, `source_commit_note` e `source_sha256`.

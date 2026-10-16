@@ -1,6 +1,6 @@
 # AS23 — Revisão matemática independente de FC-R — Specification
 
-**Referências:** `[docs/technical/reference/tecnico/parecer-astra-fcr-pos-as22.md]` (parecer externo) e `[docs/technical/plans/execucao/plano-fcr-as23-as27.md]` (plano científico). **Estado:** somente planejado, não implementado nem validado. **Branch de referência:** `novos_testes`. **Pré-condição:** AS22 concluída experimentalmente; parecer Astra registrado; COMP+K, C6, C8 e validador físico existentes.
+**Referências:** `[docs/technical/reference/tecnico/parecer-astra-fcr-pos-as22.md]` (parecer externo) e `[docs/technical/plans/execucao/plano-fcr-as23-as27.md]` (plano científico). **Estado:** implementado e certificado matematicamente em microcaso; gate técnico `VALIDATED` após parecer independente e correções obrigatórias; commit/proveniência final pendentes no checkout local. **Branch de referência:** `novos_testes`. **Pré-condição:** AS22 concluída experimentalmente; parecer Astra registrado; COMP+K, C6, C8 e validador físico existentes.
 
 ## Problem Statement
 
@@ -8,8 +8,8 @@ Estabelecer validade formal da FC-R/FC-R-T, confirmar separação exata de Q par
 
 ## Goals
 
-- [ ] Estabelecer validade formal da FC-R/FC-R-T, confirmar separação exata de Q para região L fixa e reproduzir independentemente a testemunha racional declarada pelo Astra, antes de escrever um separador para benchmarks.
-- [ ] Gate e evidências rastreáveis: Gate `VALIDATED` somente se duas provas, testemunha física e racional independente, relação C6/C8 e verificação bibliográfica forem documentadas sem divergência bloqueante. `BLOCKED` em caso contrário.
+- [x] Estabelecer validade formal da FC-R/FC-R-T, confirmar separação exata de Q para região L fixa e reproduzir independentemente a testemunha racional declarada pelo Astra, antes de escrever um separador para benchmarks.
+- [x] Gate e evidências rastreáveis: Gate `VALIDATED` somente se duas provas, testemunha física e racional independente, relação C6/C8 e verificação bibliográfica forem documentadas sem divergência bloqueante. `BLOCKED` em caso contrário.
 
 ## Out of Scope
 
@@ -77,22 +77,22 @@ Estabelecer validade formal da FC-R/FC-R-T, confirmar separação exata de Q par
 
 | Requirement ID | Story | Phase | Status |
 |---|---|---|---|
-| FCR23-01 | Prova auditável | Tasks | Pending |
-| FCR23-02 | Prova auditável | Tasks | Pending |
-| FCR23-03 | Prova auditável | Tasks | Pending |
-| FCR23-04 | Testemunha independente | Tasks | Pending |
-| FCR23-05 | Testemunha independente | Tasks | Pending |
-| FCR23-06 | Testemunha independente | Tasks | Pending |
-| FCR23-07 | Análise de não redundância | Tasks | Pending |
-| FCR23-08 | Análise de não redundância | Tasks | Pending |
+| FCR23-01 | Prova auditável | Tasks | Validated; minor follow-ups documented |
+| FCR23-02 | Prova auditável | Tasks | Validated; minor follow-ups documented |
+| FCR23-03 | Prova auditável | Tasks | Validated; minor follow-ups documented |
+| FCR23-04 | Testemunha independente | Tasks | Validated; minor follow-ups documented |
+| FCR23-05 | Testemunha independente | Tasks | Validated; minor follow-ups documented |
+| FCR23-06 | Testemunha independente | Tasks | Validated; minor follow-ups documented |
+| FCR23-07 | Análise de não redundância | Tasks | Validated; minor follow-ups documented |
+| FCR23-08 | Análise de não redundância | Tasks | Validated; minor follow-ups documented |
 
-**Coverage:** 8 requisitos rastreáveis; tarefas detalhadas em `tasks.md`; 0 implementados.
+**Coverage:** 8 requisitos com evidência técnica; testes e prova em `experiments/cuts/test_as23_*`, `as23-prova-fcr.md` e `as23-validacao-fcr.md`. Revisão independente recebida em resumo; ver `validation.md` para limitações e achados menores.
 
 ## Success Criteria
 
-- [ ] Duas provas de validade conferidas independentemente e nenhum Q inválido aceito.
-- [ ] Pontos fracionários reproduzidos com certificados exatos e discrepâncias explícitas.
-- [ ] Pelo menos uma testemunha válida contra COMP+K+C6+C8, ou decisão BLOCKED justificada.
+- [x] Duas provas de validade conferidas independentemente e nenhum Q inválido aceito.
+- [x] Pontos fracionários reproduzidos com certificados exatos e discrepâncias explícitas.
+- [x] Pelo menos uma testemunha válida contra COMP+K+C6+C8, ou decisão BLOCKED justificada.
 
 ## Dependências e gate
 
@@ -101,3 +101,7 @@ Gate `VALIDATED` somente se duas provas, testemunha física e racional independe
 ## Fora de escopo científico adicional
 
 Nenhum resultado sintético é extrapolado para benchmark; nenhuma alegação de originalidade, de dominância geral ou de superioridade sobre COMP+K sem prova e dados comparáveis.
+
+## Execução e verificação
+
+Reprodução local: `results/benchmark/as23-fcr-witness-001.json`, **173 testes aprovados**. Aritmética racional exata e revisão bibliográfica documentadas em `docs/technical/reference/experimentos/as23-validacao-fcr.md`. Gate técnico **`VALIDATED`** após correção do MAJOR FC-R-T; liberar AS24 depois do commit e da atualização de proveniência descritos em `validation.md`.

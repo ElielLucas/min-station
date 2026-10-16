@@ -1,6 +1,6 @@
 # AS23 — Tasks: Revisão matemática independente de FC-R
 
-**Status:** PLANEJADA; caixas abertas são trabalho futuro, não implementado.
+**Status:** T1–T5 implementadas e verificadas localmente; gate científico VALIDATED após revisão independente reportada e correção obrigatória; commit e provenance ainda pendentes no checkout do pesquisador.
 
 **Design:** `specs/as-23-fcr-revisao-matematica/design.md`. **Fonte:** `docs/technical/reference/tecnico/parecer-astra-fcr-pos-as22.md`.
 
@@ -57,9 +57,9 @@ Fases sequenciais; dependências por tarefa exibidas no mapa abaixo.
 
 **Done when:**
 
-- [ ] Gerar explicitamente grafo físico, H, S, T, r, relés e verificar os quatro K gerados; não codificar objetivos como suposições.
-- [ ] Evidência identificável por arquivo/linha, com divergências e abstenções explícitas.
-- [ ] Gate `quick` aprovado e suíte existente sem redução de testes.
+- [x] Gerar explicitamente grafo físico, H, S, T, r, relés e verificar os quatro K gerados; não codificar objetivos como suposições.
+- [x] Evidência identificável por arquivo/linha, com divergências e abstenções explícitas.
+- [x] Gate `quick` aprovado e suíte existente sem redução de testes.
 
 **Tests:** unit
 **Gate:** quick
@@ -75,9 +75,9 @@ Fases sequenciais; dependências por tarefa exibidas no mapa abaixo.
 
 **Done when:**
 
-- [ ] Formalizar validade origens/destinos para todo COMP inteiro; contraexemplos de Q com terminais; caso com circulação.
-- [ ] Evidência identificável por arquivo/linha, com divergências e abstenções explícitas.
-- [ ] Gate `build` aprovado e suíte existente sem redução de testes.
+- [x] Formalizar validade origens/destinos para todo COMP inteiro; contraexemplos de Q com terminais; caso com circulação.
+- [x] Evidência identificável por arquivo/linha, com divergências e abstenções explícitas.
+- [x] Gate `build` aprovado e suíte existente sem redução de testes.
 
 **Tests:** proof
 **Gate:** build
@@ -93,9 +93,9 @@ Fases sequenciais; dependências por tarefa exibidas no mapa abaixo.
 
 **Done when:**
 
-- [ ] Cobrir pontos COMP+K, C6/C8, violação FC-R e combinações lineares; usar Fraction para comparar igualdades.
-- [ ] Evidência identificável por arquivo/linha, com divergências e abstenções explícitas.
-- [ ] Gate `quick` aprovado e suíte existente sem redução de testes.
+- [x] Cobrir pontos COMP+K, C6/C8, violação FC-R e combinações lineares; usar Fraction para comparar igualdades.
+- [x] Evidência identificável por arquivo/linha, com divergências e abstenções explícitas.
+- [x] Gate `quick` aprovado e suíte existente sem redução de testes.
 
 **Tests:** unit
 **Gate:** quick
@@ -111,9 +111,9 @@ Fases sequenciais; dependências por tarefa exibidas no mapa abaixo.
 
 **Done when:**
 
-- [ ] Deduzir regra de sinal e comparar em casos pequenos com enumeração exaustiva, incluindo empates e FC-R-T.
-- [ ] Evidência identificável por arquivo/linha, com divergências e abstenções explícitas.
-- [ ] Gate `quick` aprovado e suíte existente sem redução de testes.
+- [x] Deduzir regra de sinal e comparar em casos pequenos com enumeração exaustiva, incluindo empates e FC-R-T.
+- [x] Evidência identificável por arquivo/linha, com divergências e abstenções explícitas.
+- [x] Gate `quick` aprovado e suíte existente sem redução de testes.
 
 **Tests:** unit
 **Gate:** quick
@@ -129,9 +129,9 @@ Fases sequenciais; dependências por tarefa exibidas no mapa abaixo.
 
 **Done when:**
 
-- [ ] Citar linhas/certificados, conferir literatura, registrar VALIDATED ou BLOCKED; não promover sem revisor independente.
-- [ ] Evidência identificável por arquivo/linha, com divergências e abstenções explícitas.
-- [ ] Gate `build` aprovado e suíte existente sem redução de testes.
+- [x] Citar linhas/certificados, conferir literatura, registrar VALIDATED ou BLOCKED; não promover sem revisor independente.
+- [x] Evidência identificável por arquivo/linha, com divergências e abstenções explícitas.
+- [x] Gate `build` aprovado e suíte existente sem redução de testes.
 
 **Tests:** review
 **Gate:** build
@@ -170,4 +170,4 @@ As setas intrafase dos diagramas refletem `Depends on`. Dependências cruzadas a
 
 **Gate `VALIDATED` somente se duas provas, testemunha física e racional independente, relação C6/C8 e verificação bibliográfica forem documentadas sem divergência bloqueante. `BLOCKED` em caso contrário.**
 
-**Importante:** este plano não contém tarefas marcadas como concluídas; validação estrutural do texto não equivale a testes de produto ou de FC-R.
+**Execução:** 173 testes, certificados exatos e revisão adversarial reportada por Claude Code. MAJOR de FC-R-T corrigido; `validation.md` registra PASS técnico e a condição operacional de commit e `source_commit` antes de abrir AS24. Os dez MINOR não foram enumerados integralmente.
