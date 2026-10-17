@@ -1,12 +1,12 @@
 # AS24 — Design técnico: Separador FC-R e microvalidação
 
-**Spec:** `spec.md`; **Status:** Proposed — depende de gate anterior.
+**Spec:** `spec.md`; **Status:** `VALIDATED_WITH_MINOR_FINDINGS` após veredito independente favorável; detalhes menores a acompanhar.
 
 ## Architecture Overview
 
 Implementar separação FC-R/FC-R-T comprovadamente válida, completa para regiões unitárias e exata na seleção de Q para cada região fixada, com seleção controlada de regiões maiores e microcasos adversariais.
 
-**Fluxo:** AS23 `VALIDATED` e documento de prova com hipóteses resolvidas.
+**Fluxo:** AS23 `VALIDATED` técnico → AS24 separação + microtestes → revisão independente → eventual AS25.
 
 ## Code Reuse Analysis
 
@@ -58,4 +58,15 @@ Falhas de solver, entradas sem solução LP, tempo esgotado ou L fora de escopo 
 
 Separador não emite corte inválido; decisão `VALIDATED` depende de concordância exata na escolha de Q em microcasos, cobertura total declarada dos singletons e testes adversariais completos.
 
-**Proveniência:** decisões ainda propostas; nenhuma implementação realizada como parte desta entrega documental.
+**Proveniência:** implementação entregue nesta etapa, com hashes de arquivos e `source_commit` no JSON. O SHA de HEAD não substitui o commit posterior que incluirá os arquivos. AS25 não foi iniciada.
+
+## Limites da implementação
+
+- `separate_fixed` usa a regra ótima de `Q` e não precisa resolver LP auxiliar. `scan` cobre todos os singletons admissíveis quando não censurado, mas somente uma lista heurística de regiões maiores.
+- `FCRRow` mantém nomes de arcos `F[u,v]` e ativação `y[v]`; `as_compiled` fornece somente a ponte auditável ao compilador da AS23. Nenhuma mudança foi feita em COMP+K nem no gerador K.
+- A violação só gera linha quando excede `tolerance`. Orçamentos de tempo e de linhas, domínio numérico, duplicação e cobertura são registrados. Pontos LP de entrada pressupõem satisfação das restrições de COMP; a AS25 deverá conferir status e factibilidade do solver antes de separar.
+- Testes enumeram Q por um avaliador independente e procuram contraexemplos com fluxos adversariais em micrografos, fixando todas as instalações binárias e minimizando cada linha sob COMP.
+
+## Fechamento AS24 (16/10/2026)
+
+Revisão independente favorável, `APPROVED_WITH_MINOR_FINDINGS`, conforme registro em `docs/technical/reference/experimentos/as24-revisao-independente-claude.md`. A implementação e os controles matemáticos não foram alterados neste fechamento. O JSON original é evidência sintética pré-revisão e mantém esse gate histórico; a autorização atual está em `validation.md`. A campanha LP de AS25 exige protocolo congelado e commit/proveniência auditável antes de executar.

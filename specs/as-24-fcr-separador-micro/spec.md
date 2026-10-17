@@ -1,6 +1,6 @@
 # AS24 — Separador FC-R e microvalidação — Specification
 
-**Referências:** `[docs/technical/reference/tecnico/parecer-astra-fcr-pos-as22.md]` (parecer externo) e `[docs/technical/plans/execucao/plano-fcr-as23-as27.md]` (plano científico). **Estado:** somente planejado, não implementado nem validado. **Branch de referência:** `novos_testes`. **Pré-condição:** AS23 `VALIDATED` e documento de prova com hipóteses resolvidas.
+**Referências:** `[docs/technical/reference/tecnico/parecer-astra-fcr-pos-as22.md]` (parecer externo) e `[docs/technical/plans/execucao/plano-fcr-as23-as27.md]` (plano científico). **Estado:** `VALIDATED_WITH_MINOR_FINDINGS` após parecer favorável `APPROVED_WITH_MINOR_FINDINGS`; detalhes dos achados menores ainda não fornecidos. **Branch de referência:** `novos_testes`. **Pré-condição:** AS23 tecnicamente `VALIDATED` conforme `specs/as-23-fcr-revisao-matematica/validation.md`; proveniência final do commit é responsabilidade do checkout local.
 
 ## Problem Statement
 
@@ -8,8 +8,8 @@ Implementar separação FC-R/FC-R-T comprovadamente válida, completa para regi�
 
 ## Goals
 
-- [ ] Implementar separação FC-R/FC-R-T comprovadamente válida, completa para regiões unitárias e exata na seleção de Q para cada região fixada, com seleção controlada de regiões maiores e microcasos adversariais.
-- [ ] Gate e evidências rastreáveis: Separador não emite corte inválido; decisão `VALIDATED` depende de concordância exata na escolha de Q em microcasos, cobertura total declarada dos singletons e testes adversariais completos.
+- [x] Implementar separação FC-R/FC-R-T comprovadamente válida, completa para regiões unitárias e exata na seleção de Q para cada região fixada, com seleção controlada de regiões maiores e microcasos adversariais.
+- [x] Gate e evidências rastreáveis: Separador não emite corte inválido; decisão `VALIDATED` depende de concordância exata na escolha de Q em microcasos, cobertura total declarada dos singletons e testes adversariais completos.
 
 ## Out of Scope
 
@@ -77,22 +77,22 @@ Implementar separação FC-R/FC-R-T comprovadamente válida, completa para regi�
 
 | Requirement ID | Story | Phase | Status |
 |---|---|---|---|
-| FCR24-01 | Separar a família declarada | Tasks | Pending |
-| FCR24-02 | Separar a família declarada | Tasks | Pending |
-| FCR24-03 | Separar a família declarada | Tasks | Pending |
-| FCR24-04 | Emitir somente cortes válidos | Tasks | Pending |
-| FCR24-05 | Emitir somente cortes válidos | Tasks | Pending |
-| FCR24-06 | Emitir somente cortes válidos | Tasks | Pending |
-| FCR24-07 | Avaliar regiões maiores | Tasks | Pending |
-| FCR24-08 | Avaliar regiões maiores | Tasks | Pending |
+| FCR24-01 | Separar Q origem para L fixa | T2, T4 | Validado com achados menores |
+| FCR24-02 | Separar Q destino para L fixa | T2, T4 | Validado com achados menores |
+| FCR24-03 | Cobrir os singletons elegíveis | T3, T4 | Validado com achados menores |
+| FCR24-04 | Rejeitar L/Q inválidos e tolerância | T1, T2, T4 | Validado com achados menores |
+| FCR24-05 | Certificado algébrico reproduzível | T1, T5 | Validado com achados menores |
+| FCR24-06 | Deduplicação por assinatura | T1, T2, T4 | Validado com achados menores |
+| FCR24-07 | Seleção heurística limitada | T3, T4 | Validado com achados menores |
+| FCR24-08 | Limites e cobertura parcial explícitos | T2, T3, T4, T5 | Validado com achados menores |
 
-**Coverage:** 8 requisitos rastreáveis; tarefas detalhadas em `tasks.md`; 0 implementados.
+**Coverage:** 8 requisitos rastreáveis; implementados, com testes e evidências. Revisão independente favorável registrada; achados menores não detalhados permanecem em acompanhamento.
 
 ## Success Criteria
 
-- [ ] Zero cortes inválidos em enumeração integral de padrões pequenos.
-- [ ] Concordância com enumeração de Q para região fixa e as duas orientações.
-- [ ] Cobertura total de todos os singletons elegíveis, com cobertura parcial explícita de regiões maiores.
+- [x] Zero cortes inválidos em enumeração integral de padrões pequenos.
+- [x] Concordância com enumeração de Q para região fixa e as duas orientações.
+- [x] Cobertura total de todos os singletons elegíveis, com cobertura parcial explícita de regiões maiores.
 
 ## Dependências e gate
 
@@ -101,3 +101,10 @@ Separador não emite corte inválido; decisão `VALIDATED` depende de concordân
 ## Fora de escopo científico adicional
 
 Nenhum resultado sintético é extrapolado para benchmark; nenhuma alegação de originalidade, de dominância geral ou de superioridade sobre COMP+K sem prova e dados comparáveis.
+
+## Resultado de implementação (16/10/2026)
+
+- Componentes: `experiments/cuts/fcr_rows.py`, `fcr_separator.py`, `fcr_regions.py`, `run_fcr_micro_as24.py`, `test_as24_fcr.py`.
+- Dados: `results/benchmark/as24-fcr-micro-001.json` (`SYNTHETIC_ONLY`).
+- Evidência e pendências formais: `docs/technical/reference/experimentos/as24-validacao-separador-fcr.md` e `validation.md`.
+- **Gate científico:** `VALIDATED_WITH_MINOR_FINDINGS`; AS25 liberada para implementação e pré-registro, não para execução real sem protocolo congelado. Ver `validation.md` e `docs/technical/reference/experimentos/as24-revisao-independente-claude.md`.

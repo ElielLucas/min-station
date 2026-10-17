@@ -1,6 +1,6 @@
 # AS24 — Tasks: Separador FC-R e microvalidação
 
-**Status:** PLANEJADA; caixas abertas são trabalho futuro, não implementado.
+**Status:** T1–T5 concluídas; revisão independente favorável (`APPROVED_WITH_MINOR_FINDINGS`); commit final e atualização de proveniência pendentes no checkout do pesquisador.
 
 **Design:** `specs/as-24-fcr-separador-micro/design.md`. **Fonte:** `docs/technical/reference/tecnico/parecer-astra-fcr-pos-as22.md`.
 
@@ -57,9 +57,9 @@ Fases sequenciais; dependências por tarefa exibidas no mapa abaixo.
 
 **Done when:**
 
-- [ ] Termos de fluxo e y com orientação e saldo; rejeitar Q proibido e fornecer assinatura determinística.
-- [ ] Evidência identificável por arquivo/linha, com divergências e abstenções explícitas.
-- [ ] Gate `quick` aprovado e suíte existente sem redução de testes.
+- [x] Termos de fluxo e y com orientação e saldo; rejeitar Q proibido e fornecer assinatura determinística.
+- [x] Evidência identificável por arquivo/linha, com divergências e abstenções explícitas.
+- [x] Gate `quick` aprovado e suíte existente sem redução de testes.
 
 **Tests:** unit
 **Gate:** quick
@@ -75,9 +75,9 @@ Fases sequenciais; dependências por tarefa exibidas no mapa abaixo.
 
 **Done when:**
 
-- [ ] Implementar ambas as orientações, fórmula fechada Q*, empates, tolerâncias e deduplicação com testes co-localizados.
-- [ ] Evidência identificável por arquivo/linha, com divergências e abstenções explícitas.
-- [ ] Gate `quick` aprovado e suíte existente sem redução de testes.
+- [x] Implementar ambas as orientações, fórmula fechada Q*, empates, tolerâncias e deduplicação com testes co-localizados.
+- [x] Evidência identificável por arquivo/linha, com divergências e abstenções explícitas.
+- [x] Gate `quick` aprovado e suíte existente sem redução de testes.
 
 **Tests:** unit
 **Gate:** quick
@@ -93,9 +93,9 @@ Fases sequenciais; dependências por tarefa exibidas no mapa abaixo.
 
 **Done when:**
 
-- [ ] Exaurir singletons elegíveis; heurística limitada para L maiores com cobertura e abstenção explícita.
-- [ ] Evidência identificável por arquivo/linha, com divergências e abstenções explícitas.
-- [ ] Gate `quick` aprovado e suíte existente sem redução de testes.
+- [x] Exaurir singletons elegíveis; heurística limitada para L maiores com cobertura e abstenção explícita.
+- [x] Evidência identificável por arquivo/linha, com divergências e abstenções explícitas.
+- [x] Gate `quick` aprovado e suíte existente sem redução de testes.
 
 **Tests:** unit
 **Gate:** quick
@@ -111,9 +111,9 @@ Fases sequenciais; dependências por tarefa exibidas no mapa abaixo.
 
 **Done when:**
 
-- [ ] Verificar Q por força bruta em L pequeno e validade para todos os y binários/fluxos construídos; cobrir S=T, interseção, ciclos, r>1 e K fechado.
-- [ ] Evidência identificável por arquivo/linha, com divergências e abstenções explícitas.
-- [ ] Gate `full` aprovado e suíte existente sem redução de testes.
+- [x] Verificar Q por força bruta em L pequeno e validade para todos os y binários/fluxos construídos; cobrir S=T, interseção, ciclos, r>1 e K fechado.
+- [x] Evidência identificável por arquivo/linha, com divergências e abstenções explícitas.
+- [x] Gate `full` aprovado e suíte existente sem redução de testes.
 
 **Tests:** unit
 **Gate:** full
@@ -129,9 +129,9 @@ Fases sequenciais; dependências por tarefa exibidas no mapa abaixo.
 
 **Done when:**
 
-- [ ] Registrar contagens, regiões verificadas, limite de enumeração e gate VALIDATED/BLOCKED antes de AS25.
-- [ ] Evidência identificável por arquivo/linha, com divergências e abstenções explícitas.
-- [ ] Gate `build` aprovado e suíte existente sem redução de testes.
+- [x] Registrar contagens, regiões verificadas, limite de enumeração e gate VALIDATED/BLOCKED antes de AS25.
+- [x] Evidência identificável por arquivo/linha, com divergências e abstenções explícitas.
+- [x] Gate `build` aprovado e suíte existente sem redução de testes.
 
 **Tests:** review
 **Gate:** build
@@ -158,14 +158,21 @@ As setas intrafase dos diagramas refletem `Depends on`. Dependências cruzadas a
 
 | Task | Code Layer Created/Modified | Matrix Requires | Task Says | Status |
 |---|---|---|---|---|
-| T1 | `experiments/cuts/fcr_rows.py` | unit | unit | OK — planejado |
-| T2 | `experiments/cuts/fcr_separator.py` | unit | unit | OK — planejado |
-| T3 | `experiments/cuts/fcr_regions.py` | unit | unit | OK — planejado |
-| T4 | `experiments/cuts/test_as24_fcr.py` | unit | unit | OK — planejado |
-| T5 | `docs/technical/reference/experimentos/as24-validacao-separador-fcr.md` | review | review | OK — planejado |
+| T1 | `experiments/cuts/fcr_rows.py` | unit | unit | OK — implementado |
+| T2 | `experiments/cuts/fcr_separator.py` | unit | unit | OK — implementado |
+| T3 | `experiments/cuts/fcr_regions.py` | unit | unit | OK — implementado |
+| T4 | `experiments/cuts/test_as24_fcr.py` | unit | unit | OK — implementado |
+| T5 | `docs/technical/reference/experimentos/as24-validacao-separador-fcr.md` | review | review | OK — implementado |
 
 ## Gate de habilitação
 
 **Separador não emite corte inválido; decisão `VALIDATED` depende de concordância exata na escolha de Q em microcasos, cobertura total declarada dos singletons e testes adversariais completos.**
 
-**Importante:** este plano não contém tarefas marcadas como concluídas; validação estrutural do texto não equivale a testes de produto ou de FC-R.
+**Importante:** as tarefas de implementação e microtestes têm evidências locais. A revisão independente do Claude foi comunicada pelo pesquisador como `APPROVED_WITH_MINOR_FINDINGS`; os achados menores não foram individualizados e continuam em acompanhamento. Consulte `validation.md`.
+
+## Evidências de execução
+
+- `experiments/cuts/test_as24_fcr.py`: seleção exata de Q nas duas direções e para saldo 1/2, validade contra minimização adversarial de fluxo, S=T, interseção, terminais, compartilhamento, alcance r>1, censura, limite de cortes e determinismo.
+- `results/benchmark/as24-fcr-micro-001.json`: seis pontos LP sintéticos certificados na AS23, exames unitários e ablação de regiões maiores.
+- `docs/technical/reference/experimentos/as24-validacao-separador-fcr.md`: resultados de teste e escopo do gate.
+- **Ação restante:** aplicar/commitar o pacote no checkout do pesquisador e regenerar o JSON com `source_commit` definitivo; obter o relatório detalhado do Claude apenas para acompanhar os achados menores, sem bloquear a AS25.

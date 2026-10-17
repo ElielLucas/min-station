@@ -1,0 +1,7368 @@
+{
+  "as23_evidence_sha256": "fcf4458c31cf03a6b1e13a567c664c687e32b33cb023c6fbbd6888e70c32a3df",
+  "case_count": 6,
+  "cases": {
+    "COMP_K": {
+      "lp_objective_as23": "1",
+      "separator_scans": {
+        "singleton": {
+          "cuts": [
+            {
+              "demand": 1,
+              "family": "FC-R",
+              "flow_terms": [
+                [
+                  "a1",
+                  "c1",
+                  1
+                ],
+                [
+                  "a1",
+                  "c2",
+                  1
+                ],
+                [
+                  "a1",
+                  "x12",
+                  1
+                ],
+                [
+                  "a1",
+                  "x13",
+                  1
+                ]
+              ],
+              "proof": "balance + exclusion of terminal heads",
+              "q": [
+                "x11"
+              ],
+              "region": [
+                "a1"
+              ],
+              "rhs": 1,
+              "station_terms": [
+                [
+                  "x11",
+                  1
+                ]
+              ]
+            },
+            {
+              "demand": 1,
+              "family": "FC-R",
+              "flow_terms": [
+                [
+                  "a2",
+                  "c1",
+                  1
+                ],
+                [
+                  "a2",
+                  "c2",
+                  1
+                ],
+                [
+                  "a2",
+                  "x21",
+                  1
+                ],
+                [
+                  "a2",
+                  "x23",
+                  1
+                ]
+              ],
+              "proof": "balance + exclusion of terminal heads",
+              "q": [
+                "x22"
+              ],
+              "region": [
+                "a2"
+              ],
+              "rhs": 1,
+              "station_terms": [
+                [
+                  "x22",
+                  1
+                ]
+              ]
+            },
+            {
+              "demand": 1,
+              "family": "FC-R-T",
+              "flow_terms": [
+                [
+                  "e1",
+                  "d1",
+                  1
+                ],
+                [
+                  "x11",
+                  "d1",
+                  1
+                ],
+                [
+                  "x12",
+                  "d1",
+                  1
+                ],
+                [
+                  "x13",
+                  "d1",
+                  1
+                ],
+                [
+                  "x21",
+                  "d1",
+                  1
+                ],
+                [
+                  "x23",
+                  "d1",
+                  1
+                ],
+                [
+                  "x31",
+                  "d1",
+                  1
+                ],
+                [
+                  "x32",
+                  "d1",
+                  1
+                ],
+                [
+                  "x33",
+                  "d1",
+                  1
+                ],
+                [
+                  "x41",
+                  "d1",
+                  1
+                ],
+                [
+                  "x42",
+                  "d1",
+                  1
+                ],
+                [
+                  "x43",
+                  "d1",
+                  1
+                ]
+              ],
+              "proof": "balance + exclusion of source tails",
+              "q": [
+                "x22"
+              ],
+              "region": [
+                "d1"
+              ],
+              "rhs": 1,
+              "station_terms": [
+                [
+                  "x22",
+                  1
+                ]
+              ]
+            },
+            {
+              "demand": 1,
+              "family": "FC-R-T",
+              "flow_terms": [
+                [
+                  "e2",
+                  "d2",
+                  1
+                ],
+                [
+                  "x12",
+                  "d2",
+                  1
+                ],
+                [
+                  "x13",
+                  "d2",
+                  1
+                ],
+                [
+                  "x21",
+                  "d2",
+                  1
+                ],
+                [
+                  "x22",
+                  "d2",
+                  1
+                ],
+                [
+                  "x23",
+                  "d2",
+                  1
+                ],
+                [
+                  "x31",
+                  "d2",
+                  1
+                ],
+                [
+                  "x32",
+                  "d2",
+                  1
+                ],
+                [
+                  "x33",
+                  "d2",
+                  1
+                ],
+                [
+                  "x41",
+                  "d2",
+                  1
+                ],
+                [
+                  "x42",
+                  "d2",
+                  1
+                ],
+                [
+                  "x43",
+                  "d2",
+                  1
+                ]
+              ],
+              "proof": "balance + exclusion of source tails",
+              "q": [
+                "x11"
+              ],
+              "region": [
+                "d2"
+              ],
+              "rhs": 1,
+              "station_terms": [
+                [
+                  "x11",
+                  1
+                ]
+              ]
+            }
+          ],
+          "events": [
+            {
+              "certificate": {
+                "demand": 1,
+                "family": "FC-R",
+                "flow_terms": [
+                  [
+                    "a1",
+                    "c1",
+                    1
+                  ],
+                  [
+                    "a1",
+                    "c2",
+                    1
+                  ],
+                  [
+                    "a1",
+                    "x12",
+                    1
+                  ],
+                  [
+                    "a1",
+                    "x13",
+                    1
+                  ]
+                ],
+                "proof": "balance + exclusion of terminal heads",
+                "q": [
+                  "x11"
+                ],
+                "region": [
+                  "a1"
+                ],
+                "rhs": 1,
+                "station_terms": [
+                  [
+                    "x11",
+                    1
+                  ]
+                ]
+              },
+              "decision": "ADDED",
+              "deficit": "1/6",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "5/6",
+              "q": [
+                "x11"
+              ],
+              "region": [
+                "a1"
+              ],
+              "signature": "('origin', ('a1',), ('x11',))"
+            },
+            {
+              "certificate": {
+                "demand": 1,
+                "family": "FC-R",
+                "flow_terms": [
+                  [
+                    "a2",
+                    "c1",
+                    1
+                  ],
+                  [
+                    "a2",
+                    "c2",
+                    1
+                  ],
+                  [
+                    "a2",
+                    "x21",
+                    1
+                  ],
+                  [
+                    "a2",
+                    "x23",
+                    1
+                  ]
+                ],
+                "proof": "balance + exclusion of terminal heads",
+                "q": [
+                  "x22"
+                ],
+                "region": [
+                  "a2"
+                ],
+                "rhs": 1,
+                "station_terms": [
+                  [
+                    "x22",
+                    1
+                  ]
+                ]
+              },
+              "decision": "ADDED",
+              "deficit": "5/6",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1/6",
+              "q": [
+                "x22"
+              ],
+              "region": [
+                "a2"
+              ],
+              "signature": "('origin', ('a2',), ('x22',))"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "a3"
+              ],
+              "signature": "('origin', ('a3',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "a4"
+              ],
+              "signature": "('origin', ('a4',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "c1"
+              ],
+              "signature": "('destination', ('c1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "c2"
+              ],
+              "signature": "('destination', ('c2',), ())"
+            },
+            {
+              "certificate": {
+                "demand": 1,
+                "family": "FC-R-T",
+                "flow_terms": [
+                  [
+                    "e1",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x11",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x12",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x13",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x21",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x23",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x31",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x32",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x33",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x41",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x42",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x43",
+                    "d1",
+                    1
+                  ]
+                ],
+                "proof": "balance + exclusion of source tails",
+                "q": [
+                  "x22"
+                ],
+                "region": [
+                  "d1"
+                ],
+                "rhs": 1,
+                "station_terms": [
+                  [
+                    "x22",
+                    1
+                  ]
+                ]
+              },
+              "decision": "ADDED",
+              "deficit": "5/6",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1/6",
+              "q": [
+                "x22"
+              ],
+              "region": [
+                "d1"
+              ],
+              "signature": "('destination', ('d1',), ('x22',))"
+            },
+            {
+              "certificate": {
+                "demand": 1,
+                "family": "FC-R-T",
+                "flow_terms": [
+                  [
+                    "e2",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x12",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x13",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x21",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x22",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x23",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x31",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x32",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x33",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x41",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x42",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x43",
+                    "d2",
+                    1
+                  ]
+                ],
+                "proof": "balance + exclusion of source tails",
+                "q": [
+                  "x11"
+                ],
+                "region": [
+                  "d2"
+                ],
+                "rhs": 1,
+                "station_terms": [
+                  [
+                    "x11",
+                    1
+                  ]
+                ]
+              },
+              "decision": "ADDED",
+              "deficit": "1/6",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "5/6",
+              "q": [
+                "x11"
+              ],
+              "region": [
+                "d2"
+              ],
+              "signature": "('destination', ('d2',), ('x11',))"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "e1"
+              ],
+              "signature": "('origin', ('e1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "e2"
+              ],
+              "signature": "('origin', ('e2',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "g1"
+              ],
+              "signature": "('destination', ('g1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "g2"
+              ],
+              "signature": "('destination', ('g2',), ())"
+            }
+          ],
+          "stats": {
+            "capped": 0,
+            "coverage": "ALL_ELIGIBLE_SINGLETONS",
+            "duplicates": 0,
+            "elapsed_s": 0.004353136999952767,
+            "emitted": 4,
+            "examined": 12,
+            "global_region_separation": false,
+            "larger_checked": 0,
+            "larger_complete_selected": true,
+            "larger_discarded": 0,
+            "larger_generated": 0,
+            "larger_selected": 0,
+            "no_violation": 8,
+            "reason": null,
+            "singleton_complete": true,
+            "singletons_checked": 12,
+            "singletons_eligible": 12,
+            "violated": 4
+          },
+          "status": "COMPLETE_DECLARED_FAMILY"
+        },
+        "singleton_plus_heuristic": {
+          "cuts": [
+            {
+              "demand": 1,
+              "family": "FC-R",
+              "flow_terms": [
+                [
+                  "a1",
+                  "c1",
+                  1
+                ],
+                [
+                  "a1",
+                  "c2",
+                  1
+                ],
+                [
+                  "a1",
+                  "x12",
+                  1
+                ],
+                [
+                  "a1",
+                  "x13",
+                  1
+                ]
+              ],
+              "proof": "balance + exclusion of terminal heads",
+              "q": [
+                "x11"
+              ],
+              "region": [
+                "a1"
+              ],
+              "rhs": 1,
+              "station_terms": [
+                [
+                  "x11",
+                  1
+                ]
+              ]
+            },
+            {
+              "demand": 1,
+              "family": "FC-R",
+              "flow_terms": [
+                [
+                  "a2",
+                  "c1",
+                  1
+                ],
+                [
+                  "a2",
+                  "c2",
+                  1
+                ],
+                [
+                  "a2",
+                  "x21",
+                  1
+                ],
+                [
+                  "a2",
+                  "x23",
+                  1
+                ]
+              ],
+              "proof": "balance + exclusion of terminal heads",
+              "q": [
+                "x22"
+              ],
+              "region": [
+                "a2"
+              ],
+              "rhs": 1,
+              "station_terms": [
+                [
+                  "x22",
+                  1
+                ]
+              ]
+            },
+            {
+              "demand": 1,
+              "family": "FC-R-T",
+              "flow_terms": [
+                [
+                  "e1",
+                  "d1",
+                  1
+                ],
+                [
+                  "x11",
+                  "d1",
+                  1
+                ],
+                [
+                  "x12",
+                  "d1",
+                  1
+                ],
+                [
+                  "x13",
+                  "d1",
+                  1
+                ],
+                [
+                  "x21",
+                  "d1",
+                  1
+                ],
+                [
+                  "x23",
+                  "d1",
+                  1
+                ],
+                [
+                  "x31",
+                  "d1",
+                  1
+                ],
+                [
+                  "x32",
+                  "d1",
+                  1
+                ],
+                [
+                  "x33",
+                  "d1",
+                  1
+                ],
+                [
+                  "x41",
+                  "d1",
+                  1
+                ],
+                [
+                  "x42",
+                  "d1",
+                  1
+                ],
+                [
+                  "x43",
+                  "d1",
+                  1
+                ]
+              ],
+              "proof": "balance + exclusion of source tails",
+              "q": [
+                "x22"
+              ],
+              "region": [
+                "d1"
+              ],
+              "rhs": 1,
+              "station_terms": [
+                [
+                  "x22",
+                  1
+                ]
+              ]
+            },
+            {
+              "demand": 1,
+              "family": "FC-R-T",
+              "flow_terms": [
+                [
+                  "e2",
+                  "d2",
+                  1
+                ],
+                [
+                  "x12",
+                  "d2",
+                  1
+                ],
+                [
+                  "x13",
+                  "d2",
+                  1
+                ],
+                [
+                  "x21",
+                  "d2",
+                  1
+                ],
+                [
+                  "x22",
+                  "d2",
+                  1
+                ],
+                [
+                  "x23",
+                  "d2",
+                  1
+                ],
+                [
+                  "x31",
+                  "d2",
+                  1
+                ],
+                [
+                  "x32",
+                  "d2",
+                  1
+                ],
+                [
+                  "x33",
+                  "d2",
+                  1
+                ],
+                [
+                  "x41",
+                  "d2",
+                  1
+                ],
+                [
+                  "x42",
+                  "d2",
+                  1
+                ],
+                [
+                  "x43",
+                  "d2",
+                  1
+                ]
+              ],
+              "proof": "balance + exclusion of source tails",
+              "q": [
+                "x11"
+              ],
+              "region": [
+                "d2"
+              ],
+              "rhs": 1,
+              "station_terms": [
+                [
+                  "x11",
+                  1
+                ]
+              ]
+            },
+            {
+              "demand": 2,
+              "family": "FC-R",
+              "flow_terms": [
+                [
+                  "a1",
+                  "c1",
+                  1
+                ],
+                [
+                  "a1",
+                  "c2",
+                  1
+                ],
+                [
+                  "a1",
+                  "x11",
+                  1
+                ],
+                [
+                  "a1",
+                  "x12",
+                  1
+                ],
+                [
+                  "a1",
+                  "x13",
+                  1
+                ],
+                [
+                  "a2",
+                  "c1",
+                  1
+                ],
+                [
+                  "a2",
+                  "c2",
+                  1
+                ],
+                [
+                  "a2",
+                  "x21",
+                  1
+                ],
+                [
+                  "a2",
+                  "x23",
+                  1
+                ]
+              ],
+              "proof": "balance + exclusion of terminal heads",
+              "q": [
+                "x22"
+              ],
+              "region": [
+                "a1",
+                "a2"
+              ],
+              "rhs": 2,
+              "station_terms": [
+                [
+                  "x22",
+                  2
+                ]
+              ]
+            },
+            {
+              "demand": 2,
+              "family": "FC-R",
+              "flow_terms": [
+                [
+                  "a2",
+                  "c1",
+                  1
+                ],
+                [
+                  "a2",
+                  "c2",
+                  1
+                ],
+                [
+                  "a2",
+                  "x21",
+                  1
+                ],
+                [
+                  "a2",
+                  "x23",
+                  1
+                ],
+                [
+                  "a3",
+                  "c1",
+                  1
+                ],
+                [
+                  "a3",
+                  "c2",
+                  1
+                ],
+                [
+                  "a3",
+                  "x31",
+                  1
+                ],
+                [
+                  "a3",
+                  "x32",
+                  1
+                ],
+                [
+                  "a3",
+                  "x33",
+                  1
+                ]
+              ],
+              "proof": "balance + exclusion of terminal heads",
+              "q": [
+                "x22"
+              ],
+              "region": [
+                "a2",
+                "a3"
+              ],
+              "rhs": 2,
+              "station_terms": [
+                [
+                  "x22",
+                  2
+                ]
+              ]
+            },
+            {
+              "demand": 2,
+              "family": "FC-R",
+              "flow_terms": [
+                [
+                  "a2",
+                  "c1",
+                  1
+                ],
+                [
+                  "a2",
+                  "c2",
+                  1
+                ],
+                [
+                  "a2",
+                  "x21",
+                  1
+                ],
+                [
+                  "a2",
+                  "x23",
+                  1
+                ],
+                [
+                  "a4",
+                  "c1",
+                  1
+                ],
+                [
+                  "a4",
+                  "c2",
+                  1
+                ],
+                [
+                  "a4",
+                  "x41",
+                  1
+                ],
+                [
+                  "a4",
+                  "x42",
+                  1
+                ],
+                [
+                  "a4",
+                  "x43",
+                  1
+                ]
+              ],
+              "proof": "balance + exclusion of terminal heads",
+              "q": [
+                "x22"
+              ],
+              "region": [
+                "a2",
+                "a4"
+              ],
+              "rhs": 2,
+              "station_terms": [
+                [
+                  "x22",
+                  2
+                ]
+              ]
+            },
+            {
+              "demand": 2,
+              "family": "FC-R-T",
+              "flow_terms": [
+                [
+                  "e1",
+                  "d1",
+                  1
+                ],
+                [
+                  "e2",
+                  "d2",
+                  1
+                ],
+                [
+                  "x11",
+                  "d1",
+                  1
+                ],
+                [
+                  "x11",
+                  "d2",
+                  1
+                ],
+                [
+                  "x12",
+                  "d1",
+                  1
+                ],
+                [
+                  "x12",
+                  "d2",
+                  1
+                ],
+                [
+                  "x13",
+                  "d1",
+                  1
+                ],
+                [
+                  "x13",
+                  "d2",
+                  1
+                ],
+                [
+                  "x21",
+                  "d1",
+                  1
+                ],
+                [
+                  "x21",
+                  "d2",
+                  1
+                ],
+                [
+                  "x23",
+                  "d1",
+                  1
+                ],
+                [
+                  "x23",
+                  "d2",
+                  1
+                ],
+                [
+                  "x31",
+                  "d1",
+                  1
+                ],
+                [
+                  "x31",
+                  "d2",
+                  1
+                ],
+                [
+                  "x32",
+                  "d1",
+                  1
+                ],
+                [
+                  "x32",
+                  "d2",
+                  1
+                ],
+                [
+                  "x33",
+                  "d1",
+                  1
+                ],
+                [
+                  "x33",
+                  "d2",
+                  1
+                ],
+                [
+                  "x41",
+                  "d1",
+                  1
+                ],
+                [
+                  "x41",
+                  "d2",
+                  1
+                ],
+                [
+                  "x42",
+                  "d1",
+                  1
+                ],
+                [
+                  "x42",
+                  "d2",
+                  1
+                ],
+                [
+                  "x43",
+                  "d1",
+                  1
+                ],
+                [
+                  "x43",
+                  "d2",
+                  1
+                ]
+              ],
+              "proof": "balance + exclusion of source tails",
+              "q": [
+                "x22"
+              ],
+              "region": [
+                "d1",
+                "d2"
+              ],
+              "rhs": 2,
+              "station_terms": [
+                [
+                  "x22",
+                  2
+                ]
+              ]
+            },
+            {
+              "demand": 2,
+              "family": "FC-R-T",
+              "flow_terms": [
+                [
+                  "e1",
+                  "d1",
+                  1
+                ],
+                [
+                  "e1",
+                  "g1",
+                  1
+                ],
+                [
+                  "x11",
+                  "d1",
+                  1
+                ],
+                [
+                  "x12",
+                  "d1",
+                  1
+                ],
+                [
+                  "x13",
+                  "d1",
+                  1
+                ],
+                [
+                  "x21",
+                  "d1",
+                  1
+                ],
+                [
+                  "x23",
+                  "d1",
+                  1
+                ],
+                [
+                  "x31",
+                  "d1",
+                  1
+                ],
+                [
+                  "x32",
+                  "d1",
+                  1
+                ],
+                [
+                  "x33",
+                  "d1",
+                  1
+                ],
+                [
+                  "x41",
+                  "d1",
+                  1
+                ],
+                [
+                  "x42",
+                  "d1",
+                  1
+                ],
+                [
+                  "x43",
+                  "d1",
+                  1
+                ]
+              ],
+              "proof": "balance + exclusion of source tails",
+              "q": [
+                "x22"
+              ],
+              "region": [
+                "d1",
+                "g1"
+              ],
+              "rhs": 2,
+              "station_terms": [
+                [
+                  "x22",
+                  2
+                ]
+              ]
+            },
+            {
+              "demand": 1,
+              "family": "FC-R",
+              "flow_terms": [
+                [
+                  "a1",
+                  "c1",
+                  1
+                ],
+                [
+                  "a1",
+                  "c2",
+                  1
+                ],
+                [
+                  "a1",
+                  "x13",
+                  1
+                ],
+                [
+                  "x12",
+                  "d1",
+                  1
+                ],
+                [
+                  "x12",
+                  "d2",
+                  1
+                ]
+              ],
+              "proof": "balance + exclusion of terminal heads",
+              "q": [
+                "x11"
+              ],
+              "region": [
+                "a1",
+                "x12"
+              ],
+              "rhs": 1,
+              "station_terms": [
+                [
+                  "x11",
+                  1
+                ]
+              ]
+            }
+          ],
+          "events": [
+            {
+              "certificate": {
+                "demand": 1,
+                "family": "FC-R",
+                "flow_terms": [
+                  [
+                    "a1",
+                    "c1",
+                    1
+                  ],
+                  [
+                    "a1",
+                    "c2",
+                    1
+                  ],
+                  [
+                    "a1",
+                    "x12",
+                    1
+                  ],
+                  [
+                    "a1",
+                    "x13",
+                    1
+                  ]
+                ],
+                "proof": "balance + exclusion of terminal heads",
+                "q": [
+                  "x11"
+                ],
+                "region": [
+                  "a1"
+                ],
+                "rhs": 1,
+                "station_terms": [
+                  [
+                    "x11",
+                    1
+                  ]
+                ]
+              },
+              "decision": "ADDED",
+              "deficit": "1/6",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "5/6",
+              "q": [
+                "x11"
+              ],
+              "region": [
+                "a1"
+              ],
+              "signature": "('origin', ('a1',), ('x11',))"
+            },
+            {
+              "certificate": {
+                "demand": 1,
+                "family": "FC-R",
+                "flow_terms": [
+                  [
+                    "a2",
+                    "c1",
+                    1
+                  ],
+                  [
+                    "a2",
+                    "c2",
+                    1
+                  ],
+                  [
+                    "a2",
+                    "x21",
+                    1
+                  ],
+                  [
+                    "a2",
+                    "x23",
+                    1
+                  ]
+                ],
+                "proof": "balance + exclusion of terminal heads",
+                "q": [
+                  "x22"
+                ],
+                "region": [
+                  "a2"
+                ],
+                "rhs": 1,
+                "station_terms": [
+                  [
+                    "x22",
+                    1
+                  ]
+                ]
+              },
+              "decision": "ADDED",
+              "deficit": "5/6",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1/6",
+              "q": [
+                "x22"
+              ],
+              "region": [
+                "a2"
+              ],
+              "signature": "('origin', ('a2',), ('x22',))"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "a3"
+              ],
+              "signature": "('origin', ('a3',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "a4"
+              ],
+              "signature": "('origin', ('a4',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "c1"
+              ],
+              "signature": "('destination', ('c1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "c2"
+              ],
+              "signature": "('destination', ('c2',), ())"
+            },
+            {
+              "certificate": {
+                "demand": 1,
+                "family": "FC-R-T",
+                "flow_terms": [
+                  [
+                    "e1",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x11",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x12",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x13",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x21",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x23",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x31",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x32",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x33",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x41",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x42",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x43",
+                    "d1",
+                    1
+                  ]
+                ],
+                "proof": "balance + exclusion of source tails",
+                "q": [
+                  "x22"
+                ],
+                "region": [
+                  "d1"
+                ],
+                "rhs": 1,
+                "station_terms": [
+                  [
+                    "x22",
+                    1
+                  ]
+                ]
+              },
+              "decision": "ADDED",
+              "deficit": "5/6",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1/6",
+              "q": [
+                "x22"
+              ],
+              "region": [
+                "d1"
+              ],
+              "signature": "('destination', ('d1',), ('x22',))"
+            },
+            {
+              "certificate": {
+                "demand": 1,
+                "family": "FC-R-T",
+                "flow_terms": [
+                  [
+                    "e2",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x12",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x13",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x21",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x22",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x23",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x31",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x32",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x33",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x41",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x42",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x43",
+                    "d2",
+                    1
+                  ]
+                ],
+                "proof": "balance + exclusion of source tails",
+                "q": [
+                  "x11"
+                ],
+                "region": [
+                  "d2"
+                ],
+                "rhs": 1,
+                "station_terms": [
+                  [
+                    "x11",
+                    1
+                  ]
+                ]
+              },
+              "decision": "ADDED",
+              "deficit": "1/6",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "5/6",
+              "q": [
+                "x11"
+              ],
+              "region": [
+                "d2"
+              ],
+              "signature": "('destination', ('d2',), ('x11',))"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "e1"
+              ],
+              "signature": "('origin', ('e1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "e2"
+              ],
+              "signature": "('origin', ('e2',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "g1"
+              ],
+              "signature": "('destination', ('g1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "g2"
+              ],
+              "signature": "('destination', ('g2',), ())"
+            },
+            {
+              "certificate": {
+                "demand": 2,
+                "family": "FC-R",
+                "flow_terms": [
+                  [
+                    "a1",
+                    "c1",
+                    1
+                  ],
+                  [
+                    "a1",
+                    "c2",
+                    1
+                  ],
+                  [
+                    "a1",
+                    "x11",
+                    1
+                  ],
+                  [
+                    "a1",
+                    "x12",
+                    1
+                  ],
+                  [
+                    "a1",
+                    "x13",
+                    1
+                  ],
+                  [
+                    "a2",
+                    "c1",
+                    1
+                  ],
+                  [
+                    "a2",
+                    "c2",
+                    1
+                  ],
+                  [
+                    "a2",
+                    "x21",
+                    1
+                  ],
+                  [
+                    "a2",
+                    "x23",
+                    1
+                  ]
+                ],
+                "proof": "balance + exclusion of terminal heads",
+                "q": [
+                  "x22"
+                ],
+                "region": [
+                  "a1",
+                  "a2"
+                ],
+                "rhs": 2,
+                "station_terms": [
+                  [
+                    "x22",
+                    2
+                  ]
+                ]
+              },
+              "decision": "ADDED",
+              "deficit": "2/3",
+              "demand": 2,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "4/3",
+              "q": [
+                "x22"
+              ],
+              "region": [
+                "a1",
+                "a2"
+              ],
+              "signature": "('origin', ('a1', 'a2'), ('x22',))"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 2,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "2",
+              "q": [],
+              "region": [
+                "a1",
+                "a3"
+              ],
+              "signature": "('origin', ('a1', 'a3'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 2,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "2",
+              "q": [],
+              "region": [
+                "a1",
+                "a4"
+              ],
+              "signature": "('origin', ('a1', 'a4'), ())"
+            },
+            {
+              "certificate": {
+                "demand": 2,
+                "family": "FC-R",
+                "flow_terms": [
+                  [
+                    "a2",
+                    "c1",
+                    1
+                  ],
+                  [
+                    "a2",
+                    "c2",
+                    1
+                  ],
+                  [
+                    "a2",
+                    "x21",
+                    1
+                  ],
+                  [
+                    "a2",
+                    "x23",
+                    1
+                  ],
+                  [
+                    "a3",
+                    "c1",
+                    1
+                  ],
+                  [
+                    "a3",
+                    "c2",
+                    1
+                  ],
+                  [
+                    "a3",
+                    "x31",
+                    1
+                  ],
+                  [
+                    "a3",
+                    "x32",
+                    1
+                  ],
+                  [
+                    "a3",
+                    "x33",
+                    1
+                  ]
+                ],
+                "proof": "balance + exclusion of terminal heads",
+                "q": [
+                  "x22"
+                ],
+                "region": [
+                  "a2",
+                  "a3"
+                ],
+                "rhs": 2,
+                "station_terms": [
+                  [
+                    "x22",
+                    2
+                  ]
+                ]
+              },
+              "decision": "ADDED",
+              "deficit": "2/3",
+              "demand": 2,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "4/3",
+              "q": [
+                "x22"
+              ],
+              "region": [
+                "a2",
+                "a3"
+              ],
+              "signature": "('origin', ('a2', 'a3'), ('x22',))"
+            },
+            {
+              "certificate": {
+                "demand": 2,
+                "family": "FC-R",
+                "flow_terms": [
+                  [
+                    "a2",
+                    "c1",
+                    1
+                  ],
+                  [
+                    "a2",
+                    "c2",
+                    1
+                  ],
+                  [
+                    "a2",
+                    "x21",
+                    1
+                  ],
+                  [
+                    "a2",
+                    "x23",
+                    1
+                  ],
+                  [
+                    "a4",
+                    "c1",
+                    1
+                  ],
+                  [
+                    "a4",
+                    "c2",
+                    1
+                  ],
+                  [
+                    "a4",
+                    "x41",
+                    1
+                  ],
+                  [
+                    "a4",
+                    "x42",
+                    1
+                  ],
+                  [
+                    "a4",
+                    "x43",
+                    1
+                  ]
+                ],
+                "proof": "balance + exclusion of terminal heads",
+                "q": [
+                  "x22"
+                ],
+                "region": [
+                  "a2",
+                  "a4"
+                ],
+                "rhs": 2,
+                "station_terms": [
+                  [
+                    "x22",
+                    2
+                  ]
+                ]
+              },
+              "decision": "ADDED",
+              "deficit": "2/3",
+              "demand": 2,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "4/3",
+              "q": [
+                "x22"
+              ],
+              "region": [
+                "a2",
+                "a4"
+              ],
+              "signature": "('origin', ('a2', 'a4'), ('x22',))"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 2,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "2",
+              "q": [],
+              "region": [
+                "a3",
+                "a4"
+              ],
+              "signature": "('origin', ('a3', 'a4'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 2,
+              "direction": "destination",
+              "kind": "heuristic",
+              "lhs": "2",
+              "q": [],
+              "region": [
+                "c1",
+                "c2"
+              ],
+              "signature": "('destination', ('c1', 'c2'), ())"
+            },
+            {
+              "certificate": {
+                "demand": 2,
+                "family": "FC-R-T",
+                "flow_terms": [
+                  [
+                    "e1",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "e2",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x11",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x11",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x12",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x12",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x13",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x13",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x21",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x21",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x23",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x23",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x31",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x31",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x32",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x32",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x33",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x33",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x41",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x41",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x42",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x42",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x43",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x43",
+                    "d2",
+                    1
+                  ]
+                ],
+                "proof": "balance + exclusion of source tails",
+                "q": [
+                  "x22"
+                ],
+                "region": [
+                  "d1",
+                  "d2"
+                ],
+                "rhs": 2,
+                "station_terms": [
+                  [
+                    "x22",
+                    2
+                  ]
+                ]
+              },
+              "decision": "ADDED",
+              "deficit": "2/3",
+              "demand": 2,
+              "direction": "destination",
+              "kind": "heuristic",
+              "lhs": "4/3",
+              "q": [
+                "x22"
+              ],
+              "region": [
+                "d1",
+                "d2"
+              ],
+              "signature": "('destination', ('d1', 'd2'), ('x22',))"
+            },
+            {
+              "certificate": {
+                "demand": 2,
+                "family": "FC-R-T",
+                "flow_terms": [
+                  [
+                    "e1",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "e1",
+                    "g1",
+                    1
+                  ],
+                  [
+                    "x11",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x12",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x13",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x21",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x23",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x31",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x32",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x33",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x41",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x42",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x43",
+                    "d1",
+                    1
+                  ]
+                ],
+                "proof": "balance + exclusion of source tails",
+                "q": [
+                  "x22"
+                ],
+                "region": [
+                  "d1",
+                  "g1"
+                ],
+                "rhs": 2,
+                "station_terms": [
+                  [
+                    "x22",
+                    2
+                  ]
+                ]
+              },
+              "decision": "ADDED",
+              "deficit": "2/3",
+              "demand": 2,
+              "direction": "destination",
+              "kind": "heuristic",
+              "lhs": "4/3",
+              "q": [
+                "x22"
+              ],
+              "region": [
+                "d1",
+                "g1"
+              ],
+              "signature": "('destination', ('d1', 'g1'), ('x22',))"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 2,
+              "direction": "destination",
+              "kind": "heuristic",
+              "lhs": "2",
+              "q": [],
+              "region": [
+                "d2",
+                "g2"
+              ],
+              "signature": "('destination', ('d2', 'g2'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "a1",
+                "x11"
+              ],
+              "signature": "('origin', ('a1', 'x11'), ())"
+            },
+            {
+              "certificate": {
+                "demand": 1,
+                "family": "FC-R",
+                "flow_terms": [
+                  [
+                    "a1",
+                    "c1",
+                    1
+                  ],
+                  [
+                    "a1",
+                    "c2",
+                    1
+                  ],
+                  [
+                    "a1",
+                    "x13",
+                    1
+                  ],
+                  [
+                    "x12",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x12",
+                    "d2",
+                    1
+                  ]
+                ],
+                "proof": "balance + exclusion of terminal heads",
+                "q": [
+                  "x11"
+                ],
+                "region": [
+                  "a1",
+                  "x12"
+                ],
+                "rhs": 1,
+                "station_terms": [
+                  [
+                    "x11",
+                    1
+                  ]
+                ]
+              },
+              "decision": "ADDED",
+              "deficit": "1/6",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "5/6",
+              "q": [
+                "x11"
+              ],
+              "region": [
+                "a1",
+                "x12"
+              ],
+              "signature": "('origin', ('a1', 'x12'), ('x11',))"
+            }
+          ],
+          "stats": {
+            "capped": 0,
+            "coverage": "ALL_ELIGIBLE_SINGLETONS",
+            "duplicates": 0,
+            "elapsed_s": 0.008404650999864316,
+            "emitted": 10,
+            "examined": 24,
+            "global_region_separation": false,
+            "larger_checked": 12,
+            "larger_complete_selected": true,
+            "larger_discarded": 34,
+            "larger_generated": 46,
+            "larger_selected": 12,
+            "no_violation": 14,
+            "reason": null,
+            "singleton_complete": true,
+            "singletons_checked": 12,
+            "singletons_eligible": 12,
+            "violated": 10
+          },
+          "status": "COMPLETE_SINGLETONS_SELECTED_HEURISTIC"
+        }
+      }
+    },
+    "COMP_K_C6_C8": {
+      "lp_objective_as23": "47/30",
+      "separator_scans": {
+        "singleton": {
+          "cuts": [
+            {
+              "demand": 1,
+              "family": "FC-R",
+              "flow_terms": [
+                [
+                  "a3",
+                  "c1",
+                  1
+                ],
+                [
+                  "a3",
+                  "c2",
+                  1
+                ]
+              ],
+              "proof": "balance + exclusion of terminal heads",
+              "q": [
+                "x31",
+                "x32",
+                "x33"
+              ],
+              "region": [
+                "a3"
+              ],
+              "rhs": 1,
+              "station_terms": [
+                [
+                  "x31",
+                  1
+                ],
+                [
+                  "x32",
+                  1
+                ],
+                [
+                  "x33",
+                  1
+                ]
+              ]
+            },
+            {
+              "demand": 1,
+              "family": "FC-R",
+              "flow_terms": [
+                [
+                  "a4",
+                  "c1",
+                  1
+                ],
+                [
+                  "a4",
+                  "c2",
+                  1
+                ]
+              ],
+              "proof": "balance + exclusion of terminal heads",
+              "q": [
+                "x41",
+                "x42",
+                "x43"
+              ],
+              "region": [
+                "a4"
+              ],
+              "rhs": 1,
+              "station_terms": [
+                [
+                  "x41",
+                  1
+                ],
+                [
+                  "x42",
+                  1
+                ],
+                [
+                  "x43",
+                  1
+                ]
+              ]
+            }
+          ],
+          "events": [
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "a1"
+              ],
+              "signature": "('origin', ('a1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "a2"
+              ],
+              "signature": "('origin', ('a2',), ())"
+            },
+            {
+              "certificate": {
+                "demand": 1,
+                "family": "FC-R",
+                "flow_terms": [
+                  [
+                    "a3",
+                    "c1",
+                    1
+                  ],
+                  [
+                    "a3",
+                    "c2",
+                    1
+                  ]
+                ],
+                "proof": "balance + exclusion of terminal heads",
+                "q": [
+                  "x31",
+                  "x32",
+                  "x33"
+                ],
+                "region": [
+                  "a3"
+                ],
+                "rhs": 1,
+                "station_terms": [
+                  [
+                    "x31",
+                    1
+                  ],
+                  [
+                    "x32",
+                    1
+                  ],
+                  [
+                    "x33",
+                    1
+                  ]
+                ]
+              },
+              "decision": "ADDED",
+              "deficit": "1/3",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "2/3",
+              "q": [
+                "x31",
+                "x32",
+                "x33"
+              ],
+              "region": [
+                "a3"
+              ],
+              "signature": "('origin', ('a3',), ('x31', 'x32', 'x33'))"
+            },
+            {
+              "certificate": {
+                "demand": 1,
+                "family": "FC-R",
+                "flow_terms": [
+                  [
+                    "a4",
+                    "c1",
+                    1
+                  ],
+                  [
+                    "a4",
+                    "c2",
+                    1
+                  ]
+                ],
+                "proof": "balance + exclusion of terminal heads",
+                "q": [
+                  "x41",
+                  "x42",
+                  "x43"
+                ],
+                "region": [
+                  "a4"
+                ],
+                "rhs": 1,
+                "station_terms": [
+                  [
+                    "x41",
+                    1
+                  ],
+                  [
+                    "x42",
+                    1
+                  ],
+                  [
+                    "x43",
+                    1
+                  ]
+                ]
+              },
+              "decision": "ADDED",
+              "deficit": "1/3",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "2/3",
+              "q": [
+                "x41",
+                "x42",
+                "x43"
+              ],
+              "region": [
+                "a4"
+              ],
+              "signature": "('origin', ('a4',), ('x41', 'x42', 'x43'))"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "-1/6",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "7/6",
+              "q": [],
+              "region": [
+                "c1"
+              ],
+              "signature": "('destination', ('c1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "-1/6",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "7/6",
+              "q": [],
+              "region": [
+                "c2"
+              ],
+              "signature": "('destination', ('c2',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "d1"
+              ],
+              "signature": "('destination', ('d1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "d2"
+              ],
+              "signature": "('destination', ('d2',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "e1"
+              ],
+              "signature": "('origin', ('e1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "e2"
+              ],
+              "signature": "('origin', ('e2',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "g1"
+              ],
+              "signature": "('destination', ('g1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "g2"
+              ],
+              "signature": "('destination', ('g2',), ())"
+            }
+          ],
+          "stats": {
+            "capped": 0,
+            "coverage": "ALL_ELIGIBLE_SINGLETONS",
+            "duplicates": 0,
+            "elapsed_s": 0.004562832000146955,
+            "emitted": 2,
+            "examined": 12,
+            "global_region_separation": false,
+            "larger_checked": 0,
+            "larger_complete_selected": true,
+            "larger_discarded": 0,
+            "larger_generated": 0,
+            "larger_selected": 0,
+            "no_violation": 10,
+            "reason": null,
+            "singleton_complete": true,
+            "singletons_checked": 12,
+            "singletons_eligible": 12,
+            "violated": 2
+          },
+          "status": "COMPLETE_DECLARED_FAMILY"
+        },
+        "singleton_plus_heuristic": {
+          "cuts": [
+            {
+              "demand": 1,
+              "family": "FC-R",
+              "flow_terms": [
+                [
+                  "a3",
+                  "c1",
+                  1
+                ],
+                [
+                  "a3",
+                  "c2",
+                  1
+                ]
+              ],
+              "proof": "balance + exclusion of terminal heads",
+              "q": [
+                "x31",
+                "x32",
+                "x33"
+              ],
+              "region": [
+                "a3"
+              ],
+              "rhs": 1,
+              "station_terms": [
+                [
+                  "x31",
+                  1
+                ],
+                [
+                  "x32",
+                  1
+                ],
+                [
+                  "x33",
+                  1
+                ]
+              ]
+            },
+            {
+              "demand": 1,
+              "family": "FC-R",
+              "flow_terms": [
+                [
+                  "a4",
+                  "c1",
+                  1
+                ],
+                [
+                  "a4",
+                  "c2",
+                  1
+                ]
+              ],
+              "proof": "balance + exclusion of terminal heads",
+              "q": [
+                "x41",
+                "x42",
+                "x43"
+              ],
+              "region": [
+                "a4"
+              ],
+              "rhs": 1,
+              "station_terms": [
+                [
+                  "x41",
+                  1
+                ],
+                [
+                  "x42",
+                  1
+                ],
+                [
+                  "x43",
+                  1
+                ]
+              ]
+            }
+          ],
+          "events": [
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "a1"
+              ],
+              "signature": "('origin', ('a1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "a2"
+              ],
+              "signature": "('origin', ('a2',), ())"
+            },
+            {
+              "certificate": {
+                "demand": 1,
+                "family": "FC-R",
+                "flow_terms": [
+                  [
+                    "a3",
+                    "c1",
+                    1
+                  ],
+                  [
+                    "a3",
+                    "c2",
+                    1
+                  ]
+                ],
+                "proof": "balance + exclusion of terminal heads",
+                "q": [
+                  "x31",
+                  "x32",
+                  "x33"
+                ],
+                "region": [
+                  "a3"
+                ],
+                "rhs": 1,
+                "station_terms": [
+                  [
+                    "x31",
+                    1
+                  ],
+                  [
+                    "x32",
+                    1
+                  ],
+                  [
+                    "x33",
+                    1
+                  ]
+                ]
+              },
+              "decision": "ADDED",
+              "deficit": "1/3",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "2/3",
+              "q": [
+                "x31",
+                "x32",
+                "x33"
+              ],
+              "region": [
+                "a3"
+              ],
+              "signature": "('origin', ('a3',), ('x31', 'x32', 'x33'))"
+            },
+            {
+              "certificate": {
+                "demand": 1,
+                "family": "FC-R",
+                "flow_terms": [
+                  [
+                    "a4",
+                    "c1",
+                    1
+                  ],
+                  [
+                    "a4",
+                    "c2",
+                    1
+                  ]
+                ],
+                "proof": "balance + exclusion of terminal heads",
+                "q": [
+                  "x41",
+                  "x42",
+                  "x43"
+                ],
+                "region": [
+                  "a4"
+                ],
+                "rhs": 1,
+                "station_terms": [
+                  [
+                    "x41",
+                    1
+                  ],
+                  [
+                    "x42",
+                    1
+                  ],
+                  [
+                    "x43",
+                    1
+                  ]
+                ]
+              },
+              "decision": "ADDED",
+              "deficit": "1/3",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "2/3",
+              "q": [
+                "x41",
+                "x42",
+                "x43"
+              ],
+              "region": [
+                "a4"
+              ],
+              "signature": "('origin', ('a4',), ('x41', 'x42', 'x43'))"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "-1/6",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "7/6",
+              "q": [],
+              "region": [
+                "c1"
+              ],
+              "signature": "('destination', ('c1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "-1/6",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "7/6",
+              "q": [],
+              "region": [
+                "c2"
+              ],
+              "signature": "('destination', ('c2',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "d1"
+              ],
+              "signature": "('destination', ('d1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "d2"
+              ],
+              "signature": "('destination', ('d2',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "e1"
+              ],
+              "signature": "('origin', ('e1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "e2"
+              ],
+              "signature": "('origin', ('e2',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "g1"
+              ],
+              "signature": "('destination', ('g1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "g2"
+              ],
+              "signature": "('destination', ('g2',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 2,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "2",
+              "q": [],
+              "region": [
+                "a1",
+                "a2"
+              ],
+              "signature": "('origin', ('a1', 'a2'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "-1/6",
+              "demand": 2,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "13/6",
+              "q": [],
+              "region": [
+                "a1",
+                "a3"
+              ],
+              "signature": "('origin', ('a1', 'a3'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "-1/6",
+              "demand": 2,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "13/6",
+              "q": [],
+              "region": [
+                "a1",
+                "a4"
+              ],
+              "signature": "('origin', ('a1', 'a4'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "-1/6",
+              "demand": 2,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "13/6",
+              "q": [],
+              "region": [
+                "a2",
+                "a3"
+              ],
+              "signature": "('origin', ('a2', 'a3'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "-1/6",
+              "demand": 2,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "13/6",
+              "q": [],
+              "region": [
+                "a2",
+                "a4"
+              ],
+              "signature": "('origin', ('a2', 'a4'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "-1/3",
+              "demand": 2,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "7/3",
+              "q": [],
+              "region": [
+                "a3",
+                "a4"
+              ],
+              "signature": "('origin', ('a3', 'a4'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "-1/3",
+              "demand": 2,
+              "direction": "destination",
+              "kind": "heuristic",
+              "lhs": "7/3",
+              "q": [],
+              "region": [
+                "c1",
+                "c2"
+              ],
+              "signature": "('destination', ('c1', 'c2'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 2,
+              "direction": "destination",
+              "kind": "heuristic",
+              "lhs": "2",
+              "q": [],
+              "region": [
+                "d1",
+                "d2"
+              ],
+              "signature": "('destination', ('d1', 'd2'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 2,
+              "direction": "destination",
+              "kind": "heuristic",
+              "lhs": "2",
+              "q": [],
+              "region": [
+                "d1",
+                "g1"
+              ],
+              "signature": "('destination', ('d1', 'g1'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 2,
+              "direction": "destination",
+              "kind": "heuristic",
+              "lhs": "2",
+              "q": [],
+              "region": [
+                "d2",
+                "g2"
+              ],
+              "signature": "('destination', ('d2', 'g2'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "a1",
+                "x11"
+              ],
+              "signature": "('origin', ('a1', 'x11'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "a1",
+                "x12"
+              ],
+              "signature": "('origin', ('a1', 'x12'), ())"
+            }
+          ],
+          "stats": {
+            "capped": 0,
+            "coverage": "ALL_ELIGIBLE_SINGLETONS",
+            "duplicates": 0,
+            "elapsed_s": 0.008882350000021688,
+            "emitted": 2,
+            "examined": 24,
+            "global_region_separation": false,
+            "larger_checked": 12,
+            "larger_complete_selected": true,
+            "larger_discarded": 34,
+            "larger_generated": 46,
+            "larger_selected": 12,
+            "no_violation": 22,
+            "reason": null,
+            "singleton_complete": true,
+            "singletons_checked": 12,
+            "singletons_eligible": 12,
+            "violated": 2
+          },
+          "status": "COMPLETE_SINGLETONS_SELECTED_HEURISTIC"
+        }
+      }
+    },
+    "COMP_K_C6_C8_FCR": {
+      "lp_objective_as23": "17/10",
+      "separator_scans": {
+        "singleton": {
+          "cuts": [],
+          "events": [
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [
+                "x12"
+              ],
+              "region": [
+                "a1"
+              ],
+              "signature": "('origin', ('a1',), ('x12',))"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "a2"
+              ],
+              "signature": "('origin', ('a2',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [
+                "x31"
+              ],
+              "region": [
+                "a3"
+              ],
+              "signature": "('origin', ('a3',), ('x31',))"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "a4"
+              ],
+              "signature": "('origin', ('a4',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "-1",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "2",
+              "q": [],
+              "region": [
+                "c1"
+              ],
+              "signature": "('destination', ('c1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "c2"
+              ],
+              "signature": "('destination', ('c2',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "d1"
+              ],
+              "signature": "('destination', ('d1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "d2"
+              ],
+              "signature": "('destination', ('d2',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "e1"
+              ],
+              "signature": "('origin', ('e1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "e2"
+              ],
+              "signature": "('origin', ('e2',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "g1"
+              ],
+              "signature": "('destination', ('g1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "g2"
+              ],
+              "signature": "('destination', ('g2',), ())"
+            }
+          ],
+          "stats": {
+            "capped": 0,
+            "coverage": "ALL_ELIGIBLE_SINGLETONS",
+            "duplicates": 0,
+            "elapsed_s": 0.004201700000066921,
+            "emitted": 0,
+            "examined": 12,
+            "global_region_separation": false,
+            "larger_checked": 0,
+            "larger_complete_selected": true,
+            "larger_discarded": 0,
+            "larger_generated": 0,
+            "larger_selected": 0,
+            "no_violation": 12,
+            "reason": null,
+            "singleton_complete": true,
+            "singletons_checked": 12,
+            "singletons_eligible": 12,
+            "violated": 0
+          },
+          "status": "COMPLETE_DECLARED_FAMILY"
+        },
+        "singleton_plus_heuristic": {
+          "cuts": [],
+          "events": [
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [
+                "x12"
+              ],
+              "region": [
+                "a1"
+              ],
+              "signature": "('origin', ('a1',), ('x12',))"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "a2"
+              ],
+              "signature": "('origin', ('a2',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [
+                "x31"
+              ],
+              "region": [
+                "a3"
+              ],
+              "signature": "('origin', ('a3',), ('x31',))"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "a4"
+              ],
+              "signature": "('origin', ('a4',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "-1",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "2",
+              "q": [],
+              "region": [
+                "c1"
+              ],
+              "signature": "('destination', ('c1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "c2"
+              ],
+              "signature": "('destination', ('c2',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "d1"
+              ],
+              "signature": "('destination', ('d1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "d2"
+              ],
+              "signature": "('destination', ('d2',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "e1"
+              ],
+              "signature": "('origin', ('e1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "e2"
+              ],
+              "signature": "('origin', ('e2',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "g1"
+              ],
+              "signature": "('destination', ('g1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "g2"
+              ],
+              "signature": "('destination', ('g2',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "-1/2",
+              "demand": 2,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "5/2",
+              "q": [],
+              "region": [
+                "a1",
+                "a2"
+              ],
+              "signature": "('origin', ('a1', 'a2'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "-1",
+              "demand": 2,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "3",
+              "q": [],
+              "region": [
+                "a1",
+                "a3"
+              ],
+              "signature": "('origin', ('a1', 'a3'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "-1/2",
+              "demand": 2,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "5/2",
+              "q": [],
+              "region": [
+                "a1",
+                "a4"
+              ],
+              "signature": "('origin', ('a1', 'a4'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "-1/2",
+              "demand": 2,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "5/2",
+              "q": [],
+              "region": [
+                "a2",
+                "a3"
+              ],
+              "signature": "('origin', ('a2', 'a3'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 2,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "2",
+              "q": [],
+              "region": [
+                "a2",
+                "a4"
+              ],
+              "signature": "('origin', ('a2', 'a4'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "-1/2",
+              "demand": 2,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "5/2",
+              "q": [],
+              "region": [
+                "a3",
+                "a4"
+              ],
+              "signature": "('origin', ('a3', 'a4'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "-1",
+              "demand": 2,
+              "direction": "destination",
+              "kind": "heuristic",
+              "lhs": "3",
+              "q": [],
+              "region": [
+                "c1",
+                "c2"
+              ],
+              "signature": "('destination', ('c1', 'c2'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 2,
+              "direction": "destination",
+              "kind": "heuristic",
+              "lhs": "2",
+              "q": [],
+              "region": [
+                "d1",
+                "d2"
+              ],
+              "signature": "('destination', ('d1', 'd2'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 2,
+              "direction": "destination",
+              "kind": "heuristic",
+              "lhs": "2",
+              "q": [],
+              "region": [
+                "d1",
+                "g1"
+              ],
+              "signature": "('destination', ('d1', 'g1'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 2,
+              "direction": "destination",
+              "kind": "heuristic",
+              "lhs": "2",
+              "q": [],
+              "region": [
+                "d2",
+                "g2"
+              ],
+              "signature": "('destination', ('d2', 'g2'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "1",
+              "q": [
+                "x12"
+              ],
+              "region": [
+                "a1",
+                "x11"
+              ],
+              "signature": "('origin', ('a1', 'x11'), ('x12',))"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "-1/2",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "3/2",
+              "q": [],
+              "region": [
+                "a1",
+                "x12"
+              ],
+              "signature": "('origin', ('a1', 'x12'), ())"
+            }
+          ],
+          "stats": {
+            "capped": 0,
+            "coverage": "ALL_ELIGIBLE_SINGLETONS",
+            "duplicates": 0,
+            "elapsed_s": 0.008525373000111358,
+            "emitted": 0,
+            "examined": 24,
+            "global_region_separation": false,
+            "larger_checked": 12,
+            "larger_complete_selected": true,
+            "larger_discarded": 34,
+            "larger_generated": 46,
+            "larger_selected": 12,
+            "no_violation": 24,
+            "reason": null,
+            "singleton_complete": true,
+            "singletons_checked": 12,
+            "singletons_eligible": 12,
+            "violated": 0
+          },
+          "status": "COMPLETE_SINGLETONS_SELECTED_HEURISTIC"
+        }
+      }
+    },
+    "COMP_K_C8": {
+      "lp_objective_as23": "11/10",
+      "separator_scans": {
+        "singleton": {
+          "cuts": [
+            {
+              "demand": 1,
+              "family": "FC-R",
+              "flow_terms": [
+                [
+                  "a1",
+                  "c1",
+                  1
+                ],
+                [
+                  "a1",
+                  "c2",
+                  1
+                ]
+              ],
+              "proof": "balance + exclusion of terminal heads",
+              "q": [
+                "x11",
+                "x12",
+                "x13"
+              ],
+              "region": [
+                "a1"
+              ],
+              "rhs": 1,
+              "station_terms": [
+                [
+                  "x11",
+                  1
+                ],
+                [
+                  "x12",
+                  1
+                ],
+                [
+                  "x13",
+                  1
+                ]
+              ]
+            },
+            {
+              "demand": 1,
+              "family": "FC-R",
+              "flow_terms": [
+                [
+                  "a2",
+                  "c1",
+                  1
+                ],
+                [
+                  "a2",
+                  "c2",
+                  1
+                ]
+              ],
+              "proof": "balance + exclusion of terminal heads",
+              "q": [
+                "x21",
+                "x22",
+                "x23"
+              ],
+              "region": [
+                "a2"
+              ],
+              "rhs": 1,
+              "station_terms": [
+                [
+                  "x21",
+                  1
+                ],
+                [
+                  "x22",
+                  1
+                ],
+                [
+                  "x23",
+                  1
+                ]
+              ]
+            }
+          ],
+          "events": [
+            {
+              "certificate": {
+                "demand": 1,
+                "family": "FC-R",
+                "flow_terms": [
+                  [
+                    "a1",
+                    "c1",
+                    1
+                  ],
+                  [
+                    "a1",
+                    "c2",
+                    1
+                  ]
+                ],
+                "proof": "balance + exclusion of terminal heads",
+                "q": [
+                  "x11",
+                  "x12",
+                  "x13"
+                ],
+                "region": [
+                  "a1"
+                ],
+                "rhs": 1,
+                "station_terms": [
+                  [
+                    "x11",
+                    1
+                  ],
+                  [
+                    "x12",
+                    1
+                  ],
+                  [
+                    "x13",
+                    1
+                  ]
+                ]
+              },
+              "decision": "ADDED",
+              "deficit": "1/2",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1/2",
+              "q": [
+                "x11",
+                "x12",
+                "x13"
+              ],
+              "region": [
+                "a1"
+              ],
+              "signature": "('origin', ('a1',), ('x11', 'x12', 'x13'))"
+            },
+            {
+              "certificate": {
+                "demand": 1,
+                "family": "FC-R",
+                "flow_terms": [
+                  [
+                    "a2",
+                    "c1",
+                    1
+                  ],
+                  [
+                    "a2",
+                    "c2",
+                    1
+                  ]
+                ],
+                "proof": "balance + exclusion of terminal heads",
+                "q": [
+                  "x21",
+                  "x22",
+                  "x23"
+                ],
+                "region": [
+                  "a2"
+                ],
+                "rhs": 1,
+                "station_terms": [
+                  [
+                    "x21",
+                    1
+                  ],
+                  [
+                    "x22",
+                    1
+                  ],
+                  [
+                    "x23",
+                    1
+                  ]
+                ]
+              },
+              "decision": "ADDED",
+              "deficit": "1/2",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1/2",
+              "q": [
+                "x21",
+                "x22",
+                "x23"
+              ],
+              "region": [
+                "a2"
+              ],
+              "signature": "('origin', ('a2',), ('x21', 'x22', 'x23'))"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "a3"
+              ],
+              "signature": "('origin', ('a3',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "a4"
+              ],
+              "signature": "('origin', ('a4',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "c1"
+              ],
+              "signature": "('destination', ('c1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "c2"
+              ],
+              "signature": "('destination', ('c2',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "d1"
+              ],
+              "signature": "('destination', ('d1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "d2"
+              ],
+              "signature": "('destination', ('d2',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "e1"
+              ],
+              "signature": "('origin', ('e1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "e2"
+              ],
+              "signature": "('origin', ('e2',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "g1"
+              ],
+              "signature": "('destination', ('g1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "g2"
+              ],
+              "signature": "('destination', ('g2',), ())"
+            }
+          ],
+          "stats": {
+            "capped": 0,
+            "coverage": "ALL_ELIGIBLE_SINGLETONS",
+            "duplicates": 0,
+            "elapsed_s": 0.006230024999922534,
+            "emitted": 2,
+            "examined": 12,
+            "global_region_separation": false,
+            "larger_checked": 0,
+            "larger_complete_selected": true,
+            "larger_discarded": 0,
+            "larger_generated": 0,
+            "larger_selected": 0,
+            "no_violation": 10,
+            "reason": null,
+            "singleton_complete": true,
+            "singletons_checked": 12,
+            "singletons_eligible": 12,
+            "violated": 2
+          },
+          "status": "COMPLETE_DECLARED_FAMILY"
+        },
+        "singleton_plus_heuristic": {
+          "cuts": [
+            {
+              "demand": 1,
+              "family": "FC-R",
+              "flow_terms": [
+                [
+                  "a1",
+                  "c1",
+                  1
+                ],
+                [
+                  "a1",
+                  "c2",
+                  1
+                ]
+              ],
+              "proof": "balance + exclusion of terminal heads",
+              "q": [
+                "x11",
+                "x12",
+                "x13"
+              ],
+              "region": [
+                "a1"
+              ],
+              "rhs": 1,
+              "station_terms": [
+                [
+                  "x11",
+                  1
+                ],
+                [
+                  "x12",
+                  1
+                ],
+                [
+                  "x13",
+                  1
+                ]
+              ]
+            },
+            {
+              "demand": 1,
+              "family": "FC-R",
+              "flow_terms": [
+                [
+                  "a2",
+                  "c1",
+                  1
+                ],
+                [
+                  "a2",
+                  "c2",
+                  1
+                ]
+              ],
+              "proof": "balance + exclusion of terminal heads",
+              "q": [
+                "x21",
+                "x22",
+                "x23"
+              ],
+              "region": [
+                "a2"
+              ],
+              "rhs": 1,
+              "station_terms": [
+                [
+                  "x21",
+                  1
+                ],
+                [
+                  "x22",
+                  1
+                ],
+                [
+                  "x23",
+                  1
+                ]
+              ]
+            },
+            {
+              "demand": 1,
+              "family": "FC-R",
+              "flow_terms": [
+                [
+                  "a1",
+                  "c1",
+                  1
+                ],
+                [
+                  "a1",
+                  "c2",
+                  1
+                ],
+                [
+                  "x11",
+                  "d1",
+                  1
+                ],
+                [
+                  "x11",
+                  "d2",
+                  1
+                ]
+              ],
+              "proof": "balance + exclusion of terminal heads",
+              "q": [
+                "x12",
+                "x13"
+              ],
+              "region": [
+                "a1",
+                "x11"
+              ],
+              "rhs": 1,
+              "station_terms": [
+                [
+                  "x12",
+                  1
+                ],
+                [
+                  "x13",
+                  1
+                ]
+              ]
+            },
+            {
+              "demand": 1,
+              "family": "FC-R",
+              "flow_terms": [
+                [
+                  "a1",
+                  "c1",
+                  1
+                ],
+                [
+                  "a1",
+                  "c2",
+                  1
+                ],
+                [
+                  "x12",
+                  "d1",
+                  1
+                ],
+                [
+                  "x12",
+                  "d2",
+                  1
+                ]
+              ],
+              "proof": "balance + exclusion of terminal heads",
+              "q": [
+                "x11",
+                "x13"
+              ],
+              "region": [
+                "a1",
+                "x12"
+              ],
+              "rhs": 1,
+              "station_terms": [
+                [
+                  "x11",
+                  1
+                ],
+                [
+                  "x13",
+                  1
+                ]
+              ]
+            }
+          ],
+          "events": [
+            {
+              "certificate": {
+                "demand": 1,
+                "family": "FC-R",
+                "flow_terms": [
+                  [
+                    "a1",
+                    "c1",
+                    1
+                  ],
+                  [
+                    "a1",
+                    "c2",
+                    1
+                  ]
+                ],
+                "proof": "balance + exclusion of terminal heads",
+                "q": [
+                  "x11",
+                  "x12",
+                  "x13"
+                ],
+                "region": [
+                  "a1"
+                ],
+                "rhs": 1,
+                "station_terms": [
+                  [
+                    "x11",
+                    1
+                  ],
+                  [
+                    "x12",
+                    1
+                  ],
+                  [
+                    "x13",
+                    1
+                  ]
+                ]
+              },
+              "decision": "ADDED",
+              "deficit": "1/2",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1/2",
+              "q": [
+                "x11",
+                "x12",
+                "x13"
+              ],
+              "region": [
+                "a1"
+              ],
+              "signature": "('origin', ('a1',), ('x11', 'x12', 'x13'))"
+            },
+            {
+              "certificate": {
+                "demand": 1,
+                "family": "FC-R",
+                "flow_terms": [
+                  [
+                    "a2",
+                    "c1",
+                    1
+                  ],
+                  [
+                    "a2",
+                    "c2",
+                    1
+                  ]
+                ],
+                "proof": "balance + exclusion of terminal heads",
+                "q": [
+                  "x21",
+                  "x22",
+                  "x23"
+                ],
+                "region": [
+                  "a2"
+                ],
+                "rhs": 1,
+                "station_terms": [
+                  [
+                    "x21",
+                    1
+                  ],
+                  [
+                    "x22",
+                    1
+                  ],
+                  [
+                    "x23",
+                    1
+                  ]
+                ]
+              },
+              "decision": "ADDED",
+              "deficit": "1/2",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1/2",
+              "q": [
+                "x21",
+                "x22",
+                "x23"
+              ],
+              "region": [
+                "a2"
+              ],
+              "signature": "('origin', ('a2',), ('x21', 'x22', 'x23'))"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "a3"
+              ],
+              "signature": "('origin', ('a3',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "a4"
+              ],
+              "signature": "('origin', ('a4',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "c1"
+              ],
+              "signature": "('destination', ('c1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "c2"
+              ],
+              "signature": "('destination', ('c2',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "d1"
+              ],
+              "signature": "('destination', ('d1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "d2"
+              ],
+              "signature": "('destination', ('d2',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "e1"
+              ],
+              "signature": "('origin', ('e1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "e2"
+              ],
+              "signature": "('origin', ('e2',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "g1"
+              ],
+              "signature": "('destination', ('g1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "g2"
+              ],
+              "signature": "('destination', ('g2',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 2,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "2",
+              "q": [
+                "x11",
+                "x13",
+                "x21",
+                "x23"
+              ],
+              "region": [
+                "a1",
+                "a2"
+              ],
+              "signature": "('origin', ('a1', 'a2'), ('x11', 'x13', 'x21', 'x23'))"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 2,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "2",
+              "q": [
+                "x11",
+                "x13"
+              ],
+              "region": [
+                "a1",
+                "a3"
+              ],
+              "signature": "('origin', ('a1', 'a3'), ('x11', 'x13'))"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 2,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "2",
+              "q": [
+                "x11",
+                "x13"
+              ],
+              "region": [
+                "a1",
+                "a4"
+              ],
+              "signature": "('origin', ('a1', 'a4'), ('x11', 'x13'))"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 2,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "2",
+              "q": [
+                "x21",
+                "x23"
+              ],
+              "region": [
+                "a2",
+                "a3"
+              ],
+              "signature": "('origin', ('a2', 'a3'), ('x21', 'x23'))"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 2,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "2",
+              "q": [
+                "x21",
+                "x23"
+              ],
+              "region": [
+                "a2",
+                "a4"
+              ],
+              "signature": "('origin', ('a2', 'a4'), ('x21', 'x23'))"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 2,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "2",
+              "q": [],
+              "region": [
+                "a3",
+                "a4"
+              ],
+              "signature": "('origin', ('a3', 'a4'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 2,
+              "direction": "destination",
+              "kind": "heuristic",
+              "lhs": "2",
+              "q": [],
+              "region": [
+                "c1",
+                "c2"
+              ],
+              "signature": "('destination', ('c1', 'c2'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 2,
+              "direction": "destination",
+              "kind": "heuristic",
+              "lhs": "2",
+              "q": [],
+              "region": [
+                "d1",
+                "d2"
+              ],
+              "signature": "('destination', ('d1', 'd2'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 2,
+              "direction": "destination",
+              "kind": "heuristic",
+              "lhs": "2",
+              "q": [],
+              "region": [
+                "d1",
+                "g1"
+              ],
+              "signature": "('destination', ('d1', 'g1'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 2,
+              "direction": "destination",
+              "kind": "heuristic",
+              "lhs": "2",
+              "q": [],
+              "region": [
+                "d2",
+                "g2"
+              ],
+              "signature": "('destination', ('d2', 'g2'), ())"
+            },
+            {
+              "certificate": {
+                "demand": 1,
+                "family": "FC-R",
+                "flow_terms": [
+                  [
+                    "a1",
+                    "c1",
+                    1
+                  ],
+                  [
+                    "a1",
+                    "c2",
+                    1
+                  ],
+                  [
+                    "x11",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x11",
+                    "d2",
+                    1
+                  ]
+                ],
+                "proof": "balance + exclusion of terminal heads",
+                "q": [
+                  "x12",
+                  "x13"
+                ],
+                "region": [
+                  "a1",
+                  "x11"
+                ],
+                "rhs": 1,
+                "station_terms": [
+                  [
+                    "x12",
+                    1
+                  ],
+                  [
+                    "x13",
+                    1
+                  ]
+                ]
+              },
+              "decision": "ADDED",
+              "deficit": "3/10",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "7/10",
+              "q": [
+                "x12",
+                "x13"
+              ],
+              "region": [
+                "a1",
+                "x11"
+              ],
+              "signature": "('origin', ('a1', 'x11'), ('x12', 'x13'))"
+            },
+            {
+              "certificate": {
+                "demand": 1,
+                "family": "FC-R",
+                "flow_terms": [
+                  [
+                    "a1",
+                    "c1",
+                    1
+                  ],
+                  [
+                    "a1",
+                    "c2",
+                    1
+                  ],
+                  [
+                    "x12",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x12",
+                    "d2",
+                    1
+                  ]
+                ],
+                "proof": "balance + exclusion of terminal heads",
+                "q": [
+                  "x11",
+                  "x13"
+                ],
+                "region": [
+                  "a1",
+                  "x12"
+                ],
+                "rhs": 1,
+                "station_terms": [
+                  [
+                    "x11",
+                    1
+                  ],
+                  [
+                    "x13",
+                    1
+                  ]
+                ]
+              },
+              "decision": "ADDED",
+              "deficit": "1/4",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "3/4",
+              "q": [
+                "x11",
+                "x13"
+              ],
+              "region": [
+                "a1",
+                "x12"
+              ],
+              "signature": "('origin', ('a1', 'x12'), ('x11', 'x13'))"
+            }
+          ],
+          "stats": {
+            "capped": 0,
+            "coverage": "ALL_ELIGIBLE_SINGLETONS",
+            "duplicates": 0,
+            "elapsed_s": 0.010970815000064249,
+            "emitted": 4,
+            "examined": 24,
+            "global_region_separation": false,
+            "larger_checked": 12,
+            "larger_complete_selected": true,
+            "larger_discarded": 34,
+            "larger_generated": 46,
+            "larger_selected": 12,
+            "no_violation": 20,
+            "reason": null,
+            "singleton_complete": true,
+            "singletons_checked": 12,
+            "singletons_eligible": 12,
+            "violated": 4
+          },
+          "status": "COMPLETE_SINGLETONS_SELECTED_HEURISTIC"
+        }
+      }
+    },
+    "COMP_K_C8_FCR": {
+      "lp_objective_as23": "7/5",
+      "separator_scans": {
+        "singleton": {
+          "cuts": [],
+          "events": [
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "a1"
+              ],
+              "signature": "('origin', ('a1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [
+                "x22"
+              ],
+              "region": [
+                "a2"
+              ],
+              "signature": "('origin', ('a2',), ('x22',))"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [
+                "x31"
+              ],
+              "region": [
+                "a3"
+              ],
+              "signature": "('origin', ('a3',), ('x31',))"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [
+                "x41"
+              ],
+              "region": [
+                "a4"
+              ],
+              "signature": "('origin', ('a4',), ('x41',))"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "-4/5",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "9/5",
+              "q": [],
+              "region": [
+                "c1"
+              ],
+              "signature": "('destination', ('c1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "-1/5",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "6/5",
+              "q": [],
+              "region": [
+                "c2"
+              ],
+              "signature": "('destination', ('c2',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "d1"
+              ],
+              "signature": "('destination', ('d1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "d2"
+              ],
+              "signature": "('destination', ('d2',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "e1"
+              ],
+              "signature": "('origin', ('e1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "e2"
+              ],
+              "signature": "('origin', ('e2',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "g1"
+              ],
+              "signature": "('destination', ('g1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "g2"
+              ],
+              "signature": "('destination', ('g2',), ())"
+            }
+          ],
+          "stats": {
+            "capped": 0,
+            "coverage": "ALL_ELIGIBLE_SINGLETONS",
+            "duplicates": 0,
+            "elapsed_s": 0.004107968999960576,
+            "emitted": 0,
+            "examined": 12,
+            "global_region_separation": false,
+            "larger_checked": 0,
+            "larger_complete_selected": true,
+            "larger_discarded": 0,
+            "larger_generated": 0,
+            "larger_selected": 0,
+            "no_violation": 12,
+            "reason": null,
+            "singleton_complete": true,
+            "singletons_checked": 12,
+            "singletons_eligible": 12,
+            "violated": 0
+          },
+          "status": "COMPLETE_DECLARED_FAMILY"
+        },
+        "singleton_plus_heuristic": {
+          "cuts": [],
+          "events": [
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "a1"
+              ],
+              "signature": "('origin', ('a1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [
+                "x22"
+              ],
+              "region": [
+                "a2"
+              ],
+              "signature": "('origin', ('a2',), ('x22',))"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [
+                "x31"
+              ],
+              "region": [
+                "a3"
+              ],
+              "signature": "('origin', ('a3',), ('x31',))"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [
+                "x41"
+              ],
+              "region": [
+                "a4"
+              ],
+              "signature": "('origin', ('a4',), ('x41',))"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "-4/5",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "9/5",
+              "q": [],
+              "region": [
+                "c1"
+              ],
+              "signature": "('destination', ('c1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "-1/5",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "6/5",
+              "q": [],
+              "region": [
+                "c2"
+              ],
+              "signature": "('destination', ('c2',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "d1"
+              ],
+              "signature": "('destination', ('d1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "d2"
+              ],
+              "signature": "('destination', ('d2',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "e1"
+              ],
+              "signature": "('origin', ('e1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "e2"
+              ],
+              "signature": "('origin', ('e2',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "g1"
+              ],
+              "signature": "('destination', ('g1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "g2"
+              ],
+              "signature": "('destination', ('g2',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "-3/5",
+              "demand": 2,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "13/5",
+              "q": [],
+              "region": [
+                "a1",
+                "a2"
+              ],
+              "signature": "('origin', ('a1', 'a2'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "-1/5",
+              "demand": 2,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "11/5",
+              "q": [],
+              "region": [
+                "a1",
+                "a3"
+              ],
+              "signature": "('origin', ('a1', 'a3'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "-1/5",
+              "demand": 2,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "11/5",
+              "q": [],
+              "region": [
+                "a1",
+                "a4"
+              ],
+              "signature": "('origin', ('a1', 'a4'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "-4/5",
+              "demand": 2,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "14/5",
+              "q": [],
+              "region": [
+                "a2",
+                "a3"
+              ],
+              "signature": "('origin', ('a2', 'a3'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "-4/5",
+              "demand": 2,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "14/5",
+              "q": [],
+              "region": [
+                "a2",
+                "a4"
+              ],
+              "signature": "('origin', ('a2', 'a4'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "-2/5",
+              "demand": 2,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "12/5",
+              "q": [],
+              "region": [
+                "a3",
+                "a4"
+              ],
+              "signature": "('origin', ('a3', 'a4'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "-1",
+              "demand": 2,
+              "direction": "destination",
+              "kind": "heuristic",
+              "lhs": "3",
+              "q": [],
+              "region": [
+                "c1",
+                "c2"
+              ],
+              "signature": "('destination', ('c1', 'c2'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 2,
+              "direction": "destination",
+              "kind": "heuristic",
+              "lhs": "2",
+              "q": [],
+              "region": [
+                "d1",
+                "d2"
+              ],
+              "signature": "('destination', ('d1', 'd2'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 2,
+              "direction": "destination",
+              "kind": "heuristic",
+              "lhs": "2",
+              "q": [],
+              "region": [
+                "d1",
+                "g1"
+              ],
+              "signature": "('destination', ('d1', 'g1'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 2,
+              "direction": "destination",
+              "kind": "heuristic",
+              "lhs": "2",
+              "q": [],
+              "region": [
+                "d2",
+                "g2"
+              ],
+              "signature": "('destination', ('d2', 'g2'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "a1",
+                "x11"
+              ],
+              "signature": "('origin', ('a1', 'x11'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "a1",
+                "x12"
+              ],
+              "signature": "('origin', ('a1', 'x12'), ())"
+            }
+          ],
+          "stats": {
+            "capped": 0,
+            "coverage": "ALL_ELIGIBLE_SINGLETONS",
+            "duplicates": 0,
+            "elapsed_s": 0.00813085000004321,
+            "emitted": 0,
+            "examined": 24,
+            "global_region_separation": false,
+            "larger_checked": 12,
+            "larger_complete_selected": true,
+            "larger_discarded": 34,
+            "larger_generated": 46,
+            "larger_selected": 12,
+            "no_violation": 24,
+            "reason": null,
+            "singleton_complete": true,
+            "singletons_checked": 12,
+            "singletons_eligible": 12,
+            "violated": 0
+          },
+          "status": "COMPLETE_SINGLETONS_SELECTED_HEURISTIC"
+        }
+      }
+    },
+    "COMP_K_FCR": {
+      "lp_objective_as23": "7/5",
+      "separator_scans": {
+        "singleton": {
+          "cuts": [
+            {
+              "demand": 1,
+              "family": "FC-R-T",
+              "flow_terms": [
+                [
+                  "e1",
+                  "d1",
+                  1
+                ],
+                [
+                  "x11",
+                  "d1",
+                  1
+                ],
+                [
+                  "x12",
+                  "d1",
+                  1
+                ],
+                [
+                  "x13",
+                  "d1",
+                  1
+                ],
+                [
+                  "x21",
+                  "d1",
+                  1
+                ],
+                [
+                  "x22",
+                  "d1",
+                  1
+                ],
+                [
+                  "x23",
+                  "d1",
+                  1
+                ],
+                [
+                  "x31",
+                  "d1",
+                  1
+                ],
+                [
+                  "x33",
+                  "d1",
+                  1
+                ],
+                [
+                  "x41",
+                  "d1",
+                  1
+                ],
+                [
+                  "x42",
+                  "d1",
+                  1
+                ],
+                [
+                  "x43",
+                  "d1",
+                  1
+                ]
+              ],
+              "proof": "balance + exclusion of source tails",
+              "q": [
+                "x32"
+              ],
+              "region": [
+                "d1"
+              ],
+              "rhs": 1,
+              "station_terms": [
+                [
+                  "x32",
+                  1
+                ]
+              ]
+            },
+            {
+              "demand": 1,
+              "family": "FC-R-T",
+              "flow_terms": [
+                [
+                  "e2",
+                  "d2",
+                  1
+                ],
+                [
+                  "x11",
+                  "d2",
+                  1
+                ],
+                [
+                  "x12",
+                  "d2",
+                  1
+                ],
+                [
+                  "x13",
+                  "d2",
+                  1
+                ],
+                [
+                  "x21",
+                  "d2",
+                  1
+                ],
+                [
+                  "x22",
+                  "d2",
+                  1
+                ],
+                [
+                  "x23",
+                  "d2",
+                  1
+                ],
+                [
+                  "x32",
+                  "d2",
+                  1
+                ],
+                [
+                  "x33",
+                  "d2",
+                  1
+                ],
+                [
+                  "x41",
+                  "d2",
+                  1
+                ],
+                [
+                  "x42",
+                  "d2",
+                  1
+                ],
+                [
+                  "x43",
+                  "d2",
+                  1
+                ]
+              ],
+              "proof": "balance + exclusion of source tails",
+              "q": [
+                "x31"
+              ],
+              "region": [
+                "d2"
+              ],
+              "rhs": 1,
+              "station_terms": [
+                [
+                  "x31",
+                  1
+                ]
+              ]
+            }
+          ],
+          "events": [
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "a1"
+              ],
+              "signature": "('origin', ('a1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "a2"
+              ],
+              "signature": "('origin', ('a2',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [
+                "x31",
+                "x32"
+              ],
+              "region": [
+                "a3"
+              ],
+              "signature": "('origin', ('a3',), ('x31', 'x32'))"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "a4"
+              ],
+              "signature": "('origin', ('a4',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "c1"
+              ],
+              "signature": "('destination', ('c1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "-1",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "2",
+              "q": [],
+              "region": [
+                "c2"
+              ],
+              "signature": "('destination', ('c2',), ())"
+            },
+            {
+              "certificate": {
+                "demand": 1,
+                "family": "FC-R-T",
+                "flow_terms": [
+                  [
+                    "e1",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x11",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x12",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x13",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x21",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x22",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x23",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x31",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x33",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x41",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x42",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x43",
+                    "d1",
+                    1
+                  ]
+                ],
+                "proof": "balance + exclusion of source tails",
+                "q": [
+                  "x32"
+                ],
+                "region": [
+                  "d1"
+                ],
+                "rhs": 1,
+                "station_terms": [
+                  [
+                    "x32",
+                    1
+                  ]
+                ]
+              },
+              "decision": "ADDED",
+              "deficit": "1/3",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "2/3",
+              "q": [
+                "x32"
+              ],
+              "region": [
+                "d1"
+              ],
+              "signature": "('destination', ('d1',), ('x32',))"
+            },
+            {
+              "certificate": {
+                "demand": 1,
+                "family": "FC-R-T",
+                "flow_terms": [
+                  [
+                    "e2",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x11",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x12",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x13",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x21",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x22",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x23",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x32",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x33",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x41",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x42",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x43",
+                    "d2",
+                    1
+                  ]
+                ],
+                "proof": "balance + exclusion of source tails",
+                "q": [
+                  "x31"
+                ],
+                "region": [
+                  "d2"
+                ],
+                "rhs": 1,
+                "station_terms": [
+                  [
+                    "x31",
+                    1
+                  ]
+                ]
+              },
+              "decision": "ADDED",
+              "deficit": "2/3",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1/3",
+              "q": [
+                "x31"
+              ],
+              "region": [
+                "d2"
+              ],
+              "signature": "('destination', ('d2',), ('x31',))"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "e1"
+              ],
+              "signature": "('origin', ('e1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "e2"
+              ],
+              "signature": "('origin', ('e2',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "g1"
+              ],
+              "signature": "('destination', ('g1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "g2"
+              ],
+              "signature": "('destination', ('g2',), ())"
+            }
+          ],
+          "stats": {
+            "capped": 0,
+            "coverage": "ALL_ELIGIBLE_SINGLETONS",
+            "duplicates": 0,
+            "elapsed_s": 0.003925745000060488,
+            "emitted": 2,
+            "examined": 12,
+            "global_region_separation": false,
+            "larger_checked": 0,
+            "larger_complete_selected": true,
+            "larger_discarded": 0,
+            "larger_generated": 0,
+            "larger_selected": 0,
+            "no_violation": 10,
+            "reason": null,
+            "singleton_complete": true,
+            "singletons_checked": 12,
+            "singletons_eligible": 12,
+            "violated": 2
+          },
+          "status": "COMPLETE_DECLARED_FAMILY"
+        },
+        "singleton_plus_heuristic": {
+          "cuts": [
+            {
+              "demand": 1,
+              "family": "FC-R-T",
+              "flow_terms": [
+                [
+                  "e1",
+                  "d1",
+                  1
+                ],
+                [
+                  "x11",
+                  "d1",
+                  1
+                ],
+                [
+                  "x12",
+                  "d1",
+                  1
+                ],
+                [
+                  "x13",
+                  "d1",
+                  1
+                ],
+                [
+                  "x21",
+                  "d1",
+                  1
+                ],
+                [
+                  "x22",
+                  "d1",
+                  1
+                ],
+                [
+                  "x23",
+                  "d1",
+                  1
+                ],
+                [
+                  "x31",
+                  "d1",
+                  1
+                ],
+                [
+                  "x33",
+                  "d1",
+                  1
+                ],
+                [
+                  "x41",
+                  "d1",
+                  1
+                ],
+                [
+                  "x42",
+                  "d1",
+                  1
+                ],
+                [
+                  "x43",
+                  "d1",
+                  1
+                ]
+              ],
+              "proof": "balance + exclusion of source tails",
+              "q": [
+                "x32"
+              ],
+              "region": [
+                "d1"
+              ],
+              "rhs": 1,
+              "station_terms": [
+                [
+                  "x32",
+                  1
+                ]
+              ]
+            },
+            {
+              "demand": 1,
+              "family": "FC-R-T",
+              "flow_terms": [
+                [
+                  "e2",
+                  "d2",
+                  1
+                ],
+                [
+                  "x11",
+                  "d2",
+                  1
+                ],
+                [
+                  "x12",
+                  "d2",
+                  1
+                ],
+                [
+                  "x13",
+                  "d2",
+                  1
+                ],
+                [
+                  "x21",
+                  "d2",
+                  1
+                ],
+                [
+                  "x22",
+                  "d2",
+                  1
+                ],
+                [
+                  "x23",
+                  "d2",
+                  1
+                ],
+                [
+                  "x32",
+                  "d2",
+                  1
+                ],
+                [
+                  "x33",
+                  "d2",
+                  1
+                ],
+                [
+                  "x41",
+                  "d2",
+                  1
+                ],
+                [
+                  "x42",
+                  "d2",
+                  1
+                ],
+                [
+                  "x43",
+                  "d2",
+                  1
+                ]
+              ],
+              "proof": "balance + exclusion of source tails",
+              "q": [
+                "x31"
+              ],
+              "region": [
+                "d2"
+              ],
+              "rhs": 1,
+              "station_terms": [
+                [
+                  "x31",
+                  1
+                ]
+              ]
+            },
+            {
+              "demand": 2,
+              "family": "FC-R-T",
+              "flow_terms": [
+                [
+                  "e1",
+                  "d1",
+                  1
+                ],
+                [
+                  "e2",
+                  "d2",
+                  1
+                ],
+                [
+                  "x11",
+                  "d1",
+                  1
+                ],
+                [
+                  "x11",
+                  "d2",
+                  1
+                ],
+                [
+                  "x12",
+                  "d1",
+                  1
+                ],
+                [
+                  "x12",
+                  "d2",
+                  1
+                ],
+                [
+                  "x13",
+                  "d1",
+                  1
+                ],
+                [
+                  "x13",
+                  "d2",
+                  1
+                ],
+                [
+                  "x21",
+                  "d1",
+                  1
+                ],
+                [
+                  "x21",
+                  "d2",
+                  1
+                ],
+                [
+                  "x22",
+                  "d1",
+                  1
+                ],
+                [
+                  "x22",
+                  "d2",
+                  1
+                ],
+                [
+                  "x23",
+                  "d1",
+                  1
+                ],
+                [
+                  "x23",
+                  "d2",
+                  1
+                ],
+                [
+                  "x33",
+                  "d1",
+                  1
+                ],
+                [
+                  "x33",
+                  "d2",
+                  1
+                ],
+                [
+                  "x41",
+                  "d1",
+                  1
+                ],
+                [
+                  "x41",
+                  "d2",
+                  1
+                ],
+                [
+                  "x42",
+                  "d1",
+                  1
+                ],
+                [
+                  "x42",
+                  "d2",
+                  1
+                ],
+                [
+                  "x43",
+                  "d1",
+                  1
+                ],
+                [
+                  "x43",
+                  "d2",
+                  1
+                ]
+              ],
+              "proof": "balance + exclusion of source tails",
+              "q": [
+                "x31",
+                "x32"
+              ],
+              "region": [
+                "d1",
+                "d2"
+              ],
+              "rhs": 2,
+              "station_terms": [
+                [
+                  "x31",
+                  2
+                ],
+                [
+                  "x32",
+                  2
+                ]
+              ]
+            },
+            {
+              "demand": 2,
+              "family": "FC-R-T",
+              "flow_terms": [
+                [
+                  "e1",
+                  "d1",
+                  1
+                ],
+                [
+                  "e1",
+                  "g1",
+                  1
+                ],
+                [
+                  "x11",
+                  "d1",
+                  1
+                ],
+                [
+                  "x12",
+                  "d1",
+                  1
+                ],
+                [
+                  "x13",
+                  "d1",
+                  1
+                ],
+                [
+                  "x21",
+                  "d1",
+                  1
+                ],
+                [
+                  "x22",
+                  "d1",
+                  1
+                ],
+                [
+                  "x23",
+                  "d1",
+                  1
+                ],
+                [
+                  "x31",
+                  "d1",
+                  1
+                ],
+                [
+                  "x33",
+                  "d1",
+                  1
+                ],
+                [
+                  "x41",
+                  "d1",
+                  1
+                ],
+                [
+                  "x42",
+                  "d1",
+                  1
+                ],
+                [
+                  "x43",
+                  "d1",
+                  1
+                ]
+              ],
+              "proof": "balance + exclusion of source tails",
+              "q": [
+                "x32"
+              ],
+              "region": [
+                "d1",
+                "g1"
+              ],
+              "rhs": 2,
+              "station_terms": [
+                [
+                  "x32",
+                  2
+                ]
+              ]
+            },
+            {
+              "demand": 2,
+              "family": "FC-R-T",
+              "flow_terms": [
+                [
+                  "e2",
+                  "d2",
+                  1
+                ],
+                [
+                  "e2",
+                  "g2",
+                  1
+                ],
+                [
+                  "x11",
+                  "d2",
+                  1
+                ],
+                [
+                  "x12",
+                  "d2",
+                  1
+                ],
+                [
+                  "x13",
+                  "d2",
+                  1
+                ],
+                [
+                  "x21",
+                  "d2",
+                  1
+                ],
+                [
+                  "x22",
+                  "d2",
+                  1
+                ],
+                [
+                  "x23",
+                  "d2",
+                  1
+                ],
+                [
+                  "x32",
+                  "d2",
+                  1
+                ],
+                [
+                  "x33",
+                  "d2",
+                  1
+                ],
+                [
+                  "x41",
+                  "d2",
+                  1
+                ],
+                [
+                  "x42",
+                  "d2",
+                  1
+                ],
+                [
+                  "x43",
+                  "d2",
+                  1
+                ]
+              ],
+              "proof": "balance + exclusion of source tails",
+              "q": [
+                "x31"
+              ],
+              "region": [
+                "d2",
+                "g2"
+              ],
+              "rhs": 2,
+              "station_terms": [
+                [
+                  "x31",
+                  2
+                ]
+              ]
+            }
+          ],
+          "events": [
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "a1"
+              ],
+              "signature": "('origin', ('a1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "a2"
+              ],
+              "signature": "('origin', ('a2',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [
+                "x31",
+                "x32"
+              ],
+              "region": [
+                "a3"
+              ],
+              "signature": "('origin', ('a3',), ('x31', 'x32'))"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "a4"
+              ],
+              "signature": "('origin', ('a4',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "c1"
+              ],
+              "signature": "('destination', ('c1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "-1",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "2",
+              "q": [],
+              "region": [
+                "c2"
+              ],
+              "signature": "('destination', ('c2',), ())"
+            },
+            {
+              "certificate": {
+                "demand": 1,
+                "family": "FC-R-T",
+                "flow_terms": [
+                  [
+                    "e1",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x11",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x12",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x13",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x21",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x22",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x23",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x31",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x33",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x41",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x42",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x43",
+                    "d1",
+                    1
+                  ]
+                ],
+                "proof": "balance + exclusion of source tails",
+                "q": [
+                  "x32"
+                ],
+                "region": [
+                  "d1"
+                ],
+                "rhs": 1,
+                "station_terms": [
+                  [
+                    "x32",
+                    1
+                  ]
+                ]
+              },
+              "decision": "ADDED",
+              "deficit": "1/3",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "2/3",
+              "q": [
+                "x32"
+              ],
+              "region": [
+                "d1"
+              ],
+              "signature": "('destination', ('d1',), ('x32',))"
+            },
+            {
+              "certificate": {
+                "demand": 1,
+                "family": "FC-R-T",
+                "flow_terms": [
+                  [
+                    "e2",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x11",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x12",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x13",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x21",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x22",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x23",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x32",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x33",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x41",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x42",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x43",
+                    "d2",
+                    1
+                  ]
+                ],
+                "proof": "balance + exclusion of source tails",
+                "q": [
+                  "x31"
+                ],
+                "region": [
+                  "d2"
+                ],
+                "rhs": 1,
+                "station_terms": [
+                  [
+                    "x31",
+                    1
+                  ]
+                ]
+              },
+              "decision": "ADDED",
+              "deficit": "2/3",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1/3",
+              "q": [
+                "x31"
+              ],
+              "region": [
+                "d2"
+              ],
+              "signature": "('destination', ('d2',), ('x31',))"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "e1"
+              ],
+              "signature": "('origin', ('e1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "e2"
+              ],
+              "signature": "('origin', ('e2',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "g1"
+              ],
+              "signature": "('destination', ('g1',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "destination",
+              "kind": "singleton",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "g2"
+              ],
+              "signature": "('destination', ('g2',), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 2,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "2",
+              "q": [],
+              "region": [
+                "a1",
+                "a2"
+              ],
+              "signature": "('origin', ('a1', 'a2'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "-1/5",
+              "demand": 2,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "11/5",
+              "q": [
+                "x31",
+                "x32"
+              ],
+              "region": [
+                "a1",
+                "a3"
+              ],
+              "signature": "('origin', ('a1', 'a3'), ('x31', 'x32'))"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 2,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "2",
+              "q": [],
+              "region": [
+                "a1",
+                "a4"
+              ],
+              "signature": "('origin', ('a1', 'a4'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "-1/5",
+              "demand": 2,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "11/5",
+              "q": [
+                "x31",
+                "x32"
+              ],
+              "region": [
+                "a2",
+                "a3"
+              ],
+              "signature": "('origin', ('a2', 'a3'), ('x31', 'x32'))"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 2,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "2",
+              "q": [],
+              "region": [
+                "a2",
+                "a4"
+              ],
+              "signature": "('origin', ('a2', 'a4'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "-1/5",
+              "demand": 2,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "11/5",
+              "q": [
+                "x31",
+                "x32"
+              ],
+              "region": [
+                "a3",
+                "a4"
+              ],
+              "signature": "('origin', ('a3', 'a4'), ('x31', 'x32'))"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "-1",
+              "demand": 2,
+              "direction": "destination",
+              "kind": "heuristic",
+              "lhs": "3",
+              "q": [],
+              "region": [
+                "c1",
+                "c2"
+              ],
+              "signature": "('destination', ('c1', 'c2'), ())"
+            },
+            {
+              "certificate": {
+                "demand": 2,
+                "family": "FC-R-T",
+                "flow_terms": [
+                  [
+                    "e1",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "e2",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x11",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x11",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x12",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x12",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x13",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x13",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x21",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x21",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x22",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x22",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x23",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x23",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x33",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x33",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x41",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x41",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x42",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x42",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x43",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x43",
+                    "d2",
+                    1
+                  ]
+                ],
+                "proof": "balance + exclusion of source tails",
+                "q": [
+                  "x31",
+                  "x32"
+                ],
+                "region": [
+                  "d1",
+                  "d2"
+                ],
+                "rhs": 2,
+                "station_terms": [
+                  [
+                    "x31",
+                    2
+                  ],
+                  [
+                    "x32",
+                    2
+                  ]
+                ]
+              },
+              "decision": "ADDED",
+              "deficit": "4/5",
+              "demand": 2,
+              "direction": "destination",
+              "kind": "heuristic",
+              "lhs": "6/5",
+              "q": [
+                "x31",
+                "x32"
+              ],
+              "region": [
+                "d1",
+                "d2"
+              ],
+              "signature": "('destination', ('d1', 'd2'), ('x31', 'x32'))"
+            },
+            {
+              "certificate": {
+                "demand": 2,
+                "family": "FC-R-T",
+                "flow_terms": [
+                  [
+                    "e1",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "e1",
+                    "g1",
+                    1
+                  ],
+                  [
+                    "x11",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x12",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x13",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x21",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x22",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x23",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x31",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x33",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x41",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x42",
+                    "d1",
+                    1
+                  ],
+                  [
+                    "x43",
+                    "d1",
+                    1
+                  ]
+                ],
+                "proof": "balance + exclusion of source tails",
+                "q": [
+                  "x32"
+                ],
+                "region": [
+                  "d1",
+                  "g1"
+                ],
+                "rhs": 2,
+                "station_terms": [
+                  [
+                    "x32",
+                    2
+                  ]
+                ]
+              },
+              "decision": "ADDED",
+              "deficit": "4/15",
+              "demand": 2,
+              "direction": "destination",
+              "kind": "heuristic",
+              "lhs": "26/15",
+              "q": [
+                "x32"
+              ],
+              "region": [
+                "d1",
+                "g1"
+              ],
+              "signature": "('destination', ('d1', 'g1'), ('x32',))"
+            },
+            {
+              "certificate": {
+                "demand": 2,
+                "family": "FC-R-T",
+                "flow_terms": [
+                  [
+                    "e2",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "e2",
+                    "g2",
+                    1
+                  ],
+                  [
+                    "x11",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x12",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x13",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x21",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x22",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x23",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x32",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x33",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x41",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x42",
+                    "d2",
+                    1
+                  ],
+                  [
+                    "x43",
+                    "d2",
+                    1
+                  ]
+                ],
+                "proof": "balance + exclusion of source tails",
+                "q": [
+                  "x31"
+                ],
+                "region": [
+                  "d2",
+                  "g2"
+                ],
+                "rhs": 2,
+                "station_terms": [
+                  [
+                    "x31",
+                    2
+                  ]
+                ]
+              },
+              "decision": "ADDED",
+              "deficit": "8/15",
+              "demand": 2,
+              "direction": "destination",
+              "kind": "heuristic",
+              "lhs": "22/15",
+              "q": [
+                "x31"
+              ],
+              "region": [
+                "d2",
+                "g2"
+              ],
+              "signature": "('destination', ('d2', 'g2'), ('x31',))"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "a1",
+                "x11"
+              ],
+              "signature": "('origin', ('a1', 'x11'), ())"
+            },
+            {
+              "decision": "NO_VIOLATION_IN_FIXED_REGION",
+              "deficit": "0",
+              "demand": 1,
+              "direction": "origin",
+              "kind": "heuristic",
+              "lhs": "1",
+              "q": [],
+              "region": [
+                "a1",
+                "x12"
+              ],
+              "signature": "('origin', ('a1', 'x12'), ())"
+            }
+          ],
+          "stats": {
+            "capped": 0,
+            "coverage": "ALL_ELIGIBLE_SINGLETONS",
+            "duplicates": 0,
+            "elapsed_s": 0.009337272000038865,
+            "emitted": 5,
+            "examined": 24,
+            "global_region_separation": false,
+            "larger_checked": 12,
+            "larger_complete_selected": true,
+            "larger_discarded": 34,
+            "larger_generated": 46,
+            "larger_selected": 12,
+            "no_violation": 19,
+            "reason": null,
+            "singleton_complete": true,
+            "singletons_checked": 12,
+            "singletons_eligible": 12,
+            "violated": 5
+          },
+          "status": "COMPLETE_SINGLETONS_SELECTED_HEURISTIC"
+        }
+      }
+    }
+  },
+  "gate": "PENDING_INDEPENDENT_REVIEW",
+  "graph_sha256_as23": "1232160bac5cbca93182ba662552213ba1ef683e03bf7b854021cafe53f3e110",
+  "kind": "SYNTHETIC_ONLY",
+  "schema_version": "as24-fcr-micro-v1",
+  "scope": "Complete separation over all strict-excess singletons; exact Q per fixed region; deterministic bounded selected pairs; no claim of global region completeness or benchmark gain",
+  "source_commit": "56b8957485c673fb08460ef836257773fb67933f",
+  "source_has_tracked_modifications": true,
+  "source_sha256": {
+    "experiments/cuts/fcr_regions.py": "ff2ca3a531be66f5ece78b2085773f37144d9f8f6c40c351342809d1a4c98ad2",
+    "experiments/cuts/fcr_rows.py": "0d46ef75d4df5b1fea8f12c70be1bbf502d37eba60f14080206570e52894c24e",
+    "experiments/cuts/fcr_separator.py": "50df12be02bacc140adec89ca4e2436ee846d42f8e97b2b9bcaaef6236856390",
+    "experiments/cuts/run_fcr_micro_as24.py": "f123d0018bc9d2193b2c03192257646251827d079972bf94f09bee4e75a82df7",
+    "experiments/cuts/test_as24_fcr.py": "30843bf930e4e4889b0005e9dda9efc2f9df49e6a3e77c9e6d96a1bf68e59d65"
+  },
+  "status": "MICRO_VALIDATION_COMPLETED"
+}
