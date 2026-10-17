@@ -1,6 +1,6 @@
 # AS25 — Design técnico: Piloto LP pareado FC-R versus COMP+K
 
-**Spec:** `spec.md`; **Status:** Proposed — depende de gate anterior.
+**Spec:** `spec.md`; **Status:** Runner/analisador implementados; real LP e revisão independente pendentes.
 
 ## Architecture Overview
 
@@ -58,4 +58,4 @@ Licença Gurobi ausente, caso faltante, seed alterada, hash incorreto ou orçame
 
 `GO_CANDIDATE_REVIEW` somente se ganho LP ≥1% em ≥2 grafos brutos independentes e custo parede total ≤2× controle nesses pares, cobertura auditável e revisão posterior. Censuras impedem inferência de ausência universal de ganho.
 
-**Proveniência:** decisões ainda propostas; nenhuma implementação realizada como parte desta entrega documental.
+**Proveniência:** plano congelado no AS25 JSON e componentes implementados; sem executar campanha real. A implementação usa índice de fronteira e o construtor canônico de linhas AS24, cobrindo 2 rodadas delimitadas e ablação em campanha isolada.

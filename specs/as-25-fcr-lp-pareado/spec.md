@@ -1,6 +1,6 @@
 # AS25 — Piloto LP pareado FC-R versus COMP+K — Specification
 
-**Referências:** `[docs/technical/reference/tecnico/parecer-astra-fcr-pos-as22.md]` (parecer externo) e `[docs/technical/plans/execucao/plano-fcr-as23-as27.md]` (plano científico). **Estado:** somente planejado, não implementado nem validado. **Branch de referência:** `novos_testes`. **Pré-condição:** AS24 `VALIDATED` e política FC-R congelada antes da campanha; não reutilizar grafos reservados.
+**Referências:** `[docs/technical/reference/tecnico/parecer-astra-fcr-pos-as22.md]` (parecer externo) e `[docs/technical/plans/execucao/plano-fcr-as23-as27.md]` (plano científico). **Estado:** T1–T4 implementadas e testadas; campanha Gurobi real (T5), relatório com resultados e revisão independente (T6) pendentes. **Branch de referência:** `novos_testes`. **Pré-condição:** AS24 `VALIDATED_WITH_MINOR_FINDINGS` e política FC-R congelada antes da campanha; não reutilizar grafos reservados.
 
 ## Problem Statement
 
@@ -8,8 +8,8 @@ Medir de forma preregistrada a contribuição marginal de FC-R em seis grafos de
 
 ## Goals
 
-- [ ] Medir de forma preregistrada a contribuição marginal de FC-R em seis grafos de desenvolvimento com quatro braços e análise separada de regiões unitárias e maiores.
-- [ ] Gate e evidências rastreáveis: `GO_CANDIDATE_REVIEW` somente se ganho LP ≥1% em ≥2 grafos brutos independentes e custo parede total ≤2× controle nesses pares, cobertura auditável e revisão posterior. Censuras impedem inferência de ausência universal de ganho.
+- [x] Instrumentar para medir de forma preregistrada a contribuição marginal de FC-R em seis grafos de desenvolvimento com quatro braços e análise separada de regiões unitárias e maiores.
+- [x] Implementar gate e evidências rastreáveis: `GO_CANDIDATE_REVIEW` somente se ganho LP ≥1% em ≥2 grafos brutos independentes e custo parede total ≤2× controle nesses pares, cobertura auditável e revisão posterior. Censuras impedem inferência de ausência universal de ganho.
 
 ## Out of Scope
 
@@ -24,12 +24,12 @@ Medir de forma preregistrada a contribuição marginal de FC-R em seis grafos de
 
 | Assumption / decision | Chosen default | Rationale | Confirmed? |
 |---|---|---|---|
-| Comparadores | `COMP`, `COMP+K`, `COMP+FC-R`, `COMP+K+FC-R` em 6 grafos fixos | Isola efeito principal e marginal de FC-R. | Não; premissa de planejamento |
-| Tempo | 90 s totais por braço incluindo preparação, separação e reotimização | Conserva interpretação do custo real das campanhas anteriores. | Não; premissa de planejamento |
-| Ablacão | Usar quatro braços no piloto principal (24 registros) e executar a ablação singleton versus singleton+regiões maiores como rodada separada, com mesmo orçamento, policy ID e resultado próprio | Quantifica cobertura e contribuição extra das regiões maiores sem manipular orçamento. | Não; premissa de planejamento |
-| Gate | Ganho ≥1% em ≥2 grafos brutos independentes e razão custo ≤2×, com censuras preservadas | Critério prospectivo do Astra, sujeito a revisão antes da primeira execução. | Não; premissa de planejamento |
+| Comparadores | `COMP`, `COMP+K`, `COMP+FC-R`, `COMP+K+FC-R` em 6 grafos fixos | Isola efeito principal e marginal de FC-R. | Sim; congelada no AS25 JSON antes da campanha |
+| Tempo | 90 s totais por braço incluindo preparação, separação e reotimização | Conserva interpretação do custo real das campanhas anteriores. | Sim; congelada no AS25 JSON antes da campanha |
+| Ablacão | Usar quatro braços no piloto principal (24 registros) e executar a ablação singleton versus singleton+regiões maiores como rodada separada, com mesmo orçamento, policy ID e resultado próprio | Quantifica cobertura e contribuição extra das regiões maiores sem manipular orçamento. | Sim; congelada no AS25 JSON antes da campanha |
+| Gate | Ganho ≥1% em ≥2 grafos brutos independentes e razão custo ≤2×, com censuras preservadas | Critério prospectivo do Astra, sujeito a revisão antes da primeira execução. | Sim; congelada no AS25 JSON antes da campanha |
 
-**Open questions:** none — as escolhas não confirmadas são premissas explícitas acima; antes da execução, revalidar alterações de escopo e gates.
+**Open questions: none.** Política técnica congelada em `as25-preregistro-fcr-lp.json`; revisão independente continua sendo um gate obrigatório posterior, não uma decisão de parâmetros pendente.
 
 ## User Stories
 
@@ -78,23 +78,23 @@ Medir de forma preregistrada a contribuição marginal de FC-R em seis grafos de
 
 | Requirement ID | Story | Phase | Status |
 |---|---|---|---|
-| FCR25-01 | Execução reproduzível | Tasks | Pending |
-| FCR25-02 | Execução reproduzível | Tasks | Pending |
-| FCR25-03 | Execução reproduzível | Tasks | Pending |
-| FCR25-04 | Medir ganho marginal correto | Tasks | Pending |
-| FCR25-05 | Medir ganho marginal correto | Tasks | Pending |
-| FCR25-06 | Medir ganho marginal correto | Tasks | Pending |
-| FCR25-07 | Decidir continuidade | Tasks | Pending |
-| FCR25-08 | Decidir continuidade | Tasks | Pending |
-| FCR25-09 | Decidir continuidade | Tasks | Pending |
+| FCR25-01 | Execução reproduzível | T1 — plano congelado | Implemented; LP pending |
+| FCR25-02 | Execução reproduzível | T2 — runner e dry-run | Implemented; LP pending |
+| FCR25-03 | Execução reproduzível | T2 — timeout e censura | Implemented; LP pending |
+| FCR25-04 | Medir ganho marginal correto | T4 — analisador | Implemented; LP pending |
+| FCR25-05 | Medir ganho marginal correto | T3 — separador/ablação | Implemented; LP pending |
+| FCR25-06 | Medir ganho marginal correto | T4 — flow-only | Implemented; LP pending |
+| FCR25-07 | Decidir continuidade | T4 — raw graph ids | Implemented; LP pending |
+| FCR25-08 | Decidir continuidade | T4 — censura | Implemented; LP pending |
+| FCR25-09 | Decidir continuidade | T4 — gate review-only | Implemented; LP pending |
 
-**Coverage:** 9 requisitos rastreáveis; tarefas detalhadas em `tasks.md`; 0 implementados.
+**Coverage:** 9 requisitos rastreáveis; código/testes das T1–T4 implementados; T5–T6 pendentes de Gurobi e revisão independente.
 
 ## Success Criteria
 
-- [ ] 24 linhas esperadas em dry-run, seis casos por quatro braços.
-- [ ] Números LP, tempo total e métricas por fase diretamente atribuíveis aos JSON gerados.
-- [ ] Gate reproduzível por script sem promoção automática a MIP.
+- [x] 24 linhas esperadas em dry-run, seis casos por quatro braços.
+- [x] Instrumentação de números LP, tempo total e métricas por fase para os JSON; execução real pendente.
+- [x] Gate reproduzível por script sem promoção automática a MIP.
 
 ## Dependências e gate
 

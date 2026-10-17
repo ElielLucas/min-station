@@ -1,6 +1,6 @@
 # Programa FC-R — Decisão de pesquisa após AS22 (AS23–AS27)
 
-**Estado (16/10/2026):** AS23 validada; AS24 `VALIDATED_WITH_MINOR_FINDINGS` após parecer independente do Claude relatado pelo pesquisador. AS25 liberada para implementação/pré-registro, **não executada**. Nenhuma campanha Gurobi real ou autorização MIP. Proveniência final da AS24 depende do commit local.  
+**Estado (16/10/2026):** AS23 validada; AS24 `VALIDATED_WITH_MINOR_FINDINGS` após parecer independente do Claude relatado pelo pesquisador. AS25 com runner/analisador/pré-registro implementados e testados (T1–T4); **campanha Gurobi real não executada (T5–T6 pendentes)**. Nenhuma campanha Gurobi real ou autorização MIP. Proveniência final da AS24 depende do commit local.  
 **Fonte externa original:** [`parecer-astra-fcr-pos-as22.md`](../../reference/tecnico/parecer-astra-fcr-pos-as22.md) (Astra; consulta declarada `novos_testes@285261b`).  
 **Baseline científico:** COMP+K original, modelo de Das com estações em todo `V`, fluxos agregados no dígrafo de alcance `H`, autonomia comum, terminais e interseção `S∩T` preservados.  
 **Status de HL:** interromper a estratégia local testada; não declarar redundância global.
@@ -51,7 +51,8 @@ A AS23 reconstruiu a instância, conferiu a viabilidade física e os objetivos r
 |---|---|---|---|
 | **AS23** | Revisão independente da matemática e reprodução racional | Parecer externo + COMP/K/C6/C8 atuais | `VALIDATED` ou `BLOCKED`; nenhuma execução nova autorizada sem prova |
 | **AS24** | Separador FC-R implementado e microtestado | AS23 `VALIDATED` técnico | `VALIDATED_WITH_MINOR_FINDINGS`; autoriza preparar AS25 após congelar protocolo, sem iniciar MIP |
-| **AS25** | Piloto LP pareado nas seis instâncias de desenvolvimento | AS24 satisfaz critérios; protocolo pré-registrado | `GO_CANDIDATE_REVIEW`, `INVESTIGATE` ou `STOP`; nenhuma autorização MIP automática |
+| **AS25** | Piloto LP pareado nas seis instâncias de desenvolvimento | AS24 validada; código e pré-registro AS25 prontos; LP real pendente | `GO_CANDIDATE_REVIEW`, `INVESTIGATE` ou `STOP`; nenhuma autorização MIP automática |
+| **AS25.1** | Diagnóstico e otimização da separação FC-R (sem novas famílias) | Resultados AS25 `INVESTIGATE` | Separador equivalente e mais barato implementado; campanha pré-registrada, classe A/B/C/D pendente; nenhuma autorização MIP |
 | **AS26** | Raiz MIP / piloto inteiro | AS25 com sinal suficiente + aprovação científica explícita | Comparar efeito após cortes automáticos, nós/tempo/gap; não ativado nesta entrega |
 | **AS27** | Avaliação independente em grafos reservados | Política congelada e decisão pós-AS26 | Validar generalização sem vazamento; não ativado nesta entrega |
 
@@ -78,6 +79,7 @@ Métricas mínimas: objetivo LP, incremento absoluto/relativo, linhas candidatas
 - [`AS23`](../../../../specs/as-23-fcr-revisao-matematica/spec.md) — prova e testemunha independente.
 - [`AS24`](../../../../specs/as-24-fcr-separador-micro/spec.md) — separação e microtestes.
 - [`AS25`](../../../../specs/as-25-fcr-lp-pareado/spec.md) — LP pareado pré-registrado.
+- [`AS25.1`](../../../../specs/as-25-1-fcr-otimizacao-separacao/spec.md) — diagnóstico e otimização da separação; relatório em `docs/technical/reference/experimentos/as251-diagnostico-fcr.md`.
 - [`AS26`](../../../../specs/as-26-fcr-mip-condicional/spec.md) — raiz MIP condicionada.
 - [`AS27`](../../../../specs/as-27-fcr-avaliacao-independente/spec.md) — generalização em reserva (condicionada).
 

@@ -1,6 +1,6 @@
 # AS25 — Tasks: Piloto LP pareado FC-R versus COMP+K
 
-**Status:** PLANEJADA; caixas abertas são trabalho futuro, não implementado.
+**Status:** T1–T4 implementadas e verificadas localmente; T5–T6 não executadas. Revisão independente ainda pendente; nenhum commit realizado nesta entrega.
 
 **Design:** `specs/as-25-fcr-lp-pareado/design.md`. **Fonte:** `docs/technical/reference/tecnico/parecer-astra-fcr-pos-as22.md`.
 
@@ -34,12 +34,20 @@ Fases sequenciais; dependências por tarefa exibidas no mapa abaixo.
 ### Phase 1: Preparação
 
 ### T1: Congelar protocolo experimental
+
+**Estado técnico:** implementado; pré-registro JSON+Markdown congelado; sem commit no checkout do usuário.
 ### T2: Implementar runner LP pareado
+
+**Estado técnico:** implementado; dry-run 24 braços passou, campanha real pendente.
 
 ### Phase 2: Verificação / núcleo
 
 ### T3: Instrumentar separação/ablação
+
+**Estado técnico:** implementado; comparador indexado validado contra AS24, ablação separada.
 ### T4: Construir analisador conservador
+
+**Estado técnico:** implementado, tested em dados sintéticos de gate e censura.
 
 ### Phase 3: Consolidação
 
@@ -50,6 +58,8 @@ Fases sequenciais; dependências por tarefa exibidas no mapa abaixo.
 
 ### T1: Congelar protocolo experimental
 
+**Estado técnico:** implementado; pré-registro JSON+Markdown congelado; sem commit no checkout do usuário.
+
 **What:** Registrar seis grafos brutos, hashes, 4 braços, 90 s de parede, ablação, gate e critérios de censura.
 **Where:** `docs/technical/plans/execucao/as25-preregistro-fcr-lp.md`
 **Depends on:** None
@@ -58,15 +68,17 @@ Fases sequenciais; dependências por tarefa exibidas no mapa abaixo.
 
 **Done when:**
 
-- [ ] Registrar seis grafos brutos, hashes, 4 braços, 90 s de parede, ablação, gate e critérios de censura.
-- [ ] Evidência identificável por arquivo/linha, com divergências e abstenções explícitas.
-- [ ] Gate `build` aprovado e suíte existente sem redução de testes.
+- [x] Registrar seis grafos brutos, hashes, 4 braços, 90 s de parede, ablação, gate e critérios de censura.
+- [x] Evidência identificável por arquivo/linha, com divergências e abstenções explícitas.
+- [x] Gate `build` aprovado e suíte existente sem redução de testes.
 
 **Tests:** review
 **Gate:** build
 **Commit:** `docs(as25): congelar protocolo experimental`
 
 ### T2: Implementar runner LP pareado
+
+**Estado técnico:** implementado; dry-run 24 braços passou, campanha real pendente.
 
 **What:** Dry-run 24 linhas, parâmetro do solver consistente, append-only, custos de fase e testes de timeout/sem licença co-localizados.
 **Where:** `experiments/cuts/run_fcr_lp_as25.py`
@@ -76,15 +88,17 @@ Fases sequenciais; dependências por tarefa exibidas no mapa abaixo.
 
 **Done when:**
 
-- [ ] Dry-run 24 linhas, parâmetro do solver consistente, append-only, custos de fase e testes de timeout/sem licença co-localizados.
-- [ ] Evidência identificável por arquivo/linha, com divergências e abstenções explícitas.
-- [ ] Gate `full` aprovado e suíte existente sem redução de testes.
+- [x] Dry-run 24 linhas, parâmetro do solver consistente, append-only, custos de fase e testes de timeout/sem licença co-localizados.
+- [x] Evidência identificável por arquivo/linha, com divergências e abstenções explícitas.
+- [x] Gate `full` aprovado e suíte existente sem redução de testes.
 
 **Tests:** integration
 **Gate:** full
 **Commit:** `feat(as25): implementar runner lp pareado`
 
 ### T3: Instrumentar separação/ablação
+
+**Estado técnico:** implementado; comparador indexado validado contra AS24, ablação separada.
 
 **What:** Registrar singleton completo versus região maior selecionada e métricas de violação, candidatos, NNZ, tempo e memória com testes.
 **Where:** `experiments/cuts/fcr_lp_policy.py`
@@ -94,15 +108,17 @@ Fases sequenciais; dependências por tarefa exibidas no mapa abaixo.
 
 **Done when:**
 
-- [ ] Registrar singleton completo versus região maior selecionada e métricas de violação, candidatos, NNZ, tempo e memória com testes.
-- [ ] Evidência identificável por arquivo/linha, com divergências e abstenções explícitas.
-- [ ] Gate `quick` aprovado e suíte existente sem redução de testes.
+- [x] Registrar singleton completo versus região maior selecionada e métricas de violação, candidatos, NNZ, tempo e memória com testes.
+- [x] Evidência identificável por arquivo/linha, com divergências e abstenções explícitas.
+- [x] Gate `quick` aprovado e suíte existente sem redução de testes.
 
 **Tests:** unit
 **Gate:** quick
 **Commit:** `feat(as25): instrumentar separação/ablação`
 
 ### T4: Construir analisador conservador
+
+**Estado técnico:** implementado, tested em dados sintéticos de gate e censura.
 
 **What:** Contar raw_graph_id, censura, ganho absoluto/relativo, razão custo, não promover automaticamente a MIP; testes por braços fictícios.
 **Where:** `experiments/cuts/analyze_fcr_lp_as25.py`
@@ -112,9 +128,9 @@ Fases sequenciais; dependências por tarefa exibidas no mapa abaixo.
 
 **Done when:**
 
-- [ ] Contar raw_graph_id, censura, ganho absoluto/relativo, razão custo, não promover automaticamente a MIP; testes por braços fictícios.
-- [ ] Evidência identificável por arquivo/linha, com divergências e abstenções explícitas.
-- [ ] Gate `full` aprovado e suíte existente sem redução de testes.
+- [x] Contar raw_graph_id, censura, ganho absoluto/relativo, razão custo, não promover automaticamente a MIP; testes por braços fictícios.
+- [x] Evidência identificável por arquivo/linha, com divergências e abstenções explícitas.
+- [x] Gate `full` aprovado e suíte existente sem redução de testes.
 
 **Tests:** unit
 **Gate:** full
