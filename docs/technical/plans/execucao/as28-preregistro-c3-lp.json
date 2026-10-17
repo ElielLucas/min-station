@@ -1,0 +1,116 @@
+{
+  "arms": [
+    "U_K",
+    "U_K_C3"
+  ],
+  "budget": {
+    "wall_seconds_per_arm": 90
+  },
+  "cases": [
+    {
+      "family": "puc",
+      "family_id": "puc:cc9-2p",
+      "name": "puc-cc9-2p-seed-r1",
+      "path": "instances/benchmark-v1/puc/puc-cc9-2p-seed-r1.txt",
+      "raw_graph_id": "puc:cc9-2p",
+      "source_sha256": "0312f43552cddc102081d9937465429e29797ddb86cf85a6871752d50aeec88c",
+      "split": "desenvolvimento"
+    },
+    {
+      "family": "puc",
+      "family_id": "puc:bip42p",
+      "name": "puc-bip42p-regiao-f2",
+      "path": "instances/benchmark-v1/puc/puc-bip42p-regiao-f2.txt",
+      "raw_graph_id": "puc:bip42p",
+      "source_sha256": "d7c53596522401d4071563d5007d9c8647ee0d37c893426b5ab3b1d65d97743a",
+      "split": "desenvolvimento"
+    },
+    {
+      "family": "pucn",
+      "family_id": "pucn:cc3-10n",
+      "name": "pucn-cc3-10n-seed-r1",
+      "path": "instances/benchmark-v1/pucn/pucn-cc3-10n-seed-r1.txt",
+      "raw_graph_id": "pucn:cc3-10n",
+      "source_sha256": "9123c0e46228c22ba586bb7f730757a7fa2c4b0f815b54afba59f54a3bc8b431",
+      "split": "desenvolvimento"
+    },
+    {
+      "family": "mapf",
+      "family_id": "mapf:map:raw-data/mapf/maps/room-32-32-4.map|scenario:room-32-32-4.map + room-32-32-4-random-1.scen",
+      "name": "mapf-room-32-32-4-m10-f8",
+      "path": "instances/benchmark-v1/mapf/mapf-room-32-32-4-m10-f8.txt",
+      "raw_graph_id": "mapf:map:raw-data/mapf/maps/room-32-32-4.map",
+      "source_sha256": "78be3e1261f31f4e583d0808bdfc9c93d9c9eb335d86d13b059ce428af5f303f",
+      "split": "desenvolvimento"
+    },
+    {
+      "family": "vienna",
+      "family_id": "vienna:I056",
+      "name": "vienna-I056-regiao-f4",
+      "path": "instances/benchmark-v1/vienna/vienna-I056-regiao-f4.txt",
+      "raw_graph_id": "vienna:I056",
+      "source_sha256": "645da5115a0eeaa6fba9eeae9f4942aebecfa66c4bcbc7aaec2bd0c994eb0ccc",
+      "split": "desenvolvimento"
+    },
+    {
+      "family": "puc",
+      "family_id": "puc:w3c571",
+      "name": "puc-w3c571-seed-r1",
+      "path": "instances/benchmark-v1/puc/puc-w3c571-seed-r1.txt",
+      "raw_graph_id": "puc:w3c571",
+      "source_sha256": "e85ced7daef779e6e88f302ee9d80a467129f448a7ac5c6ce465d64b963300fd",
+      "split": "desenvolvimento"
+    }
+  ],
+  "constraints": [
+    "only development",
+    "LP only",
+    "no MIP",
+    "no evaluation",
+    "no change COMP or K or historical C3",
+    "append only",
+    "selected sources not globally exhaustive"
+  ],
+  "gate": {
+    "maximum_cost_multiple": 2,
+    "min_paired_optimal": 4,
+    "minimum_independent_raw_graphs": 2,
+    "minimum_relative_gain": 0.01,
+    "no_mip_authorization": true,
+    "require_complete_selected_scans": true
+  },
+  "mip_automatically_authorized": false,
+  "preregistered_before_campaign": true,
+  "reference_as251_sha256": "073e3c3449b8460d60825fc4acb15d7dc0275380257251973dd27d36f3591ea6",
+  "schema_version": "AS28-C3-PLAN-v1",
+  "screen": {
+    "max_cuts_per_round": 16,
+    "max_cuts_total": 32,
+    "max_rounds": 2,
+    "max_variables": 1000000,
+    "min_reopt_remaining_s": 2,
+    "min_violation": 1e-06,
+    "separation_wall_seconds_per_round": 12,
+    "sources_per_side": 8
+  },
+  "solver_parameters": {
+    "FeasibilityTol": 1e-06,
+    "MemLimitGiB": 16,
+    "Method": 1,
+    "NumericFocus": 1,
+    "OptimalityTol": 1e-06,
+    "Presolve": -1,
+    "Seed": 42,
+    "Threads": 4
+  },
+  "source_versions": {
+    "experiments/alternative-formulations/as02_model_a.py": "d9f973ab680a9bfaf06dc6808a8c0e4cb938254696d098d9950973c24c8df8fc",
+    "experiments/cuts/analyze_c3_lp_as28.py": "bd0237fdf1cfbc32a142113a12416a7bd3db56a22ed2d7516b054e5da56165bc",
+    "experiments/cuts/c3_cut_screen_as28.py": "0781cd70dc2e95f6ac8b54fe874e8e6e6f1f5613462c0c34354d2b8b47496cd5",
+    "experiments/cuts/cuts.py": "4952ac563156bc616105251b414e8c2778a3859be94ff5ed183c2d9cd8ffaebb",
+    "experiments/cuts/run_c3_lp_as28.py": "a3ba3bac3ac2ff94ebfb631b2247f0de43ba0c603fab2ea02b82d52ef238174d",
+    "experiments/cuts/run_h2_lp.py": "61258e9ec3c4e7f5f4f551d5d1a4ba2f14a92dc0a35b23e345d61658d24c0b49"
+  },
+  "stage": "AS28",
+  "status": "FROZEN_BEFORE_CAMPAIGN"
+}
