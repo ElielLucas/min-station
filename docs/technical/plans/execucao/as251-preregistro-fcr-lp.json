@@ -1,0 +1,153 @@
+{
+  "arm_policies": {
+    "U_K_FCR_AS25": {
+      "audit_rows": true,
+      "index": "IndexedFCR",
+      "larger_mode": "always",
+      "selection": "lexicographic"
+    },
+    "U_K_FCR_AS251": {
+      "audit_rows": false,
+      "index": "FastIndexedFCR",
+      "larger_mode": "escalate",
+      "selection": "lexicographic"
+    },
+    "U_K_FCR_INFRA": {
+      "audit_rows": false,
+      "index": "FastIndexedFCR",
+      "larger_mode": "always",
+      "selection": "lexicographic"
+    }
+  },
+  "arms": [
+    "U_K",
+    "U_K_FCR_AS25",
+    "U_K_FCR_INFRA",
+    "U_K_FCR_AS251"
+  ],
+  "as16_plan_sha256": "4056fd08244a15085367a60a0c71fbfc3f44fc2d2f0a7686fdd31063b1de2dfe",
+  "as25_plan_sha256": "6426aa3920139b30e16c920f24c4eebdfc18dd5eb8f7e5da94b4ef13a8b0c69e",
+  "as25_reference_gate": {
+    "human_review_required": true,
+    "maximum_cost_multiple": 2.0,
+    "minimum_independent_raw_graphs": 2,
+    "minimum_relative_gain": 0.01,
+    "no_mip_authorization": true,
+    "require_full_six_cases": true
+  },
+  "budget": {
+    "wall_seconds_per_arm": 90
+  },
+  "cases": [
+    {
+      "family": "puc",
+      "family_id": "puc:cc9-2p",
+      "name": "puc-cc9-2p-seed-r1",
+      "path": "instances/benchmark-v1/puc/puc-cc9-2p-seed-r1.txt",
+      "raw_graph_id": "puc:cc9-2p",
+      "source_sha256": "0312f43552cddc102081d9937465429e29797ddb86cf85a6871752d50aeec88c",
+      "split": "desenvolvimento"
+    },
+    {
+      "family": "puc",
+      "family_id": "puc:bip42p",
+      "name": "puc-bip42p-regiao-f2",
+      "path": "instances/benchmark-v1/puc/puc-bip42p-regiao-f2.txt",
+      "raw_graph_id": "puc:bip42p",
+      "source_sha256": "d7c53596522401d4071563d5007d9c8647ee0d37c893426b5ab3b1d65d97743a",
+      "split": "desenvolvimento"
+    },
+    {
+      "family": "pucn",
+      "family_id": "pucn:cc3-10n",
+      "name": "pucn-cc3-10n-seed-r1",
+      "path": "instances/benchmark-v1/pucn/pucn-cc3-10n-seed-r1.txt",
+      "raw_graph_id": "pucn:cc3-10n",
+      "source_sha256": "9123c0e46228c22ba586bb7f730757a7fa2c4b0f815b54afba59f54a3bc8b431",
+      "split": "desenvolvimento"
+    },
+    {
+      "family": "mapf",
+      "family_id": "mapf:map:raw-data/mapf/maps/room-32-32-4.map|scenario:room-32-32-4.map + room-32-32-4-random-1.scen",
+      "name": "mapf-room-32-32-4-m10-f8",
+      "path": "instances/benchmark-v1/mapf/mapf-room-32-32-4-m10-f8.txt",
+      "raw_graph_id": "mapf:map:raw-data/mapf/maps/room-32-32-4.map",
+      "source_sha256": "78be3e1261f31f4e583d0808bdfc9c93d9c9eb335d86d13b059ce428af5f303f",
+      "split": "desenvolvimento"
+    },
+    {
+      "family": "vienna",
+      "family_id": "vienna:I056",
+      "name": "vienna-I056-regiao-f4",
+      "path": "instances/benchmark-v1/vienna/vienna-I056-regiao-f4.txt",
+      "raw_graph_id": "vienna:I056",
+      "source_sha256": "645da5115a0eeaa6fba9eeae9f4942aebecfa66c4bcbc7aaec2bd0c994eb0ccc",
+      "split": "desenvolvimento"
+    },
+    {
+      "family": "puc",
+      "family_id": "puc:w3c571",
+      "name": "puc-w3c571-seed-r1",
+      "path": "instances/benchmark-v1/puc/puc-w3c571-seed-r1.txt",
+      "raw_graph_id": "puc:w3c571",
+      "source_sha256": "e85ced7daef779e6e88f302ee9d80a467129f448a7ac5c6ce465d64b963300fd",
+      "split": "desenvolvimento"
+    }
+  ],
+  "classification": {
+    "candidate_arm": "U_K_FCR_AS251",
+    "censored_handling": "censored arms are never paired; AS25-censored cases rescued by INFRA are reported separately and excluded from the median",
+    "control_arm": "U_K",
+    "efficiency_minimum_median_overhead_reduction": 0.5,
+    "infra_equivalence": "same per-round signature and terms digests and |objective difference| <= 1e-6 * max(1,|objective|)",
+    "infra_objective_tolerance": 1e-06,
+    "maximum_cost_multiple": 2.0,
+    "minimum_independent_raw_graphs": 2,
+    "minimum_relative_gain": 0.01,
+    "rule": [
+      "A: >=2 raw graphs where U_K_FCR_AS251 vs U_K is paired OPTIMAL, gain>=1%, cost<=2x, objective non-decreasing, every scan singleton-complete, larger regions complete or deferred, no cut cap",
+      "C: not A and >=2 raw graphs with paired OPTIMAL gain>=1% (cost and coverage ignored)",
+      "B: not A, not C, and efficiency holds: >=1 case with U_K, U_K_FCR_AS25 and U_K_FCR_INFRA OPTIMAL; INFRA equivalent to AS25 on all such cases; median of 1-(overhead_INFRA/overhead_AS25) >= 0.5, overhead = elapsed_arm - elapsed_U_K",
+      "D: otherwise"
+    ]
+  },
+  "constraints": [
+    "only development",
+    "no MIP",
+    "no evaluation",
+    "no change COMP or K",
+    "no change AS24/AS25 code",
+    "append only"
+  ],
+  "diagnostic_reference": {
+    "enters_gate": false,
+    "evidence_class": "DIAGNOSTIC_POST_HOC",
+    "path": "results/benchmark/as251-diagnostico-001"
+  },
+  "fcr": {
+    "max_cuts_per_round": 32,
+    "max_cuts_total": 128,
+    "max_larger": 12,
+    "max_rounds": 6,
+    "max_separation_wall_s": 12,
+    "max_variables": 1000000,
+    "min_reopt_remaining_s": 2,
+    "min_violation": 1e-06
+  },
+  "human_review_required": true,
+  "mip_automatically_authorized": false,
+  "preregistered_before_campaign": true,
+  "schema_version": "AS251-FCR-PLAN-v1",
+  "solver_parameters": {
+    "FeasibilityTol": 1e-06,
+    "MemLimitGiB": 16,
+    "Method": 1,
+    "NumericFocus": 1,
+    "OptimalityTol": 1e-06,
+    "Presolve": -1,
+    "Seed": 42,
+    "Threads": 4
+  },
+  "stage": "AS25.1",
+  "status": "FROZEN_BEFORE_AS251_CAMPAIGN; code hashes captured at runtime"
+}
