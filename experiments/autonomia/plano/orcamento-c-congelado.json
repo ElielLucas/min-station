@@ -1,0 +1,126 @@
+{
+ "schema": "AUT-ORCAMENTO-C-v1",
+ "data_utc": "2026-10-23T22:49:12+00:00",
+ "plano_sha256": "4679e1380c6ae642ef5fd420e486d3b80d1750189bc83d0ed61c09ec7cc24f40",
+ "codigo_sha256": "252b39450838836f282dd32749cf5d87bde807d0b3d17348ae97b9e9714b4e28",
+ "regra": "W_i = floor_10(fator × guarda_s × min_braço(Work_b / Runtime_b)), com Work e Runtime do Gurobi na sonda do braço b na instância i. O mínimo entre braços garante que o braço de menor vazão ainda chegue ao WorkLimit antes da guarda de parede; W_i é o mesmo para os três braços e para as três sementes.",
+ "fator": 0.8,
+ "guarda_s": 3600,
+ "arredondamento": 10,
+ "semente_calibracao": 1000,
+ "time_limit_sonda_s": 300,
+ "threads": 4,
+ "calibracao": {
+  "puc-cc9-2p-seed-r1": {
+   "UI": {
+    "work": 226.55997395896398,
+    "runtime_s": 300.0071270465851,
+    "taxa_work_por_s": 0.7551819724728865,
+    "status": "TIME_LIMIT",
+    "nos": 5129,
+    "json_sha256": "a561e433546fbb90a6ea62cc8e466babaa95651ebf5a8b665111cad47824592a"
+   },
+   "UC": {
+    "work": 249.07332051445474,
+    "runtime_s": 300.00530195236206,
+    "taxa_work_por_s": 0.8302297289199414,
+    "status": "TIME_LIMIT",
+    "nos": 6393,
+    "json_sha256": "76cb3ebb26c3e01a63d6ed525a7a6f152b896d1ba7fa9167d0a8a7554e067cee"
+   },
+   "UCK": {
+    "work": 261.83599828089154,
+    "runtime_s": 300.00463604927063,
+    "taxa_work_por_s": 0.8727731735381898,
+    "status": "TIME_LIMIT",
+    "nos": 7492,
+    "json_sha256": "1d0efa338ced24a190181909e8e710ccad97d0f6d5b951d47866976a811bd8b2"
+   }
+  },
+  "mapf-room-32-32-4-m10-f8": {
+   "UC": {
+    "work": 258.2116279936505,
+    "runtime_s": 300.01456689834595,
+    "taxa_work_por_s": 0.8606636359798504,
+    "status": "TIME_LIMIT",
+    "nos": 12815,
+    "json_sha256": "cefc12836194c2697717a732074362ca765d35387ad53c273232d14f7db7d50e"
+   },
+   "UCK": {
+    "work": 256.59719611221897,
+    "runtime_s": 300.03189301490784,
+    "taxa_work_por_s": 0.85523306717086,
+    "status": "TIME_LIMIT",
+    "nos": 11560,
+    "json_sha256": "539c39f6a327f924f82ee28cf071ead64f144cac1d8ba54e714c4d7d0856345f"
+   },
+   "UI": {
+    "work": 256.8498178611039,
+    "runtime_s": 300.0132780075073,
+    "taxa_work_por_s": 0.8561281672829049,
+    "status": "TIME_LIMIT",
+    "nos": 10718,
+    "json_sha256": "d95054ae516c093f98f9b0820f1f9512fdf31b47511019a1d0bc4b01a1e93ab6"
+   }
+  },
+  "pace18-t2-061-regiao-f4": {
+   "UCK": {
+    "work": 1.12264517242379,
+    "runtime_s": 2.087794065475464,
+    "taxa_work_por_s": 0.537718346358133,
+    "status": "OPTIMAL",
+    "nos": 1,
+    "json_sha256": "df8bef4923cba97e9d94b0657dada960eb7086c94f518dbae4ce731d5195870f"
+   },
+   "UI": {
+    "work": 232.45003424928404,
+    "runtime_s": 300.7970519065857,
+    "taxa_work_por_s": 0.7727802941415556,
+    "status": "TIME_LIMIT",
+    "nos": 1596,
+    "json_sha256": "90cfa1c85f4f4ff4045564fba537004559472b8767789dff67b473c3206829e3"
+   },
+   "UC": {
+    "work": 229.62270406852795,
+    "runtime_s": 300.0111811161041,
+    "taxa_work_por_s": 0.7653804875347766,
+    "status": "TIME_LIMIT",
+    "nos": 1604,
+    "json_sha256": "988496303569c55ab9af673cede4b44b460c2d96db93ea66fa425209d1eae8ad"
+   }
+  },
+  "lin-lin03-regiao-f4": {
+   "UI": {
+    "work": 22.697479655932096,
+    "runtime_s": 29.145395040512085,
+    "taxa_work_por_s": 0.7787672675008388,
+    "status": "OPTIMAL",
+    "nos": 4281,
+    "json_sha256": "5216d94975a8e612848a60c3bbcd1e106426019589bbc1412d545cc306de0f03"
+   },
+   "UC": {
+    "work": 15.073708729676472,
+    "runtime_s": 19.927508115768433,
+    "taxa_work_por_s": 0.7564271780548819,
+    "status": "OPTIMAL",
+    "nos": 2303,
+    "json_sha256": "caad1354d22cbb63d7a26334b00abc77617a7d09ee378fcebc368aeaa887ca1f"
+   },
+   "UCK": {
+    "work": 0.6949076270509351,
+    "runtime_s": 1.5994930267333984,
+    "taxa_work_por_s": 0.4344549275529674,
+    "status": "OPTIMAL",
+    "nos": 1,
+    "json_sha256": "43cdee2da0aebb3811c717faf0fa5644661a85d45a07f2762a55798958dc2876"
+   }
+  }
+ },
+ "work_limit": {
+  "puc-cc9-2p-seed-r1": 2170,
+  "mapf-room-32-32-4-m10-f8": 2460,
+  "pace18-t2-061-regiao-f4": 1540,
+  "lin-lin03-regiao-f4": 1250
+ },
+ "nota": "WorkLimit comum aos três braços e às três sementes de cada instância. Commit deste arquivo antes da etapa 4."
+}
