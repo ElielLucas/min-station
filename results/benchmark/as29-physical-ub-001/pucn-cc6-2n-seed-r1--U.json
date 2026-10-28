@@ -1,0 +1,33 @@
+{
+ "arm_id": "U",
+ "case_name": "pucn-cc6-2n-seed-r1.txt",
+ "commit": "72c241d-dirty",
+ "finished_utc": "2026-10-18T01:52:32Z",
+ "guard_s": 1800,
+ "gurobi_status": 2,
+ "gurobi_version": "12.0.3",
+ "installed": [
+  "31",
+  "34",
+  "40",
+  "57",
+  "59",
+  "8"
+ ],
+ "instance_sha256": "0bb5c20e2f2d1601cda999e43c212a71029fda6476513f2d235839e409b1afab",
+ "invalid_incumbents": 0,
+ "mip_numeric_bound": 6.0,
+ "mip_numeric_incumbent": 6.0,
+ "model_build_s": 0.009077132912352681,
+ "n_k_cuts": 0,
+ "nodes": 1.0,
+ "physical_validated_ub": 6,
+ "protocol": "Spec A R4 config (linha_base.csv); posterior evidence, not part of the original run",
+ "schema": "AS29-PHYSICAL-UB-v1",
+ "seed": 42,
+ "solver_runtime_s": 0.41059689898975194,
+ "status": "OPTIMAL_NUMERIC",
+ "threads": 4,
+ "work": 0.04204893122157082,
+ "work_limit": 164.0
+}

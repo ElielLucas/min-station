@@ -1,0 +1,29 @@
+{
+ "arm_id": "U",
+ "case_name": "puc-cc10-2u-regiao-f2.txt",
+ "commit": "72c241d-dirty",
+ "finished_utc": "2026-10-18T02:02:19Z",
+ "guard_s": 1800,
+ "gurobi_status": 2,
+ "gurobi_version": "12.0.3",
+ "installed": [
+  "496",
+  "521"
+ ],
+ "instance_sha256": "512b6f1f16c62efe41c11bbfab838f3ac1fa9c44a9e978b9480f42c81fe5fe3b",
+ "invalid_incumbents": 0,
+ "mip_numeric_bound": 2.0,
+ "mip_numeric_incumbent": 2.0,
+ "model_build_s": 3.678292972035706,
+ "n_k_cuts": 0,
+ "nodes": 1189.0,
+ "physical_validated_ub": 2,
+ "protocol": "Spec A R4 config (linha_base.csv); posterior evidence, not part of the original run",
+ "schema": "AS29-PHYSICAL-UB-v1",
+ "seed": 42,
+ "solver_runtime_s": 295.44421292399056,
+ "status": "OPTIMAL_NUMERIC",
+ "threads": 4,
+ "work": 98.1521634986327,
+ "work_limit": 164.0
+}

@@ -2,11 +2,11 @@
 
 ## Execution Protocol
 
-Executar com a skill `/tlc-spec-driven`, seguindo Specify, Design, Tasks e Execute. **Esta entrega produz somente o planejamento; nenhuma tarefa foi executada.** Cada tarefa futura deve ser testada e concluída com commit atômico após validação, com Verifier independente ao final. Não fazer push sem autorização explícita.
+Executar com a skill `/tlc-spec-driven`, seguindo Specify, Design, Tasks e Execute. *[Rev. 1]* A primeira entrega produziu só o planejamento. As tarefas T1–T4 foram executadas depois (Rev. 0) e revisadas de forma independente (Rev. 1). Por regra do projeto (CLAUDE.md), commits só com aprovação do pesquisador, por isso os itens de commit atômico continuam pendentes. Não fazer push sem autorização explícita.
 
 **Spec:** `specs/as-29-yrbc-reconciliacao-lb-opt/spec.md`
 **Design:** `specs/as-29-yrbc-reconciliacao-lb-opt/design.md`
-**Estado:** DRAFT; **pré-condição:** AS28 encerrada; não depende de Y-RBC matematicamente válido.
+**Estado:** EXECUTED (Rev. 2) / G0 `G0_CANDIDATE_PASS` pelo contrato vigente, aprovação pendente do pesquisador; histórico: Rev. 0 EXECUTED_PARTIAL / G0_BLOCKED_EVIDENCE; Rev. 1 emenda A1 proposta e não adotada; **pré-condição:** AS28 encerrada; não depende de Y-RBC matematicamente válido.
 
 ## Test Coverage Matrix
 
@@ -25,7 +25,7 @@ Executar com a skill `/tlc-spec-driven`, seguindo Specify, Design, Tasks e Execu
 |---|---|---|
 | Spec | Antes de aprovar requisitos | `python3 .claude/skills/tlc-spec-driven/scripts/validate_spec.py specs/as-29-yrbc-reconciliacao-lb-opt/spec.md --strict` |
 | Tasks | Antes de aprovar tarefas | `python3 .claude/skills/tlc-spec-driven/scripts/validate_tasks.py specs/as-29-yrbc-reconciliacao-lb-opt/tasks.md --strict` |
-| Quick | Após alteração de código matemático | `poetry run python -m unittest discover -s experiments/cuts -p "test_*.py" -q` + teste AS específico |
+| Quick | Após alteração de código matemático | `poetry run python -m unittest discover -s experiments/benchmark -p 'test_reconcile_as29.py' -q` (+ `experiments/cuts` se o oráculo mudar) |
 | Full | Antes de gate científico | suíte completa aplicável, microtestes e verificador independente |
 | Build | Cada commit futuro | `git diff --check` e validação de arquivos experimentais |
 
@@ -49,6 +49,8 @@ Fases sequenciais; as dependências entre fases são indicadas no campo de cada 
 
 ### T1: Construir inventário de fontes
 
+**Execução:** Rev. 0 entregou o inventário (260 linhas). Rev. 1 acrescentou AS09 LP, hash de plano, seed/threads/orçamento lidos das fontes e `exclusion` para SHA divergente: 292 linhas. Commit pendente de aprovação.
+
 **What:** Localizar CSVs/JSONs/logs; associar hashes, código, versão e parâmetros; teste de unicidade da identidade de caso.
 **Where:** `docs/technical/reference/experimentos/as29-envelope-proveniencia.csv`
 **Depends on:** None
@@ -57,15 +59,17 @@ Fases sequenciais; as dependências entre fases são indicadas no campo de cada 
 **Tools:** Python/Poetry, GitHub para fontes; `/tlc-spec-driven` para Execute; Gurobi somente quando previsto e aprovado.
 
 **Done when:**
-- [ ] Artefato documentado/implementado com hipóteses, dados e versões verificáveis.
-- [ ] Critérios de aceite aplicáveis passam em teste independente e negativos (quando houver) falham.
-- [ ] Não foram alteradas fontes/partições proibidas nem inventados status/certificados.
-- [ ] Gate de teste/checagem passa e evidência é anexada ao mesmo commit atômico.
+- [x] Artefato documentado/implementado com hipóteses, dados e versões verificáveis.
+- [x] Critérios de aceite aplicáveis passam em teste independente e negativos (quando houver) falham.
+- [x] Não foram alteradas fontes/partições proibidas nem inventados status/certificados.
+- [ ] Gate de teste/checagem passa *(cumprido)*; evidência anexada ao mesmo commit atômico *(pendente: commit só com aprovação do pesquisador)*.
 **Tests:** auditoria de fonte e consistência por verificador independente; comparação reprodutível
 **Gate:** Quick
 **Commit sugerido:** `docs(as29): construir inventário de fontes`
 
 ### T2: Auditar limites e incumbentes
+
+**Execução:** Rev. 1: oráculo independente reexecutado em 67/67 instalações (0 rejeições); C/C_K inadmissível como LB; 23 lacunas de UB física sem artefato recuperável, rotuladas `SOLVER_ONLY` e não preenchidas por suposição. Checagem amostral: CC9, W3C571, BIP42p-regiao e CC10-seed conferidos contra as fontes primárias. Commit pendente.
 
 **What:** Recalcular envelope sem usar incumbente do núcleo como UB; checagem manual amostral de origens.
 **Where:** `docs/technical/reference/experimentos/as29-envelope-lb-opt.md`
@@ -75,15 +79,17 @@ Fases sequenciais; as dependências entre fases são indicadas no campo de cada 
 **Tools:** Python/Poetry, GitHub para fontes; `/tlc-spec-driven` para Execute; Gurobi somente quando previsto e aprovado.
 
 **Done when:**
-- [ ] Artefato documentado/implementado com hipóteses, dados e versões verificáveis.
-- [ ] Critérios de aceite aplicáveis passam em teste independente e negativos (quando houver) falham.
-- [ ] Não foram alteradas fontes/partições proibidas nem inventados status/certificados.
-- [ ] Gate de teste/checagem passa e evidência é anexada ao mesmo commit atômico.
+- [x] Artefato documentado/implementado com hipóteses, dados e versões verificáveis.
+- [x] Critérios de aceite aplicáveis passam em teste independente e negativos (quando houver) falham.
+- [x] Não foram alteradas fontes/partições proibidas nem inventados status/certificados.
+- [ ] Gate de teste/checagem passa *(cumprido)*; evidência anexada ao mesmo commit atômico *(pendente: commit só com aprovação do pesquisador)*.
 **Tests:** auditoria de fonte e consistência por verificador independente; comparação reprodutível
 **Gate:** Quick
 **Commit sugerido:** `docs(as29): auditar limites e incumbentes`
 
 ### T3: Registrar divergências e erratas
+
+**Execução:** erratas E-29-01 a E-29-07 (Rev. 0) e E-29-08 a E-29-10 (Rev. 1). Fonte do bound 678 de W3C571 corrigida para AS06 `arm-07`. E-29-11 (limites do manifesto) e E-29-12 (exportação posterior) acrescentadas. Commit pendente.
 
 **What:** Resolver CC9 e inconsistências reportadas; não mutar dados primários.
 **Where:** `docs/technical/reference/experimentos/as29-erratas-e-incompatibilidades.md`
@@ -93,15 +99,17 @@ Fases sequenciais; as dependências entre fases são indicadas no campo de cada 
 **Tools:** Python/Poetry, GitHub para fontes; `/tlc-spec-driven` para Execute; Gurobi somente quando previsto e aprovado.
 
 **Done when:**
-- [ ] Artefato documentado/implementado com hipóteses, dados e versões verificáveis.
-- [ ] Critérios de aceite aplicáveis passam em teste independente e negativos (quando houver) falham.
-- [ ] Não foram alteradas fontes/partições proibidas nem inventados status/certificados.
-- [ ] Gate de teste/checagem passa e evidência é anexada ao mesmo commit atômico.
+- [x] Artefato documentado/implementado com hipóteses, dados e versões verificáveis.
+- [x] Critérios de aceite aplicáveis passam em teste independente e negativos (quando houver) falham.
+- [x] Não foram alteradas fontes/partições proibidas nem inventados status/certificados.
+- [ ] Gate de teste/checagem passa *(cumprido)*; evidência anexada ao mesmo commit atômico *(pendente: commit só com aprovação do pesquisador)*.
 **Tests:** auditoria de fonte e consistência por verificador independente; comparação reprodutível
 **Gate:** Quick
 **Commit sugerido:** `docs(as29): registrar divergências e erratas`
 
 ### T4: Revisar decisão e liberar G0
+
+**Execução:** Rev. 0: BLOQUEADO. Rev. 1: revisão independente; G0 `G0_BLOCKED_EVIDENCE` (8/31) e emenda A1 proposta, depois não adotada. Rev. 2: exportação posterior de 46 instalações (E-29-12), 31/31 casos de desenvolvimento com UB física revalidada, `G0_CANDIDATE_PASS`. **A aprovação do gate e o desbloqueio da AS30 cabem ao pesquisador.**
 
 **What:** Parecer independente e tabela reconciliada para casos de desenvolvimento.
 **Where:** `docs/technical/reference/experimentos/as29-envelope-lb-opt.md`
@@ -111,10 +119,10 @@ Fases sequenciais; as dependências entre fases são indicadas no campo de cada 
 **Tools:** Python/Poetry, GitHub para fontes; `/tlc-spec-driven` para Execute; Gurobi somente quando previsto e aprovado.
 
 **Done when:**
-- [ ] Artefato documentado/implementado com hipóteses, dados e versões verificáveis.
-- [ ] Critérios de aceite aplicáveis passam em teste independente e negativos (quando houver) falham.
-- [ ] Não foram alteradas fontes/partições proibidas nem inventados status/certificados.
-- [ ] Gate de teste/checagem passa e evidência é anexada ao mesmo commit atômico.
+- [x] Artefato documentado/implementado com hipóteses, dados e versões verificáveis.
+- [x] Critérios de aceite aplicáveis passam em teste independente e negativos (quando houver) falham.
+- [x] Não foram alteradas fontes/partições proibidas nem inventados status/certificados.
+- [ ] Gate de teste/checagem passa *(cumprido)*; evidência anexada ao mesmo commit atômico *(pendente: commit só com aprovação do pesquisador)*.
 **Tests:** auditoria de fonte e consistência por verificador independente; comparação reprodutível
 **Gate:** Full
 **Commit sugerido:** `docs(as29): revisar decisão e liberar g0`
@@ -151,5 +159,5 @@ Phase 1 + Phase 2: T1 -> T2 -> T3 -> T4
 ## Dependência externa e decisão de gate
 
 - **G0 — Fontes reconciliadas:** G0 PASS: 100% dos casos de desenvolvimento usados nos futuros gates com hash, LB fonte, UB fisicamente validado e classe de status; divergências explicitamente abertas ou resolvidas; CC9 contextualizada. G0 BLOCKED se não houver rastro de proveniência suficiente.
-- A etapa seguinte depende de aprovação explícita do gate. Não criar `validation.md` até existir evidência; o Verifier deve ser outro agente.
-- Nenhuma execução ou commit acontece na entrega destas specs.
+- A etapa seguinte depende de aprovação explícita do gate. `validation.md` é escrito pelo Verifier pós-correção, que é um agente diferente do autor da Rev. 1.
+- Nenhum commit é feito sem aprovação do pesquisador.

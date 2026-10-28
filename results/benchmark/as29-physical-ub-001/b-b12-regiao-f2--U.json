@@ -1,0 +1,30 @@
+{
+ "arm_id": "U",
+ "case_name": "b-b12-regiao-f2.txt",
+ "commit": "72c241d-dirty",
+ "finished_utc": "2026-10-18T01:52:39Z",
+ "guard_s": 1800,
+ "gurobi_status": 2,
+ "gurobi_version": "12.0.3",
+ "installed": [
+  "23",
+  "36",
+  "38"
+ ],
+ "instance_sha256": "34abce24950c2dca8634ee13b0ebd9c1b685391cee091ad33dd554edcf5dd3f6",
+ "invalid_incumbents": 0,
+ "mip_numeric_bound": 3.0,
+ "mip_numeric_incumbent": 3.0,
+ "model_build_s": 0.016710186144337058,
+ "n_k_cuts": 0,
+ "nodes": 1.0,
+ "physical_validated_ub": 3,
+ "protocol": "Spec A R4 config (linha_base.csv); posterior evidence, not part of the original run",
+ "schema": "AS29-PHYSICAL-UB-v1",
+ "seed": 42,
+ "solver_runtime_s": 0.09954220592044294,
+ "status": "OPTIMAL_NUMERIC",
+ "threads": 4,
+ "work": 0.023377828001112818,
+ "work_limit": 164.0
+}

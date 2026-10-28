@@ -1,0 +1,28 @@
+{
+ "arm_id": "U",
+ "case_name": "b-b18-intercalado-f2.txt",
+ "commit": "72c241d-dirty",
+ "finished_utc": "2026-10-18T01:52:39Z",
+ "guard_s": 1800,
+ "gurobi_status": 2,
+ "gurobi_version": "12.0.3",
+ "installed": [
+  "98"
+ ],
+ "instance_sha256": "5ce1a43892f1f21a8ced22e4217fdf4dd643999a94a45a2b36b5e92ae8975624",
+ "invalid_incumbents": 0,
+ "mip_numeric_bound": 1.0,
+ "mip_numeric_incumbent": 1.0,
+ "model_build_s": 0.022681900998577476,
+ "n_k_cuts": 0,
+ "nodes": 1.0,
+ "physical_validated_ub": 1,
+ "protocol": "Spec A R4 config (linha_base.csv); posterior evidence, not part of the original run",
+ "schema": "AS29-PHYSICAL-UB-v1",
+ "seed": 42,
+ "solver_runtime_s": 0.0381220628041774,
+ "status": "OPTIMAL_NUMERIC",
+ "threads": 4,
+ "work": 0.011196008772572388,
+ "work_limit": 164.0
+}

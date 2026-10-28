@@ -1,7 +1,7 @@
 # AS29 — Design técnico
 
 **Spec:** `specs/as-29-yrbc-reconciliacao-lb-opt/spec.md`
-**Status:** DRAFT — não implementado.
+**Status:** implementado e revisado (Rev. 2, 18/10/2026). G0 pelo contrato vigente, sem emendas: `G0_CANDIDATE_PASS` (31/31 com UB física). A aprovação do gate é do pesquisador.
 
 ## Architecture Overview
 
@@ -69,3 +69,25 @@ Agrupar por identidade física de instância e hash bruto, nunca pelo prefixo PU
 - Se prova, comparação ou certificado estiverem incompletos: registrar hipótese/INCONCLUSIVE e não inferir GO.
 - Se o teste contradisser uma hipótese matemática: registrar contraexemplo com instância mínima e bloquear dependentes.
 - Se não houver Gurobi disponível: executar apenas testes independentes e dry-run, sem preencher resultados MIP fictícios.
+
+## As-built da AS29
+
+- `experiments/benchmark/reconcile_as29.py`: reconstrói a auditoria de fontes e os envelopes sem solver e sem ler resultados reservados do AS09.
+- `experiments/benchmark/test_reconcile_as29.py`: testa classificação de fontes, arredondamento, integralidade, integridade de manifests e isolamento da avaliação.
+- `as29-envelope-proveniencia.csv`: linha por braço e fonte, com SHA do arquivo, seed/limites quando constam da fonte, status e natureza do UB.
+- `as29-envelope-casos.csv`: síntese por caso, sem fundir o LB* original com limites posteriores.
+- `as29-envelope-lb-opt.md` e `as29-erratas-e-incompatibilidades.md`: interpretação, protocolo de comparabilidade e casos inconsistentes.
+- Não foi construída uma solução física nova, executado MIP/LP ou corrigido o CSV original. (Rev. 0: G0 bloqueado.)
+
+### Rev. 1 (revisão independente)
+
+- **UB física = oráculo reexecutado.** `physical_oracle()` usa `ms_utils.ler_instancia` e `experiments/cuts/independent_validator.viavel` (estados vértice-bateria + emparelhamento), com `r` do manifesto. Não usa o modelo MIP, `A_r` nem K. Metadado `physical_validated_ub` é só pré-condição (`validated_ub`).
+- **Admissibilidade de LB:** `U`, `U_K`, `K_IP`. `C`/`C_K` (AS09, `PROOF_REVIEW_REQUIRED`) ficam registrados com `lb_admissible=false`.
+- **Três colunas distintas, como previsto acima:** LP (`lp_u`, `lp_u_k`, AS09), LB MIP (`historic_lb_integer`), UB física (`physical_ub_validated`), mais UB numérica (`ub_numeric_envelope`) rotulada `SOLVER_ONLY`.
+- **Estados:** `OPT_NUMERIC_PHYSICAL`, `OPEN_PHYSICAL_UB`, `OPT_NUMERIC_SOLVER_ONLY`, `OPEN_SOLVER_UB_ONLY`, `INCONSISTENT`, `INTEGRITY_BLOCKED` (`summarize()`).
+- **Identidade:** registro com `instance_sha256` diferente do manifesto recebe `exclusion=INSTANCE_SHA_MISMATCH` e fica fora do envelope. Planos AS09 conferidos por hash canônico contra o manifesto e cada registro; AS06 por sidecar e manifesto.
+- **Gate:** `gate()` aplica o critério vigente (`G0_CANDIDATE_PASS`, `G0_BLOCKED_EVIDENCE` ou `G0_BLOCKED` para `INCONSISTENT`/`INCOMPLETE`/`INTEGRITY_BLOCKED`) e informa separadamente `amendment_candidate` (emenda A1, não adotada). A aprovação é sempre humana.
+- **Rev. 2:** nova fonte `AS29_POSTERIOR_EXPORT` (`results/benchmark/as29-physical-ub-001/`, schema `AS29-PHYSICAL-UB-v1`, sidecar SHA-256), gerada por `export_as29_installations.py` com a configuração da Spec A. Entra como `U`/`U_K` MIP com instalação revalidada pelo oráculo; por ser evidência posterior, a nota de cada linha o diz.
+- **Fontes divergentes:** limites `lb`/`ub`/`lb_melhor`/`ub_melhor` do manifesto aparecem lado a lado (`manifest_*`, `lb_documented_max`, `ub_documented_min`) e não entram no envelope (sem SHA por execução).
+- **Proveniência temporal:** `source_versioned_in` = commit e data git da fonte; `cuts_scope` distingue o hash do gerador do hash de K por instância.
+- **Envelope histórico vs. corrida pareada:** o CSV de casos marca `comparability` como envelope não pareado; comparações de desempenho exigem nova corrida pareada pré-registrada.
